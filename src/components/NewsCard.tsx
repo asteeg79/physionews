@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, ExternalLink, ChevronDown } from 'lucide-react';
 import { formatRelative, formatDate } from '@/lib/format-date';
 import type { NewsItem, Source } from '@/db/schema';
 
@@ -15,8 +15,7 @@ interface NewsCardProps {
 /**
  * Hervorgehoben werden zwei Quellen-Gruppen:
  *  1. Alle Inhalte von Rechtsanwalt Benjamin Alt
- *  2. Publikationen über die Marke pt / physiotherapeuten.de
- *     (sowohl der via-Google-News-Quellen als auch die offizielle physio.de)
+ *  2. Publikationen über die Marke pt / physiotherapeuten.de / physio.de
  */
 function isHighlightedSource(name: string): boolean {
   const lower = name.toLowerCase();
@@ -30,51 +29,58 @@ function isHighlightedSource(name: string): boolean {
 }
 
 export function NewsCard({ item, onRead }: NewsCardProps) {
-  // Optimistic UI: sofort als gelesen anzeigen beim Klick
+  const [expanded, setExpanded] = useState(false);
+  // Optimistic UI: sofort als gelesen anzeigen beim ersten Aufklappen
   const [optimisticRead, setOptimisticRead] = useState(item.isRead);
   const isRead = item.isRead || optimisticRead;
   const isHighlighted = isHighlightedSource(item.source.name);
 
-  const handleClick = () => {
-    if (!isRead) {
-      setOptimisticRead(true);
-      onRead?.(item.id);
-      // Fire-and-forget: API informieren
-      fetch(`/api/news/${item.id}/read`, { method: 'POST' }).catch(() => {
-        // Bei Netzwerk-Fehler: kein User-Impact, beim nächsten Refresh wird der DB-Stand neu geladen
-      });
-    }
+  const markReadOnce = () => {
+    if (isRead) return;
+    setOptimisticRead(true);
+    onRead?.(item.id);
+    fetch(`/api/news/${item.id}/read`, { method: 'POST' }).catch(() => undefined);
   };
 
-  // Styling-Logik
-  // - Hervorgehoben + ungelesen → kräftiger Grün-Rahmen + Soft-Background
-  // - Normal + ungelesen → Grün-Rahmen
-  // - Gelesen → grau, opacity reduziert, Haken
-  let cardClasses = 'block rounded-xl border-2 overflow-hidden transition-all group hover:shadow-md ';
-  if (isRead) {
+  const handleToggle = () => {
+    const next = !expanded;
+    setExpanded(next);
+    if (next) markReadOnce();
+  };
+
+  const handleOpen = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    markReadOnce();
+    // Default-Verhalten (Link öffnet in neuem Tab) bleibt erhalten
+  };
+
+  // Card-Styling
+  let cardClasses = 'rounded-xl border-2 overflow-hidden transition-all ';
+  if (isRead && !expanded) {
     cardClasses += 'bg-card border-border opacity-70 hover:opacity-100';
   } else if (isHighlighted) {
-    cardClasses += 'bg-brand-soft border-brand shadow-sm hover:shadow-md';
+    cardClasses += 'bg-brand-soft border-brand shadow-sm';
   } else {
-    cardClasses += 'bg-card border-brand/70 hover:border-brand';
+    cardClasses += 'bg-card border-brand/70';
   }
+  if (expanded) cardClasses += ' shadow-md opacity-100';
 
   return (
-    <a
-      href={item.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={handleClick}
-      className={cardClasses}
-      aria-label={`${item.title} — ${isRead ? 'bereits gelesen' : 'ungelesen'}`}
-    >
-      <div className="p-4">
+    <article className={cardClasses}>
+      {/* Header (klickbar zum Aufklappen) */}
+      <button
+        type="button"
+        onClick={handleToggle}
+        className="w-full text-left p-4 cursor-pointer"
+        aria-expanded={expanded}
+        aria-label={`${item.title} — ${expanded ? 'zusammenklappen' : 'aufklappen'}`}
+      >
         <div className="flex items-center gap-1.5 mb-1.5">
           {isHighlighted && (
             <Star
               className="w-3.5 h-3.5 text-brand shrink-0"
-              aria-label="Hervorgehobene Quelle"
               fill="currentColor"
+              aria-hidden="true"
             />
           )}
           <span
@@ -92,48 +98,98 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
           >
             {formatRelative(item.publishedAt)}
           </time>
-          {isRead && (
-            <span
-              className="ml-auto inline-flex items-center gap-0.5 text-xs text-brand shrink-0"
-              aria-label="Gelesen"
-            >
-              <Check className="w-4 h-4" strokeWidth={3} />
-            </span>
-          )}
+
+          <div className="ml-auto flex items-center gap-1 shrink-0">
+            {isRead && (
+              <Check className="w-4 h-4 text-brand" strokeWidth={3} aria-label="Gelesen" />
+            )}
+            <ChevronDown
+              className={`w-4 h-4 text-muted-foreground transition-transform ${
+                expanded ? 'rotate-180' : ''
+              }`}
+              aria-hidden="true"
+            />
+          </div>
         </div>
 
         <h2
-          className={`font-semibold text-sm leading-snug line-clamp-2 mb-1 transition-colors group-hover:text-brand ${
-            isRead ? 'text-muted-foreground' : 'text-foreground'
-          }`}
+          className={`font-semibold text-sm leading-snug mb-1 ${
+            expanded ? '' : 'line-clamp-2'
+          } ${isRead ? 'text-muted-foreground' : 'text-foreground'}`}
         >
           {item.title}
         </h2>
 
-        {item.summary && (
-          <p
-            className={`text-xs line-clamp-2 leading-relaxed ${
-              isRead ? 'text-muted-foreground/70' : 'text-muted-foreground'
-            }`}
-          >
+        {item.summary && !expanded && (
+          <p className="text-xs line-clamp-2 leading-relaxed text-muted-foreground">
             {item.summary}
           </p>
         )}
-      </div>
+      </button>
 
-      {item.imageUrl && (
+      {/* Expanded-Bereich */}
+      {expanded && (
+        <div className="px-4 pb-4 -mt-1 space-y-3">
+          {item.summary ? (
+            <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">
+              {item.summary}
+            </p>
+          ) : (
+            <p className="text-xs italic text-muted-foreground">
+              Keine Vorschau verfügbar — bitte beim Original weiterlesen.
+            </p>
+          )}
+
+          {item.imageUrl && (
+            <div className="w-full aspect-video overflow-hidden rounded-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.imageUrl}
+                alt=""
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          )}
+
+          <div className="flex items-center justify-between pt-1">
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleOpen}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline"
+            >
+              alles lesen
+              <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+            </a>
+            <span className="text-xs text-muted-foreground">
+              Original auf <span className="font-medium">{shortDomain(item.url)}</span>
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Bild im kollapsierten Zustand wie gewohnt */}
+      {!expanded && item.imageUrl && (
         <div className="w-full aspect-video overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={item.imageUrl}
             alt=""
-            className={`w-full h-full object-cover transition-opacity ${
-              isRead ? 'opacity-70' : ''
-            }`}
+            className={`w-full h-full object-cover ${isRead ? 'opacity-70' : ''}`}
             loading="lazy"
           />
         </div>
       )}
-    </a>
+    </article>
   );
+}
+
+function shortDomain(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return '';
+  }
 }
