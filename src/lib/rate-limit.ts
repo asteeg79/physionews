@@ -1,7 +1,12 @@
 /**
- * Einfacher In-Memory-Rate-Limiter pro Schlüssel (IP).
- * Reicht für eine private Single-User-App. Bei mehreren Vercel-Instanzen
- * (was wir nicht haben) müsste man auf Upstash Redis umstellen.
+ * Rate-Limit — einfacher In-Memory-Bucket-Counter pro Schlüssel (typisch IP).
+ *
+ * Verwendung: Schutz für /api/refresh-on-demand vor Spam (1 Request/5min/IP).
+ *
+ * Limitierung: Im-Memory-Map → funktioniert nur in derselben Function-Instanz.
+ * Bei mehreren Vercel-Instanzen würde der Counter pro Instanz separat zählen.
+ * Für unsere Single-User-PWA ist das akzeptabel. Bei Mehr-Nutzer-Deployment
+ * → auf Upstash Redis o.ä. umstellen.
  */
 
 interface Bucket {

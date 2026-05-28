@@ -1,3 +1,23 @@
+/**
+ * Content-Extractor — holt die HTML-Seite einer News-URL und extrahiert
+ * einen Vorschautext.
+ *
+ * Wird vom GET /api/news/[id]/preview Endpoint genutzt, der beim Aufklappen
+ * einer NewsCard im Frontend aufgerufen wird. Das Ergebnis wird im
+ * news_items.summary-Feld gecached, sodass nächste Klicks instant antworten.
+ *
+ * Extraktionsstrategie (priorisiert nach Praxiserfahrung):
+ *  1. Article/Main/Entry-Content-Container → längste &lt;p&gt;-Sequenz
+ *  2. JSON-LD: NewsArticle.articleBody / description
+ *  3. og:description / twitter:description / meta-description als Fallback
+ *  4. Body-weite &lt;p&gt;-Sammlung (nachdem Nav/Footer/Aside entfernt wurden)
+ *
+ * Edge-Cases:
+ *  - Google News URLs werden NICHT gefetcht (JS-Redirect zum Original läuft
+ *    nur im Browser, nicht im server-side fetch)
+ *  - 10s-Timeout pro Fetch — schützt vor hängenden Verbindungen
+ *  - 800c-Cap mit sauberem Satz-/Wort-Schnitt
+ */
 import * as cheerio from 'cheerio';
 
 const DEFAULT_HEADERS = {

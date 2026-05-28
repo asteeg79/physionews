@@ -3,6 +3,8 @@ import { db, schema } from '@/db';
 import { asc } from 'drizzle-orm';
 import { z } from 'zod';
 import { detectFeed } from '@/lib/feed-detect';
+import { ALL_CATEGORIES } from '@/lib/categories';
+import type { NewsCategory } from '@/db/schema';
 
 export async function GET() {
   const allSources = await db
@@ -16,20 +18,7 @@ export async function GET() {
 const addSchema = z.object({
   url: z.string().url(),
   name: z.string().min(2).optional(),
-  category: z
-    .enum([
-      'fachlich',
-      'gesetz',
-      'politik',
-      // alte Werte werden akzeptiert, sind aber im UI nicht mehr Default
-      'berufspolitik',
-      'recht',
-      'evidenz',
-      'fortbildung',
-      'leitlinien',
-      'allgemein',
-    ])
-    .default('fachlich'),
+  category: z.enum(ALL_CATEGORIES as readonly [NewsCategory, ...NewsCategory[]]).default('fachlich'),
   /** Wenn true (Default), wird zunächst auto-detect für RSS versucht; sonst Generic-HTML. */
   autoDetect: z.boolean().default(true),
 });

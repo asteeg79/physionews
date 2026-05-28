@@ -1,8 +1,16 @@
 'use client';
 
 /**
- * Hilfsfunktionen, um den PWA-Installations- und Push-Status zu prüfen.
- * Müssen client-seitig laufen (Zugriff auf window, navigator).
+ * PWA-Status — Browser/Plattform-Feature-Detection für die Push- und
+ * Install-Flows. Alle Funktionen laufen client-seitig (window, navigator)
+ * und sind SSR-safe (Frühe Rückgabe bei window===undefined).
+ *
+ * Genutzt von:
+ *  - PushPermissionBanner (Banner-Sichtbarkeit)
+ *  - InstallPrompt (iOS-Sonderbehandlung)
+ *  - InstallStatus (Status-Anzeige in Settings)
+ *  - PushSettings (Mehrstufige State-Detection)
+ *  - ServiceWorkerRegistrar (SW-Registration nur wenn supported)
  */
 
 export function isStandalone(): boolean {

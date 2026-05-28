@@ -1,9 +1,23 @@
+/**
+ * Relevance-Pipeline — orchestriert die Bewertung neuer News-Items
+ * auf ihre Physiotherapie-Relevanz (Score 0-10).
+ *
+ * Hybrid-Architektur:
+ *  1. Keyword-Scoring (deterministisch, kostenfrei) → scoreByKeywords()
+ *  2. Grauzonen-Items → Gemini Flash mit klarem Bewertungs-Rubric
+ *  3. Items mit Score &lt; MIN_RELEVANCE_THRESHOLD (4) werden gelöscht
+ *
+ * Token-Budget: typisch 800-4500 Tokens/Cron (&lt; 1% vom Free-Tier).
+ *
+ * @see ./keywords.ts für Schlagwortlisten und Source-Bias
+ * @see ./gemini.ts für AI-Klassifizierung
+ */
 import { db, schema } from '@/db';
 import { eq, lt, sql } from 'drizzle-orm';
 import { scoreByKeywords } from './keywords';
 import { classifyBatch, estimateTokens, type GeminiInput } from './gemini';
 
-// Kleinere Batches sind robuster und passen sicher in 4096 maxOutputTokens
+/** Batch-Größe für Gemini — passt sicher in 4096 maxOutputTokens. */
 const GEMINI_BATCH_SIZE = 20;
 
 /** Mindest-Relevanz, unter der Items komplett verworfen werden. */

@@ -1,9 +1,21 @@
 'use client';
 
+/**
+ * PushSettings — Push-Notification-Steuerung in /settings.
+ *
+ * Erkennt 5 Zustände:
+ *  - unsupported: Browser kann kein Web Push (z.B. iOS-Safari im Tab)
+ *  - needs-pwa:   iOS-Browser, aber App nicht als PWA installiert
+ *  - denied:      User hat im Browser explizit blockiert
+ *  - default:     Noch nie gefragt — bietet Aktivieren-Button
+ *  - granted:     Aktiv — Test-Push und Deaktivieren-Buttons
+ */
+
 import { useEffect, useState } from 'react';
 import { Bell, BellOff, Send, AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { isStandalone, supportsPush, isIos, urlBase64ToUint8Array } from '@/lib/pwa-status';
+import { InfoCard } from './settings/InfoCard';
 
 type PushState = 'unsupported' | 'needs-pwa' | 'denied' | 'default' | 'granted';
 
@@ -181,20 +193,4 @@ export function PushSettings() {
   );
 }
 
-function InfoCard({
-  icon,
-  variant,
-  children,
-}: {
-  icon: React.ReactNode;
-  variant: 'muted' | 'success';
-  children: React.ReactNode;
-}) {
-  const bg = variant === 'success' ? 'bg-brand/5 border-brand/30' : 'bg-card border-border';
-  return (
-    <div className={`p-3 ${bg} border rounded-xl flex items-start gap-2 text-sm`}>
-      <div className="mt-0.5 shrink-0">{icon}</div>
-      <div>{children}</div>
-    </div>
-  );
-}
+// InfoCard wurde in ./settings/InfoCard ausgelagert.

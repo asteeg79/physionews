@@ -1,11 +1,36 @@
 'use client';
 
+/**
+ * SettingsForm — Formular für die App-Verhalten-Sektion in /settings.
+ *
+ * Verwaltet:
+ *  - Refresh-Intervall (1/2/4 h)
+ *  - Aktives Zeitfenster (Stunden-Range, Europe/Berlin)
+ *  - Globale Push-Notifications
+ *  - Retention-Tage (7/14/30/60/90)
+ *  - Aktionen: Jetzt aktualisieren / Alle als gelesen / Cache leeren
+ *
+ * Pattern: Optimistic UI auf allen Wechseln. Bei Fehler wird der Wert
+ * zurückgesetzt und ein Toast gezeigt.
+ */
+
 import { useState, useTransition } from 'react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
-import { RefreshCw, Trash2, CheckCheck, AlertTriangle, Clock, Calendar, BellRing } from 'lucide-react';
+import {
+  RefreshCw,
+  Trash2,
+  CheckCheck,
+  AlertTriangle,
+  Clock,
+  Calendar,
+  BellRing,
+} from 'lucide-react';
+import { FieldGroup } from './settings/FieldGroup';
+import { Toggle } from './settings/Toggle';
+import { ActionButton } from './settings/ActionButton';
 
-interface Settings {
+export interface Settings {
   refreshIntervalHours: number;
   refreshWindowStart: number;
   refreshWindowEnd: number;
@@ -34,49 +59,46 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
   const [pending, startTransition] = useTransition();
   const [confirmClear, setConfirmClear] = useState(false);
 
+  /**
+   * Sendet ein PATCH an /api/settings. Optimistic Update zuerst, bei Fehler revert.
+   */
   const patch = async (changes: Partial<Settings>) => {
-    const optimistic = { ...settings, ...changes };
-    setSettings(optimistic);
+    const prev = settings;
+    setSettings({ ...settings, ...changes });
     try {
       const res = await fetch('/api/settings', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(changes),
       });
-      if (!res.ok) {
-        const body = (await res.json().catch(() => ({}))) as { error?: unknown };
-        throw new Error(JSON.stringify(body.error));
-      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       toast.success('Gespeichert');
     } catch (err) {
-      setSettings(settings); // revert
+      setSettings(prev);
       toast.error('Speichern fehlgeschlagen');
       console.error(err);
     }
   };
 
+  // -- Aktionen --
+
   const refreshNow = () => {
     startTransition(async () => {
       try {
-        // Cron-Endpoint braucht Secret — wir nutzen on-demand
         const res = await fetch('/api/refresh-on-demand', { method: 'POST' });
         const body = (await res.json()) as {
           ok?: boolean;
           totalNew?: number;
-          skipped?: boolean;
           reason?: string;
           resetIn?: number;
         };
         if (body.ok) {
           toast.success(`${body.totalNew ?? 0} neue Beiträge geladen`);
           router.refresh();
-        } else if (body.reason === 'too_recent') {
-          toast.info('Wurde gerade erst aktualisiert.');
-        } else if (body.reason === 'rate_limited') {
-          toast.info(`Zu viele Anfragen — bitte ${Math.ceil((body.resetIn ?? 0) / 60)} Min warten.`);
-        } else if (body.reason === 'outside_window') {
-          toast.info('Außerhalb des Refresh-Fensters.');
-        }
+        } else if (body.reason === 'too_recent') toast.info('Wurde gerade erst aktualisiert.');
+        else if (body.reason === 'rate_limited')
+          toast.info(`Limit erreicht — bitte ${Math.ceil((body.resetIn ?? 0) / 60)} Min warten.`);
+        else if (body.reason === 'outside_window') toast.info('Außerhalb des Refresh-Fensters.');
       } catch (err) {
         toast.error('Aktualisierung fehlgeschlagen');
         console.error(err);
@@ -98,6 +120,7 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
     });
   };
 
+  // Zwei-Klick-Confirm für die destruktive Cache-Lösch-Aktion
   const clearCache = () => {
     if (!confirmClear) {
       setConfirmClear(true);
@@ -120,30 +143,19 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
 
   return (
     <div className="space-y-6">
-      {/* Refresh-Intervall */}
       <FieldGroup
         icon={<Clock className="w-4 h-4 text-brand" />}
         title="Aktualisierungs-Intervall"
         description="Wie oft die Quellen gecheckt werden, wenn die App offen ist."
       >
-        <div className="flex gap-2">
-          {INTERVAL_OPTIONS.map((opt) => (
-            <button
-              key={opt.value}
-              onClick={() => patch({ refreshIntervalHours: opt.value })}
-              className={`flex-1 py-2 text-sm rounded-lg border ${
-                settings.refreshIntervalHours === opt.value
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-card border-border'
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
+        <ChoiceRow
+          options={INTERVAL_OPTIONS}
+          value={settings.refreshIntervalHours}
+          onChange={(v) => patch({ refreshIntervalHours: v })}
+          columns={3}
+        />
       </FieldGroup>
 
-      {/* Refresh-Fenster */}
       <FieldGroup
         icon={<Clock className="w-4 h-4 text-brand" />}
         title="Aktive Stunden"
@@ -168,7 +180,6 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
         </div>
       </FieldGroup>
 
-      {/* Push global */}
       <FieldGroup
         icon={<BellRing className="w-4 h-4 text-brand" />}
         title="Benachrichtigungen"
@@ -181,34 +192,20 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
         />
       </FieldGroup>
 
-      {/* Aufbewahrungsdauer */}
       <FieldGroup
         icon={<Calendar className="w-4 h-4 text-brand" />}
         title="Aufbewahrungsdauer"
         description="Ältere Beiträge werden automatisch gelöscht."
       >
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          {RETENTION_OPTIONS.map((opt) => (
-            <button
-              key={opt.value}
-              onClick={() => patch({ retentionDays: opt.value })}
-              className={`py-2 text-sm rounded-lg border ${
-                settings.retentionDays === opt.value
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-card border-border'
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
-        </div>
+        <ChoiceRow
+          options={RETENTION_OPTIONS}
+          value={settings.retentionDays}
+          onChange={(v) => patch({ retentionDays: v })}
+          columns={5}
+        />
       </FieldGroup>
 
-      {/* Aktionen */}
-      <FieldGroup
-        icon={<RefreshCw className="w-4 h-4 text-brand" />}
-        title="Aktionen"
-      >
+      <FieldGroup icon={<RefreshCw className="w-4 h-4 text-brand" />} title="Aktionen">
         <div className="space-y-2">
           <ActionButton
             onClick={refreshNow}
@@ -225,7 +222,13 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
           <ActionButton
             onClick={clearCache}
             disabled={pending}
-            icon={confirmClear ? <AlertTriangle className="w-4 h-4" /> : <Trash2 className="w-4 h-4" />}
+            icon={
+              confirmClear ? (
+                <AlertTriangle className="w-4 h-4" />
+              ) : (
+                <Trash2 className="w-4 h-4" />
+              )
+            }
             label={confirmClear ? 'Wirklich? Nochmal tippen' : 'Cache leeren'}
             variant={confirmClear ? 'danger' : 'default'}
           />
@@ -241,29 +244,45 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
   );
 }
 
-function FieldGroup({
-  icon,
-  title,
-  description,
-  children,
+/**
+ * Choice-Row: kompakte Button-Gruppe für „pick one of N"-Settings.
+ */
+function ChoiceRow({
+  options,
+  value,
+  onChange,
+  columns,
 }: {
-  icon: React.ReactNode;
-  title: string;
-  description?: string;
-  children: React.ReactNode;
+  options: { value: number; label: string }[];
+  value: number;
+  onChange: (v: number) => void;
+  columns: number;
 }) {
+  const gridClass =
+    columns === 5 ? 'grid grid-cols-2 sm:grid-cols-5 gap-2' : `grid grid-cols-${columns} gap-2`;
   return (
-    <div className="space-y-2">
-      <div className="flex items-center gap-2">
-        {icon}
-        <h3 className="font-medium text-sm">{title}</h3>
-      </div>
-      {description && <p className="text-xs text-muted-foreground">{description}</p>}
-      <div className="pt-1">{children}</div>
+    <div className={gridClass}>
+      {options.map((opt) => (
+        <button
+          key={opt.value}
+          onClick={() => onChange(opt.value)}
+          type="button"
+          className={`py-2 text-sm rounded-lg border ${
+            value === opt.value
+              ? 'bg-brand text-white border-brand'
+              : 'bg-card border-border'
+          }`}
+        >
+          {opt.label}
+        </button>
+      ))}
     </div>
   );
 }
 
+/**
+ * Stunden-Dropdown (00:00 – 24:00).
+ */
 function HourSelect({
   value,
   min,
@@ -289,64 +308,5 @@ function HourSelect({
         </option>
       ))}
     </select>
-  );
-}
-
-function Toggle({
-  enabled,
-  onChange,
-  label,
-}: {
-  enabled: boolean;
-  onChange: (v: boolean) => void;
-  label: string;
-}) {
-  return (
-    <button
-      onClick={() => onChange(!enabled)}
-      className="flex items-center justify-between w-full p-3 bg-card border border-border rounded-xl"
-    >
-      <span className="text-sm">{label}</span>
-      <span
-        className={`relative inline-block w-10 h-6 rounded-full transition-colors ${
-          enabled ? 'bg-brand' : 'bg-muted'
-        }`}
-      >
-        <span
-          className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
-            enabled ? 'translate-x-4' : ''
-          }`}
-        />
-      </span>
-    </button>
-  );
-}
-
-function ActionButton({
-  onClick,
-  disabled,
-  icon,
-  label,
-  variant = 'default',
-}: {
-  onClick: () => void;
-  disabled?: boolean;
-  icon: React.ReactNode;
-  label: string;
-  variant?: 'default' | 'danger';
-}) {
-  const cls =
-    variant === 'danger'
-      ? 'bg-destructive/10 border-destructive/30 text-destructive'
-      : 'bg-card border-border';
-  return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={`flex items-center gap-3 w-full p-3 border rounded-xl text-sm disabled:opacity-60 ${cls}`}
-    >
-      {icon}
-      <span>{label}</span>
-    </button>
   );
 }

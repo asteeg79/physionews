@@ -1,3 +1,15 @@
+/**
+ * Feed-Detect — versucht aus einer beliebigen URL einen RSS/Atom-Feed
+ * zu ermitteln. Wird vom Quellen-Hinzufügen-Dialog (Auto-Detect) genutzt.
+ *
+ * Strategie:
+ *  1. URL aufrufen
+ *  2. Wenn Content-Type RSS/Atom/XML ist oder Body mit &lt;rss/&lt;feed beginnt
+ *     → direkt diese URL als Feed verwenden
+ *  3. Sonst HTML parsen und nach &lt;link rel="alternate" type="application/rss+xml"&gt;
+ *     suchen → relative URL gegen Basis-URL auflösen
+ *  4. Sonst null (Auto-Detect fehlgeschlagen, Caller fällt auf html:generic zurück)
+ */
 import * as cheerio from 'cheerio';
 
 const DEFAULT_HEADERS = {

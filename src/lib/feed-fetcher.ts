@@ -1,5 +1,18 @@
+/**
+ * Feed-Fetcher — orchestriert das Abrufen aller aktiven News-Quellen.
+ *
+ * Aufgaben:
+ *  1. Aktive Sources aus der DB lesen
+ *  2. Pro Source den passenden Adapter ermitteln und fetchen (max 4 parallel)
+ *  3. Items deduplizieren via SHA-Hash und mit ON CONFLICT DO NOTHING inserten
+ *  4. Bei Fehler: bis zu 1 Retry bei retryable Fehlern (Timeout, 5xx, ECONNRESET)
+ *  5. Source-Status updaten (lastFetchAt / lastSuccessAt / lastError)
+ *  6. Nach allen Fetches: Relevanz-Klassifizierung der neuen Items anstoßen
+ *
+ * Wird vom Cron-Endpoint und /api/refresh-on-demand verwendet.
+ */
 import pLimit from 'p-limit';
-import { eq, inArray, desc } from 'drizzle-orm';
+import { eq } from 'drizzle-orm';
 import { db, schema } from '@/db';
 import { computeItemId } from './dedup';
 import { getAdapter } from './adapters/registry';
@@ -7,15 +20,25 @@ import { classifyPendingItems } from './relevance';
 import type { Source, NewNewsItem } from '@/db/schema';
 import type { RawNewsItem } from './adapters/types';
 
+/** Maximum gleichzeitige Adapter-Aufrufe — schützt vor Rate-Limits der Quellen. */
 const MAX_CONCURRENT = 4;
 
+/** Ergebnis pro einzelner Source. */
 export interface FetchResult {
   sourceId: string;
   sourceName: string;
+  /** Anzahl Items, die wirklich neu eingefügt wurden (Dedup-Hits zählen nicht). */
   newItems: number;
+  /** Fehlermeldung, falls Fetch nach Retry fehlgeschlagen ist. */
   error?: string;
 }
 
+/**
+ * Fetcht alle aktivierten Quellen parallel (limit 4), inserted neue Items
+ * und triggert anschließend die Relevanz-Klassifizierung.
+ *
+ * @returns Pro-Source-Ergebnisse plus Gesamt-Summe neuer Items.
+ */
 export async function fetchAllSources(): Promise<{ results: FetchResult[]; totalNew: number }> {
   const activeSources = await db
     .select()
@@ -48,6 +71,10 @@ export async function fetchAllSources(): Promise<{ results: FetchResult[]; total
   return { results, totalNew };
 }
 
+/**
+ * Holt eine einzelne Source mit Retry-Logik. Updated source.lastFetchAt /
+ * lastSuccessAt / lastError in der DB.
+ */
 async function fetchSource(source: Source): Promise<FetchResult> {
   const now = new Date();
 
@@ -89,6 +116,10 @@ async function fetchSource(source: Source): Promise<FetchResult> {
   return { sourceId: source.id, sourceName: source.name, newItems: 0, error: message };
 }
 
+/**
+ * Heuristik: ist der Fehler "vorübergehend" (Timeout, 5xx, Netzwerk)?
+ * Permanent Errors (404, 401, ungültige URL) werden NICHT retried.
+ */
 function isRetryable(err: unknown): boolean {
   if (err instanceof Error) {
     const msg = err.message.toLowerCase();
@@ -110,6 +141,13 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+/**
+ * Inserted Items mit ON CONFLICT DO NOTHING. Dedup-Schlüssel ist
+ * `sha256(sourceId + '|' + normalize(url) + '|' + normalize(title))`,
+ * siehe lib/dedup.ts.
+ *
+ * @returns Anzahl tatsächlich eingefügter Zeilen.
+ */
 async function insertItems(rawItems: RawNewsItem[], sourceId: string): Promise<number> {
   if (rawItems.length === 0) return 0;
 
@@ -132,13 +170,5 @@ async function insertItems(rawItems: RawNewsItem[], sourceId: string): Promise<n
   return inserted.length;
 }
 
-export async function getTopTitles(sourceIds: string[], maxItems = 3): Promise<string> {
-  const recentItems = await db
-    .select({ title: schema.newsItems.title })
-    .from(schema.newsItems)
-    .where(inArray(schema.newsItems.sourceId, sourceIds))
-    .orderBy(desc(schema.newsItems.fetchedAt))
-    .limit(maxItems);
-
-  return recentItems.map((i) => `• ${i.title}`).join('\n');
-}
+// getTopTitles war für die alte gebündelte Push-Notification — entfernt,
+// seit Cron pro hochrelevantem Item eine eigene Push schickt.

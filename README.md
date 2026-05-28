@@ -29,27 +29,217 @@ Private Progressive Web App, die für eine Physiotherapeutin alle berufsrelevant
 ## Architektur
 
 ```
-Browser (iOS Safari, Chrome, Firefox)
-   ↓
-   ├── Next.js App Router  ─→  Service Worker (Serwist)
-   │                                ├── Precache statischer Assets
-   │                                ├── Runtime-Cache /api/news (SWR)
-   │                                ├── /offline-Fallback
-   │                                └── Push-Empfang
-   │
-   └── API Routes
-         ├── GET  /api/news                     Frontend-Daten
-         ├── POST /api/cron/refresh             ← GitHub Actions (X-Cron-Secret)
-         ├── POST /api/refresh-on-demand        ← App-Open (Rate-Limit 1/5min)
-         ├── POST /api/push/{subscribe,unsubscribe,test}
-         ├── GET/PATCH /api/settings
-         ├── GET/POST /api/sources, /api/sources/[id]
-         ├── POST /api/news/mark-all-read
-         └── POST /api/cache/clear
-              ↓
-              FeedFetcher (12 spezifische + 1 Generic-Adapter)
-                ↓
-                Supabase Postgres
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Browser (iOS Safari 16.4+, Chrome, Firefox)                                   │
+│                                                                                │
+│  Next.js Client                            Service Worker (Serwist)            │
+│  ├─ Logo                                   ├─ Precache statische Assets        │
+│  ├─ Header (Refresh)                       ├─ NetworkFirst /api/news (SWR 24h) │
+│  ├─ CategoryTabs (Fachlich/Gesetz/Politik) ├─ CacheFirst /icons (30d)          │
+│  ├─ TopNewsSection (Top-3 nach Relevanz)   ├─ /offline Fallback                │
+│  ├─ TimeBucketSection (Heute/Woche/Monat)  ├─ Push-Empfang (tag pro Item)      │
+│  ├─ NewsCard (aufklappbar + Live-Preview)  └─ NotificationClick → openWindow   │
+│  ├─ Settings (SettingsForm / SourcesManager)                                   │
+│  ├─ PushPermissionBanner / InstallPrompt                                       │
+│  ├─ ThemeSwitcher (light/dark/system, localStorage)                            │
+│  └─ RefreshOnOpen (Mount + visibilitychange → /api/refresh-on-demand)          │
+└──────────────────────────────────────┬───────────────────────────────────────┘
+                                       │ fetch
+                                       ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Vercel — Next.js App Router (API Routes)                                      │
+│                                                                                │
+│  Frontend-Daten            Lese-Operationen                                   │
+│  ├─ GET  /api/news         (sortiert nach relevanceScore DESC, pubDate DESC)   │
+│  ├─ GET  /api/settings                                                         │
+│  └─ GET  /api/sources                                                          │
+│                                                                                │
+│  Cron & Refresh                                                                │
+│  ├─ POST /api/cron/refresh        ← GitHub Actions (X-Cron-Secret)             │
+│  └─ POST /api/refresh-on-demand   ← App-Open (Rate-Limit 1/5min, IP-Bucket)    │
+│                                                                                │
+│  Push (Web Push, VAPID)                                                        │
+│  ├─ POST /api/push/subscribe      → DB push_subscriptions                      │
+│  ├─ POST /api/push/unsubscribe                                                 │
+│  └─ POST /api/push/test           (Test-Notification, manuell aus Settings)    │
+│                                                                                │
+│  Quellen-Management                                                            │
+│  ├─ POST   /api/sources           (mit Auto-Detect RSS)                        │
+│  ├─ PATCH  /api/sources/[id]      (isEnabled, notificationsEnabled)            │
+│  └─ DELETE /api/sources/[id]      (cascade löscht news_items)                  │
+│                                                                                │
+│  Per-Item                                                                      │
+│  ├─ GET  /api/news/[id]/preview   (Live-Content-Extraction + Cache)            │
+│  ├─ POST /api/news/[id]/read      (is_read=true)                               │
+│  ├─ POST /api/news/mark-all-read                                               │
+│  └─ POST /api/cache/clear                                                      │
+│                                                                                │
+│  Settings                                                                      │
+│  └─ PATCH /api/settings           (refreshInterval/Window/retention/notif.)    │
+└──────────────────────────────────────┬───────────────────────────────────────┘
+                                       │
+                                       ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Server-Side Logik (src/lib/)                                                  │
+│                                                                                │
+│  FeedFetcher (lib/feed-fetcher.ts)                                            │
+│   ┌──────────────────────────────────────────────────────────────┐            │
+│   │  1. SELECT FROM sources WHERE is_enabled                      │            │
+│   │  2. pLimit(4) → adapter.fetch(source) mit 1× Retry            │            │
+│   │  3. computeItemId() = sha256(srcId | url | title) → ON CONFLICT│           │
+│   │  4. classifyPendingItems()                                    │            │
+│   └──────────────────────────────────────────────────────────────┘            │
+│                            │                                                   │
+│             ┌──────────────┴──────────────┐                                    │
+│             ▼                              ▼                                   │
+│   Adapter-Registry                Relevance-Pipeline                          │
+│   ├─ RssAdapter                   ┌──────────────────────────────────┐         │
+│   ├─ YouTubeAdapter               │ scoreByKeywords()                 │        │
+│   ├─ GoogleNewsAdapter (Proxy)    │  Whitelist/Blacklist + SourceBias │        │
+│   ├─ GenericHtmlAdapter           │  → score 0-10, decision           │        │
+│   ├─ 11 spezifische Html-Adapter  │     (accept/reject/gray)          │        │
+│   │  (IFK, BMG, RKI, G-BA, …)     ├──────────────────────────────────┤         │
+│   └─ feed-detect (Auto-Discovery) │ gray-Items → classifyBatch()      │        │
+│                                   │   Gemini 2.5 Flash Lite           │        │
+│   ContentExtractor                │   JSON-Schema-Output              │        │
+│   (lib/content-extractor.ts)      │   Batch von 20 Items/Call         │        │
+│   article > json-ld > og:desc     ├──────────────────────────────────┤         │
+│                                   │ Items mit score < 4 → DELETE      │        │
+│   PushSender                      └──────────────────────────────────┘         │
+│   (lib/push-sender.ts)                                                         │
+│   eindeutige tag-ID pro Notification (iOS-konform)                             │
+└──────────────────────────────────────┬───────────────────────────────────────┘
+                                       │ Drizzle ORM
+                                       ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Supabase Postgres (EU-Region, via Supavisor Pooler)                           │
+│                                                                                │
+│  sources             news_items                push_subscriptions  app_settings│
+│  ├─ id (uuid)        ├─ id (sha256-hex)        ├─ endpoint (uniq)  ├─ id=1     │
+│  ├─ name             ├─ source_id FK           ├─ keys (jsonb)     │ Singleton │
+│  ├─ url              ├─ title                  ├─ user_agent       ├─ refresh…│
+│  ├─ adapter_type     ├─ summary (gecacht)      └─ last_seen_at     ├─ retention│
+│  ├─ category         ├─ url                                        └─ window… │
+│  ├─ is_enabled       ├─ published_at                                          │
+│  ├─ notifications…   ├─ relevance_score (idx)                                 │
+│  └─ last_error       ├─ relevance_method (enum: keyword/ai/manual/pending)    │
+│                      └─ is_read                                               │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+                                       ▲
+                                       │ HTTP POST X-Cron-Secret
+                                       │ alle 2h zwischen 06–22 (Europe/Berlin)
+┌──────────────────────────────────────┴───────────────────────────────────────┐
+│ GitHub Actions — .github/workflows/cron-refresh.yml                           │
+│ cron: 0 4,6,8,10,12,14,16,18,20 * * * (UTC ≈ Berlin 06–22)                    │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Datenfluss eines News-Items
+
+1. **GitHub Actions** triggert `/api/cron/refresh`
+2. **FeedFetcher** liest aktivierte Sources und ruft pro Adapter parallel (max 4) den Inhalt ab
+3. **Adapter** parsen je nach Quelle: RSS-Parser, Cheerio (HTML), Google-News-RSS
+4. **Dedup** generiert SHA-256-ID, `ON CONFLICT DO NOTHING` verhindert Duplikate
+5. **Relevance-Pipeline**: erst Keyword-Score, Grauzonen-Items → Gemini-Klassifizierung
+6. Items mit Score < 4 werden **gelöscht**; Items mit Score >= 9 lösen pro Stück eine **Push-Notification** aus
+7. Frontend lädt sortiert nach Relevanz DESC → **TopNewsSection** (Top 3) + **TimeBucketSection** (Rest in Heute/Woche/Monat)
+8. Klick auf Karte: **Live-Preview** via Content-Extractor (gecacht), **Mark-as-Read** über Optimistic UI
+
+### Verzeichnisstruktur
+
+```
+src/
+├── app/                    Next.js App Router
+│   ├── (app)/              Hauptansicht-Routen (Logo + Tabs + Liste)
+│   │   ├── page.tsx                  Startseite (alle Kategorien)
+│   │   ├── kategorie/[slug]/         Fachlich / Gesetz / Politik
+│   │   ├── settings/
+│   │   │   ├── page.tsx              App, Erscheinungsbild, Push, Quellen, Verhalten
+│   │   │   └── sources/page.tsx      Quellen-Management
+│   ├── api/                          Alle API-Routes (s. Architektur oben)
+│   ├── offline/                      Offline-Fallback (precached)
+│   ├── sw.ts                         Service Worker (Serwist + Custom Push-Handler)
+│   ├── layout.tsx                    Root: SW-Registrar, Theme-Script, Fonts
+│   ├── manifest.webmanifest          PWA-Manifest
+│   └── globals.css                   Tailwind + Brand-Tokens
+│
+├── components/                       UI-Komponenten
+│   ├── Logo.tsx                      Symbol + Wortmarke (3 Größen)
+│   ├── Header.tsx                    Sticky Header mit Refresh + Settings
+│   ├── CategoryTabs.tsx              Tab-Navigation
+│   ├── TopNewsSection.tsx            Top-3 nach Relevanz
+│   ├── TimeBucketSection.tsx         Heute/Woche/Monat-Gruppierung
+│   ├── NewsCard.tsx                  Karte mit Expand + Live-Preview
+│   ├── NewsList.tsx                  Orchestriert Sections + State
+│   ├── SettingsForm.tsx              Refresh/Retention/Push/Aktionen
+│   ├── SourcesManager.tsx            Liste + Toggles
+│   ├── PushSettings.tsx              Aktivieren/Test/Deaktivieren
+│   ├── PushPermissionBanner.tsx      Onboarding-Banner
+│   ├── InstallPrompt.tsx             iOS + Chrome beforeinstallprompt
+│   ├── InstallStatus.tsx             Settings-Info
+│   ├── ThemeSwitcher.tsx             Hell/Dunkel/System
+│   ├── RefreshOnOpen.tsx             Mount + visibilitychange-Hook
+│   ├── ServiceWorkerRegistrar.tsx    SW-Registration (Prod-only)
+│   ├── settings/                     Wiederverwendbare Settings-Bausteine
+│   │   ├── FieldGroup.tsx
+│   │   ├── Toggle.tsx
+│   │   ├── ActionButton.tsx
+│   │   └── InfoCard.tsx
+│   ├── sources/                      Sources-Manager-Bausteine
+│   │   ├── SourceRow.tsx
+│   │   ├── AddSourceDialog.tsx
+│   │   └── types.ts
+│   └── ui/                           shadcn/ui (button, card, dialog, tabs, etc.)
+│
+├── lib/                              Business-Logic, frei von React
+│   ├── adapters/                     Source-Adapter (15 Typen)
+│   │   ├── registry.ts               Type-ID → Adapter-Instance
+│   │   ├── rss.ts                    RssAdapter (rss-parser + fetch)
+│   │   ├── youtube.ts                YouTubeAdapter (Channel-ID-Resolution)
+│   │   ├── google-news.ts            GoogleNewsAdapter (Proxy für Brightboy-Seiten)
+│   │   ├── html/
+│   │   │   ├── base.ts               HtmlScraperAdapter (Date-Helpers, Headers)
+│   │   │   ├── generic.ts            GenericHtmlAdapter (JSON-LD + DOM-Fallback)
+│   │   │   ├── ifk.ts, bmg.ts, rki.ts, cochrane.ts, physio-deutschland.ts,
+│   │   │   ├── vdb-nrw.ts, dgsp.ts, ra-alt.ts, vpt.ts, gba.ts,
+│   │   │   ├── awmf.ts, dvmt.ts
+│   │   └── types.ts
+│   ├── relevance/                    Hybrid-Klassifizierung
+│   │   ├── keywords.ts               Whitelist/Blacklist + Source-Bias + scoreByKeywords
+│   │   ├── gemini.ts                 Gemini-Batch-Klassifizierer (JSON-Schema-Mode)
+│   │   └── index.ts                  Pipeline-Orchestrator
+│   ├── feed-fetcher.ts               Top-Level Cron-Logik
+│   ├── feed-detect.ts                RSS-Auto-Discovery
+│   ├── content-extractor.ts          Live-Preview-Fetch + Parsing
+│   ├── push-sender.ts                web-push Wrapper (eindeutige Tags)
+│   ├── dedup.ts                      computeItemId(sourceId, url, title)
+│   ├── time-bucket.ts                getTimeBucket(date) → Heute/Woche/Monat/Älter
+│   ├── timezone.ts                   getBerlinHour() für Window-Checks
+│   ├── format-date.ts                de-DE Relativzeiten
+│   ├── rate-limit.ts                 In-Memory-Bucket pro IP
+│   ├── pwa-status.ts                 isStandalone/isIos/supportsPush
+│   ├── theme.ts                      Hell/Dunkel/System Persistence
+│   └── categories.ts                 Sichtbare vs. Legacy-Kategorien
+│
+├── db/
+│   ├── schema.ts                     Drizzle Schema (sources, news_items, push_subs, app_settings)
+│   ├── migrations/                   0000_initial, 0001_relevance, 0002_categories
+│   ├── seed.ts                       Default-Quellen + App-Settings
+│   └── index.ts                      Postgres-Client (SSL, prepare:false für Pooler)
+│
+└── tests/                            Vitest (82 Tests)
+    ├── adapters/                     RSS, YouTube, Generic, HTML-spezifisch, Google News
+    ├── lib/                          Categories, Rate-Limit, Content-Extractor
+    ├── relevance/                    scoreByKeywords (alle Branches)
+    ├── dedup.test.ts
+    └── time-bucket.test.ts
+
+scripts/                              Operationelle Helfer
+├── generate-icons.ts                 SVG → PNG via sharp
+├── reclassify-all.ts                 Items neu klassifizieren (z.B. nach Keyword-Update)
+├── purge-irrelevant.ts               Score < 4 löschen
+└── verify-db.ts                      DB-Stand inspizieren
 ```
 
 ## Setup von Null
