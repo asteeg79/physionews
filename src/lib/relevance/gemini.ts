@@ -9,7 +9,9 @@
  *  - Skipt komplett, wenn GEMINI_API_KEY fehlt (Fallback auf Keyword-Score)
  */
 
-const GEMINI_MODEL = 'gemini-2.0-flash';
+// gemini-2.5-flash-lite ist die günstigste Variante im Free-Tier und reicht
+// für unsere Klassifizierungs-Aufgabe (binäre/lineare Bewertung).
+const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 const SYSTEM_PROMPT = `Du bewertest Nachrichten-Titel auf Relevanz für deutsche Physiotherapeut:innen.
