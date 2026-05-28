@@ -84,7 +84,6 @@ vi.mock('@/db', () => ({
   schema: {
     newsItems: {
       id: 'mock',
-      isRead: 'mock',
       isTopNews: 'mock',
       relevanceScore: 'mock',
       publishedAt: 'mock',

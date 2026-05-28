@@ -16,7 +16,7 @@
  */
 
 import { db, schema } from '@/db';
-import { desc, eq } from 'drizzle-orm';
+import { desc, eq, gte } from 'drizzle-orm';
 
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -100,8 +100,12 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
 }
 
 /**
- * Holt die top-N-Kandidaten aus der DB: ungelesen, score >= MIN, sortiert
+ * Holt die top-N-Kandidaten aus der DB: score >= MIN, sortiert
  * primär nach Score DESC, sekundär nach Datum DESC.
+ *
+ * isRead wird NICHT als Filter benutzt — die Top-News-Auswahl
+ * ist eine kuratierte Übersicht über das Wichtigste aktuell im System,
+ * unabhängig davon ob der Nutzer einzelne Items schon gesehen hat.
  */
 async function fetchCandidatePool(): Promise<CandidateItem[]> {
   const rows = await db
@@ -115,17 +119,14 @@ async function fetchCandidatePool(): Promise<CandidateItem[]> {
     })
     .from(schema.newsItems)
     .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
-    .where(eq(schema.newsItems.isRead, false))
+    .where(gte(schema.newsItems.relevanceScore, MIN_SCORE_FOR_POOL))
     .orderBy(desc(schema.newsItems.relevanceScore), desc(schema.newsItems.publishedAt))
-    .limit(POOL_SIZE * 2); // Mehr holen, dann filtern (manche unter MIN_SCORE fallen weg)
+    .limit(POOL_SIZE);
 
-  return rows
-    .filter((r) => r.relevanceScore >= MIN_SCORE_FOR_POOL)
-    .slice(0, POOL_SIZE)
-    .map((r) => ({
-      ...r,
-      category: r.category as string,
-    }));
+  return rows.map((r) => ({
+    ...r,
+    category: r.category as string,
+  }));
 }
 
 /**
