@@ -5,6 +5,7 @@ import { Settings, RefreshCw } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import { Logo } from './Logo';
 
 export function Header() {
   const router = useRouter();
@@ -41,8 +42,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="font-bold text-lg text-brand tracking-tight">
-          PhysioNews
+        <Link
+          href="/"
+          aria-label="PhysioNews — zur Startseite"
+          className="transition-opacity hover:opacity-80"
+        >
+          <Logo size="md" />
         </Link>
 
         <div className="flex items-center gap-2">

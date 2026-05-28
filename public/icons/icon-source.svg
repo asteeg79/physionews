@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" ry="96" fill="#75b72d"/>
-  <!-- Welle (Pulsmotiv für Physio + Aktualität) -->
-  <g transform="translate(256 317.44)" stroke="#ffffff" stroke-width="23.04" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M -163.84 0 L -81.92 0 L -40.96 -92.16 L 0 92.16 L 40.96 -61.44 L 81.92 0 L 163.84 0"/>
-  </g>
-  <text x="50%" y="211.968" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif" font-size="215.04" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-2">PN</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="9" ry="9" fill="#75b72d"/>
+  <path d="M 5 16 L 10 16 L 12 11 L 15 23 L 18 9 L 21 18 L 23 16 L 27 16"
+        stroke="#ffffff" stroke-width="2.3"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
