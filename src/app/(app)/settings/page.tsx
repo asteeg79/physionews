@@ -1,7 +1,8 @@
-import { Settings } from 'lucide-react';
+import { Settings, Palette } from 'lucide-react';
 import { PushSettings } from '@/components/PushSettings';
 import { InstallStatus } from '@/components/InstallStatus';
 import { SettingsForm } from '@/components/SettingsForm';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import Link from 'next/link';
 import { ChevronRight, List } from 'lucide-react';
 import { db, schema } from '@/db';
@@ -31,6 +32,19 @@ export default async function SettingsPage() {
           App
         </h2>
         <InstallStatus />
+      </section>
+
+      <section className="space-y-3">
+        <div className="flex items-center gap-2">
+          <Palette className="w-4 h-4 text-brand" />
+          <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+            Erscheinungsbild
+          </h2>
+        </div>
+        <ThemeSwitcher />
+        <p className="text-xs text-muted-foreground">
+          Bei „System" folgt die App dem Hell-/Dunkel-Modus deines Geräts.
+        </p>
       </section>
 
       <section className="space-y-3">

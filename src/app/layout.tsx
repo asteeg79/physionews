@@ -47,15 +47,28 @@ export const viewport: Viewport = {
   // damit Nutzer:innen bei Bedarf zoomen können.
 };
 
-// Inline-Script: setzt .dark-Klasse VOR dem ersten Paint anhand der OS-Präferenz.
-// Vermeidet "Flash of Unstyled Content". Reagiert live auf Wechsel (z.B. iOS Auto).
+// Inline-Script: setzt .dark-Klasse VOR dem ersten Paint.
+// Berücksichtigt user-pref aus localStorage; bei 'system' (Default) folgt es dem OS-Setting.
+// Vermeidet "Flash of Unstyled Content" und reagiert live auf OS-Wechsel.
 const THEME_SCRIPT = `
   (function() {
     try {
+      var KEY = 'physionews-theme';
+      var stored = localStorage.getItem(KEY);
+      var pref = (stored === 'light' || stored === 'dark' || stored === 'system') ? stored : 'system';
       var mq = window.matchMedia('(prefers-color-scheme: dark)');
-      var apply = function(m) { document.documentElement.classList.toggle('dark', m.matches); };
-      apply(mq);
-      mq.addEventListener('change', apply);
+      var apply = function() {
+        var dark = pref === 'dark' || (pref === 'system' && mq.matches);
+        document.documentElement.classList.toggle('dark', dark);
+      };
+      apply();
+      mq.addEventListener('change', function() { if (pref === 'system') apply(); });
+      // Auf Setting-Änderung in anderen Tabs reagieren
+      window.addEventListener('storage', function(e) {
+        if (e.key === KEY && (e.newValue === 'light' || e.newValue === 'dark' || e.newValue === 'system')) {
+          pref = e.newValue; apply();
+        }
+      });
     } catch (e) {}
   })();
 `;
