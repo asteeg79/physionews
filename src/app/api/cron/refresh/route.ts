@@ -1,8 +1,12 @@
 import { db, schema } from '@/db';
-import { eq, lte } from 'drizzle-orm';
+import { eq, lte, gte, and, desc } from 'drizzle-orm';
 import { getBerlinHour } from '@/lib/timezone';
 import { fetchAllSources } from '@/lib/feed-fetcher';
 import { sendPushToAllSubscriptions } from '@/lib/push-sender';
+
+// Nur Items mit dieser Mindest-Relevanz lösen eine eigene Push aus.
+// 9-10 = direkter Physio-Praxis-Bezug nach unserer Bewertungs-Rubric.
+const PUSH_RELEVANCE_THRESHOLD = 9;
 
 export async function POST(req: Request) {
   // Authentifizierung
@@ -25,22 +29,51 @@ export async function POST(req: Request) {
 
   console.log(`[Cron] Starte Refresh (${berlinHour}:xx Uhr Berlin)...`);
 
+  // Zeitpunkt VOR dem Fetch merken, damit wir nur die wirklich neu eingefügten
+  // hochrelevanten Items für Push-Notifications heranziehen
+  const fetchStartedAt = new Date();
+
   const { results, totalNew } = await fetchAllSources();
 
-  // Web Push, wenn neue Items vorhanden und Benachrichtigungen aktiv
+  // Web Push: für JEDES neue Item mit Relevanz >= PUSH_RELEVANCE_THRESHOLD
+  // eine eigene Notification senden. Items mit niedriger Relevanz lösen
+  // keine Benachrichtigung aus.
+  let pushSent = 0;
   if (totalNew > 0 && settings.notificationsEnabled) {
-    const sourcesWithNew = results.filter((r) => r.newItems > 0);
-    const topTitles = sourcesWithNew
-      .slice(0, 3)
-      .map((r) => `• ${r.sourceName}`)
-      .join('\n');
+    const highRelevanceItems = await db
+      .select({
+        id: schema.newsItems.id,
+        title: schema.newsItems.title,
+        url: schema.newsItems.url,
+        relevanceScore: schema.newsItems.relevanceScore,
+        sourceName: schema.sources.name,
+        sourceNotifications: schema.sources.notificationsEnabled,
+      })
+      .from(schema.newsItems)
+      .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
+      .where(
+        and(
+          gte(schema.newsItems.fetchedAt, fetchStartedAt),
+          gte(schema.newsItems.relevanceScore, PUSH_RELEVANCE_THRESHOLD),
+          eq(schema.sources.notificationsEnabled, true)
+        )
+      )
+      .orderBy(desc(schema.newsItems.relevanceScore))
+      .limit(10);
 
-    await sendPushToAllSubscriptions({
-      title: `PhysioNews — ${totalNew} neue Beiträge`,
-      body: topTitles,
-      url: '/',
-    });
-    console.log(`[Cron] Push gesendet für ${totalNew} neue Items.`);
+    for (const item of highRelevanceItems) {
+      if (!item.sourceNotifications) continue;
+      await sendPushToAllSubscriptions({
+        title: item.sourceName,
+        body: item.title,
+        url: item.url,
+      });
+      pushSent++;
+    }
+    console.log(
+      `[Cron] ${pushSent} hochrelevante Push-Benachrichtigungen versendet ` +
+        `(Schwellwert: Score >= ${PUSH_RELEVANCE_THRESHOLD}).`
+    );
   }
 
   // lastGlobalRefreshAt aktualisieren

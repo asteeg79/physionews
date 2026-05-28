@@ -22,9 +22,10 @@ const INTERVAL_OPTIONS = [
 
 const RETENTION_OPTIONS = [
   { value: 7, label: '1 Woche' },
+  { value: 14, label: '2 Wochen' },
   { value: 30, label: '1 Monat' },
+  { value: 60, label: '2 Monate' },
   { value: 90, label: '3 Monate' },
-  { value: 365, label: '1 Jahr' },
 ];
 
 export function SettingsForm({ initialSettings }: { initialSettings: Settings }) {

@@ -12,10 +12,18 @@ interface PushPayload {
   title: string;
   body: string;
   url?: string;
+  /** Eindeutiges Tag, damit sich Notifications auf iOS nicht überschreiben.
+   *  Wenn nicht gesetzt, wird ein Zufalls-Tag generiert. */
+  tag?: string;
 }
 
 export async function sendPushToAllSubscriptions(payload: PushPayload): Promise<void> {
   const subscriptions = await db.select().from(schema.pushSubscriptions);
+
+  const fullPayload = {
+    ...payload,
+    tag: payload.tag ?? `physionews-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+  };
 
   for (const sub of subscriptions) {
     try {
@@ -24,11 +32,10 @@ export async function sendPushToAllSubscriptions(payload: PushPayload): Promise<
           endpoint: sub.endpoint,
           keys: sub.keys as { p256dh: string; auth: string },
         },
-        JSON.stringify(payload)
+        JSON.stringify(fullPayload)
       );
     } catch (err) {
       const webpushErr = err as { statusCode?: number };
-      // Abgelaufene oder ungültige Subscription entfernen
       if (webpushErr.statusCode === 410 || webpushErr.statusCode === 404) {
         await db
           .delete(schema.pushSubscriptions)

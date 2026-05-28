@@ -16,7 +16,7 @@ const patchSchema = z
     refreshIntervalHours: z.union([z.literal(1), z.literal(2), z.literal(4)]).optional(),
     refreshWindowStart: z.number().int().min(0).max(23).optional(),
     refreshWindowEnd: z.number().int().min(1).max(24).optional(),
-    retentionDays: z.number().int().min(7).max(365).optional(),
+    retentionDays: z.number().int().min(7).max(90).optional(),
     notificationsEnabled: z.boolean().optional(),
   })
   .refine(

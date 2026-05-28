@@ -87,7 +87,7 @@ export const appSettings = pgTable('app_settings', {
   refreshIntervalHours: integer('refresh_interval_hours').notNull().default(2),
   refreshWindowStart: integer('refresh_window_start').notNull().default(6),
   refreshWindowEnd: integer('refresh_window_end').notNull().default(22),
-  retentionDays: integer('retention_days').notNull().default(90),
+  retentionDays: integer('retention_days').notNull().default(30),
   notificationsEnabled: boolean('notifications_enabled').notNull().default(true),
   lastGlobalRefreshAt: timestamp('last_global_refresh_at', { withTimezone: true }),
 });

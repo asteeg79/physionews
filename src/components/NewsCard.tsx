@@ -169,20 +169,9 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
         )}
       </button>
 
-      {/* Bild — wird im KOLLABIERTEN Zustand unter dem Button gezeigt.
-          Im EXPANDED-Zustand zeigen wir das gleiche Bild innerhalb der expanded-Sektion,
-          damit es nicht zwischen kollabiert/expanded "springt". */}
-      {!expanded && item.imageUrl && (
-        <div className="w-full aspect-video overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={item.imageUrl}
-            alt=""
-            className={`w-full h-full object-cover ${isRead ? 'opacity-70' : ''}`}
-            loading="lazy"
-          />
-        </div>
-      )}
+      {/* Bilder werden bewusst nicht angezeigt — viele Quellen liefern kein
+          og:image, das Ergebnis war zu uneinheitlich. Konsistent ohne ist
+          aufgeräumter. */}
 
       {/* Expanded-Bereich — wird komplett aus dem DOM entfernt beim Kollabieren */}
       {expanded && (
@@ -200,18 +189,6 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
             <p className="text-xs italic text-muted-foreground">
               Vorschau nicht abrufbar — vollständiger Artikel öffnet sich über den Link unten.
             </p>
-          )}
-
-          {item.imageUrl && (
-            <div className="w-full aspect-video overflow-hidden rounded-lg">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={item.imageUrl}
-                alt=""
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
           )}
 
           <div className="flex items-center justify-between pt-1 gap-2">

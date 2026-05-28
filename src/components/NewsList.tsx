@@ -2,8 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { TimeBucketSection } from './TimeBucketSection';
+import { TopNewsSection } from './TopNewsSection';
 import { getTimeBucket, BUCKET_ORDER, type TimeBucket } from '@/lib/time-bucket';
 import type { NewsItem, Source, NewsCategory } from '@/db/schema';
+
+// Anzahl Top-News (sortiert nach Relevanz) die oben in der eigenen Sektion stehen
+const TOP_NEWS_COUNT = 3;
+// Items werden zusätzlich nur in TopNews aufgenommen, wenn sie Relevanz >= dem Wert haben
+const TOP_NEWS_MIN_SCORE = 8;
 
 type NewsItemWithSource = NewsItem & { source: Pick<Source, 'id' | 'name' | 'category' | 'iconName'> };
 
@@ -50,28 +56,40 @@ export function NewsList({ category }: NewsListProps) {
     );
   }
 
+  // Top-News: die höchstrelevanten Items (Score sortiert), die NICHT bereits gelesen sind
+  // Wenn alle bereits gelesen sind, zeigen wir die Top-3 trotzdem (kein Verstecken)
+  const sortedByRelevance = [...items].sort((a, b) => b.relevanceScore - a.relevanceScore);
+  const unreadHighRelevance = sortedByRelevance.filter(
+    (i) => !i.isRead && i.relevanceScore >= TOP_NEWS_MIN_SCORE
+  );
+  const topNewsCandidates = unreadHighRelevance.length > 0 ? unreadHighRelevance : sortedByRelevance;
+  const topNews = topNewsCandidates.slice(0, TOP_NEWS_COUNT);
+  const topNewsIds = new Set(topNews.map((i) => i.id));
+
+  // Übrige Items für die Zeit-Bucket-Liste
+  const restItems = items.filter((i) => !topNewsIds.has(i.id));
+
   const bucketed = BUCKET_ORDER.reduce<Record<TimeBucket, NewsItemWithSource[]>>(
     (acc, b) => ({ ...acc, [b]: [] }),
     {} as Record<TimeBucket, NewsItemWithSource[]>
   );
-
-  for (const item of items) {
-    const bucket = getTimeBucket(item.publishedAt);
-    bucketed[bucket].push(item);
+  for (const item of restItems) {
+    bucketed[getTimeBucket(item.publishedAt)].push(item);
   }
+
+  const onItemRead = (id: string) =>
+    setItems((prev) => prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)));
 
   return (
     <div className="py-2">
+      <TopNewsSection items={topNews} onItemRead={onItemRead} />
+
       {BUCKET_ORDER.map((bucket) => (
         <TimeBucketSection
           key={bucket}
           bucket={bucket}
           items={bucketed[bucket]}
-          onItemRead={(id) =>
-            setItems((prev) =>
-              prev.map((i) => (i.id === id ? { ...i, isRead: true } : i))
-            )
-          }
+          onItemRead={onItemRead}
         />
       ))}
     </div>

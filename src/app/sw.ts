@@ -60,15 +60,17 @@ const serwist = new Serwist({
 serwist.addEventListeners();
 
 self.addEventListener('push', (event: { data?: { json: () => unknown }; waitUntil: (p: Promise<unknown>) => void }) => {
-  const data = (event.data?.json() as { title?: string; body?: string; url?: string } | undefined) ?? {};
+  const data =
+    (event.data?.json() as { title?: string; body?: string; url?: string; tag?: string } | undefined) ?? {};
   event.waitUntil(
     self.registration.showNotification(data.title ?? 'PhysioNews', {
       body: data.body,
       icon: '/icons/icon-192.png',
       badge: '/icons/icon-192.png',
       data: { url: data.url ?? '/' },
-      tag: 'physionews-refresh',
-      renotify: true,
+      // Eindeutiges Tag pro Notification, damit sie nebeneinander stehen
+      // statt sich gegenseitig zu ersetzen
+      tag: data.tag ?? `physionews-${Date.now()}`,
     })
   );
 });
