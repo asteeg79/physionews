@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, Star, ExternalLink, ChevronDown } from 'lucide-react';
+import { Check, Star, ExternalLink, ChevronDown, Loader2 } from 'lucide-react';
 import { formatRelative, formatDate } from '@/lib/format-date';
 import type { NewsItem, Source } from '@/db/schema';
 
@@ -35,6 +35,14 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
   const isRead = item.isRead || optimisticRead;
   const isHighlighted = isHighlightedSource(item.source.name);
 
+  // Live-Vorschau-Lazy-Loading
+  const [livePreview, setLivePreview] = useState<string | null>(null);
+  const [previewLoading, setPreviewLoading] = useState(false);
+  const [previewFailed, setPreviewFailed] = useState(false);
+
+  const hasInitialSummary = !!(item.summary && item.summary.length >= 60);
+  const displaySummary = livePreview ?? item.summary ?? null;
+
   const markReadOnce = () => {
     if (isRead) return;
     setOptimisticRead(true);
@@ -42,10 +50,32 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
     fetch(`/api/news/${item.id}/read`, { method: 'POST' }).catch(() => undefined);
   };
 
+  const loadLivePreview = async () => {
+    if (livePreview || previewLoading || previewFailed) return;
+    if (hasInitialSummary) return; // bereits guter Inhalt vorhanden
+    setPreviewLoading(true);
+    try {
+      const res = await fetch(`/api/news/${item.id}/preview`);
+      const body = (await res.json()) as { summary?: string | null };
+      if (body.summary && body.summary.length > 30) {
+        setLivePreview(body.summary);
+      } else {
+        setPreviewFailed(true);
+      }
+    } catch {
+      setPreviewFailed(true);
+    } finally {
+      setPreviewLoading(false);
+    }
+  };
+
   const handleToggle = () => {
     const next = !expanded;
     setExpanded(next);
-    if (next) markReadOnce();
+    if (next) {
+      markReadOnce();
+      void loadLivePreview();
+    }
   };
 
   const handleOpen = (e: React.MouseEvent) => {
@@ -130,13 +160,18 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
       {/* Expanded-Bereich */}
       {expanded && (
         <div className="px-4 pb-4 -mt-1 space-y-3">
-          {item.summary ? (
+          {previewLoading ? (
+            <div className="flex items-center gap-2 py-2 text-xs text-muted-foreground">
+              <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+              Vorschau wird geladen…
+            </div>
+          ) : displaySummary ? (
             <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">
-              {item.summary}
+              {displaySummary}
             </p>
           ) : (
             <p className="text-xs italic text-muted-foreground">
-              Keine Vorschau verfügbar — bitte beim Original weiterlesen.
+              Vorschau nicht abrufbar — der vollständige Artikel öffnet sich über den Link unten.
             </p>
           )}
 
