@@ -81,10 +81,12 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
   const ai = await selectByAi(pool);
   let selectedIds = ai?.ids ?? null;
 
-  // 4. Fallback bei AI-Fail: erste TOP_N nach Score
+  // 4. Fallback bei AI-Fail: diversifizierte Score-Auswahl
+  // Statt 3 Items derselben Quelle wählen wir je ein Item pro Quelle
+  // (in Score-Reihenfolge), bis wir TOP_N voll haben — dann fülle mit dem Rest auf.
   let usedAi = true;
   if (!selectedIds || selectedIds.length === 0) {
-    selectedIds = pool.slice(0, TOP_N).map((p) => p.id);
+    selectedIds = pickDiverseByScore(pool, TOP_N);
     usedAi = false;
   }
 
@@ -206,6 +208,35 @@ async function clearAllTopNewsFlags(): Promise<void> {
     .update(schema.newsItems)
     .set({ isTopNews: false })
     .where(eq(schema.newsItems.isTopNews, true));
+}
+
+/**
+ * Diversifizierter Score-Fallback: nimmt zunächst je 1 Item pro Source
+ * in Score-Reihenfolge. Wenn nach diesem Durchgang noch nicht TOP_N
+ * Items zusammen sind, wird mit den höchstgescorten Resten aufgefüllt.
+ * Verhindert "3× dasselbe Magazin" als Top-News.
+ */
+function pickDiverseByScore(pool: CandidateItem[], n: number): string[] {
+  // Pool ist bereits nach Score DESC, pubDate DESC sortiert
+  const seenSources = new Set<string>();
+  const firstPass: string[] = [];
+  for (const item of pool) {
+    if (firstPass.length >= n) break;
+    if (seenSources.has(item.sourceName)) continue;
+    seenSources.add(item.sourceName);
+    firstPass.push(item.id);
+  }
+  if (firstPass.length >= n) return firstPass;
+
+  // Auffüllen mit den nächsten höchstgescorten Items (auch wenn Source wiederholt)
+  const selectedSet = new Set(firstPass);
+  for (const item of pool) {
+    if (firstPass.length >= n) break;
+    if (selectedSet.has(item.id)) continue;
+    firstPass.push(item.id);
+    selectedSet.add(item.id);
+  }
+  return firstPass;
 }
 
 /**
