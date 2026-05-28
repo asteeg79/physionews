@@ -1,5 +1,5 @@
 import type { PrecacheEntry, SerwistGlobalConfig } from 'serwist';
-import { Serwist, StaleWhileRevalidate, CacheFirst, ExpirationPlugin } from 'serwist';
+import { Serwist, StaleWhileRevalidate, CacheFirst, NetworkFirst, ExpirationPlugin } from 'serwist';
 
 declare global {
   interface WorkerGlobalScope extends SerwistGlobalConfig {
@@ -16,7 +16,25 @@ const serwist = new Serwist({
   skipWaiting: true,
   clientsClaim: true,
   navigationPreload: true,
+  fallbacks: {
+    entries: [
+      {
+        url: '/offline',
+        matcher({ request }: { request: Request }) {
+          return request.destination === 'document';
+        },
+      },
+    ],
+  },
   runtimeCaching: [
+    {
+      // Navigation: zuerst Netz versuchen, mit Timeout. Bei Fehler: Cache, sonst Fallback /offline.
+      matcher: ({ request }: { request: Request }) => request.mode === 'navigate',
+      handler: new NetworkFirst({
+        cacheName: 'pages',
+        networkTimeoutSeconds: 3,
+      }),
+    },
     {
       matcher: /^https?:\/\/.*\/api\/news/,
       handler: new StaleWhileRevalidate({

@@ -3,18 +3,36 @@
 import Link from 'next/link';
 import { Settings, RefreshCw } from 'lucide-react';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 export function Header() {
+  const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
 
   async function handleRefresh() {
     setRefreshing(true);
     try {
-      await fetch('/api/cron/refresh', {
-        method: 'POST',
-        headers: { 'x-cron-secret': process.env.NEXT_PUBLIC_CRON_SECRET ?? '' },
-      });
-      window.location.reload();
+      const res = await fetch('/api/refresh-on-demand', { method: 'POST' });
+      const body = (await res.json()) as {
+        ok?: boolean;
+        totalNew?: number;
+        skipped?: boolean;
+        reason?: string;
+      };
+      if (body.ok) {
+        toast.success(`${body.totalNew ?? 0} neue Beiträge`);
+        router.refresh();
+      } else if (body.reason === 'too_recent') {
+        toast.info('Wurde gerade erst aktualisiert.');
+      } else if (body.reason === 'rate_limited') {
+        toast.info('Bitte etwas warten — Limit erreicht.');
+      } else if (body.reason === 'outside_window') {
+        toast.info('Außerhalb des Refresh-Fensters.');
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error('Aktualisierung fehlgeschlagen');
     } finally {
       setRefreshing(false);
     }
@@ -36,6 +54,7 @@ export function Header() {
           >
             <RefreshCw
               className={`w-4 h-4 text-muted-foreground ${refreshing ? 'animate-spin' : ''}`}
+              aria-hidden="true"
             />
           </button>
 
@@ -44,7 +63,7 @@ export function Header() {
             aria-label="Einstellungen"
             className="p-2 rounded-full hover:bg-muted transition-colors"
           >
-            <Settings className="w-4 h-4 text-muted-foreground" />
+            <Settings className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
           </Link>
         </div>
       </div>

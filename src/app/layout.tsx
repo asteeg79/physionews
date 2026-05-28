@@ -22,20 +22,39 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0E7C7B',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#0E7C7B' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a3a3a' },
+  ],
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  // Kein userScalable:false und kein maximumScale — Accessibility-Anforderung,
+  // damit Nutzer:innen bei Bedarf zoomen können.
 };
+
+// Inline-Script: setzt .dark-Klasse VOR dem ersten Paint anhand der OS-Präferenz.
+// Vermeidet "Flash of Unstyled Content". Reagiert live auf Wechsel (z.B. iOS Auto).
+const THEME_SCRIPT = `
+  (function() {
+    try {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var apply = function(m) { document.documentElement.classList.toggle('dark', m.matches); };
+      apply(mq);
+      mq.addEventListener('change', apply);
+    } catch (e) {}
+  })();
+`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" className="h-full antialiased">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ServiceWorkerRegistrar />
         {children}
-        <Toaster position="top-center" richColors closeButton />
+        <Toaster position="top-center" richColors closeButton theme="system" />
       </body>
     </html>
   );
