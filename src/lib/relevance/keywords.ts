@@ -182,40 +182,73 @@ export const CONTEXTUAL_WHITELIST = [
 
 /**
  * Klar irrelevante Themen — bei Treffer starker Score-Abzug.
- * Diese Themen tauchen besonders in BMG/RKI-Quellen auf.
+ * Diese Themen tauchen besonders in BMG/RKI/G-BA-Quellen auf.
  */
 export const HARD_BLACKLIST = [
+  // Apothekenwesen
   'apothek',
   'apothekenreform',
   'apothekenbetrieb',
+  'arzneimittel-versorgung',
+  'medikamenten-engpass',
+  'medikamenten-knappheit',
+  'lieferengpass',
+
+  // Cannabis / Drogenpolitik
   'cannabis-gesetz',
   'cannabisanbau',
-  'cannabis-medizin', // teils Physio-relevant, aber meist Gesetzgebung
+  'cannabis-medizin',
   'tabak',
   'rauchstopp',
-  'pflegeversicherung-finanz',
+  'tabakerzeugnis',
+  'tabakkontroll',
+
+  // Krankenhausfinanzierung
   'krankenhausvergütung',
   'krankenhausplanung',
+  'krankenhausfinanzier',
+  'dRG-system',
+  'fallpauschal',
+
+  // Andere Berufsgruppen
   'kassenärztliche bundesvereinigung',
   'kbv-news',
   'tierheilbehandlung',
   'veterinär',
   'lebensmittel',
-  'tabakerzeugnis',
+  'zahnmedizin',
+  'zahnärzt',
+  'zahnärztekammer',
+  'parodontitis',
+  'mundhygiene',
+  'kariesprävention',
+  'augenheilkund',
+  'augenarzt',
+  'kataract',
+  'hörgeräteversorgung',
+  'optiker',
+
+  // Onkologie/Pharma (ohne Reha-Bezug)
+  'wirkstoff',
+  'pharmaindustrie',
+  'arzneimittelmarkt',
+  'amnog',
+  'zusatznutzen-bewertung',
+
+  // Ethik / Lebensende
   'organspende',
   'transplantation',
   'sterbehilfe',
   'embryonenschutz',
   'reproduktionsmedizin',
-  'zahnmedizin',
-  'zahnärzt',
-  'parodontitis',
-  'mundhygiene',
-  'augenheilkund',
-  'augenarzt',
-  'kataract',
-  'wha-genf', // WHO Genf
+
+  // Allgemein-Politik
+  'wha-genf',
   'weltgesundheitsversammlung',
+  'g7-gipfel',
+  'g20-gesundheit',
+
+  // Junk / Navigation
   'newsletter-anmeldung',
   'rss-feed',
   'mediathek',
@@ -223,13 +256,17 @@ export const HARD_BLACKLIST = [
   'soziale-medien',
   'instagram',
   'facebook',
+  'pressemitteilungen und meldungen',
+  'tag der offenen tür',
+  'tag des gesundheitsamt',
 ];
 
 /**
  * Weiche Blacklist — leichter Score-Abzug. Themen, die meistens nicht relevant
- * sind, aber Ausnahmen erlauben.
+ * sind, aber Ausnahmen erlauben (z.B. Reha-Bezug, Long-COVID).
  */
 export const SOFT_BLACKLIST = [
+  // Infektiologie
   'tuberkulose',
   'antibiotika',
   'malaria',
@@ -238,19 +275,57 @@ export const SOFT_BLACKLIST = [
   'röteln',
   'influenza',
   'corona',
-  'covid', // wenn nicht Long-COVID/Physio
+  'covid',
   'sars-cov',
+  'pandemie',
+  'tropenmedizin',
+  'impfung',
+  'impfstoff',
+  'impfquote',
+  'meldepflicht',
+  'rki-surveill',
+
+  // Statistik / Epidemiologie ohne Physio
+  'epidemiologisch',
+  'global burden',
+  'inzidenz',
+  'prävalenz',
+  'sterblichkeit',
+  'mortalität',
+  'gesundheitsmonitoring',
+  'journal of health monitoring',
+
+  // Onkologie / Spezialmedizin ohne Reha
   'krebsregister',
   'krebs in deutschland',
   'krebsforschung',
   'onkologie-news',
-  'epidemiologisch',
-  'global burden',
-  'tropenmedizin',
-  'impfung',
-  'impfstoff',
-  'pandemie',
+  'tumorzentrum',
+  'chemotherapie',
+  'bestrahlung',
+  'palliativmedizin',
+
+  // Allgemein-Verwaltung / Networking
   'public-health-konferenz',
+  'fachtagung',
+  'mitgliederversammlung',
+  'jahrestagung',
+  'kongressankündigung',
+  'gesundheitskongress',
+  'bronzepartner',
+  'silberpartner',
+  'goldpartner',
+  'sponsor',
+
+  // Internes / Junk
+  'newsletter',
+  'umfrage starten',
+  'umfrage-aufruf',
+  'fristenbericht',
+  'jahresbericht',
+  'bilanzpressekonferenz',
+  'methodenpapier',
+  'methodenpapiere',
 ];
 
 /**
@@ -317,15 +392,15 @@ const SOURCE_BIAS: Record<string, number> = {
   'physiotherapeuten.de — obere Extremität (via Google News)': 3,
   'physiotherapeuten.de — Neurologie & Sport (via Google News)': 3,
 
-  // Allgemein-Gesundheit — leicht abwerten, da viele off-topic Items
-  'BMG Pressemitteilungen': -1,
-  'Robert Koch-Institut Pressemitteilungen': -2,
-  'G-BA Pressemitteilungen': -1,
-  'DGSP — News': 0, // Sportmedizin, oft relevant
+  // Allgemein-Gesundheit — stärker abwerten, da viele off-topic Items
+  'BMG Pressemitteilungen': -2,
+  'Robert Koch-Institut Pressemitteilungen': -3,
+  'G-BA Pressemitteilungen': -2,
+  'DGSP — News': -1, // Sportmedizin gemischt mit Networking/Sponsoring
   'AWMF Leitlinien (aktuell)': 1, // leichter Bonus für Leitlinien
 
   // Ärzteblatt: stark gemischt
-  'Ärzteblatt RSS Übersicht': -1,
+  'Ärzteblatt RSS Übersicht': -2,
 };
 
 /**
@@ -374,10 +449,13 @@ export function scoreByKeywords(input: ScoreInput): ScoreResult {
   if (sourceBias !== 0) reasonParts.push(`src:${sourceBias > 0 ? '+' : ''}${sourceBias}`);
   const reason = reasonParts.join(' | ') || 'neutral';
 
-  // Entscheidung
+  // Entscheidung — strenger als zuvor:
+  // accept (Skip Gemini) nur bei klar positiven Treffern (score >= 8)
+  // reject (Skip Gemini) nur bei klar negativen (score <= 1)
+  // Alles dazwischen → Gemini-Befragung
   let decision: ScoreResult['decision'];
-  if (score >= 7) decision = 'accept';
-  else if (score <= 2) decision = 'reject';
+  if (score >= 8 && hits.strong.length > 0) decision = 'accept';
+  else if (score <= 1) decision = 'reject';
   else decision = 'gray';
 
   return { score, reason, decision, hits };

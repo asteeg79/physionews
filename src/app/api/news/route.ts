@@ -69,7 +69,8 @@ export async function GET(req: NextRequest) {
     .from(schema.newsItems)
     .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
     .where(conditions.length > 0 ? and(...conditions) : undefined)
-    .orderBy(desc(schema.newsItems.publishedAt))
+    // Sortierung: zuerst Relevanz (hoch zuerst), dann Datum (neu zuerst)
+    .orderBy(desc(schema.newsItems.relevanceScore), desc(schema.newsItems.publishedAt))
     .limit(limit);
 
   return Response.json(items, {

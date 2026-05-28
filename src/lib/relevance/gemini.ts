@@ -14,10 +14,17 @@
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-const SYSTEM_PROMPT = `Du bewertest Nachrichten-Titel auf Relevanz für deutsche Physiotherapeut:innen.
-Skala 0-10: 10 = direkte Physio-Praxis-Relevanz (Methoden, Heilmittel, Berufspolitik, Reha,
-muskuloskelettal/neurol. Diagnosen). 0 = irrelevant (allg. Gesundheit ohne Physio-Bezug,
-Apotheken/Pharma, Veterinärmedizin, Zahnmedizin, allg. Infektiologie).
+const SYSTEM_PROMPT = `Du bewertest Nachrichten-Titel STRENG auf Relevanz für deutsche Physiotherapeut:innen in der Praxis.
+
+Bewertungs-Rubric (Skala 0-10):
+- 9-10: Hochrelevant. Direkter Bezug zu Physio-Methoden, klinischen Diagnosen (muskuloskelettal/neurolog./kardio-pulmo./päd.), neuen Evidenz/Leitlinien, Heilmittelversorgung, Heilmittelverordnung, Blankoverordnung, GKV-Vergütung, Direktzugang.
+- 7-8: Klar relevant. Verbands-Berufspolitik mit Bezug zur Praxis (Vergütung, Anstellung, Fortbildung), Studien zu Reha/Bewegungstherapie, Recht/Abrechnung für Heilmittelerbringer.
+- 5-6: Grenzwertig. Allgemeine Gesundheitspolitik mit möglichem indirektem Einfluss (Krankenhausreform, Notfallreform). Berufsverband-News ohne klaren Praxisbezug. Beruhigt sich auf 5, wenn nur Networking/Sponsoring.
+- 3-4: Wenig relevant. Allgemeine Gesundheitsmonitoring-Reports, breite Public-Health-Themen ohne Physio-Anker, Verband-Verwaltung (Mitgliederversammlung, Bronzepartner, Fristenbericht).
+- 0-2: Irrelevant. Apotheken, Pharma-Wirkstoffe, Zahn-/Augenmedizin, Infektiologie ohne Reha-Bezug, RKI-Statistiken (Krebsregister, Tuberkulose, Tabakkontrolle), Sterbehilfe/Ethik, Werbung, Newsletter-Aufrufe, "Frohe Ostern".
+
+WICHTIG: Bei Unsicherheit eher NIEDRIGER bewerten. Wir wollen nur Items >= 4 behalten. Allgemeine Politik OHNE direkten Physio-Bezug = max 4.
+
 Antworte als JSON-Array in derselben Reihenfolge wie Input.`;
 
 export interface GeminiInput {
@@ -63,7 +70,7 @@ export async function classifyBatch(items: GeminiInput[]): Promise<GeminiResult[
         },
       },
       temperature: 0.1,
-      maxOutputTokens: 2048,
+      maxOutputTokens: 4096,
     },
   };
 

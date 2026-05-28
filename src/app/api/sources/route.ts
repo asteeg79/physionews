@@ -17,8 +17,19 @@ const addSchema = z.object({
   url: z.string().url(),
   name: z.string().min(2).optional(),
   category: z
-    .enum(['berufspolitik', 'recht', 'evidenz', 'fortbildung', 'leitlinien', 'allgemein'])
-    .default('allgemein'),
+    .enum([
+      'fachlich',
+      'gesetz',
+      'politik',
+      // alte Werte werden akzeptiert, sind aber im UI nicht mehr Default
+      'berufspolitik',
+      'recht',
+      'evidenz',
+      'fortbildung',
+      'leitlinien',
+      'allgemein',
+    ])
+    .default('fachlich'),
   /** Wenn true (Default), wird zunächst auto-detect für RSS versucht; sonst Generic-HTML. */
   autoDetect: z.boolean().default(true),
 });

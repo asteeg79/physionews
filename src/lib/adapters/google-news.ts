@@ -31,6 +31,12 @@ export class GoogleNewsAdapter implements SourceAdapter {
     return items.map((item) => ({
       ...item,
       title: cleanGoogleNewsTitle(item.title),
+      // Google News description ist nur eine Wiederholung des Titels mit
+      // Quellen-Suffix "pt Zeitschrift für Physiotherapeuten" — wertlos und
+      // produziert false positives in der Relevanz-Klassifizierung.
+      // Wir setzen summary auf undefined, sodass /api/news/[id]/preview den
+      // Original-Inhalt beim ersten Klick nachzieht.
+      summary: undefined,
     }));
   }
 }

@@ -2,14 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Stethoscope, Scale, Megaphone, LayoutGrid } from 'lucide-react';
 
 const TABS = [
-  { label: 'Alle', href: '/' },
-  { label: 'Berufspolitik', href: '/kategorie/berufspolitik' },
-  { label: 'Recht', href: '/kategorie/recht' },
-  { label: 'Evidenz', href: '/kategorie/evidenz' },
-  { label: 'Fortbildung', href: '/kategorie/fortbildung' },
-  { label: 'Leitlinien', href: '/kategorie/leitlinien' },
+  { label: 'Fachlich', href: '/kategorie/fachlich', icon: Stethoscope },
+  { label: 'Gesetz', href: '/kategorie/gesetz', icon: Scale },
+  { label: 'Politik', href: '/kategorie/politik', icon: Megaphone },
+  { label: 'Alle', href: '/', icon: LayoutGrid },
 ];
 
 export function CategoryTabs() {
@@ -25,16 +24,18 @@ export function CategoryTabs() {
           {TABS.map((tab) => {
             const isActive =
               tab.href === '/' ? pathname === '/' : pathname === tab.href;
+            const Icon = tab.icon;
             return (
               <Link
                 key={tab.href}
                 href={tab.href}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
                   isActive
                     ? 'bg-brand text-white'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
+                <Icon className="w-4 h-4" aria-hidden="true" />
                 {tab.label}
               </Link>
             );

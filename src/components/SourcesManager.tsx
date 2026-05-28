@@ -10,7 +10,16 @@ interface ClientSource {
   name: string;
   url: string;
   adapterType: string;
-  category: 'berufspolitik' | 'recht' | 'evidenz' | 'fortbildung' | 'leitlinien' | 'allgemein';
+  category:
+    | 'berufspolitik'
+    | 'recht'
+    | 'evidenz'
+    | 'fortbildung'
+    | 'leitlinien'
+    | 'allgemein'
+    | 'fachlich'
+    | 'gesetz'
+    | 'politik';
   iconName: string | null;
   isEnabled: boolean;
   notificationsEnabled: boolean;
@@ -21,12 +30,15 @@ interface ClientSource {
 }
 
 const CATEGORY_LABELS: Record<ClientSource['category'], string> = {
-  berufspolitik: 'Berufspolitik',
-  recht: 'Recht',
-  evidenz: 'Evidenz',
-  fortbildung: 'Fortbildung',
-  leitlinien: 'Leitlinien',
-  allgemein: 'Allgemein',
+  fachlich: 'Fachlich',
+  gesetz: 'Gesetz',
+  politik: 'Politik',
+  berufspolitik: 'Berufspolitik (alt)',
+  recht: 'Recht (alt)',
+  evidenz: 'Evidenz (alt)',
+  fortbildung: 'Fortbildung (alt)',
+  leitlinien: 'Leitlinien (alt)',
+  allgemein: 'Allgemein (alt)',
 };
 
 export function SourcesManager({ initialSources }: { initialSources: ClientSource[] }) {
@@ -214,7 +226,7 @@ function AddSourceDialog({
 }) {
   const [url, setUrl] = useState('');
   const [name, setName] = useState('');
-  const [category, setCategory] = useState<ClientSource['category']>('allgemein');
+  const [category, setCategory] = useState<ClientSource['category']>('fachlich');
   const [submitting, setSubmitting] = useState(false);
 
   const submit = async () => {

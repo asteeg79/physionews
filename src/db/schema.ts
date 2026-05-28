@@ -11,12 +11,17 @@ import {
 } from 'drizzle-orm/pg-core';
 
 export const categoryEnum = pgEnum('news_category', [
+  // alte Werte werden behalten für Backwards-Compatibility,
+  // im Frontend nutzen wir nur noch die drei neuen
   'berufspolitik',
   'recht',
   'evidenz',
   'fortbildung',
   'leitlinien',
   'allgemein',
+  'fachlich',
+  'gesetz',
+  'politik',
 ]);
 
 export const relevanceMethodEnum = pgEnum('relevance_method', [

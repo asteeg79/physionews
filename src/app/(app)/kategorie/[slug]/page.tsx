@@ -2,7 +2,16 @@ import { NewsList } from '@/components/NewsList';
 import type { NewsCategory } from '@/db/schema';
 
 const VALID_CATEGORIES: NewsCategory[] = [
-  'berufspolitik', 'recht', 'evidenz', 'fortbildung', 'leitlinien', 'allgemein',
+  'fachlich',
+  'gesetz',
+  'politik',
+  // alte Werte werden als Fallback toleriert, aber die UI nutzt nur die drei neuen
+  'berufspolitik',
+  'recht',
+  'evidenz',
+  'fortbildung',
+  'leitlinien',
+  'allgemein',
 ];
 
 export default async function KategoriePage({

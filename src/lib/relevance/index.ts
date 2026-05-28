@@ -3,7 +3,8 @@ import { eq, lt, sql } from 'drizzle-orm';
 import { scoreByKeywords } from './keywords';
 import { classifyBatch, estimateTokens, type GeminiInput } from './gemini';
 
-const GEMINI_BATCH_SIZE = 30;
+// Kleinere Batches sind robuster und passen sicher in 4096 maxOutputTokens
+const GEMINI_BATCH_SIZE = 20;
 
 /** Mindest-Relevanz, unter der Items komplett verworfen werden. */
 export const MIN_RELEVANCE_THRESHOLD = 4;
