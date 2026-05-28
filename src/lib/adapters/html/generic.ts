@@ -156,7 +156,7 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
           $(el).find('time').attr('datetime') ??
           $(el).find('time').first().text() ??
           $(el).find('[class*="date"], [class*="datum"], [class*="published"]').first().text();
-        const parsedDate = dateText ? this.parseGermanDate(dateText) : null;
+        const parsedDate = dateText ? this.parseDate(dateText) : null;
         const publishedAt = parsedDate ?? new Date();
 
         const summary = this.cleanText(

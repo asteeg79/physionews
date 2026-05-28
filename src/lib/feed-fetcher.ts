@@ -34,34 +34,63 @@ export async function fetchAllSources(): Promise<{ results: FetchResult[]; total
 async function fetchSource(source: Source): Promise<FetchResult> {
   const now = new Date();
 
-  try {
-    await db
-      .update(schema.sources)
-      .set({ lastFetchAt: now })
-      .where(eq(schema.sources.id, source.id));
+  await db
+    .update(schema.sources)
+    .set({ lastFetchAt: now })
+    .where(eq(schema.sources.id, source.id));
 
-    const adapter = getAdapter(source.adapterType);
-    const rawItems = await adapter.fetch(source);
+  const adapter = getAdapter(source.adapterType);
 
-    const newItems = await insertItems(rawItems, source.id);
+  let lastError: unknown = null;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const rawItems = await adapter.fetch(source);
+      const newItems = await insertItems(rawItems, source.id);
 
-    await db
-      .update(schema.sources)
-      .set({ lastSuccessAt: now, lastError: null })
-      .where(eq(schema.sources.id, source.id));
+      await db
+        .update(schema.sources)
+        .set({ lastSuccessAt: now, lastError: null })
+        .where(eq(schema.sources.id, source.id));
 
-    return { sourceId: source.id, sourceName: source.name, newItems };
-  } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    console.error(`[FeedFetcher] Fehler bei "${source.name}":`, message);
-
-    await db
-      .update(schema.sources)
-      .set({ lastError: message })
-      .where(eq(schema.sources.id, source.id));
-
-    return { sourceId: source.id, sourceName: source.name, newItems: 0, error: message };
+      return { sourceId: source.id, sourceName: source.name, newItems };
+    } catch (err) {
+      lastError = err;
+      if (!isRetryable(err) || attempt === 2) break;
+      console.warn(`[FeedFetcher] Versuch ${attempt} bei "${source.name}" fehlgeschlagen, retry in 2s...`);
+      await sleep(2000);
+    }
   }
+
+  const message = formatError(lastError, source.url);
+  console.error(`[FeedFetcher] Fehler bei "${source.name}":`, message);
+
+  await db
+    .update(schema.sources)
+    .set({ lastError: message.slice(0, 500) })
+    .where(eq(schema.sources.id, source.id));
+
+  return { sourceId: source.id, sourceName: source.name, newItems: 0, error: message };
+}
+
+function isRetryable(err: unknown): boolean {
+  if (err instanceof Error) {
+    const msg = err.message.toLowerCase();
+    if (msg.includes('http 5')) return true; // 5xx
+    if (msg.includes('timeout') || msg.includes('aborted')) return true;
+    if (msg.includes('etimedout') || msg.includes('econnreset') || msg.includes('econnrefused')) return true;
+  }
+  return false;
+}
+
+function formatError(err: unknown, sourceUrl: string): string {
+  if (err instanceof Error) {
+    return `${err.message} (${sourceUrl})`;
+  }
+  return `${String(err)} (${sourceUrl})`;
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function insertItems(rawItems: RawNewsItem[], sourceId: string): Promise<number> {

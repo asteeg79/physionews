@@ -1,31 +1,45 @@
 import type { SourceAdapter } from './types';
 import { RssAdapter } from './rss';
 import { YouTubeAdapter } from './youtube';
-import { IfkAdapter } from './html/ifk';
 import { GenericHtmlAdapter } from './html/generic';
+
+import { IfkAdapter } from './html/ifk';
+import { BmgAdapter } from './html/bmg';
+import { RkiAdapter } from './html/rki';
+import { CochraneAdapter } from './html/cochrane';
+import { PhysioDeutschlandAdapter } from './html/physio-deutschland';
+import { VdbNrwAdapter } from './html/vdb-nrw';
+import { DgspAdapter } from './html/dgsp';
+import { RaAltAdapter } from './html/ra-alt';
+import { VptAdapter, VptNrwAdapter } from './html/vpt';
+import { GbaAdapter } from './html/gba';
+import { AwmfAdapter } from './html/awmf';
+import { DvmtAdapter } from './html/dvmt';
 
 const adapters: SourceAdapter[] = [
   new RssAdapter(),
   new YouTubeAdapter(),
-  new IfkAdapter(),
 
-  // Stub-Adapter — werden in Phase 3 durch spezifische Implementierungen ersetzt
-  new GenericHtmlAdapter('html:vpt-nrw'),
-  new GenericHtmlAdapter('html:vpt'),
-  new GenericHtmlAdapter('html:physioDeutschland'),
-  new GenericHtmlAdapter('html:vdbNrw'),
-  new GenericHtmlAdapter('html:raAlt'),
-  new GenericHtmlAdapter('html:gba'),
-  new GenericHtmlAdapter('html:physioDe'),
+  // Spezifische HTML-Adapter
+  new IfkAdapter(),
+  new BmgAdapter(),
+  new RkiAdapter(),
+  new CochraneAdapter(),
+  new PhysioDeutschlandAdapter(),
+  new VdbNrwAdapter(),
+  new DgspAdapter(),
+  new RaAltAdapter(),
+  new VptAdapter(),
+  new VptNrwAdapter(),
+  new GbaAdapter(),
+  new AwmfAdapter(),
+  new DvmtAdapter(),
+
+  // Generic-Fallback für Quellen, die noch keinen spezifischen Adapter haben
   new GenericHtmlAdapter('html:thiemeJournal'),
   new GenericHtmlAdapter('html:thiemeNewsletter'),
   new GenericHtmlAdapter('html:physiotherapeutenDe'),
-  new GenericHtmlAdapter('html:cochrane'),
-  new GenericHtmlAdapter('html:awmf'),
-  new GenericHtmlAdapter('html:rki'),
-  new GenericHtmlAdapter('html:bmg'),
-  new GenericHtmlAdapter('html:dgsp'),
-  new GenericHtmlAdapter('html:dvmt'),
+  new GenericHtmlAdapter('html:physioDe'),
 ];
 
 const registry = new Map<string, SourceAdapter>(
@@ -33,7 +47,6 @@ const registry = new Map<string, SourceAdapter>(
 );
 
 export function getAdapter(typeIdentifier: string): SourceAdapter {
-  // Unterstützt sowohl 'rss' als auch 'html:ifk' etc.
   const adapter = registry.get(typeIdentifier);
   if (!adapter) {
     throw new Error(`Kein Adapter für Typ "${typeIdentifier}" registriert.`);

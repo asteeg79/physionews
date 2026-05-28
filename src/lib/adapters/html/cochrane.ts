@@ -3,17 +3,20 @@ import type { Source } from '@/db/schema';
 import type { RawNewsItem } from '../types';
 import { HtmlScraperAdapter } from './base';
 
-// Quelle: https://www.ifk.de/verband/aktuelles
-// Struktur: <article> mit h2/h3-Titel, Datum-Span und Link nach /artikel/...
-export class IfkAdapter extends HtmlScraperAdapter {
-  readonly typeIdentifier = 'html:ifk';
+// Quelle: https://www.cochrane.de/news und /zusammenfassungen-physiotherapeuten
+// Struktur: Drupal Views — .view-news .views-row mit Titel-Link + Datum (engl. "21 May 2026")
+export class CochraneAdapter extends HtmlScraperAdapter {
+  readonly typeIdentifier = 'html:cochrane';
 
   parse($: ReturnType<typeof cheerio.load>, baseUrl: string): RawNewsItem[] {
     const items: RawNewsItem[] = [];
     const seen = new Set<string>();
 
-    $('article').each((_, el) => {
-      const link = $(el).find('a[href*="/artikel/"]').first();
+    // Drupal View: .view-news (für /news) oder .view-id-* (für Zusammenfassungen)
+    const rows = $('.view-news .views-row, .view-id-news .views-row, [class*="view"] .views-row');
+
+    rows.each((_, el) => {
+      const link = $(el).find('a[href]').first();
       const href = link.attr('href');
       if (!this.isValidLink(href)) return;
 
@@ -23,18 +26,18 @@ export class IfkAdapter extends HtmlScraperAdapter {
       const title = this.cleanText(
         $(el).find('h1, h2, h3, h4').first().text() || link.text()
       );
-      if (!title || title.length < 8) return;
+      if (!title || title.length < 10) return;
 
       seen.add(url);
 
       const dateText =
         $(el).find('time').attr('datetime') ??
         $(el).find('time').first().text() ??
-        $(el).find('[class*="date"], [class*="datum"]').first().text();
+        $(el).find('.field--name-field-date, [class*="date"], [class*="created"]').first().text();
       const publishedAt = this.parseDate(dateText) ?? new Date();
 
       const summary = this.cleanText(
-        $(el).find('p').not('[class*="meta"]').not('[class*="date"]').first().text()
+        $(el).find('.field--name-body, .views-field-body, p').first().text()
       );
 
       const img = $(el).find('img').first().attr('src');
