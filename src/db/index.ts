@@ -10,7 +10,11 @@ type DrizzleDb = ReturnType<typeof drizzle<typeof schema>>;
 const globalForDb = globalThis as unknown as { _db: DrizzleDb | undefined };
 
 function createDb(): DrizzleDb {
-  const client = postgres(connectionString, { max: 1 });
+  const client = postgres(connectionString, {
+    max: 1,
+    ssl: 'require',
+    prepare: false, // Supavisor-Pooler unterstützt keine prepared statements
+  });
   return drizzle(client, { schema });
 }
 
