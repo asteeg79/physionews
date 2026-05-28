@@ -1,7 +1,22 @@
 import type { Metadata, Viewport } from 'next';
+import { Roboto, Roboto_Slab } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'sonner';
 import { ServiceWorkerRegistrar } from '@/components/ServiceWorkerRegistrar';
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-roboto',
+  display: 'swap',
+});
+
+const robotoSlab = Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-roboto-slab',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'PhysioNews',
@@ -23,8 +38,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0E7C7B' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a3a3a' },
+    { media: '(prefers-color-scheme: light)', color: '#75b72d' },
+    { media: '(prefers-color-scheme: dark)', color: '#2a3d18' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -47,7 +62,7 @@ const THEME_SCRIPT = `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className="h-full antialiased">
+    <html lang="de" className={`h-full antialiased ${roboto.variable} ${robotoSlab.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>

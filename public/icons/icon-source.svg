@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" ry="96" fill="#0E7C7B"/>
+  <rect width="512" height="512" rx="96" ry="96" fill="#75b72d"/>
   <!-- Welle (Pulsmotiv für Physio + Aktualität) -->
   <g transform="translate(256 317.44)" stroke="#ffffff" stroke-width="23.04" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M -163.84 0 L -81.92 0 L -40.96 -92.16 L 0 92.16 L 40.96 -61.44 L 81.92 0 L 163.84 0"/>

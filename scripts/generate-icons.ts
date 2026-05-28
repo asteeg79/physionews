@@ -5,7 +5,7 @@ import { join } from 'path';
 const OUT = join(process.cwd(), 'public/icons');
 mkdirSync(OUT, { recursive: true });
 
-const BRAND = '#0E7C7B';
+const BRAND = '#75b72d';
 const WHITE = '#ffffff';
 
 // Vollflächiges Icon (für 192, 512, apple-touch — abgerundete Ecken)
