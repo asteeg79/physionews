@@ -10,12 +10,9 @@ export async function GET(req: NextRequest) {
   const category = searchParams.get('category') as NewsCategory | null;
   const since = searchParams.get('since');
   const limit = Math.min(parseInt(searchParams.get('limit') ?? '100', 10), 200);
-  // Default: nur Items mit Relevanz >= 4 zeigen; mit ?minRelevance=0 explizit alle anzeigen
-  const minRelevanceParam = searchParams.get('minRelevance');
-  const minRelevance =
-    minRelevanceParam === null
-      ? 4
-      : Math.max(0, Math.min(10, parseInt(minRelevanceParam, 10) || 0));
+  // Items mit Score &lt; 4 werden bereits beim Klassifizieren gelöscht.
+  // Doppelter Boden hier, falls trotzdem etwas durchgeschlüpft ist.
+  const minRelevance = 4;
 
   // Quellen-IDs für die Kategorie ermitteln
   let sourceCategoryFilter: ReturnType<typeof eq> | undefined;

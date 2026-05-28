@@ -1,9 +1,12 @@
 import { db, schema } from '@/db';
-import { eq, sql } from 'drizzle-orm';
+import { eq, lt, sql } from 'drizzle-orm';
 import { scoreByKeywords } from './keywords';
 import { classifyBatch, estimateTokens, type GeminiInput } from './gemini';
 
 const GEMINI_BATCH_SIZE = 30;
+
+/** Mindest-Relevanz, unter der Items komplett verworfen werden. */
+export const MIN_RELEVANCE_THRESHOLD = 4;
 
 interface ScoreCandidate {
   id: string;
@@ -21,6 +24,7 @@ interface PipelineResult {
   geminiTokensEstimated: number;
   geminiBatches: number;
   geminiFailures: number;
+  deletedBelowThreshold: number;
 }
 
 /**
@@ -38,6 +42,7 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     geminiTokensEstimated: 0,
     geminiBatches: 0,
     geminiFailures: 0,
+    deletedBelowThreshold: 0,
   };
 
   if (items.length === 0) return result;
@@ -109,7 +114,6 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
   }
 
   // Stufe 3: Bulk-Update — pro Item ein einzelnes UPDATE.
-  // Bei < 100 Items akzeptabel; bei mehr wäre eine CASE/WHEN-Variante schneller.
   for (const upd of updates) {
     await db
       .update(schema.newsItems)
@@ -124,7 +128,32 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     else result.byMethod.keyword++;
   }
 
+  // Stufe 4: Items unter dem Schwellwert komplett löschen.
+  // (Der Nutzer will keine off-topic-Items in der DB; spart Speicher und
+  // hält die Liste sauber.)
+  const idsToDelete = updates
+    .filter((upd) => upd.score < MIN_RELEVANCE_THRESHOLD)
+    .map((upd) => upd.id);
+  if (idsToDelete.length > 0) {
+    // ON CONFLICT-Vermeidung: einzeln löschen ist langsamer aber sicher
+    for (const id of idsToDelete) {
+      await db.delete(schema.newsItems).where(eq(schema.newsItems.id, id));
+    }
+    result.deletedBelowThreshold = idsToDelete.length;
+  }
+
   return result;
+}
+
+/**
+ * Löscht alle bestehenden Items mit Score &lt; threshold (für Cleanup-Skript).
+ */
+export async function purgeBelowThreshold(): Promise<number> {
+  const deleted = await db
+    .delete(schema.newsItems)
+    .where(lt(schema.newsItems.relevanceScore, MIN_RELEVANCE_THRESHOLD))
+    .returning({ id: schema.newsItems.id });
+  return deleted.length;
 }
 
 /**

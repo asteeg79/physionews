@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { TimeBucketSection } from './TimeBucketSection';
-import { RelevanceFilter, readShowAll } from './RelevanceFilter';
 import { getTimeBucket, BUCKET_ORDER, type TimeBucket } from '@/lib/time-bucket';
 import type { NewsItem, Source, NewsCategory } from '@/db/schema';
 
@@ -16,16 +15,10 @@ export function NewsList({ category }: NewsListProps) {
   const [items, setItems] = useState<NewsItemWithSource[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [showAll, setShowAll] = useState<boolean>(false);
-
-  useEffect(() => {
-    setShowAll(readShowAll());
-  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams();
     if (category) params.set('category', category);
-    if (showAll) params.set('minRelevance', '0');
     const url = `/api/news${params.toString() ? `?${params.toString()}` : ''}`;
     setLoading(true);
     fetch(url)
@@ -41,35 +34,18 @@ export function NewsList({ category }: NewsListProps) {
       })
       .catch(() => setError('Nachrichten konnten nicht geladen werden.'))
       .finally(() => setLoading(false));
-  }, [category, showAll]);
+  }, [category]);
 
   if (loading) return <NewsListSkeleton />;
   if (error) return <p className="py-8 text-center text-sm text-destructive">{error}</p>;
 
-  const filter = (
-    <RelevanceFilter
-      showAll={showAll}
-      onChange={(v) => setShowAll(v)}
-      hiddenCount={null /* wir zeigen die Zahl erst nach Toggle vorne */}
-    />
-  );
-
   if (items.length === 0) {
     return (
-      <div>
-        {filter}
-        <div className="py-16 text-center">
-          <p className="text-muted-foreground text-sm">
-            {showAll
-              ? 'Noch keine Nachrichten vorhanden.'
-              : 'Keine physiotherapie-spezifischen Beiträge.'}
-          </p>
-          <p className="text-muted-foreground text-xs mt-1">
-            {showAll
-              ? 'Starte einen Refresh über das Aktualisieren-Symbol oben.'
-              : 'Aktiviere „Alle anzeigen", um auch allgemeine Gesundheitsthemen zu sehen.'}
-          </p>
-        </div>
+      <div className="py-16 text-center">
+        <p className="text-muted-foreground text-sm">Noch keine Nachrichten vorhanden.</p>
+        <p className="text-muted-foreground text-xs mt-1">
+          Starte einen Refresh über das Aktualisieren-Symbol oben.
+        </p>
       </div>
     );
   }
@@ -86,9 +62,17 @@ export function NewsList({ category }: NewsListProps) {
 
   return (
     <div className="py-2">
-      {filter}
       {BUCKET_ORDER.map((bucket) => (
-        <TimeBucketSection key={bucket} bucket={bucket} items={bucketed[bucket]} />
+        <TimeBucketSection
+          key={bucket}
+          bucket={bucket}
+          items={bucketed[bucket]}
+          onItemRead={(id) =>
+            setItems((prev) =>
+              prev.map((i) => (i.id === id ? { ...i, isRead: true } : i))
+            )
+          }
+        />
       ))}
     </div>
   );

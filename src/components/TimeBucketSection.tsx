@@ -12,9 +12,10 @@ type NewsItemWithSource = NewsItem & { source: Pick<Source, 'id' | 'name' | 'cat
 interface TimeBucketSectionProps {
   bucket: TimeBucket;
   items: NewsItemWithSource[];
+  onItemRead?: (id: string) => void;
 }
 
-export function TimeBucketSection({ bucket, items }: TimeBucketSectionProps) {
+export function TimeBucketSection({ bucket, items, onItemRead }: TimeBucketSectionProps) {
   const [collapsed, setCollapsed] = useState(bucket === 'aelter');
 
   if (items.length === 0) return null;
@@ -42,7 +43,7 @@ export function TimeBucketSection({ bucket, items }: TimeBucketSectionProps) {
       {!collapsed && (
         <div className="space-y-3">
           {items.map((item) => (
-            <NewsCard key={item.id} item={item} />
+            <NewsCard key={item.id} item={item} onRead={onItemRead} />
           ))}
         </div>
       )}
