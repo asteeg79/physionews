@@ -1,0 +1,19 @@
+name: PhysioNews Feed Refresh
+
+on:
+  schedule:
+    # Europe/Berlin = UTC+1 (Winter) / UTC+2 (Sommer)
+    # Gerade Stunden UTC 04–20 => deckt 06–22 Berlin (Winter) ab
+    # Der Endpoint prüft intern selbst, ob wir im Fenster sind.
+    - cron: '0 4,6,8,10,12,14,16,18,20 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger refresh endpoint
+        run: |
+          curl -fsS -X POST \
+            -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
+            https://${{ secrets.APP_DOMAIN }}/api/cron/refresh
