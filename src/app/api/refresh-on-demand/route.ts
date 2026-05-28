@@ -3,6 +3,7 @@ import { eq, lte } from 'drizzle-orm';
 import { getBerlinHour } from '@/lib/timezone';
 import { fetchAllSources } from '@/lib/feed-fetcher';
 import { sendPushToAllSubscriptions } from '@/lib/push-sender';
+import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 import { rateLimit, clientIpFrom } from '@/lib/rate-limit';
 
 /**
@@ -65,6 +66,11 @@ export async function POST(req: Request) {
       url: '/',
     });
   }
+
+  // Top-News-Auswahl analog zum Cron
+  await selectAndPersistTopNews().catch((err) =>
+    console.error('[OnDemand] Top-News-Auswahl fehlgeschlagen:', err)
+  );
 
   await db
     .update(schema.appSettings)

@@ -22,6 +22,13 @@
       "when": 1779994010710,
       "tag": "0002_fantastic_rogue",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1779997367370,
+      "tag": "0003_previous_fixer",
+      "breakpoints": true
     }
   ]
 }

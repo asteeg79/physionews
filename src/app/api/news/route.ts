@@ -13,6 +13,8 @@ export async function GET(req: NextRequest) {
   // Items mit Score &lt; 4 werden bereits beim Klassifizieren gelöscht.
   // Doppelter Boden hier, falls trotzdem etwas durchgeschlüpft ist.
   const minRelevance = 4;
+  /** Wenn true, werden nur die AI-kuratierten Top-News zurückgegeben (is_top_news=true). */
+  const topNewsOnly = searchParams.get('topNews') === 'true';
 
   // Quellen-IDs für die Kategorie ermitteln
   let sourceCategoryFilter: ReturnType<typeof eq> | undefined;
@@ -42,9 +44,16 @@ export async function GET(req: NextRequest) {
       ? (gte(schema.newsItems.relevanceScore, minRelevance) as ReturnType<typeof eq>)
       : undefined;
 
-  const conditions = [sourceCategoryFilter, sinceFilter, relevanceFilter].filter(
-    Boolean
-  ) as ReturnType<typeof eq>[];
+  const topNewsFilter = topNewsOnly
+    ? (eq(schema.newsItems.isTopNews, true) as ReturnType<typeof eq>)
+    : undefined;
+
+  const conditions = [
+    sourceCategoryFilter,
+    sinceFilter,
+    relevanceFilter,
+    topNewsFilter,
+  ].filter(Boolean) as ReturnType<typeof eq>[];
 
   const items = await db
     .select({

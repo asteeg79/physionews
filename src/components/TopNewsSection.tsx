@@ -14,8 +14,11 @@ interface TopNewsSectionProps {
 }
 
 /**
- * Top-News oben in der Liste: die drei nach Relevanz höchsten Items.
- * Visuell hervorgehoben mit Brand-Akzent, eigener Header und Hintergrund.
+ * Top-News-Sektion: AI-kuratierte Auswahl der wichtigsten Beiträge,
+ * die der Cron-Endpoint per Gemini gewählt hat (Praxis-Relevanz,
+ * Aktualität, Themen-Vielfalt). Items mit is_top_news=true.
+ *
+ * Visuell hervorgehoben mit Brand-Akzent und Sparkles-Icon.
  */
 export function TopNewsSection({ items, onItemRead }: TopNewsSectionProps) {
   if (items.length === 0) return null;
@@ -27,9 +30,7 @@ export function TopNewsSection({ items, onItemRead }: TopNewsSectionProps) {
         <h2 className="font-heading font-bold text-sm tracking-wide uppercase text-brand">
           Top News
         </h2>
-        <span className="text-xs text-muted-foreground">
-          Die {items.length} relevantesten Beiträge
-        </span>
+        <span className="text-xs text-muted-foreground">KI-Auswahl</span>
       </div>
 
       <div className="space-y-3">

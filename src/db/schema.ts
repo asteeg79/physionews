@@ -65,11 +65,15 @@ export const newsItems = pgTable(
     relevanceScore: integer('relevance_score').notNull().default(5),
     relevanceMethod: relevanceMethodEnum('relevance_method').notNull().default('pending'),
     relevanceReason: text('relevance_reason'),
+    // Top-News-Flag: von AI per Cron-Lauf gesetzt; bei jedem Cron neu evaluiert.
+    // Markiert 1-3 Items als "echte Top-News" basierend auf Aktualität, Vielfalt und Bedeutung.
+    isTopNews: boolean('is_top_news').notNull().default(false),
   },
   (t) => [
     index('news_published_idx').on(t.publishedAt),
     index('news_source_idx').on(t.sourceId),
     index('news_relevance_idx').on(t.relevanceScore),
+    index('news_top_news_idx').on(t.isTopNews),
   ]
 );
 

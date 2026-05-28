@@ -3,6 +3,7 @@ import { eq, lte, gte, and, desc } from 'drizzle-orm';
 import { getBerlinHour } from '@/lib/timezone';
 import { fetchAllSources } from '@/lib/feed-fetcher';
 import { sendPushToAllSubscriptions } from '@/lib/push-sender';
+import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 
 // Nur Items mit dieser Mindest-Relevanz lösen eine eigene Push aus.
 // 9-10 = direkter Physio-Praxis-Bezug nach unserer Bewertungs-Rubric.
@@ -76,6 +77,31 @@ export async function POST(req: Request) {
     );
   }
 
+  // AI-Top-News-Auswahl: 3 wichtigste Items aus dem aktuellen Bestand
+  // (Praxis-Relevanz, Aktualität, Themen-Vielfalt). Wird in DB-Flag
+  // is_top_news persistiert und vom Frontend separat abgerufen.
+  let topNewsInfo: { selected: number; usedAi: boolean; pool: number; tokens: number } = {
+    selected: 0,
+    usedAi: false,
+    pool: 0,
+    tokens: 0,
+  };
+  try {
+    const tn = await selectAndPersistTopNews();
+    topNewsInfo = {
+      selected: tn.selectedIds.length,
+      usedAi: tn.usedAi,
+      pool: tn.poolSize,
+      tokens: tn.tokensEstimated,
+    };
+    console.log(
+      `[Cron] Top-News selektiert: ${tn.selectedIds.length} aus Pool von ${tn.poolSize} ` +
+        `(usedAi=${tn.usedAi}, ~${tn.tokensEstimated} Tokens)`
+    );
+  } catch (err) {
+    console.error('[Cron] Top-News-Auswahl fehlgeschlagen:', err);
+  }
+
   // lastGlobalRefreshAt aktualisieren
   await db
     .update(schema.appSettings)
@@ -98,5 +124,7 @@ export async function POST(req: Request) {
     sourcesChecked: results.length,
     errors: results.filter((r) => r.error).map((r) => ({ source: r.sourceName, error: r.error })),
     deletedOldItems: deleted.length,
+    pushSent,
+    topNews: topNewsInfo,
   });
 }

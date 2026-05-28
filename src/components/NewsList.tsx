@@ -1,17 +1,27 @@
 'use client';
 
+/**
+ * NewsList — orchestriert die Anzeige aller News.
+ *
+ * Lade-Strategie:
+ *  - Parallel zwei API-Calls: alle Items (kategorie-gefiltert) und die
+ *    AI-kuratierten Top-News (is_top_news=true)
+ *  - Top-News werden aus der Hauptliste ausgeklammert (keine Doppel-Anzeige)
+ *  - Top-News werden ungeachtet der Kategorie immer angezeigt (Übersicht)
+ *
+ * Time-Buckets (Heute/Diese Woche/Diesen Monat/Älter) werden client-seitig
+ * aus publishedAt berechnet — siehe lib/time-bucket.ts.
+ */
+
 import { useEffect, useState } from 'react';
 import { TimeBucketSection } from './TimeBucketSection';
 import { TopNewsSection } from './TopNewsSection';
 import { getTimeBucket, BUCKET_ORDER, type TimeBucket } from '@/lib/time-bucket';
 import type { NewsItem, Source, NewsCategory } from '@/db/schema';
 
-// Anzahl Top-News (sortiert nach Relevanz) die oben in der eigenen Sektion stehen
-const TOP_NEWS_COUNT = 3;
-// Items werden zusätzlich nur in TopNews aufgenommen, wenn sie Relevanz >= dem Wert haben
-const TOP_NEWS_MIN_SCORE = 8;
-
-type NewsItemWithSource = NewsItem & { source: Pick<Source, 'id' | 'name' | 'category' | 'iconName'> };
+type NewsItemWithSource = NewsItem & {
+  source: Pick<Source, 'id' | 'name' | 'category' | 'iconName'>;
+};
 
 interface NewsListProps {
   category?: NewsCategory;
@@ -19,24 +29,30 @@ interface NewsListProps {
 
 export function NewsList({ category }: NewsListProps) {
   const [items, setItems] = useState<NewsItemWithSource[]>([]);
+  const [topNews, setTopNews] = useState<NewsItemWithSource[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams();
     if (category) params.set('category', category);
-    const url = `/api/news${params.toString() ? `?${params.toString()}` : ''}`;
+    const mainUrl = `/api/news${params.toString() ? `?${params.toString()}` : ''}`;
+    // Top-News kommen IMMER ungeachtet der Kategorie
+    const topUrl = `/api/news?topNews=true`;
+
     setLoading(true);
-    fetch(url)
-      .then((r) => r.json())
-      .then((data) => {
-        setItems(
-          data.map((item: NewsItemWithSource) => ({
-            ...item,
-            publishedAt: new Date(item.publishedAt),
-            fetchedAt: new Date(item.fetchedAt),
-          }))
-        );
+    Promise.all([
+      fetch(mainUrl).then((r) => r.json()),
+      fetch(topUrl).then((r) => r.json()),
+    ])
+      .then(([mainData, topData]: [NewsItemWithSource[], NewsItemWithSource[]]) => {
+        const hydrate = (item: NewsItemWithSource): NewsItemWithSource => ({
+          ...item,
+          publishedAt: new Date(item.publishedAt),
+          fetchedAt: new Date(item.fetchedAt),
+        });
+        setItems(mainData.map(hydrate));
+        setTopNews(topData.map(hydrate));
       })
       .catch(() => setError('Nachrichten konnten nicht geladen werden.'))
       .finally(() => setLoading(false));
@@ -45,7 +61,7 @@ export function NewsList({ category }: NewsListProps) {
   if (loading) return <NewsListSkeleton />;
   if (error) return <p className="py-8 text-center text-sm text-destructive">{error}</p>;
 
-  if (items.length === 0) {
+  if (items.length === 0 && topNews.length === 0) {
     return (
       <div className="py-16 text-center">
         <p className="text-muted-foreground text-sm">Noch keine Nachrichten vorhanden.</p>
@@ -56,19 +72,11 @@ export function NewsList({ category }: NewsListProps) {
     );
   }
 
-  // Top-News: die höchstrelevanten Items (Score sortiert), die NICHT bereits gelesen sind
-  // Wenn alle bereits gelesen sind, zeigen wir die Top-3 trotzdem (kein Verstecken)
-  const sortedByRelevance = [...items].sort((a, b) => b.relevanceScore - a.relevanceScore);
-  const unreadHighRelevance = sortedByRelevance.filter(
-    (i) => !i.isRead && i.relevanceScore >= TOP_NEWS_MIN_SCORE
-  );
-  const topNewsCandidates = unreadHighRelevance.length > 0 ? unreadHighRelevance : sortedByRelevance;
-  const topNews = topNewsCandidates.slice(0, TOP_NEWS_COUNT);
-  const topNewsIds = new Set(topNews.map((i) => i.id));
+  // Top-News-IDs aus der Hauptliste entfernen, damit sie nicht doppelt erscheinen
+  const topIds = new Set(topNews.map((t) => t.id));
+  const restItems = items.filter((i) => !topIds.has(i.id));
 
-  // Übrige Items für die Zeit-Bucket-Liste
-  const restItems = items.filter((i) => !topNewsIds.has(i.id));
-
+  // Bucketing nach Veröffentlichungs-Datum
   const bucketed = BUCKET_ORDER.reduce<Record<TimeBucket, NewsItemWithSource[]>>(
     (acc, b) => ({ ...acc, [b]: [] }),
     {} as Record<TimeBucket, NewsItemWithSource[]>
@@ -77,8 +85,14 @@ export function NewsList({ category }: NewsListProps) {
     bucketed[getTimeBucket(item.publishedAt)].push(item);
   }
 
-  const onItemRead = (id: string) =>
+  /**
+   * Lokales State-Update beim Lesen — vermeidet doppelte API-Calls
+   * und hält das UI synchron mit dem Klick im Detail-Bereich.
+   */
+  const onItemRead = (id: string) => {
     setItems((prev) => prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)));
+    setTopNews((prev) => prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)));
+  };
 
   return (
     <div className="py-2">
