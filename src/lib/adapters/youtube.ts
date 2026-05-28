@@ -4,6 +4,22 @@ import { RssAdapter } from './rss';
 
 const rss = new RssAdapter();
 
+const YOUTUBE_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  'Accept-Language': 'de-DE,de;q=0.9,en;q=0.5',
+  // Setzt EU-Cookie-Consent, damit YouTube nicht auf consent.youtube.com umleitet
+  Cookie:
+    'CONSENT=YES+cb; SOCS=CAESEwgDEgk0ODE3Nzc3MjQaAmRlIAEaBgiA_LyaBg',
+};
+
+const CHANNEL_ID_PATTERNS = [
+  /"externalId":"(UC[A-Za-z0-9_-]+)"/,
+  /"channelId":"(UC[A-Za-z0-9_-]+)"/,
+  /<meta itemprop="(?:channelId|identifier)" content="(UC[A-Za-z0-9_-]+)"/,
+  /youtube\.com\/channel\/(UC[A-Za-z0-9_-]+)/,
+];
+
 export class YouTubeAdapter implements SourceAdapter {
   readonly typeIdentifier = 'youtube';
 
@@ -20,25 +36,29 @@ export class YouTubeAdapter implements SourceAdapter {
   }
 }
 
-async function resolveChannelId(url: string): Promise<string | null> {
-  // Direkte channel_id in URL: https://www.youtube.com/feeds/videos.xml?channel_id=UCxxx
+export async function resolveChannelId(url: string): Promise<string | null> {
+  // Direkte channel_id in URL
   const fromFeed = url.match(/channel_id=(UC[\w-]+)/);
   if (fromFeed) return fromFeed[1];
 
-  // Handle-Format: @Username oder /channel/UCxxx oder /user/Username
   const fromChannel = url.match(/\/channel\/(UC[\w-]+)/);
   if (fromChannel) return fromChannel[1];
 
-  // Für @Handle-Format: Seite aufrufen und Channel-ID extrahieren
-  // Nur als Fallback — setzt User-Agent, um 403 zu vermeiden
+  // @Handle oder /user/ — Seite abrufen und Channel-ID extrahieren
   try {
     const res = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; PhysioNews/1.0)' },
-      signal: AbortSignal.timeout(10_000),
+      headers: YOUTUBE_HEADERS,
+      redirect: 'follow',
+      signal: AbortSignal.timeout(15_000),
     });
+    if (!res.ok) return null;
     const html = await res.text();
-    const match = html.match(/"channelId":"(UC[\w-]+)"/);
-    return match ? match[1] : null;
+
+    for (const pattern of CHANNEL_ID_PATTERNS) {
+      const match = html.match(pattern);
+      if (match) return match[1];
+    }
+    return null;
   } catch {
     return null;
   }

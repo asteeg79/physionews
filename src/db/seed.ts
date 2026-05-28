@@ -136,7 +136,7 @@ const defaultSources = [
   // --- Leitlinien ---
   {
     name: 'AWMF Leitlinien (aktuell)',
-    url: 'https://www.awmf.org/leitlinien/aktuelle-leitlinien',
+    url: 'https://register.awmf.org/de/leitlinien/aktuelle-leitlinien',
     adapterType: 'html:awmf',
     category: 'leitlinien' as const,
     iconName: 'clipboard-list',
@@ -145,7 +145,7 @@ const defaultSources = [
   // --- Allgemein ---
   {
     name: 'Robert Koch-Institut Pressemitteilungen',
-    url: 'https://www.rki.de/SharedDocs/Pressemitteilungen/DE/_inhalt.html',
+    url: 'https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/meldungen-pressemitteilungen-node.html',
     adapterType: 'html:rki',
     category: 'allgemein' as const,
     iconName: 'shield',
@@ -166,7 +166,7 @@ const defaultSources = [
   },
   {
     name: 'DVMT — Aktuelles',
-    url: 'https://dvmt.org/aktuelles/',
+    url: 'https://www.dvmt.de/',
     adapterType: 'html:dvmt',
     category: 'fortbildung' as const,
     iconName: 'graduation-cap',
