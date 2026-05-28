@@ -67,22 +67,22 @@ export async function POST(req: Request) {
     });
   }
 
-  // Top-News-Auswahl analog zum Cron
-  await selectAndPersistTopNews().catch((err) =>
-    console.error('[OnDemand] Top-News-Auswahl fehlgeschlagen:', err)
-  );
-
   await db
     .update(schema.appSettings)
     .set({ lastGlobalRefreshAt: new Date() })
     .where(eq(schema.appSettings.id, 1));
 
-  // Aufräumen (gleich wie Cron)
+  // Aufräumen MUSS VOR der Top-News-Auswahl laufen
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - settings.retentionDays);
   await db
     .delete(schema.newsItems)
     .where(lte(schema.newsItems.publishedAt, cutoff));
+
+  // Top-News-Auswahl analog zum Cron
+  await selectAndPersistTopNews().catch((err) =>
+    console.error('[OnDemand] Top-News-Auswahl fehlgeschlagen:', err)
+  );
 
   return Response.json({
     ok: true,

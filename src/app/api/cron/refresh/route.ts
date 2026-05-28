@@ -77,9 +77,27 @@ export async function POST(req: Request) {
     );
   }
 
-  // AI-Top-News-Auswahl: 3 wichtigste Items aus dem aktuellen Bestand
-  // (Praxis-Relevanz, Aktualität, Themen-Vielfalt). Wird in DB-Flag
-  // is_top_news persistiert und vom Frontend separat abgerufen.
+  // lastGlobalRefreshAt aktualisieren
+  await db
+    .update(schema.appSettings)
+    .set({ lastGlobalRefreshAt: new Date() })
+    .where(eq(schema.appSettings.id, 1));
+
+  // Aufräumen: alte Items löschen — MUSS VOR der Top-News-Auswahl laufen,
+  // sonst werden gerade markierte Items sofort wieder gelöscht.
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - settings.retentionDays);
+  const deleted = await db
+    .delete(schema.newsItems)
+    .where(lte(schema.newsItems.publishedAt, cutoff))
+    .returning({ id: schema.newsItems.id });
+
+  console.log(`[Cron] ${deleted.length} alte Items gelöscht (> ${settings.retentionDays} Tage).`);
+
+  // AI-Top-News-Auswahl: 3 wichtigste Items aus dem AKTUELLEN Bestand
+  // (Praxis-Relevanz, Aktualität, Themen-Vielfalt).
+  // Nach dem Retention-Cleanup, damit nur Items innerhalb der Aufbewahrungs-
+  // dauer in Frage kommen und als Top-News in der DB persistieren.
   let topNewsInfo: { selected: number; usedAi: boolean; pool: number; tokens: number } = {
     selected: 0,
     usedAi: false,
@@ -101,22 +119,6 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error('[Cron] Top-News-Auswahl fehlgeschlagen:', err);
   }
-
-  // lastGlobalRefreshAt aktualisieren
-  await db
-    .update(schema.appSettings)
-    .set({ lastGlobalRefreshAt: new Date() })
-    .where(eq(schema.appSettings.id, 1));
-
-  // Aufräumen: alte Items löschen
-  const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - settings.retentionDays);
-  const deleted = await db
-    .delete(schema.newsItems)
-    .where(lte(schema.newsItems.publishedAt, cutoff))
-    .returning({ id: schema.newsItems.id });
-
-  console.log(`[Cron] ${deleted.length} alte Items gelöscht (> ${settings.retentionDays} Tage).`);
 
   return Response.json({
     ok: true,
