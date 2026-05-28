@@ -1,0 +1,382 @@
+/**
+ * Schlagwortliste für die Physiotherapie-Relevanz-Klassifizierung.
+ *
+ * Konventionen:
+ *  - Alle Begriffe werden case-insensitive verglichen
+ *  - Mehrwort-Begriffe werden als Substring gematcht
+ *  - Begriffe sind so spezifisch wie möglich, um false positives zu vermeiden
+ */
+
+/**
+ * Hochrelevante Begriffe — bei Treffer starker Score-Anstieg.
+ * Methoden, Konzepte und Diagnosen, die direkt im Physio-Alltag relevant sind.
+ */
+export const STRONG_WHITELIST = [
+  // Berufsbezeichnung und unmittelbares Umfeld
+  'physiotherap',
+  'krankengymnast',
+  'kg-zns',
+  'kg-atmung',
+  'kg-gerät',
+  'kg-orth',
+  'heilmittelerbring',
+  'heilmittel-verordnung',
+  'heilmittelverordnung',
+  'heilmittelvergütung',
+  'heilmittelversorgung',
+  'heilmittelpreis',
+  'heilmittelkatalog',
+  'heilmittelrichtlinie',
+  'blankoverordnung',
+  'direktzugang',
+  'modellvorhaben physio',
+  'modellprojekt physio',
+  'vorbehaltsaufgab',
+  'akademisierung physio',
+  'spv', // Sektorenübergreifende Versorgung
+  'shv', // Spitzenverband der Heilmittelverbände
+
+  // Methoden und Techniken
+  'manuelle therapie',
+  'manuelle lymphdrainage',
+  'lymphdrainage',
+  ' mld ',
+  'bobath',
+  'vojta',
+  ' pnf ',
+  'kinesio-taping',
+  'medizinische trainingstherapie',
+  'medizinisches trainingstherap',
+  'schlingentisch',
+  'craniosacral',
+  'craniofacial',
+  'manualtherap',
+
+  // Verbände und Politik (spezifisch Physio)
+  'physio deutschland',
+  'physio-deutschland',
+  'zvk-verband',
+  'verband für physiotherap',
+  'verband physiotherap',
+  'ifk-verband',
+  'bundesverband selbstständiger physio',
+  'dvmt',
+  'igpt', // Interessengemeinschaft
+];
+
+/**
+ * Mittel-relevante Begriffe — bei Treffer leichter Score-Anstieg.
+ * Anatomische und neurologische Themen, bei denen Physiotherapie eine Rolle spielt.
+ */
+export const MEDIUM_WHITELIST = [
+  // Anatomie/Muskuloskelettal
+  'wirbelsäule',
+  'bandscheib',
+  'lws ',
+  'hws ',
+  'bws ',
+  'iliosakral',
+  'iliosacral',
+  'rückenschmerz',
+  'kreuzschmerz',
+  'spinalkanal',
+  'skoliose',
+  'osteoporose',
+  'arthrose',
+  'arthritis',
+  'rheuma',
+  'osteopen',
+  'tendinose',
+  'tendinitis',
+  'rotatorenmanschette',
+  'impingement',
+  'kreuzband',
+  'meniskus',
+  'achillessehne',
+  'tep',
+  'hüft-tep',
+  'knie-tep',
+  'schulterprothese',
+  'gonarthrose',
+  'coxarthrose',
+  'patellaspitzensyndrom',
+
+  // Neurologisch (Schwerpunkt Physiotherapie)
+  'schlaganfall',
+  'multiple sklerose',
+  'ms-erkrank',
+  'parkinson',
+  'querschnittlähm',
+  'querschnitt',
+  'paraplegie',
+  'hemiparese',
+  'spastik',
+  'apoplex',
+  'icp ', // infantile Cerebralparese
+  'cerebralparese',
+  'cerebral palsy',
+  'morbus parkinson',
+
+  // Kardio/Pulmo (Physio-relevant)
+  'copd',
+  'mukoviszidose',
+  'pneumonie-rehabilitation',
+  'atemtherapie',
+  'lungenrehabilitation',
+  'pulmonale rehabil',
+  'herzrehabilitation',
+  'kardiologische rehabil',
+
+  // Reha & Geriatrie
+  'rehabilitation',
+  'reha-',
+  'frührehabilitation',
+  'mobilisation',
+  'sturzprävention',
+  'geriatri',
+  'gangbild',
+  'gangstörung',
+  'gleichgewicht',
+  'propriozeption',
+  'tiefensensibil',
+
+  // Sport-Physio
+  'sportmedizin',
+  'sportverletzung',
+  'sportphysiotherap',
+  'leistungssport-rehabil',
+  'rückkehr in den sport',
+  'return-to-sport',
+  'return to play',
+
+  // Pädiatrie-Physio
+  'kinderphysiotherap',
+  'pädiatrische physio',
+  'entwicklungsstörung',
+  'frühförderung',
+];
+
+/**
+ * Begriffe, die einen physiotherapeutischen Kontext stark vermuten lassen
+ * (z.B. weil sie Behandlungs- oder Studienkontext sind).
+ */
+export const CONTEXTUAL_WHITELIST = [
+  'evidenz',
+  'leitlinie',
+  's3-leitlinie',
+  's2k-leitlinie',
+  'metaanalyse',
+  'meta-analyse',
+  'rct ',
+  'randomisierte',
+  'cochrane-review',
+  'systematic review',
+  'kohortenstudie',
+  'awmf',
+  'bewegungstherap',
+  'übungsprogramm',
+  'übungstherap',
+  'trainingsstudie',
+  'physikalische therapie',
+];
+
+/**
+ * Klar irrelevante Themen — bei Treffer starker Score-Abzug.
+ * Diese Themen tauchen besonders in BMG/RKI-Quellen auf.
+ */
+export const HARD_BLACKLIST = [
+  'apothek',
+  'apothekenreform',
+  'apothekenbetrieb',
+  'cannabis-gesetz',
+  'cannabisanbau',
+  'cannabis-medizin', // teils Physio-relevant, aber meist Gesetzgebung
+  'tabak',
+  'rauchstopp',
+  'pflegeversicherung-finanz',
+  'krankenhausvergütung',
+  'krankenhausplanung',
+  'kassenärztliche bundesvereinigung',
+  'kbv-news',
+  'tierheilbehandlung',
+  'veterinär',
+  'lebensmittel',
+  'tabakerzeugnis',
+  'organspende',
+  'transplantation',
+  'sterbehilfe',
+  'embryonenschutz',
+  'reproduktionsmedizin',
+  'zahnmedizin',
+  'zahnärzt',
+  'parodontitis',
+  'mundhygiene',
+  'augenheilkund',
+  'augenarzt',
+  'kataract',
+  'wha-genf', // WHO Genf
+  'weltgesundheitsversammlung',
+  'newsletter-anmeldung',
+  'rss-feed',
+  'mediathek',
+  'pressekontakt',
+  'soziale-medien',
+  'instagram',
+  'facebook',
+];
+
+/**
+ * Weiche Blacklist — leichter Score-Abzug. Themen, die meistens nicht relevant
+ * sind, aber Ausnahmen erlauben.
+ */
+export const SOFT_BLACKLIST = [
+  'tuberkulose',
+  'antibiotika',
+  'malaria',
+  'masern',
+  'mumps',
+  'röteln',
+  'influenza',
+  'corona',
+  'covid', // wenn nicht Long-COVID/Physio
+  'sars-cov',
+  'krebsregister',
+  'krebs in deutschland',
+  'krebsforschung',
+  'onkologie-news',
+  'epidemiologisch',
+  'global burden',
+  'tropenmedizin',
+  'impfung',
+  'impfstoff',
+  'pandemie',
+  'public-health-konferenz',
+];
+
+/**
+ * Begriffe, die eine Blacklist-Eintragung "kompensieren" — z.B. wenn
+ * "Krebs" zusammen mit "Onkologische Reha" oder "Lymphdrainage" steht.
+ */
+export const BLACKLIST_RESCUE = [
+  'rehabilitation',
+  'reha-',
+  'lymphdrainage',
+  'physiotherap',
+  'krankengymnast',
+  'mobilisation',
+  'bewegungstherap',
+  'long covid',
+  'long-covid',
+  'post-covid',
+  'post-akut',
+  'fatigue-management',
+];
+
+export interface ScoreInput {
+  title: string;
+  summary?: string | null;
+  sourceName: string;
+  sourceCategory: string;
+}
+
+export interface ScoreResult {
+  score: number; // 0-10
+  reason: string;
+  decision: 'accept' | 'reject' | 'gray';
+  hits: { strong: string[]; medium: string[]; contextual: string[]; hard: string[]; soft: string[]; rescue: string[] };
+}
+
+/**
+ * Source-Gewichtungen für die Relevanz-Berechnung.
+ * Berufsverbände → starker Bonus, allgemeine Gesundheits-Quellen → leichter Malus.
+ */
+const SOURCE_BIAS: Record<string, number> = {
+  // Berufsverbände — alle Items relevant
+  'IFK Aktuelles': 3,
+  'VPT Bundesverband': 3,
+  'VPT NRW Aktuelles': 3,
+  'VDB Physiotherapieverband NRW': 3,
+  'Physio Deutschland (ZVK)': 3,
+  'DVMT — Aktuelles': 3,
+
+  // Recht (heilmittel-spezifisch)
+  'RA Benjamin Alt — Aktuelles': 3,
+  'RA Benjamin Alt — Artikel': 3,
+  'RA Benjamin Alt — YouTube': 3,
+
+  // Evidenz / Fachpresse
+  'Thieme physioscience (RSS)': 3,
+  'Thieme Journal KG/Manuelle Therapie': 3,
+  'Thieme Newsletter Landing': 2,
+  'Cochrane für Physiotherapeuten': 3,
+  'Cochrane Deutschland — News': 0, // gemischt
+  'physio.de Newsletter-Archiv': 2,
+  'physiotherapeuten.de — Wirbelsäule': 3,
+  'physiotherapeuten.de — untere Extremität': 3,
+  'physiotherapeuten.de — obere Extremität': 3,
+
+  // Allgemein-Gesundheit — leicht abwerten, da viele off-topic Items
+  'BMG Pressemitteilungen': -1,
+  'Robert Koch-Institut Pressemitteilungen': -2,
+  'G-BA Pressemitteilungen': -1,
+  'DGSP — News': 0, // Sportmedizin, oft relevant
+  'AWMF Leitlinien (aktuell)': 1, // leichter Bonus für Leitlinien
+
+  // Ärzteblatt: stark gemischt
+  'Ärzteblatt RSS Übersicht': -1,
+};
+
+/**
+ * Berechnet einen Relevanz-Score (0-10) für ein News-Item auf Basis von
+ * Schlagwörtern und Quelle. Liefert auch eine Begründung und eine
+ * Entscheidung: accept / reject / gray (Gray-Items werden an Gemini gegeben).
+ */
+export function scoreByKeywords(input: ScoreInput): ScoreResult {
+  const text = `${input.title} ${input.summary ?? ''}`.toLowerCase();
+  const sourceBias = SOURCE_BIAS[input.sourceName] ?? 0;
+
+  const hits = {
+    strong: STRONG_WHITELIST.filter((kw) => text.includes(kw)),
+    medium: MEDIUM_WHITELIST.filter((kw) => text.includes(kw)),
+    contextual: CONTEXTUAL_WHITELIST.filter((kw) => text.includes(kw)),
+    hard: HARD_BLACKLIST.filter((kw) => text.includes(kw)),
+    soft: SOFT_BLACKLIST.filter((kw) => text.includes(kw)),
+    rescue: BLACKLIST_RESCUE.filter((kw) => text.includes(kw)),
+  };
+
+  let score = 5; // neutraler Start
+
+  // Whitelist-Punkte
+  score += Math.min(hits.strong.length * 3, 6); // max +6
+  score += Math.min(hits.medium.length * 1.5, 4); // max +4
+  score += Math.min(hits.contextual.length * 0.5, 2); // max +2
+
+  // Blacklist-Abzug — aber "Rescue"-Treffer mindern den Abzug
+  const hardPenalty = hits.hard.length * 5; // jeder harte Hit -5
+  const softPenalty = hits.soft.length * 2; // jeder weiche Hit -2
+  const rescueRelief = Math.min(hits.rescue.length * 2.5, hardPenalty + softPenalty);
+  score -= hardPenalty + softPenalty - rescueRelief;
+
+  // Source-Bias
+  score += sourceBias;
+
+  // Auf 0-10 clampen
+  score = Math.max(0, Math.min(10, Math.round(score)));
+
+  // Begründung kompakt zusammenstellen
+  const reasonParts: string[] = [];
+  if (hits.strong.length > 0) reasonParts.push(`+strong:${hits.strong.slice(0, 2).join(',')}`);
+  if (hits.medium.length > 0) reasonParts.push(`+med:${hits.medium.slice(0, 2).join(',')}`);
+  if (hits.hard.length > 0) reasonParts.push(`-hard:${hits.hard.slice(0, 2).join(',')}`);
+  if (hits.soft.length > 0) reasonParts.push(`-soft:${hits.soft.slice(0, 2).join(',')}`);
+  if (sourceBias !== 0) reasonParts.push(`src:${sourceBias > 0 ? '+' : ''}${sourceBias}`);
+  const reason = reasonParts.join(' | ') || 'neutral';
+
+  // Entscheidung
+  let decision: ScoreResult['decision'];
+  if (score >= 7) decision = 'accept';
+  else if (score <= 2) decision = 'reject';
+  else decision = 'gray';
+
+  return { score, reason, decision, hits };
+}

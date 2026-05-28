@@ -19,6 +19,13 @@ export const categoryEnum = pgEnum('news_category', [
   'allgemein',
 ]);
 
+export const relevanceMethodEnum = pgEnum('relevance_method', [
+  'keyword',
+  'ai',
+  'manual',
+  'pending',
+]);
+
 export const sources = pgTable('sources', {
   id: uuid('id').primaryKey().defaultRandom(),
   name: text('name').notNull(),
@@ -49,10 +56,15 @@ export const newsItems = pgTable(
     publishedAt: timestamp('published_at', { withTimezone: true }).notNull(),
     fetchedAt: timestamp('fetched_at', { withTimezone: true }).notNull().defaultNow(),
     isRead: boolean('is_read').notNull().default(false),
+    // Relevanz-Klassifizierung: 0 = irrelevant, 10 = hochrelevant für Physiotherapie
+    relevanceScore: integer('relevance_score').notNull().default(5),
+    relevanceMethod: relevanceMethodEnum('relevance_method').notNull().default('pending'),
+    relevanceReason: text('relevance_reason'),
   },
   (t) => [
     index('news_published_idx').on(t.publishedAt),
     index('news_source_idx').on(t.sourceId),
+    index('news_relevance_idx').on(t.relevanceScore),
   ]
 );
 
