@@ -1,6 +1,7 @@
 import type { SourceAdapter } from './types';
 import { RssAdapter } from './rss';
 import { YouTubeAdapter } from './youtube';
+import { GoogleNewsAdapter } from './google-news';
 import { GenericHtmlAdapter } from './html/generic';
 
 import { IfkAdapter } from './html/ifk';
@@ -19,6 +20,7 @@ import { DvmtAdapter } from './html/dvmt';
 const adapters: SourceAdapter[] = [
   new RssAdapter(),
   new YouTubeAdapter(),
+  new GoogleNewsAdapter(),
 
   // Spezifische HTML-Adapter
   new IfkAdapter(),

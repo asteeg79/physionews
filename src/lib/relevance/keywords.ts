@@ -311,9 +311,11 @@ const SOURCE_BIAS: Record<string, number> = {
   'Cochrane für Physiotherapeuten': 3,
   'Cochrane Deutschland — News': 0, // gemischt
   'physio.de Newsletter-Archiv': 2,
-  'physiotherapeuten.de — Wirbelsäule': 3,
-  'physiotherapeuten.de — untere Extremität': 3,
-  'physiotherapeuten.de — obere Extremität': 3,
+  // physiotherapeuten.de via Google News (Original-Seite hat Brightboy-Schutz)
+  'physiotherapeuten.de — Wirbelsäule (via Google News)': 3,
+  'physiotherapeuten.de — untere Extremität (via Google News)': 3,
+  'physiotherapeuten.de — obere Extremität (via Google News)': 3,
+  'physiotherapeuten.de — Neurologie & Sport (via Google News)': 3,
 
   // Allgemein-Gesundheit — leicht abwerten, da viele off-topic Items
   'BMG Pressemitteilungen': -1,
