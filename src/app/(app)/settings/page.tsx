@@ -1,10 +1,24 @@
 import { Settings } from 'lucide-react';
 import { PushSettings } from '@/components/PushSettings';
 import { InstallStatus } from '@/components/InstallStatus';
+import { SettingsForm } from '@/components/SettingsForm';
 import Link from 'next/link';
 import { ChevronRight, List } from 'lucide-react';
+import { db, schema } from '@/db';
 
-export default function SettingsPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function SettingsPage() {
+  const [settings] = await db.select().from(schema.appSettings).limit(1);
+
+  if (!settings) {
+    return (
+      <div className="py-6 px-3">
+        <p className="text-sm text-destructive">Settings-Tabelle leer. Bitte Seed laufen lassen.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="py-6 space-y-6 px-3">
       <div className="flex items-center gap-2">
@@ -47,9 +61,21 @@ export default function SettingsPage() {
         </Link>
       </section>
 
-      <p className="text-xs text-muted-foreground text-center pt-4">
-        Phase 5 ergänzt: Auto-Refresh-Intervall, Aufbewahrungsdauer, „Alle als gelesen"
-      </p>
+      <section className="space-y-3">
+        <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+          Verhalten
+        </h2>
+        <SettingsForm
+          initialSettings={{
+            refreshIntervalHours: settings.refreshIntervalHours,
+            refreshWindowStart: settings.refreshWindowStart,
+            refreshWindowEnd: settings.refreshWindowEnd,
+            retentionDays: settings.retentionDays,
+            notificationsEnabled: settings.notificationsEnabled,
+            lastGlobalRefreshAt: settings.lastGlobalRefreshAt?.toISOString() ?? null,
+          }}
+        />
+      </section>
     </div>
   );
 }

@@ -36,6 +36,7 @@ const adapters: SourceAdapter[] = [
   new DvmtAdapter(),
 
   // Generic-Fallback für Quellen, die noch keinen spezifischen Adapter haben
+  new GenericHtmlAdapter('html:generic'),
   new GenericHtmlAdapter('html:thiemeJournal'),
   new GenericHtmlAdapter('html:thiemeNewsletter'),
   new GenericHtmlAdapter('html:physiotherapeutenDe'),
