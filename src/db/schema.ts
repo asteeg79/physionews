@@ -103,6 +103,13 @@ export const appSettings = pgTable('app_settings', {
   retentionDays: integer('retention_days').notNull().default(30),
   notificationsEnabled: boolean('notifications_enabled').notNull().default(true),
   lastGlobalRefreshAt: timestamp('last_global_refresh_at', { withTimezone: true }),
+  /**
+   * Cutoff für Push-Benachrichtigungen: nur News-Items mit
+   * `fetched_at > last_notified_at` werden gepusht. Verhindert, dass
+   * dasselbe Item zwei Mal benachrichtigt wird, wenn der classify-Cron
+   * mehrfach pro Refresh-Zyklus läuft (GitHub-Actions-Loop).
+   */
+  lastNotifiedAt: timestamp('last_notified_at', { withTimezone: true }),
 });
 
 /**

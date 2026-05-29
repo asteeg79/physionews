@@ -12,8 +12,8 @@ import { fetchAllSources } from '@/lib/feed-fetcher';
 import { classifyPendingItems } from '@/lib/relevance';
 import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 import { db, schema } from '@/db';
-import { eq, lte, gte, and } from 'drizzle-orm';
-import { sendPushToAllSubscriptions } from '@/lib/push-sender';
+import { eq, lte } from 'drizzle-orm';
+import { notifyNewHighRelevanceItems } from '@/lib/push-sender';
 import { checkCronSecret } from '@/lib/cron-auth';
 import { checkWindow } from '@/lib/cron-window';
 
@@ -36,42 +36,17 @@ export async function POST(req: Request) {
   console.log(`[Cron:Legacy] Komplettlauf (${win.berlinHour}h)`);
 
   // 1. Fetch
-  const fetchStartedAt = new Date();
   const { results, totalNew } = await fetchAllSources();
 
   // 2. Classify
   const classify = await classifyPendingItems();
 
-  // 3. Push für hochrelevante Items
-  let pushSent = 0;
-  if (totalNew > 0 && win.settings.notificationsEnabled) {
-    const highRel = await db
-      .select({
-        title: schema.newsItems.title,
-        url: schema.newsItems.url,
-        sourceName: schema.sources.name,
-        sourceNotifications: schema.sources.notificationsEnabled,
-      })
-      .from(schema.newsItems)
-      .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
-      .where(
-        and(
-          gte(schema.newsItems.fetchedAt, fetchStartedAt),
-          gte(schema.newsItems.relevanceScore, PUSH_RELEVANCE_THRESHOLD),
-          eq(schema.sources.notificationsEnabled, true)
-        )
-      )
-      .limit(10);
-    for (const item of highRel) {
-      if (!item.sourceNotifications) continue;
-      await sendPushToAllSubscriptions({
-        title: item.sourceName,
-        body: item.title,
-        url: item.url,
-      });
-      pushSent++;
-    }
-  }
+  // 3. Push für hochrelevante NEUE Items (idempotent via lastNotifiedAt)
+  const notify = await notifyNewHighRelevanceItems({
+    threshold: PUSH_RELEVANCE_THRESHOLD,
+    notificationsEnabled: win.settings.notificationsEnabled,
+  });
+  const pushSent = notify.pushSent;
 
   // 4. Retention-Cleanup
   const cutoff = new Date();

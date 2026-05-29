@@ -9,10 +9,8 @@
  * Läuft nach /api/cron/fetch (siehe GitHub-Actions-Workflow).
  */
 
-import { db, schema } from '@/db';
-import { eq, gte, and } from 'drizzle-orm';
 import { classifyPendingItems } from '@/lib/relevance';
-import { sendPushToAllSubscriptions } from '@/lib/push-sender';
+import { notifyNewHighRelevanceItems } from '@/lib/push-sender';
 import { checkCronSecret } from '@/lib/cron-auth';
 import { checkWindow } from '@/lib/cron-window';
 
@@ -35,10 +33,6 @@ export async function POST(req: Request) {
 
   console.log(`[Cron:Classify] Start (${win.berlinHour}h Berlin)`);
 
-  // Marker für die Push-Auswahl: alles was nach diesem Zeitpunkt klassifiziert
-  // wird, ist „frisch klassifiziert" (nicht: frisch fetched).
-  const classifyStartedAt = new Date();
-
   // 150 Items pro Aufruf — hält uns sicher unter 60s Vercel-Function-Timeout.
   // Bei mehr ruft GitHub Actions den Endpoint mehrfach auf (siehe workflow).
   const CHUNK_SIZE = 150;
@@ -50,44 +44,17 @@ export async function POST(req: Request) {
       `remaining: ${classify.remaining})`
   );
 
-  // Push für hochrelevante neu klassifizierte Items
-  let pushSent = 0;
-  if (classify.total > 0 && win.settings.notificationsEnabled) {
-    // Items die in diesem Lauf klassifiziert wurden und den Schwellwert reißen.
-    // Wir nutzen fetchedAt als Surrogat — Items wurden seit dem letzten Cron-Run
-    // inserted, bevor sie klassifiziert werden konnten.
-    const highRelevanceItems = await db
-      .select({
-        title: schema.newsItems.title,
-        url: schema.newsItems.url,
-        sourceName: schema.sources.name,
-        sourceNotifications: schema.sources.notificationsEnabled,
-      })
-      .from(schema.newsItems)
-      .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
-      .where(
-        and(
-          gte(schema.newsItems.relevanceScore, PUSH_RELEVANCE_THRESHOLD),
-          gte(schema.newsItems.fetchedAt, new Date(classifyStartedAt.getTime() - 1000 * 60 * 30)),
-          eq(schema.sources.notificationsEnabled, true)
-        )
-      )
-      .limit(10);
-
-    for (const item of highRelevanceItems) {
-      if (!item.sourceNotifications) continue;
-      await sendPushToAllSubscriptions({
-        title: item.sourceName,
-        body: item.title,
-        url: item.url,
-      });
-      pushSent++;
-    }
-    console.log(
-      `[Cron:Classify] ${pushSent} Push-Benachrichtigungen versendet ` +
-        `(Schwellwert: Score >= ${PUSH_RELEVANCE_THRESHOLD}).`
-    );
-  }
+  // Push für hochrelevante NEUE Items (idempotent via app_settings.last_notified_at).
+  // Mehrfache classify-Aufrufe pro Refresh-Zyklus pushen dasselbe Item NIE doppelt,
+  // weil der Helper den Cutoff atomar hochzieht.
+  const notify = await notifyNewHighRelevanceItems({
+    threshold: PUSH_RELEVANCE_THRESHOLD,
+    notificationsEnabled: win.settings.notificationsEnabled,
+  });
+  console.log(
+    `[Cron:Classify] Push: ${notify.pushSent} gesendet ` +
+      `(${notify.itemsConsidered} Kandidaten, cutoff war ${notify.cutoffUsed.toISOString()}, Schwellwert >= ${PUSH_RELEVANCE_THRESHOLD}).`
+  );
 
   return Response.json({
     ok: true,
@@ -100,7 +67,7 @@ export async function POST(req: Request) {
       cacheHits: classify.cacheHits,
       quotaThrottled: classify.quotaThrottled,
     },
-    pushSent,
+    pushSent: notify.pushSent,
     /** Wenn > 0, sollte der Workflow classify nochmal aufrufen. */
     remaining: classify.remaining,
   });

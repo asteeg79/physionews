@@ -2,9 +2,11 @@ import { db, schema } from '@/db';
 import { eq, lte } from 'drizzle-orm';
 import { getBerlinHour } from '@/lib/timezone';
 import { fetchAllSources } from '@/lib/feed-fetcher';
-import { sendPushToAllSubscriptions } from '@/lib/push-sender';
+import { notifyNewHighRelevanceItems } from '@/lib/push-sender';
 import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 import { rateLimit, clientIpFrom } from '@/lib/rate-limit';
+
+const PUSH_RELEVANCE_THRESHOLD = 9;
 
 /**
  * Refresh-on-Open Endpoint — vom Frontend aufgerufen, wenn die App geöffnet wird
@@ -54,18 +56,13 @@ export async function POST(req: Request) {
 
   const { results, totalNew } = await fetchAllSources();
 
-  if (totalNew > 0 && settings.notificationsEnabled) {
-    const sourcesWithNew = results.filter((r) => r.newItems > 0);
-    const topTitles = sourcesWithNew
-      .slice(0, 3)
-      .map((r) => `• ${r.sourceName}`)
-      .join('\n');
-    await sendPushToAllSubscriptions({
-      title: `PhysioNews — ${totalNew} neue Beiträge`,
-      body: topTitles,
-      url: '/',
-    });
-  }
+  // Push nur für tatsächlich NEUE hochrelevante Items — idempotent.
+  // (Kein „X neue Beiträge"-Summary mehr — die App ist beim On-Demand-Refresh
+  // ohnehin im Vordergrund, ein Banner darüber wäre redundantes Rauschen.)
+  await notifyNewHighRelevanceItems({
+    threshold: PUSH_RELEVANCE_THRESHOLD,
+    notificationsEnabled: settings.notificationsEnabled,
+  });
 
   await db
     .update(schema.appSettings)

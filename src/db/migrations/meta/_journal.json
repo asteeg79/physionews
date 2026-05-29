@@ -43,6 +43,13 @@
       "when": 1780040319750,
       "tag": "0005_jittery_the_twelve",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1780080461928,
+      "tag": "0006_polite_valeria_richards",
+      "breakpoints": true
     }
   ]
 }
