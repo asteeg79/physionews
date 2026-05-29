@@ -5,11 +5,12 @@ interface LogoIconProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
 }
 
 /**
- * Reines Symbol-Logo: abgerundetes Brand-Quadrat mit stilisierter Figur
- * (ausgestreckte Arme, punktierte Wirbelsäule, Bewegungsbogen).
- * Übernimmt die Farbe vom umgebenden `text-*`-Style (currentColor).
+ * Reines Symbol-Logo: abgerundetes Brand-Quadrat mit dynamischer Figur.
+ * Design „Bewegung" — Arme nach oben gestreckt, gekrümmte Wirbelsäule,
+ * subtiler Halo, ausgeprägter Schwung-Bogen.
  *
- * Gleiches Motiv wie die App-Icons (siehe scripts/generate-icons.ts).
+ * Übernimmt die Farbe vom umgebenden `text-*`-Style (currentColor).
+ * Gleiches Motiv wie die App-Icons (scripts/generate-icons.ts).
  */
 export function LogoIcon({ size = 32, ...props }: LogoIconProps) {
   return (
@@ -25,44 +26,48 @@ export function LogoIcon({ size = 32, ...props }: LogoIconProps) {
       {/* Brand-Quadrat */}
       <rect width="32" height="32" rx="9" fill="currentColor" />
 
-      {/* Kopf */}
-      <circle cx="16" cy="6.6" r="1.9" fill="white" />
+      {/* Bewegungs-Halo */}
+      <circle cx="16" cy="16" r="13" stroke="white" strokeWidth="0.7" fill="none" opacity="0.25" />
 
-      {/* Arme: leicht nach außen geschwungen */}
+      {/* Kopf — leicht versetzt für Drehimpuls */}
+      <circle cx="14.6" cy="6.4" r="2" fill="white" />
+
+      {/* Arme nach oben/außen — Sprung-/Reichen-Geste */}
       <path
-        d="M 14.7 10 C 11 9.2, 7 10, 4 8.6"
+        d="M 13.5 9 Q 8 6.5, 3 4"
         stroke="white"
-        strokeWidth="2"
+        strokeWidth="2.1"
         strokeLinecap="round"
-        strokeLinejoin="round"
         fill="none"
       />
       <path
-        d="M 17.3 10 C 21 9.2, 25 10, 28 8.6"
+        d="M 15.5 9 Q 21 6, 27 5"
         stroke="white"
-        strokeWidth="2"
+        strokeWidth="2.1"
         strokeLinecap="round"
-        strokeLinejoin="round"
         fill="none"
       />
 
-      {/* Wirbelsäule als Punktreihe — minimales Größen-Crescendo */}
-      <circle cx="16" cy="12.2" r="0.6" fill="white" />
-      <circle cx="16" cy="14.0" r="0.75" fill="white" />
-      <circle cx="16" cy="15.9" r="0.9" fill="white" />
-      <circle cx="16" cy="17.8" r="0.9" fill="white" />
-      <circle cx="16" cy="19.7" r="0.85" fill="white" />
-      <circle cx="16" cy="21.6" r="0.7" fill="white" />
-      <circle cx="16" cy="23.4" r="0.55" fill="white" />
+      {/* Hand-Punkte */}
+      <circle cx="3.2" cy="4.2" r="1" fill="white" />
+      <circle cx="27" cy="5.1" r="1.05" fill="white" />
 
-      {/* Bewegungsbogen */}
+      {/* Gekrümmte Wirbelsäule */}
+      <circle cx="14.5" cy="11" r="0.65" fill="white" />
+      <circle cx="14.8" cy="13.1" r="0.8" fill="white" />
+      <circle cx="15.3" cy="15.2" r="0.95" fill="white" />
+      <circle cx="16" cy="17.3" r="0.95" fill="white" />
+      <circle cx="16.7" cy="19.3" r="0.9" fill="white" />
+      <circle cx="17.4" cy="21.2" r="0.75" fill="white" />
+      <circle cx="18" cy="23" r="0.6" fill="white" />
+
+      {/* Schwung-Bogen */}
       <path
-        d="M 5 27.2 Q 16 29.6, 27 27.2"
+        d="M 4 27 Q 17 30.8, 28 26"
         stroke="white"
         strokeWidth="1.6"
         strokeLinecap="round"
         fill="none"
-        opacity="0.85"
       />
     </svg>
   );
