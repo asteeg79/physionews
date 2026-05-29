@@ -19,17 +19,29 @@ jobs:
         run: |
           curl -fsS -X POST \
             -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
-            --max-time 70 \
+            --max-time 75 \
+            --retry 1 --retry-delay 5 \
             https://${{ secrets.APP_DOMAIN }}/api/cron/fetch
 
-      # Schritt 2: Klassifiziere die pending-Items (Keyword + Gemini)
-      # und sende Push für Items mit Score >= 9.
-      - name: 2. Classify and push
+      # Schritt 2: Klassifiziere die pending-Items in Chunks.
+      # Der Endpoint verarbeitet max. 150 Items pro Aufruf und liefert
+      # `remaining` zurück. Wir rufen ihn so oft auf, bis 0 (max 6×).
+      - name: 2. Classify in chunks
         run: |
-          curl -fsS -X POST \
-            -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
-            --max-time 70 \
-            https://${{ secrets.APP_DOMAIN }}/api/cron/classify
+          for i in 1 2 3 4 5 6; do
+            RESP=$(curl -fsS -X POST \
+              -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
+              --max-time 75 \
+              --retry 1 --retry-delay 5 \
+              https://${{ secrets.APP_DOMAIN }}/api/cron/classify)
+            echo "Aufruf $i: $RESP"
+            REMAINING=$(echo "$RESP" | python3 -c "import sys,json; print(json.load(sys.stdin).get('remaining', 0))" 2>/dev/null || echo 0)
+            if [ "$REMAINING" = "0" ]; then
+              echo "Keine pending-Items mehr — fertig nach $i Aufruf(en)"
+              break
+            fi
+            echo "Noch $REMAINING pending — nochmal …"
+          done
 
       # Schritt 3: Retention-Cleanup, lastRefreshAt setzen,
       # AI-Top-News-Auswahl.
@@ -37,5 +49,6 @@ jobs:
         run: |
           curl -fsS -X POST \
             -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
-            --max-time 70 \
+            --max-time 75 \
+            --retry 1 --retry-delay 5 \
             https://${{ secrets.APP_DOMAIN }}/api/cron/maintenance

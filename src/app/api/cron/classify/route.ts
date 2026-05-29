@@ -39,11 +39,15 @@ export async function POST(req: Request) {
   // wird, ist „frisch klassifiziert" (nicht: frisch fetched).
   const classifyStartedAt = new Date();
 
-  const classify = await classifyPendingItems();
+  // 150 Items pro Aufruf — hält uns sicher unter 60s Vercel-Function-Timeout.
+  // Bei mehr ruft GitHub Actions den Endpoint mehrfach auf (siehe workflow).
+  const CHUNK_SIZE = 150;
+  const classify = await classifyPendingItems(CHUNK_SIZE);
   console.log(
     `[Cron:Classify] ${classify.total} klassifiziert (keyword: ${classify.byMethod.keyword}, ` +
       `ai: ${classify.byMethod.ai}, gelöscht: ${classify.deletedBelowThreshold}, ` +
-      `gemini batches: ${classify.geminiBatches}, ~tokens: ${classify.geminiTokensEstimated})`
+      `gemini batches: ${classify.geminiBatches}, ~tokens: ${classify.geminiTokensEstimated}, ` +
+      `remaining: ${classify.remaining})`
   );
 
   // Push für hochrelevante neu klassifizierte Items
@@ -93,7 +97,11 @@ export async function POST(req: Request) {
       deletedBelowThreshold: classify.deletedBelowThreshold,
       geminiBatches: classify.geminiBatches,
       tokens: classify.geminiTokensEstimated,
+      cacheHits: classify.cacheHits,
+      quotaThrottled: classify.quotaThrottled,
     },
     pushSent,
+    /** Wenn > 0, sollte der Workflow classify nochmal aufrufen. */
+    remaining: classify.remaining,
   });
 }

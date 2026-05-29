@@ -233,8 +233,12 @@ export async function purgeBelowThreshold(): Promise<number> {
 /**
  * Holt sich Items, die noch nicht klassifiziert wurden (method='pending')
  * und klassifiziert sie. Wird vom Cron + Skript benutzt.
+ *
+ * @param limit Maximale Items pro Aufruf. Vercel-Functions haben ein
+ *              60s-Timeout — bei großen Batches lieber mehrere kleine
+ *              Aufrufe machen.
  */
-export async function classifyPendingItems(): Promise<PipelineResult> {
+export async function classifyPendingItems(limit = 500): Promise<PipelineResult & { remaining: number }> {
   const items = await db
     .select({
       id: schema.newsItems.id,
@@ -247,9 +251,9 @@ export async function classifyPendingItems(): Promise<PipelineResult> {
     .from(schema.newsItems)
     .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
     .where(eq(schema.newsItems.relevanceMethod, 'pending'))
-    .limit(500);
+    .limit(limit);
 
-  return classifyNewItems(
+  const result = await classifyNewItems(
     items.map((row) => ({
       id: row.id,
       title: row.title,
@@ -259,4 +263,12 @@ export async function classifyPendingItems(): Promise<PipelineResult> {
       sourceCategory: row.sourceCategory,
     }))
   );
+
+  // Wie viele bleiben pending? Wenn > 0, sollte der Caller nochmal anrufen.
+  const [{ n: remaining }] = (await db
+    .select({ n: sql<number>`COUNT(*)::int` })
+    .from(schema.newsItems)
+    .where(eq(schema.newsItems.relevanceMethod, 'pending'))) as Array<{ n: number }>;
+
+  return { ...result, remaining };
 }

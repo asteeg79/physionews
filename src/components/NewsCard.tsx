@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { Check, Star, ExternalLink, ChevronDown, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { formatRelative, formatDate } from '@/lib/format-date';
@@ -34,6 +34,17 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
   const [optimisticRead, setOptimisticRead] = useState(item.isRead);
   const isRead = item.isRead || optimisticRead;
   const isHighlighted = isHighlightedSource(item.source.name);
+
+  // iOS-Safari rendert geclampten Text gelegentlich nicht neu,
+  // wenn der Display-Mode wechselt. Wir erzwingen nach jedem
+  // Toggle einen Reflow auf dem Article-Element.
+  const articleRef = useRef<HTMLElement | null>(null);
+  useLayoutEffect(() => {
+    const el = articleRef.current;
+    if (!el) return;
+    // Triggert ein Layout-Recalc, ohne dass etwas auf dem Screen flackert
+    void el.offsetHeight;
+  }, [expanded]);
 
   // Live-Vorschau-Lazy-Loading
   const [livePreview, setLivePreview] = useState<string | null>(null);
@@ -92,7 +103,14 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
   if (expanded) cardClasses += ' shadow-md';
 
   return (
-    <article className={cardClasses}>
+    <article
+      ref={articleRef}
+      className={cardClasses}
+      // contain: 'content' isoliert das Layout dieser Karte vom Rest —
+      // beschleunigt Reflow und vermeidet iOS-Safari-Layout-Glitches
+      // beim Auf-/Zuklappen.
+      style={{ contain: 'content' }}
+    >
       {/* Header (klickbar zum Aufklappen) */}
       <button
         type="button"
@@ -133,23 +151,19 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
           </div>
         </div>
 
-        {/* Titel: kollabiert auf 2 Zeilen, expanded zeigt alles.
-            Wichtig für iOS-Safari: <span> mit display:-webkit-box bleibt konstant,
-            wir ändern nur den -webkit-line-clamp-Wert über eine inline Style. */}
+        {/* Titel: -webkit-box bleibt KONSTANT — wir ändern nur den
+            line-clamp-Wert (2 vs. sehr hoch). iOS-Safari aktualisiert
+            den Clamp zuverlässig nur, wenn der Display-Mode nicht wechselt. */}
         <h2
           className={`font-semibold text-sm leading-snug mb-1 ${
             isRead ? 'text-muted-foreground' : 'text-foreground'
           }`}
-          style={
-            expanded
-              ? { display: 'block' }
-              : {
-                  display: '-webkit-box',
-                  WebkitBoxOrient: 'vertical',
-                  WebkitLineClamp: 2,
-                  overflow: 'hidden',
-                }
-          }
+          style={{
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            WebkitLineClamp: expanded ? 99 : 2,
+            overflow: 'hidden',
+          }}
         >
           {item.title}
         </h2>
