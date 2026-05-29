@@ -3,17 +3,16 @@
 /**
  * NewsList — orchestriert die Anzeige aller News.
  *
- * Lade-Strategie:
- *  - Parallel zwei API-Calls: alle Items (kategorie-gefiltert) und die
- *    AI-kuratierten Top-News (is_top_news=true)
- *  - Top-News werden aus der Hauptliste ausgeklammert (keine Doppel-Anzeige)
- *  - Top-News werden ungeachtet der Kategorie immer angezeigt (Übersicht)
+ * Lade-Strategie (UX-optimiert für rapide Filter-Wechsel):
+ *  - Erste Load: Skeleton-Karten
+ *  - Folge-Wechsel: alte Items bleiben sichtbar, oben erscheint eine
+ *    dezente Progress-Bar — sobald neue Daten da sind, wird ausgetauscht
+ *  - Browser-Cache (max-age=20) macht häufige Filter-Wechsel instant
  *
- * Time-Buckets (Heute/Diese Woche/Diesen Monat/Älter) werden client-seitig
- * aus publishedAt berechnet — siehe lib/time-bucket.ts.
+ * Time-Buckets werden client-seitig aus publishedAt berechnet.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { TimeBucketSection } from './TimeBucketSection';
 import { TopNewsSection } from './TopNewsSection';
@@ -36,10 +35,12 @@ export function NewsList({ category }: NewsListProps) {
   const ebp = sp.get('ebp') === 'true';
   const hasFilter = q.length > 0 || tag.length > 0 || ebp;
 
-  const [items, setItems] = useState<NewsItemWithSource[]>([]);
+  const [items, setItems] = useState<NewsItemWithSource[] | null>(null);
   const [topNews, setTopNews] = useState<NewsItemWithSource[]>([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [, startTransition] = useTransition();
+  // Pending nur für „still loading"-Indikator, blockiert NICHT das Rendering der alten Liste
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams();
@@ -48,47 +49,56 @@ export function NewsList({ category }: NewsListProps) {
     if (tag) params.set('tag', tag);
     if (ebp) params.set('ebp', 'true');
     const mainUrl = `/api/news${params.toString() ? `?${params.toString()}` : ''}`;
-    // Top-News kommen IMMER ungeachtet der Kategorie — aber bei aktiver
+    // Top-News kommen IMMER ungeachtet der Kategorie — bei aktiver
     // Suche oder Tag-Filter werden sie ausgeblendet (passt nicht zum Filter)
     const topUrl = hasFilter ? null : `/api/news?topNews=true`;
 
-    setLoading(true);
+    setPending(true);
+    setError(null);
+
+    let cancelled = false;
     Promise.all([
       fetch(mainUrl).then((r) => r.json()),
       topUrl ? fetch(topUrl).then((r) => r.json()) : Promise.resolve([]),
     ])
       .then(([mainData, topData]: [NewsItemWithSource[], NewsItemWithSource[]]) => {
+        if (cancelled) return;
         const hydrate = (item: NewsItemWithSource): NewsItemWithSource => ({
           ...item,
           publishedAt: new Date(item.publishedAt),
           fetchedAt: new Date(item.fetchedAt),
         });
-        setItems(mainData.map(hydrate));
-        setTopNews(topData.map(hydrate));
+        // Transition: Re-Render geschieht im Hintergrund, alte Liste bleibt
+        // sichtbar bis der neue State frisch ist.
+        startTransition(() => {
+          setItems(mainData.map(hydrate));
+          setTopNews(topData.map(hydrate));
+        });
       })
-      .catch(() => setError('Nachrichten konnten nicht geladen werden.'))
-      .finally(() => setLoading(false));
+      .catch(() => {
+        if (!cancelled) setError('Nachrichten konnten nicht geladen werden.');
+      })
+      .finally(() => {
+        if (!cancelled) setPending(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [category, q, tag, ebp, hasFilter]);
 
-  if (loading) return <NewsListSkeleton />;
-  if (error) return <p className="py-8 text-center text-sm text-destructive">{error}</p>;
-
-  if (items.length === 0 && topNews.length === 0) {
-    return (
-      <div className="py-16 text-center">
-        <p className="text-muted-foreground text-sm">Noch keine Nachrichten vorhanden.</p>
-        <p className="text-muted-foreground text-xs mt-1">
-          Starte einen Refresh über das Aktualisieren-Symbol oben.
-        </p>
-      </div>
-    );
+  if (items === null) {
+    // Allererste Load — Skeleton zeigen
+    return <NewsListSkeleton />;
+  }
+  if (error) {
+    return <p className="py-8 text-center text-sm text-destructive">{error}</p>;
   }
 
   // Top-News-IDs aus der Hauptliste entfernen, damit sie nicht doppelt erscheinen
   const topIds = new Set(topNews.map((t) => t.id));
   const restItems = items.filter((i) => !topIds.has(i.id));
 
-  // Bucketing nach Veröffentlichungs-Datum
   const bucketed = BUCKET_ORDER.reduce<Record<TimeBucket, NewsItemWithSource[]>>(
     (acc, b) => ({ ...acc, [b]: [] }),
     {} as Record<TimeBucket, NewsItemWithSource[]>
@@ -97,29 +107,66 @@ export function NewsList({ category }: NewsListProps) {
     bucketed[getTimeBucket(item.publishedAt)].push(item);
   }
 
-  /**
-   * Lokales State-Update beim Lesen — vermeidet doppelte API-Calls
-   * und hält das UI synchron mit dem Klick im Detail-Bereich.
-   */
   const onItemRead = (id: string) => {
-    setItems((prev) => prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)));
+    setItems((prev) =>
+      prev ? prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)) : prev
+    );
     setTopNews((prev) => prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)));
   };
 
   return (
-    <div className="py-2">
+    <div className="py-2 relative">
+      {/* Dezente Progress-Bar oben während des Reloads */}
+      {pending && <PendingBar />}
+
       <ActiveFilters q={q} tag={tag} ebp={ebp} matchCount={items.length} />
 
-      <TopNewsSection items={topNews} onItemRead={onItemRead} />
+      {items.length === 0 && topNews.length === 0 ? (
+        <div className="py-16 text-center">
+          <p className="text-muted-foreground text-sm">Keine Treffer.</p>
+          <p className="text-muted-foreground text-xs mt-1">
+            {hasFilter
+              ? 'Filter anpassen oder zurücksetzen.'
+              : 'Starte einen Refresh über das Aktualisieren-Symbol oben.'}
+          </p>
+        </div>
+      ) : (
+        <>
+          <TopNewsSection items={topNews} onItemRead={onItemRead} />
+          {BUCKET_ORDER.map((bucket) => (
+            <TimeBucketSection
+              key={bucket}
+              bucket={bucket}
+              items={bucketed[bucket]}
+              onItemRead={onItemRead}
+            />
+          ))}
+        </>
+      )}
+    </div>
+  );
+}
 
-      {BUCKET_ORDER.map((bucket) => (
-        <TimeBucketSection
-          key={bucket}
-          bucket={bucket}
-          items={bucketed[bucket]}
-          onItemRead={onItemRead}
-        />
-      ))}
+/**
+ * Dünner Indeterminate-Progress-Balken am oberen Rand der Liste,
+ * zeigt einen laufenden Fetch ohne das UI zu blockieren.
+ */
+function PendingBar() {
+  return (
+    <div className="absolute top-0 left-0 right-0 h-0.5 overflow-hidden">
+      <div
+        className="h-full bg-brand"
+        style={{
+          width: '40%',
+          animation: 'pn-progress 1.2s ease-in-out infinite',
+        }}
+      />
+      <style>{`
+        @keyframes pn-progress {
+          0%   { transform: translateX(-100%); }
+          100% { transform: translateX(350%); }
+        }
+      `}</style>
     </div>
   );
 }

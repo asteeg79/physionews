@@ -133,8 +133,27 @@ export async function GET(req: NextRequest) {
   return jsonResponse(items);
 }
 
+/**
+ * Setzt Cache-Header für die News-API.
+ *
+ * Zwei separate Layer:
+ *  - `Cache-Control` → Browser-Cache (max-age) für rapid Filter-Wechsel
+ *  - `CDN-Cache-Control` → Vercel-Edge-Cache (überlebt Deploys nicht,
+ *    aber gut für concurrent Requests vom selben Edge-PoP)
+ *
+ * Vercel überschreibt `Cache-Control` allein auf dynamic Routes mit
+ * `max-age=0` — `CDN-Cache-Control` wird respektiert und nicht überschrieben.
+ *
+ * Werte:
+ *  - Browser: max-age=20 (Filter-Wechsel innerhalb von 20s = instant)
+ *  - Edge:    s-maxage=60 + SWR=300 (Bursts beim Cron-Run abfangen)
+ */
 function jsonResponse<T>(body: T): Response {
   return Response.json(body, {
-    headers: { 'Cache-Control': 's-maxage=60, stale-while-revalidate=300' },
+    headers: {
+      'Cache-Control': 'public, max-age=20, stale-while-revalidate=60',
+      'CDN-Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+      'Vercel-CDN-Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+    },
   });
 }

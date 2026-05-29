@@ -8,6 +8,7 @@
  * State liegt im URL-Param `?ebp=true` (geteilt mit dem API-Filter).
  */
 
+import { useTransition } from 'react';
 import { FlaskConical } from 'lucide-react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
@@ -16,12 +17,17 @@ export function EbpToggle() {
   const pathname = usePathname();
   const sp = useSearchParams();
   const isActive = sp.get('ebp') === 'true';
+  const [, startTransition] = useTransition();
 
   const toggle = () => {
     const params = new URLSearchParams(sp.toString());
     if (isActive) params.delete('ebp');
     else params.set('ebp', 'true');
-    router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`);
+    // Transition: Button bleibt sofort sichtbar im neuen State, ohne
+    // dass das ganze Liste-Re-Render blockierend wird
+    startTransition(() => {
+      router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`);
+    });
   };
 
   return (
