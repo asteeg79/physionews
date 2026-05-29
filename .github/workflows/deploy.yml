@@ -1,0 +1,60 @@
+# Vercel-Deploy als Fallback / Backup-Pfad.
+#
+# Vercel deployt zwar normalerweise automatisch beim Push auf main, sobald
+# die Vercel-GitHub-App im Repo installiert ist. Diese Integration ist aber
+# schon einmal stillschweigend ausgefallen ("link: NONE" auf Project-Seite,
+# 6 h ohne Auto-Deploy) — und das Frontend hat nicht erkannt, dass die
+# letzten Commits nicht live waren.
+#
+# Dieser Workflow fängt das ab: jeder push auf main triggert einen
+# `vercel deploy --prod`. Das ist idempotent — gibt es schon einen Deploy
+# für denselben Commit-SHA (z. B. weil die App-Integration heute doch
+# greift), wird ein bestehender, identischer Build aliased statt neu
+# gebaut.
+#
+# Benötigte Repository-Secrets:
+#   - VERCEL_TOKEN        (https://vercel.com/account/tokens)
+#   - VERCEL_ORG_ID       (aus .vercel/project.json: "orgId")
+#   - VERCEL_PROJECT_ID   (aus .vercel/project.json: "projectId")
+
+name: Vercel Production Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Mehrere Pushes hintereinander → nur der letzte gewinnt.
+# Spart Build-Minutes, vermeidet Race auf Vercel-Side.
+concurrency:
+  group: vercel-prod-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel environment (production)
+        run: vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+
+      - name: Build
+        run: vercel build --prod --token=$VERCEL_TOKEN
+
+      - name: Deploy prebuilt artifacts to production
+        run: vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
