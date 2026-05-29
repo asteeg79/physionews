@@ -106,10 +106,11 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
     <article
       ref={articleRef}
       className={cardClasses}
-      // contain: 'content' isoliert das Layout dieser Karte vom Rest —
-      // beschleunigt Reflow und vermeidet iOS-Safari-Layout-Glitches
-      // beim Auf-/Zuklappen.
-      style={{ contain: 'content' }}
+      // KEIN `contain: content` — verursacht auf iOS Safari "Phantom-Höhe":
+      // beim Kollabieren bleibt die Box auf der alten Höhe stehen.
+      // Explizites height:auto + min-height:0 zwingt den Browser, sich beim
+      // jedem Toggle die natürliche Inhaltshöhe zu nehmen.
+      style={{ height: 'auto', minHeight: 0 }}
     >
       {/* Header (klickbar zum Aufklappen) */}
       <button
@@ -193,41 +194,45 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
           og:image, das Ergebnis war zu uneinheitlich. Konsistent ohne ist
           aufgeräumter. */}
 
-      {/* Expanded-Bereich — wird komplett aus dem DOM entfernt beim Kollabieren */}
-      {expanded && (
-        <div className="px-4 pb-4 space-y-3 border-t border-border/50 pt-3">
-          {previewLoading ? (
-            <div className="flex items-center gap-2 py-2 text-xs text-muted-foreground">
-              <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
-              Vorschau wird geladen…
-            </div>
-          ) : displaySummary ? (
-            <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">
-              {displaySummary}
-            </p>
-          ) : (
-            <p className="text-xs italic text-muted-foreground">
-              Vorschau nicht abrufbar — vollständiger Artikel öffnet sich über den Link unten.
-            </p>
-          )}
-
-          <div className="flex items-center justify-between pt-1 gap-2">
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleOpen}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline shrink-0"
-            >
-              alles lesen
-              <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-            </a>
-            <span className="text-xs text-muted-foreground truncate">
-              {shortDomain(item.url)}
-            </span>
+      {/* Expanded-Bereich — bleibt IMMER im DOM, wird per `hidden` ausgeblendet.
+          Auf iOS-Safari führt React-Unmount eines Subtrees teils zu
+          "Phantom-Höhen" im Eltern-Container. Mit `hidden` (display:none)
+          ist der Reflow vorhersehbarer. */}
+      <div
+        hidden={!expanded}
+        className="px-4 pb-4 space-y-3 border-t border-border/50 pt-3"
+      >
+        {previewLoading ? (
+          <div className="flex items-center gap-2 py-2 text-xs text-muted-foreground">
+            <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+            Vorschau wird geladen…
           </div>
+        ) : displaySummary ? (
+          <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">
+            {displaySummary}
+          </p>
+        ) : (
+          <p className="text-xs italic text-muted-foreground">
+            Vorschau nicht abrufbar — vollständiger Artikel öffnet sich über den Link unten.
+          </p>
+        )}
+
+        <div className="flex items-center justify-between pt-1 gap-2">
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleOpen}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline shrink-0"
+          >
+            alles lesen
+            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+          </a>
+          <span className="text-xs text-muted-foreground truncate">
+            {shortDomain(item.url)}
+          </span>
         </div>
-      )}
+      </div>
     </article>
   );
 }
