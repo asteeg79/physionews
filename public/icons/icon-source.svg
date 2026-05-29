@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="9" ry="9" fill="#75b72d"/>
-  <path d="M 5 16 L 10 16 L 12 11 L 15 23 L 18 9 L 21 18 L 23 16 L 27 16"
-        stroke="#ffffff" stroke-width="2.3"
+  <rect width="32" height="32" rx="9.00" ry="9.00" fill="#75b72d"/>
+  
+  <!-- Kopf -->
+  <circle cx="16" cy="6.6" r="1.9" fill="#ffffff"/>
+
+  <!-- Arme ausgestreckt, leicht nach außen geschwungen -->
+  <path d="M 14.7 10 C 11 9.2, 7 10, 4 8.6"
+        stroke="#ffffff" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 17.3 10 C 21 9.2, 25 10, 28 8.6"
+        stroke="#ffffff" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Wirbelsäule als dezent verlaufende Punkte -->
+  <circle cx="16" cy="12.2" r="0.6"  fill="#ffffff"/>
+  <circle cx="16" cy="14.0" r="0.75" fill="#ffffff"/>
+  <circle cx="16" cy="15.9" r="0.9"  fill="#ffffff"/>
+  <circle cx="16" cy="17.8" r="0.9"  fill="#ffffff"/>
+  <circle cx="16" cy="19.7" r="0.85" fill="#ffffff"/>
+  <circle cx="16" cy="21.6" r="0.7"  fill="#ffffff"/>
+  <circle cx="16" cy="23.4" r="0.55" fill="#ffffff"/>
+
+  <!-- Bewegungsbogen unten -->
+  <path d="M 5 27.2 Q 16 29.6, 27 27.2"
+        stroke="#ffffff" stroke-width="1.6"
+        stroke-linecap="round" fill="none" opacity="0.85"/>
+  
 </svg>
