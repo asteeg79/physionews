@@ -13,7 +13,10 @@ declare const self: any;
 
 const serwist = new Serwist({
   precacheEntries: self.__SW_MANIFEST,
-  skipWaiting: true,
+  // skipWaiting: false — Updates werden NICHT automatisch aktiviert.
+  // Stattdessen zeigt das Frontend einen Toast "Update verfügbar",
+  // der per Klick die SKIP_WAITING-Message an den SW schickt.
+  skipWaiting: false,
   clientsClaim: true,
   navigationPreload: true,
   fallbacks: {
@@ -73,6 +76,14 @@ self.addEventListener('push', (event: { data?: { json: () => unknown }; waitUnti
       tag: data.tag ?? `physionews-${Date.now()}`,
     })
   );
+});
+
+// Beim Empfang von SKIP_WAITING aktiviert sich der wartende SW sofort.
+// Vom Frontend ausgelöst, nachdem der User auf "Aktualisieren" geklickt hat.
+self.addEventListener('message', (event: { data?: { type?: string } }) => {
+  if (event.data?.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener('notificationclick', (event: { notification: { close: () => void; data: { url?: string } }; waitUntil: (p: Promise<unknown>) => void }) => {

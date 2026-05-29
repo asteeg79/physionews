@@ -3,6 +3,7 @@ import { Roboto, Roboto_Slab } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'sonner';
 import { ServiceWorkerRegistrar } from '@/components/ServiceWorkerRegistrar';
+import { SwUpdatePrompt } from '@/components/SwUpdatePrompt';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ServiceWorkerRegistrar />
+        <SwUpdatePrompt />
         {children}
         <Toaster position="top-center" richColors closeButton theme="system" />
       </body>

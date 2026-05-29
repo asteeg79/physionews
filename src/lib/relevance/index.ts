@@ -16,6 +16,8 @@ import { db, schema } from '@/db';
 import { eq, lt, sql } from 'drizzle-orm';
 import { scoreByKeywords } from './keywords';
 import { classifyBatch, estimateTokens, type GeminiInput } from './gemini';
+import { getQuotaStatus, recordUsage } from './gemini-quota';
+import { getCachedByHashes, setCachedBulk, titleHash } from './gemini-cache';
 
 /** Batch-Größe für Gemini — passt sicher in 4096 maxOutputTokens. */
 const GEMINI_BATCH_SIZE = 20;
@@ -40,6 +42,10 @@ interface PipelineResult {
   geminiBatches: number;
   geminiFailures: number;
   deletedBelowThreshold: number;
+  /** Anzahl Items, die per Cache-Hit klassifiziert wurden (kein API-Call). */
+  cacheHits: number;
+  /** True, wenn das Tages-Quota-Limit gebremst hat. */
+  quotaThrottled: boolean;
 }
 
 /**
@@ -58,6 +64,8 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     geminiBatches: 0,
     geminiFailures: 0,
     deletedBelowThreshold: 0,
+    cacheHits: 0,
+    quotaThrottled: false,
   };
 
   if (items.length === 0) return result;
@@ -103,24 +111,70 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     }
   }
 
-  // Stufe 2: Gemini auf Grauzone (liefert auch Topic-Tags)
+  // Stufe 2: Gemini auf Grauzone (mit Quota-Check und Result-Cache)
   if (grayPool.length > 0 && process.env.GEMINI_API_KEY) {
     const aiResults = new Map<string, { score: number; reason: string; topics: string[] }>();
-    for (let i = 0; i < grayPool.length; i += GEMINI_BATCH_SIZE) {
-      const batch = grayPool.slice(i, i + GEMINI_BATCH_SIZE);
-      result.geminiBatches++;
-      result.geminiTokensEstimated += estimateTokens(batch);
-      const batchResults = await classifyBatch(batch);
-      if (!batchResults) {
-        result.geminiFailures++;
-        continue;
-      }
-      for (const r of batchResults) {
-        aiResults.set(r.id, { score: r.score, reason: r.reason, topics: r.topics });
+
+    // 2a. Cache-Lookup: titles, die wir bereits klassifiziert haben
+    const grayHashes = grayPool.map((g) => ({ ...g, h: titleHash(g.title) }));
+    const cache = await getCachedByHashes(grayHashes.map((g) => g.h));
+    const stillUnclassified: GeminiInput[] = [];
+    for (const g of grayHashes) {
+      const hit = cache.get(g.h);
+      if (hit) {
+        aiResults.set(g.id, { score: hit.score, reason: hit.reason, topics: hit.topics });
+        result.cacheHits++;
+      } else {
+        stillUnclassified.push({ id: g.id, title: g.title, sourceName: g.sourceName });
       }
     }
 
-    // AI-Ergebnisse in updates einarbeiten
+    // 2b. Quota prüfen
+    const quota = await getQuotaStatus();
+    if (!quota.canUseAi && stillUnclassified.length > 0) {
+      result.quotaThrottled = true;
+      console.warn(
+        `[Pipeline] Gemini-Quota erreicht (${quota.tokensUsed}/${quota.tokensUsed + quota.tokensRemaining} Tokens) ` +
+          `— ${stillUnclassified.length} Items bleiben bei Keyword-Score.`
+      );
+    } else if (stillUnclassified.length > 0) {
+      // 2c. API-Calls nur für nicht-gecachte Items
+      const newCacheEntries: Array<Parameters<typeof setCachedBulk>[0][number]> = [];
+      const titleHashes = new Map(stillUnclassified.map((u) => [u.id, titleHash(u.title)]));
+
+      for (let i = 0; i < stillUnclassified.length; i += GEMINI_BATCH_SIZE) {
+        const batch = stillUnclassified.slice(i, i + GEMINI_BATCH_SIZE);
+        result.geminiBatches++;
+        const tokens = estimateTokens(batch);
+        result.geminiTokensEstimated += tokens;
+
+        const batchResults = await classifyBatch(batch);
+        if (!batchResults) {
+          result.geminiFailures++;
+          continue;
+        }
+        await recordUsage(tokens, 1);
+
+        for (const r of batchResults) {
+          aiResults.set(r.id, { score: r.score, reason: r.reason, topics: r.topics });
+          const h = titleHashes.get(r.id);
+          if (h) {
+            newCacheEntries.push({
+              titleHash: h,
+              score: r.score,
+              topics: r.topics,
+              reason: r.reason,
+            });
+          }
+        }
+      }
+      // 2d. Neue Cache-Einträge persistieren
+      if (newCacheEntries.length > 0) {
+        await setCachedBulk(newCacheEntries);
+      }
+    }
+
+    // AI-Ergebnisse (Cache + fresh) in updates einarbeiten
     for (const upd of updates) {
       const ai = aiResults.get(upd.id);
       if (ai) {

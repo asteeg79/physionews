@@ -43,9 +43,14 @@ export const TOPIC_TAXONOMY = [
   'Berufsausbildung',
   'Praxisgründung',
 
-  // Evidenz
+  // Evidenz — EBP-spezifisch (für „Nur Evidenz"-Filter)
   'Leitlinie',
+  'S3-Leitlinie',
+  'S2k-Leitlinie',
   'Studie',
+  'RCT',
+  'Meta-Analyse',
+  'Systematic Review',
   'Cochrane-Review',
 
   // Sonstiges
@@ -62,4 +67,24 @@ const TOPIC_SET = new Set<string>(TOPIC_TAXONOMY);
 export function filterToValidTopics(input: unknown): string[] {
   if (!Array.isArray(input)) return [];
   return input.filter((t): t is string => typeof t === 'string' && TOPIC_SET.has(t)).slice(0, 3);
+}
+
+/**
+ * Evidenzbasierte Tags — Items mit mindestens einem dieser Tags gelten als
+ * „Evidenz"-Beiträge und werden vom EBP-Filter angezeigt.
+ */
+export const EVIDENCE_TOPICS: readonly Topic[] = [
+  'Leitlinie',
+  'S3-Leitlinie',
+  'S2k-Leitlinie',
+  'RCT',
+  'Meta-Analyse',
+  'Systematic Review',
+  'Cochrane-Review',
+  'Studie',
+];
+
+/** True, wenn das Item mindestens ein Evidenz-Tag hat. */
+export function hasEvidenceTopic(topics: readonly string[]): boolean {
+  return topics.some((t) => (EVIDENCE_TOPICS as readonly string[]).includes(t));
 }

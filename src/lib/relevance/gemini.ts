@@ -32,6 +32,10 @@ ${TOPIC_TAXONOMY.join(', ')}
 
 Tags sollen das Item thematisch einordnen. Wenn nichts passt, leeres Array.
 
+EVIDENZ-TAGS sind besonders wichtig: vergib „Leitlinie", „S3-Leitlinie", „S2k-Leitlinie",
+„RCT", „Meta-Analyse", „Systematic Review" oder „Cochrane-Review", wenn das Item
+klar diesen Studientyp benennt. Bei „Studie" allgemein nutze „Studie".
+
 Antworte als JSON-Array in derselben Reihenfolge wie Input.`;
 
 const SYSTEM_PROMPT = SYSTEM_PROMPT_TEMPLATE;

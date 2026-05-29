@@ -72,6 +72,9 @@ export const newsItems = pgTable(
     // Werden von der AI-Klassifizierung beim Bewerten mit ermittelt.
     // Beispiel: ['Wirbelsäule', 'Manuelle Therapie', 'GKV']
     topics: text('topics').array().notNull().default([]),
+    // Sprache des Items — Default 'de'. Items mit 'en' (oder andere)
+    // werden vom Frontend ausgeblendet, da unsere Zielgruppe deutschsprachig ist.
+    lang: text('lang').notNull().default('de'),
   },
   (t) => [
     index('news_published_idx').on(t.publishedAt),
@@ -100,6 +103,29 @@ export const appSettings = pgTable('app_settings', {
   retentionDays: integer('retention_days').notNull().default(30),
   notificationsEnabled: boolean('notifications_enabled').notNull().default(true),
   lastGlobalRefreshAt: timestamp('last_global_refresh_at', { withTimezone: true }),
+});
+
+/**
+ * Tagesweise Gemini-Token-Verbrauchszähler.
+ * date ist der UTC-Tag (Gemini-Tagesquota ist UTC-basiert).
+ */
+export const geminiUsage = pgTable('gemini_usage', {
+  date: text('date').primaryKey(), // YYYY-MM-DD UTC
+  tokensUsed: integer('tokens_used').notNull().default(0),
+  requestsMade: integer('requests_made').notNull().default(0),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+});
+
+/**
+ * Cache für Gemini-Klassifizierungen. Identische Titel (genormter Hash)
+ * brauchen nur einmal pro Refresh-Zyklus den API-Call.
+ */
+export const geminiCache = pgTable('gemini_cache', {
+  titleHash: text('title_hash').primaryKey(),
+  score: integer('score').notNull(),
+  topics: text('topics').array().notNull().default([]),
+  reason: text('reason').notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 });
 
 export type Source = typeof sources.$inferSelect;

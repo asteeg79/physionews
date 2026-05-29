@@ -33,7 +33,8 @@ export function NewsList({ category }: NewsListProps) {
   const sp = useSearchParams();
   const q = sp.get('q')?.trim() ?? '';
   const tag = sp.get('tag')?.trim() ?? '';
-  const hasFilter = q.length > 0 || tag.length > 0;
+  const ebp = sp.get('ebp') === 'true';
+  const hasFilter = q.length > 0 || tag.length > 0 || ebp;
 
   const [items, setItems] = useState<NewsItemWithSource[]>([]);
   const [topNews, setTopNews] = useState<NewsItemWithSource[]>([]);
@@ -45,6 +46,7 @@ export function NewsList({ category }: NewsListProps) {
     if (category) params.set('category', category);
     if (q) params.set('q', q);
     if (tag) params.set('tag', tag);
+    if (ebp) params.set('ebp', 'true');
     const mainUrl = `/api/news${params.toString() ? `?${params.toString()}` : ''}`;
     // Top-News kommen IMMER ungeachtet der Kategorie — aber bei aktiver
     // Suche oder Tag-Filter werden sie ausgeblendet (passt nicht zum Filter)
@@ -66,7 +68,7 @@ export function NewsList({ category }: NewsListProps) {
       })
       .catch(() => setError('Nachrichten konnten nicht geladen werden.'))
       .finally(() => setLoading(false));
-  }, [category, q, tag, hasFilter]);
+  }, [category, q, tag, ebp, hasFilter]);
 
   if (loading) return <NewsListSkeleton />;
   if (error) return <p className="py-8 text-center text-sm text-destructive">{error}</p>;
@@ -106,7 +108,7 @@ export function NewsList({ category }: NewsListProps) {
 
   return (
     <div className="py-2">
-      <ActiveFilters q={q} tag={tag} matchCount={items.length} />
+      <ActiveFilters q={q} tag={tag} ebp={ebp} matchCount={items.length} />
 
       <TopNewsSection items={topNews} onItemRead={onItemRead} />
 

@@ -18,6 +18,7 @@ import { NextRequest } from 'next/server';
 import { db, schema } from '@/db';
 import { desc, eq, and, gte, inArray, sql } from 'drizzle-orm';
 import type { NewsCategory } from '@/db/schema';
+import { EVIDENCE_TOPICS } from '@/lib/relevance/topics';
 
 export const revalidate = 60;
 
@@ -33,6 +34,7 @@ export async function GET(req: NextRequest) {
   const topNewsOnly = sp.get('topNews') === 'true';
   const searchQuery = sp.get('q')?.trim() || null;
   const tag = sp.get('tag')?.trim() || null;
+  const evidenceOnly = sp.get('ebp') === 'true';
 
   // Kategorie-Filter via Source-IDs
   let sourceCategoryFilter: ReturnType<typeof eq> | undefined;
@@ -58,6 +60,10 @@ export async function GET(req: NextRequest) {
     schema.newsItems.relevanceScore,
     MIN_RELEVANCE
   ) as ReturnType<typeof eq>;
+
+  // Sprach-Filter: nur deutsche Items zeigen.
+  // 'unknown' wird beim Insert auf 'de' gemapped, daher nur 'de' OK.
+  const langFilter = eq(schema.newsItems.lang, 'de') as ReturnType<typeof eq>;
   const topNewsFilter = topNewsOnly
     ? (eq(schema.newsItems.isTopNews, true) as ReturnType<typeof eq>)
     : undefined;
@@ -76,13 +82,25 @@ export async function GET(req: NextRequest) {
     ? (sql`${tag} = ANY(${schema.newsItems.topics})` as ReturnType<typeof eq>)
     : undefined;
 
+  // EBP-Filter: mindestens ein Evidenz-Tag muss vorkommen.
+  // Postgres-Operator && (overlap) testet, ob zwei Arrays mindestens ein
+  // gemeinsames Element haben — nutzt den GIN-Index auf topics.
+  const ebpFilter = evidenceOnly
+    ? (sql`${schema.newsItems.topics} && ${sql`ARRAY[${sql.join(
+        EVIDENCE_TOPICS.map((t) => sql`${t}`),
+        sql`, `
+      )}]::text[]`}` as ReturnType<typeof eq>)
+    : undefined;
+
   const conditions = [
     sourceCategoryFilter,
     sinceFilter,
     relevanceFilter,
+    langFilter,
     topNewsFilter,
     searchFilter,
     tagFilter,
+    ebpFilter,
   ].filter(Boolean) as ReturnType<typeof eq>[];
 
   const items = await db

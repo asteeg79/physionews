@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Stethoscope, Scale, Megaphone, LayoutGrid } from 'lucide-react';
+import { EbpToggle } from './EbpToggle';
 
 const TABS = [
   { label: 'Fachlich', href: '/kategorie/fachlich', icon: Stethoscope },
@@ -20,7 +21,7 @@ export function CategoryTabs() {
       className="sticky top-14 z-40 bg-background border-b border-border overflow-x-auto"
     >
       <div className="container max-w-2xl mx-auto px-4">
-        <div className="flex gap-1 py-1 min-w-max">
+        <div className="flex items-center gap-1 py-1 min-w-max">
           {TABS.map((tab) => {
             const isActive =
               tab.href === '/' ? pathname === '/' : pathname === tab.href;
@@ -40,6 +41,8 @@ export function CategoryTabs() {
               </Link>
             );
           })}
+          <span className="w-px h-5 bg-border mx-1 self-center" aria-hidden="true" />
+          <EbpToggle />
         </div>
       </div>
     </nav>

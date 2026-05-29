@@ -391,6 +391,12 @@ const SOURCE_BIAS: Record<string, number> = {
   'physiotherapeuten.de — untere Extremität (via Google News)': 3,
   'physiotherapeuten.de — obere Extremität (via Google News)': 3,
   'physiotherapeuten.de — Neurologie & Sport (via Google News)': 3,
+  // Neue Fachquellen
+  'pt-online.de (via Google News)': 3, // Pflaum-Verlag Fachzeitschrift
+  'Springer Manuelle Medizin (Updates)': 2, // Journal, gemischt
+  'DGOU Pressemitteilungen': 0, // Orthopädie/Unfallchirurgie, gemischt
+  'AOK WIdO — News & Presse': 0, // Wissenschaftsinstitut, gemischt
+  'BARMER Presseinformationen': -1, // Kasse, eher allgemein-politisch
 
   // Allgemein-Gesundheit — stärker abwerten, da viele off-topic Items
   'BMG Pressemitteilungen': -2,

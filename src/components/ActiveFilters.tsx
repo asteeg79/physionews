@@ -7,23 +7,24 @@
  * Beim Schließen wird der entsprechende Param entfernt.
  */
 
-import { Search, Tag, X } from 'lucide-react';
+import { Search, Tag, X, FlaskConical } from 'lucide-react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 interface ActiveFiltersProps {
   q: string;
   tag: string;
+  ebp: boolean;
   matchCount: number;
 }
 
-export function ActiveFilters({ q, tag, matchCount }: ActiveFiltersProps) {
+export function ActiveFilters({ q, tag, ebp, matchCount }: ActiveFiltersProps) {
   const router = useRouter();
   const pathname = usePathname();
   const sp = useSearchParams();
 
-  if (!q && !tag) return null;
+  if (!q && !tag && !ebp) return null;
 
-  const removeParam = (key: 'q' | 'tag') => {
+  const removeParam = (key: 'q' | 'tag' | 'ebp') => {
     const params = new URLSearchParams(sp.toString());
     params.delete(key);
     router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`);
@@ -31,11 +32,16 @@ export function ActiveFilters({ q, tag, matchCount }: ActiveFiltersProps) {
 
   return (
     <div className="flex items-center flex-wrap gap-2 px-1 pt-2 pb-3 text-xs">
-      <span className="text-muted-foreground">
-        {matchCount} {matchCount === 1 ? 'Treffer' : 'Treffer'} ·
-      </span>
+      <span className="text-muted-foreground">{matchCount} Treffer ·</span>
       {q && <FilterChip icon={<Search className="w-3 h-3" />} label={q} onRemove={() => removeParam('q')} />}
       {tag && <FilterChip icon={<Tag className="w-3 h-3" />} label={tag} onRemove={() => removeParam('tag')} />}
+      {ebp && (
+        <FilterChip
+          icon={<FlaskConical className="w-3 h-3" />}
+          label="Nur Evidenz"
+          onRemove={() => removeParam('ebp')}
+        />
+      )}
     </div>
   );
 }

@@ -10,7 +10,7 @@
  */
 
 import { db, schema } from '@/db';
-import { eq, lte } from 'drizzle-orm';
+import { eq, lte, ne, or } from 'drizzle-orm';
 import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 import { checkCronSecret } from '@/lib/cron-auth';
 import { checkWindow } from '@/lib/cron-window';
@@ -28,14 +28,25 @@ export async function POST(req: Request) {
   // Maintenance läuft auch außerhalb des Fensters, damit Retention gewährleistet ist —
   // wir entscheiden bewusst gegen einen Outside-Window-Skip hier.
 
-  // 1. Retention: alte Items löschen
+  // 1a. Retention: alte Items löschen
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - win.settings.retentionDays);
-  const deleted = await db
+  const deletedOld = await db
     .delete(schema.newsItems)
     .where(lte(schema.newsItems.publishedAt, cutoff))
     .returning({ id: schema.newsItems.id });
-  console.log(`[Cron:Maintenance] ${deleted.length} alte Items gelöscht`);
+
+  // 1b. Nicht-deutsche Items löschen — Frontend filtert sie ohnehin aus,
+  //     hier sparen wir uns Speicher und Klassifizierungs-Tokens.
+  const deletedLang = await db
+    .delete(schema.newsItems)
+    .where(ne(schema.newsItems.lang, 'de'))
+    .returning({ id: schema.newsItems.id });
+
+  console.log(
+    `[Cron:Maintenance] ${deletedOld.length} alte + ${deletedLang.length} nicht-deutsche Items gelöscht`
+  );
+  void or; // potentiell für künftige OR-Filter
 
   // 2. lastGlobalRefreshAt aktualisieren
   await db
@@ -69,7 +80,8 @@ export async function POST(req: Request) {
 
   return Response.json({
     ok: true,
-    deletedOldItems: deleted.length,
+    deletedOldItems: deletedOld.length,
+    deletedNonGermanItems: deletedLang.length,
     topNews: topNewsInfo,
     berlinHour: win.berlinHour,
   });

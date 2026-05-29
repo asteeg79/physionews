@@ -16,6 +16,7 @@ import { eq } from 'drizzle-orm';
 import { db, schema } from '@/db';
 import { computeItemId } from './dedup';
 import { getAdapter } from './adapters/registry';
+import { detectLanguage } from './lang-detect';
 import type { Source, NewNewsItem } from '@/db/schema';
 import type { RawNewsItem } from './adapters/types';
 
@@ -136,15 +137,23 @@ function sleep(ms: number): Promise<void> {
 async function insertItems(rawItems: RawNewsItem[], sourceId: string): Promise<number> {
   if (rawItems.length === 0) return 0;
 
-  const toInsert: NewNewsItem[] = rawItems.map((item) => ({
-    id: computeItemId(sourceId, item.url, item.title),
-    sourceId,
-    title: item.title,
-    summary: item.summary,
-    url: item.url,
-    imageUrl: item.imageUrl,
-    publishedAt: item.publishedAt,
-  }));
+  const toInsert: NewNewsItem[] = rawItems.map((item) => {
+    // Sprache aus Titel + Summary erkennen.
+    // Bei 'en' wird das Item zwar inserted, aber im API ausgeblendet
+    // (und beim nächsten Maintenance-Lauf gelöscht).
+    const langProbe = `${item.title} ${item.summary ?? ''}`;
+    const detected = detectLanguage(langProbe);
+    return {
+      id: computeItemId(sourceId, item.url, item.title),
+      sourceId,
+      title: item.title,
+      summary: item.summary,
+      url: item.url,
+      imageUrl: item.imageUrl,
+      publishedAt: item.publishedAt,
+      lang: detected === 'unknown' ? 'de' : detected,
+    };
+  });
 
   const inserted = await db
     .insert(schema.newsItems)
