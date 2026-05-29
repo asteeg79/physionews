@@ -14,8 +14,10 @@
  */
 
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { TimeBucketSection } from './TimeBucketSection';
 import { TopNewsSection } from './TopNewsSection';
+import { ActiveFilters } from './ActiveFilters';
 import { getTimeBucket, BUCKET_ORDER, type TimeBucket } from '@/lib/time-bucket';
 import type { NewsItem, Source, NewsCategory } from '@/db/schema';
 
@@ -28,6 +30,11 @@ interface NewsListProps {
 }
 
 export function NewsList({ category }: NewsListProps) {
+  const sp = useSearchParams();
+  const q = sp.get('q')?.trim() ?? '';
+  const tag = sp.get('tag')?.trim() ?? '';
+  const hasFilter = q.length > 0 || tag.length > 0;
+
   const [items, setItems] = useState<NewsItemWithSource[]>([]);
   const [topNews, setTopNews] = useState<NewsItemWithSource[]>([]);
   const [loading, setLoading] = useState(true);
@@ -36,14 +43,17 @@ export function NewsList({ category }: NewsListProps) {
   useEffect(() => {
     const params = new URLSearchParams();
     if (category) params.set('category', category);
+    if (q) params.set('q', q);
+    if (tag) params.set('tag', tag);
     const mainUrl = `/api/news${params.toString() ? `?${params.toString()}` : ''}`;
-    // Top-News kommen IMMER ungeachtet der Kategorie
-    const topUrl = `/api/news?topNews=true`;
+    // Top-News kommen IMMER ungeachtet der Kategorie — aber bei aktiver
+    // Suche oder Tag-Filter werden sie ausgeblendet (passt nicht zum Filter)
+    const topUrl = hasFilter ? null : `/api/news?topNews=true`;
 
     setLoading(true);
     Promise.all([
       fetch(mainUrl).then((r) => r.json()),
-      fetch(topUrl).then((r) => r.json()),
+      topUrl ? fetch(topUrl).then((r) => r.json()) : Promise.resolve([]),
     ])
       .then(([mainData, topData]: [NewsItemWithSource[], NewsItemWithSource[]]) => {
         const hydrate = (item: NewsItemWithSource): NewsItemWithSource => ({
@@ -56,7 +66,7 @@ export function NewsList({ category }: NewsListProps) {
       })
       .catch(() => setError('Nachrichten konnten nicht geladen werden.'))
       .finally(() => setLoading(false));
-  }, [category]);
+  }, [category, q, tag, hasFilter]);
 
   if (loading) return <NewsListSkeleton />;
   if (error) return <p className="py-8 text-center text-sm text-destructive">{error}</p>;
@@ -96,6 +106,8 @@ export function NewsList({ category }: NewsListProps) {
 
   return (
     <div className="py-2">
+      <ActiveFilters q={q} tag={tag} matchCount={items.length} />
+
       <TopNewsSection items={topNews} onItemRead={onItemRead} />
 
       {BUCKET_ORDER.map((bucket) => (

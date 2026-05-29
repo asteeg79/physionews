@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Check, Star, ExternalLink, ChevronDown, Loader2 } from 'lucide-react';
+import Link from 'next/link';
 import { formatRelative, formatDate } from '@/lib/format-date';
 import type { NewsItem, Source } from '@/db/schema';
 
@@ -169,6 +170,11 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
         )}
       </button>
 
+      {/* Topic-Tags: kleine Chips unter dem Header — klickbar als Filter */}
+      {item.topics && item.topics.length > 0 && (
+        <TopicChips topics={item.topics} muted={isRead && !expanded} />
+      )}
+
       {/* Bilder werden bewusst nicht angezeigt — viele Quellen liefern kein
           og:image, das Ergebnis war zu uneinheitlich. Konsistent ohne ist
           aufgeräumter. */}
@@ -218,4 +224,29 @@ function shortDomain(url: string): string {
   } catch {
     return '';
   }
+}
+
+/**
+ * Topic-Chips — klickbare Tags, die als Filter über `?tag=…` gesetzt werden.
+ * Verhindert Card-Toggle durch stopPropagation auf dem Link.
+ */
+function TopicChips({ topics, muted }: { topics: string[]; muted: boolean }) {
+  return (
+    <div className="px-4 pb-3 -mt-2 flex flex-wrap gap-1.5">
+      {topics.map((t) => (
+        <Link
+          key={t}
+          href={`/?tag=${encodeURIComponent(t)}`}
+          onClick={(e) => e.stopPropagation()}
+          className={`inline-block text-[10px] font-medium px-2 py-0.5 rounded-full border transition-colors ${
+            muted
+              ? 'bg-muted border-border text-muted-foreground'
+              : 'bg-brand-soft border-brand/30 text-brand hover:bg-brand hover:text-white'
+          }`}
+        >
+          {t}
+        </Link>
+      ))}
+    </div>
+  );
 }

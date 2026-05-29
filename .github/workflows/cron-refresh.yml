@@ -3,8 +3,8 @@ name: PhysioNews Feed Refresh
 on:
   schedule:
     # Europe/Berlin = UTC+1 (Winter) / UTC+2 (Sommer)
-    # Gerade Stunden UTC 04–20 => deckt 06–22 Berlin (Winter) ab
-    # Der Endpoint prüft intern selbst, ob wir im Fenster sind.
+    # Gerade Stunden UTC 04–20 => deckt 06–22 Berlin (Winter) ab.
+    # Jeder Endpoint prüft intern selbst, ob wir im Fenster sind.
     - cron: '0 4,6,8,10,12,14,16,18,20 * * *'
   workflow_dispatch: {}
 
@@ -12,8 +12,30 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger refresh endpoint
+      # Schritt 1: Quellen abrufen und neue Items in DB schreiben.
+      # Klassifizierung + Maintenance laufen in separaten Endpoints,
+      # damit jeder einzelne Schritt im Vercel-Function-Timeout bleibt.
+      - name: 1. Fetch sources
         run: |
           curl -fsS -X POST \
             -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
-            https://${{ secrets.APP_DOMAIN }}/api/cron/refresh
+            --max-time 70 \
+            https://${{ secrets.APP_DOMAIN }}/api/cron/fetch
+
+      # Schritt 2: Klassifiziere die pending-Items (Keyword + Gemini)
+      # und sende Push für Items mit Score >= 9.
+      - name: 2. Classify and push
+        run: |
+          curl -fsS -X POST \
+            -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
+            --max-time 70 \
+            https://${{ secrets.APP_DOMAIN }}/api/cron/classify
+
+      # Schritt 3: Retention-Cleanup, lastRefreshAt setzen,
+      # AI-Top-News-Auswahl.
+      - name: 3. Maintenance + Top News
+        run: |
+          curl -fsS -X POST \
+            -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
+            --max-time 70 \
+            https://${{ secrets.APP_DOMAIN }}/api/cron/maintenance

@@ -1,52 +1,54 @@
-import { db, schema } from '@/db';
-import { eq, lte, gte, and, desc } from 'drizzle-orm';
-import { getBerlinHour } from '@/lib/timezone';
-import { fetchAllSources } from '@/lib/feed-fetcher';
-import { sendPushToAllSubscriptions } from '@/lib/push-sender';
-import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
+/**
+ * Legacy-Cron-Endpoint — ruft die drei neuen Stufen nacheinander auf.
+ *
+ * Bleibt für Manuelles-Triggern (z.B. via curl) und für Setups, bei denen
+ * GitHub Actions noch nicht auf den neuen Workflow umgestellt ist.
+ *
+ * In Production wird der Workflow direkt fetch → classify → maintenance
+ * aufrufen, damit jeder Schritt sein eigenes 60s-Function-Timeout-Budget hat.
+ */
 
-// Nur Items mit dieser Mindest-Relevanz lösen eine eigene Push aus.
-// 9-10 = direkter Physio-Praxis-Bezug nach unserer Bewertungs-Rubric.
+import { fetchAllSources } from '@/lib/feed-fetcher';
+import { classifyPendingItems } from '@/lib/relevance';
+import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
+import { db, schema } from '@/db';
+import { eq, lte, gte, and } from 'drizzle-orm';
+import { sendPushToAllSubscriptions } from '@/lib/push-sender';
+import { checkCronSecret } from '@/lib/cron-auth';
+import { checkWindow } from '@/lib/cron-window';
+
+export const maxDuration = 60;
+
 const PUSH_RELEVANCE_THRESHOLD = 9;
 
 export async function POST(req: Request) {
-  // Authentifizierung
-  const cronSecret = req.headers.get('x-cron-secret');
-  if (cronSecret !== process.env.CRON_SECRET) {
-    return new Response('Unauthorized', { status: 401 });
-  }
+  const authFail = checkCronSecret(req);
+  if (authFail) return authFail;
 
-  const [settings] = await db.select().from(schema.appSettings).limit(1);
-  if (!settings) {
+  const win = await checkWindow();
+  if (!win) {
     return Response.json({ error: 'App-Einstellungen fehlen' }, { status: 500 });
   }
-
-  // Zeitfenster prüfen (Europe/Berlin)
-  const berlinHour = getBerlinHour();
-  if (berlinHour < settings.refreshWindowStart || berlinHour >= settings.refreshWindowEnd) {
-    console.log(`[Cron] Außerhalb des Refresh-Fensters (${berlinHour}:xx Uhr Berlin) — übersprungen.`);
-    return Response.json({ skipped: true, reason: 'outside_window', berlinHour });
+  if (!win.inWindow) {
+    return Response.json({ skipped: true, reason: 'outside_window', berlinHour: win.berlinHour });
   }
 
-  console.log(`[Cron] Starte Refresh (${berlinHour}:xx Uhr Berlin)...`);
+  console.log(`[Cron:Legacy] Komplettlauf (${win.berlinHour}h)`);
 
-  // Zeitpunkt VOR dem Fetch merken, damit wir nur die wirklich neu eingefügten
-  // hochrelevanten Items für Push-Notifications heranziehen
+  // 1. Fetch
   const fetchStartedAt = new Date();
-
   const { results, totalNew } = await fetchAllSources();
 
-  // Web Push: für JEDES neue Item mit Relevanz >= PUSH_RELEVANCE_THRESHOLD
-  // eine eigene Notification senden. Items mit niedriger Relevanz lösen
-  // keine Benachrichtigung aus.
+  // 2. Classify
+  const classify = await classifyPendingItems();
+
+  // 3. Push für hochrelevante Items
   let pushSent = 0;
-  if (totalNew > 0 && settings.notificationsEnabled) {
-    const highRelevanceItems = await db
+  if (totalNew > 0 && win.settings.notificationsEnabled) {
+    const highRel = await db
       .select({
-        id: schema.newsItems.id,
         title: schema.newsItems.title,
         url: schema.newsItems.url,
-        relevanceScore: schema.newsItems.relevanceScore,
         sourceName: schema.sources.name,
         sourceNotifications: schema.sources.notificationsEnabled,
       })
@@ -59,10 +61,8 @@ export async function POST(req: Request) {
           eq(schema.sources.notificationsEnabled, true)
         )
       )
-      .orderBy(desc(schema.newsItems.relevanceScore))
       .limit(10);
-
-    for (const item of highRelevanceItems) {
+    for (const item of highRel) {
       if (!item.sourceNotifications) continue;
       await sendPushToAllSubscriptions({
         title: item.sourceName,
@@ -71,39 +71,23 @@ export async function POST(req: Request) {
       });
       pushSent++;
     }
-    console.log(
-      `[Cron] ${pushSent} hochrelevante Push-Benachrichtigungen versendet ` +
-        `(Schwellwert: Score >= ${PUSH_RELEVANCE_THRESHOLD}).`
-    );
   }
 
-  // lastGlobalRefreshAt aktualisieren
-  await db
-    .update(schema.appSettings)
-    .set({ lastGlobalRefreshAt: new Date() })
-    .where(eq(schema.appSettings.id, 1));
-
-  // Aufräumen: alte Items löschen — MUSS VOR der Top-News-Auswahl laufen,
-  // sonst werden gerade markierte Items sofort wieder gelöscht.
+  // 4. Retention-Cleanup
   const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - settings.retentionDays);
+  cutoff.setDate(cutoff.getDate() - win.settings.retentionDays);
   const deleted = await db
     .delete(schema.newsItems)
     .where(lte(schema.newsItems.publishedAt, cutoff))
     .returning({ id: schema.newsItems.id });
 
-  console.log(`[Cron] ${deleted.length} alte Items gelöscht (> ${settings.retentionDays} Tage).`);
+  // 5. Top-News
+  await db
+    .update(schema.appSettings)
+    .set({ lastGlobalRefreshAt: new Date() })
+    .where(eq(schema.appSettings.id, 1));
 
-  // AI-Top-News-Auswahl: 3 wichtigste Items aus dem AKTUELLEN Bestand
-  // (Praxis-Relevanz, Aktualität, Themen-Vielfalt).
-  // Nach dem Retention-Cleanup, damit nur Items innerhalb der Aufbewahrungs-
-  // dauer in Frage kommen und als Top-News in der DB persistieren.
-  let topNewsInfo: { selected: number; usedAi: boolean; pool: number; tokens: number } = {
-    selected: 0,
-    usedAi: false,
-    pool: 0,
-    tokens: 0,
-  };
+  let topNewsInfo = { selected: 0, usedAi: false, pool: 0, tokens: 0 };
   try {
     const tn = await selectAndPersistTopNews();
     topNewsInfo = {
@@ -112,12 +96,8 @@ export async function POST(req: Request) {
       pool: tn.poolSize,
       tokens: tn.tokensEstimated,
     };
-    console.log(
-      `[Cron] Top-News selektiert: ${tn.selectedIds.length} aus Pool von ${tn.poolSize} ` +
-        `(usedAi=${tn.usedAi}, ~${tn.tokensEstimated} Tokens)`
-    );
   } catch (err) {
-    console.error('[Cron] Top-News-Auswahl fehlgeschlagen:', err);
+    console.error('[Cron:Legacy] Top-News-Auswahl fehlgeschlagen:', err);
   }
 
   return Response.json({
@@ -125,8 +105,9 @@ export async function POST(req: Request) {
     totalNew,
     sourcesChecked: results.length,
     errors: results.filter((r) => r.error).map((r) => ({ source: r.sourceName, error: r.error })),
-    deletedOldItems: deleted.length,
+    classified: classify.total,
     pushSent,
+    deletedOldItems: deleted.length,
     topNews: topNewsInfo,
   });
 }

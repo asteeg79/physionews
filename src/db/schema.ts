@@ -68,12 +68,18 @@ export const newsItems = pgTable(
     // Top-News-Flag: von AI per Cron-Lauf gesetzt; bei jedem Cron neu evaluiert.
     // Markiert 1-3 Items als "echte Top-News" basierend auf Aktualität, Vielfalt und Bedeutung.
     isTopNews: boolean('is_top_news').notNull().default(false),
+    // Themen-Tags aus geschlossener Liste (siehe lib/relevance/topics.ts).
+    // Werden von der AI-Klassifizierung beim Bewerten mit ermittelt.
+    // Beispiel: ['Wirbelsäule', 'Manuelle Therapie', 'GKV']
+    topics: text('topics').array().notNull().default([]),
   },
   (t) => [
     index('news_published_idx').on(t.publishedAt),
     index('news_source_idx').on(t.sourceId),
-    index('news_relevance_idx').on(t.relevanceScore),
     index('news_top_news_idx').on(t.isTopNews),
+    // Composite-Index für die häufigste Sortier-Query (Relevanz + Datum).
+    // Partial-Index, da Items mit score < 4 ohnehin gelöscht werden.
+    index('news_sort_idx').on(t.relevanceScore.desc(), t.publishedAt.desc()),
   ]
 );
 

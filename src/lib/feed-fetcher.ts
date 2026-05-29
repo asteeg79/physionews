@@ -16,7 +16,6 @@ import { eq } from 'drizzle-orm';
 import { db, schema } from '@/db';
 import { computeItemId } from './dedup';
 import { getAdapter } from './adapters/registry';
-import { classifyPendingItems } from './relevance';
 import type { Source, NewNewsItem } from '@/db/schema';
 import type { RawNewsItem } from './adapters/types';
 
@@ -52,22 +51,8 @@ export async function fetchAllSources(): Promise<{ results: FetchResult[]; total
   );
 
   const totalNew = results.reduce((sum, r) => sum + r.newItems, 0);
-
-  // Nach allen Fetches: pending-Items klassifizieren (keyword + ggf. Gemini)
-  if (totalNew > 0) {
-    try {
-      const classify = await classifyPendingItems();
-      console.log(
-        `[Relevance] ${classify.total} klassifiziert ` +
-          `(keyword: ${classify.byMethod.keyword}, ai: ${classify.byMethod.ai}, ` +
-          `accept: ${classify.byDecision.accept}, reject: ${classify.byDecision.reject}, gray: ${classify.byDecision.gray}, ` +
-          `gemini batches: ${classify.geminiBatches}, ~tokens: ${classify.geminiTokensEstimated})`
-      );
-    } catch (err) {
-      console.error('[Relevance] Klassifizierung fehlgeschlagen:', err);
-    }
-  }
-
+  // Klassifizierung läuft nicht mehr hier — wird vom /api/cron/classify-Endpoint
+  // separat angestoßen. So bleibt jeder Cron-Endpoint im Vercel-Function-Timeout.
   return { results, totalNew };
 }
 

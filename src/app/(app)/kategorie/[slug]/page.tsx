@@ -2,6 +2,9 @@ import { NewsList } from '@/components/NewsList';
 import { isKnownCategory } from '@/lib/categories';
 import type { NewsCategory } from '@/db/schema';
 
+// useSearchParams (q, tag) erfordert dynamic Rendering.
+export const dynamic = 'force-dynamic';
+
 /**
  * Dynamische Kategorie-Seite. Akzeptiert sowohl die drei sichtbaren
  * Kategorien (fachlich/gesetz/politik) als auch die alten Werte aus

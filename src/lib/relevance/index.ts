@@ -68,6 +68,7 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     score: number;
     reason: string;
     method: 'keyword' | 'ai' | 'pending';
+    topics: string[];
   }> = [];
 
   // Stufe 1: Keyword-Scoring
@@ -89,6 +90,7 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
         score: scored.score,
         reason: `keyword (gray): ${scored.reason}`,
         method: 'keyword',
+        topics: [], // erst durch Gemini gesetzt
       });
     } else {
       updates.push({
@@ -96,13 +98,14 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
         score: scored.score,
         reason: `keyword (${scored.decision}): ${scored.reason}`,
         method: 'keyword',
+        topics: [],
       });
     }
   }
 
-  // Stufe 2: Gemini auf Grauzone
+  // Stufe 2: Gemini auf Grauzone (liefert auch Topic-Tags)
   if (grayPool.length > 0 && process.env.GEMINI_API_KEY) {
-    const aiResults = new Map<string, { score: number; reason: string }>();
+    const aiResults = new Map<string, { score: number; reason: string; topics: string[] }>();
     for (let i = 0; i < grayPool.length; i += GEMINI_BATCH_SIZE) {
       const batch = grayPool.slice(i, i + GEMINI_BATCH_SIZE);
       result.geminiBatches++;
@@ -113,7 +116,7 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
         continue;
       }
       for (const r of batchResults) {
-        aiResults.set(r.id, { score: r.score, reason: r.reason });
+        aiResults.set(r.id, { score: r.score, reason: r.reason, topics: r.topics });
       }
     }
 
@@ -124,6 +127,7 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
         upd.score = ai.score;
         upd.reason = `ai: ${ai.reason}`;
         upd.method = 'ai';
+        upd.topics = ai.topics;
       }
     }
   }
@@ -136,6 +140,7 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
         relevanceScore: upd.score,
         relevanceMethod: upd.method,
         relevanceReason: upd.reason,
+        topics: upd.topics,
       })
       .where(eq(schema.newsItems.id, upd.id));
 

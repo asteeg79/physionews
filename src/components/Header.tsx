@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { Logo } from './Logo';
+import { SearchBar } from './SearchBar';
 
 export function Header() {
   const router = useRouter();
@@ -50,7 +51,9 @@ export function Header() {
           <Logo size="md" />
         </Link>
 
-        <div className="flex items-center gap-2">
+        <SearchBar />
+
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={handleRefresh}
             disabled={refreshing}

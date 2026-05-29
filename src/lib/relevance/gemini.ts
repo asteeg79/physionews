@@ -14,18 +14,27 @@
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
-const SYSTEM_PROMPT = `Du bewertest Nachrichten-Titel STRENG auf Relevanz für deutsche Physiotherapeut:innen in der Praxis.
+import { TOPIC_TAXONOMY, filterToValidTopics } from './topics';
+
+const SYSTEM_PROMPT_TEMPLATE = `Du bewertest Nachrichten-Titel STRENG auf Relevanz für deutsche Physiotherapeut:innen in der Praxis.
 
 Bewertungs-Rubric (Skala 0-10):
 - 9-10: Hochrelevant. Direkter Bezug zu Physio-Methoden, klinischen Diagnosen (muskuloskelettal/neurolog./kardio-pulmo./päd.), neuen Evidenz/Leitlinien, Heilmittelversorgung, Heilmittelverordnung, Blankoverordnung, GKV-Vergütung, Direktzugang.
 - 7-8: Klar relevant. Verbands-Berufspolitik mit Bezug zur Praxis (Vergütung, Anstellung, Fortbildung), Studien zu Reha/Bewegungstherapie, Recht/Abrechnung für Heilmittelerbringer.
-- 5-6: Grenzwertig. Allgemeine Gesundheitspolitik mit möglichem indirektem Einfluss (Krankenhausreform, Notfallreform). Berufsverband-News ohne klaren Praxisbezug. Beruhigt sich auf 5, wenn nur Networking/Sponsoring.
-- 3-4: Wenig relevant. Allgemeine Gesundheitsmonitoring-Reports, breite Public-Health-Themen ohne Physio-Anker, Verband-Verwaltung (Mitgliederversammlung, Bronzepartner, Fristenbericht).
-- 0-2: Irrelevant. Apotheken, Pharma-Wirkstoffe, Zahn-/Augenmedizin, Infektiologie ohne Reha-Bezug, RKI-Statistiken (Krebsregister, Tuberkulose, Tabakkontrolle), Sterbehilfe/Ethik, Werbung, Newsletter-Aufrufe, "Frohe Ostern".
+- 5-6: Grenzwertig. Allgemeine Gesundheitspolitik mit möglichem indirektem Einfluss. Berufsverband-News ohne klaren Praxisbezug.
+- 3-4: Wenig relevant. Allgemeine Gesundheitsmonitoring-Reports, Verband-Verwaltung (Mitgliederversammlung, Sponsoring, Fristenbericht).
+- 0-2: Irrelevant. Apotheken, Pharma-Wirkstoffe, Zahn-/Augenmedizin, Infektiologie ohne Reha-Bezug, RKI-Statistiken, Sterbehilfe, Werbung.
 
-WICHTIG: Bei Unsicherheit eher NIEDRIGER bewerten. Wir wollen nur Items >= 4 behalten. Allgemeine Politik OHNE direkten Physio-Bezug = max 4.
+WICHTIG: Bei Unsicherheit eher NIEDRIGER bewerten. Allgemeine Politik OHNE direkten Physio-Bezug = max 4.
+
+Zusätzlich: weise jedem Item 0-3 Themen-Tags aus dieser EXAKTEN Liste zu (nichts anderes):
+${TOPIC_TAXONOMY.join(', ')}
+
+Tags sollen das Item thematisch einordnen. Wenn nichts passt, leeres Array.
 
 Antworte als JSON-Array in derselben Reihenfolge wie Input.`;
+
+const SYSTEM_PROMPT = SYSTEM_PROMPT_TEMPLATE;
 
 export interface GeminiInput {
   id: string;
@@ -37,6 +46,7 @@ export interface GeminiResult {
   id: string;
   score: number; // 0-10
   reason: string; // kurzes Begründungsstichwort
+  topics: string[]; // 0-3 Tags aus TOPIC_TAXONOMY
 }
 
 /**
@@ -65,6 +75,11 @@ export async function classifyBatch(items: GeminiInput[]): Promise<GeminiResult[
             i: { type: 'integer' }, // Index 1-basiert
             s: { type: 'integer', minimum: 0, maximum: 10 }, // score
             r: { type: 'string' }, // reason kurz
+            t: {
+              // topics — 0-3 Tags aus der Taxonomie
+              type: 'array',
+              items: { type: 'string' },
+            },
           },
           required: ['i', 's', 'r'],
         },
@@ -104,7 +119,12 @@ export async function classifyBatch(items: GeminiInput[]): Promise<GeminiResult[
       const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
       if (!text) return null;
 
-      const parsed = JSON.parse(text) as Array<{ i: number; s: number; r: string }>;
+      const parsed = JSON.parse(text) as Array<{
+        i: number;
+        s: number;
+        r: string;
+        t?: unknown;
+      }>;
       const results: GeminiResult[] = [];
       for (const entry of parsed) {
         const sourceItem = items[entry.i - 1];
@@ -113,6 +133,7 @@ export async function classifyBatch(items: GeminiInput[]): Promise<GeminiResult[
           id: sourceItem.id,
           score: Math.max(0, Math.min(10, Math.round(entry.s))),
           reason: entry.r.slice(0, 100),
+          topics: filterToValidTopics(entry.t),
         });
       }
       return results;
