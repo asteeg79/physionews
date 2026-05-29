@@ -393,7 +393,8 @@ const SOURCE_BIAS: Record<string, number> = {
   'physiotherapeuten.de — Neurologie & Sport (via Google News)': 3,
   // Neue Fachquellen
   'pt-online.de (via Google News)': 3, // Pflaum-Verlag Fachzeitschrift
-  'Springer Manuelle Medizin (Updates)': 2, // Journal, gemischt
+  'Springer Manualmedizin (via Google News)': 3, // gezielt manuelle Therapie/Medizin
+  'SpringerMedizin Physio (via Google News)': 3, // Physiotherapie + Rehabilitation
   'DGOU Pressemitteilungen': 0, // Orthopädie/Unfallchirurgie, gemischt
   'AOK WIdO — News & Presse': 0, // Wissenschaftsinstitut, gemischt
   'BARMER Presseinformationen': -1, // Kasse, eher allgemein-politisch
@@ -414,7 +415,44 @@ const SOURCE_BIAS: Record<string, number> = {
  * Schlagwörtern und Quelle. Liefert auch eine Begründung und eine
  * Entscheidung: accept / reject / gray (Gray-Items werden an Gemini gegeben).
  */
+/**
+ * Junk-Titel-Patterns — Navigations- und Verwaltungs-Phrasen, die zwar
+ * gelegentlich von Adaptern miterfasst werden, aber nie Artikel-Inhalt
+ * tragen. Treffer → sofort score=0, decision='reject', kein AI-Call.
+ */
+const JUNK_TITLE_PATTERNS: RegExp[] = [
+  /^abonnement/i,
+  /^informationen für autoren$/i,
+  /^cme zertifizierte fortbildung$/i,
+  /^diese zeitschrift ist in e\.med/i,
+  /^springermedizin\.de$/i,
+  /^pressemitteilungen$/i,
+  /^pressemitteilungen und meldungen$/i,
+  /^newsletter/i,
+  /^mediathek$/i,
+  /^impressum$/i,
+  /^datenschutz/i,
+  /^kontakt$/i,
+  /^startseite$/i,
+  /^mehr lesen$/i,
+  /^weiterlesen$/i,
+  /^zur (n[äa]chsten|vorherigen|ersten|letzten) seite$/i,
+  /^zur übersicht$/i,
+  /^artikel teilen$/i,
+];
+
 export function scoreByKeywords(input: ScoreInput): ScoreResult {
+  const titleTrim = input.title.trim();
+  // Junk-Frühfilter — vor jedem anderen Scoring
+  if (JUNK_TITLE_PATTERNS.some((re) => re.test(titleTrim)) || titleTrim.length < 20) {
+    return {
+      score: 0,
+      reason: `junk-title: "${titleTrim.slice(0, 40)}"`,
+      decision: 'reject',
+      hits: { strong: [], medium: [], contextual: [], hard: [], soft: [], rescue: [] },
+    };
+  }
+
   const text = `${input.title} ${input.summary ?? ''}`.toLowerCase();
   const sourceBias = SOURCE_BIAS[input.sourceName] ?? 0;
 
@@ -455,12 +493,14 @@ export function scoreByKeywords(input: ScoreInput): ScoreResult {
   if (sourceBias !== 0) reasonParts.push(`src:${sourceBias > 0 ? '+' : ''}${sourceBias}`);
   const reason = reasonParts.join(' | ') || 'neutral';
 
-  // Entscheidung — strenger als zuvor:
-  // accept (Skip Gemini) nur bei klar positiven Treffern (score >= 8)
+  // Entscheidung — AI großzügiger einsetzen (Tokens haben wir):
+  // accept (Skip Gemini) NUR bei sehr klaren Treffern: score >= 9 UND
+  //   mindestens 2 strong-Hits (eindeutige Praxis-Relevanz)
   // reject (Skip Gemini) nur bei klar negativen (score <= 1)
-  // Alles dazwischen → Gemini-Befragung
+  // Alles dazwischen → Gemini-Befragung — auch bei „guten" Score 7-8,
+  //   weil das oft nur Source-Bonus ohne echte Praxisrelevanz war.
   let decision: ScoreResult['decision'];
-  if (score >= 8 && hits.strong.length > 0) decision = 'accept';
+  if (score >= 9 && hits.strong.length >= 2) decision = 'accept';
   else if (score <= 1) decision = 'reject';
   else decision = 'gray';
 

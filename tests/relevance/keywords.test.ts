@@ -121,11 +121,30 @@ describe('scoreByKeywords', () => {
     it('decision=gray bei nur Source-Bias ohne strong-Hit', () => {
       const r = scoreByKeywords({
         ...baseInput,
-        title: 'Termin-Erinnerung',
+        title: 'Quartalsmeldung aus der Geschäftsstelle',
         sourceName: 'IFK Aktuelles',
       });
-      // Score 8 (5 + 3 Source) aber keine strong-Hits → gray
+      // Score 8 (5 + 3 Source) aber keine strong-Hits → gray (AI prüft nach)
       expect(r.decision).toBe('gray');
+    });
+
+    it('decision=reject bei Junk-Titel-Pattern', () => {
+      const r = scoreByKeywords({
+        ...baseInput,
+        title: 'Abonnementpreise',
+        sourceName: 'IFK Aktuelles',
+      });
+      expect(r.decision).toBe('reject');
+      expect(r.score).toBe(0);
+    });
+
+    it('decision=reject bei sehr kurzem Titel (< 20 Zeichen)', () => {
+      const r = scoreByKeywords({
+        ...baseInput,
+        title: 'Pressemitteilung',
+        sourceName: 'IFK Aktuelles',
+      });
+      expect(r.decision).toBe('reject');
     });
 
     it('decision=reject bei Score <= 1', () => {
@@ -153,7 +172,7 @@ describe('scoreByKeywords', () => {
     it('Reason enthält Quellen-Bias bei nicht-null Quellen', () => {
       const r = scoreByKeywords({
         ...baseInput,
-        title: 'Neutrale Headline',
+        title: 'Quartalsmeldung aus dem Vorstand für Mitglieder',
         sourceName: 'IFK Aktuelles',
       });
       expect(r.reason).toContain('src:');
