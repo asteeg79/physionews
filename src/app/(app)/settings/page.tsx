@@ -3,6 +3,7 @@ import { PushSettings } from '@/components/PushSettings';
 import { InstallStatus } from '@/components/InstallStatus';
 import { SettingsForm } from '@/components/SettingsForm';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { GeminiUsagePanel } from '@/components/GeminiUsagePanel';
 import Link from 'next/link';
 import { ChevronRight, List } from 'lucide-react';
 import { db, schema } from '@/db';
@@ -73,6 +74,13 @@ export default async function SettingsPage() {
           </div>
           <ChevronRight className="w-4 h-4 text-muted-foreground" />
         </Link>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+          KI-Klassifizierung
+        </h2>
+        <GeminiUsagePanel />
       </section>
 
       <section className="space-y-3">

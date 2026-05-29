@@ -6,10 +6,10 @@ import { Stethoscope, Scale, Megaphone, LayoutGrid } from 'lucide-react';
 import { EbpToggle } from './EbpToggle';
 
 const TABS = [
+  { label: 'Alle', href: '/', icon: LayoutGrid },
   { label: 'Fachlich', href: '/kategorie/fachlich', icon: Stethoscope },
   { label: 'Gesetz', href: '/kategorie/gesetz', icon: Scale },
   { label: 'Politik', href: '/kategorie/politik', icon: Megaphone },
-  { label: 'Alle', href: '/', icon: LayoutGrid },
 ];
 
 export function CategoryTabs() {
