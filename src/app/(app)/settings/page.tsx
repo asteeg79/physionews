@@ -4,6 +4,7 @@ import { InstallStatus } from '@/components/InstallStatus';
 import { SettingsForm } from '@/components/SettingsForm';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { GeminiUsagePanel } from '@/components/GeminiUsagePanel';
+import { VersionFooter } from '@/components/VersionFooter';
 import Link from 'next/link';
 import { ChevronRight, List } from 'lucide-react';
 import { db, schema } from '@/db';
@@ -98,6 +99,8 @@ export default async function SettingsPage() {
           }}
         />
       </section>
+
+      <VersionFooter />
     </div>
   );
 }

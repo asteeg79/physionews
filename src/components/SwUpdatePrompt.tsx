@@ -19,6 +19,7 @@ import { useEffect, useRef } from 'react';
 import { toast } from 'sonner';
 
 const POLL_INTERVAL_MS = 60_000;
+const BUNDLE_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? 'unknown';
 
 export function SwUpdatePrompt() {
   const toastShown = useRef(false);
@@ -31,7 +32,7 @@ export function SwUpdatePrompt() {
     let reg: ServiceWorkerRegistration | null = null;
     let intervalId: ReturnType<typeof setInterval> | null = null;
 
-    const promptForUpdate = (waiting: ServiceWorker) => {
+    const promptForUpdate = (waiting: ServiceWorker | null) => {
       if (toastShown.current) return;
       toastShown.current = true;
       toast.info('Update verfügbar', {
@@ -40,10 +41,35 @@ export function SwUpdatePrompt() {
         action: {
           label: 'Aktualisieren',
           onClick: () => {
-            waiting.postMessage({ type: 'SKIP_WAITING' });
+            if (waiting) {
+              // Sauberer Weg: SW aktivieren, dann lädt controllerchange-Handler neu
+              waiting.postMessage({ type: 'SKIP_WAITING' });
+            } else {
+              // Fallback (z. B. iOS-PWA, wo updatefound nicht gefeuert wurde):
+              // einfach hart reloaden — neuer Bundle wird vom Server geholt.
+              window.location.reload();
+            }
           },
         },
       });
+    };
+
+    /**
+     * Vergleicht die Server-Version (via /api/version, no-store) mit der
+     * im Bundle eingebakenen `NEXT_PUBLIC_APP_VERSION`. Bei Abweichung
+     * Toast zeigen — auch wenn der Service-Worker noch keinen `waiting`-
+     * State hat (iOS-PWAs verschlucken updatefound-Events gelegentlich).
+     */
+    const checkVersionMismatch = async () => {
+      try {
+        const res = await fetch('/api/version', { cache: 'no-store' });
+        const data = (await res.json()) as { version?: string };
+        if (data.version && data.version !== BUNDLE_VERSION) {
+          promptForUpdate(reg?.waiting ?? null);
+        }
+      } catch {
+        // offline → ignorieren
+      }
     };
 
     const checkForWaiting = async () => {
@@ -54,7 +80,13 @@ export function SwUpdatePrompt() {
         // Update-Check kann offline scheitern — ignorieren
       }
       if (reg.waiting) promptForUpdate(reg.waiting);
+      // Zweite Sicherung: Bundle-Version vs. Server-Version
+      await checkVersionMismatch();
     };
+
+    // Sofort beim Mount Version checken — falls die App lange offen war
+    // und seitdem deployed wurde, sieht der User direkt einen Hinweis.
+    void checkVersionMismatch();
 
     navigator.serviceWorker.ready
       .then((registration) => {
