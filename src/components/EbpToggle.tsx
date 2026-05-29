@@ -34,10 +34,10 @@ export function EbpToggle() {
           ? 'bg-brand text-white'
           : 'text-muted-foreground hover:text-foreground hover:bg-muted'
       }`}
-      title="Nur evidenzbasierte Beiträge (RCT, Leitlinie, Meta-Analyse, …)"
+      title="Nur Beiträge mit AI-vergebenen Evidenz-Tags (RCT, Leitlinie, Meta-Analyse, …)"
     >
       <FlaskConical className="w-4 h-4" aria-hidden="true" />
-      Evidenz
+      KI Klassifiziert
     </button>
   );
 }

@@ -38,7 +38,7 @@ export function ActiveFilters({ q, tag, ebp, matchCount }: ActiveFiltersProps) {
       {ebp && (
         <FilterChip
           icon={<FlaskConical className="w-3 h-3" />}
-          label="Nur Evidenz"
+          label="Nur KI klassifiziert"
           onRemove={() => removeParam('ebp')}
         />
       )}
