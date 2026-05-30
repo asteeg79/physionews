@@ -35,15 +35,19 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
   const isRead = item.isRead || optimisticRead;
   const isHighlighted = isHighlightedSource(item.source.name);
 
-  // iOS-Safari rendert geclampten Text gelegentlich nicht neu,
-  // wenn der Display-Mode wechselt. Wir erzwingen nach jedem
-  // Toggle einen Reflow auf dem Article-Element.
+  // iOS-Safari hält gelegentlich die Layout-Höhe aus dem expanded-Zustand
+  // fest, auch wenn der Subtree unmounted ist. Zwei-Stufen-Repaint-Trick:
+  // direkt nach dem DOM-Update einen Reflow erzwingen, dann nach dem
+  // nächsten Paint nochmal — fängt Safari-spezifische Verzögerungen ab.
   const articleRef = useRef<HTMLElement | null>(null);
   useLayoutEffect(() => {
     const el = articleRef.current;
     if (!el) return;
-    // Triggert ein Layout-Recalc, ohne dass etwas auf dem Screen flackert
     void el.offsetHeight;
+    const raf = requestAnimationFrame(() => {
+      void el.offsetHeight;
+    });
+    return () => cancelAnimationFrame(raf);
   }, [expanded]);
 
   // Live-Vorschau-Lazy-Loading
@@ -91,8 +95,13 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
     markReadOnce();
   };
 
-  // Card-Klassen — KEIN transition-all, nur transition-colors (iOS-freundlich)
-  let cardClasses = 'rounded-xl border-2 overflow-hidden transition-colors duration-150 ';
+  // Card-Klassen — KEIN transition-all, nur transition-colors (iOS-freundlich).
+  // KEIN `overflow-hidden`: in Kombination mit dem Collapse-Toggle hat iOS
+  // Safari die alte Höhe der ausgeklappten Box gecacht und nicht
+  // neu berechnet. Ohne overflow-hidden ist der Reflow zuverlässig.
+  // Border-Radius funktioniert trotzdem sauber, da keine Bilder über
+  // die Ecken laufen.
+  let cardClasses = 'rounded-xl border-2 transition-colors duration-150 ';
   if (isRead && !expanded) {
     cardClasses += 'bg-card border-border opacity-70';
   } else if (isHighlighted) {
@@ -106,11 +115,12 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
     <article
       ref={articleRef}
       className={cardClasses}
-      // KEIN `contain: content` — verursacht auf iOS Safari "Phantom-Höhe":
-      // beim Kollabieren bleibt die Box auf der alten Höhe stehen.
-      // Explizites height:auto + min-height:0 zwingt den Browser, sich beim
-      // jedem Toggle die natürliche Inhaltshöhe zu nehmen.
-      style={{ height: 'auto', minHeight: 0 }}
+      // Explizite Layout-Hinweise gegen iOS-Safari-Phantom-Höhe:
+      //  - display:block       → keine inkonsistente Default-Computation
+      //  - height/maxHeight    → natürliche Höhe, kein gecachtes Limit
+      //  - minHeight:0         → erlaubt Schrumpfen unter intrinsische Größe
+      // KEIN `contain` und KEIN `overflow:hidden` (siehe cardClasses-Kommentar).
+      style={{ display: 'block', height: 'auto', maxHeight: 'none', minHeight: 0 }}
     >
       {/* Header (klickbar zum Aufklappen) */}
       <button
@@ -194,12 +204,14 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
           og:image, das Ergebnis war zu uneinheitlich. Konsistent ohne ist
           aufgeräumter. */}
 
-      {/* Expanded-Bereich — bleibt IMMER im DOM, wird per `hidden` ausgeblendet.
-          Auf iOS-Safari führt React-Unmount eines Subtrees teils zu
-          "Phantom-Höhen" im Eltern-Container. Mit `hidden` (display:none)
-          ist der Reflow vorhersehbarer. */}
+      {/* Expanded-Bereich — Conditional-Render (NICHT `hidden`-Attribut).
+          Frühere Version nutzte `hidden`, das wurde aber auf iOS-Safari
+          mit Tailwind v4 von einer Layout-Regel überschrieben und der
+          Bereich blieb effektiv sichtbar (Phantom-Höhe blieb stehen).
+          Reine React-Unmount funktioniert jetzt, nachdem `contain: content`
+          weg ist und die Article-Box explizit display:block trägt. */}
+      {expanded && (
       <div
-        hidden={!expanded}
         className="px-4 pb-4 space-y-3 border-t border-border/50 pt-3"
       >
         {previewLoading ? (
@@ -233,6 +245,7 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
           </span>
         </div>
       </div>
+      )}
     </article>
   );
 }
