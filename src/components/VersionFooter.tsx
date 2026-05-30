@@ -13,7 +13,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Loader2, RefreshCw } from 'lucide-react';
 
 const BUNDLE_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? 'unknown';
 
@@ -85,6 +85,35 @@ export function VersionFooter() {
             )}
           </div>
         </div>
+
+        {/* Notfall-Button: erzwingt das Leeren aller Caches + SW-Unregister
+            und einen harten Reload. Nötig, wenn die PWA aus irgendeinem
+            Grund das alte Bundle hartnäckig behält (typisch iOS-PWA). */}
+        <button
+          type="button"
+          onClick={async () => {
+            try {
+              if ('caches' in window) {
+                const names = await caches.keys();
+                await Promise.all(names.map((n) => caches.delete(n)));
+              }
+              if ('serviceWorker' in navigator) {
+                const regs = await navigator.serviceWorker.getRegistrations();
+                await Promise.all(regs.map((r) => r.unregister()));
+              }
+            } catch {
+              /* ignore */
+            }
+            const sep = window.location.search ? '&' : '?';
+            window.location.replace(
+              `${window.location.pathname}${window.location.search}${sep}_pn_upd=${Date.now()}`
+            );
+          }}
+          className="mt-3 inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground border border-border rounded-md px-3 py-1.5 transition-colors"
+        >
+          <RefreshCw className="w-3.5 h-3.5" aria-hidden="true" />
+          Cache leeren und neu laden
+        </button>
       </div>
     </div>
   );

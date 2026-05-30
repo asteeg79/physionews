@@ -32,6 +32,32 @@ export function SwUpdatePrompt() {
     let reg: ServiceWorkerRegistration | null = null;
     let intervalId: ReturnType<typeof setInterval> | null = null;
 
+    /**
+     * Räumt vor dem Reload ALLE Caches + ALLE SW-Registrations aus.
+     * iOS-PWAs sind notorisch dafür bekannt, alte JS-Bundles aus dem
+     * SW-Precache zu servieren, selbst wenn ein neuer SW aktiv ist.
+     * Mit harter Cache-Schleifung wird beim Reload garantiert frisches
+     * JS vom Server geladen.
+     */
+    const nukeCachesAndReload = async () => {
+      try {
+        if ('caches' in window) {
+          const names = await caches.keys();
+          await Promise.all(names.map((n) => caches.delete(n)));
+        }
+        if ('serviceWorker' in navigator) {
+          const regs = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(regs.map((r) => r.unregister()));
+        }
+      } catch {
+        // Ignorieren — reload trotzdem versuchen
+      }
+      // Cache-Buster-Param erzwingt Browser, das HTML neu vom Server
+      // zu holen (statt SW-Fallback).
+      const sep = window.location.search ? '&' : '?';
+      window.location.replace(`${window.location.pathname}${window.location.search}${sep}_pn_upd=${Date.now()}`);
+    };
+
     const promptForUpdate = (waiting: ServiceWorker | null) => {
       if (toastShown.current) return;
       toastShown.current = true;
@@ -42,13 +68,12 @@ export function SwUpdatePrompt() {
           label: 'Aktualisieren',
           onClick: () => {
             if (waiting) {
-              // Sauberer Weg: SW aktivieren, dann lädt controllerchange-Handler neu
+              // Saubere Aktivierung des wartenden SW
               waiting.postMessage({ type: 'SKIP_WAITING' });
-            } else {
-              // Fallback (z. B. iOS-PWA, wo updatefound nicht gefeuert wurde):
-              // einfach hart reloaden — neuer Bundle wird vom Server geholt.
-              window.location.reload();
             }
+            // Auf jeden Fall Caches leeren und harten Reload erzwingen.
+            // iOS hält sonst gnadenlos das alte Bundle vor.
+            void nukeCachesAndReload();
           },
         },
       });

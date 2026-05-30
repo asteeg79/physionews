@@ -114,13 +114,20 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
   return (
     <article
       ref={articleRef}
+      // KEY-REMOUNT: Bei jedem Toggle wird der article-Knoten von React
+      // komplett unmounted und neu erzeugt. Das ist die Holzhammer-Lösung
+      // gegen iOS-Safari, das nach dem Collapse intern gemerkte Layout-
+      // Dimensionen für den vorherigen Zustand weitergibt. Der Performance-
+      // Hit ist vernachlässigbar (wenige DOM-Knoten pro Karte), der State
+      // der NewsCard-Komponente bleibt erhalten (nur das DOM wird neu).
+      key={expanded ? 'open' : 'closed'}
       className={cardClasses}
-      // Explizite Layout-Hinweise gegen iOS-Safari-Phantom-Höhe:
-      //  - display:block       → keine inkonsistente Default-Computation
-      //  - height/maxHeight    → natürliche Höhe, kein gecachtes Limit
-      //  - minHeight:0         → erlaubt Schrumpfen unter intrinsische Größe
-      // KEIN `contain` und KEIN `overflow:hidden` (siehe cardClasses-Kommentar).
+      // Zusätzliche Layout-Hinweise (überholend, schaden nicht):
       style={{ display: 'block', height: 'auto', maxHeight: 'none', minHeight: 0 }}
+      // Debug-Marker für Web-Inspector — bei Bug-Reports sofort sichtbar
+      // ob die UI-Komponente überhaupt den richtigen State trägt.
+      data-expanded={expanded}
+      data-card-version="v3"
     >
       {/* Header (klickbar zum Aufklappen) */}
       <button
