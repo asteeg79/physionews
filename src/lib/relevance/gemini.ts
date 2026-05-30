@@ -54,10 +54,19 @@ export interface GeminiResult {
 }
 
 /**
- * Klassifiziert eine Liste von Items per Gemini. Liefert null wenn API-Key
- * fehlt oder der Call komplett scheitert (Caller behält dann Keyword-Score).
+ * Sentinel-Return für quota-Failures (429). Caller bricht damit weitere
+ * Batches im selben Lauf ab, statt weiter Tokens zu verbrennen.
  */
-export async function classifyBatch(items: GeminiInput[]): Promise<GeminiResult[] | null> {
+export const GEMINI_QUOTA_EXHAUSTED = Symbol('gemini-quota-exhausted');
+export type ClassifyResult = GeminiResult[] | null | typeof GEMINI_QUOTA_EXHAUSTED;
+
+/**
+ * Klassifiziert eine Liste von Items per Gemini. Liefert:
+ *  - GeminiResult[]                  bei Erfolg
+ *  - GEMINI_QUOTA_EXHAUSTED          bei HTTP 429 (Caller stoppt restliche Batches)
+ *  - null                            bei anderen Fehlern (Caller behält Keyword-Score)
+ */
+export async function classifyBatch(items: GeminiInput[]): Promise<ClassifyResult> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey || items.length === 0) return null;
 
@@ -107,6 +116,11 @@ export async function classifyBatch(items: GeminiInput[]): Promise<GeminiResult[
       if (!res.ok) {
         const errText = await res.text().catch(() => '');
         console.warn(`[Gemini] HTTP ${res.status}: ${errText.slice(0, 200)}`);
+        if (res.status === 429) {
+          // Quota erschöpft — Caller stoppt sofort, statt weitere Batches
+          // mit garantierten 429ern zu verheizen.
+          return GEMINI_QUOTA_EXHAUSTED;
+        }
         if (res.status >= 500 && attempt < 2) {
           await sleep(2000);
           continue;

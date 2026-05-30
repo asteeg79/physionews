@@ -15,7 +15,7 @@
 import { db, schema } from '@/db';
 import { eq, lt, sql } from 'drizzle-orm';
 import { scoreByKeywords } from './keywords';
-import { classifyBatch, estimateTokens, type GeminiInput } from './gemini';
+import { classifyBatch, estimateTokens, GEMINI_QUOTA_EXHAUSTED, type GeminiInput } from './gemini';
 import { getQuotaStatus, recordUsage } from './gemini-quota';
 import { getCachedByHashes, setCachedBulk, titleHash } from './gemini-cache';
 
@@ -111,6 +111,11 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     }
   }
 
+  // IDs aller Gray-Items, die beim Quota-Throttle nicht klassifiziert wurden.
+  // Diese bleiben auf relevance_method='pending' und werden im nächsten
+  // Cron-Lauf nachgeholt.
+  const skippedDueToQuota = new Set<string>();
+
   // Stufe 2: Gemini auf Grauzone (mit Quota-Check und Result-Cache)
   if (grayPool.length > 0 && process.env.GEMINI_API_KEY) {
     const aiResults = new Map<string, { score: number; reason: string; topics: string[] }>();
@@ -149,6 +154,19 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
         result.geminiTokensEstimated += tokens;
 
         const batchResults = await classifyBatch(batch);
+        if (batchResults === GEMINI_QUOTA_EXHAUSTED) {
+          // 429 — Quota erschöpft. Restliche Batches überspringen, sonst
+          // hageln wir nur weitere 429er. Items dieser Batch + alle
+          // ausstehenden bleiben 'pending' für den nächsten Run.
+          result.quotaThrottled = true;
+          for (let j = i; j < stillUnclassified.length; j++) {
+            skippedDueToQuota.add(stillUnclassified[j].id);
+          }
+          console.warn(
+            `[Pipeline] Gemini-Quota erschöpft (HTTP 429) — ${skippedDueToQuota.size} Items bleiben pending.`
+          );
+          break;
+        }
         if (!batchResults) {
           result.geminiFailures++;
           continue;
@@ -187,7 +205,11 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
   }
 
   // Stufe 3: Bulk-Update — pro Item ein einzelnes UPDATE.
+  // Items, die wegen Quota-Throttle nicht klassifiziert werden konnten,
+  // bleiben in der DB auf 'pending' und werden im nächsten Cron-Lauf nachgeholt.
   for (const upd of updates) {
+    if (skippedDueToQuota.has(upd.id)) continue;
+
     await db
       .update(schema.newsItems)
       .set({

@@ -68,7 +68,13 @@ export async function POST(req: Request) {
       quotaThrottled: classify.quotaThrottled,
     },
     pushSent: notify.pushSent,
-    /** Wenn > 0, sollte der Workflow classify nochmal aufrufen. */
-    remaining: classify.remaining,
+    /**
+     * Wenn > 0, sollte der Workflow classify nochmal aufrufen.
+     * Bei `quotaThrottled=true` wird 0 zurückgegeben (auch wenn pending
+     * Items übrig sind) — sonst hagelt der nächste Loop-Aufruf wieder
+     * nur 429er. Die Items bleiben pending und werden im NÄCHSTEN
+     * Cron-Zyklus (2 h später) nachgeholt.
+     */
+    remaining: classify.quotaThrottled ? 0 : classify.remaining,
   });
 }
