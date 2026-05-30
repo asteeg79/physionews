@@ -46,7 +46,18 @@ export async function getCachedByHashes(
   return result;
 }
 
-/** Persistiert mehrere Klassifizierungen in den Cache (UPSERT). */
+/**
+ * Persistiert mehrere Klassifizierungen in den Cache.
+ *
+ * Strategie: ON CONFLICT DO NOTHING — wenn der Titel-Hash schon im Cache
+ * liegt, ist der Inhalt per Definition identisch (Hash ist deterministisch
+ * über den normalisierten Titel) und der vorhandene Eintrag bleibt gültig.
+ *
+ * Der frühere `onConflictDoUpdate` mit `set: { …: schema.col }` hat in
+ * Drizzle keinen EXCLUDED-Verweis erzeugt und in seltenen Race-Conditions
+ * Constraint-Fehler ausgelöst (zwei parallele Batches mit derselben Title-
+ * Variante kollidierten). DO NOTHING ist semantisch korrekter und stabil.
+ */
 export async function setCachedBulk(
   entries: Array<{ titleHash: string } & CachedClassification>
 ): Promise<void> {
@@ -61,14 +72,7 @@ export async function setCachedBulk(
         reason: e.reason,
       }))
     )
-    .onConflictDoUpdate({
-      target: schema.geminiCache.titleHash,
-      set: {
-        score: schema.geminiCache.score,
-        topics: schema.geminiCache.topics,
-        reason: schema.geminiCache.reason,
-      },
-    });
+    .onConflictDoNothing({ target: schema.geminiCache.titleHash });
 }
 
 /** Cleanup: löscht Cache-Einträge älter als N Tage. */

@@ -80,6 +80,12 @@ vi.mock('@/db', () => ({
         where: () => Promise.resolve(),
       }),
     }),
+    // recordUsage in gemini-quota.ts braucht db.insert(...).values(...).onConflictDoUpdate(...)
+    insert: () => ({
+      values: () => ({
+        onConflictDoUpdate: () => Promise.resolve(),
+      }),
+    }),
   },
   schema: {
     newsItems: {
@@ -93,6 +99,12 @@ vi.mock('@/db', () => ({
       name: 'mock',
       category: 'mock',
       id: 'mock',
+    },
+    geminiUsage: {
+      date: 'mock',
+      tokensUsed: 'mock',
+      requestsMade: 'mock',
+      updatedAt: 'mock',
     },
   },
 }));

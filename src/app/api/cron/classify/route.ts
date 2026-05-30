@@ -33,9 +33,12 @@ export async function POST(req: Request) {
 
   console.log(`[Cron:Classify] Start (${win.berlinHour}h Berlin)`);
 
-  // 150 Items pro Aufruf — hält uns sicher unter 60s Vercel-Function-Timeout.
-  // Bei mehr ruft GitHub Actions den Endpoint mehrfach auf (siehe workflow).
-  const CHUNK_SIZE = 150;
+  // 100 Items pro Aufruf — bei BATCH_SIZE=20 sind das max. 5 Gemini-Batches.
+  // Mit 2,5 s Inter-Batch-Throttle dauert das ~12 s netto, locker im
+  // 60s-Function-Timeout. Vorher waren 150 = 7-8 Batches in einem Call,
+  // die zusammen RPM-Limits sprengen konnten. Backlogs werden über mehr
+  // GH-Loop-Iterationen verteilt (max 8 Aufrufe pro Cron, siehe workflow).
+  const CHUNK_SIZE = 100;
   const classify = await classifyPendingItems(CHUNK_SIZE);
   console.log(
     `[Cron:Classify] ${classify.total} klassifiziert (keyword: ${classify.byMethod.keyword}, ` +

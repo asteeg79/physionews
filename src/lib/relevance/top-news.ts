@@ -17,6 +17,7 @@
 
 import { db, schema } from '@/db';
 import { desc, eq, gte } from 'drizzle-orm';
+import { recordUsage } from './gemini-quota';
 
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -167,6 +168,11 @@ async function selectByAi(
     },
   };
 
+  // Geschätzte Tokens (4 chars/token Faustregel) — schon hier ermitteln,
+  // damit auch failed/empty Calls als Request gegen die Tagesquota zählen.
+  const charsTotal = SYSTEM_PROMPT.length + userInput.length;
+  const tokensEstimated = Math.ceil(charsTotal / 4);
+
   try {
     const res = await fetch(`${ENDPOINT}?key=${apiKey}`, {
       method: 'POST',
@@ -176,25 +182,35 @@ async function selectByAi(
     });
     if (!res.ok) {
       console.warn(`[TopNews-AI] HTTP ${res.status}`);
+      // Auch failed Calls (z. B. 429) zählen bei Google gegen RPM/RPD —
+      // wir tracken nur den Request, keine Tokens (keine Antwort erhalten).
+      await recordUsage(0, 1);
       return null;
     }
     const data = (await res.json()) as {
       candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
     };
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) return null;
+    if (!text) {
+      await recordUsage(tokensEstimated, 1);
+      return null;
+    }
 
     const parsed = JSON.parse(text) as string[];
     // Sanity: alle IDs müssen aus dem Pool stammen
     const validIds = new Set(pool.map((p) => p.id));
     const filtered = parsed.filter((id) => validIds.has(id));
-    if (filtered.length === 0) return null;
+    if (filtered.length === 0) {
+      await recordUsage(tokensEstimated, 1);
+      return null;
+    }
 
-    // Geschätzte Tokens (4 chars/token Faustregel)
-    const charsTotal = SYSTEM_PROMPT.length + userInput.length;
-    return { ids: filtered.slice(0, TOP_N), tokensEstimated: Math.ceil(charsTotal / 4) };
+    await recordUsage(tokensEstimated, 1);
+    return { ids: filtered.slice(0, TOP_N), tokensEstimated };
   } catch (err) {
     console.warn('[TopNews-AI] Fehler:', err);
+    // Timeout/Netzwerk-Fehler: Call ist trotzdem rausgegangen.
+    await recordUsage(0, 1);
     return null;
   }
 }

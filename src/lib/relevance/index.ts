@@ -22,6 +22,18 @@ import { getCachedByHashes, setCachedBulk, titleHash } from './gemini-cache';
 /** Batch-Größe für Gemini — passt sicher in 4096 maxOutputTokens. */
 const GEMINI_BATCH_SIZE = 20;
 
+/**
+ * Sleep zwischen Gemini-Batches innerhalb desselben classify-Calls.
+ * Free-Tier-RPM-Limit für gemini-2.5-flash-lite ist 30/min — mit 2,5 s
+ * Pause halten wir uns bei max. ~24 RPM, sicherer Abstand. So vermeiden
+ * wir 429er auch bei größeren Backlogs.
+ */
+const INTER_BATCH_DELAY_MS = 2_500;
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 /** Mindest-Relevanz, unter der Items komplett verworfen werden. */
 export const MIN_RELEVANCE_THRESHOLD = 4;
 
@@ -153,11 +165,16 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
         const tokens = estimateTokens(batch);
         result.geminiTokensEstimated += tokens;
 
+        // Per-Minute-Throttle: zwischen Batches kurze Pause, damit wir
+        // nicht ins RPM-Limit (30/min für free tier) rauschen. Erster
+        // Batch läuft sofort, ab dem zweiten warten wir.
+        if (i > 0) await sleep(INTER_BATCH_DELAY_MS);
+
         const batchResults = await classifyBatch(batch);
         if (batchResults === GEMINI_QUOTA_EXHAUSTED) {
-          // 429 — Quota erschöpft. Restliche Batches überspringen, sonst
-          // hageln wir nur weitere 429er. Items dieser Batch + alle
-          // ausstehenden bleiben 'pending' für den nächsten Run.
+          // 429 — Quota erschöpft. Failed call zählt bei Google trotzdem
+          // gegen die RPM/RPD — bei uns als Request ohne Tokens verbuchen.
+          await recordUsage(0, 1);
           result.quotaThrottled = true;
           for (let j = i; j < stillUnclassified.length; j++) {
             skippedDueToQuota.add(stillUnclassified[j].id);
@@ -168,6 +185,9 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
           break;
         }
         if (!batchResults) {
+          // 5xx/Timeout/Parse-Fehler: Call ging trotzdem raus, zählt bei
+          // Google. Wir verbuchen den Request ohne Tokens.
+          await recordUsage(0, 1);
           result.geminiFailures++;
           continue;
         }
