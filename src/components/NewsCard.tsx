@@ -56,7 +56,16 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
   const [previewFailed, setPreviewFailed] = useState(false);
 
   const hasInitialSummary = !!(item.summary && item.summary.length >= 60);
-  const displaySummary = livePreview ?? item.summary ?? null;
+
+  // WICHTIG: zwei getrennte Summary-Felder!
+  // - `collapsedPreview` darf NIE livePreview enthalten. iOS Safari berechnet
+  //   bei -webkit-line-clamp:2 mit dynamisch geänderten langen Texten die
+  //   Layout-Höhe falsch (visuell 2 Zeilen, layoutmäßig volle intrinsische
+  //   Höhe). Das war über mehrere Versuche der wirkliche Auslöser der
+  //   "Phantom-Höhe" beim Wieder-Zuklappen.
+  // - `expandedSummary` darf livePreview verwenden — kein Clamp, kein Bug.
+  const collapsedPreview = item.summary ?? null;
+  const expandedSummary = livePreview ?? item.summary ?? null;
 
   const markReadOnce = () => {
     if (isRead) return;
@@ -186,8 +195,10 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
           {item.title}
         </h2>
 
-        {/* Preview-Snippet im kollabierten Zustand (max 2 Zeilen) */}
-        {!expanded && displaySummary && (
+        {/* Preview-Snippet im kollabierten Zustand (max 2 Zeilen).
+            STRIKT NUR `collapsedPreview` (= item.summary) — niemals
+            livePreview, sonst Phantom-Höhe auf iOS, s.o. */}
+        {!expanded && collapsedPreview && (
           <p
             className="text-xs leading-relaxed text-muted-foreground"
             style={{
@@ -197,7 +208,7 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
               overflow: 'hidden',
             }}
           >
-            {displaySummary}
+            {collapsedPreview}
           </p>
         )}
       </button>
@@ -226,9 +237,9 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
             <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
             Vorschau wird geladen…
           </div>
-        ) : displaySummary ? (
+        ) : expandedSummary ? (
           <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">
-            {displaySummary}
+            {expandedSummary}
           </p>
         ) : (
           <p className="text-xs italic text-muted-foreground">
