@@ -6,28 +6,13 @@ import Link from 'next/link';
 import { formatRelative, formatDate } from '@/lib/format-date';
 import type { NewsItem, Source } from '@/db/schema';
 import { NewsDetailSheet } from './NewsDetailSheet';
+import { isHighlightedSourceName } from '@/lib/highlighted-sources';
 
 type SourceLight = Pick<Source, 'id' | 'name' | 'category' | 'iconName'>;
 
 interface NewsCardProps {
   item: NewsItem & { source: SourceLight };
   onRead?: (id: string) => void;
-}
-
-/**
- * Hervorgehoben werden zwei Quellen-Gruppen:
- *  1. Alle Inhalte von Rechtsanwalt Benjamin Alt
- *  2. Publikationen über die Marke pt / physiotherapeuten.de / physio.de
- */
-function isHighlightedSource(name: string): boolean {
-  const lower = name.toLowerCase();
-  return (
-    lower.includes('benjamin alt') ||
-    lower.includes('ra benjamin') ||
-    lower.includes('physiotherapeuten.de') ||
-    lower.startsWith('physio.de') ||
-    lower.includes('pt zeitschrift')
-  );
 }
 
 /**
@@ -51,7 +36,7 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [optimisticRead, setOptimisticRead] = useState(item.isRead);
   const isRead = item.isRead || optimisticRead;
-  const isHighlighted = isHighlightedSource(item.source.name);
+  const isHighlighted = isHighlightedSourceName(item.source.name);
 
   const markReadOnce = () => {
     if (isRead) return;

@@ -1,5 +1,6 @@
 import { db, schema } from '@/db';
-import { eq, lte } from 'drizzle-orm';
+import { and, eq, lte, notInArray } from 'drizzle-orm';
+import { isHighlightedSourceName } from '@/lib/highlighted-sources';
 import { getBerlinHour } from '@/lib/timezone';
 import { fetchAllSources } from '@/lib/feed-fetcher';
 import { notifyNewHighRelevanceItems } from '@/lib/push-sender';
@@ -69,12 +70,20 @@ export async function POST(req: Request) {
     .set({ lastGlobalRefreshAt: new Date() })
     .where(eq(schema.appSettings.id, 1));
 
-  // Aufräumen MUSS VOR der Top-News-Auswahl laufen
+  // Aufräumen MUSS VOR der Top-News-Auswahl laufen.
+  // Highlighted Quellen (RA Alt etc.) sind von Retention ausgenommen,
+  // siehe lib/highlighted-sources.ts.
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - settings.retentionDays);
-  await db
-    .delete(schema.newsItems)
-    .where(lte(schema.newsItems.publishedAt, cutoff));
+  const allSrc = await db
+    .select({ id: schema.sources.id, name: schema.sources.name })
+    .from(schema.sources);
+  const protectedIds = allSrc.filter((s) => isHighlightedSourceName(s.name)).map((s) => s.id);
+  const conds = [lte(schema.newsItems.publishedAt, cutoff)];
+  if (protectedIds.length > 0) {
+    conds.push(notInArray(schema.newsItems.sourceId, protectedIds));
+  }
+  await db.delete(schema.newsItems).where(and(...conds));
 
   // Top-News-Auswahl analog zum Cron
   await selectAndPersistTopNews().catch((err) =>

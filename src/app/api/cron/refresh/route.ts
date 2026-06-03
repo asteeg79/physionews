@@ -12,10 +12,11 @@ import { fetchAllSources } from '@/lib/feed-fetcher';
 import { classifyPendingItems } from '@/lib/relevance';
 import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 import { db, schema } from '@/db';
-import { eq, lte } from 'drizzle-orm';
+import { and, eq, lte, notInArray } from 'drizzle-orm';
 import { notifyNewHighRelevanceItems } from '@/lib/push-sender';
 import { checkCronSecret } from '@/lib/cron-auth';
 import { checkWindow } from '@/lib/cron-window';
+import { isHighlightedSourceName } from '@/lib/highlighted-sources';
 
 export const maxDuration = 60;
 
@@ -48,12 +49,20 @@ export async function POST(req: Request) {
   });
   const pushSent = notify.pushSent;
 
-  // 4. Retention-Cleanup
+  // 4. Retention-Cleanup (highlighted Quellen ausgenommen)
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - win.settings.retentionDays);
+  const allSrc = await db
+    .select({ id: schema.sources.id, name: schema.sources.name })
+    .from(schema.sources);
+  const protectedIds = allSrc.filter((s) => isHighlightedSourceName(s.name)).map((s) => s.id);
+  const conds = [lte(schema.newsItems.publishedAt, cutoff)];
+  if (protectedIds.length > 0) {
+    conds.push(notInArray(schema.newsItems.sourceId, protectedIds));
+  }
   const deleted = await db
     .delete(schema.newsItems)
-    .where(lte(schema.newsItems.publishedAt, cutoff))
+    .where(and(...conds))
     .returning({ id: schema.newsItems.id });
 
   // 5. Top-News

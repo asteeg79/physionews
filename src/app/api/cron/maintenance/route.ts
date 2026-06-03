@@ -10,10 +10,11 @@
  */
 
 import { db, schema } from '@/db';
-import { eq, lte, ne, or } from 'drizzle-orm';
+import { and, eq, lte, ne, notInArray, or } from 'drizzle-orm';
 import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 import { checkCronSecret } from '@/lib/cron-auth';
 import { checkWindow } from '@/lib/cron-window';
+import { isHighlightedSourceName } from '@/lib/highlighted-sources';
 
 export const maxDuration = 60;
 
@@ -28,13 +29,35 @@ export async function POST(req: Request) {
   // Maintenance läuft auch außerhalb des Fensters, damit Retention gewährleistet ist —
   // wir entscheiden bewusst gegen einen Outside-Window-Skip hier.
 
-  // 1a. Retention: alte Items löschen
+  // 1a. Retention: alte Items löschen.
+  // AUSNAHME: hervorgehobene Quellen (RA Alt, physiotherapeuten.de, …)
+  // publizieren sporadisch — bei 30 Tagen Retention würden ihre Items sofort
+  // wieder verschwinden. Wir ermitteln deren Source-IDs einmal und schließen
+  // sie vom DELETE aus. Storage-Volumen ist vernachlässigbar (~4 Quellen
+  // × wenige Items/Monat).
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - win.settings.retentionDays);
+
+  const allSources = await db
+    .select({ id: schema.sources.id, name: schema.sources.name })
+    .from(schema.sources);
+  const protectedIds = allSources
+    .filter((s) => isHighlightedSourceName(s.name))
+    .map((s) => s.id);
+
+  const retentionConditions = [lte(schema.newsItems.publishedAt, cutoff)];
+  if (protectedIds.length > 0) {
+    retentionConditions.push(notInArray(schema.newsItems.sourceId, protectedIds));
+  }
   const deletedOld = await db
     .delete(schema.newsItems)
-    .where(lte(schema.newsItems.publishedAt, cutoff))
+    .where(and(...retentionConditions))
     .returning({ id: schema.newsItems.id });
+  if (protectedIds.length > 0) {
+    console.log(
+      `[Cron:Maintenance] Retention-Schutz für ${protectedIds.length} hervorgehobene Quellen aktiv`
+    );
+  }
 
   // 1b. Nicht-deutsche Items löschen — Frontend filtert sie ohnehin aus,
   //     hier sparen wir uns Speicher und Klassifizierungs-Tokens.
