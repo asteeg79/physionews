@@ -17,11 +17,16 @@
 #   - VERCEL_ORG_ID       (aus .vercel/project.json: "orgId")
 #   - VERCEL_PROJECT_ID   (aus .vercel/project.json: "projectId")
 
-name: Vercel Production Deploy
+name: Vercel Production Deploy (Fallback)
 
+# Nur manueller Trigger.
+# Das primäre Deploy läuft über die Vercel-GitHub-App-Integration und
+# braucht keinen GitHub-Actions-Lauf. Dieser Workflow ist nur das
+# Sicherheitsnetz für den Fall, dass die Vercel-Integration ausfällt
+# (wie schon einmal passiert). Aktivieren über "Run workflow" im
+# Actions-Tab — setzt voraus, dass die drei VERCEL_*-Secrets im Repo
+# gesetzt sind.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 # Mehrere Pushes hintereinander → nur der letzte gewinnt.
