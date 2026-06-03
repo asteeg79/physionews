@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useRef, useLayoutEffect } from 'react';
-import { Check, Star, ExternalLink, ChevronDown, Loader2 } from 'lucide-react';
+import { useState } from 'react';
+import { Check, Star } from 'lucide-react';
 import Link from 'next/link';
 import { formatRelative, formatDate } from '@/lib/format-date';
 import type { NewsItem, Source } from '@/db/schema';
+import { NewsDetailSheet } from './NewsDetailSheet';
 
 type SourceLight = Pick<Source, 'id' | 'name' | 'category' | 'iconName'>;
 
@@ -29,43 +30,28 @@ function isHighlightedSource(name: string): boolean {
   );
 }
 
+/**
+ * News-Card — KOMPLETT NEUE Architektur (v4).
+ *
+ * Frühere Versionen hatten ein In-Place-Accordion (expand-Toggle, dynamische
+ * Höhe, line-clamp-Wechsel, livePreview ändert Text-Inhalt). Auf iOS-Safari
+ * hat das wiederholt zu "Phantom-Höhe"-Bugs geführt, die mit verschiedensten
+ * Tricks nie vollständig stabil wurden.
+ *
+ * v4 ändert das Konzept grundsätzlich:
+ *  - Card ist IMMER kompakt (Header + Title + 2-Zeilen-Preview + Chips).
+ *    KEINE Höhenänderung, kein State-getriebener Layout-Wechsel.
+ *  - Tap öffnet ein Bottom-Sheet-Overlay (`NewsDetailSheet`), das den
+ *    Volltext zeigt. Das Sheet ist ein Portal-Render in <body>, die Liste
+ *    dahinter bleibt physisch unverändert.
+ *  - iOS-Safari kann strukturell keine Phantom-Höhen mehr erzeugen, weil
+ *    die Card-Geometrie konstant bleibt.
+ */
 export function NewsCard({ item, onRead }: NewsCardProps) {
-  const [expanded, setExpanded] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
   const [optimisticRead, setOptimisticRead] = useState(item.isRead);
   const isRead = item.isRead || optimisticRead;
   const isHighlighted = isHighlightedSource(item.source.name);
-
-  // iOS-Safari hält gelegentlich die Layout-Höhe aus dem expanded-Zustand
-  // fest, auch wenn der Subtree unmounted ist. Zwei-Stufen-Repaint-Trick:
-  // direkt nach dem DOM-Update einen Reflow erzwingen, dann nach dem
-  // nächsten Paint nochmal — fängt Safari-spezifische Verzögerungen ab.
-  const articleRef = useRef<HTMLElement | null>(null);
-  useLayoutEffect(() => {
-    const el = articleRef.current;
-    if (!el) return;
-    void el.offsetHeight;
-    const raf = requestAnimationFrame(() => {
-      void el.offsetHeight;
-    });
-    return () => cancelAnimationFrame(raf);
-  }, [expanded]);
-
-  // Live-Vorschau-Lazy-Loading
-  const [livePreview, setLivePreview] = useState<string | null>(null);
-  const [previewLoading, setPreviewLoading] = useState(false);
-  const [previewFailed, setPreviewFailed] = useState(false);
-
-  const hasInitialSummary = !!(item.summary && item.summary.length >= 60);
-
-  // WICHTIG: zwei getrennte Summary-Felder!
-  // - `collapsedPreview` darf NIE livePreview enthalten. iOS Safari berechnet
-  //   bei -webkit-line-clamp:2 mit dynamisch geänderten langen Texten die
-  //   Layout-Höhe falsch (visuell 2 Zeilen, layoutmäßig volle intrinsische
-  //   Höhe). Das war über mehrere Versuche der wirkliche Auslöser der
-  //   "Phantom-Höhe" beim Wieder-Zuklappen.
-  // - `expandedSummary` darf livePreview verwenden — kein Clamp, kein Bug.
-  const collapsedPreview = item.summary ?? null;
-  const expandedSummary = livePreview ?? item.summary ?? null;
 
   const markReadOnce = () => {
     if (isRead) return;
@@ -74,133 +60,64 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
     fetch(`/api/news/${item.id}/read`, { method: 'POST' }).catch(() => undefined);
   };
 
-  const loadLivePreview = async () => {
-    if (livePreview || previewLoading || previewFailed) return;
-    if (hasInitialSummary) return;
-    setPreviewLoading(true);
-    try {
-      const res = await fetch(`/api/news/${item.id}/preview`);
-      const body = (await res.json()) as { summary?: string | null };
-      if (body.summary && body.summary.length > 30) setLivePreview(body.summary);
-      else setPreviewFailed(true);
-    } catch {
-      setPreviewFailed(true);
-    } finally {
-      setPreviewLoading(false);
-    }
-  };
-
-  const handleToggle = () => {
-    const next = !expanded;
-    setExpanded(next);
-    if (next) {
-      markReadOnce();
-      void loadLivePreview();
-    }
-  };
-
-  const handleOpen = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleOpen = () => {
     markReadOnce();
+    setSheetOpen(true);
   };
 
-  // Card-Klassen — KEIN transition-all, nur transition-colors (iOS-freundlich).
-  // KEIN `overflow-hidden`: in Kombination mit dem Collapse-Toggle hat iOS
-  // Safari die alte Höhe der ausgeklappten Box gecacht und nicht
-  // neu berechnet. Ohne overflow-hidden ist der Reflow zuverlässig.
-  // Border-Radius funktioniert trotzdem sauber, da keine Bilder über
-  // die Ecken laufen.
+  // Card-Klassen — konstant, da kein expand-State existiert.
   let cardClasses = 'rounded-xl border-2 transition-colors duration-150 ';
-  if (isRead && !expanded) {
+  if (isRead) {
     cardClasses += 'bg-card border-border opacity-70';
   } else if (isHighlighted) {
     cardClasses += 'bg-brand-soft border-brand shadow-sm';
   } else {
     cardClasses += 'bg-card border-brand/70';
   }
-  if (expanded) cardClasses += ' shadow-md';
 
   return (
-    <article
-      ref={articleRef}
-      // KEY-REMOUNT: Bei jedem Toggle wird der article-Knoten von React
-      // komplett unmounted und neu erzeugt. Das ist die Holzhammer-Lösung
-      // gegen iOS-Safari, das nach dem Collapse intern gemerkte Layout-
-      // Dimensionen für den vorherigen Zustand weitergibt. Der Performance-
-      // Hit ist vernachlässigbar (wenige DOM-Knoten pro Karte), der State
-      // der NewsCard-Komponente bleibt erhalten (nur das DOM wird neu).
-      key={expanded ? 'open' : 'closed'}
-      className={cardClasses}
-      // Zusätzliche Layout-Hinweise (überholend, schaden nicht):
-      style={{ display: 'block', height: 'auto', maxHeight: 'none', minHeight: 0 }}
-      // Debug-Marker für Web-Inspector — bei Bug-Reports sofort sichtbar
-      // ob die UI-Komponente überhaupt den richtigen State trägt.
-      data-expanded={expanded}
-      data-card-version="v3"
-    >
-      {/* Header (klickbar zum Aufklappen) */}
-      <button
-        type="button"
-        onClick={handleToggle}
-        className="w-full text-left p-4 cursor-pointer"
-        aria-expanded={expanded}
-      >
-        <div className="flex items-center gap-1.5 mb-1.5">
-          {isHighlighted && (
-            <Star className="w-3.5 h-3.5 text-brand shrink-0" fill="currentColor" aria-hidden="true" />
-          )}
-          <span
-            className={`text-xs font-medium truncate ${
-              isHighlighted ? 'text-brand' : 'text-muted-foreground'
-            }`}
-          >
-            {item.source.name}
-          </span>
-          <span className="text-xs text-muted-foreground/50">·</span>
-          <time
-            dateTime={item.publishedAt.toISOString()}
-            className="text-xs text-muted-foreground shrink-0"
-            title={formatDate(item.publishedAt)}
-          >
-            {formatRelative(item.publishedAt)}
-          </time>
-
-          <div className="ml-auto flex items-center gap-1 shrink-0">
-            {isRead && (
-              <Check className="w-4 h-4 text-brand" strokeWidth={3} aria-label="Gelesen" />
-            )}
-            <ChevronDown
-              className={`w-4 h-4 text-muted-foreground transition-transform duration-150 ${
-                expanded ? 'rotate-180' : ''
-              }`}
-              aria-hidden="true"
-            />
-          </div>
-        </div>
-
-        {/* Titel: -webkit-box bleibt KONSTANT — wir ändern nur den
-            line-clamp-Wert (2 vs. sehr hoch). iOS-Safari aktualisiert
-            den Clamp zuverlässig nur, wenn der Display-Mode nicht wechselt. */}
-        <h2
-          className={`font-semibold text-sm leading-snug mb-1 ${
-            isRead ? 'text-muted-foreground' : 'text-foreground'
-          }`}
-          style={{
-            display: '-webkit-box',
-            WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: expanded ? 99 : 2,
-            overflow: 'hidden',
-          }}
+    <>
+      <article className={cardClasses} data-card-version="v4">
+        <button
+          type="button"
+          onClick={handleOpen}
+          className="w-full text-left p-4 cursor-pointer"
         >
-          {item.title}
-        </h2>
+          {/* Header: Quelle, Zeit, Read-Check */}
+          <div className="flex items-center gap-1.5 mb-1.5">
+            {isHighlighted && (
+              <Star className="w-3.5 h-3.5 text-brand shrink-0" fill="currentColor" aria-hidden="true" />
+            )}
+            <span
+              className={`text-xs font-medium truncate ${
+                isHighlighted ? 'text-brand' : 'text-muted-foreground'
+              }`}
+            >
+              {item.source.name}
+            </span>
+            <span className="text-xs text-muted-foreground/50">·</span>
+            <time
+              dateTime={item.publishedAt.toISOString()}
+              className="text-xs text-muted-foreground shrink-0"
+              title={formatDate(item.publishedAt)}
+            >
+              {formatRelative(item.publishedAt)}
+            </time>
 
-        {/* Preview-Snippet im kollabierten Zustand (max 2 Zeilen).
-            STRIKT NUR `collapsedPreview` (= item.summary) — niemals
-            livePreview, sonst Phantom-Höhe auf iOS, s.o. */}
-        {!expanded && collapsedPreview && (
-          <p
-            className="text-xs leading-relaxed text-muted-foreground"
+            <div className="ml-auto flex items-center gap-1 shrink-0">
+              {isRead && (
+                <Check className="w-4 h-4 text-brand" strokeWidth={3} aria-label="Gelesen" />
+              )}
+            </div>
+          </div>
+
+          {/* Titel — IMMER 2 Zeilen line-clamped, kein dynamischer Wechsel.
+              Da der Textinhalt NIE wechselt (nur item.title), gibt es kein
+              iOS-Layout-Problem mit -webkit-line-clamp. */}
+          <h2
+            className={`font-semibold text-sm leading-snug mb-1 ${
+              isRead ? 'text-muted-foreground' : 'text-foreground'
+            }`}
             style={{
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
@@ -208,72 +125,39 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
               overflow: 'hidden',
             }}
           >
-            {collapsedPreview}
-          </p>
+            {item.title}
+          </h2>
+
+          {/* Summary-Preview — IMMER nur item.summary (statischer Text),
+              max 2 Zeilen. Kein livePreview hier — siehe v3-Bugfix-Kommentare
+              in der Git-History. */}
+          {item.summary && (
+            <p
+              className="text-xs leading-relaxed text-muted-foreground"
+              style={{
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: 2,
+                overflow: 'hidden',
+              }}
+            >
+              {item.summary}
+            </p>
+          )}
+        </button>
+
+        {/* Topic-Tags */}
+        {item.topics && item.topics.length > 0 && (
+          <TopicChips topics={item.topics} muted={isRead} />
         )}
-      </button>
+      </article>
 
-      {/* Topic-Tags: kleine Chips unter dem Header — klickbar als Filter */}
-      {item.topics && item.topics.length > 0 && (
-        <TopicChips topics={item.topics} muted={isRead && !expanded} />
+      {/* Detail-Sheet (Portal nach body) */}
+      {sheetOpen && (
+        <NewsDetailSheet item={item} onClose={() => setSheetOpen(false)} />
       )}
-
-      {/* Bilder werden bewusst nicht angezeigt — viele Quellen liefern kein
-          og:image, das Ergebnis war zu uneinheitlich. Konsistent ohne ist
-          aufgeräumter. */}
-
-      {/* Expanded-Bereich — Conditional-Render (NICHT `hidden`-Attribut).
-          Frühere Version nutzte `hidden`, das wurde aber auf iOS-Safari
-          mit Tailwind v4 von einer Layout-Regel überschrieben und der
-          Bereich blieb effektiv sichtbar (Phantom-Höhe blieb stehen).
-          Reine React-Unmount funktioniert jetzt, nachdem `contain: content`
-          weg ist und die Article-Box explizit display:block trägt. */}
-      {expanded && (
-      <div
-        className="px-4 pb-4 space-y-3 border-t border-border/50 pt-3"
-      >
-        {previewLoading ? (
-          <div className="flex items-center gap-2 py-2 text-xs text-muted-foreground">
-            <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
-            Vorschau wird geladen…
-          </div>
-        ) : expandedSummary ? (
-          <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">
-            {expandedSummary}
-          </p>
-        ) : (
-          <p className="text-xs italic text-muted-foreground">
-            Vorschau nicht abrufbar — vollständiger Artikel öffnet sich über den Link unten.
-          </p>
-        )}
-
-        <div className="flex items-center justify-between pt-1 gap-2">
-          <a
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={handleOpen}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline shrink-0"
-          >
-            alles lesen
-            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-          </a>
-          <span className="text-xs text-muted-foreground truncate">
-            {shortDomain(item.url)}
-          </span>
-        </div>
-      </div>
-      )}
-    </article>
+    </>
   );
-}
-
-function shortDomain(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, '');
-  } catch {
-    return '';
-  }
 }
 
 /**
