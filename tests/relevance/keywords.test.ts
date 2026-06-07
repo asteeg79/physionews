@@ -109,13 +109,25 @@ describe('scoreByKeywords', () => {
   });
 
   describe('Entscheidungs-Logik', () => {
-    it('decision=accept nur bei Score >= 8 UND strong-Hit', () => {
+    it('decision=accept nur bei Score >= 10 UND >= 3 strong-Hits (sehr streng)', () => {
+      const r = scoreByKeywords({
+        ...baseInput,
+        title:
+          'Physiotherapie Manuelle Therapie Heilmittelverordnung Blankoverordnung',
+        sourceName: 'IFK Aktuelles',
+      });
+      // Mehrere strong-Hits, hoher Score, vertrauensvolle Quelle → accept
+      expect(r.decision).toBe('accept');
+    });
+
+    it('decision=gray bei nur 1-2 strong-Hits — AI prüft nach', () => {
       const r = scoreByKeywords({
         ...baseInput,
         title: 'Physiotherapie und Heilmittelversorgung',
         sourceName: 'VPT Bundesverband',
       });
-      expect(r.decision).toBe('accept');
+      // Score ist hoch genug, aber nur 1-2 strong-Hits → Gemini bewertet
+      expect(r.decision).toBe('gray');
     });
 
     it('decision=gray bei nur Source-Bias ohne strong-Hit', () => {

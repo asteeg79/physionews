@@ -18,14 +18,29 @@
 const HIGHLIGHTED_PATTERNS = [
   'benjamin alt',
   'ra benjamin',
-  'physiotherapeuten.de',
   'pt zeitschrift',
 ];
 
 const HIGHLIGHTED_PREFIXES = ['physio.de'];
 
+/**
+ * AUSSCHLÜSSE — verhindert, dass Google-News-Wrapper, die zufällig
+ * "physiotherapeuten.de" im Namen tragen, als hervorgehoben gelten.
+ * Diese Wrapper sind Such-Aggregatoren mit historischen Treffern, keine
+ * direkten Marken-Publikationen.
+ */
+const EXCLUDED_PATTERNS = ['(via google news)', 'via google news'];
+
+/**
+ * Maximale Anzahl Items, die pro hervorgehobener Quelle behalten werden.
+ * Verhindert, dass Lieblingsquellen die Liste dominieren — pro Quelle nur
+ * die N neuesten Beiträge, ältere werden vom Maintenance-Cron gelöscht.
+ */
+export const HIGHLIGHTED_SOURCE_KEEP = 5;
+
 export function isHighlightedSourceName(name: string): boolean {
   const lower = name.toLowerCase();
+  if (EXCLUDED_PATTERNS.some((p) => lower.includes(p))) return false;
   if (HIGHLIGHTED_PATTERNS.some((p) => lower.includes(p))) return true;
   if (HIGHLIGHTED_PREFIXES.some((p) => lower.startsWith(p))) return true;
   return false;

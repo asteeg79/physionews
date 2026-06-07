@@ -493,14 +493,16 @@ export function scoreByKeywords(input: ScoreInput): ScoreResult {
   if (sourceBias !== 0) reasonParts.push(`src:${sourceBias > 0 ? '+' : ''}${sourceBias}`);
   const reason = reasonParts.join(' | ') || 'neutral';
 
-  // Entscheidung — AI großzügiger einsetzen (Tokens haben wir):
-  // accept (Skip Gemini) NUR bei sehr klaren Treffern: score >= 9 UND
-  //   mindestens 2 strong-Hits (eindeutige Praxis-Relevanz)
-  // reject (Skip Gemini) nur bei klar negativen (score <= 1)
-  // Alles dazwischen → Gemini-Befragung — auch bei „guten" Score 7-8,
-  //   weil das oft nur Source-Bonus ohne echte Praxisrelevanz war.
+  // Entscheidung — AI noch großzügiger einsetzen (User-Feedback v85+):
+  // accept (Skip Gemini) NUR bei EXTREM klaren Treffern: score >= 10 UND
+  //   mindestens 3 strong-Hits (mehrere unabhängige Praxis-Belege).
+  //   Das ist in der Praxis selten — meist geht's an Gemini zur Prüfung.
+  // reject (Skip Gemini) bei klar negativen (score <= 1).
+  // Alles dazwischen → Gemini bewertet, ob es wirklich passt. Spart uns
+  //   "halbpassende" Verbands-News, die nur über Source-Bonus über die
+  //   Schwelle kommen, in der Praxis aber nicht relevant sind.
   let decision: ScoreResult['decision'];
-  if (score >= 9 && hits.strong.length >= 2) decision = 'accept';
+  if (score >= 10 && hits.strong.length >= 3) decision = 'accept';
   else if (score <= 1) decision = 'reject';
   else decision = 'gray';
 

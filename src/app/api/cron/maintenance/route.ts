@@ -10,11 +10,11 @@
  */
 
 import { db, schema } from '@/db';
-import { and, eq, lte, ne, notInArray, or } from 'drizzle-orm';
+import { and, desc, eq, lte, ne, notInArray, or, sql as drizzleSql } from 'drizzle-orm';
 import { selectAndPersistTopNews } from '@/lib/relevance/top-news';
 import { checkCronSecret } from '@/lib/cron-auth';
 import { checkWindow } from '@/lib/cron-window';
-import { isHighlightedSourceName } from '@/lib/highlighted-sources';
+import { isHighlightedSourceName, HIGHLIGHTED_SOURCE_KEEP } from '@/lib/highlighted-sources';
 
 export const maxDuration = 60;
 
@@ -56,6 +56,31 @@ export async function POST(req: Request) {
   if (protectedIds.length > 0) {
     console.log(
       `[Cron:Maintenance] Retention-Schutz für ${protectedIds.length} hervorgehobene Quellen aktiv`
+    );
+  }
+
+  // 1c. Pro hervorgehobener Quelle nur die N neuesten Items behalten.
+  // Verhindert, dass Lieblingsquellen die Liste dominieren — sie sind
+  // zwar vom 30-Tage-Cutoff ausgenommen, aber nicht von der Mengen-
+  // begrenzung. Bei N=5 pro Quelle bleibt die Liste übersichtlich.
+  let highlightedTrimmed = 0;
+  for (const srcId of protectedIds) {
+    // Subselect: IDs der N+1-ten und älteren Items dieser Quelle.
+    const stale = await db
+      .select({ id: schema.newsItems.id })
+      .from(schema.newsItems)
+      .where(eq(schema.newsItems.sourceId, srcId))
+      .orderBy(desc(schema.newsItems.publishedAt))
+      .offset(HIGHLIGHTED_SOURCE_KEEP);
+    if (stale.length === 0) continue;
+    await db
+      .delete(schema.newsItems)
+      .where(drizzleSql`${schema.newsItems.id} = ANY(${stale.map((r) => r.id)}::text[])`);
+    highlightedTrimmed += stale.length;
+  }
+  if (highlightedTrimmed > 0) {
+    console.log(
+      `[Cron:Maintenance] ${highlightedTrimmed} alte Items aus hervorgehobenen Quellen gestutzt (max ${HIGHLIGHTED_SOURCE_KEEP} pro Quelle)`
     );
   }
 

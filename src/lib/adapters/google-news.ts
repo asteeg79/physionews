@@ -22,22 +22,38 @@ const rss = new RssAdapter();
  *
  * Title-Cleanup: " - {Quellen-Name}" am Ende entfernen.
  */
+/**
+ * Maximales Alter, das ein Google-News-Treffer beim Einlesen haben darf.
+ * Ältere Items werden verworfen — Google News liefert nach Themen-Suchen
+ * gerne historische Artikel von 2017, 2019 etc., die niemals "neu" für
+ * den User sind und die Liste mit Altlasten fluten.
+ */
+const MAX_AGE_DAYS = 60;
+
 export class GoogleNewsAdapter implements SourceAdapter {
   readonly typeIdentifier = 'google-news';
 
   async fetch(source: Source): Promise<RawNewsItem[]> {
     // Source-URL ist die Google-News-Such-URL
     const items = await rss.fetch(source);
-    return items.map((item) => ({
-      ...item,
-      title: cleanGoogleNewsTitle(item.title),
-      // Google News description ist nur eine Wiederholung des Titels mit
-      // Quellen-Suffix "pt Zeitschrift für Physiotherapeuten" — wertlos und
-      // produziert false positives in der Relevanz-Klassifizierung.
-      // Wir setzen summary auf undefined, sodass /api/news/[id]/preview den
-      // Original-Inhalt beim ersten Klick nachzieht.
-      summary: undefined,
-    }));
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - MAX_AGE_DAYS);
+    return items
+      .filter((item) => {
+        // Items ohne Datum verwerfen (lieber konservativ als Müll einlesen)
+        if (!item.publishedAt) return false;
+        return item.publishedAt.getTime() >= cutoff.getTime();
+      })
+      .map((item) => ({
+        ...item,
+        title: cleanGoogleNewsTitle(item.title),
+        // Google News description ist nur eine Wiederholung des Titels mit
+        // Quellen-Suffix "pt Zeitschrift für Physiotherapeuten" — wertlos und
+        // produziert false positives in der Relevanz-Klassifizierung.
+        // Wir setzen summary auf undefined, sodass /api/news/[id]/preview den
+        // Original-Inhalt beim ersten Klick nachzieht.
+        summary: undefined,
+      }));
   }
 }
 
