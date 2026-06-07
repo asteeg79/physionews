@@ -411,6 +411,22 @@ const SOURCE_BIAS: Record<string, number> = {
 };
 
 /**
+ * Quellen, deren Items IMMER von der AI geprüft werden sollen — egal,
+ * wie hoch der Keyword-Score ausfällt. Hintergrund: Diese Quellen produzieren
+ * gemischtes Material, bei dem ein hoher Keyword-Score allein (z.B. durch
+ * "Reha", "Therapie", "Patient") nicht ausreicht, um Praxis-Relevanz für
+ * Physiotherapeut:innen sicher zu beweisen. Gemini bewertet pro Item, ob
+ * es wirklich passt.
+ *
+ * Wirkung: bei diesen Quellen wird `decision = 'gray'` erzwungen, auch
+ * wenn das Keyword-Layer „accept" sagen würde.
+ */
+const FORCE_AI_SOURCES: Set<string> = new Set([
+  'G-BA Pressemitteilungen',
+  'DGSP — News',
+]);
+
+/**
  * Berechnet einen Relevanz-Score (0-10) für ein News-Item auf Basis von
  * Schlagwörtern und Quelle. Liefert auch eine Begründung und eine
  * Entscheidung: accept / reject / gray (Gray-Items werden an Gemini gegeben).
@@ -498,13 +514,22 @@ export function scoreByKeywords(input: ScoreInput): ScoreResult {
   //   mindestens 3 strong-Hits (mehrere unabhängige Praxis-Belege).
   //   Das ist in der Praxis selten — meist geht's an Gemini zur Prüfung.
   // reject (Skip Gemini) bei klar negativen (score <= 1).
-  // Alles dazwischen → Gemini bewertet, ob es wirklich passt. Spart uns
-  //   "halbpassende" Verbands-News, die nur über Source-Bonus über die
-  //   Schwelle kommen, in der Praxis aber nicht relevant sind.
+  // Alles dazwischen → Gemini bewertet, ob es wirklich passt.
+  //
+  // FORCE_AI_SOURCES überschreibt das: bei G-BA und DGSP wird IMMER
+  // 'gray' gesetzt (außer bei klar abgelehntem Junk), weil diese
+  // Quellen oft Items mit hohem Keyword-Score liefern, die in der Praxis
+  // nicht relevant sind (z.B. allgemeine Gesundheitspolitik).
   let decision: ScoreResult['decision'];
-  if (score >= 10 && hits.strong.length >= 3) decision = 'accept';
-  else if (score <= 1) decision = 'reject';
-  else decision = 'gray';
+  if (score <= 1) {
+    decision = 'reject';
+  } else if (FORCE_AI_SOURCES.has(input.sourceName)) {
+    decision = 'gray';
+  } else if (score >= 10 && hits.strong.length >= 3) {
+    decision = 'accept';
+  } else {
+    decision = 'gray';
+  }
 
   return { score, reason, decision, hits };
 }
