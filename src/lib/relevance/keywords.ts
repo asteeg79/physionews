@@ -424,6 +424,13 @@ const SOURCE_BIAS: Record<string, number> = {
 const FORCE_AI_SOURCES: Set<string> = new Set([
   'G-BA Pressemitteilungen',
   'DGSP — News',
+  // Erweitert auf User-Wunsch — diese Quellen produzieren häufig
+  // allgemeine Gesundheitspolitik / Statistik, die nur durch Source-Bias
+  // oder generische Keywords über die Schwelle kommen, in der Praxis
+  // aber selten direkt für Physiotherapeut:innen relevant sind.
+  'BMG Pressemitteilungen',
+  'Robert Koch-Institut Pressemitteilungen',
+  'Ärzteblatt RSS Übersicht',
 ]);
 
 /**
