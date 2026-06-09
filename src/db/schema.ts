@@ -61,6 +61,16 @@ export const newsItems = pgTable(
     publishedAt: timestamp('published_at', { withTimezone: true }).notNull(),
     fetchedAt: timestamp('fetched_at', { withTimezone: true }).notNull().defaultNow(),
     isRead: boolean('is_read').notNull().default(false),
+    /**
+     * Zeitpunkt der ersten Push-Notification für dieses Item. NULL = noch nie
+     * notifiziert. Strikt einmal-pro-Item: sobald gesetzt, wird das Item
+     * NIE wieder gepusht — egal ob gelesen, gelöscht und re-inserted, oder
+     * von mehreren Cron-Endpoints parallel angefasst.
+     *
+     * Ersetzt die frühere lockerere `app_settings.last_notified_at`-Cutoff-
+     * Logik (siehe push-sender.ts notifyNewHighRelevanceItems).
+     */
+    notifiedAt: timestamp('notified_at', { withTimezone: true }),
     // Relevanz-Klassifizierung: 0 = irrelevant, 10 = hochrelevant für Physiotherapie
     relevanceScore: integer('relevance_score').notNull().default(5),
     relevanceMethod: relevanceMethodEnum('relevance_method').notNull().default('pending'),

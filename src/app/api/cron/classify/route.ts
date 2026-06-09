@@ -56,7 +56,7 @@ export async function POST(req: Request) {
   });
   console.log(
     `[Cron:Classify] Push: ${notify.pushSent} gesendet ` +
-      `(${notify.itemsConsidered} Kandidaten, cutoff war ${notify.cutoffUsed.toISOString()}, Schwellwert >= ${PUSH_RELEVANCE_THRESHOLD}).`
+      `(${notify.itemsConsidered} Kandidaten, Schwellwert >= ${PUSH_RELEVANCE_THRESHOLD}).`
   );
 
   return Response.json({
