@@ -105,32 +105,8 @@ async function classifyCandidates(items: ScoreCandidate[]): Promise<{
 
   if (items.length === 0) return { result, updates, skipped: skippedDueToQuota };
 
-  const grayPool: GeminiInput[] = [];
-
   // Stufe 1: Keyword-Scoring
-  for (const item of items) {
-    const scored = scoreByKeywords({
-      title: item.title,
-      summary: item.summary,
-      sourceName: item.sourceName,
-      sourceCategory: item.sourceCategory,
-    });
-
-    result.byDecision[scored.decision]++;
-
-    if (scored.decision === 'gray') {
-      grayPool.push({ id: item.id, title: item.title, sourceName: item.sourceName });
-    }
-
-    // Keyword-Score vorab festhalten, falls Gemini nichts liefert.
-    updates.push({
-      id: item.id,
-      score: scored.score,
-      reason: `keyword (${scored.decision}): ${scored.reason}`,
-      method: 'keyword',
-      topics: [], // Topics setzt erst Gemini
-    });
-  }
+  const grayPool = scoreAllByKeywords(items, updates, result);
 
   // Stufe 2: Gemini auf Grauzone (mit Quota-Check und Result-Cache)
   if (grayPool.length > 0 && process.env.GEMINI_API_KEY) {
@@ -155,6 +131,46 @@ async function classifyCandidates(items: ScoreCandidate[]): Promise<{
   }
 
   return { result, updates, skipped: skippedDueToQuota };
+}
+
+/**
+ * Stufe 1 — Keyword-Scoring für alle Kandidaten.
+ *
+ * Schreibt für jedes Item einen vorläufigen Eintrag nach `updates` (der gilt,
+ * falls Gemini später nichts liefert) und gibt die Grauzonen-Items zurück,
+ * die eine KI-Bewertung brauchen.
+ */
+function scoreAllByKeywords(
+  items: ScoreCandidate[],
+  updates: ClassificationUpdate[],
+  result: PipelineResult
+): GeminiInput[] {
+  const grayPool: GeminiInput[] = [];
+
+  for (const item of items) {
+    const scored = scoreByKeywords({
+      title: item.title,
+      summary: item.summary,
+      sourceName: item.sourceName,
+      sourceCategory: item.sourceCategory,
+    });
+
+    result.byDecision[scored.decision]++;
+
+    if (scored.decision === 'gray') {
+      grayPool.push({ id: item.id, title: item.title, sourceName: item.sourceName });
+    }
+
+    updates.push({
+      id: item.id,
+      score: scored.score,
+      reason: `keyword (${scored.decision}): ${scored.reason}`,
+      method: 'keyword',
+      topics: [], // Topics setzt erst Gemini
+    });
+  }
+
+  return grayPool;
 }
 
 /** Ein von Gemini (oder aus dem Cache) geliefertes Ergebnis. */

@@ -107,7 +107,10 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     }
 
     // Jan 14, 2026
-    const enMatch2 = /([A-Za-z]+)\s{1,3}(\d{1,2}),?\s{1,3}(\d{4})/.exec(clean);
+    // {3,9} statt +: Monatsnamen sind zwischen 'Jan' und 'September' lang.
+    // Unbegrenzt könnte die Gruppe bei einer langen Buchstabenfolge über
+    // jede Startposition zurücklaufen — quadratische Laufzeit.
+    const enMatch2 = /\b([A-Za-z]{3,9})\b\s{1,3}(\d{1,2}),?\s{1,3}(\d{4})/.exec(clean);
     if (enMatch2) {
       const [, monName, d, y] = enMatch2;
       const m = MONTHS_EN[monName.toLowerCase()];
