@@ -35,6 +35,15 @@ function sleep(ms: number): Promise<void> {
 }
 
 /**
+ * Macht fremden Text für eine Log-Zeile unschädlich: Steuerzeichen und
+ * Zeilenumbrüche raus, damit eine API-Antwort keine zusätzlichen Log-Einträge
+ * vortäuschen kann, und auf eine vernünftige Länge gekürzt.
+ */
+function sanitizeForLog(value: string): string {
+  return value.replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, 200);
+}
+
+/**
  * Zieht die aussagekräftige Meldung aus einer Fehlerantwort der Gemini-API.
  * Vorher wurde nur der Statuscode geloggt — damit ließ sich nicht
  * unterscheiden, ob das Minutenlimit, das Tagesbudget oder ein fehlerhafter
@@ -45,10 +54,12 @@ async function errorDetail(res: Response): Promise<string> {
     const body = await res.text();
     const parsed = JSON.parse(body) as { error?: { status?: string; message?: string } };
     const err = parsed.error;
-    if (err?.message) return `${err.status ?? res.status}: ${err.message.slice(0, 200)}`;
-    return body.slice(0, 200);
+    if (err?.message) {
+      return sanitizeForLog(`${err.status ?? res.status}: ${err.message}`);
+    }
+    return sanitizeForLog(body);
   } catch {
-    return res.statusText || String(res.status);
+    return sanitizeForLog(res.statusText || String(res.status));
   }
 }
 
