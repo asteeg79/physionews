@@ -3011,5 +3011,354 @@
     ],
     "reason": "IFK-Webinare zur TI: Für jeden Wissensstand das passende Angebot",
     "createdAt": "2026-09-17T14:30:10.155Z"
+  },
+  {
+    "titleHash": "484e54c1b34524df6676c64870aeffcb",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die neue Ausgabe des Verbandsmagazins \"Physio Deutschland\" ist erschienen. Solche Publikationen enth",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "0d3d42d4e97168c603239a8268e1ac1c",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung betrifft die Grippe-Impfquoten bei Kindern und Jugendlichen mit Grunderkrankung und hat ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "4f4ddbb9aaf4b15b51772c0577af5873",
+    "score": 0,
+    "topics": [
+      "Geriatrie"
+    ],
+    "reason": "Die Meldung über Hochaltrige und deren Lebenswelten im Bundesgesundheitsblatt ist ein allgemeines Ge",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "b570075d6f38b5e4e45994b73f01e4cb",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Aufforderung zur Teilnahme an einem RKI-Panel ist eine allgemeine Bürgerbeteiligungsmaßnahme und",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "3dcd7460505267837d5a91d34af57c13",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über die Krisenfestigkeit von Krankenhäusern ist ein Thema der Krankenhausverwaltung und",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "e7d6aba2b2264bf46c73742134b6e096",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über Antibiotikaresistenzen und -verbrauch ist ein Thema der Infektiologie und des öffen",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "973578f59f699ff6b74d23996e76e13b",
+    "score": 7,
+    "topics": [
+      "Fuß & Sprunggelenk",
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "reason": "Die Meldung über die Behandlung von Sprunggelenksbrüchen (konservativ vs. operativ, Schonung vs. Bel",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "ec640622b996b7fef4275acbdae9d00d",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Analyse des WIdO zu Schwellenwerten für die Pflegebegutachtung betrifft primär die Pflege und ha",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "005838440502eabc4e4353c8066dbf41",
+    "score": 4,
+    "topics": [
+      "Rückenschmerz",
+      "Sturzprävention"
+    ],
+    "reason": "Die Meldung über Rückenschmerzen bei Schulkindern im Zusammenhang mit Schulranzen und Tablets hat ei",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "d6f299c61f64cf005fe672397500fdaa",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Studie zu Schwerverletzten nach gewalttätigen Auseinandersetzungen ist ein Thema der Notfallmedi",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "791daf15bd1913a6d71e406ccc9380ab",
+    "score": 3,
+    "topics": [
+      "Praxisgründung",
+      "Veranstaltung"
+    ],
+    "reason": "Die Ankündigung von Praxisgründungsseminaren des IFK ist eine Veranstaltungsankündigung und keine Än",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "9b34c36224611e00865f73d6c6c998d9",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Erhöhung der Höchstbeträge für beihilfefähige Aufwendungen hat direkte Auswirkungen auf die Abre",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "de87f621a2a78220f282818df7bdf48f",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Weiterentwicklung der Telematikinfrastruktur ist ein allgemeines Digitalisierungsthema im Gesund",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "4525cec950e3690bb4debeb9e295a352",
+    "score": 0,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Die Meldung zur Praxisübergabe ist ein Thema der Praxisorganisation und -verwaltung, hat aber keinen",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "b9f38f6873158e598a29717b67cb4ff2",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Übersicht über Pflege- und Gesundheitsfachberufe ist eine allgemeine Information und keine Änder",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "071d55b876f8cbe7085d1221e5c64f80",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Blankoverordnung"
+    ],
+    "reason": "Die Forderung nach einer zukunftsfähigen elektronischen Heilmittelverordnung (eHV) durch den IFK adr",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "751cb9502de9daf125b8dfa9f9d02a9d",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Ein 'Berufspolitisches Update' bei einem Regionalforum kann relevante Informationen über Entwicklung",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "76489549a22fe35c40df0648e9a4e7bc",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Die Fortsetzung der Schulgeldfreiheit in den Gesundheitsfachberufen in NRW ist eine relevante Inform",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "dccca5787a4d2ad6ac13c7b1ebaa3e75",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über KIM und TIM zur Kommunikation im Praxisalltag ist ein technisches Thema der Digital",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "876ac880ee54e46ffeb57d062fee20c4",
+    "score": 0,
+    "topics": [
+      "Praxisgründung",
+      "Veranstaltung"
+    ],
+    "reason": "Die Ankündigung eines Businessplanwettbewerbs ist eine Veranstaltungsankündigung und keine Änderung ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "7772dca689ef60eef13548127585da1c",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über eine gefälschte Sicherheitsabfrage ist eine allgemeine IT-Sicherheitswarnung ohne d",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "fa86739a5cd4a9e9c92518861b0e831d",
+    "score": 0,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Die Meldung zur Berufsanerkennung ist relevant für Personen, die im Ausland eine Ausbildung absolvie",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "812d76862baaa9b1648a7b8f1de26adf",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung über ein dreitägiges Event mit starken Ergebnissen für Mitglieder ist eine allgemeine Ve",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "6e1162ac8c8f7fb23c93b42556bfcfa8",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Eine Demonstration in Berlin mit dem Tenor 'Die Luft ist raus' deutet auf eine starke Unzufriedenhei",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "7566b92b42fd4c08b0badad12fe043bb",
+    "score": 8,
+    "topics": [
+      "Fortbildung",
+      "Berufsausbildung"
+    ],
+    "reason": "Neue Weiterbildungsregelungen in der Physiotherapie haben direkten Einfluss auf die Fortbildungspfli",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "0de67fb4fb5f3f0498bb8f43a3445c09",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die 'Notfallreform 2026' mit Bezug zur Physiotherapie in NRW könnte Änderungen in der Versorgung ode",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "062e92cd983afd47db8add2c10775063",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Warnung, die Heilmittelversorgung nicht kaputtzusparen, adressiert direkt die Vergütung und die ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "03152cd438713d9dc2d7c8ee189aaaae",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Warnung von Heilmittelverbänden vor Fehlsteuerung im Heilmittelbereich betrifft direkt die Arbei",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "7c720e6f2cb24fe688072f8e4b232578",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "reason": "Die Vorstellung der Methode 'Ajambow' zur Bewegungserfahrung an Land und im Wasser könnte für Physio",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "620b035fecad7c110641028476ae1cda",
+    "score": 0,
+    "topics": [],
+    "reason": "Ein Ostergruß ist eine rein private oder allgemeine Mitteilung ohne Bezug zur physiotherapeutischen ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "22f7ad8df5c6182f7ad09c222c84871e",
+    "score": 4,
+    "topics": [
+      "Rückenschmerz"
+    ],
+    "reason": "Die Aufforderung, dem Rücken etwas Gutes zu tun, ist ein allgemeiner Gesundheitshinweis. Ohne konkre",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "d4fa1aa274e2775bf1d6ec5f386cc951",
+    "score": 4,
+    "topics": [
+      "Manuelle Therapie"
+    ],
+    "reason": "Der Vergleich 'Hands-off vs. Hands-on' berührt die Diskussion über physiotherapeutische Behandlungst",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "70e9147660faadde3de8fbe60a2b1ce2",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Zurückweisung einer Revision der Berufsverbände durch das BSG kann weitreichende rechtliche und ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "d186fc1c302652548e36b2c088f1fc12",
+    "score": 0,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Die Meldung über eine Fristende zur Grundqualifikation ist spezifisch und betrifft möglicherweise nu",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "dd538bdfd1685c6625e6efb96419ac5c",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Information über eine Vergütungssteigerung um 2,49 % hat direkte Auswirkungen auf die Einnahmen ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "7b77b6998ee1323c36a153f819b1daaf",
+    "score": 7,
+    "topics": [],
+    "reason": "Die Verschiebung der TI-Anbindung durch den Bundestag kann Auswirkungen auf die Digitalisierung und ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "48b20f446a365ff9cf7cdb80d6e8c680",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Das Angebot eines kostenlosen Tickets für eine Messe ist eine Veranstaltungsankündigung und keine Än",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "d0ab1c45d1ed3f62cd40fb2014e03a03",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Höhere Beihilfebeiträge ab einem bestimmten Datum haben direkte Auswirkungen auf die Abrechnung und ",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "952453430dbaa54c34370c98c09963ed",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Nennung von 'YOLii' im Kontext der therapie Düsseldorf ist eine Ankündigung eines Ausstellers od",
+    "createdAt": "2026-09-17T18:29:20.936Z"
+  },
+  {
+    "titleHash": "088fbbbb361cbe5d33ff2f0c2b0f352f",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über Behinderung und gesellschaftliche Teilhabe als Leit­thema im Bundes­gesund­heits­bl",
+    "createdAt": "2026-09-17T18:29:20.936Z"
   }
 ]
