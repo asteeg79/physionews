@@ -1,5 +1,22 @@
 [
   {
+    "id": "e154ae350eb5530c8ec605b447dbcb1de7e7d5fd625bb4ace8fe046497fc43ea",
+    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
+    "title": "Neue Vorsitzende Optendrenk: „Rahmenbedingungen für eine effektive Projektförderung werden schwerer“",
+    "summary": null,
+    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1347/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-17T13:18:36.302Z",
+    "fetchedAt": "2026-09-17T13:18:36.326Z",
+    "notifiedAt": null,
+    "relevanceScore": 5,
+    "relevanceMethod": "pending",
+    "relevanceReason": null,
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
     "id": "3928e1c83cb9e7580f4ab8b2fd03447699cba31acc379a39213e48bde0db4e28",
     "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
     "title": "Welttag der Patientensicherheit – chronische Erkrankungen im Fokus",
@@ -153,7 +170,7 @@
     "fetchedAt": "2026-09-17T08:37:13.539Z",
     "notifiedAt": null,
     "relevanceScore": 4,
-    "relevanceMethod": "pending",
+    "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): src:-2",
     "isTopNews": false,
     "topics": [],
@@ -170,7 +187,7 @@
     "fetchedAt": "2026-09-17T08:37:13.539Z",
     "notifiedAt": null,
     "relevanceScore": 4,
-    "relevanceMethod": "pending",
+    "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): src:-2",
     "isTopNews": false,
     "topics": [],
@@ -187,7 +204,7 @@
     "fetchedAt": "2026-09-17T08:37:13.539Z",
     "notifiedAt": null,
     "relevanceScore": 4,
-    "relevanceMethod": "pending",
+    "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): src:-2",
     "isTopNews": false,
     "topics": [],
@@ -204,29 +221,10 @@
     "fetchedAt": "2026-09-17T08:37:13.539Z",
     "notifiedAt": null,
     "relevanceScore": 4,
-    "relevanceMethod": "pending",
+    "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): src:-2",
     "isTopNews": false,
     "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "15bea327d9b24cbbc5d39a59bb86c92ef31bb1b559a923eb8b9b6962d43576d0",
-    "sourceId": "16c01fbb-ffd2-410d-98ac-b222f625da54",
-    "title": "Finanzentwicklung der GKV im 1. Halbjahr 2026",
-    "summary": null,
-    "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/finanzentwicklung-der-gkv-im-1-halbjahr-2026",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T08:37:13.272Z",
-    "fetchedAt": "2026-09-17T08:37:13.273Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Finanzentwicklung der GKV im 1. Halbjahr 2026",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
     "lang": "de"
   },
   {
@@ -239,14 +237,11 @@
     "publishedAt": "2026-09-17T08:37:07.578Z",
     "fetchedAt": "2026-09-17T08:37:07.578Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: DGSP beim dvs-Kongress Gesundheit 2026 in Köln: Smart Health und Bewegung als Schlüssel einer zukunf",
+    "relevanceScore": 4,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:-1",
     "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -259,15 +254,11 @@
     "publishedAt": "2026-09-17T08:37:06.101Z",
     "fetchedAt": "2026-09-17T08:37:06.101Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Gemeinsamer Protest von Physiotherapie- und Ergotherapieverbänden gegen Absetzungen ist hochrelevant",
-    "isTopNews": true,
-    "topics": [
-      "Heilmittelversorgung",
-      "GKV-Vergütung",
-      "Berufsverband"
-    ],
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -280,14 +271,11 @@
     "publishedAt": "2026-09-17T08:37:06.100Z",
     "fetchedAt": "2026-09-17T08:37:06.101Z",
     "notifiedAt": null,
-    "relevanceScore": 8,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Austausch des VPT mit Politikern zur Physiotherapie ist berufsrelevant und kann Auswirkungen auf die",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Heilmittelversorgung"
-    ],
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
+    "isTopNews": true,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -300,13 +288,11 @@
     "publishedAt": "2026-09-17T08:37:06.100Z",
     "fetchedAt": "2026-09-17T08:37:06.101Z",
     "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Antrag auf Insolvenzverfahren bei einer Firma ist eher eine administrative/wirtschaftliche Nachricht",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Berufsverband"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -319,14 +305,11 @@
     "publishedAt": "2026-09-17T08:37:06.099Z",
     "fetchedAt": "2026-09-17T08:37:06.101Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Gespräche des VPT mit dem AOK-Bundesverband zur Primärversorgung sind relevant für die Heilmittelver",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Berufsverband"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -339,13 +322,11 @@
     "publishedAt": "2026-09-17T08:37:06.099Z",
     "fetchedAt": "2026-09-17T08:37:06.101Z",
     "notifiedAt": null,
-    "relevanceScore": 6,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Neue Folge zu Bewegung und Anpassung des Körpers könnte indirekt relevant sein, aber der Bezug zur P",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -358,100 +339,11 @@
     "publishedAt": "2026-09-17T08:37:06.098Z",
     "fetchedAt": "2026-09-17T08:37:06.101Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Programm und Informationen des VPT Bundesverbandes sind für die Mitglieder relevant, aber nicht dire",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "bcb5f92e54ac072981672dd285417a1cff9d69ff5a2128a6198acf7dd562d060",
-    "sourceId": "4cf7742e-5ae0-49f4-a95b-4545f65cdb06",
-    "title": "Sieben Dimen­sionen - Di­ver­sität ist das Motto beim dies­jährigen Tag des Ge­sund­heits­amtes am 19. März",
-    "summary": null,
-    "url": "https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/Pressemitteilungen/2026/01_2026.html?nn=16776990",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T08:37:06.042Z",
-    "fetchedAt": "2026-09-17T08:37:06.043Z",
-    "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Informationen zum Tag des Gesundheitsamtes sind allgemein relevant, aber ohne direkten Bezug zur Phy",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "8ca5dbf7412faf847460525dd63d3ab954a8387a1891adf0e5f57cfacaf208cc",
-    "sourceId": "4cf7742e-5ae0-49f4-a95b-4545f65cdb06",
-    "title": "Diskriminierungs­erfahrungen sind bedeut­sam für die Gesund­heit und gesund­heitliche Ungleich­heit in Deutsch­land",
-    "summary": null,
-    "url": "https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/Meldungen/2026-03-02_Pressestatement-Diskriminierung.html?nn=16776990",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T08:37:06.042Z",
-    "fetchedAt": "2026-09-17T08:37:06.043Z",
-    "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Informationen zu Diskriminierung und Gesundheit sind allgemein relevant, aber ohne direkten Bezug zu",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "3d34ba983455b91e19eb37e9679070e84c63ac9e3bdb868bcad17181cc0c437d",
-    "sourceId": "4cf7742e-5ae0-49f4-a95b-4545f65cdb06",
-    "title": "Bericht zu Pflege­bedürftig­keit und Ein­schrän­kungen in der funk­tio­nalen Gesund­heit",
-    "summary": null,
-    "url": "https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/Meldungen/2026-05-05_Pflegebericht.html?nn=16776990",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T08:37:06.040Z",
-    "fetchedAt": "2026-09-17T08:37:06.043Z",
-    "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Bericht zu Pflegebedürftigkeit und Einschränkungen ist allgemein relevant, aber ohne spezifischen ph",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "03b49d9c540ec2ee8cd49abbe7844d131a48cd6845d8bd11b123edadc36b3701",
-    "sourceId": "4cf7742e-5ae0-49f4-a95b-4545f65cdb06",
-    "title": "Behinderung und gesell­schaft­liche Teil­habe sind Leit­thema im Bundes­gesund­heits­blatt",
-    "summary": null,
-    "url": "https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/Meldungen/2026-07-28_Bundesgesundheitsblatt-Teilhabe.html?nn=16776990",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T08:37:06.038Z",
-    "fetchedAt": "2026-09-17T08:37:06.043Z",
-    "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Allgemeine Information über Behinderung und Teilhabe, ohne direkten Bezug zu physiotherapeutischen I",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "473f18f249585b550e54120f34f75eb389eda2d061a991dce0249d53c5ddd3ba",
-    "sourceId": "4cf7742e-5ae0-49f4-a95b-4545f65cdb06",
-    "title": "Hochaltrige Menschen – Gesundheit und Lebens­welten im Bundes­gesund­heits­blatt",
-    "summary": null,
-    "url": "https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/Meldungen/2026-09-10_Bundesgesundheitsblatt-Hochaltrige-Menschen.html?nn=16776990",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T08:37:06.037Z",
-    "fetchedAt": "2026-09-17T08:37:06.043Z",
-    "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Allgemeine Gesundheitsmonitoring-Information über Hochaltrige, ohne direkten Bezug zur Physiotherapi",
-    "isTopNews": false,
-    "topics": [
-      "Geriatrie"
-    ],
     "lang": "de"
   },
   {
@@ -464,13 +356,11 @@
     "publishedAt": "2026-09-17T08:37:05.256Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Schulgeldfreiheit in NRW ist relevant für die Ausbildung und Rekrutierung von Fachkräften.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Berufsausbildung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -483,9 +373,9 @@
     "publishedAt": "2026-09-17T08:37:05.256Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Effiziente und sichere Kommunikation durch KIM und TIM ist relevant für die Praxisorganisation.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
@@ -501,12 +391,10 @@
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
     "relevanceScore": 8,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Businessplanwettbewerb ist direkt relevant für angehende Praxisinhaber und Unternehmer.",
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Praxisgründung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -519,9 +407,9 @@
     "publishedAt": "2026-09-17T08:37:05.255Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Erhöhung von Beihilfeaufwendungen ist relevant für Beihilfepatienten und deren Kostenträger.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
@@ -536,9 +424,9 @@
     "publishedAt": "2026-09-17T08:37:05.255Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Allgemeine Entwicklung der Telematikinfrastruktur, ohne direkten Bezug zur täglichen Praxisarbeit.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
@@ -553,13 +441,11 @@
     "publishedAt": "2026-09-17T08:37:05.255Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Praxisübergabe ist ein wichtiges Thema für Praxisinhaber und deren Nachfolgeplanung.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Praxisgründung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -572,14 +458,11 @@
     "publishedAt": "2026-09-17T08:37:05.255Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Forderung nach einer elektronischen Heilmittelverordnung ist direkt relevant für die Digitalisierung",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:heilmittelverordnung | src:+3",
     "isTopNews": true,
-    "topics": [
-      "Heilmittelversorgung",
-      "Blankoverordnung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -592,13 +475,11 @@
     "publishedAt": "2026-09-17T08:37:05.255Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Berufspolitisches Update ist relevant für die allgemeine Orientierung in der Physiotherapie.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Berufsverband"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -611,13 +492,11 @@
     "publishedAt": "2026-09-17T08:37:05.254Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 6,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Kooperation für nebenberufliches Studium ist eher allgemein bildungsrelevant, nicht direkt praxisrel",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Berufsausbildung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -630,13 +509,11 @@
     "publishedAt": "2026-09-17T08:37:05.254Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Klare Anweisung zur Durchführung von Zertifikatsleistungen, die direkt die Abrechnung und Leistungse",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -649,13 +526,11 @@
     "publishedAt": "2026-09-17T08:37:05.254Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Der Entgeltatlas 2025 und die Vergütung von Praxisinhabern sind direkt relevant für die finanzielle ",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -668,14 +543,11 @@
     "publishedAt": "2026-09-17T08:37:05.254Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Erweiterung der Diagnoseliste für langfristigen Heilmittelbedarf ist direkt relevant für die Verordn",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Leitlinie"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -688,13 +560,11 @@
     "publishedAt": "2026-09-17T08:37:05.253Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Allgemeine Berufsverbandsnachrichten, die die aktuelle Situation und Entwicklung der Physiotherapie ",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Berufsverband"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -707,9 +577,9 @@
     "publishedAt": "2026-09-17T08:37:05.253Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 6,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Webinare zur TI sind für die Praxisorganisation relevant, aber nicht direkt für die therapeutische A",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
@@ -725,13 +595,10 @@
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
     "relevanceScore": 8,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Gemeinsame Positionierung von Berufsverbänden gegen Absetzungen ist direkt relevant für die finanzie",
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Berufsverband"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -745,12 +612,10 @@
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
     "relevanceScore": 8,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Praxisgründungsseminare sind direkt relevant für angehende Praxisinhaber.",
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Praxisgründung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -763,9 +628,9 @@
     "publishedAt": "2026-09-17T08:37:05.252Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 6,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Die Telematikinfrastruktur (TI) ist ein Thema für die Praxisorganisation, aber der direkte Bezug zur",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
@@ -780,13 +645,11 @@
     "publishedAt": "2026-09-17T08:37:05.250Z",
     "fetchedAt": "2026-09-17T08:37:05.256Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Bewertung der Praxis für Praxisinhaber relevant, aber nicht direkt methodisch oder vergütungsrelevan",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Praxisgründung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -799,14 +662,11 @@
     "publishedAt": "2026-09-16T12:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:05.994Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Veranstaltungshinweis des Berufsverbandes, aber ohne direkten Praxisbezug.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Veranstaltung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -819,14 +679,11 @@
     "publishedAt": "2026-09-16T12:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:05.994Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Direkter Bezug zur Vergütung und zur Wertschätzung des Berufsstandes, was für die Praxis essenziell ",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung",
-      "Berufsverband"
-    ],
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
+    "isTopNews": true,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -839,14 +696,11 @@
     "publishedAt": "2026-09-14T12:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:05.994Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Veranstaltungshinweis des Berufsverbandes, aber ohne direkten Praxisbezug.",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Veranstaltung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -860,13 +714,44 @@
     "fetchedAt": "2026-09-17T08:37:05.994Z",
     "notifiedAt": null,
     "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:blankoverordnung | src:+3",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "c820573ea0a92afa81b4cf9c864c7097f3aa380339b778c85987932d2b378244",
+    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
+    "title": "In eigener Sache: GBA erneuert sein visuelles Erscheinungsbild",
+    "summary": null,
+    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1353/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-09T00:00:00.000Z",
+    "fetchedAt": "2026-09-17T13:18:36.326Z",
+    "notifiedAt": null,
+    "relevanceScore": 5,
     "relevanceMethod": "pending",
-    "relevanceReason": "ai: Direkter Bezug zur Blankoverordnung, einem zentralen Thema für die praktische Arbeit.",
-    "isTopNews": true,
-    "topics": [
-      "Blankoverordnung",
-      "Heilmittelversorgung"
-    ],
+    "relevanceReason": null,
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "cdf49276b1a96d63fd1bc0980e62b77366a4919c29a1151636f5e24e7fa07598",
+    "sourceId": "080c8549-27aa-4c6f-be77-a748e9dd65c8",
+    "title": "Pressemitteilung zum aktualisierten Cochrane Review: Wie gut helfen E-Zigaretten beim Rauchstopp? Freiburg, 26.8.2026. Etliche Raucher*innen tun sich trotz aller Gesundheitsrisiken schwer damit, von Zigaretten loszukommen – zu stark ist die Abhängigkeit. Vor diesem Hintergrund hat ein jetzt aktualisierter Cochrane Review untersucht, wie gut E-Zigaretten Raucher*innen bei der Tabakentwöhnung helfen. Sein Ergebnis, kurz zusammengefasst: Zwar bringen nikotinhaltige E-Zigaretten mittelfristig etwas mehr Menschen vom Tabak ab als Nikotinpflaster, -kaugummis und andere herkömmliche Nikotinersatzpräparate. 26 Aug 2026",
+    "summary": null,
+    "url": "https://www.cochrane.de/news/pressemitteilung-zum-aktualisierten-cochrane-review-wie-gut-helfen-e-zigaretten-beim",
+    "imageUrl": "https://www.cochrane.de/sites/cochrane.de/files/styles/grid_image/public/uploads/images/image/adobestock_245970858.jpeg.webp?itok=0HNnpNJ3",
+    "publishedAt": "2026-08-26T07:02:03.000Z",
+    "fetchedAt": "2026-09-17T13:18:31.004Z",
+    "notifiedAt": null,
+    "relevanceScore": 5,
+    "relevanceMethod": "pending",
+    "relevanceReason": null,
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -879,9 +764,9 @@
     "publishedAt": "2026-08-26T00:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:05.481Z",
     "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Eine lokale Aktion ohne direkten Bezug zur physiotherapeutischen Praxis oder Berufspolitik.",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
@@ -896,15 +781,11 @@
     "publishedAt": "2026-08-23T23:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:09.373Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Healthy Ageing Needs Muscle: Physiotherapy between WHO Framework, Implementation Gap and Myokine Rev",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha",
-      "Studie"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -917,13 +798,11 @@
     "publishedAt": "2026-08-23T23:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:09.373Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: physioscience in a Changing Scientific Landscape – Ensuring Quality, Transparency, Integrity, Trustw",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Studie"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -936,15 +815,11 @@
     "publishedAt": "2026-08-23T23:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:09.373Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Reporting Randomised Trials of Physical Exercise or Training Interventions in Older AdultsEmpfehlung",
+    "relevanceScore": 9,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Studie",
-      "RCT",
-      "Geriatrie"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -957,15 +832,11 @@
     "publishedAt": "2026-08-23T23:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:09.373Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Effectiveness of physical therapeutic scoliosis exercise (PSSE) intervention for adolescent idiopath",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | +med:skoliose | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Wirbelsäule",
-      "Bewegungstherapie",
-      "Systematic Review"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -978,13 +849,11 @@
     "publishedAt": "2026-08-23T23:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:09.373Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Are our cities falling behind? A German perspective on the offer for year-round outdoor exerciseFall",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -997,13 +866,28 @@
     "publishedAt": "2026-08-23T23:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:09.373Z",
     "notifiedAt": null,
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "0c42c7e044f2bb0970479477fd8501b9fd4fc604aaaed85e1dec2a38af4881a9",
+    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
+    "title": "Drei beendete Förderprojekte geben Anregungen für eine bessere Gesundheitsversorgung",
+    "summary": null,
+    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1352/",
+    "imageUrl": null,
+    "publishedAt": "2026-08-21T12:00:00.000Z",
+    "fetchedAt": "2026-09-17T13:18:36.326Z",
+    "notifiedAt": null,
     "relevanceScore": 5,
     "relevanceMethod": "pending",
-    "relevanceReason": "ai: News from the Sections of the German Society for Physiotherapy ScienceNeues aus den Sektionen der De",
+    "relevanceReason": null,
     "isTopNews": false,
-    "topics": [
-      "Berufsverband"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1016,14 +900,45 @@
     "publishedAt": "2026-08-21T11:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:07.035Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: CESAR-Studie zur Bewertung von KI in der Evidenzsynthese ist methodisch relevant für die Erstellung ",
+    "relevanceScore": 6,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): neutral",
     "isTopNews": false,
-    "topics": [
-      "Studie",
-      "Systematic Review"
-    ],
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "e417260dc35e784963dfd9d8a61ce69f152dd64c7063a350a55dd49e2a77fccb",
+    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
+    "title": "Früherkennung bei Kindern und Jugendlichen: GBA führt neue U10 ein und integriert Dokumentation der J1 ins Gelbe Heft",
+    "summary": null,
+    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1350/",
+    "imageUrl": null,
+    "publishedAt": "2026-08-20T12:00:00.000Z",
+    "fetchedAt": "2026-09-17T13:18:36.326Z",
+    "notifiedAt": null,
+    "relevanceScore": 5,
+    "relevanceMethod": "pending",
+    "relevanceReason": null,
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "aa7f8d302718ff2c10bb399e7a09340914978941160562f393807fa6bdbae7e1",
+    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
+    "title": "Ärztliche Zweitmeinung: GBA nimmt Linksherz-Katheteruntersuchungen neu auf und erweitert Zugangsmöglichkeiten",
+    "summary": null,
+    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1351/",
+    "imageUrl": null,
+    "publishedAt": "2026-08-20T12:00:00.000Z",
+    "fetchedAt": "2026-09-17T13:18:36.326Z",
+    "notifiedAt": null,
+    "relevanceScore": 5,
+    "relevanceMethod": "pending",
+    "relevanceReason": null,
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1036,13 +951,11 @@
     "publishedAt": "2026-04-26T09:37:04.000Z",
     "fetchedAt": "2026-09-17T08:37:13.850Z",
     "notifiedAt": null,
-    "relevanceScore": 4,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Geplante Sparmaßnahmen der Politik - GKV-Stabilisierungsgesetz",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1055,13 +968,11 @@
     "publishedAt": "2026-02-15T11:09:18.000Z",
     "fetchedAt": "2026-09-17T08:37:13.850Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Unangekündigte Besuche in Praxen",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1074,14 +985,11 @@
     "publishedAt": "2026-02-08T15:12:48.000Z",
     "fetchedAt": "2026-09-17T08:37:13.850Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Regressgefahr Blankoverordnung - Kassen machen ernst!",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:blankoverordnung | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Blankoverordnung",
-      "Heilmittelversorgung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1094,9 +1002,9 @@
     "publishedAt": "2026-02-01T11:24:12.000Z",
     "fetchedAt": "2026-09-17T08:37:13.850Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Anhörung durch Krankenkassen",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
@@ -1111,13 +1019,11 @@
     "publishedAt": "2026-01-25T10:40:30.000Z",
     "fetchedAt": "2026-09-17T08:37:13.850Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Gefahr beim Hausbesuch",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1130,13 +1036,11 @@
     "publishedAt": "2025-06-19T00:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:13.191Z",
     "notifiedAt": null,
-    "relevanceScore": 7,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Freie Mitarbeiterschaft wieder bestätigt (Hessen)",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
     "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1149,14 +1053,11 @@
     "publishedAt": "2025-05-21T00:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:13.191Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Rechtsanwalt Alt siegt vor Sozialgericht Dortmund wegen freier Mitarbeiterschaft",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Direktzugang"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1169,14 +1070,11 @@
     "publishedAt": "2025-05-08T00:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:13.191Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Freie Mitarbeiterschaft in Physiotherapie von Sozialgericht Koblenz bestätigt",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Direktzugang"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1190,12 +1088,10 @@
     "fetchedAt": "2026-09-17T08:37:13.191Z",
     "notifiedAt": null,
     "relevanceScore": 8,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Stempel sinnlos: Ärztliche Verweigerung führt zur Ungültigkeit der Verordnung",
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
@@ -1208,14 +1104,11 @@
     "publishedAt": "2025-04-11T00:00:00.000Z",
     "fetchedAt": "2026-09-17T08:37:13.191Z",
     "notifiedAt": null,
-    "relevanceScore": 9,
-    "relevanceMethod": "pending",
-    "relevanceReason": "ai: Freie Mitarbeiterschaft in der Physiotherapie wieder bestätigt",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
     "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Direktzugang"
-    ],
+    "topics": [],
     "lang": "de"
   }
 ]
