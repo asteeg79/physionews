@@ -39,11 +39,7 @@ export class VptAdapter extends HtmlScraperAdapter {
       seen.add(url);
 
       const wrapper = $(el).closest('article, li, .news-item, .teaser');
-      const dateText =
-        wrapper.find('time').attr('datetime') ??
-        wrapper.find('time').first().text() ??
-        wrapper.find('[class*="date"], [class*="datum"]').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       const summary = this.cleanText(
         wrapper.find('p').not('[class*="meta"]').first().text()

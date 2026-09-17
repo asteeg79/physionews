@@ -27,11 +27,7 @@ export class PhysioDeutschlandAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      const dateText =
-        $(el).find('time').attr('datetime') ??
-        $(el).find('.item--date, .item--date--subline').first().text() ??
-        $(el).find('time').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       const summary = this.cleanText(
         $(el).find('.item--bodytext, .item--text, p').first().text()

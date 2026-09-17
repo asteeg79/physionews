@@ -29,11 +29,7 @@ export class CochraneAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      const dateText =
-        $(el).find('time').attr('datetime') ??
-        $(el).find('time').first().text() ??
-        $(el).find('.field--name-field-date, [class*="date"], [class*="created"]').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       const summary = this.cleanText(
         $(el).find('.field--name-body, .views-field-body, p').first().text()

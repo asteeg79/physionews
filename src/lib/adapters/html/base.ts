@@ -21,6 +21,32 @@ const MONTHS_EN: Record<string, number> = {
   jan: 0, feb: 1, mar: 2, apr: 3, jun: 5, jul: 6, aug: 7, sep: 8, sept: 8, oct: 9, nov: 10, dec: 11,
 };
 
+/**
+ * Obergrenze für die Datumssuche im freien Text. Umfasst der Block mehr
+ * Zeichen, gehört das erste Datum darin vermutlich nicht zu diesem Item.
+ */
+const MAX_DATE_SCAN_CHARS = 600;
+
+/**
+ * Ein Veröffentlichungsdatum darf nicht in der Zukunft liegen und nicht
+ * absurd alt sein. Ohne diese Prüfung landen Fehlgriffe — eine Aktenzeichen-
+ * Nummer, ein Termin im Fließtext — als Datum am Item und sortieren sich
+ * vor alles andere. Zwei Tage Toleranz für Zeitzonen und früh gesetzte
+ * Veröffentlichungsdaten.
+ */
+const FUTURE_TOLERANCE_MS = 2 * 24 * 60 * 60 * 1000;
+const EARLIEST_PLAUSIBLE_YEAR = 1995;
+
+function isPlausiblePublishDate(d: Date): boolean {
+  const t = d.getTime();
+  if (Number.isNaN(t)) return false;
+  if (t > Date.now() + FUTURE_TOLERANCE_MS) return false;
+  return d.getUTCFullYear() >= EARLIEST_PLAUSIBLE_YEAR;
+}
+
+/** Wie viele Ebenen über dem Treffer noch nach einem Datum gesucht wird. */
+const MAX_DATE_ANCESTOR_DEPTH = 6;
+
 export abstract class HtmlScraperAdapter implements SourceAdapter {
   abstract readonly typeIdentifier: string;
 
@@ -71,6 +97,12 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
    * - Englisch: 14 January 2025, Jan 14, 2025, 14 May 2026
    */
   protected parseDate(input: string | null | undefined): Date | null {
+    const parsed = this.parseDateRaw(input);
+    return parsed && isPlausiblePublishDate(parsed) ? parsed : null;
+  }
+
+  /** Die eigentliche Formaterkennung — ohne Plausibilitätsprüfung. */
+  private parseDateRaw(input: string | null | undefined): Date | null {
     if (!input) return null;
     // Whitespace zusammenfassen, nicht nur trimmen: gescrapte Datumsangaben
     // enthalten oft Zeilenumbrüche und Tabs. Nebeneffekt — die `\s`-Gruppen
@@ -78,6 +110,18 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     // quadratisches Backtracking bei langen Leerzeichenfolgen ausschließt.
     const clean = input.replace(/\s+/g, ' ').trim();
     if (!clean) return null;
+
+    // DD/MM/YYYY — MUSS vor `new Date()` stehen: JavaScript liest
+    // "05/06/2026" amerikanisch als 6. Mai statt als 5. Juni. Deutsche
+    // Quellen meinen Tag/Monat (z. B. VPT: datetime="27/05/2026").
+    const slashMatch = /(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(clean);
+    if (slashMatch) {
+      const [, first, second, y] = slashMatch;
+      // Ist die erste Zahl > 12, kann sie nur der Tag sein; ist die zweite
+      // > 12, muss es umgekehrt sein. Sonst gilt die deutsche Lesart.
+      const [d, m] = +second > 12 ? [second, first] : [first, second];
+      return new Date(Date.UTC(+y, +m - 1, +d, 12));
+    }
 
     // ISO-Datum oder direkt parsebar
     const iso = new Date(clean);
@@ -118,6 +162,53 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     }
 
     return null;
+  }
+
+  /**
+   * Sucht das Veröffentlichungsdatum im Umfeld eines Treffers.
+   *
+   * Reihenfolge: `<time datetime>` → Text des `<time>` → Element mit
+   * `date`/`datum` in der Klasse → freier Text des Umfelds.
+   *
+   * Der letzte Schritt ist der wichtige: viele Quellen schreiben das Datum
+   * als gewöhnlichen Text („Erschienen am 28.05.2026"), ohne jede Auszeichnung.
+   * Ohne ihn fielen rund 70 % aller Items auf den Abrufzeitpunkt zurück —
+   * mit Folgen für Zeit-Gruppierung, Retention und Top-News-Auswahl.
+   *
+   * Findet sich im übergebenen Block nichts, wird bis zu
+   * `MAX_DATE_ANCESTOR_DEPTH` Ebenen nach oben weitergesucht — je nach Quelle
+   * steht das Datum als Geschwister des Links, nicht darin.
+   *
+   * Der Text wird nur bis `MAX_DATE_SCAN_CHARS` durchsucht: in einem großen
+   * Block wäre das erste gefundene Datum womöglich das eines anderen Beitrags.
+   * Diese Grenze begrenzt zugleich die Suche nach oben — sobald der Block zu
+   * groß wird, liefert er nichts mehr.
+   */
+  protected extractDate($scope: cheerio.Cheerio): Date | null {
+    let node = $scope;
+    for (let depth = 0; depth < MAX_DATE_ANCESTOR_DEPTH && node.length > 0; depth++) {
+      const found = this.dateFromScope(node);
+      if (found) return found;
+      node = node.parent();
+    }
+    return null;
+  }
+
+  /**
+   * Sucht ein Datum genau in einem Block — ohne die Vorfahren einzubeziehen.
+   *
+   * Reihenfolge: `<time datetime>` → Text des `<time>` → Element mit
+   * `date`/`datum` in der Klasse → freier Text des Blocks.
+   */
+  private dateFromScope($scope: cheerio.Cheerio): Date | null {
+    const direct =
+      this.parseDate($scope.find('time').attr('datetime')) ??
+      this.parseDate($scope.find('time').first().text()) ??
+      this.parseDate($scope.find('[class*="date"], [class*="datum"]').first().text());
+    if (direct) return direct;
+
+    const text = this.cleanText($scope.text());
+    return text.length <= MAX_DATE_SCAN_CHARS ? this.parseDate(text) : null;
   }
 
   /**

@@ -36,11 +36,7 @@ export class GbaAdapter extends HtmlScraperAdapter {
       seen.add(url);
 
       const wrapper = $(el).closest('article, li, .item, [class*="press"]');
-      const dateText =
-        wrapper.find('time').attr('datetime') ??
-        wrapper.find('time').first().text() ??
-        wrapper.find('[class*="date"], [class*="datum"]').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       items.push({
         externalId: url,

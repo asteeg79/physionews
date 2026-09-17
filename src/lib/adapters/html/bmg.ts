@@ -34,8 +34,7 @@ export class BmgAdapter extends HtmlScraperAdapter {
       // Fallback: Datum aus Parent-Element
       if (!publishedAt) {
         const parent = $(el).closest('article, li, [class*="news"], [class*="teaser"]');
-        const dateText = parent.find('time').attr('datetime') ?? parent.find('time').first().text();
-        publishedAt = this.parseDate(dateText);
+        publishedAt = this.extractDate($(el));
       }
 
       items.push({

@@ -26,11 +26,7 @@ export class IfkAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      const dateText =
-        $(el).find('time').attr('datetime') ??
-        $(el).find('time').first().text() ??
-        $(el).find('[class*="date"], [class*="datum"]').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       const summary = this.cleanText(
         $(el).find('p').not('[class*="meta"]').not('[class*="date"]').first().text()

@@ -32,11 +32,7 @@ export class AwmfAdapter extends HtmlScraperAdapter {
       seen.add(url);
 
       const wrapper = $(el).closest('li, article, .leitlinien-item, [class*="guideline"]');
-      const dateText =
-        wrapper.find('time').attr('datetime') ??
-        wrapper.find('time').first().text() ??
-        wrapper.find('[class*="date"], [class*="datum"]').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       items.push({
         externalId: url,

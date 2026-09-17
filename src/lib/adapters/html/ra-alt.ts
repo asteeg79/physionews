@@ -26,10 +26,7 @@ export class RaAltAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      const dateText =
-        $(el).find('time').attr('datetime') ??
-        $(el).find('.j-blog-date, [class*="date"], [class*="datum"]').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       const summary = this.cleanText(
         $(el).find('.j-blog-content, .j-blog-text, p').first().text()

@@ -27,11 +27,7 @@ export class VdbNrwAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      const dateText =
-        $(el).find('time').attr('datetime') ??
-        $(el).find('time').first().text() ??
-        $(el).find('.entry-date, [class*="date"]').first().text();
-      const publishedAt = this.parseDate(dateText) ?? new Date();
+      const publishedAt = this.extractDate($(el)) ?? new Date();
 
       const summary = this.cleanText(
         $(el).find('.entry-summary, .entry-excerpt, .excerpt, p').first().text()
