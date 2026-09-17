@@ -17,6 +17,8 @@ interface StoredSettings {
   refreshWindowStart: number;
   refreshWindowEnd: number;
   retentionDays: number;
+  minRelevance: number;
+  maxItemsPerSource: number;
   notificationsEnabled: boolean;
   lastGlobalRefreshAt: string | null;
   lastNotifiedAt: string | null;
@@ -27,6 +29,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   refreshWindowStart: 6,
   refreshWindowEnd: 22,
   retentionDays: 30,
+  minRelevance: 7,
+  maxItemsPerSource: 8,
   notificationsEnabled: true,
   lastGlobalRefreshAt: null,
   lastNotifiedAt: null,
@@ -38,6 +42,8 @@ function fromStored(stored: Partial<StoredSettings>): AppSettings {
     refreshWindowStart: stored.refreshWindowStart ?? DEFAULT_SETTINGS.refreshWindowStart,
     refreshWindowEnd: stored.refreshWindowEnd ?? DEFAULT_SETTINGS.refreshWindowEnd,
     retentionDays: stored.retentionDays ?? DEFAULT_SETTINGS.retentionDays,
+    minRelevance: stored.minRelevance ?? DEFAULT_SETTINGS.minRelevance,
+    maxItemsPerSource: stored.maxItemsPerSource ?? DEFAULT_SETTINGS.maxItemsPerSource,
     notificationsEnabled:
       stored.notificationsEnabled ?? DEFAULT_SETTINGS.notificationsEnabled,
     lastGlobalRefreshAt: toDate(stored.lastGlobalRefreshAt),
@@ -51,6 +57,8 @@ function toStored(settings: AppSettings): StoredSettings {
     refreshWindowStart: settings.refreshWindowStart,
     refreshWindowEnd: settings.refreshWindowEnd,
     retentionDays: settings.retentionDays,
+    minRelevance: settings.minRelevance,
+    maxItemsPerSource: settings.maxItemsPerSource,
     notificationsEnabled: settings.notificationsEnabled,
     lastGlobalRefreshAt: settings.lastGlobalRefreshAt?.toISOString() ?? null,
     lastNotifiedAt: settings.lastNotifiedAt?.toISOString() ?? null,

@@ -229,3 +229,22 @@ describe('queryNews — Deckel pro Quelle', () => {
     expect(await queryNews({ maxPerSource: 1, limit: 3 })).toHaveLength(2);
   });
 });
+
+describe('queryNews — einstellbare Mindest-Relevanz', () => {
+  it('nutzt ohne Angabe die Voreinstellung', async () => {
+    // Voreinstellung 7: n-old (Score 7) ist noch dabei
+    expect(ids(await queryNews())).toContain('n-old');
+  });
+
+  it('lässt sich strenger stellen', async () => {
+    // n-old hat Score 7 und fällt bei 8 heraus
+    expect(ids(await queryNews({ minRelevance: 8 }))).toEqual(['n-top', 'n-rct']);
+  });
+
+  it('lässt sich lockerer stellen', async () => {
+    // Score 2 bleibt trotzdem draußen — darunter wird ohnehin gelöscht
+    const result = ids(await queryNews({ minRelevance: 4 }));
+    expect(result).toContain('n-old');
+    expect(result).not.toContain('n-low');
+  });
+});

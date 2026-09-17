@@ -85,6 +85,8 @@ export default async function SettingsPage() {
             refreshWindowStart: settings.refreshWindowStart,
             refreshWindowEnd: settings.refreshWindowEnd,
             retentionDays: settings.retentionDays,
+            minRelevance: settings.minRelevance,
+            maxItemsPerSource: settings.maxItemsPerSource,
             notificationsEnabled: settings.notificationsEnabled,
             lastGlobalRefreshAt: settings.lastGlobalRefreshAt?.toISOString() ?? null,
           }}

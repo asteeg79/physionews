@@ -97,6 +97,13 @@ export interface AppSettings {
   refreshWindowStart: number;
   refreshWindowEnd: number;
   retentionDays: number;
+  /**
+   * Mindest-Relevanz für die Anzeige (4–9). Items darunter bleiben
+   * gespeichert — der Wert lässt sich also jederzeit ohne neuen Abruf drehen.
+   */
+  minRelevance: number;
+  /** Höchstzahl Meldungen je Quelle in der Übersicht. */
+  maxItemsPerSource: number;
   notificationsEnabled: boolean;
   lastGlobalRefreshAt: Date | null;
   lastNotifiedAt: Date | null;

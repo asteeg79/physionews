@@ -17,7 +17,9 @@ import { listSources } from './sources';
 const FILE = 'news.json';
 
 /**
- * Mindest-Relevanz für die Anzeige.
+ * Voreingestellte Mindest-Relevanz für die Anzeige. In den Einstellungen
+ * überschreibbar (`settings.minRelevance`), diese Konstante ist nur der
+ * Rückfallwert.
  *
  * Bewusst höher als die Lösch-Schwelle (MIN_RELEVANCE_THRESHOLD = 4): der
  * Bewertungsmaßstab in lib/relevance/gemini.ts nennt 4–6 „nur mittelbarer
@@ -27,7 +29,8 @@ const FILE = 'news.json';
 export const MIN_RELEVANCE = 7;
 
 /**
- * Wie viele Items dieselbe Quelle höchstens zur Übersicht beisteuern darf.
+ * Voreingestellte Höchstzahl Items je Quelle. In den Einstellungen
+ * überschreibbar (`settings.maxItemsPerSource`).
  *
  * Ohne Deckel bestimmt schlicht die Publikationsfrequenz das Bild: eine
  * fleißige Quelle stellte zuletzt 14 von 34 sichtbaren Meldungen. Der Deckel
@@ -122,6 +125,8 @@ export interface NewsQuery {
   evidenceTopics?: readonly string[];
   /** Höchstzahl Items je Quelle. Ohne Angabe kein Deckel. */
   maxPerSource?: number;
+  /** Mindest-Relevanz. Ohne Angabe gilt MIN_RELEVANCE. */
+  minRelevance?: number;
   limit?: number;
 }
 
@@ -194,9 +199,10 @@ function capPerSource(items: NewsItemWithSource[], max: number): NewsItemWithSou
 function buildFilter(query: NewsQuery): (item: NewsItem, source: SourceLight) => boolean {
   const matchesSearch = query.search ? buildSearchMatcher(query.search) : null;
   const evidence = query.evidenceTopics ? new Set(query.evidenceTopics) : null;
+  const minScore = query.minRelevance ?? MIN_RELEVANCE;
 
   return (item, source) => {
-    if (item.relevanceScore < MIN_RELEVANCE) return false;
+    if (item.relevanceScore < minScore) return false;
     // 'unknown' wird beim Einlesen auf 'de' abgebildet, daher reicht der
     // exakte Vergleich.
     if (item.lang !== 'de') return false;

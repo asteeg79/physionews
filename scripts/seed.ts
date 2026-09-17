@@ -78,6 +78,8 @@ const DEFAULT_SETTINGS = {
   refreshWindowStart: 6,
   refreshWindowEnd: 22,
   retentionDays: 30,
+  minRelevance: 7,
+  maxItemsPerSource: 8,
   notificationsEnabled: true,
   lastGlobalRefreshAt: null,
   lastNotifiedAt: null,

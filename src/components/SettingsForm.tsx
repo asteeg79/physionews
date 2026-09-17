@@ -25,6 +25,8 @@ import {
   Clock,
   Calendar,
   BellRing,
+  Filter,
+  Layers,
 } from 'lucide-react';
 import { FieldGroup } from './settings/FieldGroup';
 import { Toggle } from './settings/Toggle';
@@ -36,6 +38,8 @@ export interface Settings {
   refreshWindowStart: number;
   refreshWindowEnd: number;
   retentionDays: number;
+  minRelevance: number;
+  maxItemsPerSource: number;
   notificationsEnabled: boolean;
   lastGlobalRefreshAt: string | null;
 }
@@ -44,6 +48,25 @@ const INTERVAL_OPTIONS = [
   { value: 1, label: '1 Stunde' },
   { value: 2, label: '2 Stunden' },
   { value: 4, label: '4 Stunden' },
+];
+
+/**
+ * Strenge der Auswahl. Die Zahl ist die Mindest-Relevanz auf der Skala des
+ * Bewertungsmaßstabs (siehe lib/relevance/gemini.ts): ab 7 gilt eine Meldung
+ * dort als „klar relevant", 4–6 heißt „nur mittelbarer Bezug".
+ */
+const RELEVANCE_OPTIONS = [
+  { value: 5, label: 'Breit' },
+  { value: 6, label: 'Locker' },
+  { value: 7, label: 'Ausgewogen' },
+  { value: 8, label: 'Streng' },
+];
+
+const PER_SOURCE_OPTIONS = [
+  { value: 3, label: '3' },
+  { value: 5, label: '5' },
+  { value: 8, label: '8' },
+  { value: 15, label: '15' },
 ];
 
 const RETENTION_OPTIONS = [
@@ -189,6 +212,32 @@ export function SettingsForm({ initialSettings }: Readonly<{ initialSettings: Se
           enabled={settings.notificationsEnabled}
           onChange={(v) => patch({ notificationsEnabled: v })}
           label={settings.notificationsEnabled ? 'Aktiviert' : 'Deaktiviert'}
+        />
+      </FieldGroup>
+
+      <FieldGroup
+        icon={<Filter className="w-4 h-4 text-brand" />}
+        title="Strenge der Auswahl"
+        description="Wie eng der Physio-Bezug sein muss, damit eine Meldung erscheint. Aussortierte Beiträge bleiben gespeichert und über die Suche erreichbar."
+      >
+        <ChoiceRow
+          options={RELEVANCE_OPTIONS}
+          value={settings.minRelevance}
+          onChange={(v) => patch({ minRelevance: v })}
+          columns={4}
+        />
+      </FieldGroup>
+
+      <FieldGroup
+        icon={<Layers className="w-4 h-4 text-brand" />}
+        title="Meldungen je Quelle"
+        description="Verhindert, dass eine fleißige Quelle die Übersicht beherrscht. Bei Suche und Themen-Filter gilt der Deckel nicht."
+      >
+        <ChoiceRow
+          options={PER_SOURCE_OPTIONS}
+          value={settings.maxItemsPerSource}
+          onChange={(v) => patch({ maxItemsPerSource: v })}
+          columns={4}
         />
       </FieldGroup>
 
