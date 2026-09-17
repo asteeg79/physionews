@@ -92,7 +92,7 @@ function looksLikeFeed(body: string): boolean {
 }
 
 function extractFeedTitle(xml: string): string | undefined {
-  const match = xml.match(/<title[^>]*>([^<]+)<\/title>/i);
+  const match = /<title[^>]*>([^<]+)<\/title>/i.exec(xml);
   if (!match) return undefined;
   return match[1].trim().replace(/^<!\[CDATA\[|\]\]>$/g, '');
 }

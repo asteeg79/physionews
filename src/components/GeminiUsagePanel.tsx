@@ -61,7 +61,7 @@ export function GeminiUsagePanel() {
   );
 }
 
-function UsageDisplay({ status }: { status: QuotaStatus }) {
+function UsageDisplay({ status }: Readonly<{ status: QuotaStatus }>) {
   const tokensTotal = status.tokensUsed + status.tokensRemaining;
   const requestsTotal = status.requestsMade + status.requestsRemaining;
   const tokensPct = tokensTotal > 0 ? (status.tokensUsed / tokensTotal) * 100 : 0;
@@ -114,14 +114,14 @@ function UsageBar({
   used,
   total,
   format,
-}: {
+}: Readonly<{
   label: string;
   used: number;
   total: number;
   format: (n: number) => string;
-}) {
+}>) {
   const pct = total > 0 ? Math.min(100, (used / total) * 100) : 0;
-  const barColor = pct >= 80 ? 'bg-destructive' : pct >= 50 ? 'bg-amber-500' : 'bg-brand';
+  const barColor = barColorForUsage(pct);
 
   return (
     <div>
@@ -139,4 +139,11 @@ function UsageBar({
       </div>
     </div>
   );
+}
+
+/** Ampelfarbe des Verbrauchsbalkens: ab 50 % gelb, ab 80 % rot. */
+function barColorForUsage(pct: number): string {
+  if (pct >= 80) return 'bg-destructive';
+  if (pct >= 50) return 'bg-amber-500';
+  return 'bg-brand';
 }

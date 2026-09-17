@@ -11,7 +11,7 @@
  * Hash → ON CONFLICT DO NOTHING beim Insert verhindert Duplikate, ohne dass
  * eine separate Existenz-Prüfung nötig ist.
  */
-import { createHash } from 'crypto';
+import { createHash } from 'node:crypto';
 
 /** Berechnet die deterministische ID für ein News-Item. */
 export function computeItemId(sourceId: string, url: string, title: string): string {

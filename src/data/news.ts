@@ -123,26 +123,14 @@ export async function queryNews(query: NewsQuery = {}): Promise<NewsItemWithSour
     ])
   );
 
-  const matchesSearch = query.search ? buildSearchMatcher(query.search) : null;
-  const evidence = query.evidenceTopics ? new Set(query.evidenceTopics) : null;
+  const matches = buildFilter(query);
 
   const result: NewsItemWithSource[] = [];
   for (const item of items) {
     const source = sourceById.get(item.sourceId);
     // Items ohne Quelle sind Waisen (Quelle wurde gelöscht) — ausblenden.
     if (!source) continue;
-
-    if (item.relevanceScore < MIN_RELEVANCE) continue;
-    // 'unknown' wird beim Einlesen auf 'de' abgebildet, daher reicht der
-    // exakte Vergleich.
-    if (item.lang !== 'de') continue;
-    if (query.category && source.category !== query.category) continue;
-    if (query.since && item.publishedAt < query.since) continue;
-    if (query.topNewsOnly && !item.isTopNews) continue;
-    if (query.tag && !item.topics.includes(query.tag)) continue;
-    if (evidence && !item.topics.some((t) => evidence.has(t))) continue;
-    if (matchesSearch && !matchesSearch(`${item.title} ${item.summary ?? ''}`)) continue;
-
+    if (!matches(item, source)) continue;
     result.push({ ...item, source });
   }
 
@@ -153,6 +141,31 @@ export async function queryNews(query: NewsQuery = {}): Promise<NewsItemWithSour
   );
 
   return query.limit !== undefined ? result.slice(0, query.limit) : result;
+}
+
+/**
+ * Baut aus der Abfrage ein Prädikat für ein einzelnes Item.
+ *
+ * Die Vorbereitung (Suchfunktion, Tag-Menge) passiert einmal beim Bauen,
+ * nicht pro Item — und `queryNews` bleibt eine reine Schleife.
+ */
+function buildFilter(query: NewsQuery): (item: NewsItem, source: SourceLight) => boolean {
+  const matchesSearch = query.search ? buildSearchMatcher(query.search) : null;
+  const evidence = query.evidenceTopics ? new Set(query.evidenceTopics) : null;
+
+  return (item, source) => {
+    if (item.relevanceScore < MIN_RELEVANCE) return false;
+    // 'unknown' wird beim Einlesen auf 'de' abgebildet, daher reicht der
+    // exakte Vergleich.
+    if (item.lang !== 'de') return false;
+    if (query.category && source.category !== query.category) return false;
+    if (query.since && item.publishedAt < query.since) return false;
+    if (query.topNewsOnly && !item.isTopNews) return false;
+    if (query.tag && !item.topics.includes(query.tag)) return false;
+    if (evidence && !item.topics.some((t) => evidence.has(t))) return false;
+    if (matchesSearch && !matchesSearch(`${item.title} ${item.summary ?? ''}`)) return false;
+    return true;
+  };
 }
 
 /**

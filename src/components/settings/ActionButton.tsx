@@ -17,7 +17,7 @@ export function ActionButton({
   icon,
   label,
   variant = 'default',
-}: ActionButtonProps) {
+}: Readonly<ActionButtonProps>) {
   const cls =
     variant === 'danger'
       ? 'bg-destructive/10 border-destructive/30 text-destructive'

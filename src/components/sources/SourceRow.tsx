@@ -19,7 +19,7 @@ export interface SourceRowProps {
   onDelete: () => void;
 }
 
-export function SourceRow({ source, onUpdate, onDelete }: SourceRowProps) {
+export function SourceRow({ source, onUpdate, onDelete }: Readonly<SourceRowProps>) {
   const hasError = !!source.lastError;
   return (
     <div
@@ -31,14 +31,7 @@ export function SourceRow({ source, onUpdate, onDelete }: SourceRowProps) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <p className="font-medium text-sm truncate">{source.name}</p>
-            {hasError ? (
-              <AlertCircle className="w-3.5 h-3.5 text-destructive shrink-0" aria-label="Fehler" />
-            ) : source.lastSuccessAt ? (
-              <CheckCircle2
-                className="w-3.5 h-3.5 text-brand shrink-0"
-                aria-label="Letzter Refresh erfolgreich"
-              />
-            ) : null}
+            <SourceStatusIcon hasError={hasError} lastSuccessAt={source.lastSuccessAt} />
           </div>
           <p className="text-xs text-muted-foreground truncate">{source.url}</p>
           {source.lastError && (
@@ -84,4 +77,23 @@ export function SourceRow({ source, onUpdate, onDelete }: SourceRowProps) {
       </div>
     </div>
   );
+}
+
+/** Statussymbol einer Quelle: Fehler, erfolgreicher Abruf, oder noch nie abgerufen. */
+function SourceStatusIcon({
+  hasError,
+  lastSuccessAt,
+}: Readonly<{ hasError: boolean; lastSuccessAt: string | null }>) {
+  if (hasError) {
+    return <AlertCircle className="w-3.5 h-3.5 text-destructive shrink-0" aria-label="Fehler" />;
+  }
+  if (lastSuccessAt) {
+    return (
+      <CheckCircle2
+        className="w-3.5 h-3.5 text-brand shrink-0"
+        aria-label="Letzter Refresh erfolgreich"
+      />
+    );
+  }
+  return null;
 }

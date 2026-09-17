@@ -96,7 +96,7 @@ export async function recordUsage(tokens: number, requests = 1): Promise<void> {
   else next[index] = updated;
 
   // Alte Tage abschneiden — die Datei soll nicht unbegrenzt wachsen.
-  const trimmed = next.sort((a, b) => b.date.localeCompare(a.date)).slice(0, KEEP_DAYS);
+  const trimmed = next.toSorted((a, b) => b.date.localeCompare(a.date)).slice(0, KEEP_DAYS);
 
   await writeJson(FILE, trimmed, 'chore(data): Gemini-Verbrauch aktualisiert');
 }

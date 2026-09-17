@@ -30,7 +30,7 @@ const MAX_LIMIT = 200;
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
   const since = sp.get('since');
-  const parsedLimit = parseInt(sp.get('limit') ?? String(DEFAULT_LIMIT), 10);
+  const parsedLimit = Number.parseInt(sp.get('limit') ?? String(DEFAULT_LIMIT), 10);
 
   const items = await queryNews({
     category: (sp.get('category') as NewsCategory | null) ?? undefined,

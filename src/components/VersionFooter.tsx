@@ -49,15 +49,7 @@ export function VersionFooter() {
     <div className="mt-8 pt-6 border-t border-border/50">
       <div className="space-y-2 text-xs text-muted-foreground">
         <div className="flex items-start gap-2">
-          {error ? (
-            <AlertCircle className="w-3.5 h-3.5 text-destructive shrink-0 mt-0.5" />
-          ) : server === null ? (
-            <Loader2 className="w-3.5 h-3.5 animate-spin shrink-0 mt-0.5" />
-          ) : matches ? (
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-          ) : (
-            <AlertCircle className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
-          )}
+          <VersionStatusIcon error={error} loading={server === null} matches={matches} />
           <div className="flex-1 min-w-0">
             <p className="font-mono break-all">
               <span className="text-muted-foreground/70">App:</span> {BUNDLE_VERSION}
@@ -117,4 +109,21 @@ export function VersionFooter() {
       </div>
     </div>
   );
+}
+
+/**
+ * Statussymbol des Versionsvergleichs: Fehler, noch am Laden, identisch
+ * oder abweichend. Als eigene Komponente, damit die Auswahl nicht als
+ * vierstufige Ternary-Kette mitten im Layout steht.
+ */
+function VersionStatusIcon({
+  error,
+  loading,
+  matches,
+}: Readonly<{ error: boolean; loading: boolean; matches: boolean }>) {
+  const cls = 'w-3.5 h-3.5 shrink-0 mt-0.5';
+  if (error) return <AlertCircle className={`${cls} text-destructive`} />;
+  if (loading) return <Loader2 className={`${cls} animate-spin`} />;
+  if (matches) return <CheckCircle2 className={`${cls} text-emerald-600`} />;
+  return <AlertCircle className={`${cls} text-amber-600`} />;
 }

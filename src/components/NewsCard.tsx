@@ -30,7 +30,7 @@ interface NewsCardProps {
  *  - iOS-Safari kann strukturell keine Phantom-Höhen mehr erzeugen, weil
  *    die Card-Geometrie konstant bleibt.
  */
-export function NewsCard({ item, onRead }: NewsCardProps) {
+export function NewsCard({ item, onRead }: Readonly<NewsCardProps>) {
   const [sheetOpen, setSheetOpen] = useState(false);
   // `item.isRead` kommt aus dem localStorage-Lesestand der Liste; bis der
   // State oben nachzieht, hält der lokale Merker die Karte schon gelesen.
@@ -148,7 +148,7 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
  * Topic-Chips — klickbare Tags, die als Filter über `?tag=…` gesetzt werden.
  * Verhindert Card-Toggle durch stopPropagation auf dem Link.
  */
-function TopicChips({ topics, muted }: { topics: string[]; muted: boolean }) {
+function TopicChips({ topics, muted }: Readonly<{ topics: string[]; muted: boolean }>) {
   return (
     <div className="px-4 pb-3 -mt-2 flex flex-wrap gap-1.5">
       {topics.map((t) => (

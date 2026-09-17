@@ -38,10 +38,10 @@ export class YouTubeAdapter implements SourceAdapter {
 
 export async function resolveChannelId(url: string): Promise<string | null> {
   // Direkte channel_id in URL
-  const fromFeed = url.match(/channel_id=(UC[\w-]+)/);
+  const fromFeed = /channel_id=(UC[\w-]+)/.exec(url);
   if (fromFeed) return fromFeed[1];
 
-  const fromChannel = url.match(/\/channel\/(UC[\w-]+)/);
+  const fromChannel = /\/channel\/(UC[\w-]+)/.exec(url);
   if (fromChannel) return fromChannel[1];
 
   // @Handle oder /user/ — Seite abrufen und Channel-ID extrahieren
@@ -55,7 +55,7 @@ export async function resolveChannelId(url: string): Promise<string | null> {
     const html = await res.text();
 
     for (const pattern of CHANNEL_ID_PATTERNS) {
-      const match = html.match(pattern);
+      const match = pattern.exec(html);
       if (match) return match[1];
     }
     return null;

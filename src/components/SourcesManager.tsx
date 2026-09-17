@@ -28,7 +28,7 @@ export interface SourcesManagerProps {
   initialSources: ClientSource[];
 }
 
-export function SourcesManager({ initialSources }: SourcesManagerProps) {
+export function SourcesManager({ initialSources }: Readonly<SourcesManagerProps>) {
   const router = useRouter();
   const [sources, setSources] = useState(initialSources);
   const [showAddDialog, setShowAddDialog] = useState(false);
@@ -77,7 +77,8 @@ export function SourcesManager({ initialSources }: SourcesManagerProps) {
   // landen unter ihrer alten Kategorie (technisch erlaubt, im UI als „andere" zusammengefasst).
   const grouped = sources.reduce<Record<string, ClientSource[]>>((acc, src) => {
     const key = isVisibleCategory(src.category) ? src.category : 'sonstige';
-    (acc[key] = acc[key] || []).push(src);
+    acc[key] ??= [];
+    acc[key].push(src);
     return acc;
   }, {});
 

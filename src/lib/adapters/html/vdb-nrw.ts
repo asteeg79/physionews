@@ -1,5 +1,4 @@
 import * as cheerio from 'cheerio';
-import type { Source } from '@/data/types';
 import type { RawNewsItem } from '../types';
 import { HtmlScraperAdapter } from './base';
 

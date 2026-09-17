@@ -1,4 +1,4 @@
-import { Settings, Palette } from 'lucide-react';
+import { ChevronRight, List, Palette, Settings } from 'lucide-react';
 import { PushSettings } from '@/components/PushSettings';
 import { InstallStatus } from '@/components/InstallStatus';
 import { SettingsForm } from '@/components/SettingsForm';
@@ -6,7 +6,6 @@ import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { GeminiUsagePanel } from '@/components/GeminiUsagePanel';
 import { VersionFooter } from '@/components/VersionFooter';
 import Link from 'next/link';
-import { ChevronRight, List } from 'lucide-react';
 import { getSettings } from '@/data/settings';
 
 export const dynamic = 'force-dynamic';

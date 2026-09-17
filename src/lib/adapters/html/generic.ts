@@ -102,7 +102,7 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
           title: this.cleanText(title),
           summary: article.description ? this.cleanText(article.description) : undefined,
           url: resolved,
-          publishedAt: isNaN(publishedAt.getTime()) ? new Date() : publishedAt,
+          publishedAt: Number.isNaN(publishedAt.getTime()) ? new Date() : publishedAt,
           imageUrl: extractImageFromLd(article.image),
         });
       }

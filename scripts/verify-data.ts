@@ -26,7 +26,7 @@ async function main(): Promise<void> {
   const byCategory = new Map<string, number>();
   for (const s of sources) byCategory.set(s.category, (byCategory.get(s.category) ?? 0) + 1);
   console.log('Nach Kategorie:');
-  for (const [category, count] of [...byCategory].sort()) {
+  for (const [category, count] of [...byCategory].sort(([a], [b]) => a.localeCompare(b))) {
     console.log(`  ${category}: ${count}`);
   }
 

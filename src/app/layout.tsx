@@ -74,7 +74,7 @@ const THEME_SCRIPT = `
   })();
 `;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de" className={`h-full antialiased ${roboto.variable} ${robotoSlab.variable}`}>
       <head>

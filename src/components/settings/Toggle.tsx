@@ -16,7 +16,7 @@ export function Toggle({
   label,
   size = 'md',
   ariaLabel,
-}: ToggleProps) {
+}: Readonly<ToggleProps>) {
   const dimensions = {
     sm: { wrap: 'w-9 h-5', knob: 'w-4 h-4 top-0.5 left-0.5', translate: 'translate-x-4' },
     md: { wrap: 'w-10 h-6', knob: 'w-5 h-5 top-0.5 left-0.5', translate: 'translate-x-4' },

@@ -42,7 +42,6 @@ declare const self: any;
 // leeres Array an `precacheEntries` — damit wird de facto nichts
 // gecached, und das Build geht trotzdem durch.
 const _swManifest = self.__SW_MANIFEST;
-void _swManifest;
 
 const serwist = new Serwist({
   // Absichtlich leer: kein Precache mehr (siehe Kommentar oben).

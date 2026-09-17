@@ -13,7 +13,7 @@ interface TimeBucketSectionProps {
   onItemRead?: (id: string) => void;
 }
 
-export function TimeBucketSection({ bucket, items, onItemRead }: TimeBucketSectionProps) {
+export function TimeBucketSection({ bucket, items, onItemRead }: Readonly<TimeBucketSectionProps>) {
   const [collapsed, setCollapsed] = useState(bucket === 'aelter');
 
   if (items.length === 0) return null;

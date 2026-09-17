@@ -72,22 +72,26 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
    */
   protected parseDate(input: string | null | undefined): Date | null {
     if (!input) return null;
-    const clean = input.trim();
+    // Whitespace zusammenfassen, nicht nur trimmen: gescrapte Datumsangaben
+    // enthalten oft Zeilenumbrüche und Tabs. Nebeneffekt — die `\s`-Gruppen
+    // der Muster unten können danach nie mehr als ein Zeichen greifen, was
+    // quadratisches Backtracking bei langen Leerzeichenfolgen ausschließt.
+    const clean = input.replace(/\s+/g, ' ').trim();
     if (!clean) return null;
 
     // ISO-Datum oder direkt parsebar
     const iso = new Date(clean);
-    if (!isNaN(iso.getTime()) && clean.match(/\d{4}/)) return iso;
+    if (!Number.isNaN(iso.getTime()) && /\d{4}/.test(clean)) return iso;
 
     // DD.MM.YYYY
-    const dotMatch = clean.match(/(\d{1,2})\.(\d{1,2})\.(\d{4})/);
+    const dotMatch = /(\d{1,2})\.(\d{1,2})\.(\d{4})/.exec(clean);
     if (dotMatch) {
       const [, d, m, y] = dotMatch;
       return new Date(Date.UTC(+y, +m - 1, +d, 12));
     }
 
     // 14. Januar 2025 oder 14. Jan. 2025
-    const deMatch = clean.match(/(\d{1,2})\.?\s+([A-Za-zäöüÄÖÜß]+)\.?\s+(\d{4})/);
+    const deMatch = /(\d{1,2})\.?\s+([A-Za-zäöüÄÖÜß]+)\.?\s+(\d{4})/.exec(clean);
     if (deMatch) {
       const [, d, monName, y] = deMatch;
       const m = MONTHS_DE[monName.toLowerCase()];
@@ -95,7 +99,7 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     }
 
     // 14 May 2026
-    const enMatch = clean.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
+    const enMatch = /(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/.exec(clean);
     if (enMatch) {
       const [, d, monName, y] = enMatch;
       const m = MONTHS_EN[monName.toLowerCase()];
@@ -103,7 +107,7 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     }
 
     // Jan 14, 2026
-    const enMatch2 = clean.match(/([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})/);
+    const enMatch2 = /([A-Za-z]+)\s{1,3}(\d{1,2}),?\s{1,3}(\d{4})/.exec(clean);
     if (enMatch2) {
       const [, monName, d, y] = enMatch2;
       const m = MONTHS_EN[monName.toLowerCase()];

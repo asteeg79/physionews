@@ -12,7 +12,7 @@ interface LogoIconProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
  * Übernimmt die Farbe vom umgebenden `text-*`-Style (currentColor).
  * Gleiches Motiv wie die App-Icons (scripts/generate-icons.ts).
  */
-export function LogoIcon({ size = 32, ...props }: LogoIconProps) {
+export function LogoIcon({ size = 32, ...props }: Readonly<LogoIconProps>) {
   return (
     <svg
       width={size}
@@ -85,7 +85,7 @@ interface LogoProps {
  * Volles Logo: Symbol + Wortmarke "PhysioNews" in Slab-Schrift.
  * „Physio" in Brand-Grün, „News" in Foreground für klare Lesbarkeit auch im Dark Mode.
  */
-export function Logo({ iconOnly = false, size = 'md', className }: LogoProps) {
+export function Logo({ iconOnly = false, size = 'md', className }: Readonly<LogoProps>) {
   const sizes = {
     sm: { icon: 22, text: 'text-base' },
     md: { icon: 26, text: 'text-lg' },

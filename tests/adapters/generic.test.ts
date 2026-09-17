@@ -38,7 +38,7 @@ describe('GenericHtmlAdapter', () => {
       const adapter = new GenericHtmlAdapter('html:test');
       const items = await adapter.fetch(makeSource('https://example.com/news'));
 
-      expect(items.length).toBe(2);
+      expect(items).toHaveLength(2);
       expect(items[0].title).toBe('Neue Studie zur Physiotherapie bei Rückenschmerzen');
       expect(items[0].url).toBe('https://example.com/news/studie-rueckenschmerzen');
       expect(items[0].imageUrl).toBe('https://example.com/img/studie.jpg');
@@ -56,7 +56,7 @@ describe('GenericHtmlAdapter', () => {
       const items = await adapter.fetch(makeSource('https://example.com/aktuelles/'));
 
       // Erwartet: nur die 2 echten Artikel
-      expect(items.length).toBe(2);
+      expect(items).toHaveLength(2);
 
       const titles = items.map((i) => i.title);
       expect(titles).toContain('Wichtige Neuigkeit zur Berufspolitik der Physiotherapie');

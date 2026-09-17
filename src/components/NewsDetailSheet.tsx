@@ -174,20 +174,7 @@ export function NewsDetailSheet({ item, onClose }: NewsDetailSheetProps) {
             </div>
           )}
 
-          {previewLoading ? (
-            <div className="flex items-center gap-2 py-4 text-xs text-muted-foreground">
-              <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
-              Vorschau wird geladen …
-            </div>
-          ) : fullText ? (
-            <p className="text-sm leading-relaxed whitespace-pre-wrap">
-              {fullText}
-            </p>
-          ) : previewFailed ? (
-            <p className="text-xs italic text-muted-foreground">
-              Vorschau nicht abrufbar — vollständiger Artikel öffnet sich über den Link unten.
-            </p>
-          ) : null}
+          <PreviewBody loading={previewLoading} fullText={fullText} failed={previewFailed} />
         </div>
 
         {/* Fuß: Link zum Original */}
@@ -229,4 +216,35 @@ function shortDomain(url: string): string {
   } catch {
     return '';
   }
+}
+
+/**
+ * Inhaltsbereich der Vorschau: lädt, Text vorhanden, endgültig fehlgeschlagen
+ * oder (noch) nichts. Als eigene Komponente, damit die vier Zustände nicht als
+ * Ternary-Kette im Layout stehen.
+ */
+function PreviewBody({
+  loading,
+  fullText,
+  failed,
+}: Readonly<{ loading: boolean; fullText: string | null; failed: boolean }>) {
+  if (loading) {
+    return (
+      <div className="flex items-center gap-2 py-4 text-xs text-muted-foreground">
+        <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+        Vorschau wird geladen …
+      </div>
+    );
+  }
+  if (fullText) {
+    return <p className="text-sm leading-relaxed whitespace-pre-wrap">{fullText}</p>;
+  }
+  if (failed) {
+    return (
+      <p className="text-xs italic text-muted-foreground">
+        Vorschau nicht abrufbar — vollständiger Artikel öffnet sich über den Link unten.
+      </p>
+    );
+  }
+  return null;
 }

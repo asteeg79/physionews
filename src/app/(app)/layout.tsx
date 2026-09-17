@@ -4,7 +4,7 @@ import { PushPermissionBanner } from '@/components/PushPermissionBanner';
 import { InstallPrompt } from '@/components/InstallPrompt';
 import { RefreshOnOpen } from '@/components/RefreshOnOpen';
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="flex flex-col min-h-dvh">
       <Header />

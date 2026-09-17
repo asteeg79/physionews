@@ -19,6 +19,6 @@ describe('titleHash', () => {
   });
 
   it('hat eine erwartbare Länge von 32 Zeichen (sha256 truncated)', () => {
-    expect(titleHash('Test').length).toBe(32);
+    expect(titleHash('Test')).toHaveLength(32);
   });
 });

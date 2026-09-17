@@ -11,6 +11,7 @@
 import { useTransition } from 'react';
 import { FlaskConical } from 'lucide-react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { withQuery } from '@/lib/query-string';
 
 export function EbpToggle() {
   const router = useRouter();
@@ -26,7 +27,7 @@ export function EbpToggle() {
     // Transition: Button bleibt sofort sichtbar im neuen State, ohne
     // dass das ganze Liste-Re-Render blockierend wird
     startTransition(() => {
-      router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`);
+      router.replace(withQuery(pathname, params));
     });
   };
 

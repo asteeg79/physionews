@@ -16,7 +16,7 @@ interface TopNewsSectionProps {
  *
  * Visuell hervorgehoben mit Brand-Akzent und Sparkles-Icon.
  */
-export function TopNewsSection({ items, onItemRead }: TopNewsSectionProps) {
+export function TopNewsSection({ items, onItemRead }: Readonly<TopNewsSectionProps>) {
   if (items.length === 0) return null;
 
   return (

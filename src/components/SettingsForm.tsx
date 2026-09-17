@@ -54,7 +54,7 @@ const RETENTION_OPTIONS = [
   { value: 90, label: '3 Monate' },
 ];
 
-export function SettingsForm({ initialSettings }: { initialSettings: Settings }) {
+export function SettingsForm({ initialSettings }: Readonly<{ initialSettings: Settings }>) {
   const router = useRouter();
   const [settings, setSettings] = useState(initialSettings);
   const [pending, startTransition] = useTransition();
@@ -252,12 +252,12 @@ function ChoiceRow({
   value,
   onChange,
   columns,
-}: {
+}: Readonly<{
   options: { value: number; label: string }[];
   value: number;
   onChange: (v: number) => void;
   columns: number;
-}) {
+}>) {
   const gridClass =
     columns === 5 ? 'grid grid-cols-2 sm:grid-cols-5 gap-2' : `grid grid-cols-${columns} gap-2`;
   return (
@@ -288,12 +288,12 @@ function HourSelect({
   min,
   max,
   onChange,
-}: {
+}: Readonly<{
   value: number;
   min: number;
   max: number;
   onChange: (v: number) => void;
-}) {
+}>) {
   const options: number[] = [];
   for (let i = min; i <= max; i++) options.push(i);
   return (

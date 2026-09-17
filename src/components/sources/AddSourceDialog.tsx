@@ -25,7 +25,7 @@ export interface AddSourceDialogProps {
   onAdded: (created: ClientSource) => void;
 }
 
-export function AddSourceDialog({ onClose, onAdded }: AddSourceDialogProps) {
+export function AddSourceDialog({ onClose, onAdded }: Readonly<AddSourceDialogProps>) {
   const [url, setUrl] = useState('');
   const [name, setName] = useState('');
   const [category, setCategory] = useState<VisibleCategory>('fachlich');
@@ -138,7 +138,7 @@ export function AddSourceDialog({ onClose, onAdded }: AddSourceDialogProps) {
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ label, children }: Readonly<{ label: string; children: React.ReactNode }>) {
   return (
     <div className="space-y-2">
       <label className="text-xs font-medium block">{label}</label>

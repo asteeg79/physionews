@@ -9,6 +9,7 @@
 
 import { Search, Tag, X, FlaskConical } from 'lucide-react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { withQuery } from '@/lib/query-string';
 
 interface ActiveFiltersProps {
   q: string;
@@ -17,7 +18,7 @@ interface ActiveFiltersProps {
   matchCount: number;
 }
 
-export function ActiveFilters({ q, tag, ebp, matchCount }: ActiveFiltersProps) {
+export function ActiveFilters({ q, tag, ebp, matchCount }: Readonly<ActiveFiltersProps>) {
   const router = useRouter();
   const pathname = usePathname();
   const sp = useSearchParams();
@@ -27,7 +28,7 @@ export function ActiveFilters({ q, tag, ebp, matchCount }: ActiveFiltersProps) {
   const removeParam = (key: 'q' | 'tag' | 'ebp') => {
     const params = new URLSearchParams(sp.toString());
     params.delete(key);
-    router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`);
+    router.replace(withQuery(pathname, params));
   };
 
   return (
@@ -50,11 +51,11 @@ function FilterChip({
   icon,
   label,
   onRemove,
-}: {
+}: Readonly<{
   icon: React.ReactNode;
   label: string;
   onRemove: () => void;
-}) {
+}>) {
   return (
     <span className="inline-flex items-center gap-1.5 bg-brand-soft border border-brand/30 text-foreground rounded-full pl-2.5 pr-1 py-1">
       <span className="text-brand">{icon}</span>

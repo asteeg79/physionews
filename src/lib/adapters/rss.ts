@@ -66,7 +66,7 @@ function extractDate(item: Parser.Item & Record<string, unknown>): Date {
   for (const c of candidates) {
     if (!c) continue;
     const d = new Date(c);
-    if (!isNaN(d.getTime())) return d;
+    if (!Number.isNaN(d.getTime())) return d;
   }
   return new Date();
 }
@@ -104,7 +104,7 @@ function extractImage(item: Parser.Item & Record<string, unknown>): string | und
   // Fallback: erstes <img src> aus content:encoded
   const html = (item.contentEncoded as string | undefined) ?? (item.content as string | undefined);
   if (html) {
-    const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    const match = /<img[^>]+src=["']([^"']+)["']/i.exec(html);
     if (match) return match[1];
   }
   return undefined;
@@ -114,7 +114,10 @@ function stripHtml(html: string): string {
   return html
     .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
     .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
-    .replace(/<[^>]+>/g, ' ')
+    // `<` bewusst mit ausgeschlossen: eine Folge von `<` kann so nicht von
+    // der Zeichenklasse verschluckt werden, jeder Fehlversuch bricht sofort
+    // ab. Ein Tag kann ohnehin kein `<` enthalten.
+    .replace(/<[^<>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')

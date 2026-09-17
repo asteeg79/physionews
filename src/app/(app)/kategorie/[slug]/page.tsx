@@ -12,9 +12,9 @@ export const dynamic = 'force-dynamic';
  */
 export default async function KategoriePage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const category = isKnownCategory(slug) ? (slug as NewsCategory) : undefined;
   return <NewsList category={category} />;

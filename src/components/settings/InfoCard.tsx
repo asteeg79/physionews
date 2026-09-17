@@ -8,7 +8,7 @@ export interface InfoCardProps {
   children: React.ReactNode;
 }
 
-export function InfoCard({ icon, variant, children }: InfoCardProps) {
+export function InfoCard({ icon, variant, children }: Readonly<InfoCardProps>) {
   const styles: Record<InfoCardProps['variant'], string> = {
     muted: 'bg-card border-border',
     success: 'bg-brand/5 border-brand/30',

@@ -6,6 +6,7 @@
  * beim An-/Abmelden, gelesen von der App (Test-Push) und von der Pipeline
  * in GitHub Actions (Benachrichtigung über neue hochrelevante Items).
  */
+import { randomUUID } from 'node:crypto';
 import webpush from 'web-push';
 import { loadNews, saveNews } from '@/data/news';
 import { listSources } from '@/data/sources';
@@ -55,7 +56,7 @@ export async function sendPushToAllSubscriptions(payload: PushPayload): Promise<
 
   const fullPayload = {
     ...payload,
-    tag: payload.tag ?? `physionews-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    tag: payload.tag ?? `physionews-${randomUUID()}`,
   };
 
   const expired: string[] = [];

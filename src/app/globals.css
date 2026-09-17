@@ -84,6 +84,13 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Markenfarben — angelehnt an Physio Heinrichs:
+     Primär: frisches Grün #75b72d, Akzent: kräftiges Rot #e80000. */
+  --brand: #75b72d;
+  --brand-dark: #6aa329;
+  --brand-soft: #f0f7e6;
+  --accent-red: #e80000;
 }
 
 .dark {
@@ -118,6 +125,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Markenfarben, im Dark Mode leicht heller für Lesbarkeit. */
+  --brand: #8fc94a;
+  --brand-dark: #75b72d;
+  --brand-soft: rgba(143, 201, 74, 0.12);
+  --accent-red: #ff4d4d;
 }
 
 @layer base {
@@ -136,23 +149,6 @@
     font-family: var(--font-heading-stack);
     letter-spacing: -0.01em;
   }
-}
-
-/* Markenfarben — angelehnt an Physio Heinrichs:
-   Primär: frisches Grün #75b72d, Akzent: kräftiges Rot #e80000.
-   Dark-Mode-Varianten leicht heller für Lesbarkeit auf dunklem Grund. */
-:root {
-  --brand: #75b72d;
-  --brand-dark: #6aa329;
-  --brand-soft: #f0f7e6;
-  --accent-red: #e80000;
-}
-
-.dark {
-  --brand: #8fc94a;
-  --brand-dark: #75b72d;
-  --brand-soft: rgba(143, 201, 74, 0.12);
-  --accent-red: #ff4d4d;
 }
 
 @layer utilities {

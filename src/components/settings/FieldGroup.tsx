@@ -9,7 +9,7 @@ export interface FieldGroupProps {
   children: React.ReactNode;
 }
 
-export function FieldGroup({ icon, title, description, children }: FieldGroupProps) {
+export function FieldGroup({ icon, title, description, children }: Readonly<FieldGroupProps>) {
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-2">

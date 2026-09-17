@@ -134,87 +134,7 @@ async function classifyCandidates(items: ScoreCandidate[]): Promise<{
 
   // Stufe 2: Gemini auf Grauzone (mit Quota-Check und Result-Cache)
   if (grayPool.length > 0 && process.env.GEMINI_API_KEY) {
-    const aiResults = new Map<string, { score: number; reason: string; topics: string[] }>();
-
-    // 2a. Cache-Lookup: Titel, die wir bereits klassifiziert haben
-    const grayHashes = grayPool.map((g) => ({ ...g, h: titleHash(g.title) }));
-    const cache = await getCachedByHashes(grayHashes.map((g) => g.h));
-    const stillUnclassified: GeminiInput[] = [];
-    for (const g of grayHashes) {
-      const hit = cache.get(g.h);
-      if (hit) {
-        aiResults.set(g.id, { score: hit.score, reason: hit.reason, topics: hit.topics });
-        result.cacheHits++;
-      } else {
-        stillUnclassified.push({ id: g.id, title: g.title, sourceName: g.sourceName });
-      }
-    }
-
-    // 2b. Quota prüfen
-    const quota = await getQuotaStatus();
-    if (!quota.canUseAi && stillUnclassified.length > 0) {
-      result.quotaThrottled = true;
-      console.warn(
-        `[Pipeline] Gemini-Quota erreicht (${quota.tokensUsed}/${quota.tokensUsed + quota.tokensRemaining} Tokens) ` +
-          `— ${stillUnclassified.length} Items bleiben bei Keyword-Score.`
-      );
-    } else if (stillUnclassified.length > 0) {
-      // 2c. API-Calls nur für nicht-gecachte Items
-      const newCacheEntries: Array<Parameters<typeof setCachedBulk>[0][number]> = [];
-      const titleHashes = new Map(stillUnclassified.map((u) => [u.id, titleHash(u.title)]));
-
-      for (let i = 0; i < stillUnclassified.length; i += GEMINI_BATCH_SIZE) {
-        const batch = stillUnclassified.slice(i, i + GEMINI_BATCH_SIZE);
-        result.geminiBatches++;
-        const tokens = estimateTokens(batch);
-        result.geminiTokensEstimated += tokens;
-
-        // Per-Minute-Throttle: zwischen Batches kurze Pause, damit wir
-        // nicht ins RPM-Limit (30/min für free tier) rauschen. Erster
-        // Batch läuft sofort, ab dem zweiten warten wir.
-        if (i > 0) await sleep(INTER_BATCH_DELAY_MS);
-
-        const batchResults = await classifyBatch(batch);
-        if (batchResults === GEMINI_QUOTA_EXHAUSTED) {
-          // 429 — Quota erschöpft. Failed call zählt bei Google trotzdem
-          // gegen die RPM/RPD — bei uns als Request ohne Tokens verbuchen.
-          await recordUsage(0, 1);
-          result.quotaThrottled = true;
-          for (let j = i; j < stillUnclassified.length; j++) {
-            skippedDueToQuota.add(stillUnclassified[j].id);
-          }
-          console.warn(
-            `[Pipeline] Gemini-Quota erschöpft (HTTP 429) — ${skippedDueToQuota.size} Items bleiben pending.`
-          );
-          break;
-        }
-        if (!batchResults) {
-          // 5xx/Timeout/Parse-Fehler: Call ging trotzdem raus, zählt bei
-          // Google. Wir verbuchen den Request ohne Tokens.
-          await recordUsage(0, 1);
-          result.geminiFailures++;
-          continue;
-        }
-        await recordUsage(tokens, 1);
-
-        for (const r of batchResults) {
-          aiResults.set(r.id, { score: r.score, reason: r.reason, topics: r.topics });
-          const h = titleHashes.get(r.id);
-          if (h) {
-            newCacheEntries.push({
-              titleHash: h,
-              score: r.score,
-              topics: r.topics,
-              reason: r.reason,
-            });
-          }
-        }
-      }
-      // 2d. Neue Cache-Einträge persistieren
-      if (newCacheEntries.length > 0) {
-        await setCachedBulk(newCacheEntries);
-      }
-    }
+    const aiResults = await classifyGrayPool(grayPool, result, skippedDueToQuota);
 
     // AI-Ergebnisse (Cache + frisch) in die Updates einarbeiten
     for (const upd of updates) {
@@ -235,6 +155,120 @@ async function classifyCandidates(items: ScoreCandidate[]): Promise<{
   }
 
   return { result, updates, skipped: skippedDueToQuota };
+}
+
+/** Ein von Gemini (oder aus dem Cache) geliefertes Ergebnis. */
+interface AiResult {
+  score: number;
+  reason: string;
+  topics: string[];
+}
+
+/**
+ * Bewertet die Grauzonen-Items per Gemini: erst Cache-Treffer einsammeln,
+ * dann — sofern das Tagesbudget es hergibt — den Rest in Batches anfragen.
+ *
+ * Aktualisiert die Zähler in `result` und trägt Items, die wegen erschöpfter
+ * Quota unbewertet blieben, in `skipped` ein.
+ */
+async function classifyGrayPool(
+  grayPool: GeminiInput[],
+  result: PipelineResult,
+  skipped: Set<string>
+): Promise<Map<string, AiResult>> {
+  const aiResults = new Map<string, AiResult>();
+
+  // 2a. Cache-Lookup: Titel, die wir bereits klassifiziert haben
+  const grayHashes = grayPool.map((g) => ({ ...g, h: titleHash(g.title) }));
+  const cache = await getCachedByHashes(grayHashes.map((g) => g.h));
+  const stillUnclassified: GeminiInput[] = [];
+  for (const g of grayHashes) {
+    const hit = cache.get(g.h);
+    if (hit) {
+      aiResults.set(g.id, { score: hit.score, reason: hit.reason, topics: hit.topics });
+      result.cacheHits++;
+    } else {
+      stillUnclassified.push({ id: g.id, title: g.title, sourceName: g.sourceName });
+    }
+  }
+
+  if (stillUnclassified.length === 0) return aiResults;
+
+  // 2b. Quota prüfen
+  const quota = await getQuotaStatus();
+  if (!quota.canUseAi) {
+    result.quotaThrottled = true;
+    console.warn(
+      `[Pipeline] Gemini-Quota erreicht (${quota.tokensUsed}/${quota.tokensUsed + quota.tokensRemaining} Tokens) ` +
+        `— ${stillUnclassified.length} Items bleiben bei Keyword-Score.`
+    );
+    return aiResults;
+  }
+
+  // 2c./2d. API-Calls für die restlichen Items, Ergebnisse cachen
+  await runGeminiBatches(stillUnclassified, aiResults, result, skipped);
+  return aiResults;
+}
+
+/**
+ * Schickt die offenen Items batchweise an Gemini und trägt die Ergebnisse in
+ * `aiResults` ein. Bricht bei erschöpfter Quota ab und markiert die dann noch
+ * offenen Items in `skipped`, damit sie `pending` bleiben.
+ */
+async function runGeminiBatches(
+  items: GeminiInput[],
+  aiResults: Map<string, AiResult>,
+  result: PipelineResult,
+  skipped: Set<string>
+): Promise<void> {
+  const newCacheEntries: Array<Parameters<typeof setCachedBulk>[0][number]> = [];
+  const titleHashes = new Map(items.map((u) => [u.id, titleHash(u.title)]));
+
+  for (let i = 0; i < items.length; i += GEMINI_BATCH_SIZE) {
+    const batch = items.slice(i, i + GEMINI_BATCH_SIZE);
+    result.geminiBatches++;
+    const tokens = estimateTokens(batch);
+    result.geminiTokensEstimated += tokens;
+
+    // Per-Minute-Throttle: zwischen Batches kurze Pause, damit wir nicht ins
+    // RPM-Limit (30/min für free tier) rauschen. Erster Batch läuft sofort,
+    // ab dem zweiten warten wir.
+    if (i > 0) await sleep(INTER_BATCH_DELAY_MS);
+
+    const batchResults = await classifyBatch(batch);
+
+    if (batchResults === GEMINI_QUOTA_EXHAUSTED) {
+      // 429 — Quota erschöpft. Der fehlgeschlagene Call zählt bei Google
+      // trotzdem gegen RPM/RPD, bei uns als Request ohne Tokens.
+      await recordUsage(0, 1);
+      result.quotaThrottled = true;
+      for (let j = i; j < items.length; j++) skipped.add(items[j].id);
+      console.warn(
+        `[Pipeline] Gemini-Quota erschöpft (HTTP 429) — ${skipped.size} Items bleiben pending.`
+      );
+      break;
+    }
+
+    if (!batchResults) {
+      // 5xx/Timeout/Parse-Fehler: Call ging trotzdem raus, zählt bei Google.
+      await recordUsage(0, 1);
+      result.geminiFailures++;
+      continue;
+    }
+
+    await recordUsage(tokens, 1);
+    for (const r of batchResults) {
+      aiResults.set(r.id, { score: r.score, reason: r.reason, topics: r.topics });
+      const h = titleHashes.get(r.id);
+      if (h) {
+        newCacheEntries.push({ titleHash: h, score: r.score, topics: r.topics, reason: r.reason });
+      }
+    }
+  }
+
+  if (newCacheEntries.length > 0) {
+    await setCachedBulk(newCacheEntries);
+  }
 }
 
 /**

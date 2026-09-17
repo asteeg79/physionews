@@ -15,6 +15,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Search, X } from 'lucide-react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { withQuery } from '@/lib/query-string';
 
 const DEBOUNCE_MS = 300;
 
@@ -44,7 +45,7 @@ export function SearchBar() {
       const params = new URLSearchParams(sp.toString());
       if (value.trim()) params.set('q', value.trim());
       else params.delete('q');
-      router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`);
+      router.replace(withQuery(pathname, params));
     }, DEBOUNCE_MS);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,7 +56,7 @@ export function SearchBar() {
     setOpen(false);
     const params = new URLSearchParams(sp.toString());
     params.delete('q');
-    router.replace(`${pathname}${params.toString() ? `?${params.toString()}` : ''}`);
+    router.replace(withQuery(pathname, params));
   };
 
   if (!open) {

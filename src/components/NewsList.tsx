@@ -27,12 +27,13 @@ import {
   type ClientNewsItem,
   type ReadState,
 } from '@/lib/read-state';
+import { withQuery } from '@/lib/query-string';
 
 interface NewsListProps {
   category?: NewsCategory;
 }
 
-export function NewsList({ category }: NewsListProps) {
+export function NewsList({ category }: Readonly<NewsListProps>) {
   const sp = useSearchParams();
   const q = sp.get('q')?.trim() ?? '';
   const tag = sp.get('tag')?.trim() ?? '';
@@ -59,7 +60,7 @@ export function NewsList({ category }: NewsListProps) {
     if (q) params.set('q', q);
     if (tag) params.set('tag', tag);
     if (ebp) params.set('ebp', 'true');
-    const mainUrl = `/api/news${params.toString() ? `?${params.toString()}` : ''}`;
+    const mainUrl = withQuery('/api/news', params);
     // Top-News kommen IMMER ungeachtet der Kategorie — bei aktiver
     // Suche oder Tag-Filter werden sie ausgeblendet (passt nicht zum Filter)
     const topUrl = hasFilter ? null : `/api/news?topNews=true`;
