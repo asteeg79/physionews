@@ -1,22 +1,5 @@
 [
   {
-    "id": "e154ae350eb5530c8ec605b447dbcb1de7e7d5fd625bb4ace8fe046497fc43ea",
-    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
-    "title": "Neue Vorsitzende Optendrenk: „Rahmenbedingungen für eine effektive Projektförderung werden schwerer“",
-    "summary": null,
-    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1347/",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T18:29:08.657Z",
-    "fetchedAt": "2026-09-17T18:29:08.663Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
     "id": "3928e1c83cb9e7580f4ab8b2fd03447699cba31acc379a39213e48bde0db4e28",
     "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
     "title": "Welttag der Patientensicherheit – chronische Erkrankungen im Fokus",
@@ -286,23 +269,6 @@
     "lang": "de"
   },
   {
-    "id": "c820573ea0a92afa81b4cf9c864c7097f3aa380339b778c85987932d2b378244",
-    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
-    "title": "In eigener Sache: GBA erneuert sein visuelles Erscheinungsbild",
-    "summary": null,
-    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1353/",
-    "imageUrl": null,
-    "publishedAt": "2026-09-09T00:00:00.000Z",
-    "fetchedAt": "2026-09-17T18:29:08.663Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
     "id": "6034a55144307b3f529fbc8e3b22eac6865ba1ac2d67fff7d05395234eeef673",
     "sourceId": "cbe1c07e-ab05-4fe8-8cbd-063112fcd6f3",
     "title": "DGSP beim dvs-Kongress Gesundheit 2026 in Köln: Smart Health und Bewegung als Schlüssel einer zukunftsfähigen Gesundheitsversorgung",
@@ -339,23 +305,6 @@
     "topics": [
       "Praxisgründung"
     ],
-    "lang": "de"
-  },
-  {
-    "id": "15bea327d9b24cbbc5d39a59bb86c92ef31bb1b559a923eb8b9b6962d43576d0",
-    "sourceId": "16c01fbb-ffd2-410d-98ac-b222f625da54",
-    "title": "Finanzentwicklung der GKV im 1. Halbjahr 2026",
-    "summary": null,
-    "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/finanzentwicklung-der-gkv-im-1-halbjahr-2026",
-    "imageUrl": null,
-    "publishedAt": "2026-09-04T00:00:00.000Z",
-    "fetchedAt": "2026-09-17T18:29:08.475Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
     "lang": "de"
   },
   {
@@ -542,7 +491,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Effectiveness of physical therapeutic scoliosis exercise (PSSE) intervention for adolescent idiopath",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "Wirbelsäule",
       "Systematic Review",
@@ -606,23 +555,6 @@
     "lang": "de"
   },
   {
-    "id": "0c42c7e044f2bb0970479477fd8501b9fd4fc604aaaed85e1dec2a38af4881a9",
-    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
-    "title": "Drei beendete Förderprojekte geben Anregungen für eine bessere Gesundheitsversorgung",
-    "summary": null,
-    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1352/",
-    "imageUrl": null,
-    "publishedAt": "2026-08-21T12:00:00.000Z",
-    "fetchedAt": "2026-09-17T18:29:08.663Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
     "id": "7901ef75805ed32502c18564393deab9088072266ebc002dafee0635b1caff63",
     "sourceId": "080c8549-27aa-4c6f-be77-a748e9dd65c8",
     "title": "CESAR-Studie zur Bewertung von KI-Werkzeugen in der Evidenzsynthese kommt voran Die internationale Cochrane Collaboration vermeldet einen wichtigen Zwischenschritt bei der Arbeit an ihrer neuen Studie zum Einsatz von KI in systematischen Übersichtsarbeiten: Kürzlich wurde das Protokoll der CESAR-Studie im „Journal of Clinical Epidemiology“ veröffentlicht. 21 Aug 2026",
@@ -640,57 +572,6 @@
       "Systematic Review",
       "Studie"
     ],
-    "lang": "de"
-  },
-  {
-    "id": "e417260dc35e784963dfd9d8a61ce69f152dd64c7063a350a55dd49e2a77fccb",
-    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
-    "title": "Früherkennung bei Kindern und Jugendlichen: GBA führt neue U10 ein und integriert Dokumentation der J1 ins Gelbe Heft",
-    "summary": null,
-    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1350/",
-    "imageUrl": null,
-    "publishedAt": "2026-08-20T12:00:00.000Z",
-    "fetchedAt": "2026-09-17T18:29:08.663Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "aa7f8d302718ff2c10bb399e7a09340914978941160562f393807fa6bdbae7e1",
-    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
-    "title": "Ärztliche Zweitmeinung: GBA nimmt Linksherz-Katheteruntersuchungen neu auf und erweitert Zugangsmöglichkeiten",
-    "summary": null,
-    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1351/",
-    "imageUrl": null,
-    "publishedAt": "2026-08-20T12:00:00.000Z",
-    "fetchedAt": "2026-09-17T18:29:08.663Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "23562a7693b38eda1047eadce8ecc2f316dfc90aacd4d8ec55f9852d1854ce43",
-    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
-    "title": "GBA: Keine belastbare Evidenz für Ausweitung der organisierten Darmkrebs-Früherkennung auf jüngere Personen mit familiärem Risiko",
-    "summary": null,
-    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1349/",
-    "imageUrl": null,
-    "publishedAt": "2026-08-20T12:00:00.000Z",
-    "fetchedAt": "2026-09-17T18:29:08.663Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
     "lang": "de"
   },
   {
@@ -744,7 +625,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Regressgefahr Blankoverordnung - Kassen machen ernst!",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Blankoverordnung",
       "GKV-Vergütung"
