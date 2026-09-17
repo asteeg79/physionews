@@ -23,8 +23,6 @@ export class DgspAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      // Datum aus Sibling oder Parent
-      const wrapper = $(el).closest('li, article, .news-item, .entry');
       const publishedAt = this.extractDate($(el)) ?? new Date();
 
       items.push({

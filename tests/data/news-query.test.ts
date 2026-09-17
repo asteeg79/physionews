@@ -71,6 +71,21 @@ const { files } = vi.hoisted(() => {
     },
     {
       ...base,
+      id: 'n-mittel',
+      // Bewusst dieselbe Quelle wie n-top und mit gemeinsamem Suchwort:
+      // so lässt sich prüfen, dass der Deckel bei gezielter Abfrage ruht.
+      sourceId: 'src-a',
+      title: 'Blankoverordnung: mittelbare Folgen für die Praxis',
+      url: 'https://example.test/7',
+      publishedAt: '2026-05-19T00:00:00.000Z',
+      // Score 5 liegt über der Lösch-Schwelle (4), aber unter der
+      // Anzeige-Voreinstellung (7) — genau der Bereich, den die
+      // einstellbare Schwelle sichtbar machen soll.
+      relevanceScore: 5,
+      topics: ['GKV'],
+    },
+    {
+      ...base,
       id: 'n-low',
       sourceId: 'src-a',
       title: 'Kaum relevant',
@@ -205,22 +220,9 @@ describe('queryNews — Suche', () => {
 });
 
 describe('queryNews — Deckel pro Quelle', () => {
-  it('ohne Angabe gibt es keinen Deckel', async () => {
-    // src-a liefert n-top und n-old
-    expect(ids(await queryNews())).toEqual(['n-top', 'n-rct', 'n-old']);
-  });
-
-  it('begrenzt den Beitrag einer Quelle', async () => {
-    const result = await queryNews({ maxPerSource: 1 });
-    expect(ids(result)).toEqual(['n-top', 'n-rct']);
-  });
-
-  it('behält je Quelle das relevanteste Item', async () => {
-    // n-top (Score 10) schlägt n-old (Score 7) aus derselben Quelle
-    const result = await queryNews({ maxPerSource: 1 });
-    const fromA = result.filter((i) => i.source.id === 'src-a');
-    expect(fromA).toHaveLength(1);
-    expect(fromA[0].id).toBe('n-top');
+  it('behält je Quelle die relevantesten Items', async () => {
+    // src-a liefert n-top (10) und n-old (7) — bei max 1 gewinnt n-top
+    expect(ids(await queryNews({ maxPerSource: 1 }))).toEqual(['n-top', 'n-rct']);
   });
 
   it('greift vor der Mengenbegrenzung', async () => {
@@ -228,23 +230,42 @@ describe('queryNews — Deckel pro Quelle', () => {
     // anschließende limit kann daran nichts mehr ändern.
     expect(await queryNews({ maxPerSource: 1, limit: 3 })).toHaveLength(2);
   });
+
+  it('gilt nicht bei gezielter Suche', async () => {
+    // n-top und n-mittel stammen beide aus src-a und teilen das Suchwort.
+    // Mit Deckel 1 käme nur eines durch — bei einer Suche sollen beide
+    // erscheinen.
+    const result = await queryNews({
+      maxPerSource: 1,
+      minRelevance: 4,
+      search: 'blankoverordnung',
+    });
+    expect(ids(result)).toEqual(['n-top', 'n-mittel']);
+  });
+
+  it('gilt nicht bei Tag-Filter', async () => {
+    const result = await queryNews({ maxPerSource: 1, minRelevance: 4, tag: 'GKV' });
+    expect(ids(result)).toEqual(['n-top', 'n-mittel']);
+  });
 });
 
 describe('queryNews — einstellbare Mindest-Relevanz', () => {
-  it('nutzt ohne Angabe die Voreinstellung', async () => {
-    // Voreinstellung 7: n-old (Score 7) ist noch dabei
-    expect(ids(await queryNews())).toContain('n-old');
+  it('blendet mittelbar relevante Items in der Voreinstellung aus', async () => {
+    // n-mittel hat Score 5, die Voreinstellung ist 7
+    expect(ids(await queryNews())).not.toContain('n-mittel');
+  });
+
+  it('macht sie bei lockerer Einstellung sichtbar', async () => {
+    expect(ids(await queryNews({ minRelevance: 4 }))).toContain('n-mittel');
+  });
+
+  it('holt aber nichts unterhalb der Lösch-Schwelle hervor', async () => {
+    // n-low hat Score 2 — solche Items existieren im Betrieb gar nicht
+    expect(ids(await queryNews({ minRelevance: 4 }))).not.toContain('n-low');
   });
 
   it('lässt sich strenger stellen', async () => {
     // n-old hat Score 7 und fällt bei 8 heraus
     expect(ids(await queryNews({ minRelevance: 8 }))).toEqual(['n-top', 'n-rct']);
-  });
-
-  it('lässt sich lockerer stellen', async () => {
-    // Score 2 bleibt trotzdem draußen — darunter wird ohnehin gelöscht
-    const result = ids(await queryNews({ minRelevance: 4 }));
-    expect(result).toContain('n-old');
-    expect(result).not.toContain('n-low');
   });
 });

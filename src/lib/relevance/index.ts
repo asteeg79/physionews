@@ -16,7 +16,7 @@
  * @see ./gemini.ts für AI-Klassifizierung
  */
 import type { NewsItem, RelevanceMethod } from '@/data/types';
-import { loadNews, saveNews } from '@/data/news';
+import { loadNews, saveNews, MIN_RELEVANCE_THRESHOLD } from '@/data/news';
 import { listSources } from '@/data/sources';
 import { scoreByKeywords } from './keywords';
 import { classifyBatch, estimateTokens, GEMINI_QUOTA_EXHAUSTED, type GeminiInput } from './gemini';
@@ -45,8 +45,9 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/** Mindest-Relevanz, unter der Items komplett verworfen werden. */
-export const MIN_RELEVANCE_THRESHOLD = 4;
+// Die Schwelle gehört zur Datenschicht — sie entscheidet, was aufbewahrt
+// wird, und begrenzt zugleich die einstellbare Anzeigeschwelle.
+export { MIN_RELEVANCE_THRESHOLD } from '@/data/news';
 
 interface ScoreCandidate {
   id: string;
@@ -222,14 +223,32 @@ async function classifyGrayPool(
   if (!quota.canUseAi) {
     result.quotaThrottled = true;
     console.warn(
-      `[Pipeline] Gemini-Quota erreicht (${quota.tokensUsed}/${quota.tokensUsed + quota.tokensRemaining} Tokens) ` +
+      `[Pipeline] Gemini-Tagesbudget aufgebraucht (${quota.requestsMade} Anfragen) ` +
         `— ${stillUnclassified.length} Items bleiben bei Keyword-Score.`
     );
     return aiResults;
   }
 
-  // 2c./2d. API-Calls für die restlichen Items, Ergebnisse cachen
-  await runGeminiBatches(stillUnclassified, aiResults, result, skipped);
+  // 2c. Auf das Restbudget zuschneiden.
+  //
+  // Die Batch-Schleife fragt das Budget nicht erneut ab. Ohne diesen Schnitt
+  // feuert sie nach einer einzigen Prüfung bis zu drei Anfragen und kann den
+  // Soft-Cap um zwei überziehen — also genau um die Reserve, die für die
+  // Top-News-Auswahl zurückgelegt ist. Mit dem Schnitt hält beides per
+  // Konstruktion, und ein 429 ist wieder der Ausnahmefall statt das
+  // Steuerungsmittel.
+  const affordable = quota.requestsRemaining * GEMINI_BATCH_SIZE;
+  if (stillUnclassified.length > affordable) {
+    result.quotaThrottled = true;
+    for (const item of stillUnclassified.slice(affordable)) skipped.add(item.id);
+    console.warn(
+      `[Pipeline] Restbudget reicht für ${affordable} Items — ` +
+        `${stillUnclassified.length - affordable} bleiben für den nächsten Lauf.`
+    );
+  }
+
+  // 2d. API-Calls für die bezahlbaren Items, Ergebnisse cachen
+  await runGeminiBatches(stillUnclassified.slice(0, affordable), aiResults, result, skipped);
   return aiResults;
 }
 

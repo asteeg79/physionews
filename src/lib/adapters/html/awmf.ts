@@ -31,7 +31,6 @@ export class AwmfAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      const wrapper = $(el).closest('li, article, .leitlinien-item, [class*="guideline"]');
       const publishedAt = this.extractDate($(el)) ?? new Date();
 
       items.push({

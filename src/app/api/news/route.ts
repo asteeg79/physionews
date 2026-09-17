@@ -43,9 +43,7 @@ export async function GET(req: NextRequest) {
     topNewsOnly: sp.get('topNews') === 'true',
     search,
     tag,
-    // Bei gezielter Suche oder Tag-Filter kein Deckel — dort sollen alle
-    // Treffer erscheinen, auch wenn sie aus derselben Quelle stammen.
-    maxPerSource: search || tag ? undefined : settings.maxItemsPerSource,
+    maxPerSource: settings.maxItemsPerSource,
     evidenceTopics: sp.get('ebp') === 'true' ? EVIDENCE_TOPICS : undefined,
     minRelevance: settings.minRelevance,
     limit: Math.min(Number.isNaN(parsedLimit) ? DEFAULT_LIMIT : parsedLimit, MAX_LIMIT),

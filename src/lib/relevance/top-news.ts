@@ -18,6 +18,7 @@
 import type { NewsItem } from '@/data/types';
 import { loadNews, saveNews } from '@/data/news';
 import { listSources } from '@/data/sources';
+import { getSettings } from '@/data/settings';
 import { getQuotaStatus, recordUsage } from './gemini-quota';
 
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
@@ -67,7 +68,14 @@ async function errorDetail(res: Response): Promise<string> {
 const POOL_SIZE = 25;
 /** Anzahl Items, die als Top-News markiert werden. */
 const TOP_N = 3;
-/** Mindest-Relevanz, ab der ein Item überhaupt als Top-News-Kandidat in Frage kommt. */
+/**
+ * Untergrenze für den Kandidaten-Pool.
+ *
+ * Wirksam ist immer das Maximum aus diesem Wert und der eingestellten
+ * Anzeigeschwelle: ein kuratiertes Item unterhalb der Anzeigeschwelle würde
+ * eine Anfrage aus dem knappen Tagesbudget kosten und wäre danach unsichtbar,
+ * die Top-News-Sektion zeigte dann stillschweigend weniger Einträge.
+ */
 const MIN_SCORE_FOR_POOL = 6;
 
 const SYSTEM_PROMPT = `Du wählst aus einer Kandidatenliste die 3 wichtigsten News-Items für deutsche Physiotherapeut:innen aus.
@@ -154,11 +162,12 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
  * Lesestand eines einzelnen Geräts.
  */
 async function buildCandidatePool(news: NewsItem[]): Promise<CandidateItem[]> {
-  const sources = await listSources();
+  const [sources, settings] = await Promise.all([listSources(), getSettings()]);
   const sourceById = new Map(sources.map((s) => [s.id, s]));
+  const minScore = Math.max(MIN_SCORE_FOR_POOL, settings.minRelevance);
 
   return news
-    .filter((n) => n.relevanceScore >= MIN_SCORE_FOR_POOL && sourceById.has(n.sourceId))
+    .filter((n) => n.relevanceScore >= minScore && sourceById.has(n.sourceId))
     .sort(
       (a, b) =>
         b.relevanceScore - a.relevanceScore ||

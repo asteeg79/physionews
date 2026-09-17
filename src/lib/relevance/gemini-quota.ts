@@ -1,15 +1,10 @@
 /**
  * Gemini Quota-Tracking — speichert den Tagesverbrauch in
- * `data/gemini-usage.json`, damit wir vor Erreichen des Free-Tier-Limits
- * auf Keyword-only-Klassifizierung umschalten.
+ * `data/gemini-usage.json`, damit die Pipeline vor Erreichen des
+ * Tageslimits auf Keyword-only-Klassifizierung umschaltet.
  *
- * Free-Tier-Limits für gemini-2.5-flash-lite (Stand 2026):
- *  - 1.000 RPM (Requests pro Minute)
- *  - 1.000.000 TPD (Tokens pro Tag)
- *  - 15.000 RPD (Requests pro Tag)
- *
- * Wir wählen einen konservativen Soft-Cap, damit auch Reclassify-Aktionen
- * oder unerwartete Spikes nicht den Tagesbetrieb blockieren.
+ * Die geltenden Limits stehen an den Konstanten unten, belegt aus der
+ * 429-Antwort der API — nicht aus der Dokumentation.
  *
  * Geschrieben wird die Datei nur von der Pipeline in GitHub Actions; die
  * App liest sie für die Verbrauchsanzeige in den Einstellungen.
@@ -99,7 +94,10 @@ export async function getQuotaStatus(): Promise<QuotaStatus> {
     requestsMade,
     tokensRemaining,
     requestsRemaining,
-    canUseAi: tokensRemaining > 5_000 && requestsRemaining > 0,
+    // Nur die Anfragen binden. Bei höchstens 18 Anfragen à ~1.800 Tokens
+    // liegt der Tagesverbrauch bei ~33.000 — der Token-Deckel von 800.000
+    // ist strukturell unerreichbar und täuschte einen Schutz vor.
+    canUseAi: requestsRemaining > 0,
     // Die Top-News-Auswahl darf auch noch in die Reserve greifen.
     canUseAiForTopNews: requestsMade < DAILY_REQUEST_LIMIT,
   };

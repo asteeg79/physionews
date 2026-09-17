@@ -29,7 +29,6 @@ export class DvmtAdapter extends HtmlScraperAdapter {
 
       seen.add(url);
 
-      const wrapper = $(el).is('a') ? $(el).parent() : $(el);
       const publishedAt = this.extractDate($(el)) ?? new Date();
 
       items.push({

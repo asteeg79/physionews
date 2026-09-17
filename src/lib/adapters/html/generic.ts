@@ -7,6 +7,9 @@ import { HtmlScraperAdapter } from './base';
 // 1. Versucht JSON-LD (schema.org Article/NewsArticle/BlogPosting) — sehr zuverlässig wenn vorhanden
 // 2. Fallback: heuristische DOM-Suche mit Junk-Filter
 
+/** Wie viele Ebenen ein Treffer höchstens erweitert wird. */
+const MAX_WIDEN_DEPTH = 3;
+
 const MIN_TITLE_LENGTH = 12;
 
 const JUNK_TITLES = new Set([
@@ -94,15 +97,17 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
         if (seen.has(resolved)) continue;
         seen.add(resolved);
 
+        // parseDate statt new Date(): so gilt auch für JSON-LD die
+        // Plausibilitätsprüfung (kein Datum aus der Zukunft, nichts vor 1995).
         const dateStr = article.datePublished ?? article.dateModified;
-        const publishedAt = dateStr ? new Date(dateStr) : new Date();
+        const publishedAt = this.parseDate(dateStr) ?? new Date();
 
         items.push({
           externalId: resolved,
           title: this.cleanText(title),
           summary: article.description ? this.cleanText(article.description) : undefined,
           url: resolved,
-          publishedAt: Number.isNaN(publishedAt.getTime()) ? new Date() : publishedAt,
+          publishedAt,
           imageUrl: extractImageFromLd(article.image),
         });
       }
@@ -135,9 +140,16 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
       if (elements.length === 0) continue;
 
       elements.each((_, el) => {
-        const link = $(el).find('a[href]').first();
-        const href = link.attr('href');
-        if (!href) return;
+        // Der Selektor trifft oft nur einen Bestandteil des Items — etwa
+        // `.teaser-text`, den Fließtext-Block, während Überschrift und
+        // Artikellink daneben liegen. Von dort aus aufsteigen, bis der Block
+        // beides enthält; aber nicht über die Item-Grenze hinaus, sonst
+        // umfasst er die ganze Liste und liefert für alle Treffer dasselbe.
+        const $item = widenToItem($, el, elements);
+
+        const link = pickItemLink($item, $);
+        const href = link?.attr('href');
+        if (!link || !href) return;
 
         const resolved = this.resolveUrl(href, baseUrl);
         if (seen.has(resolved)) return;
@@ -146,24 +158,19 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
         if (baseDomain && safeHostname(resolved) !== baseDomain) return;
 
         const title = this.cleanText(
-          $(el).find('h1, h2, h3, h4').first().text() || link.text()
+          $item.find('h1, h2, h3, h4').first().text() || link.text()
         );
         if (!isValidTitle(title)) return;
 
         seen.add(resolved);
 
-        const dateText =
-          $(el).find('time').attr('datetime') ??
-          $(el).find('time').first().text() ??
-          $(el).find('[class*="date"], [class*="datum"], [class*="published"]').first().text();
-        const parsedDate = dateText ? this.parseDate(dateText) : null;
-        const publishedAt = parsedDate ?? new Date();
+        const publishedAt = this.extractDate($item) ?? new Date();
 
         const summary = this.cleanText(
-          $(el).find('p, .summary, .excerpt, .teaser-text, .beschreibung').first().text()
+          $item.find('p, .summary, .excerpt, .teaser-text, .beschreibung').first().text()
         );
 
-        const img = $(el).find('img').first().attr('src');
+        const img = $item.find('img').first().attr('src');
 
         items.push({
           externalId: resolved,
@@ -222,6 +229,54 @@ function safeHostname(url: string): string | null {
   } catch {
     return null;
   }
+}
+
+/**
+ * Erweitert einen Treffer auf den Block, der das ganze Item umfasst.
+ *
+ * Generische Selektoren wie `[class*="teaser"]` treffen häufig nur einen
+ * Bestandteil — `.teaser-text` etwa enthält den Fließtext, aber weder
+ * Überschrift noch Artikellink; der einzige Link darin heißt „> mehr".
+ *
+ * Deshalb von dort aufsteigen, solange der Block weder eine Überschrift noch
+ * einen Link mit brauchbarem Text enthält. Abbruch, sobald der Vorfahre mehr
+ * als einen der ursprünglichen Treffer umfasst: dann ist die Item-Grenze
+ * überschritten und der Block wäre die ganze Liste.
+ */
+function widenToItem(
+  $: ReturnType<typeof cheerio.load>,
+  el: Parameters<Parameters<cheerio.Cheerio['each']>[0]>[1],
+  matched: cheerio.Cheerio
+): cheerio.Cheerio {
+  let $node = $(el);
+  for (let depth = 0; depth < MAX_WIDEN_DEPTH; depth++) {
+    if (hasUsableTitle($node, $)) return $node;
+    const $parent = $node.parent();
+    if ($parent.length === 0) return $node;
+    // Item-Grenze: der Vorfahre darf nicht mehrere Treffer umschließen.
+    if ($parent.find(matched).length > 1) return $node;
+    $node = $parent;
+  }
+  return $node;
+}
+
+function hasUsableTitle($scope: cheerio.Cheerio, $: ReturnType<typeof cheerio.load>): boolean {
+  if ($scope.find('h1, h2, h3, h4').first().text().trim().length >= MIN_TITLE_LENGTH) return true;
+  return pickItemLink($scope, $) !== null;
+}
+
+/**
+ * Der Link, der am ehesten auf den Artikel zeigt: der erste mit einem Text,
+ * der als Titel taugen könnte. „> mehr" und „weiterlesen" fallen damit raus.
+ */
+function pickItemLink($scope: cheerio.Cheerio, $: ReturnType<typeof cheerio.load>): cheerio.Cheerio | null {
+  let found: cheerio.Cheerio | null = null;
+  $scope.find('a[href]').each((_, a) => {
+    if (found) return;
+    const $a = $(a);
+    if ($a.text().replace(/\s+/g, ' ').trim().length >= MIN_TITLE_LENGTH) found = $a;
+  });
+  return found;
 }
 
 function isValidTitle(title: string): boolean {

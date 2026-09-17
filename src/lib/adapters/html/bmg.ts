@@ -31,11 +31,8 @@ export class BmgAdapter extends HtmlScraperAdapter {
         publishedAt = new Date(Date.UTC(+y, +m - 1, +d, 12));
       }
 
-      // Fallback: Datum aus Parent-Element
-      if (!publishedAt) {
-        const parent = $(el).closest('article, li, [class*="news"], [class*="teaser"]');
-        publishedAt = this.extractDate($(el));
-      }
+      // Fallback: Datum im Umfeld des Links suchen
+      publishedAt ??= this.extractDate($(el));
 
       items.push({
         externalId: url,

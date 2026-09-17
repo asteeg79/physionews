@@ -13,31 +13,19 @@
 import type { NewsItem, NewsItemWithSource, RelevanceMethod, SourceLight } from './types';
 import { readJson, writeJson, toDate, toRequiredDate } from './json-store';
 import { listSources } from './sources';
+import { DEFAULT_SETTINGS } from './settings';
 
 const FILE = 'news.json';
 
-/**
- * Voreingestellte Mindest-Relevanz für die Anzeige. In den Einstellungen
- * überschreibbar (`settings.minRelevance`), diese Konstante ist nur der
- * Rückfallwert.
- *
- * Bewusst höher als die Lösch-Schwelle (MIN_RELEVANCE_THRESHOLD = 4): der
- * Bewertungsmaßstab in lib/relevance/gemini.ts nennt 4–6 „nur mittelbarer
- * Bezug". Solche Items bleiben gespeichert — damit sich die Schwelle ohne
- * erneutes Abrufen nachjustieren lässt — werden aber nicht angezeigt.
- */
-export const MIN_RELEVANCE = 7;
 
 /**
- * Voreingestellte Höchstzahl Items je Quelle. In den Einstellungen
- * überschreibbar (`settings.maxItemsPerSource`).
+ * Score, unterhalb dessen ein Item gar nicht erst aufbewahrt wird.
  *
- * Ohne Deckel bestimmt schlicht die Publikationsfrequenz das Bild: eine
- * fleißige Quelle stellte zuletzt 14 von 34 sichtbaren Meldungen. Der Deckel
- * greift beim Ausliefern, nicht beim Löschen — er lässt sich damit ohne
- * erneuten Abruf verstellen.
+ * Zugleich die Untergrenze für die einstellbare Anzeigeschwelle: darunter
+ * gibt es per Konstruktion keine Items, eine niedrigere Einstellung wäre
+ * also wirkungslos.
  */
-export const MAX_ITEMS_PER_SOURCE = 8;
+export const MIN_RELEVANCE_THRESHOLD = 4;
 
 /** Rohformat in der Datei — Zeitpunkte als ISO-String. */
 interface StoredNewsItem {
@@ -123,9 +111,12 @@ export interface NewsQuery {
   tag?: string;
   /** Nur Items mit mindestens einem Evidenz-Tag. */
   evidenceTopics?: readonly string[];
-  /** Höchstzahl Items je Quelle. Ohne Angabe kein Deckel. */
+  /**
+   * Höchstzahl Items je Quelle im Überblick. Ohne Angabe kein Deckel; bei
+   * einer gezielten Abfrage (search/tag/evidenceTopics) bleibt er ungenutzt.
+   */
   maxPerSource?: number;
-  /** Mindest-Relevanz. Ohne Angabe gilt MIN_RELEVANCE. */
+  /** Mindest-Relevanz. Ohne Angabe gilt die Vorgabe aus den Einstellungen. */
   minRelevance?: number;
   limit?: number;
 }
@@ -135,7 +126,7 @@ export interface NewsQuery {
  * `GET /api/news` ausgibt.
  *
  * Sortierung: Relevanz absteigend, dann Datum absteigend.
- * Grundfilter (immer aktiv): Score >= MIN_RELEVANCE und Sprache `de`.
+ * Grundfilter (immer aktiv): Score >= `query.minRelevance` und Sprache `de`.
  */
 export async function queryNews(query: NewsQuery = {}): Promise<NewsItemWithSource[]> {
   const [items, sources] = await Promise.all([loadNews(), listSources()]);
@@ -164,8 +155,14 @@ export async function queryNews(query: NewsQuery = {}): Promise<NewsItemWithSour
       b.publishedAt.getTime() - a.publishedAt.getTime()
   );
 
+  // Der Deckel gilt nur für den Überblick. Bei einer gezielten Abfrage —
+  // Suche, Themen-Tag oder Evidenz-Filter — sollen alle Treffer erscheinen,
+  // auch mehrere aus derselben Quelle.
+  const focused = Boolean(query.search || query.tag || query.evidenceTopics);
   const capped =
-    query.maxPerSource === undefined ? result : capPerSource(result, query.maxPerSource);
+    focused || query.maxPerSource === undefined
+      ? result
+      : capPerSource(result, query.maxPerSource);
 
   return query.limit !== undefined ? capped.slice(0, query.limit) : capped;
 }
@@ -199,7 +196,7 @@ function capPerSource(items: NewsItemWithSource[], max: number): NewsItemWithSou
 function buildFilter(query: NewsQuery): (item: NewsItem, source: SourceLight) => boolean {
   const matchesSearch = query.search ? buildSearchMatcher(query.search) : null;
   const evidence = query.evidenceTopics ? new Set(query.evidenceTopics) : null;
-  const minScore = query.minRelevance ?? MIN_RELEVANCE;
+  const minScore = query.minRelevance ?? DEFAULT_SETTINGS.minRelevance;
 
   return (item, source) => {
     if (item.relevanceScore < minScore) return false;

@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server';
 import { z } from 'zod';
 import { getSettings, updateSettings } from '@/data/settings';
+import { MIN_RELEVANCE_THRESHOLD } from '@/data/news';
 import { writeErrorResponse } from '@/lib/write-guard';
 
 export const dynamic = 'force-dynamic';
@@ -15,8 +16,8 @@ const patchSchema = z
     refreshWindowStart: z.number().int().min(0).max(23).optional(),
     refreshWindowEnd: z.number().int().min(1).max(24).optional(),
     retentionDays: z.number().int().min(7).max(90).optional(),
-    // 4 ist zugleich die Lösch-Schwelle — darunter existieren keine Items.
-    minRelevance: z.number().int().min(4).max(9).optional(),
+    // Untergrenze ist die Lösch-Schwelle: darunter gibt es keine Items mehr.
+    minRelevance: z.number().int().min(MIN_RELEVANCE_THRESHOLD).max(9).optional(),
     maxItemsPerSource: z.number().int().min(1).max(50).optional(),
     notificationsEnabled: z.boolean().optional(),
   })

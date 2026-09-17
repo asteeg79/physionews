@@ -24,6 +24,20 @@ interface StoredSettings {
   lastNotifiedAt: string | null;
 }
 
+/**
+ * Voreinstellungen. Diese Werte sind die einzige Quelle der Wahrheit — die
+ * Anzeigeschwelle und der Deckel je Quelle werden ausschließlich von hier
+ * bzw. aus `data/settings.json` gelesen.
+ *
+ * `minRelevance` liegt bewusst über der Lösch-Schwelle
+ * (MIN_RELEVANCE_THRESHOLD in data/news.ts): der
+ * Bewertungsmaßstab nennt 4–6 „nur mittelbarer Bezug". Solche Items bleiben
+ * gespeichert, damit sich die Schwelle ohne erneutes Abrufen drehen lässt,
+ * werden aber nicht angezeigt.
+ *
+ * `maxItemsPerSource` verhindert, dass die Publikationsfrequenz das Bild
+ * bestimmt — eine fleißige Quelle stellte zuletzt 14 von 34 Meldungen.
+ */
 export const DEFAULT_SETTINGS: AppSettings = {
   refreshIntervalHours: 2,
   refreshWindowStart: 6,

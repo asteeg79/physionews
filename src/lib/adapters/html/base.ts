@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { isPlausiblePublishDate } from '../../publish-date';
 import type { Source } from '@/data/types';
 import type { RawNewsItem, SourceAdapter } from '../types';
 
@@ -27,25 +28,59 @@ const MONTHS_EN: Record<string, number> = {
  */
 const MAX_DATE_SCAN_CHARS = 600;
 
-/**
- * Ein Veröffentlichungsdatum darf nicht in der Zukunft liegen und nicht
- * absurd alt sein. Ohne diese Prüfung landen Fehlgriffe — eine Aktenzeichen-
- * Nummer, ein Termin im Fließtext — als Datum am Item und sortieren sich
- * vor alles andere. Zwei Tage Toleranz für Zeitzonen und früh gesetzte
- * Veröffentlichungsdaten.
- */
-const FUTURE_TOLERANCE_MS = 2 * 24 * 60 * 60 * 1000;
-const EARLIEST_PLAUSIBLE_YEAR = 1995;
-
-function isPlausiblePublishDate(d: Date): boolean {
-  const t = d.getTime();
-  if (Number.isNaN(t)) return false;
-  if (t > Date.now() + FUTURE_TOLERANCE_MS) return false;
-  return d.getUTCFullYear() >= EARLIEST_PLAUSIBLE_YEAR;
-}
-
 /** Wie viele Ebenen über dem Treffer noch nach einem Datum gesucht wird. */
 const MAX_DATE_ANCESTOR_DEPTH = 6;
+
+/** Minimale Sicht auf einen DOM-Knoten, wie cheerio ihn liefert. */
+interface TextNode {
+  type?: string;
+  data?: string;
+  children?: TextNode[];
+}
+
+/**
+ * Sammelt den Text eines Teilbaums — bricht aber ab, sobald absehbar mehr
+ * als `limit` Zeichen zusammenkommen.
+ *
+ * Vorher wurde `$scope.text()` aufgerufen und das Ergebnis erst danach
+ * gegen die Grenze geprüft — auf den oberen Ebenen also der Text der halben
+ * Seite, nur um ihn zu verwerfen.
+ *
+ * Auf den Test-Fixtures ist das nicht messbar: dort findet sich das Datum
+ * meist schon auf der ersten oder zweiten Ebene. Der Zweck ist die obere
+ * Schranke — eine unbegrenzte Operation auf fremdem Markup wird zu einer
+ * begrenzten, unabhängig davon, wie groß die Seite ist.
+ *
+ * @returns Der normalisierte Text, oder `null`, wenn er die Grenze reißt.
+ */
+function collectTextUpTo(node: TextNode | undefined, limit: number): string | null {
+  if (!node) return null;
+
+  // Großzügige Rohgrenze: Whitespace schrumpft beim Normalisieren, die
+  // genaue Prüfung passiert danach.
+  const rawLimit = limit * 4;
+  const parts: string[] = [];
+  let raw = 0;
+
+  const walk = (n: TextNode): boolean => {
+    if (n.type === 'text') {
+      const chunk = n.data ?? '';
+      raw += chunk.length;
+      if (raw > rawLimit) return false;
+      parts.push(chunk);
+      return true;
+    }
+    for (const child of n.children ?? []) {
+      if (!walk(child)) return false;
+    }
+    return true;
+  };
+
+  if (!walk(node)) return null;
+
+  const text = parts.join(' ').replace(/\s+/g, ' ').trim();
+  return text.length <= limit ? text : null;
+}
 
 export abstract class HtmlScraperAdapter implements SourceAdapter {
   abstract readonly typeIdentifier: string;
@@ -201,14 +236,19 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
    * `date`/`datum` in der Klasse → freier Text des Blocks.
    */
   private dateFromScope($scope: cheerio.Cheerio): Date | null {
+    // `find('time')` einmal ausführen statt zweimal denselben Teilbaum zu
+    // durchlaufen — ohne <time> lieferte der erste Ausdruck nur null.
+    const times = $scope.find('time');
     const direct =
-      this.parseDate($scope.find('time').attr('datetime')) ??
-      this.parseDate($scope.find('time').first().text()) ??
-      this.parseDate($scope.find('[class*="date"], [class*="datum"]').first().text());
+      this.parseDate(times.attr('datetime')) ??
+      this.parseDate(times.first().text()) ??
+      this.parseDate(
+        $scope.find('[class*="date"], [class*="datum"], [class*="published"]').first().text()
+      );
     if (direct) return direct;
 
-    const text = this.cleanText($scope.text());
-    return text.length <= MAX_DATE_SCAN_CHARS ? this.parseDate(text) : null;
+    const text = collectTextUpTo($scope[0] as unknown as TextNode, MAX_DATE_SCAN_CHARS);
+    return text === null ? null : this.parseDate(text);
   }
 
   /**

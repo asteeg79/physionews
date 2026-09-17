@@ -19,6 +19,7 @@ import { loadNews, saveNews } from '@/data/news';
 import { computeItemId } from './dedup';
 import { getAdapter } from './adapters/registry';
 import { detectLanguage } from './lang-detect';
+import { isPlausiblePublishDate } from './publish-date';
 import type { RawNewsItem } from './adapters/types';
 
 /** Maximum gleichzeitige Adapter-Aufrufe — schützt vor Rate-Limits der Quellen. */
@@ -157,6 +158,12 @@ function appendItems(
     // nächsten Maintenance-Lauf gelöscht.
     const detected = detectLanguage(`${item.title} ${item.summary ?? ''}`);
 
+    // Verbindliche Plausibilitätsprüfung — hier läuft jedes Item jedes
+    // Adapters durch, auch RSS, Google News und YouTube. Ein Datum aus der
+    // Zukunft oder aus grauer Vorzeit ist ein Fehlgriff beim Auslesen; dann
+    // ist der Abrufzeitpunkt die ehrlichere Angabe.
+    const publishedAt = isPlausiblePublishDate(item.publishedAt) ? item.publishedAt : fetchedAt;
+
     news.push({
       id,
       sourceId,
@@ -164,7 +171,7 @@ function appendItems(
       summary: item.summary ?? null,
       url: item.url,
       imageUrl: item.imageUrl ?? null,
-      publishedAt: item.publishedAt,
+      publishedAt,
       fetchedAt,
       notifiedAt: null,
       relevanceScore: 5,
