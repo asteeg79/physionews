@@ -12,6 +12,7 @@
 import { createHash } from 'node:crypto';
 import type { GeminiCacheEntry } from '@/data/types';
 import { readJson, writeJson, toRequiredDate } from '@/data/json-store';
+import { RUBRIC_VERSION } from './gemini';
 
 const FILE = 'gemini-cache.json';
 
@@ -32,10 +33,18 @@ export interface CachedClassification {
 /**
  * Normalisiert einen Titel und liefert einen 32-Hex-Hash.
  * Normalisierung: lowercase, mehrfache Spaces, kein Trailing-Whitespace.
+ *
+ * Die Version des Bewertungsmaßstabs geht mit in den Hash ein: wird der
+ * Prompt geändert, sind alle alten Einträge damit automatisch ungültig.
+ * Ohne das würde eine geschärfte Rubrik wirkungslos bleiben, weil die
+ * Grauzonen-Items ihre alte Bewertung aus dem Cache bekämen.
  */
 export function titleHash(title: string): string {
   const normalized = title.toLowerCase().replace(/\s+/g, ' ').trim();
-  return createHash('sha256').update(normalized).digest('hex').slice(0, 32);
+  return createHash('sha256')
+    .update(`v${RUBRIC_VERSION}|${normalized}`)
+    .digest('hex')
+    .slice(0, 32);
 }
 
 async function loadEntries(): Promise<StoredCacheEntry[]> {

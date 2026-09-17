@@ -23,8 +23,15 @@ import { classifyBatch, estimateTokens, GEMINI_QUOTA_EXHAUSTED, type GeminiInput
 import { getQuotaStatus, recordUsage } from './gemini-quota';
 import { getCachedByHashes, setCachedBulk, titleHash } from './gemini-cache';
 
-/** Batch-Größe für Gemini — passt sicher in 4096 maxOutputTokens. */
-const GEMINI_BATCH_SIZE = 20;
+/**
+ * Items pro Gemini-Anfrage.
+ *
+ * Der Free Tier erlaubt nur 20 Anfragen pro Tag (siehe gemini-quota.ts) —
+ * die knappe Größe sind also Anfragen, nicht Tokens. Mit 40 statt 20 Items
+ * deckt dasselbe Budget die doppelte Menge ab. 40 Ergebnisse à ~80 Tokens
+ * bleiben deutlich unter den 8192 maxOutputTokens.
+ */
+const GEMINI_BATCH_SIZE = 40;
 
 /**
  * Sleep zwischen Gemini-Batches innerhalb desselben Laufs.

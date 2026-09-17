@@ -18,7 +18,7 @@
 import type { NewsItem } from '@/data/types';
 import { loadNews, saveNews } from '@/data/news';
 import { listSources } from '@/data/sources';
-import { recordUsage } from './gemini-quota';
+import { getQuotaStatus, recordUsage } from './gemini-quota';
 
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -187,6 +187,16 @@ async function selectByAi(
 ): Promise<{ ids: string[]; tokensEstimated: number } | null> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) return null;
+
+  // Erst das Tagesbudget prüfen: ohne verbleibende Anfragen wäre der Call
+  // ein garantierter 429 — der bei Google trotzdem zählt.
+  const quota = await getQuotaStatus();
+  if (!quota.canUseAiForTopNews) {
+    console.warn(
+      `[TopNews-AI] Tagesbudget aufgebraucht (${quota.requestsMade} Anfragen) — Score-Sortierung.`
+    );
+    return null;
+  }
 
   // Kompaktes Format pro Item: ID | Quelle | Score | Datum | Titel
   const userInput = pool

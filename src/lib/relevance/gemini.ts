@@ -16,21 +16,29 @@ const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMI
 
 import { TOPIC_TAXONOMY, filterToValidTopics } from './topics';
 
+/**
+ * Version des Bewertungsmaßstabs. Fließt in den Cache-Schlüssel ein — eine
+ * Änderung am Prompt macht damit automatisch alle gecachten Bewertungen
+ * ungültig, statt sie stillschweigend weiterzuverwenden.
+ */
+export const RUBRIC_VERSION = 2;
+
 const SYSTEM_PROMPT_TEMPLATE = `Du bewertest Nachrichten-Titel STRENG auf Relevanz für deutsche Physiotherapeut:innen in der Praxis.
 
-Bewertungs-Rubric (Skala 0-10):
-- 9-10: Hochrelevant. Direkter Bezug zu Physio-Methoden, klinischen Diagnosen (muskuloskelettal/neurolog./kardio-pulmo./päd.), neuen Evidenz/Leitlinien, Heilmittelversorgung, Heilmittelverordnung, Blankoverordnung, GKV-Vergütung, Direktzugang.
-- 7-8: Klar relevant. Verbands-Berufspolitik mit Bezug zur Praxis (Vergütung, Anstellung, Fortbildung), Studien zu Reha/Bewegungstherapie, Recht/Abrechnung für Heilmittelerbringer.
-- 5-6: Grenzwertig. Allgemeine Gesundheitspolitik mit möglichem indirektem Einfluss. Berufsverband-News ohne klaren Praxisbezug.
-- 3-4: Wenig relevant. Allgemeine Gesundheitsmonitoring-Reports, Verband-Verwaltung (Mitgliederversammlung, Sponsoring, Fristenbericht).
-- 0-2: Irrelevant. Apotheken, Pharma-Wirkstoffe, Zahn-/Augenmedizin, Infektiologie ohne Reha-Bezug, RKI-Statistiken, Sterbehilfe, Werbung.
+LEITFRAGE: Ändert sich durch diese Meldung etwas an der Arbeit, der Abrechnung, der Ausbildung oder dem fachlichen Wissen einer Physiotherapeutin? Wenn du das nicht klar bejahen kannst, ist die Meldung NICHT relevant.
 
-WICHTIG: Bei Unsicherheit eher NIEDRIGER bewerten. Allgemeine Politik OHNE direkten Physio-Bezug = max 4.
+Bewertungs-Rubric (Skala 0-10):
+- 9-10: Unmittelbar. Heilmittelverordnung, Blankoverordnung, Direktzugang, GKV-Vergütung für Heilmittel, Zertifikatspositionen, Abrechnungsregeln, neue Leitlinien oder Studien zu physiotherapeutischen Verfahren.
+- 7-8: Klar relevant. Berufspolitik der Physio-Verbände mit Folgen für die Praxis, Recht und Abrechnung für Heilmittelerbringer, Studien zu Reha und Bewegungstherapie, Aus- und Fortbildung in der Physiotherapie.
+- 4-6: Nur wenn ein konkreter Bezug zur Physiotherapie erkennbar ist, dieser aber mittelbar bleibt.
+- 0-3: Alles Übrige. Dazu gehört AUSDRÜCKLICH Gesundheitspolitik ohne Physio-Bezug: Gremien- und Personalmeldungen, Förderprogramme und Innovationsfonds, Verfahrensordnungen, Finanzberichte der GKV, Screening- und Vorsorgeprogramme, Krankenhaus- und Psychiatrie-Themen, Pharma, Zahn- und Augenmedizin, Infektiologie, allgemeine Gesundheitsmonitorings, Verbandsverwaltung, Veranstaltungs- und Kongresshinweise.
+
+WICHTIG: Eine Meldung ist NICHT dadurch relevant, dass sie aus einer physiotherapienahen Quelle stammt oder irgendwie das Gesundheitswesen betrifft. Entscheidend ist allein der erkennbare Bezug zur physiotherapeutischen Praxis. Im Zweifel NIEDRIGER bewerten.
 
 Zusätzlich: weise jedem Item 0-3 Themen-Tags aus dieser EXAKTEN Liste zu (nichts anderes):
 ${TOPIC_TAXONOMY.join(', ')}
 
-Tags sollen das Item thematisch einordnen. Wenn nichts passt, leeres Array.
+Tags ordnen das Item thematisch ein — sie sagen NICHTS über die Relevanz aus. Wenn nichts passt, leeres Array.
 
 EVIDENZ-TAGS sind besonders wichtig: vergib „Leitlinie", „S3-Leitlinie", „S2k-Leitlinie",
 „RCT", „Meta-Analyse", „Systematic Review" oder „Cochrane-Review", wenn das Item
@@ -98,7 +106,7 @@ export async function classifyBatch(items: GeminiInput[]): Promise<ClassifyResul
         },
       },
       temperature: 0.1,
-      maxOutputTokens: 4096,
+      maxOutputTokens: 8192,
     },
   };
 

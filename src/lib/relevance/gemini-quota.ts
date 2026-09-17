@@ -20,9 +20,34 @@ import { readJson, writeJson, toRequiredDate } from '@/data/json-store';
 
 const FILE = 'gemini-usage.json';
 
-/** Soft-Cap pro Tag — bei Überschreitung kein Gemini-Call mehr. */
+/**
+ * Das tatsächliche Tageslimit des Free Tier für gemini-2.5-flash-lite.
+ *
+ * Die API nennt es in ihrer 429-Antwort selbst:
+ *   GenerateRequestsPerDayPerProjectPerModel-FreeTier | Limit: 20
+ *
+ * Hier stand vorher 12.000 — eine Annahme aus der Dokumentation anderer
+ * Modelle. Dadurch hat die Bremse nie gegriffen: die Pipeline hielt sich für
+ * quasi unbegrenzt und lief bei jedem Lauf in 429er, statt das Budget
+ * einzuteilen. Anfragen, nicht Tokens, sind der knappe Posten.
+ */
+const DAILY_REQUEST_LIMIT = 20;
+
+/**
+ * Anfragen, die für die Top-News-Auswahl zurückgehalten werden. Sonst
+ * verbraucht die Klassifizierung das Budget und die Kuratierung fällt
+ * jeden Tag auf die Score-Sortierung zurück.
+ */
+const TOP_NEWS_RESERVE = 2;
+
+/** Für die Klassifizierung nutzbar. */
+const DAILY_REQUEST_SOFT_CAP = DAILY_REQUEST_LIMIT - TOP_NEWS_RESERVE;
+
+/**
+ * Tokens sind beim Free Tier nicht der begrenzende Faktor (250k/Minute,
+ * 1 Mio/Tag) — der Deckel dient nur als zweite Sicherung.
+ */
 const DAILY_TOKEN_SOFT_CAP = 800_000;
-const DAILY_REQUEST_SOFT_CAP = 12_000;
 
 /** So viele Tage Historie bleiben in der Datei stehen. */
 const KEEP_DAYS = 30;
@@ -44,7 +69,10 @@ export interface QuotaStatus {
   requestsMade: number;
   tokensRemaining: number;
   requestsRemaining: number;
+  /** Reicht das Budget noch für einen Klassifizierungs-Batch? */
   canUseAi: boolean;
+  /** Reicht es noch für die Top-News-Auswahl (nutzt die Reserve)? */
+  canUseAiForTopNews: boolean;
 }
 
 /** Der komplette Verlauf, neueste Tage zuerst. */
@@ -72,6 +100,8 @@ export async function getQuotaStatus(): Promise<QuotaStatus> {
     tokensRemaining,
     requestsRemaining,
     canUseAi: tokensRemaining > 5_000 && requestsRemaining > 0,
+    // Die Top-News-Auswahl darf auch noch in die Reserve greifen.
+    canUseAiForTopNews: requestsMade < DAILY_REQUEST_LIMIT,
   };
 }
 

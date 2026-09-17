@@ -16,8 +16,15 @@ import { listSources } from './sources';
 
 const FILE = 'news.json';
 
-/** Mindest-Relevanz, unterhalb derer Items gar nicht erst ausgeliefert werden. */
-export const MIN_RELEVANCE = 4;
+/**
+ * Mindest-Relevanz für die Anzeige.
+ *
+ * Bewusst höher als die Lösch-Schwelle (MIN_RELEVANCE_THRESHOLD = 4): der
+ * Bewertungsmaßstab in lib/relevance/gemini.ts nennt 4–6 „nur mittelbarer
+ * Bezug". Solche Items bleiben gespeichert — damit sich die Schwelle ohne
+ * erneutes Abrufen nachjustieren lässt — werden aber nicht angezeigt.
+ */
+export const MIN_RELEVANCE = 7;
 
 /** Rohformat in der Datei — Zeitpunkte als ISO-String. */
 interface StoredNewsItem {
