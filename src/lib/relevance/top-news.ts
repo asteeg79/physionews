@@ -243,9 +243,10 @@ async function selectByAi(
       });
 
       if (!res.ok) {
-        // Auch fehlgeschlagene Calls zählen bei Google gegen RPM/RPD —
-        // wir verbuchen den Request ohne Tokens (keine Antwort erhalten).
-        await recordUsage(0, 1);
+        // 429 NICHT mitzählen — abgewiesen heißt, das Budget war schon weg.
+        // Andere Fehler (5xx, Timeout) haben Google dagegen erreicht und
+        // werden als Request ohne Tokens verbucht.
+        if (res.status !== 429) await recordUsage(0, 1);
         const detail = await errorDetail(res);
 
         if (res.status === 429 && attempt < RETRY_DELAYS_MS.length) {

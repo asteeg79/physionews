@@ -261,9 +261,9 @@ async function runGeminiBatches(
     const batchResults = await classifyBatch(batch);
 
     if (batchResults === GEMINI_QUOTA_EXHAUSTED) {
-      // 429 — Quota erschöpft. Der fehlgeschlagene Call zählt bei Google
-      // trotzdem gegen RPM/RPD, bei uns als Request ohne Tokens.
-      await recordUsage(0, 1);
+      // 429 NICHT mitzählen: die Anfrage wurde abgewiesen, WEIL das Budget
+      // schon erschöpft war. Sie zusätzlich zu verbuchen erzeugt
+      // Phantom-Verbrauch, der die eigene Bremse dauerhaft blockiert.
       result.quotaThrottled = true;
       for (let j = i; j < items.length; j++) skipped.add(items[j].id);
       console.warn(
