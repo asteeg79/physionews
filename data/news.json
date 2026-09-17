@@ -28,11 +28,13 @@
     "publishedAt": "2026-09-17T08:43:25.188Z",
     "fetchedAt": "2026-09-17T08:43:25.206Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der G-BA ist ein wichtiges Gremium, aber die Übernahme des Vorsitzes durch eine neue Person hat kein",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Berufsverband"
+    ],
     "lang": "de"
   },
   {
@@ -46,10 +48,13 @@
     "fetchedAt": "2026-09-17T08:43:25.206Z",
     "notifiedAt": null,
     "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Mindestpersonalausstattung in der stationären Psychiatrie ist für Physiotherapeuten, die primär ",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Reha",
+      "Neurologie"
+    ],
     "lang": "de"
   },
   {
@@ -62,11 +67,13 @@
     "publishedAt": "2026-09-17T08:43:25.186Z",
     "fetchedAt": "2026-09-17T08:43:25.206Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Zuständigkeiten der unparteiischen Mitglieder im G-BA sind für die operative Arbeit von Physioth",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Berufsverband"
+    ],
     "lang": "de"
   },
   {
@@ -79,11 +86,13 @@
     "publishedAt": "2026-09-17T08:43:25.185Z",
     "fetchedAt": "2026-09-17T08:43:25.206Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Aussage zur Projektförderung ist zu allgemein und hat keinen direkten Bezug zur Praxis von Physi",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Berufsverband"
+    ],
     "lang": "de"
   },
   {
@@ -96,11 +105,14 @@
     "publishedAt": "2026-09-17T08:43:25.182Z",
     "fetchedAt": "2026-09-17T08:43:25.206Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceScore": 6,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Einführung neuer Früherkennungsuntersuchungen bei Kindern und Jugendlichen kann indirekt relevan",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Pädiatrie",
+      "Heilmittelversorgung"
+    ],
     "lang": "de"
   },
   {
@@ -114,10 +126,12 @@
     "fetchedAt": "2026-09-17T08:43:25.206Z",
     "notifiedAt": null,
     "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Aufnahme von Linksherz-Katheteruntersuchungen in die ärztliche Zweitmeinung ist primär für Kardi",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Leitlinie"
+    ],
     "lang": "de"
   },
   {
@@ -130,28 +144,14 @@
     "publishedAt": "2026-09-17T08:43:25.181Z",
     "fetchedAt": "2026-09-17T08:43:25.206Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Anregungen aus beendeten Förderprojekten sind zu allgemein formuliert und haben keinen direkten,",
     "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "c820573ea0a92afa81b4cf9c864c7097f3aa380339b778c85987932d2b378244",
-    "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
-    "title": "In eigener Sache: GBA erneuert sein visuelles Erscheinungsbild",
-    "summary": null,
-    "url": "https://www.g-ba.de/presse/pressemitteilungen-meldungen/1353/",
-    "imageUrl": null,
-    "publishedAt": "2026-09-17T08:43:25.180Z",
-    "fetchedAt": "2026-09-17T08:43:25.206Z",
-    "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
-    "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Reha",
+      "Studie"
+    ],
     "lang": "de"
   },
   {
@@ -164,11 +164,13 @@
     "publishedAt": "2026-09-17T08:43:24.860Z",
     "fetchedAt": "2026-09-17T08:43:24.861Z",
     "notifiedAt": null,
-    "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Bürokratieabbau im BMG ist ein allgemeines politisches Thema. Ohne konkreten Bezug zur Heilmittelver",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Heilmittelversorgung"
+    ],
     "lang": "de"
   },
   {
@@ -182,10 +184,13 @@
     "fetchedAt": "2026-09-17T08:43:24.861Z",
     "notifiedAt": null,
     "relevanceScore": 5,
-    "relevanceMethod": "pending",
-    "relevanceReason": null,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Einführung eines Rahmenlehrplans für Pflegefachassistenz ist indirekt relevant, da sie die Zusam",
     "isTopNews": false,
-    "topics": [],
+    "topics": [
+      "Berufsausbildung",
+      "Fortbildung"
+    ],
     "lang": "de"
   },
   {
