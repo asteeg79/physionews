@@ -9,14 +9,15 @@
  *  - Aktualität (jünger bevorzugt)
  *  - Themen-Vielfalt (verschiedene Aspekte, nicht 3x dasselbe Thema)
  *
- * Aufruf: Nach jedem Cron-Refresh. Die Auswahl wird im DB-Flag
- * news_items.is_top_news persistiert (vorher alle is_top_news=false setzen).
+ * Aufruf: Als letzte Stufe jedes Pipeline-Laufs. Die Auswahl wird im Feld
+ * `isTopNews` in `data/news.json` festgehalten (vorher alle zurücksetzen).
  *
- * Token-Budget: Pro Auswahl ~1000 Tokens (1× pro Cron-Lauf alle 2h).
+ * Token-Budget: Pro Auswahl ~1000 Tokens (1× pro Lauf alle 2h).
  */
 
-import { db, schema } from '@/db';
-import { desc, eq, gte } from 'drizzle-orm';
+import type { NewsItem } from '@/data/types';
+import { loadNews, saveNews } from '@/data/news';
+import { listSources } from '@/data/sources';
 import { recordUsage } from './gemini-quota';
 
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
@@ -63,18 +64,20 @@ export interface TopNewsResult {
  * die gewählten IDs zurück. Setzt vorher alle bisherigen Flags zurück.
  */
 export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
-  // 1. Kandidaten-Pool holen: hochrelevante, ungelesene Items, nach Score+Datum sortiert
-  const pool = await fetchCandidatePool();
+  const news = await loadNews();
+
+  // 1. Kandidaten-Pool bilden: hochrelevante Items, nach Score+Datum sortiert
+  const pool = await buildCandidatePool(news);
 
   if (pool.length === 0) {
-    await clearAllTopNewsFlags();
+    await persistFlags(news, []);
     return { selectedIds: [], usedAi: false, poolSize: 0, tokensEstimated: 0 };
   }
 
   // 2. Bei sehr kleiner Liste: nimm einfach alle bzw. die Top-N
   if (pool.length <= TOP_N) {
     const ids = pool.map((p) => p.id);
-    await persistFlags(ids);
+    await persistFlags(news, ids);
     return { selectedIds: ids, usedAi: false, poolSize: pool.length, tokensEstimated: 0 };
   }
 
@@ -92,7 +95,7 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
   }
 
   // 5. Persist
-  await persistFlags(selectedIds);
+  await persistFlags(news, selectedIds);
 
   return {
     selectedIds,
@@ -103,33 +106,36 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
 }
 
 /**
- * Holt die top-N-Kandidaten aus der DB: score >= MIN, sortiert
- * primär nach Score DESC, sekundär nach Datum DESC.
+ * Bildet den Kandidaten-Pool: score >= MIN, sortiert primär nach Score DESC,
+ * sekundär nach Datum DESC, gekappt auf POOL_SIZE.
  *
- * isRead wird NICHT als Filter benutzt — die Top-News-Auswahl
- * ist eine kuratierte Übersicht über das Wichtigste aktuell im System,
- * unabhängig davon ob der Nutzer einzelne Items schon gesehen hat.
+ * Ob ein Item schon gelesen wurde, spielt keine Rolle — die Top-News sind
+ * eine kuratierte Übersicht über das aktuell Wichtigste, unabhängig vom
+ * Lesestand eines einzelnen Geräts.
  */
-async function fetchCandidatePool(): Promise<CandidateItem[]> {
-  const rows = await db
-    .select({
-      id: schema.newsItems.id,
-      title: schema.newsItems.title,
-      relevanceScore: schema.newsItems.relevanceScore,
-      publishedAt: schema.newsItems.publishedAt,
-      sourceName: schema.sources.name,
-      category: schema.sources.category,
-    })
-    .from(schema.newsItems)
-    .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
-    .where(gte(schema.newsItems.relevanceScore, MIN_SCORE_FOR_POOL))
-    .orderBy(desc(schema.newsItems.relevanceScore), desc(schema.newsItems.publishedAt))
-    .limit(POOL_SIZE);
+async function buildCandidatePool(news: NewsItem[]): Promise<CandidateItem[]> {
+  const sources = await listSources();
+  const sourceById = new Map(sources.map((s) => [s.id, s]));
 
-  return rows.map((r) => ({
-    ...r,
-    category: r.category as string,
-  }));
+  return news
+    .filter((n) => n.relevanceScore >= MIN_SCORE_FOR_POOL && sourceById.has(n.sourceId))
+    .sort(
+      (a, b) =>
+        b.relevanceScore - a.relevanceScore ||
+        b.publishedAt.getTime() - a.publishedAt.getTime()
+    )
+    .slice(0, POOL_SIZE)
+    .map((n) => {
+      const source = sourceById.get(n.sourceId)!;
+      return {
+        id: n.id,
+        title: n.title,
+        relevanceScore: n.relevanceScore,
+        publishedAt: n.publishedAt,
+        sourceName: source.name,
+        category: source.category as string,
+      };
+    });
 }
 
 /**
@@ -216,17 +222,6 @@ async function selectByAi(
 }
 
 /**
- * Setzt alle is_top_news Flags zurück.
- * Wird auch vor jeder neuen Auswahl aufgerufen.
- */
-async function clearAllTopNewsFlags(): Promise<void> {
-  await db
-    .update(schema.newsItems)
-    .set({ isTopNews: false })
-    .where(eq(schema.newsItems.isTopNews, true));
-}
-
-/**
  * Diversifizierter Score-Fallback: nimmt zunächst je 1 Item pro Source
  * in Score-Reihenfolge. Wenn nach diesem Durchgang noch nicht TOP_N
  * Items zusammen sind, wird mit den höchstgescorten Resten aufgefüllt.
@@ -256,15 +251,13 @@ function pickDiverseByScore(pool: CandidateItem[], n: number): string[] {
 }
 
 /**
- * Persistiert die gewählten IDs: alle anderen Flags zurücksetzen,
- * dann die neuen Top-Items auf true setzen.
+ * Schreibt die Auswahl zurück: alle Flags zurücksetzen, dann die gewählten
+ * Items markieren und die Datei einmal speichern.
  */
-async function persistFlags(ids: string[]): Promise<void> {
-  await clearAllTopNewsFlags();
-  for (const id of ids) {
-    await db
-      .update(schema.newsItems)
-      .set({ isTopNews: true })
-      .where(eq(schema.newsItems.id, id));
+async function persistFlags(news: NewsItem[], ids: string[]): Promise<void> {
+  const selected = new Set(ids);
+  for (const item of news) {
+    item.isTopNews = selected.has(item.id);
   }
+  await saveNews(news, 'chore(data): Top-News-Auswahl aktualisiert');
 }

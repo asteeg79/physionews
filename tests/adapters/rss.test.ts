@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { RssAdapter } from '../../src/lib/adapters/rss';
-import type { Source } from '../../src/db/schema';
+import type { Source } from '../../src/data/types';
 
 const fixture = readFileSync(join(__dirname, 'fixtures/sample-rss.xml'), 'utf-8');
 

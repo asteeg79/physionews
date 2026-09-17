@@ -18,11 +18,15 @@ import { TimeBucketSection } from './TimeBucketSection';
 import { TopNewsSection } from './TopNewsSection';
 import { ActiveFilters } from './ActiveFilters';
 import { getTimeBucket, BUCKET_ORDER, type TimeBucket } from '@/lib/time-bucket';
-import type { NewsItem, Source, NewsCategory } from '@/db/schema';
-
-type NewsItemWithSource = NewsItem & {
-  source: Pick<Source, 'id' | 'name' | 'category' | 'iconName'>;
-};
+import type { NewsCategory, NewsItemWithSource } from '@/data/types';
+import {
+  EMPTY_READ_STATE,
+  isItemRead,
+  loadReadState,
+  markRead,
+  type ClientNewsItem,
+  type ReadState,
+} from '@/lib/read-state';
 
 interface NewsListProps {
   category?: NewsCategory;
@@ -41,6 +45,13 @@ export function NewsList({ category }: NewsListProps) {
   const [, startTransition] = useTransition();
   // Pending nur für „still loading"-Indikator, blockiert NICHT das Rendering der alten Liste
   const [pending, setPending] = useState(false);
+  // Der Lesestand liegt im localStorage und steht erst nach dem Mount zur
+  // Verfügung — beim Server-Rendering gilt alles als ungelesen.
+  const [readState, setReadState] = useState<ReadState>(EMPTY_READ_STATE);
+
+  useEffect(() => {
+    setReadState(loadReadState());
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams();
@@ -95,23 +106,27 @@ export function NewsList({ category }: NewsListProps) {
     return <p className="py-8 text-center text-sm text-destructive">{error}</p>;
   }
 
+  // Lesestand dieses Geräts an die Items heften
+  const withReadState = (item: NewsItemWithSource): ClientNewsItem => ({
+    ...item,
+    isRead: isItemRead(readState, item),
+  });
+
   // Top-News-IDs aus der Hauptliste entfernen, damit sie nicht doppelt erscheinen
   const topIds = new Set(topNews.map((t) => t.id));
-  const restItems = items.filter((i) => !topIds.has(i.id));
+  const topNewsItems = topNews.map(withReadState);
+  const restItems = items.filter((i) => !topIds.has(i.id)).map(withReadState);
 
-  const bucketed = BUCKET_ORDER.reduce<Record<TimeBucket, NewsItemWithSource[]>>(
+  const bucketed = BUCKET_ORDER.reduce<Record<TimeBucket, ClientNewsItem[]>>(
     (acc, b) => ({ ...acc, [b]: [] }),
-    {} as Record<TimeBucket, NewsItemWithSource[]>
+    {} as Record<TimeBucket, ClientNewsItem[]>
   );
   for (const item of restItems) {
     bucketed[getTimeBucket(item.publishedAt)].push(item);
   }
 
   const onItemRead = (id: string) => {
-    setItems((prev) =>
-      prev ? prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)) : prev
-    );
-    setTopNews((prev) => prev.map((i) => (i.id === id ? { ...i, isRead: true } : i)));
+    setReadState((prev) => markRead(prev, id));
   };
 
   return (
@@ -132,7 +147,7 @@ export function NewsList({ category }: NewsListProps) {
         </div>
       ) : (
         <>
-          <TopNewsSection items={topNews} onItemRead={onItemRead} />
+          <TopNewsSection items={topNewsItems} onItemRead={onItemRead} />
           {BUCKET_ORDER.map((bucket) => (
             <TimeBucketSection
               key={bucket}

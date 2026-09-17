@@ -1,52 +1,53 @@
 /**
- * Re-Klassifiziert ALLE bestehenden News-Items (auch bereits klassifizierte).
- * Setzt relevance_method auf 'pending' zurück und ruft die Pipeline auf.
+ * Bewertet ALLE News-Items neu — auch die bereits klassifizierten.
+ * Setzt `relevanceMethod` auf `pending` zurück und lässt die Pipeline
+ * erneut darüberlaufen.
  *
- * WICHTIG: dotenv muss VOR den Modul-Importen laufen, da src/db/index.ts
- * beim Modul-Laden die DATABASE_URL liest.
+ *   npx tsx scripts/reclassify-all.ts
  */
 import { config } from 'dotenv';
+
+// Lokal kommen die Keys aus .env.local; in GitHub Actions gibt es die
+// Datei nicht und die Werte stehen bereits in der Umgebung.
 config({ path: '.env.local' });
 
-async function main() {
-  // Dynamische Imports — erst nach dotenv-Setup
-  const { db, schema } = await import('../src/db');
-  const { sql } = await import('drizzle-orm');
-  const { classifyPendingItems } = await import('../src/lib/relevance');
-  void schema;
+import { classifyPendingItems, resetAllToPending, relevanceStats } from '../src/lib/relevance';
 
-  console.log('Setze alle Items auf method=pending...');
-  await db.execute(sql`UPDATE news_items SET relevance_method = 'pending'::relevance_method`);
+/** Items pro Runde — hält die Gemini-Batches und den Speicher überschaubar. */
+const CHUNK = 200;
+const MAX_ROUNDS = 25;
 
-  console.log('Starte Klassifizierung (max 500 pro Runde, mehrere Runden)...\n');
-  let totalClassified = 0;
-  for (let round = 1; round <= 10; round++) {
-    const result = await classifyPendingItems();
+async function main(): Promise<void> {
+  const total = await resetAllToPending();
+  console.log(`${total} Items auf pending zurückgesetzt.\n`);
+
+  let classified = 0;
+  for (let round = 1; round <= MAX_ROUNDS; round++) {
+    const result = await classifyPendingItems(CHUNK);
     if (result.total === 0) {
       console.log(`Runde ${round}: nichts mehr zu tun.`);
       break;
     }
-    totalClassified += result.total;
+    classified += result.total;
     console.log(
-      `Runde ${round}: ${result.total} klassifiziert ` +
+      `Runde ${round}: ${result.total} bewertet ` +
         `(keyword: ${result.byMethod.keyword}, ai: ${result.byMethod.ai}, ` +
-        `accept: ${result.byDecision.accept}, gray: ${result.byDecision.gray}, reject: ${result.byDecision.reject}, ` +
-        `gemini batches: ${result.geminiBatches}, ~tokens: ${result.geminiTokensEstimated})`
+        `accept: ${result.byDecision.accept}, gray: ${result.byDecision.gray}, ` +
+        `reject: ${result.byDecision.reject}, gelöscht: ${result.deletedBelowThreshold}, ` +
+        `Gemini-Batches: ${result.geminiBatches}, ~${result.geminiTokensEstimated} Tokens)`
     );
+    if (result.quotaThrottled) {
+      console.log('Gemini-Quota erschöpft — Rest bleibt pending.');
+      break;
+    }
+    if (result.remaining === 0) break;
   }
 
-  console.log(`\n✅ Insgesamt ${totalClassified} Items neu klassifiziert.\n`);
-
-  // Statistik
-  const stats = await db.execute(
-    sql`SELECT relevance_score::int as score, relevance_method::text as method, COUNT(*)::int as n FROM news_items GROUP BY relevance_score, relevance_method ORDER BY relevance_score DESC, method`
-  );
-  console.log('Verteilung (Score / Method → Anzahl):');
-  for (const row of stats as unknown as Array<{ score: number; method: string; n: number }>) {
-    console.log(`  ${row.score} (${row.method}): ${row.n}`);
+  console.log(`\n✅ Insgesamt ${classified} Items neu bewertet.\n`);
+  console.log('Verteilung (Score / Methode → Anzahl):');
+  for (const row of await relevanceStats()) {
+    console.log(`  ${row.score} (${row.method}): ${row.count}`);
   }
-
-  process.exit(0);
 }
 
 main().catch((err) => {

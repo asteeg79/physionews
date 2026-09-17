@@ -1,27 +1,26 @@
 /**
- * Cron-Window-Check — geteiltes Helper für alle Cron-Endpoints.
+ * Refresh-Fenster-Check — geteiltes Helper für die Pipeline-Stufen.
  *
- * Liest app_settings.refreshWindowStart/End und vergleicht mit der
- * aktuellen Stunde in Europe/Berlin.
+ * Liest `refreshWindowStart`/`refreshWindowEnd` aus `data/settings.json`
+ * und vergleicht sie mit der aktuellen Stunde in Europe/Berlin.
  */
 
-import { db, schema } from '@/db';
+import type { AppSettings } from '@/data/types';
+import { getSettings } from '@/data/settings';
 import { getBerlinHour } from './timezone';
 
 export interface WindowCheckResult {
   inWindow: boolean;
   berlinHour: number;
-  settings: typeof schema.appSettings.$inferSelect;
+  settings: AppSettings;
 }
 
 /**
- * Lädt die App-Settings und prüft, ob die aktuelle Berliner Stunde im
+ * Lädt die App-Einstellungen und prüft, ob die aktuelle Berliner Stunde im
  * konfigurierten Refresh-Fenster liegt.
  */
-export async function checkWindow(): Promise<WindowCheckResult | null> {
-  const [settings] = await db.select().from(schema.appSettings).limit(1);
-  if (!settings) return null;
-
+export async function checkWindow(): Promise<WindowCheckResult> {
+  const settings = await getSettings();
   const berlinHour = getBerlinHour();
   const inWindow =
     berlinHour >= settings.refreshWindowStart && berlinHour < settings.refreshWindowEnd;

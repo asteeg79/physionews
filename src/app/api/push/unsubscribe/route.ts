@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
-import { db, schema } from '@/db';
-import { eq } from 'drizzle-orm';
 import { z } from 'zod';
+import { removePushSubscription } from '@/data/push-subscriptions';
+import { writeErrorResponse } from '@/lib/write-guard';
 
 const bodySchema = z.object({ endpoint: z.string().url() });
 
@@ -18,9 +18,10 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: parsed.error.flatten() }, { status: 422 });
   }
 
-  await db
-    .delete(schema.pushSubscriptions)
-    .where(eq(schema.pushSubscriptions.endpoint, parsed.data.endpoint));
-
-  return Response.json({ ok: true });
+  try {
+    await removePushSubscription(parsed.data.endpoint);
+    return Response.json({ ok: true });
+  } catch (err) {
+    return writeErrorResponse(err);
+  }
 }

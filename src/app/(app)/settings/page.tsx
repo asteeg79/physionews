@@ -7,20 +7,12 @@ import { GeminiUsagePanel } from '@/components/GeminiUsagePanel';
 import { VersionFooter } from '@/components/VersionFooter';
 import Link from 'next/link';
 import { ChevronRight, List } from 'lucide-react';
-import { db, schema } from '@/db';
+import { getSettings } from '@/data/settings';
 
 export const dynamic = 'force-dynamic';
 
 export default async function SettingsPage() {
-  const [settings] = await db.select().from(schema.appSettings).limit(1);
-
-  if (!settings) {
-    return (
-      <div className="py-6 px-3">
-        <p className="text-sm text-destructive">Settings-Tabelle leer. Bitte Seed laufen lassen.</p>
-      </div>
-    );
-  }
+  const settings = await getSettings();
 
   return (
     <div className="py-6 space-y-6 px-3">

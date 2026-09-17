@@ -1,16 +1,12 @@
 import { Rss, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
-import { db, schema } from '@/db';
-import { asc } from 'drizzle-orm';
+import { listSources } from '@/data/sources';
 import { SourcesManager } from '@/components/SourcesManager';
 
 export const dynamic = 'force-dynamic';
 
 export default async function SourcesPage() {
-  const sources = await db
-    .select()
-    .from(schema.sources)
-    .orderBy(asc(schema.sources.category), asc(schema.sources.name));
+  const sources = await listSources();
 
   return (
     <div className="py-6 space-y-4 px-3">

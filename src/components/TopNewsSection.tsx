@@ -2,21 +2,17 @@
 
 import { Sparkles } from 'lucide-react';
 import { NewsCard } from './NewsCard';
-import type { NewsItem, Source } from '@/db/schema';
-
-type NewsItemWithSource = NewsItem & {
-  source: Pick<Source, 'id' | 'name' | 'category' | 'iconName'>;
-};
+import type { ClientNewsItem } from '@/lib/read-state';
 
 interface TopNewsSectionProps {
-  items: NewsItemWithSource[];
+  items: ClientNewsItem[];
   onItemRead?: (id: string) => void;
 }
 
 /**
- * Top-News-Sektion: AI-kuratierte Auswahl der wichtigsten Beiträge,
- * die der Cron-Endpoint per Gemini gewählt hat (Praxis-Relevanz,
- * Aktualität, Themen-Vielfalt). Items mit is_top_news=true.
+ * Top-News-Sektion: KI-kuratierte Auswahl der wichtigsten Beiträge,
+ * die die Pipeline per Gemini gewählt hat (Praxis-Relevanz, Aktualität,
+ * Themen-Vielfalt). Items mit `isTopNews = true`.
  *
  * Visuell hervorgehoben mit Brand-Akzent und Sparkles-Icon.
  */

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import * as cheerio from 'cheerio';
-import type { Source } from '../../src/db/schema';
+import type { Source } from '../../src/data/types';
 
 import { IfkAdapter } from '../../src/lib/adapters/html/ifk';
 import { BmgAdapter } from '../../src/lib/adapters/html/bmg';

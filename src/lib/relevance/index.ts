@@ -7,13 +7,17 @@
  *  2. Grauzonen-Items → Gemini Flash mit klarem Bewertungs-Rubric
  *  3. Items mit Score &lt; MIN_RELEVANCE_THRESHOLD (4) werden gelöscht
  *
- * Token-Budget: typisch 800-4500 Tokens/Cron (&lt; 1% vom Free-Tier).
+ * Token-Budget: typisch 800-4500 Tokens/Lauf (&lt; 1% vom Free-Tier).
+ *
+ * Läuft in GitHub Actions (scripts/pipeline/classify.ts): die Items werden
+ * einmal geladen, im Speicher bewertet und einmal zurückgeschrieben.
  *
  * @see ./keywords.ts für Schlagwortlisten und Source-Bias
  * @see ./gemini.ts für AI-Klassifizierung
  */
-import { db, schema } from '@/db';
-import { eq, lt, sql } from 'drizzle-orm';
+import type { NewsItem, RelevanceMethod } from '@/data/types';
+import { loadNews, saveNews } from '@/data/news';
+import { listSources } from '@/data/sources';
 import { scoreByKeywords } from './keywords';
 import { classifyBatch, estimateTokens, GEMINI_QUOTA_EXHAUSTED, type GeminiInput } from './gemini';
 import { getQuotaStatus, recordUsage } from './gemini-quota';
@@ -23,7 +27,7 @@ import { getCachedByHashes, setCachedBulk, titleHash } from './gemini-cache';
 const GEMINI_BATCH_SIZE = 20;
 
 /**
- * Sleep zwischen Gemini-Batches innerhalb desselben classify-Calls.
+ * Sleep zwischen Gemini-Batches innerhalb desselben Laufs.
  * Free-Tier-RPM-Limit für gemini-2.5-flash-lite ist 30/min — mit 2,5 s
  * Pause halten wir uns bei max. ~24 RPM, sicherer Abstand. So vermeiden
  * wir 429er auch bei größeren Backlogs.
@@ -46,6 +50,15 @@ interface ScoreCandidate {
   sourceCategory: string;
 }
 
+/** Ein berechnetes Ergebnis, das noch auf das Item geschrieben werden muss. */
+interface ClassificationUpdate {
+  id: string;
+  score: number;
+  reason: string;
+  method: RelevanceMethod;
+  topics: string[];
+}
+
 interface PipelineResult {
   total: number;
   byMethod: { keyword: number; ai: number };
@@ -61,13 +74,20 @@ interface PipelineResult {
 }
 
 /**
- * Klassifiziert eine Liste von News-Items per Hybrid-Pipeline:
+ * Bewertet eine Liste von Kandidaten per Hybrid-Pipeline:
  *  1. scoreByKeywords für alle Items
- *  2. accept/reject werden sofort gespeichert
- *  3. gray-Items werden batch-weise an Gemini geschickt
- *  4. Bei Gemini-Fail oder fehlendem Key: keyword-Score bleibt
+ *  2. accept/reject stehen damit fest
+ *  3. gray-Items gehen batch-weise an Gemini
+ *  4. Bei Gemini-Fail oder fehlendem Key: Keyword-Score bleibt
+ *
+ * Schreibt nichts — liefert die Ergebnisse, die der Aufrufer anwendet.
  */
-export async function classifyNewItems(items: ScoreCandidate[]): Promise<PipelineResult> {
+async function classifyCandidates(items: ScoreCandidate[]): Promise<{
+  result: PipelineResult;
+  updates: ClassificationUpdate[];
+  /** IDs, die wegen Quota-Limit unbewertet blieben und `pending` bleiben. */
+  skipped: Set<string>;
+}> {
   const result: PipelineResult = {
     total: items.length,
     byMethod: { keyword: 0, ai: 0 },
@@ -80,16 +100,12 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     quotaThrottled: false,
   };
 
-  if (items.length === 0) return result;
+  const updates: ClassificationUpdate[] = [];
+  const skippedDueToQuota = new Set<string>();
+
+  if (items.length === 0) return { result, updates, skipped: skippedDueToQuota };
 
   const grayPool: GeminiInput[] = [];
-  const updates: Array<{
-    id: string;
-    score: number;
-    reason: string;
-    method: 'keyword' | 'ai' | 'pending';
-    topics: string[];
-  }> = [];
 
   // Stufe 1: Keyword-Scoring
   for (const item of items) {
@@ -104,35 +120,23 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
 
     if (scored.decision === 'gray') {
       grayPool.push({ id: item.id, title: item.title, sourceName: item.sourceName });
-      // Vorab den Keyword-Score persistieren, falls Gemini fehlschlägt
-      updates.push({
-        id: item.id,
-        score: scored.score,
-        reason: `keyword (gray): ${scored.reason}`,
-        method: 'keyword',
-        topics: [], // erst durch Gemini gesetzt
-      });
-    } else {
-      updates.push({
-        id: item.id,
-        score: scored.score,
-        reason: `keyword (${scored.decision}): ${scored.reason}`,
-        method: 'keyword',
-        topics: [],
-      });
     }
-  }
 
-  // IDs aller Gray-Items, die beim Quota-Throttle nicht klassifiziert wurden.
-  // Diese bleiben auf relevance_method='pending' und werden im nächsten
-  // Cron-Lauf nachgeholt.
-  const skippedDueToQuota = new Set<string>();
+    // Keyword-Score vorab festhalten, falls Gemini nichts liefert.
+    updates.push({
+      id: item.id,
+      score: scored.score,
+      reason: `keyword (${scored.decision}): ${scored.reason}`,
+      method: 'keyword',
+      topics: [], // Topics setzt erst Gemini
+    });
+  }
 
   // Stufe 2: Gemini auf Grauzone (mit Quota-Check und Result-Cache)
   if (grayPool.length > 0 && process.env.GEMINI_API_KEY) {
     const aiResults = new Map<string, { score: number; reason: string; topics: string[] }>();
 
-    // 2a. Cache-Lookup: titles, die wir bereits klassifiziert haben
+    // 2a. Cache-Lookup: Titel, die wir bereits klassifiziert haben
     const grayHashes = grayPool.map((g) => ({ ...g, h: titleHash(g.title) }));
     const cache = await getCachedByHashes(grayHashes.map((g) => g.h));
     const stillUnclassified: GeminiInput[] = [];
@@ -212,7 +216,7 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
       }
     }
 
-    // AI-Ergebnisse (Cache + fresh) in updates einarbeiten
+    // AI-Ergebnisse (Cache + frisch) in die Updates einarbeiten
     for (const upd of updates) {
       const ai = aiResults.get(upd.id);
       if (ai) {
@@ -224,93 +228,105 @@ export async function classifyNewItems(items: ScoreCandidate[]): Promise<Pipelin
     }
   }
 
-  // Stufe 3: Bulk-Update — pro Item ein einzelnes UPDATE.
-  // Items, die wegen Quota-Throttle nicht klassifiziert werden konnten,
-  // bleiben in der DB auf 'pending' und werden im nächsten Cron-Lauf nachgeholt.
   for (const upd of updates) {
     if (skippedDueToQuota.has(upd.id)) continue;
-
-    await db
-      .update(schema.newsItems)
-      .set({
-        relevanceScore: upd.score,
-        relevanceMethod: upd.method,
-        relevanceReason: upd.reason,
-        topics: upd.topics,
-      })
-      .where(eq(schema.newsItems.id, upd.id));
-
     if (upd.method === 'ai') result.byMethod.ai++;
     else result.byMethod.keyword++;
   }
 
-  // Stufe 4: Items unter dem Schwellwert komplett löschen.
-  // (Der Nutzer will keine off-topic-Items in der DB; spart Speicher und
-  // hält die Liste sauber.)
-  const idsToDelete = updates
-    .filter((upd) => upd.score < MIN_RELEVANCE_THRESHOLD)
-    .map((upd) => upd.id);
-  if (idsToDelete.length > 0) {
-    // ON CONFLICT-Vermeidung: einzeln löschen ist langsamer aber sicher
-    for (const id of idsToDelete) {
-      await db.delete(schema.newsItems).where(eq(schema.newsItems.id, id));
-    }
-    result.deletedBelowThreshold = idsToDelete.length;
+  return { result, updates, skipped: skippedDueToQuota };
+}
+
+/**
+ * Holt die noch nicht klassifizierten Items (`relevanceMethod === 'pending'`),
+ * bewertet sie und schreibt `data/news.json` einmal zurück.
+ *
+ * Items unter dem Schwellwert werden dabei gelöscht — off-topic-Einträge
+ * sollen gar nicht erst in der Datei stehen bleiben.
+ *
+ * @param limit Maximale Items pro Aufruf.
+ */
+export async function classifyPendingItems(
+  limit = 500
+): Promise<PipelineResult & { remaining: number }> {
+  const news = await loadNews();
+  const sources = await listSources();
+  const sourceById = new Map(sources.map((s) => [s.id, s]));
+
+  const pending = news.filter((n) => n.relevanceMethod === 'pending');
+  const batch = pending.slice(0, limit);
+
+  const candidates: ScoreCandidate[] = batch.map((item) => {
+    const source = sourceById.get(item.sourceId);
+    return {
+      id: item.id,
+      title: item.title,
+      summary: item.summary,
+      url: item.url,
+      sourceName: source?.name ?? '',
+      sourceCategory: source?.category ?? '',
+    };
+  });
+
+  const { result, updates, skipped } = await classifyCandidates(candidates);
+
+  // Ergebnisse anwenden
+  const byId = new Map(news.map((n) => [n.id, n]));
+  const dropIds = new Set<string>();
+  for (const upd of updates) {
+    if (skipped.has(upd.id)) continue;
+    const item = byId.get(upd.id);
+    if (!item) continue;
+    item.relevanceScore = upd.score;
+    item.relevanceMethod = upd.method;
+    item.relevanceReason = upd.reason;
+    item.topics = upd.topics;
+    if (upd.score < MIN_RELEVANCE_THRESHOLD) dropIds.add(upd.id);
   }
 
-  return result;
-}
+  const kept = dropIds.size > 0 ? news.filter((n) => !dropIds.has(n.id)) : news;
+  result.deletedBelowThreshold = dropIds.size;
 
-/**
- * Löscht alle bestehenden Items mit Score &lt; threshold (für Cleanup-Skript).
- */
-export async function purgeBelowThreshold(): Promise<number> {
-  const deleted = await db
-    .delete(schema.newsItems)
-    .where(lt(schema.newsItems.relevanceScore, MIN_RELEVANCE_THRESHOLD))
-    .returning({ id: schema.newsItems.id });
-  return deleted.length;
-}
+  await saveNews(kept, 'chore(data): News klassifiziert');
 
-/**
- * Holt sich Items, die noch nicht klassifiziert wurden (method='pending')
- * und klassifiziert sie. Wird vom Cron + Skript benutzt.
- *
- * @param limit Maximale Items pro Aufruf. Vercel-Functions haben ein
- *              60s-Timeout — bei großen Batches lieber mehrere kleine
- *              Aufrufe machen.
- */
-export async function classifyPendingItems(limit = 500): Promise<PipelineResult & { remaining: number }> {
-  const items = await db
-    .select({
-      id: schema.newsItems.id,
-      title: schema.newsItems.title,
-      summary: schema.newsItems.summary,
-      url: schema.newsItems.url,
-      sourceName: schema.sources.name,
-      sourceCategory: sql<string>`${schema.sources.category}::text`,
-    })
-    .from(schema.newsItems)
-    .innerJoin(schema.sources, eq(schema.newsItems.sourceId, schema.sources.id))
-    .where(eq(schema.newsItems.relevanceMethod, 'pending'))
-    .limit(limit);
-
-  const result = await classifyNewItems(
-    items.map((row) => ({
-      id: row.id,
-      title: row.title,
-      summary: row.summary,
-      url: row.url,
-      sourceName: row.sourceName,
-      sourceCategory: row.sourceCategory,
-    }))
-  );
-
-  // Wie viele bleiben pending? Wenn > 0, sollte der Caller nochmal anrufen.
-  const [{ n: remaining }] = (await db
-    .select({ n: sql<number>`COUNT(*)::int` })
-    .from(schema.newsItems)
-    .where(eq(schema.newsItems.relevanceMethod, 'pending'))) as Array<{ n: number }>;
-
+  const remaining = kept.filter((n) => n.relevanceMethod === 'pending').length;
   return { ...result, remaining };
+}
+
+/** Löscht alle bestehenden Items mit Score &lt; MIN_RELEVANCE_THRESHOLD. */
+export async function purgeBelowThreshold(): Promise<number> {
+  const news = await loadNews();
+  const kept = news.filter((n) => n.relevanceScore >= MIN_RELEVANCE_THRESHOLD);
+  const removed = news.length - kept.length;
+  if (removed > 0) {
+    await saveNews(kept, 'chore(data): irrelevante News entfernt');
+  }
+  return removed;
+}
+
+/** Setzt alle Items auf `pending` zurück — für eine komplette Neubewertung. */
+export async function resetAllToPending(): Promise<number> {
+  const news = await loadNews();
+  for (const item of news) {
+    item.relevanceMethod = 'pending';
+  }
+  await saveNews(news, 'chore(data): Klassifizierung zurückgesetzt');
+  return news.length;
+}
+
+/** Verteilung Score/Methode — für die Ausgabe der Wartungsskripte. */
+export async function relevanceStats(): Promise<
+  Array<{ score: number; method: RelevanceMethod; count: number }>
+> {
+  const news: NewsItem[] = await loadNews();
+  const buckets = new Map<string, { score: number; method: RelevanceMethod; count: number }>();
+  for (const item of news) {
+    const key = `${item.relevanceScore}|${item.relevanceMethod}`;
+    const bucket = buckets.get(key);
+    if (bucket) bucket.count++;
+    else buckets.set(key, { score: item.relevanceScore, method: item.relevanceMethod, count: 1 });
+  }
+  return [...buckets.values()].sort(
+    (a, b) => b.score - a.score || a.method.localeCompare(b.method)
+  );
 }

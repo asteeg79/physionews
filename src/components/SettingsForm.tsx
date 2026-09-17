@@ -29,6 +29,7 @@ import {
 import { FieldGroup } from './settings/FieldGroup';
 import { Toggle } from './settings/Toggle';
 import { ActionButton } from './settings/ActionButton';
+import { markAllRead as markAllReadLocally } from '@/lib/read-state';
 
 export interface Settings {
   refreshIntervalHours: number;
@@ -72,7 +73,9 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
         body: JSON.stringify(changes),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      toast.success('Gespeichert');
+      // Die Einstellungen werden als Commit ins Repo geschrieben; live sind
+      // sie erst nach dem folgenden Deploy.
+      toast.success('Gespeichert — in ca. 1 Minute aktiv');
     } catch (err) {
       setSettings(prev);
       toast.error('Speichern fehlgeschlagen');
@@ -88,13 +91,14 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
         const res = await fetch('/api/refresh-on-demand', { method: 'POST' });
         const body = (await res.json()) as {
           ok?: boolean;
-          totalNew?: number;
+          dispatched?: boolean;
           reason?: string;
           resetIn?: number;
         };
         if (body.ok) {
-          toast.success(`${body.totalNew ?? 0} neue Beiträge geladen`);
-          router.refresh();
+          // Der Abruf läuft in GitHub Actions — bis die neuen Beiträge in
+          // der App stehen, vergehen Pipeline-Lauf plus Deploy.
+          toast.success('Abruf gestartet — die neuen Beiträge erscheinen in wenigen Minuten');
         } else if (body.reason === 'too_recent') toast.info('Wurde gerade erst aktualisiert.');
         else if (body.reason === 'rate_limited')
           toast.info(`Limit erreicht — bitte ${Math.ceil((body.resetIn ?? 0) / 60)} Min warten.`);
@@ -106,18 +110,14 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
     });
   };
 
+  /**
+   * „Alle als gelesen" wirkt nur auf diesem Gerät: der Lesestand liegt im
+   * localStorage, nicht mehr in den Daten (siehe lib/read-state.ts).
+   */
   const markAllRead = () => {
-    startTransition(async () => {
-      try {
-        const res = await fetch('/api/news/mark-all-read', { method: 'POST' });
-        const body = (await res.json()) as { markedAsRead: number };
-        toast.success(`${body.markedAsRead} Beiträge markiert`);
-        router.refresh();
-      } catch (err) {
-        toast.error('Aktion fehlgeschlagen');
-        console.error(err);
-      }
-    });
+    markAllReadLocally();
+    toast.success('Alle Beiträge auf diesem Gerät als gelesen markiert');
+    router.refresh();
   };
 
   // Zwei-Klick-Confirm für die destruktive Cache-Lösch-Aktion

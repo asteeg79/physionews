@@ -1,4 +1,4 @@
-import type { Source } from '@/db/schema';
+import type { Source } from '@/data/types';
 import type { RawNewsItem, SourceAdapter } from './types';
 import { RssAdapter } from './rss';
 

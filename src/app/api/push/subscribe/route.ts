@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server';
-import { db, schema } from '@/db';
 import { z } from 'zod';
+import { upsertPushSubscription } from '@/data/push-subscriptions';
+import { writeErrorResponse } from '@/lib/write-guard';
 
 const subscriptionSchema = z.object({
   endpoint: z.string().url(),
@@ -23,16 +24,14 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: parsed.error.flatten() }, { status: 422 });
   }
 
-  const { endpoint, keys } = parsed.data;
-  const userAgent = req.headers.get('user-agent') ?? undefined;
-
-  await db
-    .insert(schema.pushSubscriptions)
-    .values({ endpoint, keys, userAgent })
-    .onConflictDoUpdate({
-      target: schema.pushSubscriptions.endpoint,
-      set: { keys, lastSeenAt: new Date(), userAgent },
+  try {
+    await upsertPushSubscription({
+      endpoint: parsed.data.endpoint,
+      keys: parsed.data.keys,
+      userAgent: req.headers.get('user-agent'),
     });
-
-  return Response.json({ ok: true });
+    return Response.json({ ok: true });
+  } catch (err) {
+    return writeErrorResponse(err);
+  }
 }

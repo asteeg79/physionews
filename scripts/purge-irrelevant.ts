@@ -1,23 +1,26 @@
+/**
+ * Löscht alle News-Items unterhalb des Relevanz-Schwellwerts aus
+ * `data/news.json`.
+ *
+ *   npx tsx scripts/purge-irrelevant.ts
+ */
 import { config } from 'dotenv';
+
+// Lokal kommen die Keys aus .env.local; in GitHub Actions gibt es die
+// Datei nicht und die Werte stehen bereits in der Umgebung.
 config({ path: '.env.local' });
 
-async function main() {
-  const { purgeBelowThreshold, MIN_RELEVANCE_THRESHOLD } = await import(
-    '../src/lib/relevance'
-  );
+import { purgeBelowThreshold, MIN_RELEVANCE_THRESHOLD } from '../src/lib/relevance';
+import { loadNews } from '../src/data/news';
 
-  console.log(`Lösche Items mit relevance_score < ${MIN_RELEVANCE_THRESHOLD}...`);
+async function main(): Promise<void> {
+  console.log(`Lösche Items mit relevanceScore < ${MIN_RELEVANCE_THRESHOLD}...`);
   const deleted = await purgeBelowThreshold();
   console.log(`✅ ${deleted} Items gelöscht.`);
-
-  const { db, schema } = await import('../src/db');
-  const { sql } = await import('drizzle-orm');
-  void schema;
-  const remaining = await db.execute(sql`SELECT COUNT(*)::int as n FROM news_items`);
-  const row = (remaining as unknown as Array<{ n: number }>)[0];
-  console.log(`Verbleibend: ${row.n} Items in der DB.`);
-
-  process.exit(0);
+  console.log(`Verbleibend: ${(await loadNews()).length} Items.`);
 }
 
-main().catch((err) => { console.error(err); process.exit(1); });
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

@@ -1,20 +1,19 @@
-import { db, schema } from '@/db';
-import { eq } from 'drizzle-orm';
+import { loadNews, saveNews } from '@/data/news';
+import { updateSettings } from '@/data/settings';
+import { writeErrorResponse } from '@/lib/write-guard';
 
 /**
  * Löscht alle gespeicherten News-Items.
- * `lastGlobalRefreshAt` wird auf null gesetzt, damit der nächste App-Open
- * sofort einen frischen Refresh auslöst.
+ * `lastGlobalRefreshAt` wird auf null gesetzt, damit der nächste Refresh
+ * sofort durchläuft statt am Intervall-Check zu scheitern.
  */
 export async function POST() {
-  const deleted = await db
-    .delete(schema.newsItems)
-    .returning({ id: schema.newsItems.id });
-
-  await db
-    .update(schema.appSettings)
-    .set({ lastGlobalRefreshAt: null })
-    .where(eq(schema.appSettings.id, 1));
-
-  return Response.json({ ok: true, deleted: deleted.length });
+  try {
+    const deleted = (await loadNews()).length;
+    await saveNews([], 'chore(data): News-Cache geleert');
+    await updateSettings({ lastGlobalRefreshAt: null });
+    return Response.json({ ok: true, deleted });
+  } catch (err) {
+    return writeErrorResponse(err);
+  }
 }

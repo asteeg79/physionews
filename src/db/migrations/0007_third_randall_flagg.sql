@@ -1,1 +1,0 @@
-ALTER TABLE "news_items" ADD COLUMN "notified_at" timestamp with time zone;

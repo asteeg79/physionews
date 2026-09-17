@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server';
-import { db, schema } from '@/db';
-import { eq } from 'drizzle-orm';
 import { z } from 'zod';
+import { deleteSource, updateSource } from '@/data/sources';
+import { writeErrorResponse } from '@/lib/write-guard';
 
 const patchSchema = z.object({
   isEnabled: z.boolean().optional(),
@@ -26,17 +26,15 @@ export async function PATCH(
     return Response.json({ error: parsed.error.flatten() }, { status: 422 });
   }
 
-  const [updated] = await db
-    .update(schema.sources)
-    .set(parsed.data)
-    .where(eq(schema.sources.id, id))
-    .returning();
-
-  if (!updated) {
-    return Response.json({ error: 'Quelle nicht gefunden' }, { status: 404 });
+  try {
+    const updated = await updateSource(id, parsed.data);
+    if (!updated) {
+      return Response.json({ error: 'Quelle nicht gefunden' }, { status: 404 });
+    }
+    return Response.json(updated);
+  } catch (err) {
+    return writeErrorResponse(err);
   }
-
-  return Response.json(updated);
 }
 
 export async function DELETE(
@@ -44,7 +42,10 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
-
-  await db.delete(schema.sources).where(eq(schema.sources.id, id));
-  return new Response(null, { status: 204 });
+  try {
+    await deleteSource(id);
+    return new Response(null, { status: 204 });
+  } catch (err) {
+    return writeErrorResponse(err);
+  }
 }

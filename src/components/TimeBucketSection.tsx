@@ -3,15 +3,13 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { NewsCard } from './NewsCard';
-import type { NewsItem, Source } from '@/db/schema';
+import type { ClientNewsItem } from '@/lib/read-state';
 import type { TimeBucket } from '@/lib/time-bucket';
 import { BUCKET_LABELS } from '@/lib/time-bucket';
 
-type NewsItemWithSource = NewsItem & { source: Pick<Source, 'id' | 'name' | 'category' | 'iconName'> };
-
 interface TimeBucketSectionProps {
   bucket: TimeBucket;
-  items: NewsItemWithSource[];
+  items: ClientNewsItem[];
   onItemRead?: (id: string) => void;
 }
 

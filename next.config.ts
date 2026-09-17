@@ -39,6 +39,18 @@ function resolveBuildVersion(): string {
 const APP_VERSION = resolveBuildVersion();
 
 const nextConfig: NextConfig = {
+  /**
+   * Die Datendateien in `data/` werden zur Laufzeit per `fs` gelesen
+   * (siehe src/data/json-store.ts). Der Build-Tracer erkennt das nicht von
+   * allein — ohne diesen Eintrag fehlen die Dateien im Function-Bundle und
+   * jede Route liefert leere Listen.
+   *
+   * Der Schlüssel wird als Substring gegen den Routen-Pfad gematcht, `/**`
+   * trifft damit alle serverseitigen Routen.
+   */
+  outputFileTracingIncludes: {
+    '/**': ['./data/**/*.json'],
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '**' },

@@ -1,120 +1,101 @@
-name: PhysioNews Feed Refresh
+# PhysioNews — Datenpflege.
+#
+# Seit die Daten als JSON-Dateien im Repo liegen, läuft die komplette
+# Pipeline hier statt in Vercel-Functions: abrufen, klassifizieren,
+# aufräumen, Push verschicken — alles in einem Node-Prozess, danach werden
+# die geänderten Dateien in `data/` committet.
+#
+# Der Push auf main löst den Vercel-Deploy aus; ein bis zwei Minuten
+# später sind die neuen Beiträge in der App.
+#
+# Vorteile gegenüber den früheren Cron-Endpoints:
+#   • kein 60-Sekunden-Function-Timeout, also kein Chunking-Loop im YAML
+#   • kein CRON_SECRET und keine öffentlich erreichbaren Cron-Routen
+#   • ein Lauf = ein nachvollziehbarer Commit
+#
+# Benötigte Repository-Secrets:
+#   GEMINI_API_KEY    Klassifizierung und Top-News-Auswahl (optional —
+#                     ohne Key bleibt es beim Keyword-Score)
+#   PUSH_STORE_KEY    entschlüsselt data/push-subscriptions.enc.json
+#   VAPID_SUBJECT / VAPID_PUBLIC_KEY / VAPID_PRIVATE_KEY   Web-Push
+
+name: PhysioNews Datenpflege
 
 on:
   schedule:
-    # Europe/Berlin = UTC+1 (Winter) / UTC+2 (Sommer)
-    # Gerade Stunden UTC 04–20 => deckt 06–22 Berlin (Winter) ab.
-    # Jeder Endpoint prüft intern selbst, ob wir im Fenster sind.
+    # Europe/Berlin = UTC+1 (Winter) / UTC+2 (Sommer).
+    # Gerade Stunden UTC 04–20 deckt 06–22 Berlin (Winter) ab; ob wir
+    # wirklich im Fenster sind, entscheidet die Pipeline selbst anhand
+    # von data/settings.json.
     - cron: '0 4,6,8,10,12,14,16,18,20 * * *'
+  # Wird auch vom Refresh-Knopf in der App ausgelöst (siehe
+  # src/app/api/refresh-on-demand/route.ts). Ein manueller Lauf ignoriert
+  # das Refresh-Fenster.
   workflow_dispatch: {}
 
-# Robustheitsprinzip:
-#   Jeder Stage tolerieren wir vereinzelte 5xx-Antworten (Vercel-Function-
-#   Timeouts, Cold-Starts, Gemini-Quota-Throttling, …). Ein einzelner
-#   Fehler darf den ganzen Run NICHT zum Hard-Fail machen — der nächste
-#   geplante Cron 2 h später räumt eh hinterher. Stattdessen:
-#     • Curl mit eigenem Retry-Loop + Backoff statt --fail-on-error
-#     • HTTP-Code wird inspiziert, Body geloggt
-#     • Bei 5xx über alle Retries: WARNING (≠ Job-Failure), nächster Step
-#     • Echte Hard-Errors (DNS, Auth fehlt) brechen mit `exit 1` ab
+# Zwei gleichzeitige Läufe würden sich beim Commit in die Quere kommen.
+concurrency:
+  group: physionews-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      # Schritt 1: Quellen abrufen und neue Items in DB schreiben.
-      - name: 1. Fetch sources
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pipeline ausführen
         env:
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
-          APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PUSH_STORE_KEY: ${{ secrets.PUSH_STORE_KEY }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          # Die Pipeline schreibt direkt ins ausgecheckte Repo, nicht über
+          # die GitHub-API.
+          DATA_WRITE_MODE: fs
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: npx tsx scripts/pipeline/run.ts all
+
+      - name: Änderungen committen
         run: |
           set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- data; then
+            echo "Keine Datenänderungen — nichts zu committen."
+            exit 0
+          fi
+
+          git add data
+          git commit -m "chore(data): automatischer Refresh $(date -u '+%Y-%m-%d %H:%M UTC')"
+
+          # Zwischen Pipeline-Start und Push kann die App selbst etwas
+          # committet haben (Einstellungen, Quellen, Push-Anmeldung).
+          # Rebase holt das ab, statt den Push scheitern zu lassen.
           for attempt in 1 2 3; do
-            HTTP_CODE=$(curl -sS -X POST \
-              -H "X-Cron-Secret: $CRON_SECRET" \
-              --max-time 75 \
-              -o /tmp/fetch.json -w "%{http_code}" \
-              "https://$APP_DOMAIN/api/cron/fetch") || HTTP_CODE="000"
-            echo "Versuch $attempt → HTTP $HTTP_CODE"
-            cat /tmp/fetch.json 2>/dev/null || true; echo
-            if [ "$HTTP_CODE" = "200" ]; then
-              echo "::notice::Fetch erfolgreich"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "Push erfolgreich (Versuch $attempt)."
               exit 0
             fi
-            if [ "$attempt" -lt "3" ]; then
-              echo "Warte 10 s und versuche erneut …"
-              sleep 10
-            fi
+            echo "Push fehlgeschlagen — neuer Versuch in 5 s …"
+            sleep 5
           done
-          echo "::warning::Fetch hat nach 3 Versuchen kein 200 geliefert — nächster Cron-Lauf räumt nach."
-
-      # Schritt 2: Klassifiziere die pending-Items in Chunks.
-      # Endpoint verarbeitet max. 150 Items pro Aufruf, liefert `remaining`.
-      # Loop bricht ab bei remaining=0 oder bei wiederholten 5xx.
-      - name: 2. Classify in chunks
-        env:
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
-          APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
-        run: |
-          set -euo pipefail
-          consecutive_errors=0
-          for i in 1 2 3 4 5 6 7 8; do
-            HTTP_CODE=$(curl -sS -X POST \
-              -H "X-Cron-Secret: $CRON_SECRET" \
-              --max-time 75 \
-              -o /tmp/classify.json -w "%{http_code}" \
-              "https://$APP_DOMAIN/api/cron/classify") || HTTP_CODE="000"
-            BODY=$(cat /tmp/classify.json 2>/dev/null || echo '{}')
-            echo "Aufruf $i → HTTP $HTTP_CODE → $BODY"
-
-            if [ "$HTTP_CODE" != "200" ]; then
-              consecutive_errors=$((consecutive_errors + 1))
-              if [ "$consecutive_errors" -ge "2" ]; then
-                echo "::warning::2× HTTP $HTTP_CODE in Folge — Loop wird abgebrochen, nächster Cron-Lauf macht weiter."
-                break
-              fi
-              echo "5xx (#$consecutive_errors) — warte 15 s …"
-              sleep 15
-              continue
-            fi
-            consecutive_errors=0
-
-            REMAINING=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin).get('remaining', 0))" 2>/dev/null || echo 0)
-            THROTTLED=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin).get('classify',{}).get('quotaThrottled', False))" 2>/dev/null || echo False)
-            if [ "$THROTTLED" = "True" ]; then
-              echo "::notice::Gemini-Quota erschöpft — nächster Cron-Lauf in 2 h macht weiter."
-              break
-            fi
-            if [ "$REMAINING" = "0" ]; then
-              echo "Keine pending-Items mehr — fertig nach $i Aufruf(en)"
-              break
-            fi
-            echo "Noch $REMAINING pending — nochmal …"
-          done
-
-      # Schritt 3: Retention-Cleanup, lastRefreshAt setzen,
-      # AI-Top-News-Auswahl.
-      - name: 3. Maintenance + Top News
-        env:
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
-          APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
-        run: |
-          set -euo pipefail
-          for attempt in 1 2 3; do
-            HTTP_CODE=$(curl -sS -X POST \
-              -H "X-Cron-Secret: $CRON_SECRET" \
-              --max-time 75 \
-              -o /tmp/maint.json -w "%{http_code}" \
-              "https://$APP_DOMAIN/api/cron/maintenance") || HTTP_CODE="000"
-            echo "Versuch $attempt → HTTP $HTTP_CODE"
-            cat /tmp/maint.json 2>/dev/null || true; echo
-            if [ "$HTTP_CODE" = "200" ]; then
-              exit 0
-            fi
-            if [ "$attempt" -lt "3" ]; then
-              echo "Warte 10 s und versuche erneut …"
-              sleep 10
-            fi
-          done
-          echo "::warning::Maintenance hat nach 3 Versuchen kein 200 geliefert — nächster Cron-Lauf räumt nach."
+          echo "::error::Push nach 3 Versuchen fehlgeschlagen."
+          exit 1

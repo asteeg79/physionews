@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import type { Source } from '@/db/schema';
+import type { Source } from '@/data/types';
 import type { RawNewsItem, SourceAdapter } from '../types';
 
 export const DEFAULT_HEADERS = {

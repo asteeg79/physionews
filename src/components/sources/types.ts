@@ -3,7 +3,7 @@
  * Client-side representation (Date-Spalten als ISO-String serialisiert).
  */
 
-import type { NewsCategory } from '@/db/schema';
+import type { NewsCategory } from '@/data/types';
 
 export interface ClientSource {
   id: string;

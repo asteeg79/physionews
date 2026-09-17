@@ -1,4 +1,4 @@
-import type { Source } from '@/db/schema';
+import type { Source } from '@/data/types';
 
 export interface RawNewsItem {
   externalId: string;

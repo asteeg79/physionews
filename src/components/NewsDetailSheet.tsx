@@ -26,12 +26,10 @@ import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { X, ExternalLink, Loader2 } from 'lucide-react';
 import { formatDate, formatRelative } from '@/lib/format-date';
-import type { NewsItem, Source } from '@/db/schema';
-
-type SourceLight = Pick<Source, 'id' | 'name' | 'category' | 'iconName'>;
+import type { NewsItemWithSource } from '@/data/types';
 
 interface NewsDetailSheetProps {
-  item: NewsItem & { source: SourceLight };
+  item: NewsItemWithSource;
   onClose: () => void;
 }
 

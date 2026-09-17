@@ -1,14 +1,12 @@
 import { NextRequest } from 'next/server';
-import { db, schema } from '@/db';
-import { eq } from 'drizzle-orm';
 import { z } from 'zod';
+import { getSettings, updateSettings } from '@/data/settings';
+import { writeErrorResponse } from '@/lib/write-guard';
+
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  const [settings] = await db.select().from(schema.appSettings).limit(1);
-  if (!settings) {
-    return Response.json({ error: 'Settings nicht gefunden' }, { status: 404 });
-  }
-  return Response.json(settings);
+  return Response.json(await getSettings());
 }
 
 const patchSchema = z
@@ -47,11 +45,9 @@ export async function PATCH(req: NextRequest) {
     return Response.json({ error: 'Keine Änderungen' }, { status: 400 });
   }
 
-  const [updated] = await db
-    .update(schema.appSettings)
-    .set(parsed.data)
-    .where(eq(schema.appSettings.id, 1))
-    .returning();
-
-  return Response.json(updated);
+  try {
+    return Response.json(await updateSettings(parsed.data));
+  } catch (err) {
+    return writeErrorResponse(err);
+  }
 }

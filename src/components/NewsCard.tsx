@@ -4,14 +4,12 @@ import { useState } from 'react';
 import { Check, Star } from 'lucide-react';
 import Link from 'next/link';
 import { formatRelative, formatDate } from '@/lib/format-date';
-import type { NewsItem, Source } from '@/db/schema';
+import type { ClientNewsItem } from '@/lib/read-state';
 import { NewsDetailSheet } from './NewsDetailSheet';
 import { isHighlightedSourceName } from '@/lib/highlighted-sources';
 
-type SourceLight = Pick<Source, 'id' | 'name' | 'category' | 'iconName'>;
-
 interface NewsCardProps {
-  item: NewsItem & { source: SourceLight };
+  item: ClientNewsItem;
   onRead?: (id: string) => void;
 }
 
@@ -34,7 +32,9 @@ interface NewsCardProps {
  */
 export function NewsCard({ item, onRead }: NewsCardProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [optimisticRead, setOptimisticRead] = useState(item.isRead);
+  // `item.isRead` kommt aus dem localStorage-Lesestand der Liste; bis der
+  // State oben nachzieht, hält der lokale Merker die Karte schon gelesen.
+  const [optimisticRead, setOptimisticRead] = useState(false);
   const isRead = item.isRead || optimisticRead;
   const isHighlighted = isHighlightedSourceName(item.source.name);
 
@@ -42,7 +42,6 @@ export function NewsCard({ item, onRead }: NewsCardProps) {
     if (isRead) return;
     setOptimisticRead(true);
     onRead?.(item.id);
-    fetch(`/api/news/${item.id}/read`, { method: 'POST' }).catch(() => undefined);
   };
 
   const handleOpen = () => {

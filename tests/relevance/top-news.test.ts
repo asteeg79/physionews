@@ -1,112 +1,107 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 /**
- * Tests für den AI-Top-News-Selektor.
+ * Tests für den KI-Top-News-Selektor.
  *
- * Die DB-Schicht wird hier nicht echt aufgerufen — wir mocken sie via
- * vi.mock (vi.hoisted, damit der Mock vor dem Import des Moduls greift).
- * Geprüft wird hauptsächlich der Gemini-Response-Pfad, der Fallback bei
- * fehlendem API-Key und die Sanity-Filter (IDs müssen aus dem Pool stammen).
+ * Die Datenschicht wird hier nicht echt angefasst — `@/data/news`,
+ * `@/data/sources` und der JSON-Store werden via vi.mock ersetzt
+ * (vi.hoisted, damit der Mock vor dem Import des Moduls greift).
+ * Geprüft wird der Gemini-Response-Pfad, der Fallback bei fehlendem
+ * API-Key und der Sanity-Filter (IDs müssen aus dem Pool stammen).
  */
 
-// Mock-Pool ist bereits nach Score DESC + pubDate DESC sortiert
-// (simuliert die DB-Query in fetchCandidatePool)
-const mockPool = [
-  {
-    id: 'item-1',
-    title: 'Blankoverordnung kommt im Januar',
-    sourceName: 'IFK Aktuelles',
-    category: 'gesetz',
-    relevanceScore: 10,
-    publishedAt: new Date('2026-05-20'),
-  },
-  {
-    id: 'item-4',
-    title: 'GKV-Vergütungsanpassung 2026',
-    sourceName: 'Physio Deutschland',
-    category: 'gesetz',
-    relevanceScore: 9,
-    publishedAt: new Date('2026-05-22'),
-  },
-  {
-    id: 'item-3',
-    title: 'Manuelle Therapie bei Nackenschmerzen — RCT',
-    sourceName: 'Thieme physioscience',
-    category: 'fachlich',
-    relevanceScore: 9,
-    publishedAt: new Date('2026-05-18'),
-  },
-  {
-    id: 'item-2',
-    title: 'Frohe Ostern vom Verband',
-    sourceName: 'IFK Aktuelles',
-    category: 'politik',
-    relevanceScore: 8,
-    publishedAt: new Date('2026-04-01'),
-  },
-  {
-    id: 'item-5',
-    title: 'Sponsoring-Partnerschaft mit Lilly',
-    sourceName: 'DGSP',
-    category: 'fachlich',
-    relevanceScore: 6,
-    publishedAt: new Date('2026-05-10'),
-  },
-];
+const { mockNews, mockSources, savedNews } = vi.hoisted(() => {
+  const sources = [
+    { id: 'src-ifk', name: 'IFK Aktuelles', category: 'gesetz' },
+    { id: 'src-zvk', name: 'Physio Deutschland', category: 'gesetz' },
+    { id: 'src-thieme', name: 'Thieme physioscience', category: 'fachlich' },
+    { id: 'src-dgsp', name: 'DGSP', category: 'fachlich' },
+  ].map((s) => ({
+    ...s,
+    url: `https://example.test/${s.id}`,
+    adapterType: 'rss',
+    iconName: null,
+    isEnabled: true,
+    notificationsEnabled: true,
+    lastFetchAt: null,
+    lastSuccessAt: null,
+    lastError: null,
+    createdAt: new Date('2026-01-01'),
+  }));
 
-// vi.hoisted erlaubt dynamische Mocks die VOR den Modul-Imports greifen
-const { mockDb } = vi.hoisted(() => ({
-  mockDb: {
-    select: vi.fn(),
-    update: vi.fn(),
+  // Bereits nach Score DESC + Datum DESC sortiert — so wie der Pool,
+  // den buildCandidatePool daraus bildet.
+  const news = [
+    {
+      id: 'item-1',
+      sourceId: 'src-ifk',
+      title: 'Blankoverordnung kommt im Januar',
+      relevanceScore: 10,
+      publishedAt: new Date('2026-05-20'),
+    },
+    {
+      id: 'item-4',
+      sourceId: 'src-zvk',
+      title: 'GKV-Vergütungsanpassung 2026',
+      relevanceScore: 9,
+      publishedAt: new Date('2026-05-22'),
+    },
+    {
+      id: 'item-3',
+      sourceId: 'src-thieme',
+      title: 'Manuelle Therapie bei Nackenschmerzen — RCT',
+      relevanceScore: 9,
+      publishedAt: new Date('2026-05-18'),
+    },
+    {
+      id: 'item-2',
+      sourceId: 'src-ifk',
+      title: 'Frohe Ostern vom Verband',
+      relevanceScore: 8,
+      publishedAt: new Date('2026-04-01'),
+    },
+    {
+      id: 'item-5',
+      sourceId: 'src-dgsp',
+      title: 'Sponsoring-Partnerschaft mit Lilly',
+      relevanceScore: 6,
+      publishedAt: new Date('2026-05-10'),
+    },
+  ].map((n) => ({
+    ...n,
+    summary: null,
+    url: `https://example.test/${n.id}`,
+    imageUrl: null,
+    fetchedAt: new Date('2026-05-23'),
+    notifiedAt: null,
+    relevanceMethod: 'ai' as const,
+    relevanceReason: null,
+    isTopNews: false,
+    topics: [] as string[],
+    lang: 'de',
+  }));
+
+  return { mockNews: news, mockSources: sources, savedNews: [] as unknown[] };
+});
+
+vi.mock('@/data/news', () => ({
+  loadNews: async () => mockNews.map((n) => ({ ...n })),
+  saveNews: async (items: unknown) => {
+    savedNews.push(items);
   },
 }));
 
-vi.mock('@/db', () => ({
-  db: {
-    select: () => ({
-      from: () => ({
-        innerJoin: () => ({
-          where: () => ({
-            orderBy: () => ({
-              limit: () => Promise.resolve(mockPool),
-            }),
-          }),
-        }),
-      }),
-    }),
-    update: () => ({
-      set: () => ({
-        where: () => Promise.resolve(),
-      }),
-    }),
-    // recordUsage in gemini-quota.ts braucht db.insert(...).values(...).onConflictDoUpdate(...)
-    insert: () => ({
-      values: () => ({
-        onConflictDoUpdate: () => Promise.resolve(),
-      }),
-    }),
-  },
-  schema: {
-    newsItems: {
-      id: 'mock',
-      isTopNews: 'mock',
-      relevanceScore: 'mock',
-      publishedAt: 'mock',
-      sourceId: 'mock',
-    },
-    sources: {
-      name: 'mock',
-      category: 'mock',
-      id: 'mock',
-    },
-    geminiUsage: {
-      date: 'mock',
-      tokensUsed: 'mock',
-      requestsMade: 'mock',
-      updatedAt: 'mock',
-    },
-  },
+vi.mock('@/data/sources', () => ({
+  listSources: async () => mockSources,
+}));
+
+// recordUsage schreibt sonst wirklich data/gemini-usage.json.
+vi.mock('@/data/json-store', () => ({
+  readJson: async <T,>(_file: string, fallback: T) => fallback,
+  writeJson: async () => undefined,
+  toRequiredDate: (value: string | null | undefined) => (value ? new Date(value) : new Date(0)),
+  toDate: (value: string | null | undefined) => (value ? new Date(value) : null),
+  clearCache: () => undefined,
 }));
 
 beforeEach(() => {

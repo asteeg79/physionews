@@ -2,7 +2,7 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { GenericHtmlAdapter } from '../../src/lib/adapters/html/generic';
-import type { Source } from '../../src/db/schema';
+import type { Source } from '../../src/data/types';
 
 const jsonLdFixture = readFileSync(join(__dirname, 'fixtures/sample-jsonld.html'), 'utf-8');
 const domFixture = readFileSync(join(__dirname, 'fixtures/sample-dom.html'), 'utf-8');

@@ -1,18 +1,15 @@
 import { NextRequest } from 'next/server';
-import { db, schema } from '@/db';
-import { asc } from 'drizzle-orm';
 import { z } from 'zod';
+import { addSource, listSources } from '@/data/sources';
+import type { NewsCategory } from '@/data/types';
 import { detectFeed } from '@/lib/feed-detect';
 import { ALL_CATEGORIES } from '@/lib/categories';
-import type { NewsCategory } from '@/db/schema';
+import { writeErrorResponse } from '@/lib/write-guard';
+
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  const allSources = await db
-    .select()
-    .from(schema.sources)
-    .orderBy(asc(schema.sources.category), asc(schema.sources.name));
-
-  return Response.json(allSources);
+  return Response.json(await listSources());
 }
 
 const addSchema = z.object({
@@ -36,9 +33,11 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: parsed.error.flatten() }, { status: 422 });
   }
 
-  const { url, autoDetect } = parsed.data;
-  let { name, category } = parsed.data;
+  const { url, autoDetect, category } = parsed.data;
+  let { name } = parsed.data;
   let finalUrl = url;
+  // Ohne erkannten Feed landet die Quelle beim Generic-HTML-Adapter,
+  // der in der Registry unter genau diesem Namen registriert ist.
   let adapterType = 'html:generic';
   let detectedTitle: string | undefined;
 
@@ -55,29 +54,13 @@ export async function POST(req: NextRequest) {
     name = detectedTitle ?? new URL(finalUrl).hostname.replace(/^www\./, '');
   }
 
-  // Generic-HTML braucht einen registrierten adapter-Typ — wir nutzen unsere Auto-Generic-Variante
-  // (siehe registry.ts: dort registrieren wir mehrere Generic-Typen für bekannte Subtypen)
-  if (adapterType === 'html:generic') {
-    // Wir ergänzen den Generic-Typ in der Registry, falls noch nicht vorhanden
-    // (Phase 5 erweitert die Registry später dynamisch — vorerst loggen und Generic nehmen)
-    adapterType = 'html:generic';
-  }
-
   try {
-    const [inserted] = await db
-      .insert(schema.sources)
-      .values({
-        name,
-        url: finalUrl,
-        adapterType,
-        category,
-        isEnabled: true,
-        notificationsEnabled: true,
-      })
-      .returning();
-    return Response.json({ ...inserted, detectedAs: adapterType === 'rss' ? 'rss' : 'html' }, { status: 201 });
+    const created = await addSource({ name, url: finalUrl, adapterType, category });
+    return Response.json(
+      { ...created, detectedAs: adapterType === 'rss' ? 'rss' : 'html' },
+      { status: 201 }
+    );
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    return Response.json({ error: 'Quelle konnte nicht angelegt werden', detail: message }, { status: 500 });
+    return writeErrorResponse(err);
   }
 }

@@ -12,7 +12,7 @@
  * mehr als eigenständige Tabs gezeigt.
  */
 
-import type { NewsCategory } from '@/db/schema';
+import type { NewsCategory } from '@/data/types';
 
 /** Die drei aktuellen, im UI sichtbaren Kategorien. */
 export const VISIBLE_CATEGORIES = ['fachlich', 'gesetz', 'politik'] as const;
