@@ -21,7 +21,7 @@ import { TOPIC_TAXONOMY, filterToValidTopics } from './topics';
  * Änderung am Prompt macht damit automatisch alle gecachten Bewertungen
  * ungültig, statt sie stillschweigend weiterzuverwenden.
  */
-export const RUBRIC_VERSION = 2;
+export const RUBRIC_VERSION = 3;
 
 const SYSTEM_PROMPT_TEMPLATE = `Du bewertest Nachrichten-Titel STRENG auf Relevanz für deutsche Physiotherapeut:innen in der Praxis.
 
@@ -29,9 +29,9 @@ LEITFRAGE: Ändert sich durch diese Meldung etwas an der Arbeit, der Abrechnung,
 
 Bewertungs-Rubric (Skala 0-10):
 - 9-10: Unmittelbar. Heilmittelverordnung, Blankoverordnung, Direktzugang, GKV-Vergütung für Heilmittel, Zertifikatspositionen, Abrechnungsregeln, neue Leitlinien oder Studien zu physiotherapeutischen Verfahren.
-- 7-8: Klar relevant. Berufspolitik der Physio-Verbände mit Folgen für die Praxis, Recht und Abrechnung für Heilmittelerbringer, Studien zu Reha und Bewegungstherapie, Aus- und Fortbildung in der Physiotherapie.
+- 7-8: Klar relevant. Berufspolitik der Physio-Verbände mit Folgen für die Praxis, Recht und Abrechnung für Heilmittelerbringer, Studien zu Reha und Bewegungstherapie, ÄNDERUNGEN an Aus- und Fortbildung (Ausbildungsordnung, Zulassungsvoraussetzungen, Zertifikatskurse als Abrechnungsvoraussetzung).
 - 4-6: Nur wenn ein konkreter Bezug zur Physiotherapie erkennbar ist, dieser aber mittelbar bleibt.
-- 0-3: Alles Übrige. Dazu gehört AUSDRÜCKLICH Gesundheitspolitik ohne Physio-Bezug: Gremien- und Personalmeldungen, Förderprogramme und Innovationsfonds, Verfahrensordnungen, Finanzberichte der GKV, Screening- und Vorsorgeprogramme, Krankenhaus- und Psychiatrie-Themen, Pharma, Zahn- und Augenmedizin, Infektiologie, allgemeine Gesundheitsmonitorings, Verbandsverwaltung, Veranstaltungs- und Kongresshinweise.
+- 0-3: Alles Übrige. Dazu gehört AUSDRÜCKLICH Gesundheitspolitik ohne Physio-Bezug: Gremien- und Personalmeldungen, Förderprogramme und Innovationsfonds, Verfahrensordnungen, Finanzberichte der GKV, Screening- und Vorsorgeprogramme, Krankenhaus- und Psychiatrie-Themen, Pharma, Zahn- und Augenmedizin, Infektiologie, allgemeine Gesundheitsmonitorings, Verbandsverwaltung sowie ANKÜNDIGUNGEN einzelner Veranstaltungen, Kongresse, Messen, Webinare und Aktionstage — auch dann, wenn sie sich ausdrücklich an Physiotherapeut:innen richten. Entscheidend ist, ob sich fachlich etwas ändert, nicht ob man hingehen könnte.
 
 WICHTIG: Eine Meldung ist NICHT dadurch relevant, dass sie aus einer physiotherapienahen Quelle stammt oder irgendwie das Gesundheitswesen betrifft. Entscheidend ist allein der erkennbare Bezug zur physiotherapeutischen Praxis. Im Zweifel NIEDRIGER bewerten.
 
