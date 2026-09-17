@@ -203,3 +203,29 @@ describe('queryNews — Suche', () => {
     expect(ids(await queryNews({ search: '-manuelle' }))).toEqual(['n-top', 'n-old']);
   });
 });
+
+describe('queryNews — Deckel pro Quelle', () => {
+  it('ohne Angabe gibt es keinen Deckel', async () => {
+    // src-a liefert n-top und n-old
+    expect(ids(await queryNews())).toEqual(['n-top', 'n-rct', 'n-old']);
+  });
+
+  it('begrenzt den Beitrag einer Quelle', async () => {
+    const result = await queryNews({ maxPerSource: 1 });
+    expect(ids(result)).toEqual(['n-top', 'n-rct']);
+  });
+
+  it('behält je Quelle das relevanteste Item', async () => {
+    // n-top (Score 10) schlägt n-old (Score 7) aus derselben Quelle
+    const result = await queryNews({ maxPerSource: 1 });
+    const fromA = result.filter((i) => i.source.id === 'src-a');
+    expect(fromA).toHaveLength(1);
+    expect(fromA[0].id).toBe('n-top');
+  });
+
+  it('greift vor der Mengenbegrenzung', async () => {
+    // Ohne Deckel wären es 3 Items; der Deckel reduziert auf 2, das
+    // anschließende limit kann daran nichts mehr ändern.
+    expect(await queryNews({ maxPerSource: 1, limit: 3 })).toHaveLength(2);
+  });
+});

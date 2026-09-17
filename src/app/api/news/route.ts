@@ -18,7 +18,7 @@
  * Gerät im localStorage (siehe lib/read-state.ts).
  */
 import { NextRequest } from 'next/server';
-import { queryNews } from '@/data/news';
+import { MAX_ITEMS_PER_SOURCE, queryNews } from '@/data/news';
 import type { NewsCategory } from '@/data/types';
 import { EVIDENCE_TOPICS } from '@/lib/relevance/topics';
 
@@ -32,12 +32,18 @@ export async function GET(req: NextRequest) {
   const since = sp.get('since');
   const parsedLimit = Number.parseInt(sp.get('limit') ?? String(DEFAULT_LIMIT), 10);
 
+  const search = sp.get('q')?.trim() || undefined;
+  const tag = sp.get('tag')?.trim() || undefined;
+
   const items = await queryNews({
     category: (sp.get('category') as NewsCategory | null) ?? undefined,
     since: since ? new Date(since) : undefined,
     topNewsOnly: sp.get('topNews') === 'true',
-    search: sp.get('q')?.trim() || undefined,
-    tag: sp.get('tag')?.trim() || undefined,
+    search,
+    tag,
+    // Bei gezielter Suche oder Tag-Filter kein Deckel — dort sollen alle
+    // Treffer erscheinen, auch wenn sie aus derselben Quelle stammen.
+    maxPerSource: search || tag ? undefined : MAX_ITEMS_PER_SOURCE,
     evidenceTopics: sp.get('ebp') === 'true' ? EVIDENCE_TOPICS : undefined,
     limit: Math.min(Number.isNaN(parsedLimit) ? DEFAULT_LIMIT : parsedLimit, MAX_LIMIT),
   });

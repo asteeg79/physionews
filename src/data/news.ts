@@ -26,6 +26,16 @@ const FILE = 'news.json';
  */
 export const MIN_RELEVANCE = 7;
 
+/**
+ * Wie viele Items dieselbe Quelle höchstens zur Übersicht beisteuern darf.
+ *
+ * Ohne Deckel bestimmt schlicht die Publikationsfrequenz das Bild: eine
+ * fleißige Quelle stellte zuletzt 14 von 34 sichtbaren Meldungen. Der Deckel
+ * greift beim Ausliefern, nicht beim Löschen — er lässt sich damit ohne
+ * erneuten Abruf verstellen.
+ */
+export const MAX_ITEMS_PER_SOURCE = 8;
+
 /** Rohformat in der Datei — Zeitpunkte als ISO-String. */
 interface StoredNewsItem {
   id: string;
@@ -110,6 +120,8 @@ export interface NewsQuery {
   tag?: string;
   /** Nur Items mit mindestens einem Evidenz-Tag. */
   evidenceTopics?: readonly string[];
+  /** Höchstzahl Items je Quelle. Ohne Angabe kein Deckel. */
+  maxPerSource?: number;
   limit?: number;
 }
 
@@ -147,7 +159,30 @@ export async function queryNews(query: NewsQuery = {}): Promise<NewsItemWithSour
       b.publishedAt.getTime() - a.publishedAt.getTime()
   );
 
-  return query.limit !== undefined ? result.slice(0, query.limit) : result;
+  const capped =
+    query.maxPerSource === undefined ? result : capPerSource(result, query.maxPerSource);
+
+  return query.limit !== undefined ? capped.slice(0, query.limit) : capped;
+}
+
+/**
+ * Begrenzt den Beitrag einer einzelnen Quelle.
+ *
+ * Erwartet eine bereits sortierte Liste: behalten werden je Quelle die
+ * ersten Einträge — also die relevantesten, bei gleichem Score die neuesten.
+ */
+function capPerSource(items: NewsItemWithSource[], max: number): NewsItemWithSource[] {
+  const perSource = new Map<string, number>();
+  const kept: NewsItemWithSource[] = [];
+
+  for (const item of items) {
+    const used = perSource.get(item.sourceId) ?? 0;
+    if (used >= max) continue;
+    perSource.set(item.sourceId, used + 1);
+    kept.push(item);
+  }
+
+  return kept;
 }
 
 /**
