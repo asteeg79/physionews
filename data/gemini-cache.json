@@ -2338,5 +2338,345 @@
     ],
     "reason": "Die Aktualisierung des DMP zu chronischem Rückenschmerz ist für Physiotherapeuten sehr relevant, da ",
     "createdAt": "2026-09-17T09:48:25.040Z"
+  },
+  {
+    "titleHash": "9fecbd0179256f7d14d357586e46431f",
+    "score": 7,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Veranstaltungshinweis für Physiotherapeuten, der Austausch und Weiterbildungsmöglichkeiten bietet.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "cf7df7a0684aff62223524e538892ece",
+    "score": 8,
+    "topics": [
+      "GKV-Vergütung",
+      "Berufsverband"
+    ],
+    "reason": "Berufspolitische Forderung zur Verbesserung der Vergütung in der Physiotherapie, die direkte Auswirk",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "ee9f85b39bcf3422ec803521cab040e5",
+    "score": 7,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Ankündigung eines Kongresses für Physiotherapeuten, der relevante Fachinformationen und Networking-M",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "b07c0fce351de5aabc9a47e4b4409930",
+    "score": 9,
+    "topics": [
+      "Blankoverordnung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Fokus auf die Blankoverordnung, ein zentrales Thema für die Abrechnung und Praxisorganisation in der",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "f51110d61cea0a30a606999d30b0281e",
+    "score": 0,
+    "topics": [],
+    "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis, betrifft primär die Impfquoten bei Kindern mit",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "49c381287a10b1f13bd74d4c98a82196",
+    "score": 4,
+    "topics": [
+      "Neurologie"
+    ],
+    "reason": "Meldung über neue Erkenntnisse zu Alzheimer und Schmerz, was mittelbar für die physiotherapeutische ",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "56fc1e251e5ebaf806df72884afc8bfb",
+    "score": 0,
+    "topics": [
+      "Geriatrie"
+    ],
+    "reason": "Allgemeine Meldung über Hochaltrige und deren Lebenswelten, ohne spezifischen Bezug zur physiotherap",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "c16f4ebe07ce7a1ce572743261bdf0b0",
+    "score": 0,
+    "topics": [],
+    "reason": "Daten zu Antibiotikaresistenzen und -verbrauch sind für die allgemeine Gesundheitsversorgung relevan",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "935c5486eba1791d00a4edf6b35fc149",
+    "score": 0,
+    "topics": [],
+    "reason": "Aufforderung zur Teilnahme an einem RKI-Panel, was keine direkte Auswirkung auf die physiotherapeuti",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "c7162379143cb05758475ef74391c4fa",
+    "score": 0,
+    "topics": [],
+    "reason": "Thema Behinderung und Teilhabe ist allgemein relevant, aber die Meldung hat keinen direkten Bezug zu",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "944f44e93b5c4c332d531a1aeeb5387a",
+    "score": 0,
+    "topics": [],
+    "reason": "Daten zu Adipositas bei Vorschulkindern sind für die Prävention relevant, aber nicht direkt für die ",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "1a9ccde772f63be607287ddf624c350c",
+    "score": 0,
+    "topics": [],
+    "reason": "Pilotstudie zu Drogen und Infektionskrankheiten in Haftanstalten hat keinen direkten Bezug zur physi",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "df4d5822cc025b0bee086da5dac191ac",
+    "score": 0,
+    "topics": [],
+    "reason": "Forschung zu Virus-Evolution ist ein allgemeines wissenschaftliches Thema ohne direkten Bezug zur ph",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "fde5a3bdcef2c3b68430b5d63e64d748",
+    "score": 0,
+    "topics": [],
+    "reason": "Neue Daten zu Stressbewältigung sind allgemein interessant, aber nicht spezifisch für die physiother",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "c46f5944d136021be6f882777b69a241",
+    "score": 0,
+    "topics": [],
+    "reason": "Daten zu Schlafstörungen sind allgemein relevant, aber nicht spezifisch für die physiotherapeutische",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "8d8d074342d12c9f27c1e45f02cced5b",
+    "score": 0,
+    "topics": [],
+    "reason": "Bericht zu Pflegebedürftigkeit und Einschränkungen ist allgemein relevant, aber ohne direkten Bezug ",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "e8a96cf28d837a79b4e8b446579b91d1",
+    "score": 0,
+    "topics": [],
+    "reason": "Forschung zu Impfverhalten ist kein Thema der physiotherapeutischen Praxis.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "18c6bbfaa43c2976c172712d822dbe08",
+    "score": 0,
+    "topics": [],
+    "reason": "Besuch von Schulklassen im RKI hat keinen Bezug zur physiotherapeutischen Praxis.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "752970080cf8904adabfa595d1de4ebe",
+    "score": 0,
+    "topics": [],
+    "reason": "Tag des Gesundheitsamtes mit Fokus auf Diversität ist kein Thema der physiotherapeutischen Praxis.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "ea27d4163d81b5133e63918bb1a5b071",
+    "score": 0,
+    "topics": [],
+    "reason": "Diskriminierungserfahrungen und gesundheitliche Ungleichheit sind allgemein relevant, aber nicht spe",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "fb5974993bd136b9807fdd263dd391bb",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Aktion eines Physiotherapieverbandes, die auf die Bedeutung der Physiotherapie aufmerksam machen sol",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "7bcdc1413c8577db021108d5421f6d5d",
+    "score": 0,
+    "topics": [],
+    "reason": "Sicherheitswarnung bezüglich einer Website, kein direkter Bezug zur physiotherapeutischen Praxis.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "fb7a011f610faac7df749fae68972103",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Informationen zur Berufsanerkennung sind für Physiotherapeuten, insbesondere aus dem Ausland, releva",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "f35bcdf635bb0f34d60ad9cf28f6bbde",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Zusammenfassung einer Veranstaltung eines Berufsverbandes, die auf die Interessen der Mitglieder abz",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "5bc1ab74964843fa341586d3330d44ed",
+    "score": 8,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ankündigung einer Demonstration zur Vertretung der Interessen von Physiotherapeuten, was direkte Aus",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "226865795005653ff40b2bacb000c4cd",
+    "score": 8,
+    "topics": [
+      "Fortbildung",
+      "Berufsverband"
+    ],
+    "reason": "Änderungen bei Weiterbildungsregelungen in der Physiotherapie sind direkt relevant für die fachliche",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "d9f6e1ebb3c6c03b08ca016d6c962907",
+    "score": 8,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Informationen zur Notfallreform mit Auswirkungen auf die Physiotherapiepraxis in NRW.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "511b1b3aa0c3dd8d3d219b68bc0d9cc2",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Warnung vor Einsparungen bei der Heilmittelversorgung, was direkte Auswirkungen auf die Abrechnung u",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "838c069f05c2c4c6b4571d7324b9941c",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Warnung von Heilmittelverbänden vor Fehlsteuerung im Bereich der Heilmittelversorgung, was die Praxi",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "fcbb6c2cae3d973f6de9efb9e81fed24",
+    "score": 5,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Vorstellung einer neuen Bewegungsmethode, die potenziell für die physiotherapeutische Praxis relevan",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "9c6077d6a8433514805016f9d4df2b88",
+    "score": 0,
+    "topics": [],
+    "reason": "Feiertagsgruß ohne direkten Bezug zur physiotherapeutischen Praxis.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "5160e794b7b3d5423e5cce88ade4d245",
+    "score": 4,
+    "topics": [
+      "Rückenschmerz",
+      "Bewegungstherapie"
+    ],
+    "reason": "Allgemeiner Ratschlag zur Rückengesundheit, der für Physiotherapeuten relevant ist, aber keine spezi",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "1370055d0324adab8792972960549423",
+    "score": 4,
+    "topics": [
+      "Manuelle Therapie"
+    ],
+    "reason": "Diskussion zwischen 'Hands-off' und 'Hands-on' Ansätzen, was für die manuelle Therapie relevant ist,",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "68c7ffdf845fc21c0734ef3bc456029f",
+    "score": 8,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Gerichtsentscheidung bezüglich der Berufsausübung, die Auswirkungen auf die Arbeit von Physiotherape",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "517782bfd04a4c86b36ccd2462bd35ea",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung",
+      "Fortbildung"
+    ],
+    "reason": "Frist für die Grundqualifikation ist relevant für die Berufsausübung und Weiterbildung.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "32267c11a5c2f70a8114ccd1e71dd16b",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Erhöhung der Vergütung um 2,49 % ist eine direkte Änderung der GKV-Vergütung für Heilmittel.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "5db0ccf44c54b2ed4e9446fd0c0f73bd",
+    "score": 8,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Verschiebung der TI-Anbindung hat Auswirkungen auf die technische Infrastruktur und Prozesse in phys",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "7ac33c1624fed0f78f27306c81458a9e",
+    "score": 7,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Kostenloses Ticket für eine Messe, die für Physiotherapeuten relevant ist (therapie Düsseldorf).",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "97708c8bfa16c3e13b8aa5427d0486c3",
+    "score": 7,
+    "topics": [],
+    "reason": "Erhöhung der Beihilfebeiträge kann für Beihilfeberechtigte Physiotherapeuten relevant sein.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
+  },
+  {
+    "titleHash": "6e6c08aa233cf8ca310631b8a6f6b87b",
+    "score": 7,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Ankündigung der Messe 'therapie Düsseldorf', eine wichtige Veranstaltung für Physiotherapeuten.",
+    "createdAt": "2026-09-17T13:21:02.736Z"
   }
 ]
