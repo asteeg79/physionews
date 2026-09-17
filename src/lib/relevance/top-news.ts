@@ -23,6 +23,35 @@ import { recordUsage } from './gemini-quota';
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
+/**
+ * Wartezeiten vor den Wiederholungen nach einem 429 (ms). Zwei Versuche
+ * reichen, um die Minutengrenze zu überbrücken; danach greift der
+ * Score-Fallback.
+ */
+const RETRY_DELAYS_MS = [8_000, 20_000];
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Zieht die aussagekräftige Meldung aus einer Fehlerantwort der Gemini-API.
+ * Vorher wurde nur der Statuscode geloggt — damit ließ sich nicht
+ * unterscheiden, ob das Minutenlimit, das Tagesbudget oder ein fehlerhafter
+ * Request die Ursache war.
+ */
+async function errorDetail(res: Response): Promise<string> {
+  try {
+    const body = await res.text();
+    const parsed = JSON.parse(body) as { error?: { status?: string; message?: string } };
+    const err = parsed.error;
+    if (err?.message) return `${err.status ?? res.status}: ${err.message.slice(0, 200)}`;
+    return body.slice(0, 200);
+  } catch {
+    return res.statusText || String(res.status);
+  }
+}
+
 /** Anzahl Items, die als Pool an Gemini übergeben werden. */
 const POOL_SIZE = 25;
 /** Anzahl Items, die als Top-News markiert werden. */
@@ -180,39 +209,59 @@ async function selectByAi(
   const tokensEstimated = Math.ceil(charsTotal / 4);
 
   try {
-    const res = await fetch(`${ENDPOINT}?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(requestBody),
-      signal: AbortSignal.timeout(20_000),
-    });
-    if (!res.ok) {
-      console.warn(`[TopNews-AI] HTTP ${res.status}`);
-      // Auch failed Calls (z. B. 429) zählen bei Google gegen RPM/RPD —
-      // wir tracken nur den Request, keine Tokens (keine Antwort erhalten).
-      await recordUsage(0, 1);
-      return null;
-    }
-    const data = (await res.json()) as {
-      candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-    };
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) {
-      await recordUsage(tokensEstimated, 1);
-      return null;
-    }
+    // Ein 429 heißt hier fast immer „zu viele Anfragen pro Minute", nicht
+    // „Tagesbudget aufgebraucht": die Klassifizierung feuert unmittelbar
+    // davor bis zu 15 Anfragen, und dieser Aufruf fällt oft noch in
+    // dieselbe Minute. Kurz warten und erneut versuchen genügt meistens.
+    for (let attempt = 0; ; attempt++) {
+      const res = await fetch(`${ENDPOINT}?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+        signal: AbortSignal.timeout(20_000),
+      });
 
-    const parsed = JSON.parse(text) as string[];
-    // Sanity: alle IDs müssen aus dem Pool stammen
-    const validIds = new Set(pool.map((p) => p.id));
-    const filtered = parsed.filter((id) => validIds.has(id));
-    if (filtered.length === 0) {
-      await recordUsage(tokensEstimated, 1);
-      return null;
-    }
+      if (!res.ok) {
+        // Auch fehlgeschlagene Calls zählen bei Google gegen RPM/RPD —
+        // wir verbuchen den Request ohne Tokens (keine Antwort erhalten).
+        await recordUsage(0, 1);
+        const detail = await errorDetail(res);
 
-    await recordUsage(tokensEstimated, 1);
-    return { ids: filtered.slice(0, TOP_N), tokensEstimated };
+        if (res.status === 429 && attempt < RETRY_DELAYS_MS.length) {
+          const wait = RETRY_DELAYS_MS[attempt];
+          console.warn(
+            `[TopNews-AI] HTTP 429 (${detail}) — neuer Versuch in ${wait / 1000}s …`
+          );
+          await sleep(wait);
+          continue;
+        }
+
+        console.warn(`[TopNews-AI] HTTP ${res.status}: ${detail}`);
+        return null;
+      }
+
+      const data = (await res.json()) as {
+        candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+      };
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!text) {
+        console.warn('[TopNews-AI] Antwort ohne verwertbaren Text.');
+        await recordUsage(tokensEstimated, 1);
+        return null;
+      }
+
+      const parsed = JSON.parse(text) as string[];
+      // Sanity: alle IDs müssen aus dem Pool stammen
+      const validIds = new Set(pool.map((p) => p.id));
+      const filtered = parsed.filter((id) => validIds.has(id));
+      await recordUsage(tokensEstimated, 1);
+
+      if (filtered.length === 0) {
+        console.warn('[TopNews-AI] Keine der gelieferten IDs stammt aus dem Pool.');
+        return null;
+      }
+      return { ids: filtered.slice(0, TOP_N), tokensEstimated };
+    }
   } catch (err) {
     console.warn('[TopNews-AI] Fehler:', err);
     // Timeout/Netzwerk-Fehler: Call ist trotzdem rausgegangen.

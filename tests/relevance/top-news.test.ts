@@ -188,4 +188,68 @@ describe('selectAndPersistTopNews', () => {
     expect(result.usedAi).toBe(false);
     expect(result.selectedIds.length).toBeGreaterThan(0);
   });
+
+  it('wiederholt nach einem 429 und nutzt dann doch die KI-Auswahl', async () => {
+    process.env.GEMINI_API_KEY = 'test-key';
+
+    // Erster Aufruf läuft ins Minutenlimit, der zweite liefert die Auswahl.
+    let calls = 0;
+    global.fetch = vi.fn(async () => {
+      calls++;
+      if (calls === 1) {
+        return new Response(
+          JSON.stringify({ error: { status: 'RESOURCE_EXHAUSTED', message: 'rate limit' } }),
+          { status: 429 }
+        );
+      }
+      return new Response(
+        JSON.stringify({
+          candidates: [
+            { content: { parts: [{ text: JSON.stringify(['item-3', 'item-4', 'item-1']) }] } },
+          ],
+        }),
+        { status: 200 }
+      );
+    }) as unknown as typeof fetch;
+
+    vi.resetModules();
+    vi.useFakeTimers();
+    try {
+      const { selectAndPersistTopNews } = await import('../../src/lib/relevance/top-news');
+      const pending = selectAndPersistTopNews();
+      await vi.runAllTimersAsync();
+      const result = await pending;
+
+      expect(calls).toBe(2);
+      expect(result.usedAi).toBe(true);
+      expect(result.selectedIds).toEqual(['item-3', 'item-4', 'item-1']);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('gibt nach erschöpften Wiederholungen auf und sortiert nach Score', async () => {
+    process.env.GEMINI_API_KEY = 'test-key';
+    let calls = 0;
+    global.fetch = vi.fn(async () => {
+      calls++;
+      return new Response(JSON.stringify({ error: { message: 'rate limit' } }), { status: 429 });
+    }) as unknown as typeof fetch;
+
+    vi.resetModules();
+    vi.useFakeTimers();
+    try {
+      const { selectAndPersistTopNews } = await import('../../src/lib/relevance/top-news');
+      const pending = selectAndPersistTopNews();
+      await vi.runAllTimersAsync();
+      const result = await pending;
+
+      // Erstversuch plus zwei Wiederholungen
+      expect(calls).toBe(3);
+      expect(result.usedAi).toBe(false);
+      expect(result.selectedIds.length).toBeGreaterThan(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
 });
