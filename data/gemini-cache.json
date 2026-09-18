@@ -3721,5 +3721,1267 @@
     ],
     "reason": "Group therapy in physiotherapyGruppentherapie in der Physiotherapie",
     "createdAt": "2026-09-17T19:21:12.336Z"
+  },
+  {
+    "titleHash": "87eb9f7396604242d9b4b0fcfb0eec79",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeuten richtet, ist nicht relevant",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "b87ccf25ef418d2664edda5102b0b62b",
+    "score": 1,
+    "topics": [
+      "Reha"
+    ],
+    "reason": "Die Meldung über die Zunahme komplexer Operationen in weniger Kliniken ist für Physiotherapeuten mit",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "bc29d11c374ab4ef1b948c7f2c51aa21",
+    "score": 2,
+    "topics": [
+      "Geriatrie",
+      "Reha"
+    ],
+    "reason": "Der Anstieg der Demenzfälle und der Rückgang der Erwerbsbevölkerung sind für die Geriatrie und die R",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "2cdd661eefa4f0ab71b03c85c73a3151",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung",
+      "Studie"
+    ],
+    "reason": "Der Heilmittel-Report 2026 mit steigenden Kosten und wenig Wissen über Versorgungsqualität ist unmit",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "e7073467b3a81fe49a0e63f67d7cd65e",
+    "score": 3,
+    "topics": [],
+    "reason": "Der Rückgang bei Herzinfarkten ist eine allgemeine Gesundheitsmeldung ohne direkten Bezug zur täglic",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "d66a414d6b28df32cf77a220eb726ec7",
+    "score": 2,
+    "topics": [
+      "Geriatrie",
+      "Reha"
+    ],
+    "reason": "Die Meldung über pflegende Angehörige und deren Erwerbsarbeit ist für die Geriatrie und die Reha-Pla",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "6126b43d1f002f8b8bf41c4b4636936c",
+    "score": 3,
+    "topics": [],
+    "reason": "Die Möglichkeit, mehr Krankenhausfälle ambulant zu versorgen, ist eine gesundheitspolitische Aussage",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "b9ebc329af5200989ed291d257f3181f",
+    "score": 2,
+    "topics": [],
+    "reason": "Die Meldung über die Pflegeversicherung ist eine sozialpolitische Information ohne direkten Bezug zu",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "5b6bcd46ee595b941f6b174c0a095654",
+    "score": 3,
+    "topics": [],
+    "reason": "Die Fehlzeiten-Bilanz mit Rückgang der Krankheitstage und hohen Ausfallzeiten wegen Langzeiterkranku",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "822830f20f23fb1d2031ddf2250d8373",
+    "score": 2,
+    "topics": [],
+    "reason": "Der Fahrplan für krisenfeste Traumaversorgung ist eine sicherheitspolitische und medizinplanerische ",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "a303fb8fef4c5a513bea0a6baf1b780f",
+    "score": 5,
+    "topics": [
+      "Pädiatrie",
+      "Bewegungstherapie",
+      "Fuß & Sprunggelenk"
+    ],
+    "reason": "Barfußlaufen zur Förderung gesunder Kinderfüße hat einen direkten Bezug zur Pädiatrie und Bewegungst",
+    "createdAt": "2026-09-18T08:32:49.831Z"
+  },
+  {
+    "titleHash": "c22ed8f0f83c397fb2ccc1ce8941a9fc",
+    "score": 3,
+    "topics": [
+      "Wirbelsäule",
+      "Rückenschmerz",
+      "Studie"
+    ],
+    "reason": "DGOU macht auf das Risiko von Querschnittlähmungen nach Kopfsprüngen aufmerksam",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "a9f27e8024736544d15fdc66dd4d00f5",
+    "score": 5,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung",
+      "Veranstaltung"
+    ],
+    "reason": "Europas größter Fachkongress für Orthopädie und Unfallchirurgie diskutiert neue Wege in Versorgung, ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c2f1834ea2b8a7f1ced5e00076f7cf0b",
+    "score": 6,
+    "topics": [
+      "Arthrose",
+      "Bewegungstherapie",
+      "Studie"
+    ],
+    "reason": "Gelenkschmerzen im Alter: Was heute bei Arthrose möglich ist",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c0b01463721a45b5348260f2259f5977",
+    "score": 0,
+    "topics": [],
+    "reason": "Für den militärischen Ernstfall gerüstet: Neue Spezialzentren zur Versorgung Schwerverletzter",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "ff75f96f5dd28fdc320e7fc8e2cb4221",
+    "score": 0,
+    "topics": [
+      "Geriatrie",
+      "Leitlinie",
+      "Studie"
+    ],
+    "reason": "Erfolgreich abgeschlossene Versorgungsforschungsprojekte: Multimodale Konzepte für Ältere sowie Anal",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "18c6d7f4a26e0321560d14e529d902b3",
+    "score": 0,
+    "topics": [],
+    "reason": "Mindestpersonalausstattung in der stationären Psychiatrie und Psychosomatik: GBA entwickelt Anforder",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "b0c09901a28b02dcad5c88cd1e68a271",
+    "score": 0,
+    "topics": [],
+    "reason": "GBA beschließt Zuständigkeiten der unparteiischen Mitglieder",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "fb26fa202d2e2227037f92b90ae06771",
+    "score": 0,
+    "topics": [],
+    "reason": "Dr. Sonja Optendrenk übernimmt den Vorsitz des Gemeinsamen Bundesausschusses",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c4f2e4e1c3e774010e62620d16429736",
+    "score": 0,
+    "topics": [
+      "Leitlinie",
+      "Studie"
+    ],
+    "reason": "Versorgungsforschung und medizinische Leitlinien: Innovationsausschuss veröffentlicht neue Förderbek",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "74e10840f0b640d882310089f06b6c7d",
+    "score": 0,
+    "topics": [
+      "S3-Leitlinie",
+      "Studie"
+    ],
+    "reason": "Innovationsfonds-Projekte: Erste S3-Leitlinien für junge Menschen mit Adipositas sowie für Menschen ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "139ce71373fd9ca23392a70bc6e994d4",
+    "score": 0,
+    "topics": [],
+    "reason": "GBA legt neue Mindestmenge für Magenkrebs-Operationen fest",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "ab83bf11d900654fd0e1ba30632fb721",
+    "score": 4,
+    "topics": [
+      "Rückenschmerz",
+      "Leitlinie"
+    ],
+    "reason": "GBA aktualisiert DMP zu chronischem Rückenschmerz – Angebote für Versicherte stehen noch aus",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "e7ee5fc2e556a163d5e539c74638b804",
+    "score": 0,
+    "topics": [
+      "Pädiatrie"
+    ],
+    "reason": "Hörtests bei Neugeborenen – GBA verbessert das Früherkennungsangebot",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "e77ec78a7edbf17137dad74ad11cdd64",
+    "score": 0,
+    "topics": [],
+    "reason": "GBA unterbricht Beratungen zu Krankenbeobachtung bei erhöhtem Überwachungsbedarf – gesetzliche Klars",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "754ac6db975cad0aa90a15a0cbf3b211",
+    "score": 0,
+    "topics": [
+      "Studie"
+    ],
+    "reason": "Versorgungsforschung: Innovationsausschuss fördert 45 neue Projekte",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "fbdbdd13627ba80b1618fcb0eb7f06bf",
+    "score": 0,
+    "topics": [
+      "Leitlinie",
+      "Studie"
+    ],
+    "reason": "Innovationsausschuss: Drei Leitlinienprojekte erfolgreich abgeschlossen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "0a16e24537806cdad9522620b4131bc3",
+    "score": 0,
+    "topics": [
+      "Pädiatrie"
+    ],
+    "reason": "Innovationsausschuss-Projekte: Transferbeschlüsse unter anderem zu Humanmilchbanken für Frühgeborene",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "1fe96201cd5aabe5d3e1e687edf2d483",
+    "score": 5,
+    "topics": [
+      "Knie",
+      "Studie"
+    ],
+    "reason": "Innovationsausschuss-Projekte: Erkenntnisse zu Langzeit-Opioidtherapien, regionalen Versorgungsbedar",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7839c02a8424c974e5883e7c433a906b",
+    "score": 0,
+    "topics": [
+      "Leitlinie",
+      "Studie"
+    ],
+    "reason": "Innovationsausschuss fördert 12 neue Projekte zu medizinischen Leitlinien",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "debb6c825be5f1236e74ae7bd9ffcb17",
+    "score": 0,
+    "topics": [],
+    "reason": "Unser Gesundheitswesen bedarfsgerechter und effizienter machen: Dem Innovationsausschuss liegen erne",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "3e99619059a9c0a7cc9adb9807dc07b8",
+    "score": 0,
+    "topics": [],
+    "reason": "Innovationsausschuss: ab heute Themenvorschläge für das Förderjahr 2027 möglich",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c4463b445196ab0108da71df8d414368",
+    "score": 0,
+    "topics": [
+      "S3-Leitlinie",
+      "Studie"
+    ],
+    "reason": "Förderung aus Innovationsfonds: Zwei weitere S3-Leitlinien konnten entwickelt werden",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7b26eb18ed9ecae27a8485cf355d90fe",
+    "score": 0,
+    "topics": [],
+    "reason": "Innovationsausschuss-Projekt: Neues Datenportal zur palliativen Versorgung",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7143fc26a5daa3517bcd0000d7e5d229",
+    "score": 0,
+    "topics": [],
+    "reason": "Mammographie-Screening zur Früherkennung von Brustkrebs: GBA berät über Absenkung der Altersgrenze a",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "b642f41022b57cfe588e4160d05fc26f",
+    "score": 4,
+    "topics": [
+      "Osteoporose",
+      "Leitlinie"
+    ],
+    "reason": "GBA aktualisiert DMP Osteoporose umfassend – Neu: Männer bereits ab 50 Jahren anspruchsberechtigt",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "439cd9941b56842c2467f4edc7765fa7",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Tod nach Behandlung - Gericht entscheidet über Podologen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c823b5ff581a7c6d90fbd72e6cd6a67c",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Bundessozialgericht muss wieder über Freie Mitarbeiterschaft bei Therapeuten entscheiden",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "132f859854bfc9e0a8237d884d73d487",
+    "score": 4,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Praxiskauf und Praxisverkauf - Whitepaper",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "86cd4701fc2765e5c54577be34447f76",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Verklagt: SVLFG zahlt wieder zu spät und verursacht Kosten",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "84f589bfbb1e9ba36532c2cb93a0166b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "STREIT um 322.258,90 € - Techniker Krankenkasse muss Kosten zahlen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "a969e5bcff58d3217a3baea253781dc6",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Mehr als 10.000,00 €! Techniker verliert Gerichtsverfahren wegen Fehler der DAVASO!",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "0a8722155f5869bafe40565cc0691c7a",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Landgericht Aschaffenburg entscheidet zugunsten von Physiotherapeut",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "689cb9f79251ecc4e017ac03229c54f6",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Amtsgericht Speyer verurteilt Patienten wegen Ausfallgebühr",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "a806907b712068dffd87293ab025835d",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Barmer durch Sozialgericht Hildesheim verurteilt",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "4a8ca15580bd62ed1793cb66bdcdc75c",
+    "score": 3,
+    "topics": [
+      "Fortbildung"
+    ],
+    "reason": "Kursanmeldungen können teuer werden",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "dcedf33cd17991fedfca9b9706ae2821",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Erfolgreiche Untätigkeitsklage eines Physio-Schülers gegen Stadt Herne",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7a4e03b244e67d8ae9211c19ef330a3b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Physiotherapeuten gewinnen gegen Patientin vor Amtsgericht Solingen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "5a03a44db278aac744e74ca342abd368",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "BIG direkt gesund muss nach Gerichtsverfahren Kosten übernehmen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "6ef194bcbf96db3db1abd4a4810fd0ce",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Erfolg einer Physiotherapeutin vor dem Sozialgericht Würzburg gegen Barmer",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "3fb5b3cbd9a3f819918ce6a44e553cb1",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Wichtiges Urteil zu üblichen Preisen in der Physiotherapie",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "788bed3d17a7dc423b145f153a4f364b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Erfolg gegen die BGW vor dem Sozialgericht Berlin",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "18a744bb7654d68c517c46e9f892bb7c",
+    "score": 0,
+    "topics": [],
+    "reason": "Strafanzeige wegen möglichem versuchtem Prozessbetrug in Verfahren gegen hkk erstattet",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "a330f10947d83aa71015180d0790796c",
+    "score": 0,
+    "topics": [],
+    "reason": "Hebamme erfolgreich vor dem Sozialgericht Stuttgart gegen Barmer",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "20db7deb6e23fb691243463933e3ad5e",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Techniker Krankenkasse muss wieder Kosten nach Gerichtsverfahren zahlen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "9a464d6b0f2b31b459340326dfdc464b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Privatpatient gewinnt vor dem Landgericht gegen private Krankenversicherung (LKH)",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "2c629f1b9b81c8cd9c67f062e466071d",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Patientin wird durch Amtsgericht Brühl wegen Ausfallgebühr verurteilt",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "1c10ec105412a0e1e4351e67b1795f43",
+    "score": 3,
+    "topics": [],
+    "reason": "Deutscher Konsumentenbund e. V. mahnt viele Therapeuten ab",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "341c4413194bcfcfe0d34a5901e7fb22",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Podologin siegt vor Gericht wegen Ausfallhonorar",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c2ab21e8f405884a12bdeb9d1f6585f4",
+    "score": 0,
+    "topics": [],
+    "reason": "Kein Bußgeld bei fehlendem Impfnachweis",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "cdfe39dceb3603f9786fb369c72a596b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Therapeutin siegt gegen BKK24",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "2448dbbb60e1c5064d95ab7696ff58b9",
+    "score": 0,
+    "topics": [],
+    "reason": "Hebamme gewinnt gegen KKH wegen Verzugskostenpauschale",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "f2760aaae8bc395717b2618eb81330e4",
+    "score": 0,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Einsatz von nicht ausreichend qualifiziertem Personal - DAK startet Regresse",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "d1e1338ccc9a988a6617dd2026221828",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Podologin hat Anspruch auf sektorale Heilpraktikererlaubnis",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c64a72cde52b2a2e8b8331b74d7b4144",
+    "score": 0,
+    "topics": [],
+    "reason": "Löschung alter Videos und alter Informationen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7570f1ab5ca192022376704853da087c",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Deutsche Rentenversicherung wird wegen T-RENA erfolgreich verklagt",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "6a287057be2039ee22b6e5ebfd502fd2",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Klagewelle wegen Hausbesuchspauschale hat begonnen",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "d37f591cc2285cf9dd011eae312c133d",
+    "score": 0,
+    "topics": [],
+    "reason": "Tätowierer gewinnt in Rechtsstreit wegen angeblicher Hygienemängel",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "1f333afc7938fcfba007ac2985cf295a",
+    "score": 3,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Abofallen haben bei Physiotherapeuten weiter Hochkonjunktur (Bella Werbe GmbH)",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "aa0eb2edd2bd1ce5ea2d47d2142a4ffa",
+    "score": 0,
+    "topics": [],
+    "reason": "Heilpraktiker sind nicht gesetzlich rentenversicherungspflichtig",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "3e26bfe85ae1b6a334184cc8ae4bfc4c",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ausfallgebühr wird durch Behandlungsvertrag abgesichert",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "b1a771c1ed45889f9c12a77ca78055f2",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Landkreis Nienburg/Weser hat sein Beschäftigungsverbot aufgehoben. Dies hat keine direkten Auswi",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "f461e27a8b60937d6ec897fecd9f0aa1",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Landkreis Nienburg/Weser spricht weiterhin ein Beschäftigungsverbot aus. Dies hat keine direkten",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "0f36aaf78d3a8ba648f3db279872f404",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft Hebammen und deren Umgang mit bestimmten Situationen. Sie hat keine direkte R",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "b2fccf5943ed41323e3790d22fea8b8e",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung bezieht sich auf die DAVASO und die Techniker Krankenkasse und deren Verhalten. Ohne e",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "58eebd755c65e738536e6471f6708fe5",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über Klagen gegen die SVLFG hat keine direkte Auswirkung auf die Arbeit, Abrechnung oder",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "95f48f2b305354aa7101f1c536087817",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über Klagen gegen die SVLFG hat keine direkte Auswirkung auf die Arbeit, Abrechnung oder",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "50f75c83b5e977e386eedc1f81418208",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über Ausnahmegenehmigungen zur einrichtungsbezogenen Impfpflicht hat keine direkte Auswi",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "021ebf69b07085f3dee63e77761e3bbb",
+    "score": 0,
+    "topics": [],
+    "reason": "Das Urteil gegen die Techniker Krankenkasse bezüglich Prozesskosten hat keine direkte Auswirkung auf",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "6193a8e25576623678896727f2b27df7",
+    "score": 10,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung über den Anspruch von Physiotherapeuten auf eine Verzugskostenpauschale ist unmittelbar ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "a19770a9b39d330a32e883ad8c1bbc32",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft Hebammen und deren Rechtsstreit mit der Barmer. Sie hat keine direkte Relevan",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "a011d18dcc446b57f02442bb3a1cd186",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein Physiotherapeut siegt in einem Rechtsstreit. Dies kann Auswirkungen auf die Abrechnungspraxis od",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "6f2937e88df5ac7521ab271c62580e69",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Frage, ob Post an die DAVASO verloren geht, hat keine direkte Auswirkung auf die Arbeit, Abrechn",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "9dcb9fc25737e7eab8431d41e2366027",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung über Ermittlungsverfahren wegen Ausstellung unrichtiger Gesundheitszeugnisse betrifft ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "f12e53d449f1a20296c8fb341b4bb661",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über kostenpflichtige Coronatests und deren Schutz vor Ausfallgebühr hat keine direkte A",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "53d7e0040b221f0cc828ad27b9c833ea",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft eine Hebamme und deren Rechtsstreit mit der Barmer wegen Zahlungsverzug. Sie ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "6d5c79f36a16b86cc2d1df32f1b8b635",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Die Verurteilung der ARGE Heilmittelzulassung wegen Untätigkeit ist relevant, da sie die Zulassungsp",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "59d9d8ba4a9f3b761586915cbac80eb1",
+    "score": 0,
+    "topics": [],
+    "reason": "Ein Erfolg in einem Statusfeststellungsverfahren ist nicht direkt auf die physiotherapeutische Praxi",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "f82d3cc5ff3ccacb134b1886b927d8b5",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Veröffentlichung eines Buches ist eine Ankündigung und hat keine unmittelbare Auswirkung auf die",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "f4ef74da5f596010395f7a79e58c5cc6",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Verurteilung eines Patienten wegen Terminausfall hat keine direkte Auswirkung auf die Arbeit, Ab",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7c4456f5fb6ae24bd2c33f500a342999",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Verurteilung einer Patientin wegen nicht rechtzeitig abgesagtem Termin hat keine direkte Auswirk",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "fa52de88f5ace3d1fb78efc9c54650fd",
+    "score": 0,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "reason": "Eine neue Regresswelle der AOK Bayern ist zwar potenziell relevant, aber ohne konkrete Details zur A",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "1672aed14b7f877cd472252bb3a87a1d",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Eine Gerichtsentscheidung zugunsten der Praxis bezüglich der Ausfallgebühr ist unmittelbar relevant,",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "a0522eea701ecfa098465fef190afffb",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft eine Hebamme und deren Rechtsstreit mit der IKK classic. Sie hat keine direkt",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "e6762b740b6fc14daf38805ba0c8bc36",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung, dass die Verzugskostenpauschale nicht auf Rechtsanwaltskosten angerechnet werden darf, ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "9154e923f5d0e4ee96ba4180bd808f3e",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Techniker Krankenkasse muss nach Klage eines Physiotherapeuten zahlen. Dies ist relevant, da es ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "d0ab8e488926021e2af4c83daed23460",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung, dass nun auch die Techniker Krankenkasse betroffen ist, ist ohne weitere Details zur Ar",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "52d1a06ef6ad6741d0eebf4c39c66794",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die IKK classic muss nach Gerichtsverfahren zahlen. Dies ist relevant, da es um die Vergütung physio",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "985b58a3907c1cdbfae507696b47455b",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung, dass Maskenverweigerer gekündigt werden können, hat keine direkte Auswirkung auf die Ar",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "ea7d7ea46a83b7be58e12c9b8278d98c",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die IKK classic verliert im Rechtsstreit gegen eine Abrechnungsstelle. Dies ist relevant, da es um d",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "4d9e35b2026930be1ed70c07ee5d0ac0",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Meldung, dass physiotherapeutische Praxen in der Regel keine Zahlungen an die GEMA erbringen müs",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "59daa346a658ed36af82803f6c8694d4",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Eine Klagewelle gegen die IKK classic führt zu Erfolg. Dies ist relevant, da es um die Abrechnungspr",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "c8745272b74c203f3cf778cb9b89e418",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die IKK classic verliert erneut und trennt sich von einem Abrechnungszentrum. Dies ist relevant, da ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7ed9993c8331e7021c8300806f7d9df7",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die IKK classic verliert in einem Gerichtsverfahren. Dies ist relevant, da es um die Abrechnungsprax",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "ffd10c4cdc31bc97278869cc6d5e4511",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Barmer muss Verzugskostenpauschale und Zinsen zahlen. Dies ist relevant, da es um die Vergütung ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "4d30b777ef0acfe7dfd5c8ac3b951ed5",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die BAHN-BKK verliert gegen eine Therapeutin. Dies ist relevant, da es um die Vergütung physiotherap",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "4c7fbab8006a5fb7296c52c874a2daf2",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die IKK classic unterliegt in einem Gerichtsstreit. Dies ist relevant, da es um die Abrechnungspraxi",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "1b9e8cbb58d38100b49b66231f028055",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über die AOK Nordwest, die Rechtsanwaltskosten zahlen muss, ist ohne spezifischen Bezug ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "3ac0b54e24746401f17ff982f978da07",
+    "score": 9,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung, dass es keine Begrenzung der klassischen Massagetherapie auf 10 Einheiten gibt, ist unm",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "18f7b50066fcc4611739c73629a33dd2",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein Physiotherapeut verklagt die DAK erfolgreich wegen Behandlungskosten und Verzugspauschale. Dies ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "9841387c26a178848d2f5f4d6cf3224f",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Verurteilung einer Patientin zur Zahlung einer Ausfallgebühr hat keine direkte Auswirkung auf di",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "12c96f184ababffc71ae064756bfb4c1",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein Therapeut gewinnt nach langem Prozess gegen die Bayerische Beamtenkrankenkasse AG. Dies ist rele",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "32c5bd4c61c0ca71b95d4b42f4332ce6",
+    "score": 9,
+    "topics": [
+      "Reha",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein Physiotherapeut siegt gegen die Deutsche Rentenversicherung. Dies ist relevant, da es um die Kos",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "d194ee41fe22ff9abd1bb0bd783c05e4",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug ist eine allgemeine Information üb",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "7bdd50b38a641e9a25c9524778e5845b",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die mhplus verliert in mehreren Verfahren gegen eine physiotherapeutische Praxis. Dies ist relevant,",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "bf2df8aede43b31405ed58128c041b20",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft eine Hebamme und deren Rechtsstreit mit der DAK wegen Stillberatung. Sie hat ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "cde08ba915171da80a76ad19ec5a291a",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung, dass die Barmer und DDG eine Klagewelle abwenden, ist ohne weitere Details zur Art des ",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "55adc87ca2278d021e3e21933bcdf7c5",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über Subventionsbetrug wegen Corona ist ein allgemeines Thema und hat keine direkte Ausw",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "418b46ddfe77cb584c10c97a9fc044c6",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Corona-Krise und ihre Folgen für die Heilberufe sind ein breites Thema. Ohne spezifische Auswirk",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "9c08e78265e4a3dee5477f389e575def",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Frage, was sich für Therapeuten im Jahre 2020 ändert, ist zu allgemein gehalten. Ohne konkrete I",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "1e4c47a767f5742553883666f50f4a2a",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über die Verfolgung von Falschabrechnung von Primärprävention durch Staatsanwaltschaft u",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "249bf4d2b48eb10208f58238d7762a91",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die IKK classic verliert vor dem Sozialgericht Stuttgart und es gibt Chaos beim Abrechnungszentrum E",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "e1e00d6daac96f67b91c9a0285d9ae52",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die IKK classic verliert vor Gericht, nachdem das Abrechnungszentrum Emmendingen zu spät zahlt. Dies",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "10aeeb6a7bdfe6599099433b2f2f8652",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung, dass die KKH sich vertragsbrüchig verhält, ist ohne spezifischen Bezug zur physiotherap",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "85c08b44330f42f1a6c790610e733602",
+    "score": 0,
+    "topics": [],
+    "reason": "Die zunehmende Anzahl von Datenschutzverstößen ist ein allgemeines Thema und hat keine direkte Auswi",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "700b44b309037d3471bfabf9c1ab9d06",
+    "score": 0,
+    "topics": [],
+    "reason": "Verspätete Zahlungen durch Abrechnungszentren sind ein allgemeines Problem im Abrechnungswesen, aber",
+    "createdAt": "2026-09-18T08:33:11.608Z"
+  },
+  {
+    "titleHash": "131c06a777802a6f854860e7dc4cca39",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung",
+      "Praxisgründung"
+    ],
+    "reason": "Neue Regelungen zur Arbeitszeiterfassung können direkte Auswirkungen auf die Organisation und die Ar",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "000f70307b95efc2742ea6ecf2b9c892",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Meldung von Mitarbeitern für die Abrechnung ist ein direkter administrativer Prozess, der die Pr",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "9e4b63aa64d75ea4de02d0c9978aea0c",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Eine Regresswelle der AOK gegen Physiotherapeuten hat direkte finanzielle und abrechnungstechnische ",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "33aad898930bf77577ba61ce19ae0945",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Ausfallgebühr ist ein abrechnungsrelevanter Punkt für Praxen und betrifft die GKV-Vergütung.",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "450eb43003deacd42779ce592edf5619",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Meldung 'Praxen unter Generalverdacht' deutet auf mögliche rechtliche oder abrechnungstechnische",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "cffbfb2ddd63974479d9a71919d34a11",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Fortbildung"
+    ],
+    "reason": "Änderungen bezüglich Osteopathie, insbesondere im Hinblick auf erlaubte Praktiken ab 2026, beeinflus",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "3a410802cf39056ab919586939c8ac1f",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Meldung über rechtliche Konsequenzen bezüglich Praktikanten (z.B. 'In den Knast') betrifft die A",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "f83c0b62e047ff68696836c424bd0b01",
+    "score": 7,
+    "topics": [
+      "Praxisgründung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Durchsuchungen bei Arbeitnehmern sind ein rechtliches Thema, das die Praxisorganisation und die Einh",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "0d152f83c04fdb7e4e85309eed3ab2cb",
+    "score": 0,
+    "topics": [],
+    "reason": "Eine Wahlempfehlung ist keine fachliche oder abrechnungstechnische Änderung für die Praxis.",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "a41e8014adc271e1477f8ac048ee6337",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Berichterstattung über eine Veranstaltung ohne konkreten Bezug zu Änderungen in der physiotherapeuti",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "3648408beba6035f755c9b755481a440",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Frage nach fehlender Vergütung trotz Behandlung betrifft unmittelbar die Abrechnung und die GKV-",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "27068fcf4c938a874cc1f9acf3f05bc3",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Betrug im Gesundheitswesen kann zu verschärften Kontrollen und Prüfungen führen, was die Abrechnungs",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "d4291793736fe7eae7a0f7873fcceae7",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Betrug im Gesundheitswesen kann zu verschärften Kontrollen und Prüfungen führen, was die Abrechnungs",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "c229b294ae9108b6798d4d27e3bf0045",
+    "score": 0,
+    "topics": [
+      "Sturzprävention",
+      "Reha"
+    ],
+    "reason": "Allgemeine Gesundheitspolitik ohne direkten Bezug zu Änderungen in der physiotherapeutischen Praxis.",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "f049db6ff7c5f4a5920c5ce5728ce9fb",
+    "score": 4,
+    "topics": [],
+    "reason": "Das Gesetz für Daten und digitale Innovation im Gesundheitswesen könnte mittelbar die Digitalisierun",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "6efab00ee3df41a2535c192cf071b807",
+    "score": 0,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "reason": "Das GKV-Beitragssatzstabilisierungsgesetz betrifft die Finanzierung der GKV allgemein, aber nicht di",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "f1e306658ea1f5331db2ae9102b0ee2b",
+    "score": 0,
+    "topics": [],
+    "reason": "Bürokratieabbau im BMG ist eine allgemeine politische Maßnahme ohne direkten Bezug zu den praktische",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "a6ded4935607469dbf50a823efe90889",
+    "score": 0,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Die Ausbildung zur Pflegefachassistenz betrifft nicht die Ausbildung oder Praxis von Physiotherapeut",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "7a526c6f8ed1bb64f55c2538f486d1d9",
+    "score": 0,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "reason": "Finanzentwicklung der GKV ist eine allgemeine Information ohne direkten Einfluss auf die physiothera",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "fa550d050e9208aafe599f8402371762",
+    "score": 0,
+    "topics": [],
+    "reason": "Teilnahme einer Ministerin an einem Ratstreffen ist keine Meldung, die die Arbeit von Physiotherapeu",
+    "createdAt": "2026-09-18T08:33:16.144Z"
+  },
+  {
+    "titleHash": "607d74adecd2b1105c27f5d639fe9b28",
+    "score": 0,
+    "topics": [],
+    "reason": "Stärkung der pharmazeutischen Industrie ist kein Thema, das die physiotherapeutische Praxis direkt b",
+    "createdAt": "2026-09-18T08:33:16.144Z"
   }
 ]
