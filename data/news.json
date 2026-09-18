@@ -1,5 +1,147 @@
 [
   {
+    "id": "a76cbb8f64516c145dbf61f078ef05aaa5d0e48088201d1fcd4d8a425f22e837",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "GEMA gibt gegen Physiotherapeuten nicht auf",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/gema-gibt-gegen-physiotherapeuten-nicht-auf/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-18T10:40:52.996Z",
+    "fetchedAt": "2026-09-18T10:40:52.996Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die GEMA, die gegen Physiotherapeuten nicht aufgibt, betrifft die Lizenzierung von ",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-18T10:40:52.995Z",
+    "fetchedAt": "2026-09-18T10:40:52.996Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie di",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "3f7d04ba51ff3c9d6d24eae2bf8e3e3d08ffe77814ef05438943e423a567b9e7",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Keine berechtigte Abmahnung ohne konkretes Wettbewerbsverhältnis",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/keine-berechtigte-abmahnung-ohne-konkretes-wettbewerbsverh%C3%A4ltnis/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-18T10:40:52.994Z",
+    "fetchedAt": "2026-09-18T10:40:52.996Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über berechtigte Abmahnungen ohne konkretes Wettbewerbsverhältnis ist zwar eine juristis",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "5667ca78f0d00cd12dcf4a4fd5de9ed0b89d74c35f112de6d02b516534f6bc3b",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Gesetzliche Krankenkasse zur Zahlung von Verzugskostenpauschale verurteilt",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/viele-ermittlungsverfahren-wegen-anstiftung-zur-ausstellung-eines-unrichtigen-gesundheitszeugnisses-eingeleitet/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-18T10:40:52.993Z",
+    "fetchedAt": "2026-09-18T10:40:52.996Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Verurteilung einer gesetzlichen Krankenkasse zur Zahlung einer Verzugskostenpauschale ist für Ph",
+    "isTopNews": true,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-18T10:40:52.993Z",
+    "fetchedAt": "2026-09-18T10:40:52.996Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung zur Kassenzulassung für Fachfremde in der Physiotherapie ist unmittelbar relevant, da si",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "3427e9c7c5e23647fa3f39ef9c9a69bf9292c1eebc39989895819d39f3de43f2",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Grundlohnsumme bremst Vergütungszuwachs ab 2027",
+    "summary": "Das Bundesgesundheitsministerium hat die Grundlohnrate für 2027 bekanntgegeben – doch durch gesetzliche Abschläge fällt der Verhandlungsspielraum für Physiotherapeuten noch geringer aus.",
+    "url": "https://physio.de/community/news/grundlohnsumme-bremst-verguetungszuwachs-ab-2027/99/12026/1",
+    "imageUrl": null,
+    "publishedAt": "2026-09-18T10:06:48.531Z",
+    "fetchedAt": "2026-09-18T10:40:48.536Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Information über die Grundlohnsumme und deren Auswirkung auf die Vergütung ab 2027 ist unmittelb",
+    "isTopNews": true,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "8634cadcae3df52a96aa73b1bf164f6fc82249aece3af72e360abcefed643f6c",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Therapeutenmangel nimmt leicht ab – Physios dennoch auf Platz 1 der Mangelberufe",
+    "summary": "Ergebnisse der Fachkräfte-Engpassanalyse 2025",
+    "url": "https://physio.de/community/news/therapeutenmangel-nimmt-leicht-ab-ndash-physios-dennoch-auf-platz-1-der-mangelberufe/99/12014/1",
+    "imageUrl": null,
+    "publishedAt": "2026-09-18T09:52:48.531Z",
+    "fetchedAt": "2026-09-18T10:40:48.536Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Information über einen leichten Rückgang des Therapeutenmangels und die Platzierung von Physios ",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "da5c96da7593a602ece3076c65871b7da1848fa817f057a6f2e850dae43d9274",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Physiotherapie muss Chefsache werden",
+    "summary": "Mit der Vereidigung im Bundestag wurde Anfang letzter Woche der Personalwechsel an der Spitze des BMG vollzogen – und die Erwartungen an Carsten Linnemann (CDU) sind hoch.",
+    "url": "https://physio.de/community/news/physiotherapie-muss-chefsache-werden/99/12024/1",
+    "imageUrl": null,
+    "publishedAt": "2026-09-17T21:40:48.530Z",
+    "fetchedAt": "2026-09-18T10:40:48.536Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Aussage, dass Physiotherapie Chefsache werden muss, ist eine allgemeine Forderung ohne direkten ",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "3928e1c83cb9e7580f4ab8b2fd03447699cba31acc379a39213e48bde0db4e28",
     "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
     "title": "Welttag der Patientensicherheit – chronische Erkrankungen im Fokus",
@@ -34,6 +176,22 @@
     "topics": [
       "Berufsverband"
     ],
+    "lang": "de"
+  },
+  {
+    "id": "2be5d2d185c9c3802606c56206bf85a7b13341afad5c4fe88f53d47c82c80aec",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Rund 1 Milliarde an Beitragsgeldern stehen im Feuer",
+    "summary": "Neue Zahlen zeigen: Das Problem ist deutlich größer als bislang bekannt.",
+    "url": "https://physio.de/community/news/rund-1-milliarde-an-beitragsgeldern-stehen-im-feuer/99/12013/1",
+    "imageUrl": null,
+    "publishedAt": "2026-09-17T10:40:48.531Z",
+    "fetchedAt": "2026-09-18T10:40:48.536Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Information über Beitragsgelder, die im Feuer stehen, ist eine allgemeine finanzielle Meldung oh",
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -111,6 +269,22 @@
     "lang": "de"
   },
   {
+    "id": "a5c1ff21c251196e589ca9cb5cd1c0d0dc5eea230a03701cf3f480cd7ce4896c",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Die Empörung ist groß – auf beiden Seiten!",
+    "summary": "Der IGeL-Monitor-Evidenzbericht zur Osteopathie bei unspezifischen Rückenschmerzen",
+    "url": "https://physio.de/community/news/die-empoerung-ist-gross-ndash-auf-beiden-seiten/99/11976/1",
+    "imageUrl": null,
+    "publishedAt": "2026-09-15T10:40:48.534Z",
+    "fetchedAt": "2026-09-18T10:40:48.536Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Aussage über Empörung auf beiden Seiten ist eine allgemeine Feststellung ohne konkreten Bezug zu",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
     "id": "93f9b8b0f8d9c47fbda67a69c2efb88277754680d47f01806bbfc99aea6f05ec",
     "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
     "title": "Bundeskongress Physiotherapie 2026: Noch wenige Plätze verfügbar",
@@ -180,6 +354,196 @@
     "lang": "de"
   },
   {
+    "id": "fa6d74aef7b96d0909d344c39ae50026fe2e7ed3bdf4986f300db2e6e07e6732",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Deutschland als Schlusslicht – Die Rolle der Physiotherapie im Public Health Index",
+    "summary": "Deutschland investiert Milliarden in die Behandlung von Krankheiten – aber vergleichsweise wenig in deren Vermeidung, wie der Public Health Index zeigt. Gleichzeitig wächst der finanzielle Druck auf das Gesundheitssystem. Ein stärkerer Fokus auf Prävention kann dazu beitragen, mehrere Herausforderungen gleichzeitig zu bewältigen. Das senkt die Krankheitslast der Bevölkerung und kann dadurch den F…",
+    "url": "http://dx.doi.org/10.1055/a-2880-7139",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Rolle der Physiotherapie im Public Health Index ist relevant, da sie die Bedeutung und Position ",
+    "isTopNews": false,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "165665c925cafca6d0d65af17802bb81431494d8940c2f52a4687938c7c97813",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Effekte des Blood Flow Restricition Trainings bei Gonarthrose – Wissenschaft nachgefragt",
+    "summary": "Bewegungstherapie gehört zu den gängigen Behandlungsmethoden bei Gonarthrose, ist jedoch oft nicht intensiv genug, um zum Muskelaufbau beizutragen. Deshalb untersuchte Iven Gosch, ob Blood Flow Restriction Training ähnliche Effekte auf Kraft und Schmerz hat.",
+    "url": "http://dx.doi.org/10.1055/a-2880-6808",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Effekte des Blood Flow Restriction Trainings bei Gonarthrose sind wissenschaftlich relevant und ",
+    "isTopNews": false,
+    "topics": [
+      "Knie",
+      "Studie",
+      "Bewegungstherapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "18eb445b9bbcdb6ee46c2d433e91f3c682c5250fdda49398b00acfa33b33c5b7",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Internationale Studienergebnisse",
+    "summary": null,
+    "url": "http://dx.doi.org/10.1055/a-2880-6754",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Internationale Studienergebnisse sind nur relevant, wenn ein konkreter Bezug zur physiotherapeutisch",
+    "isTopNews": false,
+    "topics": [
+      "Studie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "52eba898576dae37285d97e7d0846728a89ec7a493bd76ca86901d5dd5b6e4e2",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Zwischen Kiefer-, Kopf- und Nackenschmerz – Differenzialdiagnostik der Trigeminusneuralgie",
+    "summary": "Stechend, brennend oder dumpf – Gesichtsschmerzen können ganz unterschiedliche Ursachen haben. Für Physiotherapeut*innen ist eine sichere Differenzialdiagnostik entscheidend, denn hinter vermeintlichen Trigeminusbeschwerden verbergen sich häufig Neuropathien oder ein persistierender idiopathischer Gesichtsschmerz. Der Beitrag zeigt, wie sich die Krankheitsbilder unterscheiden und welche diagnosti…",
+    "url": "http://dx.doi.org/10.1055/a-2880-7121",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Differenzialdiagnostik der Trigeminusneuralgie ist relevant, da sie das fachliche Wissen im Bere",
+    "isTopNews": false,
+    "topics": [
+      "Wirbelsäule",
+      "Neurologie",
+      "Manuelle Therapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b11768e4d5f8f5037bbff3ed48e8a02141d843bcd637a6064dd561fc8cd092a3",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Sicher ins Wohlfühlbad – Transfer Rollstuhl – Badewanne",
+    "summary": "Bevorzugen Sie eine Dusche oder ein Bad? Für Menschen, die einen Rollstuhl nutzen, kann der Zugang zur Dusche oder in die Badewanne schnell herausfordernd werden. Sie müssen herausfinden, welche Lösung im Alltag am besten für sie passt. Dabei gilt es sowohl die individuellen körperlichen Voraussetzungen als auch die Wohnsituation und weitere Kontextfaktoren zu berücksichtigen.",
+    "url": "http://dx.doi.org/10.1055/a-2917-4963",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der Transfer Rollstuhl – Badewanne ist eine praktische Anleitung, die mittelbar relevant sein kann, ",
+    "isTopNews": false,
+    "topics": [
+      "Reha"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "aefb89183601de32d26eb8cceee7eec412d7b2bfc6143ab85e780a4db837ce55",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Fehlerhafte Software – Funktionelle Bewegungsstörungen: Physiotherapie zwischen Neurowissenschaft und Praxis",
+    "summary": "Funktionelle Bewegungsstörungen stellen Betroffene und Behandelnde häufig vor besondere Herausforderungen. Neue Erkenntnisse zur Bewegungssteuerung und die aktuelle S2k-Leitlinie zeigen, wie eine gezielte physiotherapeutische Behandlung mit Psychoedukation, Aufmerksamkeitslenkung und aktivem Training wirksam eingesetzt werden kann.",
+    "url": "http://dx.doi.org/10.1055/a-2880-6985",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Funktionelle Bewegungsstörungen und deren Behandlung zwischen Neurowissenschaft und Praxis sind rele",
+    "isTopNews": false,
+    "topics": [
+      "Neurologie",
+      "Bewegungstherapie",
+      "Manuelle Therapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "7165c461beb94d2cce1e44e63825968de87f0fb9bae10d4cf3f5d6f332cc68bb",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Brennendes Becken – Red Flags erkennen",
+    "summary": "Clara kämpft seit Monaten mit persistierenden Schmerzen und einer ausgeprägten Überempfindlichkeit im Becken- und Vulvabereich. Die physiotherapeutische Untersuchung liefert erste Hinweise auf eine mögliche neuronale Beteiligung, doch das klinische Bild ist komplex. Lesen Sie, welche Strukturen tatsächlich betroffen sind und welche Rolle Claras Vorgeschichte dabei spielt.",
+    "url": "http://dx.doi.org/10.1055/a-2880-6826",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Das Erkennen von Red Flags bei einem \"brennenden Becken\" ist relevant für die diagnostische Kompeten",
+    "isTopNews": false,
+    "topics": [
+      "Wirbelsäule",
+      "Hüfte",
+      "Manuelle Therapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "0b3ce66f607e15199268d39eba88913760f913266c859ee2e087d66ff952f20a",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Mehr als Narben behandeln – Genitaloperationen für trans* Personen",
+    "summary": "Physiotherapeut*innen übernehmen eine wichtige Rolle in der Begleitung von Menschen nach geschlechtsangleichenden Genitaloperationen. Neben Narbenmanagement, Beckenbodentherapie und funktioneller Rehabilitation sind eine trans*sensible Herangehensweise und interprofessionelle Zusammenarbeit zentrale Bestandteile der Versorgung. Zwei Fallbeispiele zeigen typische Operationsverfahren, häufige Kompl…",
+    "url": "http://dx.doi.org/10.1055/a-2880-7037",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Behandlung von Genitaloperationen für trans* Personen ist ein spezialisiertes Feld, das für die ",
+    "isTopNews": false,
+    "topics": [
+      "Lymphdrainage"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "38943d4da59edbc2e9d0d66fd67953395778abfd5679d680edd903a25591b94e",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Damit die Besten ihr Bestes geben können – Physiotherapeut bei der Fußball-WM",
+    "summary": "Jonas Spiess hat die Schweizer Nationalmannschaft durch die WM begleitet. Er erzählt, was die Arbeit mit Top-Athleten so besonders macht, wie ein Turniertag hinter den Kulissen ablief – und warum er die Schweiz-Spiele völlig anders verfolgt hat als die Fans.",
+    "url": "http://dx.doi.org/10.1055/a-2921-1125",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Arbeit eines Physiotherapeuten bei der Fußball-WM ist relevant für die Sportphysiotherapie und z",
+    "isTopNews": false,
+    "topics": [
+      "Sportphysiotherapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "04412d28df7ac09470f796d254eed74afdf7b5dd9af283f29d3414e64918da59",
+    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
+    "title": "Die Rechtsfrage: Wie rechnen angestellte Heilpraktiker*innen korrekt ab?",
+    "summary": "” Dürfen angestellte Heilpraktiker*innen einer Physiopraxis Privatrezepte für die Physiotherapie ausstellen und sie in derselben Einrichtung abrechnen? Therapeut aus Bayern",
+    "url": "http://dx.doi.org/10.1055/a-2880-6844",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T23:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:49.483Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Rechtsfrage zur korrekten Abrechnung durch angestellte Heilpraktiker:innen ist relevant für die ",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "c4c339f579bdee0ffc7e885f82a14e1491e8c5c61381f2bde6e6a2f22cde2bb5",
     "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
     "title": "Treffpunkt Führungskräfte: Blankoverordnung in der Praxis",
@@ -213,6 +577,169 @@
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "8887ad7c15ce0913c2c9b67c57ef24f7eb6297756a3fefaf4a3cf934f95ed067",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Plötzlich geht nichts mehr",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5Fd0hRTWlzeF9ZcUU5VHk2dzMwX3E3SjVoei1qMnFoa2FKSkJLS1EydFpxdkFNSzhQN0ttUVRpeHM2Q1ZzVWkwZWcxSEpuc2ZhY3ptTEhDaENaZnc0ajJHRTJpZHdEak1hdlN4VGxnX3Z3cHF0REIwdjR3?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T09:59:59.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung \"Plötzlich geht nichts mehr\" ist zu unspezifisch, um eine Relevanz für die physiotherape",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "a85e03d6169c3de10228aed8693e7dd19adc159015a1d2bca83112078650c5cf",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Mythos Gleichgewichtsfähigkeit",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9wWGF0Wkxwek9QTk9NU3RMb1I4c3V6eTF4VWFfVFIxYk54RVd6akdzYWhIV1VtZ0VEZ1AwejdyWjJxX1UyVVZLUVZmM0F4clBtYm5UUms2REpINFRHVHJwb3hYX2NqaW85TDZDM1pTU3FqMlhsVzFEUQ?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T03:16:38.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung thematisiert Gleichgewichtsfähigkeit, was für die Physiotherapie relevant ist. Allerding",
+    "isTopNews": false,
+    "topics": [
+      "Sturzprävention",
+      "Bewegungstherapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "f037f6cb6720f6c01857c4b2396529e594c6a91e8c3befb4123f77cc81a9a431",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Nicht ins Stocken geraten",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA5OGtrYmE1SGc1ZkFvdDRXcmZTRFFyYTNDdUo1NE1VV2lROHRVLVZkTTl1R0x0eG9taWNISnU5N1UwVDBQWm1EVjF1dUhYV053VFlrNnZsUE43OEl6d0xZRGh1eXBrcW5oUm1lcW9sb1Q?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T03:16:37.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Allgemeine Aussage über das Aufrechterhalten von Aktivität, ohne spezifischen physiotherapeutischen ",
+    "isTopNews": false,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "3b7f065db4aff7659ef8432e01bd984dec8fb420ba474623f2d01251004ef853",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Gehen beginnt im Kopf",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1FNkdnSmstcVdvcUVFZ0VOYmtVdlR2TDFyc1F4TVJKeVhvOVB1RHo1ekN0NlJqd2dTSmpvUEhBa09EZEpZN21wbkJadDgxRXJwYVFZejBPaU9JUnZ3Tkp5ZUgyLTdDZG5TQXZF?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T02:03:36.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Allgemeine Aussage über die Bedeutung der kognitiven Steuerung von Bewegung, ohne konkreten Bezug zu",
+    "isTopNews": false,
+    "topics": [
+      "Neurologie",
+      "Bewegungstherapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "113dfdbb3f8af1ad9df5bfc0496575cf18b31e6af1402fa64854f70402bf68bd",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Wir sind Menschen, weil wir gehen",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9yb0VraFBWTzRNeDFLRnhBd25LRG94SDhFcUs2aXlFVTB5ZVBzdTNoRDR0N1pUdWdiNW16T3hSdlBJZFlwQXVwdUpuQS1CUFNIdmVxenh4aGI1c3FuUThpMWRhUEdzOW95RkthdEp3UlNnRFNjalhGaldR?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T00:35:36.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Philosophische Aussage über das Gehen, ohne direkten Bezug zur physiotherapeutischen Arbeit oder Wis",
+    "isTopNews": false,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "8d14789e42a47576248c18537017c010c2dd09c3626a71b92175bf3a7aeab9fc",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Glänzen beim schlenzen",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5JcE5KWGdZZUFpTDhvM2xIZXQxblc2V2p1MlB1cGNLaGtiY1FjRWdLZkNiZlViUDh1R0NnZG5TbmVLZ2pqY2stQl83V2Z2aWtQTzlNYUloSHZUTVBVWnQwZ0t3QjBVWjN1b1NUX1F3?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T00:35:35.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung thematisiert das Eisbaden, was eine Form der Kälteexposition ist. Während es gesundheitl",
+    "isTopNews": false,
+    "topics": [
+      "Sportphysiotherapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "f34c2c2c1e06ce72f4bef2212e62b1c80aad5730f950228ff052e963ff174b3a",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Cool bleiben beim Eisbaden",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE80dllvTERmZU54ZE16c00xLUtneU45SE8wS3NNVzN4OUVZcVRubGlaM1NNLUt0VHkzZGg4RmFGTWlhTEs3NkhuaTBpcGNKMXlQQUk4ZEVaWEt3TkhWa1RMS182UkZDZjgwQ1JjTGRsWDV5UQ?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T00:35:34.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung thematisiert Eisbaden. Obwohl Kälteexposition in der Physiotherapie Anwendung finden kan",
+    "isTopNews": false,
+    "topics": [
+      "Sportphysiotherapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "69c429426be300a4efa3f8916c8e1a16b8f5937bc6c7994797f6067ac7b1eb76",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Kribbeln? Wackeln? Gegensteuern!",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9FUVh2N3ExTlZJZmtiRXZMTHNpcW5Vd0ZWaHBJM3BYbWRiRG1ORkcwMGxyY3dQOHNaWVJtOHRoR2M4RUpXZFpXNEdwN1B6bUFQZXpMaVFibXdoeEdwSlF1RElSYVNXZENVXzh1UzJfcTBiVW1XaXc?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T00:35:33.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Allgemeine Aussage über sensorische Störungen, ohne spezifischen physiotherapeutischen Bezug oder ne",
+    "isTopNews": false,
+    "topics": [
+      "Neurologie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "4dfd5bd500e266516a57241abdbfaa6037584d79b39ccc75f1d350b9bc7f1d71",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Wenn die Luft knapp wird",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA0NER6NDFNS0NqUl9pQnJ4b2VqVzNHWUs1MzMzcUdUa05xWGh0R0MwcTlTdFh0cG14M1dzaEZHbkduajdrQ1FwazFVOTItTnZFQkZOMXFhb3dXTG55ZlQ1a3g3Z1ZxQ3V5bHltRHg4NA?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-10T00:00:14.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Könnte sich auf Atemtherapie beziehen, aber ohne konkrete neue Erkenntnisse oder Änderungen für die ",
+    "isTopNews": false,
+    "topics": [
+      "Atemtherapie"
     ],
     "lang": "de"
   },
@@ -305,6 +832,22 @@
     "lang": "de"
   },
   {
+    "id": "20b238c85ec8539fef8d84683cd6484a3ec0c551bbe40aef56ce8beb5c7d0369",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "„Sie halten unser Pflegesystem am Laufen.“",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPbWlHbjJRcXJmaU1ReEdHS0I5aXNaVnBLbkZTSEFMVHp3THVLblBnWGRRdUNHZzV1bGwyNVlsSWZ5SXZFQlpEbVpiODRmV0dZUnBjcndBMERuX2tTcE14QnFQS2hsS3RTQzdaOHFQN29laXNoVm1nU3FwY1VaLThGMTdkaE1EaHN2NXc?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-08T14:12:39.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Aussage \"Sie halten unser Pflegesystem am Laufen\" ist eine allgemeine Würdigung ohne direkten Be",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
     "id": "6034a55144307b3f529fbc8e3b22eac6865ba1ac2d67fff7d05395234eeef673",
     "sourceId": "cbe1c07e-ab05-4fe8-8cbd-063112fcd6f3",
     "title": "DGSP beim dvs-Kongress Gesundheit 2026 in Köln: Smart Health und Bewegung als Schlüssel einer zukunftsfähigen Gesundheitsversorgung",
@@ -320,6 +863,24 @@
     "topics": [
       "Bewegungstherapie",
       "Veranstaltung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "5108d9df93c24004b2aec88854fc22773dc0953853a63b91bd1c1b52a11b2f98",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Puls hoch, Risiko runter",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9SVTZRUDFmTV8zWlVGU2M4WkNOdFZrbVQ2cl9ORDFuSVd2eXRVLXFFMGJPTjVqRGtVT2ZWNTVnaThwMERoVnJ2cHZ3ME14MmttSUgxdHBJMHhVOVgyRE5weldHR0R2OEVVZjZ6ME8yUVJlUWJq?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-07T09:51:30.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Allgemeine Gesundheitsförderung ohne direkten Bezug zur physiotherapeutischen Praxis.",
+    "isTopNews": false,
+    "topics": [
+      "Bewegungstherapie"
     ],
     "lang": "de"
   },
@@ -342,6 +903,59 @@
     "lang": "de"
   },
   {
+    "id": "c4bdac33a6718b0edd428ad03ebc5df9a4ab12e05790e613d88cb226b00bcbcb",
+    "sourceId": "4553dd52-6dda-4f34-b43f-a0f6f2b1c1e3",
+    "title": "AOK-Tag in Dortmund – \"Primärversorgung neu denken\"",
+    "summary": "AOK‑Tag 2026 in Dortmund am 03.09.2026: Im Fokus stand die Zukunft der Primärversorgung – mit klaren Patientenwegen, digitaler Ersteinschätzung und…",
+    "url": "https://vpt-nord-west.de/aktuelles/newsarchiv/news-archiv-detail/aok-tag-in-dortmund-primaerversorgung-neu-denken/",
+    "imageUrl": "https://vpt-nrw.de/fileadmin/_processed_/2/d/csm_Foto_AOK_Tag_Dortmund_88a2901b4d.jpg",
+    "publishedAt": "2026-09-04T12:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:47.345Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der AOK-Tag mit dem Thema \"Primärversorgung neu denken\" könnte mittelbar relevant sein, da er die zu",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "5ffa9bb6edfae6c521b8511ad738201c9d102276f5cfc267cf2cba3f40a456a7",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "NovoMotion®: Videowissen für die Physiotherapie bei Hämophilie",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOYUVIX3I4ZFFsS1E3aVlndzdYOFNOY05TdUxjXzBCdS0zUHlUVTdzRFZfRmxEX2o4VTVjUlJ1RWVxcjhSSlVYdWZ6UkdhV0tpZU5qV3lHU0FhdjlwQ1BvQzlFWTNqcmt6YUxVQ1h4VWl1elYtSHNjb2p1ZU1lZGUweUxWeFhDV2JJaGVNS29LdWsxR0MxYVJPa3EtdlJ1TGRQS3pkT19yd0o?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-03T16:45:13.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 5,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Spezifisches Wissen über ein Hilfsmittel für eine seltene Erkrankung, das für die breite physiothera",
+    "isTopNews": false,
+    "topics": [
+      "Neurologie",
+      "Fortbildung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "0e446235d965674f18fc1acdbe0ef8776c3bb466fa978eb84a9d8f5b51b78694",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Keine Angst vorm Blick aufs Konto",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOd2daek5ibVpxVzRIRElrN2tsS1ZZbmp1bjNyVnpfMVNGNkxIZS1ZcHY1eUxjNnJUNFJTTk1LdWR4bGMwNG84dkNfVlhIUENReWJLMm5aSVlrS0d0ZHAwbVVKTnFLLVAxa19vcmVLYnRhZkVTYWh6QklnOTJvZ2J1R2tR?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-09-03T12:53:04.000Z",
+    "fetchedAt": "2026-09-18T10:40:51.637Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung \"Keine Angst vorm Blick aufs Konto\" könnte mittelbar relevant sein, da sie sich auf fina",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
     "id": "ca54a21c682a5c6949f8a990fded9526ac258ff052b20d45c885f85f31384dc0",
     "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
     "title": "Alle maßgeblichen Verbände der Physio- und Ergotherapie gemeinsam gegen drohende Absetzungen",
@@ -350,6 +964,24 @@
     "imageUrl": null,
     "publishedAt": "2026-09-02T12:00:00.000Z",
     "fetchedAt": "2026-09-17T13:20:45.673Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Alle maßgeblichen Verbände der Physio- und Ergotherapie gemeinsam gegen drohende Absetzungen",
+    "isTopNews": false,
+    "topics": [
+      "Berufsverband"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "9e6b187bcb9460c3f10647fad5ca72b28538ab616c1f4dbb0d35f4a878dcdc19",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Alle maßgeblichen Verbände der Physio- und Ergotherapie gemeinsam gegen drohende Absetzungen",
+    "summary": null,
+    "url": "https://www.ifk.de/artikel/alle-massgeblichen-verbaende-der-physio-und-ergotherapie-gemeinsam-gegen-drohende",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/IM_BMG.jpg?itok=I1Ub8dUm",
+    "publishedAt": "2026-09-02T12:00:00.000Z",
+    "fetchedAt": "2026-09-18T10:40:46.158Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Alle maßgeblichen Verbände der Physio- und Ergotherapie gemeinsam gegen drohende Absetzungen",
@@ -425,7 +1057,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Achtung: Zertifikatsleistungen erst nach erteilter Abgabeberechtigung durchführen",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Fortbildung",
       "GKV-Vergütung"
@@ -694,7 +1326,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Regressgefahr Blankoverordnung - Kassen machen ernst!",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Blankoverordnung",
       "GKV-Vergütung"
