@@ -8,9 +8,9 @@
  */
 import { randomUUID } from 'node:crypto';
 import webpush from 'web-push';
-import { loadNews, saveNews } from '@/data/news';
+import { loadNews } from '@/data/news';
+import { loadNotifiedIds, markNotified } from '@/data/notified';
 import { listSources } from '@/data/sources';
-import { getSettings, updateSettings } from '@/data/settings';
 import {
   listPushSubscriptions,
   removePushSubscriptions,
@@ -91,14 +91,18 @@ export async function sendPushToAllSubscriptions(payload: PushPayload): Promise<
 /**
  * Notifiziert über NEUE hochrelevante Items — strikt einmal pro Item.
  *
- * Strategie (per-Item-Marker, robust gegen doppelte Läufe):
- *  - Auswahl: Items mit `notifiedAt === null`, Score >= threshold, aus
- *    Quellen mit aktivierten Benachrichtigungen, neueste zuerst
+ * Strategie (Register in data/notified.json, robust gegen doppelte Läufe):
+ *  - Auswahl: Items, deren ID nicht im Register steht, Score >= threshold,
+ *    aus Quellen mit aktivierten Benachrichtigungen, neueste zuerst
  *  - Limit `maxPushes` pro Aufruf (Sicherheitsdeckel gegen Spam)
- *  - `notifiedAt` wird VOR dem Versand gesetzt und gespeichert — egal ob
- *    der Versand selbst klappt (eine Bestätigung bekommen wir vom
- *    Push-Service ohnehin nicht)
- *  - Items über dem Limit bleiben `null` und kommen im nächsten Lauf dran
+ *  - Die IDs werden VOR dem Versand vermerkt — egal ob der Versand selbst
+ *    klappt (eine Bestätigung bekommen wir vom Push-Service ohnehin nicht)
+ *  - Items über dem Limit bleiben unvermerkt und kommen im nächsten Lauf dran
+ *
+ * Das Register überdauert das Item bewusst: Retention und Quellen-Deckel
+ * löschen Items, die auf der Quellseite weiter gelistet sind, und der
+ * nächste Abruf liest sie mit derselben ID erneut ein. Hinge die Zusage am
+ * Item, würde dieselbe Meldung alle zwei Stunden erneut gepusht.
  *
  * Wenn `notificationsEnabled=false`: NICHTS wird gemacht. Items bleiben
  * `null` und werden gepusht, sobald Benachrichtigungen wieder aktiv sind.
@@ -120,19 +124,22 @@ export async function notifyNewHighRelevanceItems(opts: {
   }
 
   // Ohne angemeldetes Gerät gibt es nichts zu senden — und vor allem darf
-  // dann auch `notifiedAt` nicht gesetzt werden. Sonst gälten die Items als
-  // erledigt und würden nie nachgeholt, sobald sich das erste Gerät anmeldet.
+  // dann auch nichts vermerkt werden. Sonst gälten die Items als erledigt
+  // und würden nie nachgeholt, sobald sich das erste Gerät anmeldet.
   if ((await listPushSubscriptions()).length === 0) {
     return { pushSent: 0, itemsConsidered: 0 };
   }
 
-  const news = await loadNews();
-  const sources = await listSources();
+  const [news, sources, alreadyNotified] = await Promise.all([
+    loadNews(),
+    listSources(),
+    loadNotifiedIds(),
+  ]);
   const sourceById = new Map(sources.map((s) => [s.id, s]));
 
   const candidates = news
     .filter((item) => {
-      if (item.notifiedAt !== null) return false;
+      if (alreadyNotified.has(item.id)) return false;
       if (item.relevanceScore < opts.threshold) return false;
       return sourceById.get(item.sourceId)?.notificationsEnabled === true;
     })
@@ -143,15 +150,10 @@ export async function notifyNewHighRelevanceItems(opts: {
     return { pushSent: 0, itemsConsidered: 0 };
   }
 
-  // WICHTIG: Erst `notifiedAt` setzen und speichern, DANN senden. Startet
-  // ein weiterer Lauf parallel, sieht der diese Items bereits als
-  // notifiziert und überspringt sie — Doppel-Pushes sind damit
-  // ausgeschlossen.
-  const now = new Date();
-  for (const item of candidates) {
-    item.notifiedAt = now;
-  }
-  await saveNews(news, 'chore(data): Push-Markierungen gesetzt');
+  // WICHTIG: Erst vermerken und speichern, DANN senden. Startet ein
+  // weiterer Lauf parallel, sieht der diese Items bereits als notifiziert
+  // und überspringt sie — Doppel-Pushes sind damit ausgeschlossen.
+  await markNotified(candidates.map((c) => c.id));
 
   let pushSent = 0;
   for (const item of candidates) {
@@ -166,15 +168,9 @@ export async function notifyNewHighRelevanceItems(opts: {
       });
     } catch (err) {
       // Ein einzelner Push-Fehler darf den ganzen Lauf nicht abbrechen.
-      // `notifiedAt` bleibt gesetzt — ein Retry würde sonst doppelt pushen.
+      // Der Vermerk bleibt stehen — ein Retry würde sonst doppelt pushen.
       console.error('[Notify] Push fehlgeschlagen für item', item.id, err);
     }
-  }
-
-  // Zeitpunkt als Sekundär-Marker mitführen (die Settings-Seite zeigt ihn an).
-  const settings = await getSettings();
-  if (settings.lastNotifiedAt?.getTime() !== now.getTime()) {
-    await updateSettings({ lastNotifiedAt: now });
   }
 
   return { pushSent, itemsConsidered: candidates.length };

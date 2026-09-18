@@ -21,7 +21,6 @@ interface StoredSettings {
   maxItemsPerSource: number;
   notificationsEnabled: boolean;
   lastGlobalRefreshAt: string | null;
-  lastNotifiedAt: string | null;
 }
 
 /**
@@ -47,7 +46,6 @@ export const DEFAULT_SETTINGS: AppSettings = {
   maxItemsPerSource: 8,
   notificationsEnabled: true,
   lastGlobalRefreshAt: null,
-  lastNotifiedAt: null,
 };
 
 function fromStored(stored: Partial<StoredSettings>): AppSettings {
@@ -61,7 +59,6 @@ function fromStored(stored: Partial<StoredSettings>): AppSettings {
     notificationsEnabled:
       stored.notificationsEnabled ?? DEFAULT_SETTINGS.notificationsEnabled,
     lastGlobalRefreshAt: toDate(stored.lastGlobalRefreshAt),
-    lastNotifiedAt: toDate(stored.lastNotifiedAt),
   };
 }
 
@@ -75,7 +72,6 @@ function toStored(settings: AppSettings): StoredSettings {
     maxItemsPerSource: settings.maxItemsPerSource,
     notificationsEnabled: settings.notificationsEnabled,
     lastGlobalRefreshAt: settings.lastGlobalRefreshAt?.toISOString() ?? null,
-    lastNotifiedAt: settings.lastNotifiedAt?.toISOString() ?? null,
   };
 }
 

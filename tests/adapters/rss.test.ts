@@ -2,24 +2,11 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { RssAdapter } from '../../src/lib/adapters/rss';
-import type { Source } from '../../src/data/types';
+import { makeSource } from '../helpers';
 
 const fixture = readFileSync(join(__dirname, 'fixtures/sample-rss.xml'), 'utf-8');
 
-const fakeSource: Source = {
-  id: 'test-src',
-  name: 'Test',
-  url: 'https://example.com/feed.xml',
-  adapterType: 'rss',
-  category: 'evidenz',
-  iconName: null,
-  isEnabled: true,
-  notificationsEnabled: true,
-  lastFetchAt: null,
-  lastSuccessAt: null,
-  lastError: null,
-  createdAt: new Date(),
-};
+const fakeSource = makeSource({ url: 'https://example.com/feed.xml', adapterType: 'rss' });
 
 describe('RssAdapter', () => {
   beforeEach(() => {

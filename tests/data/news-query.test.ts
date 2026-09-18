@@ -29,7 +29,6 @@ const { files } = vi.hoisted(() => {
     summary: null as string | null,
     imageUrl: null,
     fetchedAt: '2026-05-23T08:00:00.000Z',
-    notifiedAt: null,
     relevanceMethod: 'ai',
     relevanceReason: null,
     isTopNews: false,

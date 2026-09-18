@@ -17,5 +17,7 @@ export interface ClientSource {
   lastFetchAt: string | null;
   lastSuccessAt: string | null;
   lastError: string | null;
+  lastItemCount: number | null;
+  emptyRunsInARow: number;
   createdAt: string;
 }

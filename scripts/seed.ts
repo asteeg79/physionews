@@ -82,7 +82,6 @@ const DEFAULT_SETTINGS = {
   maxItemsPerSource: 8,
   notificationsEnabled: true,
   lastGlobalRefreshAt: null,
-  lastNotifiedAt: null,
 };
 
 async function exists(file: string): Promise<boolean> {

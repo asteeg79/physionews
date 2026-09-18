@@ -3,6 +3,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import * as cheerio from 'cheerio';
 import type { Source } from '../../src/data/types';
+import { makeSource } from '../helpers';
 
 import { IfkAdapter } from '../../src/lib/adapters/html/ifk';
 import { BmgAdapter } from '../../src/lib/adapters/html/bmg';
@@ -24,11 +25,7 @@ function loadAndParse(
 ) {
   const html = readFileSync(join(FIX, fixture), 'utf-8');
   const $ = cheerio.load(html);
-  const src: Source = {
-    id: 'test', name: 'test', url: baseUrl, adapterType: 'test', category: 'evidenz',
-    iconName: null, isEnabled: true, notificationsEnabled: true,
-    lastFetchAt: null, lastSuccessAt: null, lastError: null, createdAt: new Date(),
-  };
+  const src = makeSource({ id: 'test', name: 'test', url: baseUrl });
   return (adapter.parse as (a: typeof $, b: string, c: Source) => Array<{ title: string; url: string; publishedAt: Date }>)($, baseUrl, src);
 }
 

@@ -73,7 +73,6 @@ const { mockNews, mockSources, savedNews } = vi.hoisted(() => {
     url: `https://example.test/${n.id}`,
     imageUrl: null,
     fetchedAt: new Date('2026-05-23'),
-    notifiedAt: null,
     relevanceMethod: 'ai' as const,
     relevanceReason: null,
     isTopNews: false,

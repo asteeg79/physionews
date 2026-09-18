@@ -31,6 +31,10 @@ export interface FetchResult {
   sourceName: string;
   /** Anzahl Items, die wirklich neu hinzugekommen sind (Dedup-Treffer zählen nicht). */
   newItems: number;
+  /** Anzahl geparster Beiträge — 0 trotz HTTP 200 heißt: Adapter greift nicht mehr. */
+  parsedItems: number;
+  /** Wie viele Abrufe in Folge nichts geparst haben. */
+  emptyRunsInARow: number;
   /** Fehlermeldung, falls der Abruf auch nach dem Retry fehlgeschlagen ist. */
   error?: string;
 }
@@ -85,8 +89,18 @@ async function fetchSource(
 
       source.lastSuccessAt = now;
       source.lastError = null;
+      source.lastItemCount = rawItems.length;
+      // Ein Abruf ohne einen einzigen geparsten Beitrag ist kein Erfolg,
+      // auch wenn HTTP 200 kam — meist hat die Quelle ihr Markup geändert.
+      source.emptyRunsInARow = rawItems.length === 0 ? source.emptyRunsInARow + 1 : 0;
 
-      return { sourceId: source.id, sourceName: source.name, newItems };
+      return {
+        sourceId: source.id,
+        sourceName: source.name,
+        newItems,
+        parsedItems: rawItems.length,
+        emptyRunsInARow: source.emptyRunsInARow,
+      };
     } catch (err) {
       lastError = err;
       if (!isRetryable(err) || attempt === 2) break;
@@ -101,7 +115,14 @@ async function fetchSource(
   console.error(`[FeedFetcher] Fehler bei "${source.name}":`, message);
   source.lastError = message.slice(0, 500);
 
-  return { sourceId: source.id, sourceName: source.name, newItems: 0, error: message };
+  return {
+    sourceId: source.id,
+    sourceName: source.name,
+    newItems: 0,
+    parsedItems: 0,
+    emptyRunsInARow: source.emptyRunsInARow,
+    error: message,
+  };
 }
 
 /**
@@ -173,7 +194,6 @@ function appendItems(
       imageUrl: item.imageUrl ?? null,
       publishedAt,
       fetchedAt,
-      notifiedAt: null,
       relevanceScore: 5,
       relevanceMethod: 'pending',
       relevanceReason: null,

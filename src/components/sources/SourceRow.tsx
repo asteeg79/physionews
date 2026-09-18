@@ -31,15 +31,27 @@ export function SourceRow({ source, onUpdate, onDelete }: Readonly<SourceRowProp
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <p className="font-medium text-sm truncate">{source.name}</p>
-            <SourceStatusIcon hasError={hasError} lastSuccessAt={source.lastSuccessAt} />
+            <SourceStatusIcon
+              hasError={hasError}
+              isEmpty={source.emptyRunsInARow > 0}
+              lastSuccessAt={source.lastSuccessAt}
+            />
           </div>
           <p className="text-xs text-muted-foreground truncate">{source.url}</p>
           {source.lastError && (
             <p className="text-xs text-destructive mt-1 line-clamp-2">{source.lastError}</p>
           )}
-          {source.lastSuccessAt && !hasError && (
+          {source.emptyRunsInARow > 0 && !hasError && (
+            <p className="text-xs text-amber-600 mt-1">
+              Liefert seit {source.emptyRunsInARow}{' '}
+              {source.emptyRunsInARow === 1 ? 'Lauf' : 'Läufen'} keine Beiträge — Adapter
+              greift vermutlich nicht mehr.
+            </p>
+          )}
+          {source.lastSuccessAt && !hasError && source.emptyRunsInARow === 0 && (
             <p className="text-xs text-muted-foreground mt-1">
               Zuletzt: {new Date(source.lastSuccessAt).toLocaleString('de-DE')}
+              {source.lastItemCount !== null && ` · ${source.lastItemCount} Beiträge`}
             </p>
           )}
         </div>
@@ -82,10 +94,20 @@ export function SourceRow({ source, onUpdate, onDelete }: Readonly<SourceRowProp
 /** Statussymbol einer Quelle: Fehler, erfolgreicher Abruf, oder noch nie abgerufen. */
 function SourceStatusIcon({
   hasError,
+  isEmpty,
   lastSuccessAt,
-}: Readonly<{ hasError: boolean; lastSuccessAt: string | null }>) {
+}: Readonly<{ hasError: boolean; isEmpty: boolean; lastSuccessAt: string | null }>) {
   if (hasError) {
     return <AlertCircle className="w-3.5 h-3.5 text-destructive shrink-0" aria-label="Fehler" />;
+  }
+  if (isEmpty) {
+    // Abruf ohne Fehler, aber ohne Ergebnis — nicht als Erfolg ausweisen.
+    return (
+      <AlertCircle
+        className="w-3.5 h-3.5 text-amber-600 shrink-0"
+        aria-label="Liefert keine Beiträge"
+      />
+    );
   }
   if (lastSuccessAt) {
     return (

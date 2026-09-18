@@ -28,6 +28,8 @@ interface StoredSource {
   lastFetchAt: string | null;
   lastSuccessAt: string | null;
   lastError: string | null;
+  lastItemCount: number | null;
+  emptyRunsInARow: number;
   createdAt: string;
 }
 
@@ -40,6 +42,8 @@ function fromStored(s: StoredSource): Source {
     lastFetchAt: toDate(s.lastFetchAt),
     lastSuccessAt: toDate(s.lastSuccessAt),
     lastError: s.lastError ?? null,
+    lastItemCount: s.lastItemCount ?? null,
+    emptyRunsInARow: s.emptyRunsInARow ?? 0,
     createdAt: toRequiredDate(s.createdAt),
   };
 }
@@ -57,6 +61,8 @@ function toStored(s: Source): StoredSource {
     lastFetchAt: s.lastFetchAt?.toISOString() ?? null,
     lastSuccessAt: s.lastSuccessAt?.toISOString() ?? null,
     lastError: s.lastError,
+    lastItemCount: s.lastItemCount,
+    emptyRunsInARow: s.emptyRunsInARow,
     createdAt: s.createdAt.toISOString(),
   };
 }
@@ -111,6 +117,8 @@ export async function addSource(input: {
     lastFetchAt: null,
     lastSuccessAt: null,
     lastError: null,
+    lastItemCount: null,
+    emptyRunsInARow: 0,
     createdAt: new Date(),
   };
   await saveSources([...sources, created], `chore(data): Quelle "${created.name}" angelegt`);

@@ -37,7 +37,6 @@ interface StoredNewsItem {
   imageUrl: string | null;
   publishedAt: string;
   fetchedAt: string;
-  notifiedAt: string | null;
   relevanceScore: number;
   relevanceMethod: RelevanceMethod;
   relevanceReason: string | null;
@@ -56,7 +55,6 @@ function fromStored(n: StoredNewsItem): NewsItem {
     imageUrl: n.imageUrl ?? null,
     publishedAt: toRequiredDate(n.publishedAt),
     fetchedAt: toRequiredDate(n.fetchedAt),
-    notifiedAt: toDate(n.notifiedAt),
     relevanceScore: n.relevanceScore ?? 5,
     relevanceMethod: n.relevanceMethod ?? 'pending',
     relevanceReason: n.relevanceReason ?? null,
@@ -76,7 +74,6 @@ function toStored(n: NewsItem): StoredNewsItem {
     imageUrl: n.imageUrl,
     publishedAt: n.publishedAt.toISOString(),
     fetchedAt: n.fetchedAt.toISOString(),
-    notifiedAt: n.notifiedAt?.toISOString() ?? null,
     relevanceScore: n.relevanceScore,
     relevanceMethod: n.relevanceMethod,
     relevanceReason: n.relevanceReason,

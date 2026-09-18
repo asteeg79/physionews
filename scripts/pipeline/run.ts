@@ -61,6 +61,20 @@ async function stageFetch(): Promise<void> {
   for (const r of failed) {
     console.warn(`::warning::Quelle "${r.sourceName}": ${r.error}`);
   }
+
+  // Ein Abruf ohne Fehler, der nichts geparst hat, ist der gefährlichere
+  // Fall: er sieht in der Quellenverwaltung wie ein Erfolg aus. Meist hat
+  // die Quelle ihr Markup geändert und der Adapter greift ins Leere.
+  const empty = results.filter((r) => !r.error && r.parsedItems === 0);
+  for (const r of empty) {
+    console.warn(
+      `::warning::Quelle "${r.sourceName}" hat nichts geliefert ` +
+        `(${r.emptyRunsInARow}. Lauf in Folge ohne Treffer) — Adapter prüfen.`
+    );
+  }
+  if (empty.length > 0) {
+    console.log(`${empty.length} von ${results.length} Quellen lieferten nichts.`);
+  }
 }
 
 async function stageClassify(): Promise<void> {

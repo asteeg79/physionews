@@ -2,27 +2,11 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { GenericHtmlAdapter } from '../../src/lib/adapters/html/generic';
-import type { Source } from '../../src/data/types';
+import { makeSource as buildSource } from '../helpers';
 
 const jsonLdFixture = readFileSync(join(__dirname, 'fixtures/sample-jsonld.html'), 'utf-8');
 const domFixture = readFileSync(join(__dirname, 'fixtures/sample-dom.html'), 'utf-8');
 
-function makeSource(url: string): Source {
-  return {
-    id: 'test',
-    name: 'Test',
-    url,
-    adapterType: 'html:test',
-    category: 'evidenz',
-    iconName: null,
-    isEnabled: true,
-    notificationsEnabled: true,
-    lastFetchAt: null,
-    lastSuccessAt: null,
-    lastError: null,
-    createdAt: new Date(),
-  };
-}
 
 describe('GenericHtmlAdapter', () => {
   afterEach(() => {
@@ -36,7 +20,7 @@ describe('GenericHtmlAdapter', () => {
       ) as unknown as typeof fetch;
 
       const adapter = new GenericHtmlAdapter('html:test');
-      const items = await adapter.fetch(makeSource('https://example.com/news'));
+      const items = await adapter.fetch(buildSource({ url: 'https://example.com/news' }));
 
       expect(items).toHaveLength(2);
       expect(items[0].title).toBe('Neue Studie zur Physiotherapie bei Rückenschmerzen');
@@ -53,7 +37,7 @@ describe('GenericHtmlAdapter', () => {
       ) as unknown as typeof fetch;
 
       const adapter = new GenericHtmlAdapter('html:test');
-      const items = await adapter.fetch(makeSource('https://example.com/aktuelles/'));
+      const items = await adapter.fetch(buildSource({ url: 'https://example.com/aktuelles/' }));
 
       // Erwartet: nur die 2 echten Artikel
       expect(items).toHaveLength(2);
@@ -72,7 +56,7 @@ describe('GenericHtmlAdapter', () => {
       ) as unknown as typeof fetch;
 
       const adapter = new GenericHtmlAdapter('html:test');
-      const items = await adapter.fetch(makeSource('https://example.com/aktuelles/'));
+      const items = await adapter.fetch(buildSource({ url: 'https://example.com/aktuelles/' }));
       const article1 = items.find((i) => i.title.includes('Berufspolitik'));
       expect(article1).toBeDefined();
       expect(article1!.publishedAt.toISOString()).toContain('2025-01-14');
@@ -85,6 +69,6 @@ describe('GenericHtmlAdapter', () => {
     ) as unknown as typeof fetch;
 
     const adapter = new GenericHtmlAdapter('html:test');
-    await expect(adapter.fetch(makeSource('https://example.com/missing'))).rejects.toThrow(/HTTP 404/);
+    await expect(adapter.fetch(buildSource({ url: 'https://example.com/missing' }))).rejects.toThrow(/HTTP 404/);
   });
 });

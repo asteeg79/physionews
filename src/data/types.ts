@@ -47,6 +47,22 @@ export interface Source {
   lastFetchAt: Date | null;
   lastSuccessAt: Date | null;
   lastError: string | null;
+  /**
+   * Wie viele Beiträge der letzte erfolgreiche Abruf geparst hat.
+   *
+   * Bewusst die geparste Menge, nicht die der neuen Items: eine Quelle ohne
+   * neue Beiträge ist normal, eine ohne jeden geparsten Beitrag ist kaputt.
+   * `null` = noch nie erfolgreich abgerufen.
+   */
+  lastItemCount: number | null;
+  /**
+   * Wie viele erfolgreiche Abrufe in Folge nichts geparst haben.
+   *
+   * Ohne diesen Zähler war eine tote Quelle von einer stillen nicht zu
+   * unterscheiden: `lastSuccessAt` wurde gesetzt, sobald der HTTP-Abruf
+   * durchging — auch wenn der Adapter am veränderten Markup scheiterte.
+   */
+  emptyRunsInARow: number;
   createdAt: Date;
 }
 
@@ -67,12 +83,6 @@ export interface NewsItem {
   imageUrl: string | null;
   publishedAt: Date;
   fetchedAt: Date;
-  /**
-   * Zeitpunkt der ersten Push-Notification. `null` = noch nie notifiziert.
-   * Strikt einmal-pro-Item: sobald gesetzt, wird das Item nie wieder
-   * gepusht — auch nicht nach Löschen und erneutem Einlesen.
-   */
-  notifiedAt: Date | null;
   /** 0 = irrelevant, 10 = hochrelevant für Physiotherapie. */
   relevanceScore: number;
   relevanceMethod: RelevanceMethod;
@@ -106,7 +116,6 @@ export interface AppSettings {
   maxItemsPerSource: number;
   notificationsEnabled: boolean;
   lastGlobalRefreshAt: Date | null;
-  lastNotifiedAt: Date | null;
 }
 
 /** Eine Web-Push-Subscription. Datei: `data/push-subscriptions.enc.json`. */
