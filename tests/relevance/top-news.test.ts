@@ -94,10 +94,16 @@ vi.mock('@/data/sources', () => ({
   listSources: async () => mockSources,
 }));
 
-// recordUsage schreibt sonst wirklich data/gemini-usage.json.
+// Zustandsbehafteter Store: recordUsage und die Top-News-Signatur schreiben
+// sonst wirklich nach data/. So bleibt beides im Speicher und ist prüfbar.
+const { files } = vi.hoisted(() => ({ files: new Map<string, unknown>() }));
+
 vi.mock('@/data/json-store', () => ({
-  readJson: async <T,>(_file: string, fallback: T) => fallback,
-  writeJson: async () => undefined,
+  readJson: async <T,>(file: string, fallback: T) =>
+    files.has(file) ? (files.get(file) as T) : fallback,
+  writeJson: async (file: string, value: unknown) => {
+    files.set(file, value);
+  },
   toRequiredDate: (value: string | null | undefined) => (value ? new Date(value) : new Date(0)),
   toDate: (value: string | null | undefined) => (value ? new Date(value) : null),
   clearCache: () => undefined,
@@ -105,6 +111,7 @@ vi.mock('@/data/json-store', () => ({
 
 beforeEach(() => {
   vi.clearAllMocks();
+  files.clear();
 });
 
 afterEach(() => {
@@ -250,5 +257,64 @@ describe('selectAndPersistTopNews', () => {
     } finally {
       vi.useRealTimers();
     }
+  });
+
+  it('überspringt die Anfrage, wenn sich der Kandidaten-Pool nicht geändert hat', async () => {
+    process.env.GEMINI_API_KEY = 'test-key';
+    let calls = 0;
+    global.fetch = vi.fn(async () => {
+      calls++;
+      return new Response(
+        JSON.stringify({
+          candidates: [
+            { content: { parts: [{ text: JSON.stringify(['item-3', 'item-4', 'item-1']) }] } },
+          ],
+        }),
+        { status: 200 }
+      );
+    }) as unknown as typeof fetch;
+
+    vi.resetModules();
+    const { selectAndPersistTopNews } = await import('../../src/lib/relevance/top-news');
+
+    const erster = await selectAndPersistTopNews();
+    expect(calls).toBe(1);
+    expect(erster.usedAi).toBe(true);
+    expect(erster.reusedPrevious).toBe(false);
+
+    // Zweiter Lauf, unveränderter Pool: keine weitere Anfrage.
+    const zweiter = await selectAndPersistTopNews();
+    expect(calls).toBe(1);
+    expect(zweiter.reusedPrevious).toBe(true);
+    expect(zweiter.selectedIds).toEqual(erster.selectedIds);
+  });
+
+  it('fragt erneut, wenn sich ein Score im Pool geändert hat', async () => {
+    process.env.GEMINI_API_KEY = 'test-key';
+    let calls = 0;
+    global.fetch = vi.fn(async () => {
+      calls++;
+      return new Response(
+        JSON.stringify({
+          candidates: [
+            { content: { parts: [{ text: JSON.stringify(['item-1', 'item-3', 'item-4']) }] } },
+          ],
+        }),
+        { status: 200 }
+      );
+    }) as unknown as typeof fetch;
+
+    vi.resetModules();
+    const { selectAndPersistTopNews } = await import('../../src/lib/relevance/top-news');
+
+    await selectAndPersistTopNews();
+    expect(calls).toBe(1);
+
+    // Eine Neubewertung ändert die Rangfolge, ohne dass ein Item wegfällt.
+    mockNews[0].relevanceScore = 7;
+    const zweiter = await selectAndPersistTopNews();
+    expect(calls).toBe(2);
+    expect(zweiter.reusedPrevious).toBe(false);
+    mockNews[0].relevanceScore = 10;
   });
 });

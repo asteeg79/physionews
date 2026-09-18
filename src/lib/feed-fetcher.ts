@@ -16,6 +16,8 @@ import pLimit from 'p-limit';
 import type { NewsItem, Source } from '@/data/types';
 import { listSources, saveSources } from '@/data/sources';
 import { loadNews, saveNews } from '@/data/news';
+import { loadDroppedIds } from '@/data/dropped';
+import { RUBRIC_VERSION } from './relevance/gemini';
 import { computeItemId } from './dedup';
 import { getAdapter } from './adapters/registry';
 import { detectLanguage } from './lang-detect';
@@ -48,7 +50,12 @@ export interface FetchResult {
 export async function fetchAllSources(): Promise<{ results: FetchResult[]; totalNew: number }> {
   const sources = await listSources();
   const news = await loadNews();
-  const knownIds = new Set(news.map((n) => n.id));
+
+  // Bekannt ist nicht nur, was im Bestand liegt, sondern auch, was bereits
+  // als irrelevant verworfen wurde — sonst liest jeder Lauf dieselben
+  // Beiträge erneut ein, nur um sie wieder zu verwerfen.
+  const dropped = await loadDroppedIds(RUBRIC_VERSION);
+  const knownIds = new Set([...news.map((n) => n.id), ...dropped]);
 
   const limit = pLimit(MAX_CONCURRENT);
   const results = await Promise.all(

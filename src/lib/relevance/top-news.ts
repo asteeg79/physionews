@@ -19,6 +19,7 @@ import type { NewsItem } from '@/data/types';
 import { loadNews, saveNews } from '@/data/news';
 import { listSources } from '@/data/sources';
 import { getSettings } from '@/data/settings';
+import { loadTopNewsState, poolSignature, saveTopNewsState } from '@/data/top-news-state';
 import { getQuotaStatus, recordUsage } from './gemini-quota';
 
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
@@ -101,6 +102,8 @@ export interface TopNewsResult {
   selectedIds: string[];
   /** Wurde Gemini erfolgreich konsultiert? false = Fallback auf Score-DESC */
   usedAi: boolean;
+  /** Wurde die vorherige Auswahl übernommen, weil sich der Pool nicht geändert hat? */
+  reusedPrevious: boolean;
   /** Anzahl Kandidaten, aus denen ausgewählt wurde */
   poolSize: number;
   /** Geschätzter Token-Verbrauch */
@@ -119,21 +122,46 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
 
   if (pool.length === 0) {
     await persistFlags(news, []);
-    return { selectedIds: [], usedAi: false, poolSize: 0, tokensEstimated: 0 };
+    return { selectedIds: [], usedAi: false, reusedPrevious: false, poolSize: 0, tokensEstimated: 0 };
   }
 
   // 2. Bei sehr kleiner Liste: nimm einfach alle bzw. die Top-N
   if (pool.length <= TOP_N) {
     const ids = pool.map((p) => p.id);
     await persistFlags(news, ids);
-    return { selectedIds: ids, usedAi: false, poolSize: pool.length, tokensEstimated: 0 };
+    return {
+      selectedIds: ids,
+      usedAi: false,
+      reusedPrevious: false,
+      poolSize: pool.length,
+      tokensEstimated: 0,
+    };
   }
 
-  // 3. AI-Auswahl
+  // 3. Hat sich am Pool nichts geändert, gilt die letzte Auswahl weiter.
+  //    Spart eine Gemini-Anfrage pro Lauf — bei 20 Anfragen Tagesbudget und
+  //    neun geplanten Läufen ist das der größte einzelne Posten.
+  const signature = poolSignature(pool);
+  const previous = await loadTopNewsState();
+  if (previous?.signature === signature && previous.selectedIds.length > 0) {
+    const stillPresent = new Set(news.map((n) => n.id));
+    if (previous.selectedIds.every((id) => stillPresent.has(id))) {
+      await persistFlags(news, previous.selectedIds);
+      return {
+        selectedIds: previous.selectedIds,
+        usedAi: false,
+        reusedPrevious: true,
+        poolSize: pool.length,
+        tokensEstimated: 0,
+      };
+    }
+  }
+
+  // 4. AI-Auswahl
   const ai = await selectByAi(pool);
   let selectedIds = ai?.ids ?? null;
 
-  // 4. Fallback bei AI-Fail: diversifizierte Score-Auswahl
+  // 5. Fallback bei AI-Fail: diversifizierte Score-Auswahl
   // Statt 3 Items derselben Quelle wählen wir je ein Item pro Quelle
   // (in Score-Reihenfolge), bis wir TOP_N voll haben — dann fülle mit dem Rest auf.
   let usedAi = true;
@@ -142,12 +170,14 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
     usedAi = false;
   }
 
-  // 5. Persist
+  // 6. Persist — Auswahl und die Signatur, für die sie gilt
   await persistFlags(news, selectedIds);
+  await saveTopNewsState(signature, selectedIds);
 
   return {
     selectedIds,
     usedAi,
+    reusedPrevious: false,
     poolSize: pool.length,
     tokensEstimated: ai?.tokensEstimated ?? 0,
   };

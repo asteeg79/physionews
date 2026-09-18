@@ -41,8 +41,12 @@ import {
 /** Mindest-Score für eine eigene Push-Benachrichtigung. */
 const PUSH_RELEVANCE_THRESHOLD = 9;
 
-/** Items pro Klassifizierungs-Runde — hält die Gemini-Batches überschaubar. */
-const CLASSIFY_CHUNK = 100;
+/**
+ * Items pro Klassifizierungs-Runde. Vielfaches von GEMINI_BATCH_SIZE (60),
+ * damit keine Runde mit einem halb gefüllten Batch endet — jede angefangene
+ * Anfrage kostet gleich viel vom Tagesbudget.
+ */
+const CLASSIFY_CHUNK = 120;
 
 /** Sicherheitsdeckel, damit ein großer Rückstand den Lauf nicht sprengt. */
 const MAX_CLASSIFY_ROUNDS = 12;
@@ -184,10 +188,10 @@ async function stageMaintenance(): Promise<void> {
   // Retention markiert werden.
   try {
     const top = await selectAndPersistTopNews();
-    console.log(
-      `Top-News: ${top.selectedIds.length} aus einem Pool von ${top.poolSize} ` +
-        `(KI: ${top.usedAi}, ~${top.tokensEstimated} Tokens).`
-    );
+    const wie = top.reusedPrevious
+      ? 'unverändert übernommen, keine Anfrage'
+      : `KI: ${top.usedAi}, ~${top.tokensEstimated} Tokens`;
+    console.log(`Top-News: ${top.selectedIds.length} aus einem Pool von ${top.poolSize} (${wie}).`);
   } catch (err) {
     console.error('::warning::Top-News-Auswahl fehlgeschlagen:', err);
   }

@@ -17,9 +17,16 @@
  */
 import type { NewsItem, RelevanceMethod } from '@/data/types';
 import { loadNews, saveNews, MIN_RELEVANCE_THRESHOLD } from '@/data/news';
+import { markDropped } from '@/data/dropped';
 import { listSources } from '@/data/sources';
 import { scoreByKeywords } from './keywords';
-import { classifyBatch, estimateTokens, GEMINI_QUOTA_EXHAUSTED, type GeminiInput } from './gemini';
+import {
+  classifyBatch,
+  estimateTokens,
+  GEMINI_QUOTA_EXHAUSTED,
+  RUBRIC_VERSION,
+  type GeminiInput,
+} from './gemini';
 import { getQuotaStatus, recordUsage } from './gemini-quota';
 import { getCachedByHashes, setCachedBulk, titleHash } from './gemini-cache';
 
@@ -27,11 +34,16 @@ import { getCachedByHashes, setCachedBulk, titleHash } from './gemini-cache';
  * Items pro Gemini-Anfrage.
  *
  * Der Free Tier erlaubt nur 20 Anfragen pro Tag (siehe gemini-quota.ts) —
- * die knappe Größe sind also Anfragen, nicht Tokens. Mit 40 statt 20 Items
- * deckt dasselbe Budget die doppelte Menge ab. 40 Ergebnisse à ~80 Tokens
- * bleiben deutlich unter den 8192 maxOutputTokens.
+ * die knappe Größe sind also Anfragen, nicht Tokens. Der Systemprompt
+ * (~720 Tokens) fällt pro Anfrage einmal an, unabhängig von der Füllung:
+ * bei 20 Items macht er 57 % der Anfrage aus, bei 60 nur noch 29 %.
+ *
+ * 60 statt mehr ist bewusst konservativ: 60 Ergebnisse à ~80 Tokens liegen
+ * bei ~4800 und damit sicher unter den 8192 maxOutputTokens. Eine
+ * abgeschnittene Antwort macht den ganzen Batch unbrauchbar — bei 20
+ * Anfragen pro Tag ein teurer Fehlschlag.
  */
-const GEMINI_BATCH_SIZE = 40;
+const GEMINI_BATCH_SIZE = 60;
 
 /**
  * Sleep zwischen Gemini-Batches innerhalb desselben Laufs.
@@ -362,6 +374,9 @@ export async function classifyPendingItems(
 
   const kept = dropIds.size > 0 ? news.filter((n) => !dropIds.has(n.id)) : news;
   result.deletedBelowThreshold = dropIds.size;
+
+  // Vermerken, damit der nächste Abruf sie nicht erneut einliest.
+  await markDropped([...dropIds], RUBRIC_VERSION);
 
   await saveNews(kept, 'chore(data): News klassifiziert');
 

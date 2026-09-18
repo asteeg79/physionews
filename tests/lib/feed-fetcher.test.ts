@@ -18,6 +18,7 @@ const { state } = vi.hoisted(() => ({
     saved: null as Source[] | null,
     /** Zustandsbehaftet, damit der zweite Lauf die Items des ersten kennt. */
     news: [] as Array<Record<string, unknown>>,
+    dropped: new Set<string>(),
   },
 }));
 
@@ -33,6 +34,10 @@ vi.mock('@/data/news', () => ({
   saveNews: async (items: Array<Record<string, unknown>>) => {
     state.news = items;
   },
+}));
+
+vi.mock('@/data/dropped', () => ({
+  loadDroppedIds: async () => state.dropped,
 }));
 
 vi.mock('@/lib/adapters/registry', () => ({
@@ -52,6 +57,7 @@ function artikel(n: number) {
 beforeEach(() => {
   state.saved = null;
   state.news = [];
+  state.dropped = new Set();
 });
 
 describe('fetchAllSources — stille Quellen', () => {
@@ -110,5 +116,27 @@ describe('fetchAllSources — stille Quellen', () => {
 
     const { results } = await fetchAllSources();
     expect(results).toHaveLength(0);
+  });
+
+  it('liest bereits verworfene Beiträge nicht erneut ein', async () => {
+    // Ein Beitrag, den die Klassifizierung wegen zu geringer Relevanz aus
+    // dem Bestand entfernt hat, steht auf der Quellseite weiter. Ohne
+    // Register läse ihn jeder Lauf erneut ein, nur um ihn wieder zu
+    // verwerfen — und nach Ablauf des Gemini-Caches erneut zu bewerten.
+    state.sources = [makeSource({ id: 's1', adapterType: 'rss' })];
+    state.parsed = artikel(3);
+
+    const ersterLauf = await fetchAllSources();
+    expect(ersterLauf.results[0].newItems).toBe(3);
+
+    // Die Klassifizierung verwirft alle drei und vermerkt sie.
+    for (const item of state.news) state.dropped.add(item.id as string);
+    state.news = [];
+
+    const zweiterLauf = await fetchAllSources();
+    expect(zweiterLauf.results[0].newItems).toBe(0);
+    // Geparst wurden sie trotzdem — die Quelle ist nicht still.
+    expect(zweiterLauf.results[0].parsedItems).toBe(3);
+    expect(zweiterLauf.results[0].emptyRunsInARow).toBe(0);
   });
 });
