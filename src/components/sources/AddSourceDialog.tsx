@@ -28,7 +28,7 @@ export interface AddSourceDialogProps {
 export function AddSourceDialog({ onClose, onAdded }: Readonly<AddSourceDialogProps>) {
   const [url, setUrl] = useState('');
   const [name, setName] = useState('');
-  const [category, setCategory] = useState<VisibleCategory>('fachlich');
+  const [category, setCategory] = useState<VisibleCategory>('evidenz');
   const [submitting, setSubmitting] = useState(false);
 
   const submit = async () => {

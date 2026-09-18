@@ -2,14 +2,30 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Stethoscope, Scale, Megaphone, LayoutGrid } from 'lucide-react';
+import { Microscope, Scale, Megaphone, LayoutGrid } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { EbpToggle } from './EbpToggle';
+import { VISIBLE_CATEGORIES, CATEGORY_LABELS } from '@/lib/categories';
+import type { VisibleCategory } from '@/lib/categories';
 
+const ICONS: Record<VisibleCategory, LucideIcon> = {
+  berufspolitik: Megaphone,
+  recht: Scale,
+  evidenz: Microscope,
+};
+
+/**
+ * Aus VISIBLE_CATEGORIES abgeleitet statt separat gepflegt. Genau diese
+ * Doppelpflege hatte die Tabs auf Kategorien zeigen lassen, die keine
+ * Quelle mehr benutzte.
+ */
 const TABS = [
   { label: 'Alle', href: '/', icon: LayoutGrid },
-  { label: 'Fachlich', href: '/kategorie/fachlich', icon: Stethoscope },
-  { label: 'Gesetz', href: '/kategorie/gesetz', icon: Scale },
-  { label: 'Politik', href: '/kategorie/politik', icon: Megaphone },
+  ...VISIBLE_CATEGORIES.map((cat) => ({
+    label: CATEGORY_LABELS[cat],
+    href: `/kategorie/${cat}`,
+    icon: ICONS[cat],
+  })),
 ];
 
 export function CategoryTabs() {

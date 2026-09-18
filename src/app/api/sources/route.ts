@@ -15,7 +15,7 @@ export async function GET() {
 const addSchema = z.object({
   url: z.string().url(),
   name: z.string().min(2).optional(),
-  category: z.enum(ALL_CATEGORIES as readonly [NewsCategory, ...NewsCategory[]]).default('fachlich'),
+  category: z.enum(ALL_CATEGORIES as readonly [NewsCategory, ...NewsCategory[]]).default('evidenz'),
   /** Wenn true (Default), wird zunächst auto-detect für RSS versucht; sonst Generic-HTML. */
   autoDetect: z.boolean().default(true),
 });

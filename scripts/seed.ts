@@ -48,12 +48,12 @@ const DEFAULT_SOURCES: SeedSource[] = [
   { name: 'DGSP — News', url: 'https://www.dgsp.de/news/', adapterType: 'html:dgsp', category: 'evidenz', iconName: 'dumbbell' },
 
   // --- Allgemein ---
-  { name: 'Robert Koch-Institut Pressemitteilungen', url: 'https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/meldungen-pressemitteilungen-node.html', adapterType: 'html:rki', category: 'allgemein', iconName: 'shield' },
+  { name: 'Robert Koch-Institut Pressemitteilungen', url: 'https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/meldungen-pressemitteilungen-node.html', adapterType: 'html:rki', category: 'evidenz', iconName: 'shield' },
 
   // --- Später ergänzte Fachquellen (vormals scripts/add-new-sources.ts) ---
-  { name: 'AOK WIdO — News & Presse', url: 'https://www.wido.de/news-presse/', adapterType: 'html:generic', category: 'fachlich', iconName: 'newspaper' },
-  { name: 'BARMER Presseinformationen', url: 'https://www.barmer.de/presse/presseinformationen', adapterType: 'html:generic', category: 'gesetz', iconName: 'newspaper', isEnabled: false },
-  { name: 'DGOU Pressemitteilungen', url: 'https://dgou.de/presse/pressemitteilungen/', adapterType: 'html:generic', category: 'fachlich', iconName: 'newspaper' },
+  { name: 'AOK WIdO — News & Presse', url: 'https://www.wido.de/news-presse/', adapterType: 'html:generic', category: 'berufspolitik', iconName: 'newspaper' },
+  { name: 'BARMER Presseinformationen', url: 'https://www.barmer.de/presse/presseinformationen', adapterType: 'html:generic', category: 'berufspolitik', iconName: 'newspaper', isEnabled: false },
+  { name: 'DGOU Pressemitteilungen', url: 'https://dgou.de/presse/pressemitteilungen/', adapterType: 'html:generic', category: 'evidenz', iconName: 'newspaper' },
   {
     name: 'physiotherapeuten.de (via Google News)',
     // Die Seite sperrt Scraper aus (Brightboy) und verbietet es per robots.txt,
@@ -62,7 +62,7 @@ const DEFAULT_SOURCES: SeedSource[] = [
     // ausgeschrieben, damit das Seed-Skript ohne App-Importe auskommt.
     url: 'https://news.google.com/rss/search?q=' + encodeURIComponent('site:physiotherapeuten.de') + '&hl=de&gl=DE&ceid=DE:de',
     adapterType: 'google-news',
-    category: 'fachlich',
+    category: 'evidenz',
     iconName: 'newspaper',
   },
 ];
