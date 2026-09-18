@@ -24,7 +24,10 @@ vi.mock('@/data/news', () => ({
 }));
 
 vi.mock('@/data/sources', () => ({
-  listSources: async () => [{ id: 'src-a', name: 'Quelle A', notificationsEnabled: true }],
+  listSources: async () => [
+    { id: 'src-a', name: 'Quelle A', notificationsEnabled: true },
+    { id: 'src-yt', name: 'RA Benjamin Alt — YouTube', notificationsEnabled: true },
+  ],
 }));
 
 vi.mock('@/data/notified', () => ({
@@ -58,6 +61,19 @@ function item(id: string, title: string, score = 9) {
     url: `https://example.test/${id}`,
     publishedAt: new Date('2026-05-20'),
     relevanceScore: score,
+  };
+}
+
+/** Beitrag einer gesetzten Quelle — `ageDays` steuert die Pin-Frist. */
+function video(id: string, title: string, ageDays: number) {
+  return {
+    id,
+    sourceId: 'src-yt',
+    title,
+    url: `https://example.test/${id}`,
+    publishedAt: new Date(Date.now() - ageDays * 86_400_000),
+    // Die Bewertung, die RA Alts Videos tatsächlich bekommen
+    relevanceScore: 4,
   };
 }
 
@@ -124,5 +140,28 @@ describe('notifyNewHighRelevanceItems', () => {
   it('ignoriert Items unter dem Schwellwert', async () => {
     state.news = [item('a1', 'Randnotiz', 8)];
     expect((await notifyNewHighRelevanceItems(OPTS)).pushSent).toBe(0);
+  });
+
+  it('benachrichtigt über ein neues Video trotz Score unter dem Schwellwert', async () => {
+    state.news = [video('v1', 'Gefahr beim Hausbesuch', 2)];
+    const res = await notifyNewHighRelevanceItems(OPTS);
+    expect(res.pushSent).toBe(1);
+    expect(state.sent).toEqual(['Gefahr beim Hausbesuch']);
+  });
+
+  it('benachrichtigt nicht über ein Video außerhalb der Frist', async () => {
+    // Verhindert, dass ein nachträglich eingelesenes Archiv Dutzende
+    // Pushes auf einmal auslöst
+    state.news = [video('v2', 'Alte Folge', 90)];
+    const res = await notifyNewHighRelevanceItems(OPTS);
+    expect(res.pushSent).toBe(0);
+  });
+
+  it('benachrichtigt über dasselbe Video kein zweites Mal', async () => {
+    state.news = [video('v3', 'Unangekündigte Besuche in Praxen', 1)];
+    await notifyNewHighRelevanceItems(OPTS);
+    state.sent = [];
+    await notifyNewHighRelevanceItems(OPTS);
+    expect(state.sent).toEqual([]);
   });
 });

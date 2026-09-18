@@ -13,6 +13,9 @@
  * `isTopNews` in `data/news.json` festgehalten (vorher alle zurücksetzen).
  *
  * Token-Budget: Pro Auswahl ~1000 Tokens (1× pro Lauf alle 2h).
+ *
+ * Neue Beiträge gesetzter Quellen (pinned-sources.ts) kommen unabhängig
+ * von der KI-Auswahl hinzu — die Liste ist dann kurzzeitig um eins länger.
  */
 
 import type { NewsItem } from '@/data/types';
@@ -21,6 +24,7 @@ import { listSources } from '@/data/sources';
 import { getSettings } from '@/data/settings';
 import { loadTopNewsState, poolSignature, saveTopNewsState } from '@/data/top-news-state';
 import { getQuotaStatus, recordUsage } from './gemini-quota';
+import { isPinnedFresh, pinnedSourceIds } from '@/lib/pinned-sources';
 
 const GEMINI_MODEL = 'gemini-2.5-flash-lite';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
@@ -117,17 +121,30 @@ export interface TopNewsResult {
 export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
   const news = await loadNews();
 
+  // Gesetzte Beiträge kommen zu jeder Auswahl hinzu, auf allen Wegen — auch
+  // wenn die vorherige Auswahl wiederverwendet wird. Sie stecken nicht im
+  // Kandidaten-Pool: ihr Score liegt unter dessen Untergrenze, genau deshalb
+  // braucht es die Regel.
+  const pinnedIds = await freshPinnedIds(news);
+  const withPinned = (ids: string[]) => [...new Set([...pinnedIds, ...ids])];
+
   // 1. Kandidaten-Pool bilden: hochrelevante Items, nach Score+Datum sortiert
   const pool = await buildCandidatePool(news);
 
   if (pool.length === 0) {
-    await persistFlags(news, []);
-    return { selectedIds: [], usedAi: false, reusedPrevious: false, poolSize: 0, tokensEstimated: 0 };
+    await persistFlags(news, pinnedIds);
+    return {
+      selectedIds: pinnedIds,
+      usedAi: false,
+      reusedPrevious: false,
+      poolSize: 0,
+      tokensEstimated: 0,
+    };
   }
 
   // 2. Bei sehr kleiner Liste: nimm einfach alle bzw. die Top-N
   if (pool.length <= TOP_N) {
-    const ids = pool.map((p) => p.id);
+    const ids = withPinned(pool.map((p) => p.id));
     await persistFlags(news, ids);
     return {
       selectedIds: ids,
@@ -146,9 +163,10 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
   if (previous?.signature === signature && previous.selectedIds.length > 0) {
     const stillPresent = new Set(news.map((n) => n.id));
     if (previous.selectedIds.every((id) => stillPresent.has(id))) {
-      await persistFlags(news, previous.selectedIds);
+      const ids = withPinned(previous.selectedIds);
+      await persistFlags(news, ids);
       return {
-        selectedIds: previous.selectedIds,
+        selectedIds: ids,
         usedAi: false,
         reusedPrevious: true,
         poolSize: pool.length,
@@ -170,12 +188,15 @@ export async function selectAndPersistTopNews(): Promise<TopNewsResult> {
     usedAi = false;
   }
 
-  // 6. Persist — Auswahl und die Signatur, für die sie gilt
-  await persistFlags(news, selectedIds);
+  // 6. Persist — gesichert wird die reine KI-Auswahl, denn nur für sie gilt
+  //    die Signatur. Der Pin ist eine Auflage obendrauf und wird bei jedem
+  //    Lauf neu bestimmt, damit er nach Ablauf der Frist von selbst endet.
   await saveTopNewsState(signature, selectedIds);
+  const effectiveIds = withPinned(selectedIds);
+  await persistFlags(news, effectiveIds);
 
   return {
-    selectedIds,
+    selectedIds: effectiveIds,
     usedAi,
     reusedPrevious: false,
     poolSize: pool.length,
@@ -364,6 +385,20 @@ function pickDiverseByScore(pool: CandidateItem[], n: number): string[] {
  * Schreibt die Auswahl zurück: alle Flags zurücksetzen, dann die gewählten
  * Items markieren und die Datei einmal speichern.
  */
+/**
+ * IDs neuer Beiträge aus gesetzten Quellen — die, die unabhängig von Score
+ * und KI-Auswahl in die Top-News gehören.
+ */
+async function freshPinnedIds(news: NewsItem[]): Promise<string[]> {
+  const pinned = pinnedSourceIds(await listSources());
+  if (pinned.size === 0) return [];
+
+  return news
+    .filter((n) => pinned.has(n.sourceId) && isPinnedFresh(n.publishedAt))
+    .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
+    .map((n) => n.id);
+}
+
 async function persistFlags(news: NewsItem[], ids: string[]): Promise<void> {
   const selected = new Set(ids);
   for (const item of news) {

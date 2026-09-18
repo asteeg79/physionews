@@ -17,6 +17,7 @@
  */
 import type { NewsItem, RelevanceMethod } from '@/data/types';
 import { loadNews, saveNews, MIN_RELEVANCE_THRESHOLD } from '@/data/news';
+import { pinnedSourceIds } from '@/lib/pinned-sources';
 import { markDropped } from '@/data/dropped';
 import { listSources } from '@/data/sources';
 import { scoreByKeywords } from './keywords';
@@ -360,6 +361,9 @@ export async function classifyPendingItems(
 
   // Ergebnisse anwenden
   const byId = new Map(news.map((n) => [n.id, n]));
+  // Gesetzte Quellen überleben auch eine schwache Bewertung: würden sie
+  // hier gelöscht, könnte die Pin-Regel später nichts mehr anzeigen.
+  const pinned = pinnedSourceIds(sources);
   const dropIds = new Set<string>();
   for (const upd of updates) {
     if (skipped.has(upd.id)) continue;
@@ -369,7 +373,9 @@ export async function classifyPendingItems(
     item.relevanceMethod = upd.method;
     item.relevanceReason = upd.reason;
     item.topics = upd.topics;
-    if (upd.score < MIN_RELEVANCE_THRESHOLD) dropIds.add(upd.id);
+    if (upd.score < MIN_RELEVANCE_THRESHOLD && !pinned.has(item.sourceId)) {
+      dropIds.add(upd.id);
+    }
   }
 
   const kept = dropIds.size > 0 ? news.filter((n) => !dropIds.has(n.id)) : news;
@@ -387,7 +393,10 @@ export async function classifyPendingItems(
 /** Löscht alle bestehenden Items mit Score &lt; MIN_RELEVANCE_THRESHOLD. */
 export async function purgeBelowThreshold(): Promise<number> {
   const news = await loadNews();
-  const kept = news.filter((n) => n.relevanceScore >= MIN_RELEVANCE_THRESHOLD);
+  const pinned = pinnedSourceIds(await listSources());
+  const kept = news.filter(
+    (n) => n.relevanceScore >= MIN_RELEVANCE_THRESHOLD || pinned.has(n.sourceId)
+  );
   const removed = news.length - kept.length;
   if (removed > 0) {
     await saveNews(kept, 'chore(data): irrelevante News entfernt');

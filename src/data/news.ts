@@ -14,6 +14,7 @@ import type { NewsItem, NewsItemWithSource, RelevanceMethod, SourceLight } from 
 import { readJson, writeJson, toDate, toRequiredDate } from './json-store';
 import { listSources } from './sources';
 import { DEFAULT_SETTINGS } from './settings';
+import { isPinnedSourceName, isPinnedFresh } from '@/lib/pinned-sources';
 
 const FILE = 'news.json';
 
@@ -146,8 +147,15 @@ export async function queryNews(query: NewsQuery = {}): Promise<NewsItemWithSour
     result.push({ ...item, source });
   }
 
+  // Neue Beiträge gesetzter Quellen stehen vorn — sonst würde sie ihr
+  // niedriger KI-Score ans Ende sortieren, gerade weil sie die Schwelle
+  // überhaupt nur über die Ausnahme oben passiert haben.
+  const pinnedFirst = (i: NewsItemWithSource) =>
+    isPinnedSourceName(i.source.name) && isPinnedFresh(i.publishedAt) ? 1 : 0;
+
   result.sort(
     (a, b) =>
+      pinnedFirst(b) - pinnedFirst(a) ||
       b.relevanceScore - a.relevanceScore ||
       b.publishedAt.getTime() - a.publishedAt.getTime()
   );
@@ -196,7 +204,9 @@ function buildFilter(query: NewsQuery): (item: NewsItem, source: SourceLight) =>
   const minScore = query.minRelevance ?? DEFAULT_SETTINGS.minRelevance;
 
   return (item, source) => {
-    if (item.relevanceScore < minScore) return false;
+    // Gesetzte Quellen unterliegen der Relevanzschwelle nicht — ihre
+    // Einstufung ist eine Nutzerentscheidung und überstimmt die KI.
+    if (item.relevanceScore < minScore && !isPinnedSourceName(source.name)) return false;
     // 'unknown' wird beim Einlesen auf 'de' abgebildet, daher reicht der
     // exakte Vergleich.
     if (item.lang !== 'de') return false;

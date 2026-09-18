@@ -11,6 +11,7 @@ import webpush from 'web-push';
 import { loadNews } from '@/data/news';
 import { loadNotifiedIds, markNotified } from '@/data/notified';
 import { listSources } from '@/data/sources';
+import { isPinnedSourceName, isPinnedFresh } from './pinned-sources';
 import {
   listPushSubscriptions,
   removePushSubscriptions,
@@ -140,8 +141,13 @@ export async function notifyNewHighRelevanceItems(opts: {
   const candidates = news
     .filter((item) => {
       if (alreadyNotified.has(item.id)) return false;
-      if (item.relevanceScore < opts.threshold) return false;
-      return sourceById.get(item.sourceId)?.notificationsEnabled === true;
+      const source = sourceById.get(item.sourceId);
+      if (source?.notificationsEnabled !== true) return false;
+      // Neue Beiträge gesetzter Quellen werden unabhängig vom Score
+      // benachrichtigt. Die Frist verhindert, dass ein nachträglich
+      // eingelesenes Archiv auf einen Schlag Dutzende Pushes auslöst.
+      if (isPinnedSourceName(source.name) && isPinnedFresh(item.publishedAt)) return true;
+      return item.relevanceScore >= opts.threshold;
     })
     .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
     .slice(0, maxPushes);
