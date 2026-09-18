@@ -24,7 +24,7 @@ interface SeedSource {
 
 const DEFAULT_SOURCES: SeedSource[] = [
   // --- Berufspolitik / Verbände ---
-  { name: 'VPT NRW Aktuelles', url: 'https://vpt-nrw.de/aktuelles/', adapterType: 'html:vpt-nrw', category: 'berufspolitik', iconName: 'building-2' },
+  { name: 'VPT NRW Aktuelles', url: 'https://vpt-nrw.de/aktuelles/newsarchiv/', adapterType: 'html:vpt-nrw', category: 'berufspolitik', iconName: 'building-2' },
   { name: 'VPT Bundesverband', url: 'https://www.vpt.de/', adapterType: 'html:vpt', category: 'berufspolitik', iconName: 'building-2' },
   { name: 'IFK Aktuelles', url: 'https://www.ifk.de/verband/aktuelles', adapterType: 'html:ifk', category: 'berufspolitik', iconName: 'users' },
   { name: 'Physio Deutschland (ZVK)', url: 'https://www.physio-deutschland.de/fachkreise/news-bundesweit.html', adapterType: 'html:physioDeutschland', category: 'berufspolitik', iconName: 'activity' },
@@ -40,19 +40,12 @@ const DEFAULT_SOURCES: SeedSource[] = [
   // --- Evidenz, Forschung & Fachpresse ---
   { name: 'Physio.de Newsletter-Archiv', url: 'https://physio.de/community/news/archiv/99', adapterType: 'html:physioDe', category: 'evidenz', iconName: 'newspaper' },
   { name: 'Thieme physioscience (RSS)', url: 'https://www.thieme-connect.de/rss/thieme/en/10.1055-s-00000128.xml', adapterType: 'rss', category: 'evidenz', iconName: 'book-open' },
-  { name: 'Thieme Journal KG/Manuelle Therapie', url: 'https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00000162', adapterType: 'html:thiemeJournal', category: 'evidenz', iconName: 'book-open' },
+  { name: 'Thieme Journal KG/Manuelle Therapie', url: 'https://www.thieme-connect.de/rss/thieme/de/10.1055-s-00000162.xml', adapterType: 'rss', category: 'evidenz', iconName: 'book-open' },
   { name: 'physiotherapeuten.de — Wirbelsäule', url: 'https://physiotherapeuten.de/themen/orthopaedie-chirurgie/orthopaedie-chirurgie_wirbelsaeule/', adapterType: 'html:physiotherapeutenDe', category: 'evidenz', iconName: 'activity' },
   { name: 'physiotherapeuten.de — untere Extremität', url: 'https://physiotherapeuten.de/themen/orthopaedie-chirurgie/orthopaedie-chirurgie_untere-extremitaet/', adapterType: 'html:physiotherapeutenDe', category: 'evidenz', iconName: 'activity' },
   { name: 'physiotherapeuten.de — obere Extremität', url: 'https://physiotherapeuten.de/themen/orthopaedie-chirurgie/orthopaedie-chirurgie_obere-extremitaet/', adapterType: 'html:physiotherapeutenDe', category: 'evidenz', iconName: 'activity' },
   { name: 'Cochrane Deutschland — News', url: 'https://www.cochrane.de/news', adapterType: 'html:cochrane', category: 'evidenz', iconName: 'microscope' },
-  { name: 'Cochrane für Physiotherapeuten', url: 'https://www.cochrane.de/zusammenfassungen-physiotherapeuten', adapterType: 'html:cochrane', category: 'evidenz', iconName: 'microscope' },
   { name: 'DGSP — News', url: 'https://www.dgsp.de/news/', adapterType: 'html:dgsp', category: 'evidenz', iconName: 'dumbbell' },
-
-  // --- Leitlinien ---
-  { name: 'AWMF Leitlinien (aktuell)', url: 'https://register.awmf.org/de/leitlinien/aktuelle-leitlinien', adapterType: 'html:awmf', category: 'leitlinien', iconName: 'clipboard-list' },
-
-  // --- Fortbildung ---
-  { name: 'DVMT — Aktuelles', url: 'https://www.dvmt.de/', adapterType: 'html:dvmt', category: 'fortbildung', iconName: 'graduation-cap' },
 
   // --- Allgemein ---
   { name: 'Robert Koch-Institut Pressemitteilungen', url: 'https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/meldungen-pressemitteilungen-node.html', adapterType: 'html:rki', category: 'allgemein', iconName: 'shield' },
@@ -61,12 +54,13 @@ const DEFAULT_SOURCES: SeedSource[] = [
   { name: 'AOK WIdO — News & Presse', url: 'https://www.wido.de/news-presse/', adapterType: 'html:generic', category: 'fachlich', iconName: 'newspaper' },
   { name: 'BARMER Presseinformationen', url: 'https://www.barmer.de/presse/presseinformationen', adapterType: 'html:generic', category: 'gesetz', iconName: 'newspaper', isEnabled: false },
   { name: 'DGOU Pressemitteilungen', url: 'https://dgou.de/presse/pressemitteilungen/', adapterType: 'html:generic', category: 'fachlich', iconName: 'newspaper' },
-  { name: 'Springer Manuelle Medizin (Updates)', url: 'https://link.springer.com/journal/337/updates', adapterType: 'html:generic', category: 'fachlich', iconName: 'newspaper' },
   {
-    name: 'pt-online.de (via Google News)',
-    // Entspricht buildGoogleNewsUrl('site:pt-online.de') — hier ausgeschrieben,
-    // damit das Seed-Skript ohne App-Importe auskommt.
-    url: 'https://news.google.com/rss/search?q=' + encodeURIComponent('site:pt-online.de') + '&hl=de&gl=DE&ceid=DE:de',
+    name: 'physiotherapeuten.de (via Google News)',
+    // Die Seite sperrt Scraper aus (Brightboy) und verbietet es per robots.txt,
+    // lässt Google aber als News-Indexer zu — dafür ist der Proxy gedacht.
+    // Entspricht buildGoogleNewsUrl('site:physiotherapeuten.de'); hier
+    // ausgeschrieben, damit das Seed-Skript ohne App-Importe auskommt.
+    url: 'https://news.google.com/rss/search?q=' + encodeURIComponent('site:physiotherapeuten.de') + '&hl=de&gl=DE&ceid=DE:de',
     adapterType: 'google-news',
     category: 'fachlich',
     iconName: 'newspaper',

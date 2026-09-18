@@ -15,6 +15,8 @@ import { DgspAdapter } from '../../src/lib/adapters/html/dgsp';
 import { RaAltAdapter } from '../../src/lib/adapters/html/ra-alt';
 import { VptAdapter } from '../../src/lib/adapters/html/vpt';
 import { GbaAdapter } from '../../src/lib/adapters/html/gba';
+import { PhysioDeAdapter } from '../../src/lib/adapters/html/physio-de';
+import { VptNrwAdapter } from '../../src/lib/adapters/html/vpt';
 
 const FIX = join(__dirname, 'fixtures');
 
@@ -84,6 +86,31 @@ describe('Quellen-spezifische HTML-Adapter (Fixture-basiert)', () => {
     // Junk-Sidebars dürfen nicht enthalten sein
     expect(items.find((i) => i.title.toLowerCase() === 'teilnahmebedingungen')).toBeUndefined();
     expect(items.find((i) => i.title.toLowerCase() === 'fachkräftemangel')).toBeUndefined();
+  });
+
+  it('RaAltAdapter liest auch die Artikel-Liste ohne .j-blogarticle', () => {
+    const items = loadAndParse('raalt-artikel.html', 'https://www.rechtsanwaltalt.de/artikel/', new RaAltAdapter() as never);
+    expect(items.length).toBeGreaterThanOrEqual(10);
+    expect(items.every((i) => i.url.includes('/artikel/'))).toBe(true);
+    // Die Übersichtsseite darf sich nicht selbst als Beitrag listen
+    expect(items.find((i) => /\/artikel\/?$/.test(i.url))).toBeUndefined();
+  });
+
+  it('PhysioDeAdapter trennt Überschrift und Teaser am <br>', () => {
+    const items = loadAndParse('physio-de.html', 'https://physio.de/community/news/archiv/99', new PhysioDeAdapter() as never);
+    expect(items.length).toBeGreaterThanOrEqual(10);
+    // Ohne die Trennung wäre der Titel der komplette Absatz
+    expect(items.every((i) => i.title.length < 160)).toBe(true);
+    // Relative Datumsangaben ("Vor 4 Tagen") müssen echte Daten ergeben
+    const real = items.filter((i) => Math.abs(i.publishedAt.getTime() - Date.now()) > 60_000);
+    expect(real.length).toBeGreaterThan(0);
+  });
+
+  it('VptNrwAdapter liest das Newsarchiv-Raster mit Datum', () => {
+    const items = loadAndParse('vpt-nrw.html', 'https://vpt-nrw.de/aktuelles/newsarchiv/', new VptNrwAdapter() as never);
+    expect(items.length).toBeGreaterThanOrEqual(5);
+    const real = items.filter((i) => Math.abs(i.publishedAt.getTime() - Date.now()) > 60_000);
+    expect(real.length).toBe(items.length);
   });
 
   it('GbaAdapter behält nur numerische Pressemitteilungs-IDs', () => {

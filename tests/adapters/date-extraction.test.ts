@@ -81,4 +81,35 @@ describe('Datumserkennung', () => {
     const item = parseOne(`<section><p>12.03.2020</p><p>${filler}</p><article>${LINK}</article></section>`);
     expect(item.publishedAt.getUTCFullYear()).toBe(new Date().getUTCFullYear());
   });
+
+  it('liest DD-MM-YYYY deutsch, nicht amerikanisch', () => {
+    // VPT NRW: <time datetime="08/09/2026"> 08-09-2026 </time>
+    const item = parseOne(`<article><time>08-09-2026</time>${LINK}</article>`);
+    expect(item.publishedAt.toISOString().slice(0, 10)).toBe('2026-09-08');
+  });
+
+  it('erfindet kein Datum aus einer Überschrift mit Jahreszahl', () => {
+    // new Date('… Stammtisch am 01.10.2026') lieferte früher den 9. Januar 2026:
+    // V8s Fallback-Parser klaubt aus beliebiger Prosa ein Datum zusammen.
+    const heading = '<a href="/presse/pressemitteilungen/1234/">VPT NRW Online Stammtisch am 01.10.2026</a>';
+    const item = parseOne(`<article><time datetime="2026-09-08">egal</time>${heading}</article>`);
+    expect(item.publishedAt.toISOString().slice(0, 10)).toBe('2026-09-08');
+  });
+
+  it('rechnet relative deutsche Angaben zurück', () => {
+    const tage = parseOne(`<article><span class="datum">Vor 4 Tagen</span>${LINK}</article>`);
+    expect(Math.round((Date.now() - tage.publishedAt.getTime()) / 86_400_000)).toBe(4);
+
+    const gestern = parseOne(`<article><span class="datum">Gestern</span>${LINK}</article>`);
+    expect(Math.round((Date.now() - gestern.publishedAt.getTime()) / 86_400_000)).toBe(1);
+
+    const woche = parseOne(`<article><span class="datum">Vor einer Woche</span>${LINK}</article>`);
+    expect(Math.round((Date.now() - woche.publishedAt.getTime()) / 86_400_000)).toBe(7);
+  });
+
+  it('hält gewöhnliches „vor allem" für kein Datum', () => {
+    const item = parseOne(`<article><span class="datum">Gilt vor allem in Bayern</span>${LINK}</article>`);
+    // Fällt auf den Abrufzeitpunkt zurück statt ein Datum zu erfinden
+    expect(Math.abs(item.publishedAt.getTime() - Date.now())).toBeLessThan(60_000);
+  });
 });

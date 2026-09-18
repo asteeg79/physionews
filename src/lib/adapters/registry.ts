@@ -14,8 +14,7 @@ import { DgspAdapter } from './html/dgsp';
 import { RaAltAdapter } from './html/ra-alt';
 import { VptAdapter, VptNrwAdapter } from './html/vpt';
 import { GbaAdapter } from './html/gba';
-import { AwmfAdapter } from './html/awmf';
-import { DvmtAdapter } from './html/dvmt';
+import { PhysioDeAdapter } from './html/physio-de';
 
 const adapters: SourceAdapter[] = [
   new RssAdapter(),
@@ -34,15 +33,12 @@ const adapters: SourceAdapter[] = [
   new VptAdapter(),
   new VptNrwAdapter(),
   new GbaAdapter(),
-  new AwmfAdapter(),
-  new DvmtAdapter(),
+  new PhysioDeAdapter(),
 
   // Generic-Fallback für Quellen, die noch keinen spezifischen Adapter haben
   new GenericHtmlAdapter('html:generic'),
-  new GenericHtmlAdapter('html:thiemeJournal'),
   new GenericHtmlAdapter('html:thiemeNewsletter'),
   new GenericHtmlAdapter('html:physiotherapeutenDe'),
-  new GenericHtmlAdapter('html:physioDe'),
 ];
 
 const registry = new Map<string, SourceAdapter>(

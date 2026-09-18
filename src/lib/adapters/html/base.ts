@@ -27,6 +27,16 @@ const MONTHS_EN: Record<string, number> = {
  * Zeichen, gehört das erste Datum darin vermutlich nicht zu diesem Item.
  */
 const MAX_DATE_SCAN_CHARS = 600;
+const DAY_MS = 86_400_000;
+/** Monat und Jahr gerundet — relative Angaben sind selbst nur Näherungen. */
+const RELATIVE_UNITS_MS: Record<string, number> = {
+  minute: 60_000,
+  stunde: 3_600_000,
+  tag: DAY_MS,
+  woche: 7 * DAY_MS,
+  monat: 30 * DAY_MS,
+  jahr: 365 * DAY_MS,
+};
 
 /** Wie viele Ebenen über dem Treffer noch nach einem Datum gesucht wird. */
 const MAX_DATE_ANCESTOR_DEPTH = 6;
@@ -122,8 +132,19 @@ export interface ListPageSpec {
   imageSelector?: string;
   /** Bevorzugtes Bild; greift es nicht, gilt `imageSelector`. */
   preferredImageSelector?: string;
-  /** Datum aus der URL ziehen, z. B. `/thema-14-05-2026/` → Gruppen d, m, y. */
+  /** Datumselement im Scope, falls es die üblichen Klassennamen verfehlt. */
+  dateSelector?: string;
+  /** Datum aus der URL ziehen, z. B. `/thema-14-05-2026/` → drei Zifferngruppen. */
   dateFromHref?: RegExp;
+  /** Reihenfolge der Gruppen in `dateFromHref`. Ohne Angabe Tag-Monat-Jahr. */
+  dateFromHrefOrder?: 'dmy' | 'ymd';
+  /**
+   * Überschrift und Teaser stehen unformatiert im selben Link, getrennt nur
+   * durch ein `<br>` (so listet z. B. Physio.de). Der Titel endet dann am
+   * ersten Umbruch, der Rest wird zur Summary — ohne die Aufteilung wäre
+   * der Titel der komplette Absatz.
+   */
+  splitTitleAtLineBreak?: boolean;
 }
 
 /** Ab dieser Länge gilt ein Absatz als brauchbare Zusammenfassung. */
@@ -184,6 +205,23 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     return parsed && isPlausiblePublishDate(parsed) ? parsed : null;
   }
 
+  /**
+   * "Vor 4 Tagen", "Vor einer Woche", "Gestern" — gerechnet ab jetzt.
+   * Auf Wort- und Zahlformen beschränkt, die eine Einheit nennen, damit
+   * gewöhnliches "vor allem" im Fließtext nicht als Datum durchgeht.
+   */
+  private parseRelativeDe(clean: string): Date | null {
+    const lower = clean.toLowerCase();
+    if (/\bheute\b/.test(lower)) return new Date();
+    if (/\bvorgestern\b/.test(lower)) return new Date(Date.now() - 2 * DAY_MS);
+    if (/\bgestern\b/.test(lower)) return new Date(Date.now() - DAY_MS);
+
+    const m = /\bvor\s+(\d{1,3}|einer|einem)\s+(minute|stunde|tag|woche|monat|jahr)/.exec(lower);
+    if (!m) return null;
+    const amount = /^\d+$/.test(m[1]) ? +m[1] : 1;
+    return new Date(Date.now() - amount * RELATIVE_UNITS_MS[m[2]]);
+  }
+
   /** Die eigentliche Formaterkennung — ohne Plausibilitätsprüfung. */
   private parseDateRaw(input: string | null | undefined): Date | null {
     if (!input) return null;
@@ -193,6 +231,12 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     // quadratisches Backtracking bei langen Leerzeichenfolgen ausschließt.
     const clean = input.replace(/\s+/g, ' ').trim();
     if (!clean) return null;
+
+    // Relative Angaben — deutsche Community-Seiten datieren so (Physio.de:
+    // "Vor 12 Stunden", "Gestern", "Vor einer Woche"). Ohne diese Zweige
+    // bliebe nur der Abrufzeitpunkt als Datum übrig.
+    const relative = this.parseRelativeDe(clean);
+    if (relative) return relative;
 
     // DD/MM/YYYY — MUSS vor `new Date()` stehen: JavaScript liest
     // "05/06/2026" amerikanisch als 6. Mai statt als 5. Juni. Deutsche
@@ -206,9 +250,25 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
       return new Date(Date.UTC(+y, +m - 1, +d, 12));
     }
 
-    // ISO-Datum oder direkt parsebar
-    const iso = new Date(clean);
-    if (!Number.isNaN(iso.getTime()) && /\d{4}/.test(clean)) return iso;
+    // DD-MM-YYYY — ebenfalls vor `new Date()`: "08-09-2026" liest JavaScript
+    // amerikanisch als 9. August statt als 8. September (VPT-NRW-Newsarchiv).
+    // Das vierstellige Jahr steht am Ende, ISO-Daten (2026-09-08) greift das
+    // Muster daher nicht — deren Jahr steht vorn.
+    const dashMatch = /(?:^|\D)(\d{1,2})-(\d{1,2})-(\d{4})(?:\D|$)/.exec(clean);
+    if (dashMatch) {
+      const [, first, second, y] = dashMatch;
+      const [d, m] = +second > 12 ? [second, first] : [first, second];
+      return new Date(Date.UTC(+y, +m - 1, +d, 12));
+    }
+
+    // ISO- und RFC-2822-Angaben — aber nur diese. Auf freien Text losgelassen
+    // erfindet V8s Fallback-Parser Daten: `new Date('VPT NRW Online Stammtisch
+    // am 01.10.2026')` ergibt den 9. Januar 2026. Überschriften mit Jahreszahl
+    // sind in Nachrichtenlisten die Regel, nicht die Ausnahme.
+    if (/^\d{4}-\d{1,2}-\d{1,2}([T ]|$)/.test(clean) || /^[A-Za-z]{3},\s/.test(clean)) {
+      const iso = new Date(clean);
+      if (!Number.isNaN(iso.getTime())) return iso;
+    }
 
     // DD.MM.YYYY
     const dotMatch = /(\d{1,2})\.(\d{1,2})\.(\d{4})/.exec(clean);
@@ -287,8 +347,10 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
       const heading = spec.titleSelector
         ? this.cleanText($el.find(spec.titleSelector).first().text())
         : '';
+      const split = spec.splitTitleAtLineBreak ? this.splitAtLineBreak($, link) : null;
       const title =
         heading ||
+        split?.head ||
         this.cleanText(link.text()) ||
         (spec.titleFromContainer ? this.cleanText($el.text()) : '');
       if (!title || title.length < spec.minTitleLength) return;
@@ -297,7 +359,12 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
 
       const scope = spec.scopeSelector ? $el.closest(spec.scopeSelector) : $el;
       const publishedAt =
-        this.dateFromHref(href!, spec.dateFromHref) ?? this.extractDate($el) ?? new Date();
+        this.dateFromHref(href!, spec.dateFromHref, spec.dateFromHrefOrder) ??
+        (spec.dateSelector
+          ? this.parseDate(scope.find(spec.dateSelector).first().text())
+          : null) ??
+        this.extractDate($el) ??
+        new Date();
 
       let summary: string | undefined;
       if (spec.summarySelector) {
@@ -305,6 +372,9 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
         for (const reject of spec.summaryReject ?? []) paragraphs = paragraphs.not(reject);
         const text = this.cleanText(paragraphs.first().text());
         summary = text.length > MIN_SUMMARY_LENGTH ? text : undefined;
+      }
+      if (!summary && split && split.tail.length > MIN_SUMMARY_LENGTH) {
+        summary = split.tail;
       }
 
       let imageUrl: string | undefined;
@@ -329,11 +399,37 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
    * `parseDate` als Zeichenkette. Dort greift zuerst `new Date(clean)`, und
    * V8 liest "1.3.2026" amerikanisch als 3. Januar statt als 1. März.
    */
-  private dateFromHref(href: string, pattern?: RegExp): Date | null {
+  /**
+   * Zerlegt einen Link, der Überschrift und Teaser durch ein `<br>` trennt.
+   * Ohne `<br>` steht alles im Kopfteil und `tail` bleibt leer.
+   */
+  private splitAtLineBreak(
+    $: ReturnType<typeof cheerio.load>,
+    link: cheerio.Cheerio
+  ): { head: string; tail: string } {
+    const parts: string[] = ['', ''];
+    let idx = 0;
+    link.contents().each((_, node) => {
+      if (idx === 0 && node.type === 'tag' && node.name === 'br') {
+        idx = 1;
+        return;
+      }
+      parts[idx] += $(node).text();
+    });
+    return { head: this.cleanText(parts[0]), tail: this.cleanText(parts[1]) };
+  }
+
+  private dateFromHref(
+    href: string,
+    pattern?: RegExp,
+    order: 'dmy' | 'ymd' = 'dmy'
+  ): Date | null {
     if (!pattern) return null;
     const m = pattern.exec(href);
     if (!m) return null;
-    const [, d, mo, y] = m;
+    // Beide Reihenfolgen kommen vor: BMG hängt `-pm-14-05-2026` an den Slug,
+    // Blog-Systeme legen ihre Beiträge unter /2026/05/14/slug ab.
+    const [d, mo, y] = order === 'ymd' ? [m[3], m[2], m[1]] : [m[1], m[2], m[3]];
     const date = new Date(Date.UTC(+y, +mo - 1, +d, 12));
     return isPlausiblePublishDate(date) ? date : null;
   }
@@ -361,6 +457,9 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
   protected extractDate($scope: cheerio.Cheerio): Date | null {
     let node = $scope;
     for (let depth = 0; depth < MAX_DATE_ANCESTOR_DEPTH && node.length > 0; depth++) {
+      // dateFromScope liefert nur plausible Daten (parseDate prüft das),
+      // künftige Veranstaltungsdaten aus der Überschrift fallen also schon
+      // dort heraus und die Suche läuft weiter nach oben.
       const found = this.dateFromScope(node);
       if (found) return found;
       node = node.parent();

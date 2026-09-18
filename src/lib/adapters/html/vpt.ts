@@ -25,7 +25,23 @@ export class VptAdapter extends HtmlScraperAdapter {
   }
 }
 
-// VPT-NRW nutzt den gleichen Selektor-Stil — separate Klasse für klarere Logs
+/**
+ * VPT NRW listet seine Meldungen im Newsarchiv in einem eigenen Raster
+ * (.newslistitem > .col-9 > .header > h3 > a) und verlinkt dabei auf die
+ * Landesgruppen-Domain vpt-nord-west.de. Deren Datum steht als DD-MM-YYYY
+ * im Kopf der Kachel, nicht im Link.
+ */
 export class VptNrwAdapter extends VptAdapter {
   readonly typeIdentifier = 'html:vpt-nrw';
+
+  parse($: ReturnType<typeof cheerio.load>, baseUrl: string): RawNewsItem[] {
+    return this.collectListItems($, baseUrl, {
+      itemSelector: '.newslistitem .header h3 a, .news-list-view .header h3 a',
+      minTitleLength: 15,
+      scopeSelector: '.newslistitem',
+      summarySelector: '.teaser, p',
+      summaryReject: ['[class*="meta"]', '[class*="date"]'],
+      imageSelector: 'img',
+    });
+  }
 }
