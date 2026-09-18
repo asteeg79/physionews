@@ -103,7 +103,6 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
         const publishedAt = this.parseDate(dateStr) ?? new Date();
 
         items.push({
-          externalId: resolved,
           title: this.cleanText(title),
           summary: article.description ? this.cleanText(article.description) : undefined,
           url: resolved,
@@ -173,7 +172,6 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
         const img = $item.find('img').first().attr('src');
 
         items.push({
-          externalId: resolved,
           title,
           summary: summary && summary.length > 20 ? summary : undefined,
           url: resolved,

@@ -45,7 +45,6 @@ export class RssAdapter implements SourceAdapter {
     return feed.items
       .filter((item) => item.link && item.title)
       .map((item) => ({
-        externalId: item.guid ?? item.link!,
         title: stripHtml(item.title!).trim(),
         summary: extractSummary(item),
         url: item.link!,

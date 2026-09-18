@@ -1,7 +1,6 @@
 import type { Source } from '@/data/types';
 
 export interface RawNewsItem {
-  externalId: string;
   title: string;
   summary?: string;
   url: string;

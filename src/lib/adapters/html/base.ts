@@ -82,6 +82,54 @@ function collectTextUpTo(node: TextNode | undefined, limit: number): string | nu
   return text.length <= limit ? text : null;
 }
 
+/**
+ * Beschreibung einer Übersichtsseite: was die 13 quellenspezifischen
+ * Adapter voneinander unterscheidet.
+ *
+ * Der Ablauf drumherum — Container finden, Link prüfen, URL auflösen,
+ * deduplizieren, Titel bilden, Datum suchen, Summary und Bild ziehen — war
+ * vorher in jedem Adapter einzeln ausgeschrieben. Rund 300 der 340 Zeilen in
+ * diesem Verzeichnis waren Kopien, und sie waren bereits auseinandergelaufen:
+ * die Mindest-Titellänge schwankte zwischen 8, 10 und 15, ohne dass ein
+ * Grund erkennbar gewesen wäre.
+ */
+export interface ListPageSpec {
+  /**
+   * Container je Beitrag. Trifft der Selektor direkt ein `<a>`, gilt dieses
+   * zugleich als Link — mehrere Quellen listen ihre Beiträge so.
+   */
+  itemSelector: string;
+  /** Link innerhalb des Containers. Ohne Angabe das erste `<a href>`. */
+  linkSelector?: string;
+  /** Greift `linkSelector` nicht, wird hiermit noch einmal gesucht. */
+  linkFallbackSelector?: string;
+  /** href-Muster, die übersprungen werden — Übersichts- und Filterseiten. */
+  rejectHref?: RegExp[];
+  /** href MUSS dieses Muster erfüllen, sonst wird übersprungen. */
+  requireHref?: RegExp;
+  /** Quellenspezifische Ausschlussregel für Fälle, die kein Muster abdeckt. */
+  rejectLink?: (href: string) => boolean;
+  /** Überschrift im Container. Fällt auf den Linktext zurück. */
+  titleSelector?: string;
+  /** Zusätzlich auf den Text des Containers zurückfallen. */
+  titleFromContainer?: boolean;
+  minTitleLength: number;
+  /** Bereich für Summary und Bild — ohne Angabe der Container selbst. */
+  scopeSelector?: string;
+  summarySelector?: string;
+  /** Absätze, die als Summary ausscheiden (Meta- und Datumszeilen). */
+  summaryReject?: string[];
+  imageSelector?: string;
+  /** Bevorzugtes Bild; greift es nicht, gilt `imageSelector`. */
+  preferredImageSelector?: string;
+  /** Datum aus der URL ziehen, z. B. `/thema-14-05-2026/` → Gruppen d, m, y. */
+  dateFromHref?: RegExp;
+}
+
+/** Ab dieser Länge gilt ein Absatz als brauchbare Zusammenfassung. */
+const MIN_SUMMARY_LENGTH = 20;
+
+
 export abstract class HtmlScraperAdapter implements SourceAdapter {
   abstract readonly typeIdentifier: string;
 
@@ -197,6 +245,97 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
     }
 
     return null;
+  }
+
+
+  /**
+   * Liest eine Übersichtsseite nach der übergebenen Beschreibung aus.
+   *
+   * Enthält den Ablauf, den vorher jeder Adapter einzeln ausgeschrieben hat.
+   * Die Adapter bleiben als benannte Klassen bestehen und liefern nur noch
+   * ihr Quellenwissen — so ist an einer Stelle sichtbar, was eine Quelle
+   * besonders macht, statt zwischen Boilerplate versteckt.
+   */
+  protected collectListItems(
+    $: ReturnType<typeof cheerio.load>,
+    baseUrl: string,
+    spec: ListPageSpec
+  ): RawNewsItem[] {
+    const items: RawNewsItem[] = [];
+    const seen = new Set<string>();
+
+    $(spec.itemSelector).each((_, el) => {
+      const $el = $(el);
+
+      // Trifft der Container-Selektor direkt ein <a>, ist es der Link selbst.
+      let link = $el.is('a')
+        ? $el
+        : $el.find(spec.linkSelector ?? 'a[href]').first();
+      if (link.length === 0 && spec.linkFallbackSelector) {
+        link = $el.find(spec.linkFallbackSelector).first();
+      }
+
+      const href = link.attr('href') ?? $el.attr('href');
+      if (!this.isValidLink(href)) return;
+      if (spec.rejectHref?.some((re) => re.test(href!))) return;
+      if (spec.requireHref && !spec.requireHref.test(href!)) return;
+      if (spec.rejectLink?.(href!)) return;
+
+      const url = this.resolveUrl(href!, baseUrl);
+      if (seen.has(url)) return;
+
+      const heading = spec.titleSelector
+        ? this.cleanText($el.find(spec.titleSelector).first().text())
+        : '';
+      const title =
+        heading ||
+        this.cleanText(link.text()) ||
+        (spec.titleFromContainer ? this.cleanText($el.text()) : '');
+      if (!title || title.length < spec.minTitleLength) return;
+
+      seen.add(url);
+
+      const scope = spec.scopeSelector ? $el.closest(spec.scopeSelector) : $el;
+      const publishedAt =
+        this.dateFromHref(href!, spec.dateFromHref) ?? this.extractDate($el) ?? new Date();
+
+      let summary: string | undefined;
+      if (spec.summarySelector) {
+        let paragraphs = scope.find(spec.summarySelector);
+        for (const reject of spec.summaryReject ?? []) paragraphs = paragraphs.not(reject);
+        const text = this.cleanText(paragraphs.first().text());
+        summary = text.length > MIN_SUMMARY_LENGTH ? text : undefined;
+      }
+
+      let imageUrl: string | undefined;
+      if (spec.imageSelector || spec.preferredImageSelector) {
+        const img =
+          (spec.preferredImageSelector
+            ? scope.find(spec.preferredImageSelector).first().attr('src')
+            : undefined) ?? scope.find(spec.imageSelector ?? 'img').first().attr('src');
+        imageUrl = img ? this.resolveUrl(img, baseUrl) : undefined;
+      }
+
+      items.push({ title, summary, url, publishedAt, imageUrl });
+    });
+
+    return items;
+  }
+
+  /**
+   * Zieht ein Datum aus der URL, sofern die Quelle es dort führt.
+   *
+   * Die Gruppen werden direkt als Tag, Monat, Jahr gelesen — NICHT über
+   * `parseDate` als Zeichenkette. Dort greift zuerst `new Date(clean)`, und
+   * V8 liest "1.3.2026" amerikanisch als 3. Januar statt als 1. März.
+   */
+  private dateFromHref(href: string, pattern?: RegExp): Date | null {
+    if (!pattern) return null;
+    const m = pattern.exec(href);
+    if (!m) return null;
+    const [, d, mo, y] = m;
+    const date = new Date(Date.UTC(+y, +mo - 1, +d, 12));
+    return isPlausiblePublishDate(date) ? date : null;
   }
 
   /**

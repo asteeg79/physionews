@@ -8,37 +8,12 @@ export class DvmtAdapter extends HtmlScraperAdapter {
   readonly typeIdentifier = 'html:dvmt';
 
   parse($: ReturnType<typeof cheerio.load>, baseUrl: string): RawNewsItem[] {
-    const items: RawNewsItem[] = [];
-    const seen = new Set<string>();
-
-    $('article, .news-item, .post, [class*="news"], a[href*="aktuelles"], a[href*="news"]').each((_, el) => {
-      const link = $(el).is('a') ? $(el) : $(el).find('a[href]').first();
-      const href = link.attr('href');
-      if (!this.isValidLink(href)) return;
-
-      // Übersichtsseiten überspringen
-      if (href!.match(/\/(news|aktuelles)\/?$/)) return;
-
-      const url = this.resolveUrl(href!, baseUrl);
-      if (seen.has(url)) return;
-
-      const title = this.cleanText(
-        $(el).find('h1, h2, h3').first().text() || link.text()
-      );
-      if (!title || title.length < 15) return;
-
-      seen.add(url);
-
-      const publishedAt = this.extractDate($(el)) ?? new Date();
-
-      items.push({
-        externalId: url,
-        title,
-        url,
-        publishedAt,
-      });
+    return this.collectListItems($, baseUrl, {
+      itemSelector:
+        'article, .news-item, .post, [class*="news"], a[href*="aktuelles"], a[href*="news"]',
+      rejectHref: [/\/(news|aktuelles)\/?$/],
+      titleSelector: 'h1, h2, h3',
+      minTitleLength: 15,
     });
-
-    return items;
   }
 }

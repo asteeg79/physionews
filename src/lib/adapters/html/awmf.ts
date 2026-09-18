@@ -10,37 +10,12 @@ export class AwmfAdapter extends HtmlScraperAdapter {
   readonly typeIdentifier = 'html:awmf';
 
   parse($: ReturnType<typeof cheerio.load>, baseUrl: string): RawNewsItem[] {
-    const items: RawNewsItem[] = [];
-    const seen = new Set<string>();
-
-    $('a[href*="/leitlinien/"], .leitlinien-item, .guideline-item, article').each((_, el) => {
-      const link = $(el).is('a') ? $(el) : $(el).find('a[href*="/leitlinien/"]').first();
-      const href = link.attr('href');
-      if (!this.isValidLink(href)) return;
-
-      // Übersichtsseiten überspringen
-      if (href!.match(/\/leitlinien\/?$/) || href!.match(/\/aktuelle-leitlinien\/?$/)) return;
-
-      const url = this.resolveUrl(href!, baseUrl);
-      if (seen.has(url)) return;
-
-      const title = this.cleanText(
-        $(el).find('h1, h2, h3').first().text() || link.text()
-      );
-      if (!title || title.length < 15) return;
-
-      seen.add(url);
-
-      const publishedAt = this.extractDate($(el)) ?? new Date();
-
-      items.push({
-        externalId: url,
-        title,
-        url,
-        publishedAt,
-      });
+    return this.collectListItems($, baseUrl, {
+      itemSelector: 'a[href*="/leitlinien/"], .leitlinien-item, .guideline-item, article',
+      linkSelector: 'a[href*="/leitlinien/"]',
+      rejectHref: [/\/leitlinien\/?$/, /\/aktuelle-leitlinien\/?$/],
+      titleSelector: 'h1, h2, h3',
+      minTitleLength: 15,
     });
-
-    return items;
   }
 }
