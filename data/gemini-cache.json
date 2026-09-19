@@ -5817,5 +5817,23 @@
     ],
     "reason": "Die Meldung über ein Innovationsfonds-Projekt zur Weiterentwicklung einer S3-Leitlinie für Störungen",
     "createdAt": "2026-09-18T10:41:23.917Z"
+  },
+  {
+    "titleHash": "74bc3fc95b1e65b2dc5a32567704c337",
+    "score": 9,
+    "topics": [
+      "Studie",
+      "RCT",
+      "Osteoporose"
+    ],
+    "reason": "Die LIPLEG-Studie ist eine randomisierte kontrollierte Studie (RCT) zur Wirksamkeit von Lipidsenkern",
+    "createdAt": "2026-09-19T08:20:05.111Z"
+  },
+  {
+    "titleHash": "20ea0b9ae81aa86c8979f872c90cd1d8",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel \"Auf dem kurzen Dienstweg\" ist zu vage und lässt keinen direkten Bezug zur physiotherapeut",
+    "createdAt": "2026-09-19T08:20:05.111Z"
   }
 ]
