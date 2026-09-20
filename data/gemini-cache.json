@@ -5835,5 +5835,12 @@
     "topics": [],
     "reason": "Der Titel \"Auf dem kurzen Dienstweg\" ist zu vage und lässt keinen direkten Bezug zur physiotherapeut",
     "createdAt": "2026-09-19T08:20:05.111Z"
+  },
+  {
+    "titleHash": "6535211fa5efac4bbc6b1c5cd78ad9a0",
+    "score": 0,
+    "topics": [],
+    "reason": "Cochrane-Ticker sind reine Ankündigungen von Reviews, die noch nicht veröffentlicht sind. Sie ändern",
+    "createdAt": "2026-09-20T13:46:26.327Z"
   }
 ]
