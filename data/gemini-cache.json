@@ -5842,5 +5842,68 @@
     "topics": [],
     "reason": "Cochrane-Ticker sind reine Ankündigungen von Reviews, die noch nicht veröffentlicht sind. Sie ändern",
     "createdAt": "2026-09-20T13:46:26.327Z"
+  },
+  {
+    "titleHash": "29fd9068b0d1c9ba8b54d64de783910a",
+    "score": 10,
+    "topics": [
+      "Blankoverordnung",
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung ist hochrelevant, da sie sich direkt mit der Blankoverordnung und deren Abrechnung (\"Ver",
+    "createdAt": "2026-09-21T09:21:36.188Z"
+  },
+  {
+    "titleHash": "31304d90483fbfd9ac90476d3e039d6d",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung über die Verlängerung der Bewerbungsfrist für die \"Physio Deutschland Awards 2026\" ist n",
+    "createdAt": "2026-09-21T09:21:36.188Z"
+  },
+  {
+    "titleHash": "aa06a93c6a974bea6512b63abb361a92",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung \"Klima, Gesundheit und Physiotherapie\" mit der Aufforderung zur Teilnahme bis Ende Augus",
+    "createdAt": "2026-09-21T09:21:36.188Z"
+  },
+  {
+    "titleHash": "acec9f6b35b6502a97ad1715d8634ee2",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung über die FIBO 2026 und den Diskurs der Berufsverbände zur \"Zukunft der Physiotherapie\" i",
+    "createdAt": "2026-09-21T09:21:36.188Z"
+  },
+  {
+    "titleHash": "24ce8c3644a1244e269e8459f579e1c0",
+    "score": 10,
+    "topics": [
+      "Blankoverordnung",
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Diese Meldung ist hochrelevant, da sie die Inkraftsetzung des \"GKV-Beitragsstabilisierungsgesetzes\" ",
+    "createdAt": "2026-09-21T09:21:36.188Z"
+  },
+  {
+    "titleHash": "a89c1333ba791e3dd6af035064e76933",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung über \"Upcoding durch Krankenkassen\" ist relevant, da sie sich mit Abrechnungspraktiken u",
+    "createdAt": "2026-09-21T09:21:36.188Z"
   }
 ]
