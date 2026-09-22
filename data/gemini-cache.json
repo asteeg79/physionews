@@ -5905,5 +5905,41 @@
     ],
     "reason": "Die Meldung über \"Upcoding durch Krankenkassen\" ist relevant, da sie sich mit Abrechnungspraktiken u",
     "createdAt": "2026-09-21T09:21:36.188Z"
+  },
+  {
+    "titleHash": "dee2ff78a2411aa1776ed45faf369388",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Der IFK berichtet über Bürokratieentlastungen im Heilmittelbereich. Dies kann direkte Auswirkungen a",
+    "createdAt": "2026-09-22T08:51:05.011Z"
+  },
+  {
+    "titleHash": "57d83e24f25d5ae0f08d9beddce7090c",
+    "score": 4,
+    "topics": [
+      "Sturzprävention",
+      "Reha"
+    ],
+    "reason": "Die Meldung bezieht sich auf die Zentrale Anlaufstelle Prävention (ZPP) und Prävention im Allgemeine",
+    "createdAt": "2026-09-22T08:51:05.011Z"
+  },
+  {
+    "titleHash": "e7ae690ff09778a4de11b70d244d8214",
+    "score": 4,
+    "topics": [
+      "Studie"
+    ],
+    "reason": "Die Meldung 'Metal lindert Schmerz' ist zu unspezifisch. Ohne klare Angaben, ob es sich um eine Stud",
+    "createdAt": "2026-09-22T08:51:05.011Z"
+  },
+  {
+    "titleHash": "667dbb5c98f292433f69f4a9564fe99f",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Alice im Technikland' ist völlig irrelevant für Physiotherapeut:innen in der Praxis. Es g",
+    "createdAt": "2026-09-22T08:51:05.011Z"
   }
 ]
