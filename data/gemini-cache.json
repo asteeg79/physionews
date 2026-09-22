@@ -5941,5 +5941,43 @@
     "topics": [],
     "reason": "Der Titel 'Alice im Technikland' ist völlig irrelevant für Physiotherapeut:innen in der Praxis. Es g",
     "createdAt": "2026-09-22T08:51:05.011Z"
+  },
+  {
+    "titleHash": "b902d5be67da1d2804b696d169adb4ef",
+    "score": 4,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung thematisiert Fortbildung und Nachwuchs im Fachbereich Orthopädie und Unfallchirurgie. Ei",
+    "createdAt": "2026-09-22T14:13:21.113Z"
+  },
+  {
+    "titleHash": "f12f7ec689c74179dfde1ad6cdf0605b",
+    "score": 4,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung bezieht sich auf neue Wege in der Orthopädie und Unfallchirurgie, wie sie auf dem DKOU 2",
+    "createdAt": "2026-09-22T14:13:21.113Z"
+  },
+  {
+    "titleHash": "c025cdda500609b30d75289ce9251768",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Meldung \"Stillen ja, aber bitte ohne Schmerzen\" könnte potenziell einen Bezug zur physiotherapeu",
+    "createdAt": "2026-09-22T14:13:21.113Z"
+  },
+  {
+    "titleHash": "e855673ba5c73e3faa941c78b69d2434",
+    "score": 4,
+    "topics": [
+      "Reha"
+    ],
+    "reason": "Die Meldung \"Therapie bis in den Tod\" ist sehr allgemein und thematisiert möglicherweise palliative ",
+    "createdAt": "2026-09-22T14:13:21.113Z"
   }
 ]
