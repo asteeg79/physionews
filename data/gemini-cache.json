@@ -6015,5 +6015,81 @@
     ],
     "reason": "Die Meldung über Unfälle am Arbeitsplatz und die Betroffenenzahlen ist zwar ein Thema im Gesundheits",
     "createdAt": "2026-09-23T08:52:30.875Z"
+  },
+  {
+    "titleHash": "22649c6dc4cc407e577f2465ee11b3ff",
+    "score": 4,
+    "topics": [
+      "Schulter",
+      "Fortbildung"
+    ],
+    "reason": "Die Ankündigung einer Fortbildung zur Schulteranatomie und Diagnostik ist für Physiotherapeuten zwar",
+    "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "e91cc924355cfeefe26e9ecce9f9a16f",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Anpassung der beihilfefähigen Höchstbeträge hat direkte Auswirkungen auf die Abrechnung von phys",
+    "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "b1fa0502c646ea21f2e675c235a99fa3",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Beschwerde beim Bundesamt für Soziale Sicherung bezüglich des Statusfeststellungsverfahrens kann",
+    "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "e8c937130b0140f735f8a23ee74bc4a6",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "reason": "Der Titel 'Menschen in Bewegung bringen' ist zu allgemein und impliziert keine konkrete Änderung für",
+    "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "04963b6b3fd8b12dd40caf057b507b36",
+    "score": 4,
+    "topics": [
+      "Fortbildung",
+      "Berufsausbildung"
+    ],
+    "reason": "Planetary Health ist ein wichtiges Thema, aber die Ankündigung von Infoveranstaltungen für Lehrende ",
+    "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "58d9f7639d6ed2404fbf31391a2ddf26",
+    "score": 5,
+    "topics": [
+      "Studie",
+      "Fortbildung"
+    ],
+    "reason": "Eine Studie zur professionellen Gesundheitskompetenz könnte mittelbar relevant sein, wenn die Ergebn",
+    "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "cff2c0c1480611b4fd2b3d5cf1721018",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Auf der Suche nach Gesundheit' ist zu allgemein und hat keinen erkennbaren direkten Bezug",
+    "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "425ebf11f178357d3058704014ca9877",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Ankündigung, über 200 Aussteller live zu erleben, ist eine reine Veranstaltungsankündigung und ä",
+    "createdAt": "2026-09-23T14:29:16.183Z"
   }
 ]
