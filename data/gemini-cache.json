@@ -5979,5 +5979,41 @@
     ],
     "reason": "Die Meldung \"Therapie bis in den Tod\" ist sehr allgemein und thematisiert möglicherweise palliative ",
     "createdAt": "2026-09-22T14:13:21.113Z"
+  },
+  {
+    "titleHash": "253f6d89a06d2dfbda497ea45479c77b",
+    "score": 4,
+    "topics": [
+      "Sturzprävention",
+      "Geriatrie"
+    ],
+    "reason": "Die Meldung thematisiert Sturzprävention bei älteren Menschen. Dies ist zwar ein relevantes Thema fü",
+    "createdAt": "2026-09-23T08:52:30.875Z"
+  },
+  {
+    "titleHash": "79ebb1081845b2a3892dee200e4158a2",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Blankoverordnung"
+    ],
+    "reason": "Die Meldung thematisiert die elektronische Heilmittelverordnung, was direkte Auswirkungen auf die Ab",
+    "createdAt": "2026-09-23T08:52:30.875Z"
+  },
+  {
+    "titleHash": "a5ca39dc59957362b3911a9c040689c2",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Strich durch die Rechnung' ist zu vage und gibt keinen klaren Bezug zur physiotherapeutis",
+    "createdAt": "2026-09-23T08:52:30.875Z"
+  },
+  {
+    "titleHash": "2cded41089979a1d97ac948bd24bef04",
+    "score": 3,
+    "topics": [
+      "Reha"
+    ],
+    "reason": "Die Meldung über Unfälle am Arbeitsplatz und die Betroffenenzahlen ist zwar ein Thema im Gesundheits",
+    "createdAt": "2026-09-23T08:52:30.875Z"
   }
 ]

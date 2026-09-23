@@ -1,16 +1,16 @@
 [
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-09-22T19:19:08.897Z",
-    "fetchedAt": "2026-09-22T19:19:08.905Z",
+    "publishedAt": "2026-09-23T08:52:27.598Z",
+    "fetchedAt": "2026-09-23T08:52:27.598Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung, dass das Oberlandesgericht Frankfurt am Main CranioSacrale Therapie auf Verordnung erla",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie di",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie"
@@ -18,74 +18,111 @@
     "lang": "de"
   },
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "a76cbb8f64516c145dbf61f078ef05aaa5d0e48088201d1fcd4d8a425f22e837",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "GEMA gibt gegen Physiotherapeuten nicht auf",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/gema-gibt-gegen-physiotherapeuten-nicht-auf/",
     "imageUrl": null,
-    "publishedAt": "2026-09-22T19:19:08.895Z",
-    "fetchedAt": "2026-09-22T19:19:08.905Z",
+    "publishedAt": "2026-09-23T08:52:27.598Z",
+    "fetchedAt": "2026-09-23T08:52:27.598Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die GEMA, die gegen Physiotherapeuten nicht aufgibt, betrifft die Lizenzierung von ",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "5667ca78f0d00cd12dcf4a4fd5de9ed0b89d74c35f112de6d02b516534f6bc3b",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Gesetzliche Krankenkasse zur Zahlung von Verzugskostenpauschale verurteilt",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/viele-ermittlungsverfahren-wegen-anstiftung-zur-ausstellung-eines-unrichtigen-gesundheitszeugnisses-eingeleitet/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-23T08:52:27.597Z",
+    "fetchedAt": "2026-09-23T08:52:27.598Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über das Bundessozialgericht und die Zulassungserweiterung für Manuelle Therapie ist unm",
+    "relevanceReason": "ai: Die Verurteilung einer gesetzlichen Krankenkasse zur Zahlung einer Verzugskostenpauschale ist für Ph",
     "isTopNews": true,
     "topics": [
-      "Manuelle Therapie",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
-    "imageUrl": null,
-    "publishedAt": "2026-09-22T19:19:08.894Z",
-    "fetchedAt": "2026-09-22T19:19:08.905Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
-    "imageUrl": null,
-    "publishedAt": "2026-09-22T19:19:08.893Z",
-    "fetchedAt": "2026-09-22T19:19:08.905Z",
-    "relevanceScore": 9,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist für Physiotherapeut:in",
-    "isTopNews": false,
-    "topics": [
+      "GKV-Vergütung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-09-22T19:19:08.892Z",
-    "fetchedAt": "2026-09-22T19:19:08.905Z",
+    "publishedAt": "2026-09-23T08:52:27.597Z",
+    "fetchedAt": "2026-09-23T08:52:27.598Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die Nutzung nicht zugelassener Geräte in der Physiotherapie ist direkt relevant, da",
+    "relevanceReason": "ai: Die Meldung zur Kassenzulassung für Fachfremde in der Physiotherapie ist unmittelbar relevant, da si",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "3f7d04ba51ff3c9d6d24eae2bf8e3e3d08ffe77814ef05438943e423a567b9e7",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Keine berechtigte Abmahnung ohne konkretes Wettbewerbsverhältnis",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/keine-berechtigte-abmahnung-ohne-konkretes-wettbewerbsverh%C3%A4ltnis/",
+    "imageUrl": null,
+    "publishedAt": "2026-09-23T08:52:27.597Z",
+    "fetchedAt": "2026-09-23T08:52:27.598Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über berechtigte Abmahnungen ohne konkretes Wettbewerbsverhältnis ist zwar eine juristis",
     "isTopNews": false,
     "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "2e82aac5015a8044f20254932c9bed67482d28c6917c54b69cecf1a67047e96c",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Große Mehrheit wünscht sich elektronische Heilmittelverordnung",
+    "summary": "Eine kleine Meldung der letzten Wochen, die es verdient hat, berichtet zu werden.",
+    "url": "https://physio.de/community/news/grosse-mehrheit-wuenscht-sich-elektronische-heilmittelverordnung/99/12029/1",
+    "imageUrl": null,
+    "publishedAt": "2026-09-23T07:57:23.566Z",
+    "fetchedAt": "2026-09-23T08:52:23.568Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung thematisiert die elektronische Heilmittelverordnung, was direkte Auswirkungen auf die Ab",
+    "isTopNews": true,
+    "topics": [
+      "Heilmittelversorgung",
+      "Blankoverordnung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "74cf03834c4a50806d5ca5e2cde65b613a80473d6c53db5d9b238bbb90ddf1a0",
+    "sourceId": "3506f175-239b-4681-b6fa-fac881826441",
+    "title": "Nasses Laub wie Schmierseife: So vermeiden ältere Menschen Stürze",
+    "summary": "Tag der älteren Generation am 1. Oktober",
+    "url": "https://dgou.de/presse/pressemitteilungen/detailansicht-pressemitteilungen/artikel/nasses-laub-wie-schmierseife-so-vermeiden-aeltere-menschen-stuerze",
+    "imageUrl": null,
+    "publishedAt": "2026-09-23T00:00:00.000Z",
+    "fetchedAt": "2026-09-23T08:52:22.841Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung thematisiert Sturzprävention bei älteren Menschen. Dies ist zwar ein relevantes Thema fü",
+    "isTopNews": false,
+    "topics": [
+      "Sturzprävention",
+      "Geriatrie"
+    ],
     "lang": "de"
   },
   {
@@ -228,24 +265,6 @@
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "3427e9c7c5e23647fa3f39ef9c9a69bf9292c1eebc39989895819d39f3de43f2",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Grundlohnsumme bremst Vergütungszuwachs ab 2027",
-    "summary": "Das Bundesgesundheitsministerium hat die Grundlohnrate für 2027 bekanntgegeben – doch durch gesetzliche Abschläge fällt der Verhandlungsspielraum für Physiotherapeuten noch geringer aus.",
-    "url": "https://physio.de/community/news/grundlohnsumme-bremst-verguetungszuwachs-ab-2027/99/12026/1",
-    "imageUrl": null,
-    "publishedAt": "2026-09-20T07:51:26.390Z",
-    "fetchedAt": "2026-09-20T08:51:26.396Z",
-    "relevanceScore": 9,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Information über die Grundlohnsumme und deren Auswirkung auf die Vergütung ab 2027 ist unmittelb",
-    "isTopNews": true,
-    "topics": [
-      "GKV-Vergütung"
     ],
     "lang": "de"
   },
@@ -1223,152 +1242,6 @@
     "relevanceScore": 4,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Entgeltatlas 2025: Praxisinhaber mehr als fair",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "92aeb6b534a96be0cffc51f36e7397a80263c891af389fd4b295c8e4f722491c",
-    "sourceId": "3506f175-239b-4681-b6fa-fac881826441",
-    "title": "Schulstart ohne Rückenschmerzen: Worauf es bei Schulranzen, Rucksack und Tablet ankommt",
-    "summary": "Rücken-Tipps für Kinder und Jugendliche",
-    "url": "https://dgou.de/presse/pressemitteilungen/detailansicht-pressemitteilungen/artikel/schulstart-ohne-rueckenschmerzen-worauf-es-bei-schulranzen-rucksack-und-tablet-ankommt",
-    "imageUrl": null,
-    "publishedAt": "2026-08-24T00:00:00.000Z",
-    "fetchedAt": "2026-09-17T14:29:57.223Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über Rückenschmerzen bei Schulkindern im Zusammenhang mit Schulranzen und Tablets hat ei",
-    "isTopNews": false,
-    "topics": [
-      "Rückenschmerz",
-      "Sturzprävention"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "fec1f53e694c9819b58a202b972b6cf1b816ea4776163e8e834e918ecfaabedf",
-    "sourceId": "3506f175-239b-4681-b6fa-fac881826441",
-    "title": "DKOU 2026: Prof. Frank Hildebrand über neue Wege in Orthopädie und Unfallchirurgie",
-    "summary": "Deutscher Kongress für Orthopädie und Unfallchirurgie",
-    "url": "https://dgou.de/presse/pressemitteilungen/detailansicht-pressemitteilungen/artikel/dkou-2026-prof-frank-hildebrand-ueber-neue-wege-in-orthopaedie-und-unfallchirurgie",
-    "imageUrl": null,
-    "publishedAt": "2026-08-24T00:00:00.000Z",
-    "fetchedAt": "2026-09-22T14:13:13.808Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung bezieht sich auf neue Wege in der Orthopädie und Unfallchirurgie, wie sie auf dem DKOU 2",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "b82a7c47f072f070673e7ec676a0dbd4f1f21e963b54a357fc7c1a71ea7b7f24",
-    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
-    "title": "Healthy Ageing Needs Muscle: Physiotherapy between WHO Framework, Implementation Gap and Myokine RevolutionHealthy Aging braucht Muskel: Physiotherapie zwischen WHO-Rahmen, Implementierungslücke und Myokin-Revolution",
-    "summary": null,
-    "url": "http://dx.doi.org/10.1055/a-2820-8394",
-    "imageUrl": null,
-    "publishedAt": "2026-08-23T23:00:00.000Z",
-    "fetchedAt": "2026-09-17T13:20:48.911Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Healthy Ageing Needs Muscle: Physiotherapy between WHO Framework, Implementation Gap and Myokine Rev",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Geriatrie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "cc6d59c48c259a1d189f71c59c8c5e0b655f4ff03bcddcecf7535a78a378e2b3",
-    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
-    "title": "physioscience in a Changing Scientific Landscape – Ensuring Quality, Transparency, Integrity, Trustworthiness and Relevance physioscience in einem sich wandelnden Wissenschaftssystem – Sicherstellung von Qualität, Transparenz, Integrität, Vertrauenswürdigkeit und Relevanz",
-    "summary": null,
-    "url": "http://dx.doi.org/10.1055/a-2896-9013",
-    "imageUrl": null,
-    "publishedAt": "2026-08-23T23:00:00.000Z",
-    "fetchedAt": "2026-09-17T13:20:48.911Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: physioscience in a Changing Scientific Landscape – Ensuring Quality, Transparency, Integrity, Trustw",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "66ae9a608f8a613eb35deacdaa0e2415f7af91be4116b97ff63e718ac7287f08",
-    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
-    "title": "Reporting Randomised Trials of Physical Exercise or Training Interventions in Older AdultsEmpfehlungen zur Darstellung randomisierter Studien zu körperlichem Training älterer Erwachsener",
-    "summary": "This reporting guideline was developed to address the gap in methodological reporting standards for trials investigating physical exercise or training in older adults, aiming to enhance the quality, transparency, and replicability of such research. The aim is to improve the reporting of key elements, including population characteristics, intervention components [e. g., Frequency, Intensity, Time,…",
-    "url": "http://dx.doi.org/10.1055/a-2820-8550",
-    "imageUrl": null,
-    "publishedAt": "2026-08-23T23:00:00.000Z",
-    "fetchedAt": "2026-09-17T13:20:48.911Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Reporting Randomised Trials of Physical Exercise or Training Interventions in Older AdultsEmpfehlung",
-    "isTopNews": false,
-    "topics": [
-      "RCT",
-      "Geriatrie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f5beb7228b0c0a7031e1624e6ed801a1695db996f556490e1032302083598776",
-    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
-    "title": "Effectiveness of physical therapeutic scoliosis exercise (PSSE) intervention for adolescent idiopathic scoliosis: a systematic review and meta-analysisWirksamkeit von skoliosespezifischen physiotherapeutischen Interventionen (PSSE) bei Jugendlichen mit idiopathischer Skoliose: eine systematische Übersichtsarbeit mit Meta-Analyse",
-    "summary": null,
-    "url": "http://dx.doi.org/10.1055/a-2817-2790",
-    "imageUrl": null,
-    "publishedAt": "2026-08-23T23:00:00.000Z",
-    "fetchedAt": "2026-09-17T13:20:48.911Z",
-    "relevanceScore": 10,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Effectiveness of physical therapeutic scoliosis exercise (PSSE) intervention for adolescent idiopath",
-    "isTopNews": false,
-    "topics": [
-      "Wirbelsäule",
-      "Systematic Review",
-      "Meta-Analyse"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "abb289b8708efad73570e49dd8363181de5626b98130ad39ef8ae87b1daad066",
-    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
-    "title": "Are our cities falling behind? A German perspective on the offer for year-round outdoor exerciseFallen unsere Städte zurück? Eine deutsche Perspektive auf das Angebot für ganzjähriges Training im Grünen",
-    "summary": null,
-    "url": "http://dx.doi.org/10.1055/a-2789-1346",
-    "imageUrl": null,
-    "publishedAt": "2026-08-23T23:00:00.000Z",
-    "fetchedAt": "2026-09-17T13:20:48.911Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Are our cities falling behind? A German perspective on the offer for year-round outdoor exerciseFall",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "04158322f6124104c61bf78e258ccdf97dfea1ba8cbc55b3db5c7c2ba7d22cf8",
-    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
-    "title": "News from the Sections of the German Society for Physiotherapy ScienceNeues aus den Sektionen der Deutschen Gesellschaft für Physiotherapiewissenschaft",
-    "summary": null,
-    "url": "http://dx.doi.org/10.1055/a-2820-8467",
-    "imageUrl": null,
-    "publishedAt": "2026-08-23T23:00:00.000Z",
-    "fetchedAt": "2026-09-17T13:20:48.911Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: News from the Sections of the German Society for Physiotherapy ScienceNeues aus den Sektionen der De",
     "isTopNews": false,
     "topics": [],
     "lang": "de"
