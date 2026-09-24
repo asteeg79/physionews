@@ -6176,5 +6176,85 @@
     ],
     "reason": "Die Meldung thematisiert die Gesundheitsreform und deren finanzielle Auswirkungen, was potenziell di",
     "createdAt": "2026-09-24T14:28:59.660Z"
+  },
+  {
+    "titleHash": "05bd09391270dc6c16ed551be3aa9d29",
+    "score": 5,
+    "topics": [
+      "Rückenschmerz",
+      "Studie"
+    ],
+    "reason": "Die Forderung nach gendersensiblen Perspektiven bei Rückenschmerzen könnte mittelbar die fachliche H",
+    "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "a81f31e44874e6600e64c858551b92ae",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Teilnahme an einem Zukunftstag eines Dienstleisters ohne konkreten Bezug zu Änderungen in der ph",
+    "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "a1540be4a29cb336fc9e4e0d36d2e12f",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Die Mitgestaltung der Heilmittelversorgung durch Gespräche mit der GKV hat direkten Einfluss auf die",
+    "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "2a4f93327f03fdaf7af8c1356f2c982d",
+    "score": 4,
+    "topics": [
+      "Studie"
+    ],
+    "reason": "Eine Befragung zur Belastung durch Hitze ist für die Praxis relevant, ändert aber nicht unmittelbar ",
+    "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "25dbfee455207dd9c404bd782d1b77d9",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Eine Rabattankündigung für einen Kongress ist eine Veranstaltungsinformation und ändert nichts an de",
+    "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "93801ea00a5e3a1a7e070af118724d37",
+    "score": 8,
+    "topics": [
+      "GKV-Vergütung",
+      "Berufsverband"
+    ],
+    "reason": "Die Grundlohnrate hat direkten Einfluss auf die Vergütung und damit auf die wirtschaftliche Situatio",
+    "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "dbcce1b44c8b01bbbd40945256992ae6",
+    "score": 3,
+    "topics": [
+      "Leitlinie",
+      "Fortbildung",
+      "Veranstaltung"
+    ],
+    "reason": "Die Leitlinien-Sprechstunde richtet sich an Leitliniengruppen und nicht unmittelbar an die praktisch",
+    "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "c16e003bb71fb3f4d9b04de341df963a",
+    "score": 5,
+    "topics": [
+      "Geriatrie",
+      "Bewegungstherapie",
+      "Sturzprävention"
+    ],
+    "reason": "Die 'Woche der Demenz' und die Betonung von Bewegung sind thematisch für die Geriatrie und Bewegungs",
+    "createdAt": "2026-09-24T19:33:17.575Z"
   }
 ]
