@@ -6091,5 +6091,80 @@
     ],
     "reason": "Die Ankündigung, über 200 Aussteller live zu erleben, ist eine reine Veranstaltungsankündigung und ä",
     "createdAt": "2026-09-23T14:29:16.183Z"
+  },
+  {
+    "titleHash": "2d9ef7954afba9c1a7db3bd83faccfad",
+    "score": 1,
+    "topics": [],
+    "reason": "Die Meldung thematisiert die ungleiche Verteilung von Herzinsuffizienz in Deutschland, bedingt durch",
+    "createdAt": "2026-09-24T08:48:15.403Z"
+  },
+  {
+    "titleHash": "4dbee2da8fe622d445e175219a3a58ce",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Berufsverband"
+    ],
+    "reason": "Die Ankündigung der 'Physio Deutschland Awards 2026' zur Sichtbarmachung von Engagement ist eine Ver",
+    "createdAt": "2026-09-24T08:48:15.403Z"
+  },
+  {
+    "titleHash": "867e109ee97f9ec71b85ac8b2ae39812",
+    "score": 9,
+    "topics": [
+      "Blankoverordnung",
+      "Heilmittelversorgung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Meldung thematisiert die Blankoverordnung in der Praxis und was dort funktioniert. Dies ist unmi",
+    "createdAt": "2026-09-24T08:48:15.403Z"
+  },
+  {
+    "titleHash": "ce3d553cf8e9262c2c2fbc97ec461d9f",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Ankündigung des '8. TherapieGipfel' in Berlin ist eine reine Veranstaltungsmeldung. Die Teilnahm",
+    "createdAt": "2026-09-24T08:48:15.403Z"
+  },
+  {
+    "titleHash": "ca259b17c27ac18bd5b39f020a1e4424",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung über die ersten 100 Tage des neuen Vorstands von Physio Deutschland ist eine reine Perso",
+    "createdAt": "2026-09-24T08:48:15.403Z"
+  },
+  {
+    "titleHash": "9e93b15d26437080c5096733c7869944",
+    "score": 4,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Ankündigung des DKOU 2026 mit einem Vortrag über neue Wege in Orthopädie und Unfallchirurgie ist",
+    "createdAt": "2026-09-24T08:48:15.403Z"
+  },
+  {
+    "titleHash": "3f5a2f3a34541701425160f12f269315",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Aufforderung zum Unterschreiben und Weitererzählen bis zum 14.09.2026 ist eine reine Aufruf- und",
+    "createdAt": "2026-09-24T08:48:15.403Z"
+  },
+  {
+    "titleHash": "3a6e394750d3ffebba16e1d9cc097403",
+    "score": 5,
+    "topics": [
+      "Sportphysiotherapie",
+      "Studie"
+    ],
+    "reason": "Die Frage, ob Kopfbälle sicher sind, berührt zwar das Thema Sport und potenziell auch die physiother",
+    "createdAt": "2026-09-24T08:48:15.403Z"
   }
 ]
