@@ -6278,5 +6278,41 @@
     ],
     "reason": "Die Einführung eines sektoralen Heilpraktikers für Chiropraktik hat direkte Auswirkungen auf die Abg",
     "createdAt": "2026-09-25T09:08:36.682Z"
+  },
+  {
+    "titleHash": "956028ee1fca5028f70f463bda466bf8",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung ohne erkennbaren direkten Einfluss auf die physiotherapeutische Prax",
+    "createdAt": "2026-09-25T14:49:08.345Z"
+  },
+  {
+    "titleHash": "ea98488c1ebe0dcf6d64b9cc227ce19a",
+    "score": 0,
+    "topics": [],
+    "reason": "Interview mit einer Person ohne erkennbaren direkten Einfluss auf die physiotherapeutische Praxis.",
+    "createdAt": "2026-09-25T14:49:08.345Z"
+  },
+  {
+    "titleHash": "de4b5faf3ef74ae6ffe8b0641a709d7e",
+    "score": 7,
+    "topics": [
+      "Fortbildung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Vortrag über Patient-Reported Outcomes (PROMs) ist relevant für die tägliche Arbeit und die Dokument",
+    "createdAt": "2026-09-25T14:49:08.345Z"
+  },
+  {
+    "titleHash": "e2a3b82d558a152300fd8a35c546102d",
+    "score": 4,
+    "topics": [
+      "Leitlinie",
+      "Studie"
+    ],
+    "reason": "Leitartikel über die Weiterentwicklung von Cochrane und den Umgang mit Desinformation und KI ist von",
+    "createdAt": "2026-09-25T14:49:08.345Z"
   }
 ]
