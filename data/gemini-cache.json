@@ -6256,5 +6256,27 @@
     ],
     "reason": "Die 'Woche der Demenz' und die Betonung von Bewegung sind thematisch für die Geriatrie und Bewegungs",
     "createdAt": "2026-09-24T19:33:17.575Z"
+  },
+  {
+    "titleHash": "dc28a17e63021bd30dadc253b3f45da8",
+    "score": 5,
+    "topics": [
+      "Rückenschmerz",
+      "Neurologie",
+      "Leitlinie"
+    ],
+    "reason": "Die ICD-11 Klassifikation chronischer Schmerzen ist für Physiotherapeuten relevant, da sie die Grund",
+    "createdAt": "2026-09-25T09:08:36.682Z"
+  },
+  {
+    "titleHash": "1cbca9208421d4c6c06b63bf7c1c531e",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Die Einführung eines sektoralen Heilpraktikers für Chiropraktik hat direkte Auswirkungen auf die Abg",
+    "createdAt": "2026-09-25T09:08:36.682Z"
   }
 ]
