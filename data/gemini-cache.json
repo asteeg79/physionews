@@ -6314,5 +6314,57 @@
     ],
     "reason": "Leitartikel über die Weiterentwicklung von Cochrane und den Umgang mit Desinformation und KI ist von",
     "createdAt": "2026-09-25T14:49:08.345Z"
+  },
+  {
+    "titleHash": "c60ebdfa6477096a058ebb55a49018a8",
+    "score": 0,
+    "topics": [
+      "Pädiatrie",
+      "Fortbildung"
+    ],
+    "reason": "Ankündigung einer Fortbildung ohne konkreten Bezug zur Änderung der physiotherapeutischen Praxis.",
+    "createdAt": "2026-09-26T13:55:42.270Z"
+  },
+  {
+    "titleHash": "840cbb3a8649435dab8377cd0a24842b",
+    "score": 7,
+    "topics": [
+      "Studie",
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "reason": "Die PrioPEG-Studie könnte die Art und Weise, wie Physiotherapeuten Gruppenbehandlungen durchführen, ",
+    "createdAt": "2026-09-26T13:55:42.270Z"
+  },
+  {
+    "titleHash": "8d14e830e4266db018a4df95230d78b3",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Eine Umfrage zum passiven Therapeutenwechsel kann Auswirkungen auf die Berufspolitik und die Organis",
+    "createdAt": "2026-09-26T13:55:42.270Z"
+  },
+  {
+    "titleHash": "5d35e401826ae688f26c6a36d41e5e43",
+    "score": 5,
+    "topics": [
+      "Arthrose",
+      "Reha",
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Ausweitung eines Arthrose-Programms durch eine Krankenkasse ist für Physiotherapeuten mittelbar ",
+    "createdAt": "2026-09-26T13:55:42.270Z"
+  },
+  {
+    "titleHash": "20b425e540dc7e904c24d84adc788e19",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Steigende Vergütungssätze für die Postbeamtenkrankenkasse haben direkte Auswirkungen auf die Abrechn",
+    "createdAt": "2026-09-26T13:55:42.270Z"
   }
 ]
