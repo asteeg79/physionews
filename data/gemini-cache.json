@@ -6376,5 +6376,25 @@
     ],
     "reason": "Die Tampa Scale of Kinesiophobia ist ein Fragebogen zur Erfassung von bewegungsbezogener Angst. Obwo",
     "createdAt": "2026-09-28T10:13:30.523Z"
+  },
+  {
+    "titleHash": "5551d9ccea7f31c17a7206f9d84d56bd",
+    "score": 0,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der Titel bezieht sich auf technische Aspekte des TI-Anschlusses, was für die alltägliche Arbeit von",
+    "createdAt": "2026-09-28T18:49:57.907Z"
+  },
+  {
+    "titleHash": "d32368928ccc4f8e2e0ad9b2810ed870",
+    "score": 3,
+    "topics": [
+      "Cochrane-Review",
+      "Meta-Analyse",
+      "Systematic Review"
+    ],
+    "reason": "Die Meldung über die unsichere Zukunft der Cochrane Deutschland Stiftung und das Auslaufen der Bunde",
+    "createdAt": "2026-09-28T18:49:57.907Z"
   }
 ]
