@@ -6396,5 +6396,45 @@
     ],
     "reason": "Die Meldung über die unsichere Zukunft der Cochrane Deutschland Stiftung und das Auslaufen der Bunde",
     "createdAt": "2026-09-28T18:49:57.907Z"
+  },
+  {
+    "titleHash": "2e96ee87f10efec21f4c464be9f50d07",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung thematisiert die Einbringung der Perspektive der Physiotherapie in die Klimaschutzdebatt",
+    "createdAt": "2026-09-29T10:10:51.878Z"
+  },
+  {
+    "titleHash": "95c546032aa696b7c5c0e579eba76cc2",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie",
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung, dass die DGSP beim Weltsportärztekongress vertreten ist, hat keinen direkten Bezug zur ",
+    "createdAt": "2026-09-29T10:10:51.878Z"
+  },
+  {
+    "titleHash": "304222c8712829c475fecee0c51e6a8a",
+    "score": 5,
+    "topics": [
+      "Arthrose",
+      "Bewegungstherapie",
+      "Studie"
+    ],
+    "reason": "Die Frage nach dem Sinn eines Sportverbots bei Arthrose berührt direkt das fachliche Wissen und die ",
+    "createdAt": "2026-09-29T10:10:51.878Z"
+  },
+  {
+    "titleHash": "f105f9987fa0a99e1ce5da88eba348c4",
+    "score": 2,
+    "topics": [
+      "Leitlinie",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung über die Neuentwicklung medizinischer Leitlinien durch den Innovationsausschuss ist zu a",
+    "createdAt": "2026-09-29T10:10:51.878Z"
   }
 ]
