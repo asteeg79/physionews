@@ -6436,5 +6436,59 @@
     ],
     "reason": "Die Meldung über die Neuentwicklung medizinischer Leitlinien durch den Innovationsausschuss ist zu a",
     "createdAt": "2026-09-29T10:10:51.878Z"
+  },
+  {
+    "titleHash": "494ec5cf390afdd56448e6afa1e91d75",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung"
+    ],
+    "reason": "Die Konjunkturbefragung des BFB ist eine allgemeine wirtschaftliche Umfrage, die keinen direkten Ein",
+    "createdAt": "2026-09-30T10:02:45.092Z"
+  },
+  {
+    "titleHash": "280579decc5f5b5986925addc07c04cf",
+    "score": 4,
+    "topics": [
+      "Leitlinie",
+      "Studie",
+      "S3-Leitlinie"
+    ],
+    "reason": "Die Leitlinie zur Bakteriophagentherapie ist zwar eine medizinische Leitlinie, aber der Bezug zur ph",
+    "createdAt": "2026-09-30T10:02:45.092Z"
+  },
+  {
+    "titleHash": "5cbc74a796b2231da62c54369c80f256",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie",
+      "Studie",
+      "Veranstaltung"
+    ],
+    "reason": "50 Jahre Sportmedizin ist eine historische Betrachtung und keine Meldung, die unmittelbare Änderunge",
+    "createdAt": "2026-09-30T10:02:45.092Z"
+  },
+  {
+    "titleHash": "eee609b5436eccf425a759cbd81f3149",
+    "score": 0,
+    "topics": [
+      "Schulter",
+      "Manuelle Therapie",
+      "Bewegungstherapie"
+    ],
+    "reason": "Der Titel 'Die Schulter schultern' ist zu vage und deutet eher auf eine allgemeine oder anekdotische",
+    "createdAt": "2026-09-30T10:02:45.092Z"
+  },
+  {
+    "titleHash": "86ca9513ca508391248bed1ae2006514",
+    "score": 0,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung 'Birgit Mücklich macht mobil' ist zu unspezifisch. Ohne weitere Informationen über den I",
+    "createdAt": "2026-09-30T10:02:45.092Z"
   }
 ]
