@@ -6490,5 +6490,22 @@
     ],
     "reason": "Die Meldung 'Birgit Mücklich macht mobil' ist zu unspezifisch. Ohne weitere Informationen über den I",
     "createdAt": "2026-09-30T10:02:45.092Z"
+  },
+  {
+    "titleHash": "41913cd9d91d822285f68892f35a5ba8",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Ankündigung einer Veranstaltung, auch wenn sie sich an Fachleute richtet, ändert nichts an der t",
+    "createdAt": "2026-09-30T17:04:59.747Z"
+  },
+  {
+    "titleHash": "e1b416a1dff4126d24bbe002715f76e1",
+    "score": 3,
+    "topics": [],
+    "reason": "Das Pflegeneuordnungsgesetz betrifft primär die Pflege und hat keine unmittelbaren Auswirkungen auf ",
+    "createdAt": "2026-09-30T17:04:59.747Z"
   }
 ]
