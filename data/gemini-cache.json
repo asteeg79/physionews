@@ -6538,5 +6538,32 @@
     ],
     "reason": "Der IFK berichtet über eine Fachkräfteengpassanalyse, bei der die Physiotherapie als \"trauriger Spit",
     "createdAt": "2026-10-01T10:30:50.446Z"
+  },
+  {
+    "titleHash": "0823abf7e0dc617b405cbfc82b67cbd8",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeut:innen richtet, ist nicht rele",
+    "createdAt": "2026-10-01T17:35:19.644Z"
+  },
+  {
+    "titleHash": "8082be63d8d12adb9c87346108a205cd",
+    "score": 0,
+    "topics": [
+      "Cochrane-Review"
+    ],
+    "reason": "Die Meldung über die Beteiligung der Cochrane Deutschland-Stiftung an einem Aktionstag ist nicht rel",
+    "createdAt": "2026-10-01T17:35:19.644Z"
+  },
+  {
+    "titleHash": "b174cef4e75593f317d1db9dbd0630ec",
+    "score": 0,
+    "topics": [
+      "Atemtherapie"
+    ],
+    "reason": "Ein Saisonbericht zu akuten respiratorischen Erkrankungen durch das Robert Koch-Institut hat keinen ",
+    "createdAt": "2026-10-01T17:35:19.644Z"
   }
 ]
