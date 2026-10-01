@@ -6507,5 +6507,26 @@
     "topics": [],
     "reason": "Das Pflegeneuordnungsgesetz betrifft primär die Pflege und hat keine unmittelbaren Auswirkungen auf ",
     "createdAt": "2026-09-30T17:04:59.747Z"
+  },
+  {
+    "titleHash": "e96d1a71b530359210bff0f2d11d42b2",
+    "score": 4,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung über die Festlegung von Forschungsprioritäten im Bereich Gender in der Physiotherapie is",
+    "createdAt": "2026-10-01T06:59:46.561Z"
+  },
+  {
+    "titleHash": "3bad1f7640747a265573fb845b255453",
+    "score": 7,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha",
+      "Studie"
+    ],
+    "reason": "Die Frühmobilisation nach Bauch-OP ist ein wichtiger Bestandteil der physiotherapeutischen Behandlun",
+    "createdAt": "2026-10-01T06:59:46.561Z"
   }
 ]
