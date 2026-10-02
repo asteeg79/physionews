@@ -6565,5 +6565,42 @@
     ],
     "reason": "Ein Saisonbericht zu akuten respiratorischen Erkrankungen durch das Robert Koch-Institut hat keinen ",
     "createdAt": "2026-10-01T17:35:19.644Z"
+  },
+  {
+    "titleHash": "d11e19b383363278183fed00a2cb5a5a",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Die Digitalisierung der Physiotherapie ist ein wichtiges Thema, das die Arbeitsweise und Effizienz i",
+    "createdAt": "2026-10-02T10:05:57.254Z"
+  },
+  {
+    "titleHash": "fb6388fc9a1e273e3c2bd0365aafa5e1",
+    "score": 4,
+    "topics": [],
+    "reason": "Die Meldung 'Mit den Physios soll es losgehen' ist zu vage, um eine direkte Relevanz für die physiot",
+    "createdAt": "2026-10-02T10:05:57.254Z"
+  },
+  {
+    "titleHash": "55055a9c6d917e6a7ba0e2e316c11166",
+    "score": 5,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "reason": "Die Effizienzsteigerung durch Pixformance könnte für Physiotherapeuten relevant sein, wenn es konkre",
+    "createdAt": "2026-10-02T10:05:57.254Z"
+  },
+  {
+    "titleHash": "ca97907d43b0f16f74aa5d3e6109f633",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Studie"
+    ],
+    "reason": "Die Kenntnis von Laborwerten im physiotherapeutischen Alltag ist für die fachliche Arbeit und die Ei",
+    "createdAt": "2026-10-02T10:05:57.254Z"
   }
 ]
