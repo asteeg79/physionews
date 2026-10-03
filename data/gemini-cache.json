@@ -6612,5 +6612,15 @@
     ],
     "reason": "Der Titel ist zu vage und gibt keinen Hinweis darauf, welche Art von Wissen getankt werden soll oder",
     "createdAt": "2026-10-02T16:54:05.108Z"
+  },
+  {
+    "titleHash": "2c8ee94c7aa5f2aa282c292c3f1c7b52",
+    "score": 4,
+    "topics": [
+      "Atemtherapie",
+      "Bewegungstherapie"
+    ],
+    "reason": "Der Titel ist zu allgemein und bezieht sich auf grundlegende physiotherapeutische Konzepte, ohne ein",
+    "createdAt": "2026-10-03T09:28:41.982Z"
   }
 ]
