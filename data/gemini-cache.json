@@ -6622,5 +6622,34 @@
     ],
     "reason": "Der Titel ist zu allgemein und bezieht sich auf grundlegende physiotherapeutische Konzepte, ohne ein",
     "createdAt": "2026-10-03T09:28:41.982Z"
+  },
+  {
+    "titleHash": "f2f6d1ca960a67223923947084e701ce",
+    "score": 3,
+    "topics": [
+      "Leitlinie",
+      "Studie"
+    ],
+    "reason": "Die Streichung der Bundesförderung für Cochrane Deutschland ist zwar ein wichtiges Thema für die evi",
+    "createdAt": "2026-10-05T10:55:01.282Z"
+  },
+  {
+    "titleHash": "678bcc0765f4a5e60ed9ce608b517092",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie"
+    ],
+    "reason": "Die Trauer um eine Person, auch wenn sie im Bereich der Sportwissenschaft tätig war, hat keinen dire",
+    "createdAt": "2026-10-05T10:55:01.282Z"
+  },
+  {
+    "titleHash": "b58d354a91c64fe4a2b57c62e6532803",
+    "score": 5,
+    "topics": [
+      "Rückenschmerz",
+      "Bewegungstherapie"
+    ],
+    "reason": "Der Titel 'Rückenschmerzen weggehen' ist sehr allgemein und deutet auf eine mögliche Information übe",
+    "createdAt": "2026-10-05T10:55:01.282Z"
   }
 ]
