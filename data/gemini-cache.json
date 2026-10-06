@@ -6651,5 +6651,52 @@
     ],
     "reason": "Der Titel 'Rückenschmerzen weggehen' ist sehr allgemein und deutet auf eine mögliche Information übe",
     "createdAt": "2026-10-05T10:55:01.282Z"
+  },
+  {
+    "titleHash": "6630c3a14f5fd3676d9b0e38c5fc3489",
+    "score": 0,
+    "topics": [
+      "Fortbildung",
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeut:innen richtet, ist nicht rele",
+    "createdAt": "2026-10-06T10:50:49.494Z"
+  },
+  {
+    "titleHash": "d59cc04fbc7b0c76b3ac0653ea8a0684",
+    "score": 4,
+    "topics": [
+      "Fortbildung"
+    ],
+    "reason": "Die Frage nach der Relevanz der Elektrotherapie für die physiotherapeutische Praxis könnte mittelbar",
+    "createdAt": "2026-10-06T10:50:49.494Z"
+  },
+  {
+    "titleHash": "27b48df633c7e69a42fc6d0e3f0e8f0d",
+    "score": 0,
+    "topics": [
+      "Wirbelsäule",
+      "Schulter",
+      "Knie"
+    ],
+    "reason": "Die Meldung über nicht heilende Knochenbrüche und Infektionen hat keinen direkten Bezug zur physioth",
+    "createdAt": "2026-10-06T10:50:49.494Z"
+  },
+  {
+    "titleHash": "4840305690cab1a8fcac0f9ec62c120e",
+    "score": 7,
+    "topics": [
+      "Direktzugang",
+      "Berufsverband"
+    ],
+    "reason": "Die klare Positionierung für einen Direktzugang durch einen Berufsverband ist für die Berufspolitik ",
+    "createdAt": "2026-10-06T10:50:49.494Z"
+  },
+  {
+    "titleHash": "dee61ee49411bad79d6c8b73805e7a02",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Dem Vergessen Beine machen' ist zu vage und hat ohne weitere Informationen keinen erkennb",
+    "createdAt": "2026-10-06T10:50:49.494Z"
   }
 ]
