@@ -6698,5 +6698,22 @@
     "topics": [],
     "reason": "Der Titel 'Dem Vergessen Beine machen' ist zu vage und hat ohne weitere Informationen keinen erkennb",
     "createdAt": "2026-10-06T10:50:49.494Z"
+  },
+  {
+    "titleHash": "eaa2aa7fc3b5336fdd5d62d5ded8cc16",
+    "score": 4,
+    "topics": [
+      "Praxisgründung",
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung thematisiert die Praxisübergabe, was für Physiotherapeut:innen relevant sein kann, die e",
+    "createdAt": "2026-10-06T17:29:17.823Z"
+  },
+  {
+    "titleHash": "45eb2e1d7815dc5ee36bde5bd790e172",
+    "score": 3,
+    "topics": [],
+    "reason": "Die Meldung über KI in der Gesundheitsversorgung ist zwar ein relevantes Zukunftsthema, aber ohne ko",
+    "createdAt": "2026-10-06T17:29:17.823Z"
   }
 ]
