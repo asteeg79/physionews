@@ -6715,5 +6715,32 @@
     "topics": [],
     "reason": "Die Meldung über KI in der Gesundheitsversorgung ist zwar ein relevantes Zukunftsthema, aber ohne ko",
     "createdAt": "2026-10-06T17:29:17.823Z"
+  },
+  {
+    "titleHash": "5b993c23b0e8814e258daecb1d6bc214",
+    "score": 3,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Die Stiftung von Physio Deutschland schreibt 20.000 Euro für Forschungsprojekte aus. Dies ist eine A",
+    "createdAt": "2026-10-07T10:37:57.627Z"
+  },
+  {
+    "titleHash": "717646790b85a63b9b96a561fb8eca88",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie",
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung über das 50-jährige Jubiläum der dvs (Deutsche Vereinigung für Sportwissenschaft) ist fü",
+    "createdAt": "2026-10-07T10:37:57.627Z"
+  },
+  {
+    "titleHash": "2870e55c2d1aa3238776277f7fdfb066",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung 'Deutschland im europäischen Mittelfeld' ist zu allgemein und hat keinen spezifischen Be",
+    "createdAt": "2026-10-07T10:37:57.627Z"
   }
 ]
