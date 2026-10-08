@@ -6742,5 +6742,66 @@
     "topics": [],
     "reason": "Die Meldung 'Deutschland im europäischen Mittelfeld' ist zu allgemein und hat keinen spezifischen Be",
     "createdAt": "2026-10-07T10:37:57.627Z"
+  },
+  {
+    "titleHash": "28cf98ab8d665d631be261e301e4140e",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung/Mitgliedschaftsaktion ohne direkten Bezug zur täglichen Arbeit oder ",
+    "createdAt": "2026-10-08T10:58:57.717Z"
+  },
+  {
+    "titleHash": "8323d211a4f58f05aa705fb7993a6dfc",
+    "score": 4,
+    "topics": [
+      "Neurologie",
+      "Reha"
+    ],
+    "reason": "Anstieg psychischer Erkrankungen als Ursache für Fehlzeiten ist ein allgemeines Gesundheitsthema, da",
+    "createdAt": "2026-10-08T10:58:57.717Z"
+  },
+  {
+    "titleHash": "63a1fa31293dcfb3f7d54d160858654c",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Stellungnahme eines Berufsverbandes zu einem Gesetz, das digitale Innovationen im Gesundheitswesen b",
+    "createdAt": "2026-10-08T10:58:57.717Z"
+  },
+  {
+    "titleHash": "cae1852325003d04892e3cbf2bb7e34f",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsausbildung"
+    ],
+    "reason": "Der elektronische Heilberufsausweis ist eine Voraussetzung für die Berufsausübung und kann sich auf ",
+    "createdAt": "2026-10-08T10:58:57.717Z"
+  },
+  {
+    "titleHash": "aff939bdfea49a72e4acb663292b58e4",
+    "score": 3,
+    "topics": [
+      "Pädiatrie",
+      "Studie",
+      "Cochrane-Review"
+    ],
+    "reason": "Ein Cochrane Review zur Jodsupplementierung bei Kindern hat keinen direkten Bezug zur physiotherapeu",
+    "createdAt": "2026-10-08T10:58:57.717Z"
+  },
+  {
+    "titleHash": "5b35b46cc8f37f4b9176702d5a7bb8ba",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung eines Jahresempfangs, der keine Änderung der physiotherapeutischen Arbeit, Abrechnung od",
+    "createdAt": "2026-10-08T10:58:57.717Z"
   }
 ]
