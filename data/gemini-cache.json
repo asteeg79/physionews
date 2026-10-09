@@ -6849,5 +6849,52 @@
     "topics": [],
     "reason": "Der Titel 'Gemeinsam statt einsam' ist zu allgemein und lässt keinen direkten Bezug zur Arbeit, Abre",
     "createdAt": "2026-10-09T10:06:47.641Z"
+  },
+  {
+    "titleHash": "ef13482b4f43c1ddf527b0a5988c17a6",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie",
+      "Fortbildung"
+    ],
+    "reason": "Der Titel suggeriert eine Effizienzsteigerung in der Therapie durch ein bestimmtes System (Pixforman",
+    "createdAt": "2026-10-09T17:36:37.994Z"
+  },
+  {
+    "titleHash": "c19e1dff91e315c835fcd9c0528fb33c",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie",
+      "Fortbildung"
+    ],
+    "reason": "Dieser Titel ist sehr allgemein und verspricht mehr Zeit und Unterstützung im Training. Ohne konkret",
+    "createdAt": "2026-10-09T17:36:37.994Z"
+  },
+  {
+    "titleHash": "a3e01e42ef4229096c8d65c452b01faf",
+    "score": 3,
+    "topics": [
+      "Fortbildung",
+      "Berufsausbildung"
+    ],
+    "reason": "Der Titel 'Fortbilden. Weiterentwickeln. 2027 Durchstarten.' ist eine allgemeine Aufforderung zur Fo",
+    "createdAt": "2026-10-09T17:36:37.994Z"
+  },
+  {
+    "titleHash": "2755d35e43fb1c95835d4ea173589ae8",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie",
+      "Fortbildung"
+    ],
+    "reason": "Der Titel 'Neue Impulse für deinen Behandlungsalltag' ist sehr vage. Es ist nicht ersichtlich, welch",
+    "createdAt": "2026-10-09T17:36:37.994Z"
+  },
+  {
+    "titleHash": "34affb82b304071462dcd001df66a28b",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Spitzenreiter wider Willen' ist völlig unklar und lässt keinen Bezug zur physiotherapeuti",
+    "createdAt": "2026-10-09T17:36:37.994Z"
   }
 ]
