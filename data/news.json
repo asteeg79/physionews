@@ -1,16 +1,32 @@
 [
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "a76cbb8f64516c145dbf61f078ef05aaa5d0e48088201d1fcd4d8a425f22e837",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "GEMA gibt gegen Physiotherapeuten nicht auf",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/gema-gibt-gegen-physiotherapeuten-nicht-auf/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T10:06:45.713Z",
-    "fetchedAt": "2026-10-09T10:06:45.717Z",
+    "publishedAt": "2026-10-09T10:57:40.642Z",
+    "fetchedAt": "2026-10-09T10:57:40.642Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die GEMA, die gegen Physiotherapeuten nicht aufgibt, betrifft die Lizenzierung von ",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-09T10:57:40.641Z",
+    "fetchedAt": "2026-10-09T10:57:40.642Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung, dass das Oberlandesgericht Frankfurt am Main CranioSacrale Therapie auf Verordnung erla",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie di",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie"
@@ -18,74 +34,57 @@
     "lang": "de"
   },
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T10:06:45.712Z",
-    "fetchedAt": "2026-10-09T10:06:45.717Z",
+    "publishedAt": "2026-10-09T10:57:40.640Z",
+    "fetchedAt": "2026-10-09T10:57:40.642Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über das Bundessozialgericht und die Zulassungserweiterung für Manuelle Therapie ist unm",
+    "relevanceReason": "ai: Die Meldung zur Kassenzulassung für Fachfremde in der Physiotherapie ist unmittelbar relevant, da si",
     "isTopNews": true,
     "topics": [
-      "Manuelle Therapie",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-09T10:06:45.711Z",
-    "fetchedAt": "2026-10-09T10:06:45.717Z",
-    "relevanceScore": 9,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist für Physiotherapeut:in",
-    "isTopNews": false,
-    "topics": [
+      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
+    "id": "3f7d04ba51ff3c9d6d24eae2bf8e3e3d08ffe77814ef05438943e423a567b9e7",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
+    "title": "Keine berechtigte Abmahnung ohne konkretes Wettbewerbsverhältnis",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/keine-berechtigte-abmahnung-ohne-konkretes-wettbewerbsverh%C3%A4ltnis/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T10:06:45.711Z",
-    "fetchedAt": "2026-10-09T10:06:45.717Z",
+    "publishedAt": "2026-10-09T10:57:40.640Z",
+    "fetchedAt": "2026-10-09T10:57:40.642Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
+    "relevanceReason": "ai: Die Meldung über berechtigte Abmahnungen ohne konkretes Wettbewerbsverhältnis ist zwar eine juristis",
     "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie"
-    ],
+    "topics": [],
     "lang": "de"
   },
   {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "id": "5667ca78f0d00cd12dcf4a4fd5de9ed0b89d74c35f112de6d02b516534f6bc3b",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "title": "Gesetzliche Krankenkasse zur Zahlung von Verzugskostenpauschale verurteilt",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/viele-ermittlungsverfahren-wegen-anstiftung-zur-ausstellung-eines-unrichtigen-gesundheitszeugnisses-eingeleitet/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T10:06:45.710Z",
-    "fetchedAt": "2026-10-09T10:06:45.717Z",
+    "publishedAt": "2026-10-09T10:57:40.639Z",
+    "fetchedAt": "2026-10-09T10:57:40.642Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die Nutzung nicht zugelassener Geräte in der Physiotherapie ist direkt relevant, da",
-    "isTopNews": false,
-    "topics": [],
+    "relevanceReason": "ai: Die Verurteilung einer gesetzlichen Krankenkasse zur Zahlung einer Verzugskostenpauschale ist für Ph",
+    "isTopNews": true,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
     "lang": "de"
   },
   {
@@ -258,6 +257,22 @@
     "lang": "de"
   },
   {
+    "id": "04bf4a0cc4148ef7178f70748e3deda60fb1f59783d36b8d5efada02251ace17",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Mit den Physios soll es losgehen",
+    "summary": "Die EU will die berufliche Mobilität innerhalb ihrer Mitgliedstaaten erleichtern und mit der Physiotherapie beginnen. Was heißt das für Deutschland?",
+    "url": "https://physio.de/community/news/mit-den-physios-soll-es-losgehen/99/12038/1",
+    "imageUrl": null,
+    "publishedAt": "2026-10-06T10:57:37.191Z",
+    "fetchedAt": "2026-10-09T10:57:37.195Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung 'Mit den Physios soll es losgehen' ist zu vage, um eine direkte Relevanz für die physiot",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
     "id": "3db360d1228144aa4cbd5e68d351d3ca6def336bf08f8e32432eab6eb2abf29f",
     "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
     "title": "Spreche ich mich klar für einen Direktzugang aus",
@@ -347,26 +362,6 @@
     "topics": [
       "Berufsverband",
       "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "a58d74287ec1516bf8d01fbc74122140013b488f78c5f869fc891115037c87e9",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Chiropraktik bekommt eigenen sektoralen Heilpraktiker",
-    "summary": "Bundesverwaltungsgericht erkennt Chiropraktik als abgrenzbaren Bereich der Heilkunde an.",
-    "url": "https://physio.de/community/news/chiropraktik-bekommt-eigenen-sektoralen-heilpraktiker/99/12019/1",
-    "imageUrl": null,
-    "publishedAt": "2026-10-02T10:06:41.998Z",
-    "fetchedAt": "2026-10-09T10:06:42.000Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Einführung eines sektoralen Heilpraktikers für Chiropraktik hat direkte Auswirkungen auf die Abg",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Heilmittelversorgung",
-      "Berufsverband"
     ],
     "lang": "de"
   },
@@ -940,7 +935,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Die Effekte des Blood Flow Restriction Trainings bei Gonarthrose sind wissenschaftlich relevant und ",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Knie",
       "Studie",
@@ -1369,6 +1364,22 @@
     "topics": [
       "Berufsverband"
     ],
+    "lang": "de"
+  },
+  {
+    "id": "df57e2343ae0422ed1a4565ad96234b20d8402b9d8f951589b4ff049034d465f",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Was bewegt die Physiotherapie?",
+    "summary": null,
+    "url": "https://www.ifk.de/artikel/was-bewegt-die-physiotherapie",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/260909_Septemberausgabe%20erschienen_0.jpg?itok=JYyEAEdy",
+    "publishedAt": "2026-09-09T12:00:00.000Z",
+    "fetchedAt": "2026-10-09T10:57:34.487Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Was bewegt die Physiotherapie?",
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
