@@ -6896,5 +6896,15 @@
     "topics": [],
     "reason": "Der Titel 'Spitzenreiter wider Willen' ist völlig unklar und lässt keinen Bezug zur physiotherapeuti",
     "createdAt": "2026-10-09T17:36:37.994Z"
+  },
+  {
+    "titleHash": "dd4882e4cdf3f44322b5d60ed00de2e5",
+    "score": 4,
+    "topics": [
+      "Knie",
+      "Sportphysiotherapie"
+    ],
+    "reason": "Der Titel thematisiert einen Kreuzbandriss bei einer bekannten politischen Person und stellt eine Fr",
+    "createdAt": "2026-10-09T19:45:07.134Z"
   }
 ]
