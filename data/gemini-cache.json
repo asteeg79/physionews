@@ -6803,5 +6803,51 @@
     ],
     "reason": "Ankündigung eines Jahresempfangs, der keine Änderung der physiotherapeutischen Arbeit, Abrechnung od",
     "createdAt": "2026-10-08T10:58:57.717Z"
+  },
+  {
+    "titleHash": "b3b4e2fbcfa24f12639d913153026a9a",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Berufsausbildung"
+    ],
+    "reason": "Die Ankündigung eines Referentenentwurfs zur Reform der Physiotherapie-Berufsgesetze ist für die Pra",
+    "createdAt": "2026-10-09T10:06:47.641Z"
+  },
+  {
+    "titleHash": "3977df4bbde00f3ec0c904e638d9ec64",
+    "score": 0,
+    "topics": [
+      "Cochrane-Review",
+      "Studie"
+    ],
+    "reason": "Die Meldung über einen Cochrane Review zu Geschenken und Honoraren von Pharmafirmen, die die Qualitä",
+    "createdAt": "2026-10-09T10:06:47.641Z"
+  },
+  {
+    "titleHash": "0de36d809089369bacdbdc574d43904d",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung"
+    ],
+    "reason": "Die Ankündigung einer neuen Episode eines Podcasts, auch wenn er von einem Berufsverband stammt, änd",
+    "createdAt": "2026-10-09T10:06:47.641Z"
+  },
+  {
+    "titleHash": "1fa9654b0af64c75e420e66bd7e4a203",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung über Teletherapie ist nur mittelbar relevant, da sie nicht klar aufzeigt, ob und wie sic",
+    "createdAt": "2026-10-09T10:06:47.641Z"
+  },
+  {
+    "titleHash": "a886edc30bf6bcfa1845636f5e0ef4ec",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Gemeinsam statt einsam' ist zu allgemein und lässt keinen direkten Bezug zur Arbeit, Abre",
+    "createdAt": "2026-10-09T10:06:47.641Z"
   }
 ]
