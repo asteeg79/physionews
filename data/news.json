@@ -1,32 +1,16 @@
 [
   {
-    "id": "a76cbb8f64516c145dbf61f078ef05aaa5d0e48088201d1fcd4d8a425f22e837",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "GEMA gibt gegen Physiotherapeuten nicht auf",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/gema-gibt-gegen-physiotherapeuten-nicht-auf/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T19:45:05.458Z",
-    "fetchedAt": "2026-10-09T19:45:05.458Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die GEMA, die gegen Physiotherapeuten nicht aufgibt, betrifft die Lizenzierung von ",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-09T19:45:05.457Z",
-    "fetchedAt": "2026-10-09T19:45:05.458Z",
+    "publishedAt": "2026-10-10T10:10:20.571Z",
+    "fetchedAt": "2026-10-10T10:10:20.573Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie di",
+    "relevanceReason": "ai: Die Meldung, dass das Oberlandesgericht Frankfurt am Main CranioSacrale Therapie auf Verordnung erla",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie"
@@ -34,56 +18,75 @@
     "lang": "de"
   },
   {
-    "id": "3f7d04ba51ff3c9d6d24eae2bf8e3e3d08ffe77814ef05438943e423a567b9e7",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Keine berechtigte Abmahnung ohne konkretes Wettbewerbsverhältnis",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/keine-berechtigte-abmahnung-ohne-konkretes-wettbewerbsverh%C3%A4ltnis/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T19:45:05.456Z",
-    "fetchedAt": "2026-10-09T19:45:05.458Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-10-10T10:10:20.570Z",
+    "fetchedAt": "2026-10-10T10:10:20.573Z",
+    "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über berechtigte Abmahnungen ohne konkretes Wettbewerbsverhältnis ist zwar eine juristis",
-    "isTopNews": false,
-    "topics": [],
+    "relevanceReason": "ai: Die Meldung über das Bundessozialgericht und die Zulassungserweiterung für Manuelle Therapie ist unm",
+    "isTopNews": true,
+    "topics": [
+      "Manuelle Therapie",
+      "Berufsverband"
+    ],
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T19:45:05.454Z",
-    "fetchedAt": "2026-10-09T19:45:05.458Z",
+    "publishedAt": "2026-10-10T10:10:20.569Z",
+    "fetchedAt": "2026-10-10T10:10:20.573Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung zur Kassenzulassung für Fachfremde in der Physiotherapie ist unmittelbar relevant, da si",
+    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist für Physiotherapeut:in",
     "isTopNews": false,
     "topics": [
-      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "5667ca78f0d00cd12dcf4a4fd5de9ed0b89d74c35f112de6d02b516534f6bc3b",
+    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Gesetzliche Krankenkasse zur Zahlung von Verzugskostenpauschale verurteilt",
+    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/viele-ermittlungsverfahren-wegen-anstiftung-zur-ausstellung-eines-unrichtigen-gesundheitszeugnisses-eingeleitet/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
     "imageUrl": null,
-    "publishedAt": "2026-10-09T19:45:05.453Z",
-    "fetchedAt": "2026-10-09T19:45:05.458Z",
-    "relevanceScore": 9,
+    "publishedAt": "2026-10-10T10:10:20.569Z",
+    "fetchedAt": "2026-10-10T10:10:20.573Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Verurteilung einer gesetzlichen Krankenkasse zur Zahlung einer Verzugskostenpauschale ist für Ph",
-    "isTopNews": true,
+    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
+    "isTopNews": false,
     "topics": [
-      "GKV-Vergütung",
-      "Heilmittelversorgung"
+      "Manuelle Therapie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-10T10:10:20.568Z",
+    "fetchedAt": "2026-10-10T10:10:20.573Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann indirekt relevant sein, da es die Abgrenzun",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie"
     ],
     "lang": "de"
   },
@@ -403,20 +406,22 @@
     "lang": "de"
   },
   {
-    "id": "3427e9c7c5e23647fa3f39ef9c9a69bf9292c1eebc39989895819d39f3de43f2",
+    "id": "33f2810a46fc35fd144814086b74310d04a72f836d29e6d845b087035d96fcef",
     "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Grundlohnsumme bremst Vergütungszuwachs ab 2027",
-    "summary": "Das Bundesgesundheitsministerium hat die Grundlohnrate für 2027 bekanntgegeben – doch durch gesetzliche Abschläge fällt der Verhandlungsspielraum für Physiotherapeuten noch geringer aus.",
-    "url": "https://physio.de/community/news/grundlohnsumme-bremst-verguetungszuwachs-ab-2027/99/12026/1",
+    "title": "Frühmobilisation nach Bauch-OP",
+    "summary": "Eine Annäherung, um der Frühmobilisation einen festen, konzeptuellen Rahmen zu geben.",
+    "url": "https://physio.de/community/news/fruehmobilisation-nach-bauch-op/99/11982/1",
     "imageUrl": null,
-    "publishedAt": "2026-10-02T19:45:00.245Z",
-    "fetchedAt": "2026-10-09T19:45:00.245Z",
-    "relevanceScore": 9,
+    "publishedAt": "2026-10-03T10:10:16.250Z",
+    "fetchedAt": "2026-10-10T10:10:16.252Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Information über die Grundlohnsumme und deren Auswirkung auf die Vergütung ab 2027 ist unmittelb",
-    "isTopNews": true,
+    "relevanceReason": "ai: Die Frühmobilisation nach Bauch-OP ist ein wichtiger Bestandteil der physiotherapeutischen Behandlun",
+    "isTopNews": false,
     "topics": [
-      "GKV-Vergütung"
+      "Bewegungstherapie",
+      "Reha",
+      "Studie"
     ],
     "lang": "de"
   },
@@ -1243,187 +1248,6 @@
     "lang": "de"
   },
   {
-    "id": "8887ad7c15ce0913c2c9b67c57ef24f7eb6297756a3fefaf4a3cf934f95ed067",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Plötzlich geht nichts mehr",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5Fd0hRTWlzeF9ZcUU5VHk2dzMwX3E3SjVoei1qMnFoa2FKSkJLS1EydFpxdkFNSzhQN0ttUVRpeHM2Q1ZzVWkwZWcxSEpuc2ZhY3ptTEhDaENaZnc0ajJHRTJpZHdEak1hdlN4VGxnX3Z3cHF0REIwdjR3?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T09:59:59.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung \"Plötzlich geht nichts mehr\" ist zu unspezifisch, um eine Relevanz für die physiotherape",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "a85e03d6169c3de10228aed8693e7dd19adc159015a1d2bca83112078650c5cf",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Mythos Gleichgewichtsfähigkeit",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9wWGF0Wkxwek9QTk9NU3RMb1I4c3V6eTF4VWFfVFIxYk54RVd6akdzYWhIV1VtZ0VEZ1AwejdyWjJxX1UyVVZLUVZmM0F4clBtYm5UUms2REpINFRHVHJwb3hYX2NqaW85TDZDM1pTU3FqMlhsVzFEUQ?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T03:16:38.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung thematisiert Gleichgewichtsfähigkeit, was für die Physiotherapie relevant ist. Allerding",
-    "isTopNews": false,
-    "topics": [
-      "Sturzprävention",
-      "Bewegungstherapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f037f6cb6720f6c01857c4b2396529e594c6a91e8c3befb4123f77cc81a9a431",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Nicht ins Stocken geraten",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA5OGtrYmE1SGc1ZkFvdDRXcmZTRFFyYTNDdUo1NE1VV2lROHRVLVZkTTl1R0x0eG9taWNISnU5N1UwVDBQWm1EVjF1dUhYV053VFlrNnZsUE43OEl6d0xZRGh1eXBrcW5oUm1lcW9sb1Q?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T03:16:37.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Allgemeine Aussage über das Aufrechterhalten von Aktivität, ohne spezifischen physiotherapeutischen ",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "3b7f065db4aff7659ef8432e01bd984dec8fb420ba474623f2d01251004ef853",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Gehen beginnt im Kopf",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1FNkdnSmstcVdvcUVFZ0VOYmtVdlR2TDFyc1F4TVJKeVhvOVB1RHo1ekN0NlJqd2dTSmpvUEhBa09EZEpZN21wbkJadDgxRXJwYVFZejBPaU9JUnZ3Tkp5ZUgyLTdDZG5TQXZF?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T02:03:36.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Allgemeine Aussage über die Bedeutung der kognitiven Steuerung von Bewegung, ohne konkreten Bezug zu",
-    "isTopNews": false,
-    "topics": [
-      "Neurologie",
-      "Bewegungstherapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "113dfdbb3f8af1ad9df5bfc0496575cf18b31e6af1402fa64854f70402bf68bd",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Wir sind Menschen, weil wir gehen",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9yb0VraFBWTzRNeDFLRnhBd25LRG94SDhFcUs2aXlFVTB5ZVBzdTNoRDR0N1pUdWdiNW16T3hSdlBJZFlwQXVwdUpuQS1CUFNIdmVxenh4aGI1c3FuUThpMWRhUEdzOW95RkthdEp3UlNnRFNjalhGaldR?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T00:35:36.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Philosophische Aussage über das Gehen, ohne direkten Bezug zur physiotherapeutischen Arbeit oder Wis",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "8d14789e42a47576248c18537017c010c2dd09c3626a71b92175bf3a7aeab9fc",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Glänzen beim schlenzen",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5JcE5KWGdZZUFpTDhvM2xIZXQxblc2V2p1MlB1cGNLaGtiY1FjRWdLZkNiZlViUDh1R0NnZG5TbmVLZ2pqY2stQl83V2Z2aWtQTzlNYUloSHZUTVBVWnQwZ0t3QjBVWjN1b1NUX1F3?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T00:35:35.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung thematisiert das Eisbaden, was eine Form der Kälteexposition ist. Während es gesundheitl",
-    "isTopNews": false,
-    "topics": [
-      "Sportphysiotherapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f34c2c2c1e06ce72f4bef2212e62b1c80aad5730f950228ff052e963ff174b3a",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Cool bleiben beim Eisbaden",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE80dllvTERmZU54ZE16c00xLUtneU45SE8wS3NNVzN4OUVZcVRubGlaM1NNLUt0VHkzZGg4RmFGTWlhTEs3NkhuaTBpcGNKMXlQQUk4ZEVaWEt3TkhWa1RMS182UkZDZjgwQ1JjTGRsWDV5UQ?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T00:35:34.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung thematisiert Eisbaden. Obwohl Kälteexposition in der Physiotherapie Anwendung finden kan",
-    "isTopNews": false,
-    "topics": [
-      "Sportphysiotherapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f615dd5db1fef64972a32f6cf01a1ba12514db8127cd623f5bc7c0e28e44de2b",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Stillen ja, aber bitte ohne Schmerzen",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1YOFpTdldnZXlPbXlPcllZOXlJTlpNNGdUd1ExWkFnc2FGZkRFN2ozZVExQWlVaW9kbUItdW9TQ2NOb0NxM2dYSFZZYmpxUkVSanZQc2hoT1pjUXhTS1c3OHVVbEo0Y3A3VnEzMFpUQ1E3T3d6LV9GVzdJQ1doOTA?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T00:35:34.000Z",
-    "fetchedAt": "2026-09-22T14:13:15.367Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung \"Stillen ja, aber bitte ohne Schmerzen\" könnte potenziell einen Bezug zur physiotherapeu",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "69c429426be300a4efa3f8916c8e1a16b8f5937bc6c7994797f6067ac7b1eb76",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Kribbeln? Wackeln? Gegensteuern!",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9FUVh2N3ExTlZJZmtiRXZMTHNpcW5Vd0ZWaHBJM3BYbWRiRG1ORkcwMGxyY3dQOHNaWVJtOHRoR2M4RUpXZFpXNEdwN1B6bUFQZXpMaVFibXdoeEdwSlF1RElSYVNXZENVXzh1UzJfcTBiVW1XaXc?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T00:35:33.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Allgemeine Aussage über sensorische Störungen, ohne spezifischen physiotherapeutischen Bezug oder ne",
-    "isTopNews": false,
-    "topics": [
-      "Neurologie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "4dfd5bd500e266516a57241abdbfaa6037584d79b39ccc75f1d350b9bc7f1d71",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Wenn die Luft knapp wird",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA0NER6NDFNS0NqUl9pQnJ4b2VqVzNHWUs1MzMzcUdUa05xWGh0R0MwcTlTdFh0cG14M1dzaEZHbkduajdrQ1FwazFVOTItTnZFQkZOMXFhb3dXTG55ZlQ1a3g3Z1ZxQ3V5bHltRHg4NA?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-09-10T00:00:14.000Z",
-    "fetchedAt": "2026-09-18T10:40:51.637Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Könnte sich auf Atemtherapie beziehen, aber ohne konkrete neue Erkenntnisse oder Änderungen für die ",
-    "isTopNews": false,
-    "topics": [
-      "Atemtherapie"
-    ],
-    "lang": "de"
-  },
-  {
     "id": "a103896f5e02dd77c0d669aeff0fa7ca47a983b7eef90a718414f726709a87d2",
     "sourceId": "8c985296-a255-47c0-bd04-5c068cc626a5",
     "title": "Geplante Sparmaßnahmen der Politik - GKV-Stabilisierungsgesetz",
@@ -1471,7 +1295,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Regressgefahr Blankoverordnung - Kassen machen ernst!",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "Blankoverordnung",
       "GKV-Vergütung"

@@ -6906,5 +6906,14 @@
     ],
     "reason": "Der Titel thematisiert einen Kreuzbandriss bei einer bekannten politischen Person und stellt eine Fr",
     "createdAt": "2026-10-09T19:45:07.134Z"
+  },
+  {
+    "titleHash": "526e29083025658fda35ee2cb31c8215",
+    "score": 2,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung betrifft die Bekämpfung von Abrechnungsbetrug in Niedersachsen. Dies hat zwar einen Bezu",
+    "createdAt": "2026-10-10T10:10:23.909Z"
   }
 ]
