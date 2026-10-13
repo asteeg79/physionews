@@ -6933,5 +6933,33 @@
     "topics": [],
     "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis erkennbar. Das Thema Frauengesundheit und Wechs",
     "createdAt": "2026-10-13T11:13:48.845Z"
+  },
+  {
+    "titleHash": "1c323c40ac27106f98f2853a89959903",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Der Heilmittel-Report 2026 thematisiert die Notwendigkeit politischer Entscheidungen für die Therapi",
+    "createdAt": "2026-10-13T18:34:27.004Z"
+  },
+  {
+    "titleHash": "2027a728a1ad5da22af5fe571cc0ee6f",
+    "score": 4,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Der Austausch auf europäischer Ebene durch Physio Deutschland in Brüssel ist für die direkte praktis",
+    "createdAt": "2026-10-13T18:34:27.004Z"
+  },
+  {
+    "titleHash": "502c830417c97aafec1f6a09a4dfc44f",
+    "score": 4,
+    "topics": [
+      "Reha"
+    ],
+    "reason": "Die interprofessionelle Versorgung in Hausarztpraxen ist ein allgemeines Thema im Gesundheitswesen. ",
+    "createdAt": "2026-10-13T18:34:27.004Z"
   }
 ]
