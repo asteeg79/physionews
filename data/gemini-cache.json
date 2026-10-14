@@ -7102,5 +7102,21 @@
     ],
     "reason": "Die Meldung des Robert Koch-Instituts über Schmerz und Alzheimer ist ein Thema der allgemeinen Gesun",
     "createdAt": "2026-10-14T14:44:38.444Z"
+  },
+  {
+    "titleHash": "e3f7d8fe9754fe5ef2d2f7f4e04209be",
+    "score": 0,
+    "topics": [
+      "Cochrane-Review"
+    ],
+    "reason": "Cochrane-Ticker sind reine Ankündigungen von Reviews, die keinen direkten Einfluss auf die tägliche ",
+    "createdAt": "2026-10-14T19:47:05.744Z"
+  },
+  {
+    "titleHash": "5e37ba7f6d98fd78400efff2713be3bd",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über den stabilen Zusatzbeitragssatz der GKV hat keinen direkten Einfluss auf die Arbeit",
+    "createdAt": "2026-10-14T19:47:05.744Z"
   }
 ]
