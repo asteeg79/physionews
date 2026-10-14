@@ -6961,5 +6961,76 @@
     ],
     "reason": "Die interprofessionelle Versorgung in Hausarztpraxen ist ein allgemeines Thema im Gesundheitswesen. ",
     "createdAt": "2026-10-13T18:34:27.004Z"
+  },
+  {
+    "titleHash": "5291b912a4b06a901fe524abbc0d15e5",
+    "score": 9,
+    "topics": [
+      "Blankoverordnung",
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Meldung thematisiert die Kosten von Blankoverordnungen im Vergleich zu \"normalen Rezepten\". Dies",
+    "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "6a763d6cf5a3e848953bdb039b2bd891",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung ist ein 'Gespräch mit Nico Nollenberger'. Ohne weitere Informationen über den Inhalt des",
+    "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "a471b7e239752703972c728784cb9e25",
+    "score": 5,
+    "topics": [
+      "Pädiatrie",
+      "Bewegungstherapie"
+    ],
+    "reason": "Der Titel 'Aktiv fördern statt unterfordern' deutet auf pädagogische oder therapeutische Ansätze hin",
+    "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "0346d3e4f93e9d36169cb987b1b0d777",
+    "score": 4,
+    "topics": [],
+    "reason": "Der Titel 'Daumen hoch statt runter' ist sehr vage. Ohne weitere Informationen ist kein direkter Bez",
+    "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "4ce1f034f1c453e81274d9a9bfec77b4",
+    "score": 6,
+    "topics": [
+      "Manuelle Therapie",
+      "Fortbildung"
+    ],
+    "reason": "Der Titel 'Zwischen Handgriff und High-Tech' deutet auf die Verbindung von manuellen Techniken und m",
+    "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "0ad1d27d17b8d5cd613ac73fd6bcd2a2",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Der Titel 'Stichtag der Abrechnung' bezieht sich direkt auf die Abrechnungspraxis von Heilmittelerbr",
+    "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "4415142fa78d3d651b7194e4096ca885",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Hoffnung auf dem Seeweg' ist sehr metaphorisch und ohne weiteren Kontext nicht auf die ph",
+    "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "e0da34a7fdf0a72d982d2e0e79c3d296",
+    "score": 2,
+    "topics": [],
+    "reason": "Die Einsetzung einer Pflegekommission durch das BMG betrifft primär die Pflege. Ohne einen explizite",
+    "createdAt": "2026-10-14T09:05:00.302Z"
   }
 ]
