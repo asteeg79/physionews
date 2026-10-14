@@ -7054,5 +7054,53 @@
     ],
     "reason": "Die MEDICA MEDICINE + SPORTS CONFERENCE ist eine Veranstaltung und ändert nichts an der direkten Arb",
     "createdAt": "2026-10-14T12:31:10.912Z"
+  },
+  {
+    "titleHash": "5926806bd9372cf56456819763405c94",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Direktzugang"
+    ],
+    "reason": "Die Möglichkeit für Physiotherapeuten, die Notaufnahme zu entlasten, deutet auf eine potenzielle Erw",
+    "createdAt": "2026-10-14T14:44:38.444Z"
+  },
+  {
+    "titleHash": "de334b7864cfb5fe56b5703251edf5d4",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Pharmakotherapie ist kein primäres Fachgebiet der Physiotherapie. Eine Änderung der Arbeitsweise",
+    "createdAt": "2026-10-14T14:44:38.444Z"
+  },
+  {
+    "titleHash": "650d506b10f8e4a4fc72217e84459fec",
+    "score": 7,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha",
+      "Neurologie"
+    ],
+    "reason": "Die Meldung, dass Training im Gehirn ankommt, ist relevant, da sie die neurophysiologischen Grundlag",
+    "createdAt": "2026-10-14T14:44:38.444Z"
+  },
+  {
+    "titleHash": "d8e7cc62ad425c451faa2b943b56895b",
+    "score": 4,
+    "topics": [
+      "Wirbelsäule",
+      "Rückenschmerz"
+    ],
+    "reason": "Die Meldung 'Geht auf deinen Nacken' ist zu unspezifisch. Ohne weitere Details über die Ursachen, Be",
+    "createdAt": "2026-10-14T14:44:38.444Z"
+  },
+  {
+    "titleHash": "b92f1f4dfc686dc10569978ca138d3dd",
+    "score": 0,
+    "topics": [
+      "Neurologie",
+      "Studie"
+    ],
+    "reason": "Die Meldung des Robert Koch-Instituts über Schmerz und Alzheimer ist ein Thema der allgemeinen Gesun",
+    "createdAt": "2026-10-14T14:44:38.444Z"
   }
 ]
