@@ -7032,5 +7032,27 @@
     "topics": [],
     "reason": "Die Einsetzung einer Pflegekommission durch das BMG betrifft primär die Pflege. Ohne einen explizite",
     "createdAt": "2026-10-14T09:05:00.302Z"
+  },
+  {
+    "titleHash": "8d73e12b825101c11ad3cdb8b22f87b6",
+    "score": 7,
+    "topics": [
+      "Leitlinie",
+      "Studie",
+      "Osteoporose"
+    ],
+    "reason": "Die neue Leitlinie zur Bakteriophagentherapie bei komplizierten Knochen- und Implantatinfektionen is",
+    "createdAt": "2026-10-14T12:31:10.912Z"
+  },
+  {
+    "titleHash": "0579914c98e8433bd698e838e42d2316",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie",
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die MEDICA MEDICINE + SPORTS CONFERENCE ist eine Veranstaltung und ändert nichts an der direkten Arb",
+    "createdAt": "2026-10-14T12:31:10.912Z"
   }
 ]
