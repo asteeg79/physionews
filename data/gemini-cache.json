@@ -7118,5 +7118,52 @@
     "topics": [],
     "reason": "Die Meldung über den stabilen Zusatzbeitragssatz der GKV hat keinen direkten Einfluss auf die Arbeit",
     "createdAt": "2026-10-14T19:47:05.744Z"
+  },
+  {
+    "titleHash": "01de45a22df34c852596e2349f00c9c0",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Der Titel bezieht sich auf die Geschichte und Bedeutung des IFK, ohne direkte Auswirkungen auf die t",
+    "createdAt": "2026-10-15T08:38:24.855Z"
+  },
+  {
+    "titleHash": "ac1b8046cfb20503165e81fd1b82bf07",
+    "score": 7,
+    "topics": [
+      "Studie",
+      "Bewegungstherapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung sucht Praxen für eine Studie zur Gruppentherapie. Dies könnte potenziell die Art und Wei",
+    "createdAt": "2026-10-15T08:38:24.855Z"
+  },
+  {
+    "titleHash": "6f68bf877a9f3b217a22abad6fa9d69e",
+    "score": 9,
+    "topics": [
+      "Leitlinie",
+      "Osteoporose",
+      "Wirbelsäule"
+    ],
+    "reason": "Die Meldung kündigt eine Leitlinie zur Behandlung von Osteoporose-Frakturen an. Leitlinien sind ents",
+    "createdAt": "2026-10-15T08:38:24.855Z"
+  },
+  {
+    "titleHash": "1a605efd0f00c60fb364df352aa70b45",
+    "score": 0,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Eine Konjunkturbefragung für Freie Berufe ist zu allgemein und hat keinen direkten, spezifischen Bez",
+    "createdAt": "2026-10-15T08:38:24.855Z"
+  },
+  {
+    "titleHash": "957ad9be1beb4bd0c73b4a3ecb255306",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Notfallreform des Bundestages ist eine allgemeine Gesundheitspolitik-Meldung ohne direkten, spez",
+    "createdAt": "2026-10-15T08:38:24.855Z"
   }
 ]
