@@ -7165,5 +7165,32 @@
     "topics": [],
     "reason": "Die Notfallreform des Bundestages ist eine allgemeine Gesundheitspolitik-Meldung ohne direkten, spez",
     "createdAt": "2026-10-15T08:38:24.855Z"
+  },
+  {
+    "titleHash": "1f0efa4e2c4a531ff36e1f05b350b305",
+    "score": 0,
+    "topics": [
+      "Sturzprävention"
+    ],
+    "reason": "Der G-BA passt das Mammographie-Screening an, was für Physiotherapeut:innen in der Praxis keine dire",
+    "createdAt": "2026-10-15T11:40:24.510Z"
+  },
+  {
+    "titleHash": "f94394c1f45a5624b832eb394ca723fb",
+    "score": 0,
+    "topics": [
+      "Sturzprävention"
+    ],
+    "reason": "Die Beratung über das Hautkrebs-Screening und den Check-up durch den G-BA hat keine unmittelbare Aus",
+    "createdAt": "2026-10-15T11:40:24.510Z"
+  },
+  {
+    "titleHash": "4e5ea8e527cf31de61d583281577025d",
+    "score": 0,
+    "topics": [
+      "Reha"
+    ],
+    "reason": "Die Einsetzung einer Pflegestrukturkommission durch das BMG betrifft primär die Organisation und Str",
+    "createdAt": "2026-10-15T11:40:24.510Z"
   }
 ]
