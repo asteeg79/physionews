@@ -7206,5 +7206,22 @@
     "topics": [],
     "reason": "Der Titel ist zu allgemein und gibt keinen direkten Bezug zur physiotherapeutischen Praxis her. Ohne",
     "createdAt": "2026-10-15T19:30:45.281Z"
+  },
+  {
+    "titleHash": "2b0aee97da6361a6c27fb4be8fda774b",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Ankündigung eines Kongresses, auch wenn er sich an Physiotherapeuten richtet, ändert nichts an d",
+    "createdAt": "2026-10-16T08:32:52.490Z"
+  },
+  {
+    "titleHash": "ac4b5f9aaa0d6411d774349e2889480f",
+    "score": 3,
+    "topics": [],
+    "reason": "Die Meldung 'Friendly fire aus der CDU' ist zu vage und bietet keinen erkennbaren direkten Bezug zur",
+    "createdAt": "2026-10-16T08:32:52.490Z"
   }
 ]
