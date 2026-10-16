@@ -7254,5 +7254,58 @@
     ],
     "reason": "Die Entwicklung einer S3-Leitlinie zu Hyperlipidämien bei Kindern und Jugendlichen durch ein Projekt",
     "createdAt": "2026-10-16T14:22:19.464Z"
+  },
+  {
+    "titleHash": "2504a29c41365cb8ba62b2c440e227b3",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeuten richtet, ist nicht relevant",
+    "createdAt": "2026-10-16T19:05:13.498Z"
+  },
+  {
+    "titleHash": "031244a0b6617dce381dc668b1b0fbe2",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Vertretung in einer Jury für einen Preis zur Teilhabe bei Rheuma ändert nichts an der direkten A",
+    "createdAt": "2026-10-16T19:05:13.498Z"
+  },
+  {
+    "titleHash": "aa218885d19d520715ed48baa7ba86b5",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeuten richtet, ist nicht relevant",
+    "createdAt": "2026-10-16T19:05:13.498Z"
+  },
+  {
+    "titleHash": "a088f94dc1ff62c068ea113f5dfc3178",
+    "score": 0,
+    "topics": [
+      "Fortbildung"
+    ],
+    "reason": "Die Ankündigung von Intervisionsangeboten ist eine reine Verbandsaktivität und keine Änderung der Ar",
+    "createdAt": "2026-10-16T19:05:13.498Z"
+  },
+  {
+    "titleHash": "8b93a2324d24a39e65bc8ddbc119d2cf",
+    "score": 9,
+    "topics": [
+      "Blankoverordnung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein Zwischenstand zur Evaluation der Blankoverordnung ist unmittelbar relevant für die Abrechnung un",
+    "createdAt": "2026-10-16T19:05:13.498Z"
+  },
+  {
+    "titleHash": "2396e79417ed48fb2c19d82951509fc3",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Ein echter Knochenjob' ist zu unspezifisch und lässt keinen direkten Bezug zur Arbeit, Ab",
+    "createdAt": "2026-10-16T19:05:13.498Z"
   }
 ]
