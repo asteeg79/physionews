@@ -7223,5 +7223,36 @@
     "topics": [],
     "reason": "Die Meldung 'Friendly fire aus der CDU' ist zu vage und bietet keinen erkennbaren direkten Bezug zur",
     "createdAt": "2026-10-16T08:32:52.490Z"
+  },
+  {
+    "titleHash": "4dc926471e9ad6a22a208bc07cfb6115",
+    "score": 0,
+    "topics": [
+      "Cochrane-Review",
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Ankündigung eines Webinars über neue Leitlinien zur qualitativen Evidenzsynthese ändert nichts a",
+    "createdAt": "2026-10-16T14:22:18.555Z"
+  },
+  {
+    "titleHash": "c74d3da039b1a8def4797bcdf54428a5",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Ankündigung des DKOU 2026 mit Highlights und Hot Topics ist eine allgemeine Veranstaltungsinform",
+    "createdAt": "2026-10-16T14:22:18.555Z"
+  },
+  {
+    "titleHash": "f4db0ce544313a393149899c009bd853",
+    "score": 4,
+    "topics": [
+      "S3-Leitlinie",
+      "Pädiatrie",
+      "Studie"
+    ],
+    "reason": "Die Entwicklung einer S3-Leitlinie zu Hyperlipidämien bei Kindern und Jugendlichen durch ein Projekt",
+    "createdAt": "2026-10-16T14:22:19.464Z"
   }
 ]
