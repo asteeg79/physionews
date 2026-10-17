@@ -7307,5 +7307,14 @@
     "topics": [],
     "reason": "Der Titel 'Ein echter Knochenjob' ist zu unspezifisch und lässt keinen direkten Bezug zur Arbeit, Ab",
     "createdAt": "2026-10-16T19:05:13.498Z"
+  },
+  {
+    "titleHash": "d83a4c5494f598b775d8706ba4c37bc0",
+    "score": 0,
+    "topics": [
+      "Sturzprävention"
+    ],
+    "reason": "Keine unmittelbare Änderung der Arbeit, Abrechnung, Ausbildung oder des fachlichen Wissens für Physi",
+    "createdAt": "2026-10-17T08:05:25.429Z"
   }
 ]
