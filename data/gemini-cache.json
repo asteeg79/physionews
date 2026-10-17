@@ -1,715 +1,5 @@
 [
   {
-    "titleHash": "484e54c1b34524df6676c64870aeffcb",
-    "score": 7,
-    "topics": [
-      "Berufsverband"
-    ],
-    "reason": "Die neue Ausgabe des Verbandsmagazins \"Physio Deutschland\" ist erschienen. Solche Publikationen enth",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "0d3d42d4e97168c603239a8268e1ac1c",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung betrifft die Grippe-Impfquoten bei Kindern und Jugendlichen mit Grunderkrankung und hat ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "4f4ddbb9aaf4b15b51772c0577af5873",
-    "score": 0,
-    "topics": [
-      "Geriatrie"
-    ],
-    "reason": "Die Meldung über Hochaltrige und deren Lebenswelten im Bundesgesundheitsblatt ist ein allgemeines Ge",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "b570075d6f38b5e4e45994b73f01e4cb",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Aufforderung zur Teilnahme an einem RKI-Panel ist eine allgemeine Bürgerbeteiligungsmaßnahme und",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "3dcd7460505267837d5a91d34af57c13",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung über die Krisenfestigkeit von Krankenhäusern ist ein Thema der Krankenhausverwaltung und",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "e7d6aba2b2264bf46c73742134b6e096",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung über Antibiotikaresistenzen und -verbrauch ist ein Thema der Infektiologie und des öffen",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "973578f59f699ff6b74d23996e76e13b",
-    "score": 7,
-    "topics": [
-      "Fuß & Sprunggelenk",
-      "Bewegungstherapie",
-      "Reha"
-    ],
-    "reason": "Die Meldung über die Behandlung von Sprunggelenksbrüchen (konservativ vs. operativ, Schonung vs. Bel",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "ec640622b996b7fef4275acbdae9d00d",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Analyse des WIdO zu Schwellenwerten für die Pflegebegutachtung betrifft primär die Pflege und ha",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "005838440502eabc4e4353c8066dbf41",
-    "score": 4,
-    "topics": [
-      "Rückenschmerz",
-      "Sturzprävention"
-    ],
-    "reason": "Die Meldung über Rückenschmerzen bei Schulkindern im Zusammenhang mit Schulranzen und Tablets hat ei",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "d6f299c61f64cf005fe672397500fdaa",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Studie zu Schwerverletzten nach gewalttätigen Auseinandersetzungen ist ein Thema der Notfallmedi",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "791daf15bd1913a6d71e406ccc9380ab",
-    "score": 3,
-    "topics": [
-      "Praxisgründung",
-      "Veranstaltung"
-    ],
-    "reason": "Die Ankündigung von Praxisgründungsseminaren des IFK ist eine Veranstaltungsankündigung und keine Än",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "9b34c36224611e00865f73d6c6c998d9",
-    "score": 7,
-    "topics": [
-      "GKV-Vergütung",
-      "Heilmittelversorgung"
-    ],
-    "reason": "Die Erhöhung der Höchstbeträge für beihilfefähige Aufwendungen hat direkte Auswirkungen auf die Abre",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "de87f621a2a78220f282818df7bdf48f",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Weiterentwicklung der Telematikinfrastruktur ist ein allgemeines Digitalisierungsthema im Gesund",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "4525cec950e3690bb4debeb9e295a352",
-    "score": 0,
-    "topics": [
-      "Praxisgründung"
-    ],
-    "reason": "Die Meldung zur Praxisübergabe ist ein Thema der Praxisorganisation und -verwaltung, hat aber keinen",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "b9f38f6873158e598a29717b67cb4ff2",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Übersicht über Pflege- und Gesundheitsfachberufe ist eine allgemeine Information und keine Änder",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "071d55b876f8cbe7085d1221e5c64f80",
-    "score": 9,
-    "topics": [
-      "Heilmittelversorgung",
-      "Blankoverordnung"
-    ],
-    "reason": "Die Forderung nach einer zukunftsfähigen elektronischen Heilmittelverordnung (eHV) durch den IFK adr",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "751cb9502de9daf125b8dfa9f9d02a9d",
-    "score": 7,
-    "topics": [
-      "Berufsverband"
-    ],
-    "reason": "Ein 'Berufspolitisches Update' bei einem Regionalforum kann relevante Informationen über Entwicklung",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "76489549a22fe35c40df0648e9a4e7bc",
-    "score": 7,
-    "topics": [
-      "Berufsausbildung"
-    ],
-    "reason": "Die Fortsetzung der Schulgeldfreiheit in den Gesundheitsfachberufen in NRW ist eine relevante Inform",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "dccca5787a4d2ad6ac13c7b1ebaa3e75",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung über KIM und TIM zur Kommunikation im Praxisalltag ist ein technisches Thema der Digital",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "876ac880ee54e46ffeb57d062fee20c4",
-    "score": 0,
-    "topics": [
-      "Praxisgründung",
-      "Veranstaltung"
-    ],
-    "reason": "Die Ankündigung eines Businessplanwettbewerbs ist eine Veranstaltungsankündigung und keine Änderung ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "7772dca689ef60eef13548127585da1c",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung über eine gefälschte Sicherheitsabfrage ist eine allgemeine IT-Sicherheitswarnung ohne d",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "fa86739a5cd4a9e9c92518861b0e831d",
-    "score": 0,
-    "topics": [
-      "Berufsausbildung"
-    ],
-    "reason": "Die Meldung zur Berufsanerkennung ist relevant für Personen, die im Ausland eine Ausbildung absolvie",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "812d76862baaa9b1648a7b8f1de26adf",
-    "score": 0,
-    "topics": [
-      "Berufsverband"
-    ],
-    "reason": "Die Meldung über ein dreitägiges Event mit starken Ergebnissen für Mitglieder ist eine allgemeine Ve",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "6e1162ac8c8f7fb23c93b42556bfcfa8",
-    "score": 7,
-    "topics": [
-      "Berufsverband",
-      "Heilmittelversorgung",
-      "GKV-Vergütung"
-    ],
-    "reason": "Eine Demonstration in Berlin mit dem Tenor 'Die Luft ist raus' deutet auf eine starke Unzufriedenhei",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "7566b92b42fd4c08b0badad12fe043bb",
-    "score": 8,
-    "topics": [
-      "Fortbildung",
-      "Berufsausbildung"
-    ],
-    "reason": "Neue Weiterbildungsregelungen in der Physiotherapie haben direkten Einfluss auf die Fortbildungspfli",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "0de67fb4fb5f3f0498bb8f43a3445c09",
-    "score": 7,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "reason": "Die 'Notfallreform 2026' mit Bezug zur Physiotherapie in NRW könnte Änderungen in der Versorgung ode",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "062e92cd983afd47db8add2c10775063",
-    "score": 9,
-    "topics": [
-      "Heilmittelversorgung",
-      "GKV-Vergütung"
-    ],
-    "reason": "Die Warnung, die Heilmittelversorgung nicht kaputtzusparen, adressiert direkt die Vergütung und die ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "03152cd438713d9dc2d7c8ee189aaaae",
-    "score": 9,
-    "topics": [
-      "Heilmittelversorgung",
-      "GKV-Vergütung"
-    ],
-    "reason": "Die Warnung von Heilmittelverbänden vor Fehlsteuerung im Heilmittelbereich betrifft direkt die Arbei",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "7c720e6f2cb24fe688072f8e4b232578",
-    "score": 4,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha"
-    ],
-    "reason": "Die Vorstellung der Methode 'Ajambow' zur Bewegungserfahrung an Land und im Wasser könnte für Physio",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "620b035fecad7c110641028476ae1cda",
-    "score": 0,
-    "topics": [],
-    "reason": "Ein Ostergruß ist eine rein private oder allgemeine Mitteilung ohne Bezug zur physiotherapeutischen ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "22f7ad8df5c6182f7ad09c222c84871e",
-    "score": 4,
-    "topics": [
-      "Rückenschmerz"
-    ],
-    "reason": "Die Aufforderung, dem Rücken etwas Gutes zu tun, ist ein allgemeiner Gesundheitshinweis. Ohne konkre",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "d4fa1aa274e2775bf1d6ec5f386cc951",
-    "score": 4,
-    "topics": [
-      "Manuelle Therapie"
-    ],
-    "reason": "Der Vergleich 'Hands-off vs. Hands-on' berührt die Diskussion über physiotherapeutische Behandlungst",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "70e9147660faadde3de8fbe60a2b1ce2",
-    "score": 7,
-    "topics": [
-      "Berufsverband"
-    ],
-    "reason": "Die Zurückweisung einer Revision der Berufsverbände durch das BSG kann weitreichende rechtliche und ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "d186fc1c302652548e36b2c088f1fc12",
-    "score": 0,
-    "topics": [
-      "Berufsausbildung"
-    ],
-    "reason": "Die Meldung über eine Fristende zur Grundqualifikation ist spezifisch und betrifft möglicherweise nu",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "dd538bdfd1685c6625e6efb96419ac5c",
-    "score": 9,
-    "topics": [
-      "GKV-Vergütung",
-      "Heilmittelversorgung"
-    ],
-    "reason": "Die Information über eine Vergütungssteigerung um 2,49 % hat direkte Auswirkungen auf die Einnahmen ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "7b77b6998ee1323c36a153f819b1daaf",
-    "score": 7,
-    "topics": [],
-    "reason": "Die Verschiebung der TI-Anbindung durch den Bundestag kann Auswirkungen auf die Digitalisierung und ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "48b20f446a365ff9cf7cdb80d6e8c680",
-    "score": 0,
-    "topics": [
-      "Veranstaltung"
-    ],
-    "reason": "Das Angebot eines kostenlosen Tickets für eine Messe ist eine Veranstaltungsankündigung und keine Än",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "d0ab1c45d1ed3f62cd40fb2014e03a03",
-    "score": 7,
-    "topics": [
-      "GKV-Vergütung",
-      "Heilmittelversorgung"
-    ],
-    "reason": "Höhere Beihilfebeiträge ab einem bestimmten Datum haben direkte Auswirkungen auf die Abrechnung und ",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "952453430dbaa54c34370c98c09963ed",
-    "score": 0,
-    "topics": [
-      "Veranstaltung"
-    ],
-    "reason": "Die Nennung von 'YOLii' im Kontext der therapie Düsseldorf ist eine Ankündigung eines Ausstellers od",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "088fbbbb361cbe5d33ff2f0c2b0f352f",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung über Behinderung und gesellschaftliche Teilhabe als Leit­thema im Bundes­gesund­heits­bl",
-    "createdAt": "2026-09-17T18:29:20.936Z"
-  },
-  {
-    "titleHash": "fe28707cbd4f652f451e55cc4a034522",
-    "score": 0,
-    "topics": [
-      "Pädiatrie",
-      "Sturzprävention"
-    ],
-    "reason": "Adipositas und Über­gewicht im Vor­schul­alter: Daten aus Schul­eingangs­unter­suchungen bis auf Lan",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "a6f37c96d79f3acef097abb5c74c513c",
-    "score": 0,
-    "topics": [],
-    "reason": "Drogen und chronische Infektions­krankheiten bei Menschen in Haft – Pilotstudie DRUCK-Haft in der JV",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "a03399334d9377c26acfcaf42729a8ff",
-    "score": 0,
-    "topics": [],
-    "reason": "Neuer Sonderforschungsbereich „VirusREvolution“: Werkzeuge zur Erforschung der Virus-Evolution",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "0a076958adcc11d4f1bb298ee7e3a7c2",
-    "score": 0,
-    "topics": [],
-    "reason": "Stress und Stressbewältigung: Neue Daten aus dem RKI-Panel",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "85c4a53744419792cb0f3b6e25e7ab5c",
-    "score": 0,
-    "topics": [],
-    "reason": "Jeder dritte Erwachsene in Deutschland schläft nicht gut - neue Daten aus dem RKI-Panel",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "60d3626b3707ca6596f3aa5502c08409",
-    "score": 4,
-    "topics": [
-      "Geriatrie",
-      "Reha"
-    ],
-    "reason": "Bericht zu Pflege­bedürftig­keit und Ein­schrän­kungen in der funk­tio­nalen Gesund­heit",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "7632d2911cdd2c2849d01b72f5e1df21",
-    "score": 0,
-    "topics": [],
-    "reason": "Neue Ergeb­nisse aus IMPRESS: IMpf­ver­halten ver­stehen, PReparednESS steigern",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "0dca9b8bb7ab230ddf72c40f18cea95c",
-    "score": 0,
-    "topics": [],
-    "reason": "Wie Forschung Wissen schafft – Das RKI erleben, Gesund­heit verstehen: Schul­klassen aus Berlin, Bra",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "d2d3da258b64c023f745c46d601d20ff",
-    "score": 0,
-    "topics": [],
-    "reason": "Sieben Dimen­sionen - Di­ver­sität ist das Motto beim dies­jährigen Tag des Ge­sund­heits­amtes am 1",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "1c60f41b8e42b135f04d697770be8706",
-    "score": 0,
-    "topics": [],
-    "reason": "Diskriminierungs­erfahrungen sind bedeut­sam für die Gesund­heit und gesund­heitliche Ungleich­heit ",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "e6be3642fabb3425bd2be225d13270e7",
-    "score": 0,
-    "topics": [
-      "Studie"
-    ],
-    "reason": "Jörg Meerpohl zu Gast beim Sciana Netzwerk „Whose Evidence Counts? Building Trust Through More Repre",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "bd979e6da690be48725044c9360c0970",
-    "score": 0,
-    "topics": [
-      "Fortbildung",
-      "Veranstaltung"
-    ],
-    "reason": "Workshop-Ausblick auf die zweite Jahreshälfte Nach der Sommerpause startet wieder unser Fort- und We",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "7910829cad5be8a4ab78b2bf5d3780f6",
-    "score": 7,
-    "topics": [
-      "Leitlinie",
-      "Fortbildung"
-    ],
-    "reason": "Einladung zur Leitlinien-Sprechstunde am 16.09.2026 Im September findet die dritte von insgesamt vie",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "a2aef7b37c97fc17e8636833ac24a3c3",
-    "score": 5,
-    "topics": [
-      "Studie",
-      "Atemtherapie"
-    ],
-    "reason": "Pressemitteilung: Wie lassen sich Kinder und Jugendliche davon abhalten, E‐Zigaretten zu konsumieren",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "09ef9ac15db9775155e4bcd7108fd1a1",
-    "score": 0,
-    "topics": [
-      "Studie",
-      "Veranstaltung"
-    ],
-    "reason": "Cochrane Deutschland Stiftung veröffentlicht Jahresbericht 2025 Von politischer Advocacy-Arbeit und ",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "b73cc4f091a6fb3a29bf0bc7dbe777ec",
-    "score": 0,
-    "topics": [
-      "Leitlinie"
-    ],
-    "reason": "Wie gut verstehen Sie die Empfehlungsstärke in Leitlinien? Ihre Antwort zählt! Cochrane Deutschland,",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "c396e47050c430980352d02e9db916e9",
-    "score": 0,
-    "topics": [
-      "Studie",
-      "Veranstaltung"
-    ],
-    "reason": "Ausführlicher Konferenzbericht zum Methodenforum: Brückenschlag zwischen klinischer Forschung und Ev",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "99cc3e1d12a1879a1be6b80db37614ca",
-    "score": 4,
-    "topics": [
-      "Studie",
-      "Reha"
-    ],
-    "reason": "Pressemitteilung zum Weltblutspendetag: Eisenpräparate machen Spende wahrscheinlicher Wenn regelmäßi",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "fb61c420d5a7d171d790390edff6f6a1",
-    "score": 0,
-    "topics": [
-      "Studie",
-      "Veranstaltung"
-    ],
-    "reason": "Spotlight on methods: Vertrauenswürdigkeit jenseits traditioneller Bias-Domänen Die europäischen Coc",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "18c748a5a0dd8bda990fc57c680db047",
-    "score": 0,
-    "topics": [
-      "Studie"
-    ],
-    "reason": "Pressemitteilung: PSA-Screening senkt wahrscheinlich die Sterblichkeit durch Prostatakrebs Ein aktua",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "37b58f81fa6422f43c5f33e5f605e026",
-    "score": 4,
-    "topics": [
-      "Studie",
-      "Pädiatrie"
-    ],
-    "reason": "Pressemitteilung zu Bluthochdruck in der Schwangerschaft: Eine frühe Geburt planen und einleiten – o",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "88b828ea6001ecef3e1c8e9bddee27fd",
-    "score": 4,
-    "topics": [
-      "Studie",
-      "Geriatrie"
-    ],
-    "reason": "Pressemitteilung zur Versorgung im Krankenhaus: Was hilft Senior*innen bei Mangelernährung? Mangeler",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "6e0403475544b393cc013e042a342c67",
-    "score": 0,
-    "topics": [
-      "Studie",
-      "Veranstaltung"
-    ],
-    "reason": "Spotlight on Methods: Dissemination Bias in der qualitativen Forschung Die europäischen Cochrane-Gru",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "6f1bdaafc899e11c9a68638b7c05fb67",
-    "score": 0,
-    "topics": [
-      "Studie",
-      "Neurologie",
-      "Parkinson & MS"
-    ],
-    "reason": "Antikörper-Therapien gegen Alzheimer-Demenz wahrscheinlich ohne klinisch bedeutsame Wirkung Bisher g",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "5d705508870a7a12647e35a0886a64f6",
-    "score": 0,
-    "topics": [
-      "Studie",
-      "Veranstaltung"
-    ],
-    "reason": "Spotlight on Methods – 3. Teil der Europäischen Webinar-Reihe Das dritte Webinar unserer, von europä",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "053e277f8f89f1c15e5408d84547d4dd",
-    "score": 7,
-    "topics": [
-      "Studie",
-      "Bewegungstherapie",
-      "Sportphysiotherapie"
-    ],
-    "reason": "Was bringt hochintensives Intervalltraining für gesunde, aber bisher inaktive Menschen? Fast ein Dri",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "f085705ebc8d72b035b3114f8f7055ef",
-    "score": 4,
-    "topics": [
-      "Studie",
-      "Pädiatrie"
-    ],
-    "reason": "Kann antiseptische Nabelpflege bei Neugeborenen Infektionen und Todesfälle verhindern? Entzündungen ",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "164a3a077d13e7d713b33191256a1d70",
-    "score": 0,
-    "topics": [
-      "Studie",
-      "Veranstaltung"
-    ],
-    "reason": "Unser Methodenforum am 19. Juni 2026: Brückenschlag zwischen klinischer Forschung und Evidenzsynthes",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "9946b54dd531b088c045c58d60ba909d",
-    "score": 0,
-    "topics": [],
-    "reason": "Nachruf auf Dr. med. Bernd Dörr",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "41e6e1e77977614417ed5ce8f4a1befd",
-    "score": 6,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "reason": "Health Economics and Cost-effectiveness in PhysiotherapyGesundheitsökonomie und Kosteneffektivität i",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "4eec85f1766b5d68b58853b0b1b456cd",
-    "score": 7,
-    "topics": [
-      "Praxisgründung",
-      "Berufsausbildung"
-    ],
-    "reason": "Developmental Tasks during the Entry into the Profession in Outpatient Physiotherapy PracticeEntwick",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "78739e6e8da718fffe707291a944d314",
-    "score": 9,
-    "topics": [
-      "RCT",
-      "Neurologie",
-      "Parkinson & MS"
-    ],
-    "reason": "Individualised Physiotherapy and Activity Coaching in Multiple Sclerosis (IPAC-MS): Results of a Ran",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "82b8657ff833b852873f02dd3ea97be9",
-    "score": 9,
-    "topics": [
-      "Systematic Review",
-      "Meta-Analyse",
-      "Bewegungstherapie"
-    ],
-    "reason": "Physiotherapy for endometriosis-associated pelvic pain: a systematic review and meta-analysisPhysiot",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "2cf27f07dd5a44c32549ddfdba85f796",
-    "score": 0,
-    "topics": [],
-    "reason": "Differences as potentials: A posthuman re-envisioning of disability and mobilityUnterschiede als Pot",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "a2130285662f9695497274c52d6ee0f8",
-    "score": 7,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "reason": "Physiotherapy Health Services ResearchPhysiotherapeutische Versorgungsforschung",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "6bf23f3d2a55ee7dd0cac548292ba907",
-    "score": 0,
-    "topics": [],
-    "reason": "Knowledge, Impact, ChangeWissen, Wirkung, Wandel",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "7786cde7758f4eeaab6c72ad406a5365",
-    "score": 5,
-    "topics": [
-      "Reha"
-    ],
-    "reason": "Exploration of Patients’ Perspective on Telerehabilitation in Physiotherapy: What are Potential Faci",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "47dae6436f7422ff9282fc61e7018420",
-    "score": 0,
-    "topics": [],
-    "reason": "Balance between evidence, norms and discourseGleichgewicht zwischen Evidenz, Norm und Diskurs",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "38f8c554463d8dafde3a5687bf31b7c8",
-    "score": 7,
-    "topics": [
-      "Bewegungstherapie",
-      "Studie"
-    ],
-    "reason": "Cluster Analysis and Predictive Factors Influencing Physiotherapists’ Recommendations for Exercise T",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
-    "titleHash": "b76efeb1be067743aadecb0e738bb180",
-    "score": 6,
-    "topics": [
-      "Bewegungstherapie"
-    ],
-    "reason": "Group therapy in physiotherapyGruppentherapie in der Physiotherapie",
-    "createdAt": "2026-09-17T19:21:12.336Z"
-  },
-  {
     "titleHash": "87eb9f7396604242d9b4b0fcfb0eec79",
     "score": 0,
     "topics": [
@@ -4303,5 +3593,130 @@
     ],
     "reason": "Keine unmittelbare Änderung der Arbeit, Abrechnung, Ausbildung oder des fachlichen Wissens für Physi",
     "createdAt": "2026-10-17T08:05:25.429Z"
+  },
+  {
+    "titleHash": "584c23c0bbc251662fa18561364c04e4",
+    "score": 4,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Die Wertermittlung einer physiotherapeutischen Praxis ist ein wichtiger Aspekt für Praxisinhaber, in",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "3895d9507a54dd73f25ac593ef377c83",
+    "score": 3,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der Anschluss an die Telematikinfrastruktur (TI) ist eine technische und organisatorische Anforderun",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "40d42e558f4f09574865fc3f26b0cf24",
+    "score": 5,
+    "topics": [],
+    "reason": "Der Titel ist sehr allgemein und lässt keinen direkten Bezug zur physiotherapeutischen Praxis erkenn",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "1c0a39fbbf8f1824cf812e6ee44f2598",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die gemeinsame Positionierung relevanter Verbände gegen drohende Absetzungen bei Heilmitteln hat dir",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "2d464249cb9fe4d9f73d619efbda33d6",
+    "score": 6,
+    "topics": [
+      "Berufsausbildung",
+      "Fortbildung"
+    ],
+    "reason": "Eine Kooperation für ein nebenberufliches Studium kann für Physiotherapeut:innen interessant sein, d",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "0967ede0fbf21b6db3a95fc3370eebe9",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung",
+      "Fortbildung"
+    ],
+    "reason": "Die Information, dass Zertifikatsleistungen erst nach erteilter Abgabeberechtigung durchgeführt werd",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "397253919405699c3c9b64a97a25436a",
+    "score": 3,
+    "topics": [
+      "Studie"
+    ],
+    "reason": "Die CESAR-Studie zur Bewertung von KI-Werkzeugen in Evidenzsynthesen ist ein Thema der wissenschaftl",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "0e8269b10f94077e1babd7dac2398c49",
+    "score": 5,
+    "topics": [
+      "Studie",
+      "Bewegungstherapie",
+      "Geriatrie"
+    ],
+    "reason": "Der Titel 'Healthy Ageing Needs Muscle' und die Erwähnung von Myokinen deuten auf einen wissenschaft",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "eb6e5e5522f8e7ed8404785ea4a589d2",
+    "score": 3,
+    "topics": [],
+    "reason": "Dieser Titel thematisiert die Qualität und Transparenz in der wissenschaftlichen Landschaft. Er hat ",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "b747dd5fa37ecdb45c5856131e3a005f",
+    "score": 7,
+    "topics": [
+      "Studie",
+      "RCT",
+      "Geriatrie"
+    ],
+    "reason": "Empfehlungen zur Darstellung randomisierter Studien zu körperlichem Training älterer Erwachsener sin",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "10c1a9e24c1b484127f7ca9f8608dc8e",
+    "score": 10,
+    "topics": [
+      "Systematic Review",
+      "Meta-Analyse",
+      "Wirbelsäule"
+    ],
+    "reason": "Die Wirksamkeit von physiotherapeutischen Interventionen bei Skoliose, dargestellt als systematische",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "09104fd7deab98598d29f3ade7c021bc",
+    "score": 4,
+    "topics": [
+      "Sportphysiotherapie",
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Frage, ob Städte für ganzjähriges Training im Freien zurückfallen, ist ein allgemeines Thema der",
+    "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "5da97748fdf8f9c75da9f8a545f294a2",
+    "score": 3,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Nachrichten aus Sektionen einer Fachgesellschaft sind in der Regel interne oder forschungsorientiert",
+    "createdAt": "2026-10-17T19:45:21.076Z"
   }
 ]
