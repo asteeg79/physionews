@@ -3718,5 +3718,237 @@
     ],
     "reason": "Nachrichten aus Sektionen einer Fachgesellschaft sind in der Regel interne oder forschungsorientiert",
     "createdAt": "2026-10-17T19:45:21.076Z"
+  },
+  {
+    "titleHash": "6e1162ac8c8f7fb23c93b42556bfcfa8",
+    "score": 0,
+    "topics": [],
+    "reason": "Demo Berlin - 11. Juni 2026: Die Luft ist raus.",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "7566b92b42fd4c08b0badad12fe043bb",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Neue Weiterbildungsregelungen in der Physiotherapie",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "0de67fb4fb5f3f0498bb8f43a3445c09",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Notfallreform 2026 – Kurzinfo für die Physiotherapie in NRW",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "062e92cd983afd47db8add2c10775063",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Heilmittelversorgung nicht kaputtsparen!",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "03152cd438713d9dc2d7c8ee189aaaae",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Heilmittelverbände warnen vor Fehlsteuerung im Heilmittelbereich",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "7c720e6f2cb24fe688072f8e4b232578",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Ajambow: Bewegung neu erleben - an Land und im Wasser",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "22f7ad8df5c6182f7ad09c222c84871e",
+    "score": 4,
+    "topics": [
+      "Rückenschmerz",
+      "Bewegungstherapie"
+    ],
+    "reason": "Tu deinem Rücken etwas Gutes",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "d4fa1aa274e2775bf1d6ec5f386cc951",
+    "score": 4,
+    "topics": [
+      "Manuelle Therapie"
+    ],
+    "reason": "Hands-off vs. Hands-on",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "70e9147660faadde3de8fbe60a2b1ce2",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "BSG weist Revision der Berufsverbände zurück",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "dd538bdfd1685c6625e6efb96419ac5c",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "reason": "Vergütungsverhandlungen: Vergütung steigt um 2,49 %",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "7b77b6998ee1323c36a153f819b1daaf",
+    "score": 3,
+    "topics": [],
+    "reason": "Bundestag verschiebt TI-Anbindung",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "d0ab1c45d1ed3f62cd40fb2014e03a03",
+    "score": 3,
+    "topics": [],
+    "reason": "Höhere Beihilfebeiträge ab 01. September 2025",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "7910829cad5be8a4ab78b2bf5d3780f6",
+    "score": 3,
+    "topics": [
+      "Leitlinie",
+      "S3-Leitlinie",
+      "S2k-Leitlinie"
+    ],
+    "reason": "Einladung zur Leitlinien-Sprechstunde am 16.09.2026 Im September findet die dritte von insgesamt vie",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "a2aef7b37c97fc17e8636833ac24a3c3",
+    "score": 3,
+    "topics": [
+      "Cochrane-Review",
+      "Pädiatrie"
+    ],
+    "reason": "Pressemitteilung: Wie lassen sich Kinder und Jugendliche davon abhalten, E‐Zigaretten zu konsumieren",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "99cc3e1d12a1879a1be6b80db37614ca",
+    "score": 3,
+    "topics": [
+      "Cochrane-Review"
+    ],
+    "reason": "Pressemitteilung zum Weltblutspendetag: Eisenpräparate machen Spende wahrscheinlicher Wenn regelmäßi",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "973578f59f699ff6b74d23996e76e13b",
+    "score": 4,
+    "topics": [
+      "Fuß & Sprunggelenk"
+    ],
+    "reason": "Sprunggelenkbruch: Nicht immer operieren, nicht immer schonen",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "60d3626b3707ca6596f3aa5502c08409",
+    "score": 0,
+    "topics": [
+      "Geriatrie",
+      "Reha"
+    ],
+    "reason": "Bericht zu Pflege­bedürftig­keit und Ein­schrän­kungen in der funk­tio­nalen Gesund­heit",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "41e6e1e77977614417ed5ce8f4a1befd",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Health Economics and Cost-effectiveness in PhysiotherapyGesundheitsökonomie und Kosteneffektivität i",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "4eec85f1766b5d68b58853b0b1b456cd",
+    "score": 7,
+    "topics": [
+      "Praxisgründung",
+      "Berufsverband"
+    ],
+    "reason": "Developmental Tasks during the Entry into the Profession in Outpatient Physiotherapy PracticeEntwick",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "78739e6e8da718fffe707291a944d314",
+    "score": 9,
+    "topics": [
+      "Neurologie",
+      "Parkinson & MS",
+      "RCT"
+    ],
+    "reason": "Individualised Physiotherapy and Activity Coaching in Multiple Sclerosis (IPAC-MS): Results of a Ran",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "82b8657ff833b852873f02dd3ea97be9",
+    "score": 9,
+    "topics": [
+      "Systematic Review",
+      "Meta-Analyse",
+      "Bewegungstherapie"
+    ],
+    "reason": "Physiotherapy for endometriosis-associated pelvic pain: a systematic review and meta-analysisPhysiot",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "a2130285662f9695497274c52d6ee0f8",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Physiotherapy Health Services ResearchPhysiotherapeutische Versorgungsforschung",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "7786cde7758f4eeaab6c72ad406a5365",
+    "score": 4,
+    "topics": [
+      "Reha"
+    ],
+    "reason": "Exploration of Patients’ Perspective on Telerehabilitation in Physiotherapy: What are Potential Faci",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "38f8c554463d8dafde3a5687bf31b7c8",
+    "score": 9,
+    "topics": [
+      "Bewegungstherapie",
+      "Studie"
+    ],
+    "reason": "Cluster Analysis and Predictive Factors Influencing Physiotherapists’ Recommendations for Exercise T",
+    "createdAt": "2026-10-18T08:22:43.374Z"
+  },
+  {
+    "titleHash": "b76efeb1be067743aadecb0e738bb180",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Group therapy in physiotherapy",
+    "createdAt": "2026-10-18T08:22:43.374Z"
   }
 ]
