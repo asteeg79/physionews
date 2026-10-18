@@ -2690,5 +2690,81 @@
     "topics": [],
     "reason": "Betrug im Gesundheitswesen ist ein relevantes Thema, aber ohne spezifischen Bezug zur physiotherapeu",
     "createdAt": "2026-10-18T16:59:30.249Z"
+  },
+  {
+    "titleHash": "4a42bde6f901ac2fdb4045af902ad9af",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung über den AOK-Tag in Dortmund mit dem Thema 'Primärversorgung neu denken' ist für Physiot",
+    "createdAt": "2026-10-18T19:45:33.217Z"
+  },
+  {
+    "titleHash": "4f9b37770041a5a467ae4424b78cad41",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung über die bundesweite Protestaktion 'Wir kreiden an' am 5. September ist für Physiotherap",
+    "createdAt": "2026-10-18T19:45:33.217Z"
+  },
+  {
+    "titleHash": "9d987311ad653ca8d5a58c528a5c2e7e",
+    "score": 9,
+    "topics": [
+      "Lymphdrainage",
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung über Lipödem und GKV-Kostenübernahme ist für Physiotherapeutinnen unmittelbar relevant. ",
+    "createdAt": "2026-10-18T19:45:33.217Z"
+  },
+  {
+    "titleHash": "06bd936de3e76e859a902f960e24229a",
+    "score": 2,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Verurteilung einer gesetzlichen Krankenkasse zur Zahlung von Verzugskostenpauschalen ist für Phy",
+    "createdAt": "2026-10-18T19:45:35.423Z"
+  },
+  {
+    "titleHash": "ffe8c51c640a2cff09c928ed14cc2ec8",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
+    "createdAt": "2026-10-18T19:45:35.423Z"
+  },
+  {
+    "titleHash": "3b56884328e6147ddd16d7de5a8aa309",
+    "score": 2,
+    "topics": [],
+    "reason": "Die Frage, ob eine Abmahnung ohne konkretes Wettbewerbsverhältnis berechtigt ist, ist eine allgemein",
+    "createdAt": "2026-10-18T19:45:35.423Z"
+  },
+  {
+    "titleHash": "54ba201b82c44cf2ccb09612767ea249",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
+    "createdAt": "2026-10-18T19:45:35.423Z"
+  },
+  {
+    "titleHash": "bc9975cfdb6a90f5beda7c642f6895b4",
+    "score": 3,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Tatsache, dass die GEMA gegen Physiotherapeuten nicht aufgibt, ist zwar eine Meldung aus dem Umf",
+    "createdAt": "2026-10-18T19:45:35.423Z"
   }
 ]
