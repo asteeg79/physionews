@@ -1865,5 +1865,830 @@
     ],
     "reason": "Die Evaluation der Blankoverordnung durch den VDB Physiotherapieverband NRW ist relevant, da sie dir",
     "createdAt": "2026-10-18T13:38:56.294Z"
+  },
+  {
+    "titleHash": "2cdd661eefa4f0ab71b03c85c73a3151",
+    "score": 3,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Der Heilmittel-Report 2026 der AOK/WIdO thematisiert steigende Kosten für Heilmitteltherapien, ohne ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "45105bfb2dbbd3a19e657be570b83c11",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Manuelle Therapie",
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Einordnung Deutschlands im Public Health Index, bei der die Rolle der Physiotherapie beleuchtet ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "48d3c16fd6de99849d5c8da2bbba054d",
+    "score": 7,
+    "topics": [
+      "Knie",
+      "Arthrose",
+      "Studie"
+    ],
+    "reason": "Die Untersuchung der Effekte von Blood Flow Restriction Training bei Gonarthrose ist relevant, da si",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "f7206916cfccdfd975117e0c214efc77",
+    "score": 4,
+    "topics": [],
+    "reason": "Internationale Studienergebnisse sind generell von Interesse, aber ohne spezifischen Bezug zu einem ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "cfe7405c204351fb689bf38334d7e934",
+    "score": 5,
+    "topics": [
+      "Neurologie",
+      "Manuelle Therapie"
+    ],
+    "reason": "Die Differenzialdiagnostik der Trigeminusneuralgie ist ein spezifisches medizinisches Thema, das für",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "329371fc6f69cb3409ccf8b1c717228a",
+    "score": 4,
+    "topics": [
+      "Reha",
+      "Geriatrie"
+    ],
+    "reason": "Der Transfer von Rollstuhl zu Badewanne ist eine alltägliche Hilfestellung, die eher dem Bereich der",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "49048c20ff4a6c6aebdcf5c830b84ffd",
+    "score": 6,
+    "topics": [
+      "Neurologie",
+      "Bewegungstherapie",
+      "Manuelle Therapie"
+    ],
+    "reason": "Die Verbindung von funktionellen Bewegungsstörungen, Neurowissenschaft und Praxis ist für Physiother",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "3caa46a233c5d7a785a8c95f293f694b",
+    "score": 4,
+    "topics": [
+      "Wirbelsäule",
+      "Manuelle Therapie"
+    ],
+    "reason": "Das Erkennen von 'Red Flags' bei einem 'brennenden Becken' ist wichtig, aber die Meldung selbst biet",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "52a5d343566b3018ffb8f67a1eeeec99",
+    "score": 4,
+    "topics": [
+      "Lymphdrainage",
+      "Manuelle Therapie"
+    ],
+    "reason": "Die Behandlung von Narben nach Genitaloperationen für trans* Personen ist ein spezialisiertes Thema,",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "5e2fa45883a6c5129010e2fd974f6dbe",
+    "score": 4,
+    "topics": [
+      "Sportphysiotherapie"
+    ],
+    "reason": "Die Rolle eines Physiotherapeuten bei der Fußball-WM ist zwar ein interessantes Einsatzgebiet, änder",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "5e0a7786988a6a5a8caee7529e07a9cc",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Frage der korrekten Abrechnung für angestellte Heilpraktiker:innen hat direkte Auswirkungen auf ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "2b4538e1bcce5c325a6f883f9a344369",
+    "score": 7,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Die notwendigen Angaben eines Arbeitsvertrages sind für angestellte Physiotherapeut:innen direkt rel",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "a729f505a08bdeacd066a2a98fb2cd1a",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Einstufung von Fahrten zum ersten Patienten als Arbeitszeit hat direkte Auswirkungen auf die Arb",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "ef940bf0ca83bebc82c96e9ad578a8da",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Zulässigkeit von 'Minusstunden' betrifft die Arbeitszeit und Vergütung angestellter Physiotherap",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "d89bc987bc19852aa627a2e8b16d5e80",
+    "score": 7,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Kündigungsfristen von Arbeitsverhältnissen sind für angestellte Physiotherapeut:innen und Arbeitgebe",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "09e795899b012d305e582ae53284894a",
+    "score": 4,
+    "topics": [],
+    "reason": "Irrtümer über die DSGVO sind ein allgemeines Rechtsthema, das für Physiotherapeut:innen relevant sei",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "907178859782ed9cc0a86271ac039756",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar relevant ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "a50980e895281b5591daf4852188369a",
+    "score": 8,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die Abrechnungspraxis ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "577b93661e24069f3b37188a9be37e69",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "ec38748e77ad61d69df461cbaca39487",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "a42c10241dd77b97900f3b532aa3a12f",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "d994ab2a8db92c2e0a1516844eb3d6d1",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "121cf0b55cdd8577a4823b031d9eee36",
+    "score": 8,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "8e0adf730d733a7bc945dcf2f8f8f65f",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "fecabe232b685f4963d709ac38096821",
+    "score": 8,
+    "topics": [
+      "Manuelle Therapie",
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "3fde7337837e037bf526e34cae07802d",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "439cd9941b56842c2467f4edc7765fa7",
+    "score": 4,
+    "topics": [],
+    "reason": "Ein Urteil über den Tod nach Behandlung bei Podologen ist zwar ein medizinisches und juristisches Th",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "c823b5ff581a7c6d90fbd72e6cd6a67c",
+    "score": 8,
+    "topics": [
+      "Heilmittelversorgung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Entscheidung des Bundessozialgerichts über die Freie Mitarbeiterschaft bei Therapeuten ist von h",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "132f859854bfc9e0a8237d884d73d487",
+    "score": 7,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Informationen zum Praxiskauf und Praxisverkauf sind direkt relevant für Physiotherapeut:innen, die e",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "86cd4701fc2765e5c54577be34447f76",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Klage gegen die SVLFG wegen verspäteter Zahlungen und verursachter Kosten ist relevant für die A",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "84f589bfbb1e9ba36532c2cb93a0166b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Ein Gerichtsverfahren, bei dem die Techniker Krankenkasse zur Zahlung von über 322.000 € verurteilt ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "a969e5bcff58d3217a3baea253781dc6",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Ein Gerichtsverfahren, bei dem die Techniker Krankenkasse wegen eines Fehlers der DAVASO verliert, i",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "0a8722155f5869bafe40565cc0691c7a",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein Urteil des Landgerichts Aschaffenburg zugunsten eines Physiotherapeuten ist relevant für die rec",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "689cb9f79251ecc4e017ac03229c54f6",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Verurteilung eines Patienten wegen einer Ausfallgebühr durch ein Amtsgericht ist relevant für di",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "a806907b712068dffd87293ab025835d",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Verurteilung der Barmer durch ein Sozialgericht ist relevant für die Abrechnungspraxis und die D",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "dcedf33cd17991fedfca9b9706ae2821",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Eine erfolgreiche Untätigkeitsklage eines Physio-Schülers gegen die Stadt Herne ist relevant für die",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "7a4e03b244e67d8ae9211c19ef330a3b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der Gewinn von Physiotherapeuten gegen eine Patientin vor dem Amtsgericht Solingen ist relevant für ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "5a03a44db278aac744e74ca342abd368",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Kostenübernahme durch BIG direkt gesund nach einem Gerichtsverfahren ist relevant für die Abrech",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "6ef194bcbf96db3db1abd4a4810fd0ce",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Der Erfolg einer Physiotherapeutin vor dem Sozialgericht Würzburg gegen die Barmer ist relevant für ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "3fb5b3cbd9a3f819918ce6a44e553cb1",
+    "score": 8,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein wichtiges Urteil zu üblichen Preisen in der Physiotherapie ist direkt relevant für die Honorarge",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "788bed3d17a7dc423b145f153a4f364b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der Erfolg gegen die BGW vor dem Sozialgericht Berlin ist relevant für die Durchsetzung von Ansprüch",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "20db7deb6e23fb691243463933e3ad5e",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Techniker Krankenkasse muss nach einem Gerichtsverfahren erneut Kosten zahlen, was für die Abrec",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "9a464d6b0f2b31b459340326dfdc464b",
+    "score": 7,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "reason": "Ein Privatpatient, der vor dem Landgericht gegen eine private Krankenversicherung gewinnt, ist relev",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "2c629f1b9b81c8cd9c67f062e466071d",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Verurteilung einer Patientin wegen einer Ausfallgebühr durch ein Amtsgericht ist relevant für di",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "341c4413194bcfcfe0d34a5901e7fb22",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Eine Podologin, die vor Gericht wegen Ausfallhonorar siegt, ist relevant für die Durchsetzung von An",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "cdfe39dceb3603f9786fb369c72a596b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Eine Therapeutin, die gegen die BKK24 siegt, ist relevant für die Abrechnungspraxis und die Durchset",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "d1e1338ccc9a988a6617dd2026221828",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der Anspruch einer Podologin auf eine sektorale Heilpraktikererlaubnis ist relevant für die Abgrenzu",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "7570f1ab5ca192022376704853da087c",
+    "score": 7,
+    "topics": [
+      "Reha",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die erfolgreiche Klage gegen die Deutsche Rentenversicherung wegen T-RENA ist relevant für die Abrec",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "6a287057be2039ee22b6e5ebfd502fd2",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Eine beginnende Klagewelle wegen Hausbesuchspauschale ist direkt relevant für die Abrechnungspraxis ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "3e26bfe85ae1b6a334184cc8ae4bfc4c",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Absicherung der Ausfallgebühr durch einen Behandlungsvertrag ist relevant für die rechtliche Abs",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "6193a8e25576623678896727f2b27df7",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Grundsatzentscheidung, dass Physiotherapeuten Anspruch auf eine Verzugskostenpauschale haben, is",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "a011d18dcc446b57f02442bb3a1cd186",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Ein umfangreicher Rechtsstreit eines Physiotherapeuten vor dem Landgericht Darmstadt ist relevant fü",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "6d5c79f36a16b86cc2d1df32f1b8b635",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Verurteilung der ARGE Heilmittelzulassung wegen Untätigkeit ist relevant für die Zulassungsproze",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "1672aed14b7f877cd472252bb3a87a1d",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Eine Gerichtsentscheidung zugunsten der Praxis bezüglich der Ausfallgebühr ist relevant für die Durc",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "e6762b740b6fc14daf38805ba0c8bc36",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Tatsache, dass die Verzugskostenpauschale nicht auf Rechtsanwaltskosten angerechnet werden muss,",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "9154e923f5d0e4ee96ba4180bd808f3e",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Techniker Krankenkasse muss nach der Klage eines Physiotherapeuten zahlen, was für die Abrechnun",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "52d1a06ef6ad6741d0eebf4c39c66794",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die IKK classic muss erneut nach einem Gerichtsverfahren zahlen, was für die Abrechnungspraxis und d",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "ea7d7ea46a83b7be58e12c9b8278d98c",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Der erneute Verlust der IKK classic in einem Rechtsstreit gegen eine Abrechnungsstelle ist relevant ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "4d9e35b2026930be1ed70c07ee5d0ac0",
+    "score": 7,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Die Tatsache, dass physiotherapeutische Praxen in der Regel keine Zahlungen an die GEMA leisten müss",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "59daa346a658ed36af82803f6c8694d4",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Eine Klagewelle gegen die IKK classic, die zu Erfolgen führt, ist relevant für die Abrechnungspraxis",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "c8745272b74c203f3cf778cb9b89e418",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Gerichtsverfahren zwischen einer Krankenkasse und einem Abrechnungszentrum, das für Physiotherapeute",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "7ed9993c8331e7021c8300806f7d9df7",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Gerichtsverfahren zwischen einer Krankenkasse und einem Abrechnungszentrum, das für Physiotherapeute",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "ffd10c4cdc31bc97278869cc6d5e4511",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Gerichtsverfahren, bei denen Krankenkassen zur Zahlung von Verzugskostenpauschalen und Zinsen verurt",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "4d30b777ef0acfe7dfd5c8ac3b951ed5",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Ein Gerichtsverfahren, das eine Krankenkasse gegen eine Physiotherapeutin verloren hat, ist relevant",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "4c7fbab8006a5fb7296c52c874a2daf2",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Gerichtsverfahren zwischen einer Krankenkasse und Physiotherapeuten sind relevant, da sie Auswirkung",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "3ac0b54e24746401f17ff982f978da07",
+    "score": 9,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Klärung, dass die klassische Massagetherapie nicht auf 10 Einheiten begrenzt ist, hat direkte Au",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "18f7b50066fcc4611739c73629a33dd2",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Ein erfolgreicher Rechtsstreit eines Physiotherapeuten gegen eine Krankenkasse wegen Behandlungskost",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "12c96f184ababffc71ae064756bfb4c1",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Ein Gerichtsverfahren, das ein Therapeut gegen eine Krankenkasse gewonnen hat, ist relevant, da es A",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "32c5bd4c61c0ca71b95d4b42f4332ce6",
+    "score": 7,
+    "topics": [
+      "Reha",
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Ein Sieg eines Physiotherapeuten gegen die Deutsche Rentenversicherung vor dem Landessozialgericht N",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "7bdd50b38a641e9a25c9524778e5845b",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Mehrere Gerichtsverfahren, die eine Krankenkasse gegen eine physiotherapeutische Praxis verloren hat",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "418b46ddfe77cb584c10c97a9fc044c6",
+    "score": 4,
+    "topics": [],
+    "reason": "Die Corona-Krise und ihre Folgen für die Heilberufe sind ein allgemeines Thema, das nicht unmittelba",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "9c08e78265e4a3dee5477f389e575def",
+    "score": 4,
+    "topics": [],
+    "reason": "Eine allgemeine Übersicht über Änderungen für Therapeuten im Jahr 2020 ist nur relevant, wenn konkre",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "249bf4d2b48eb10208f58238d7762a91",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Gerichtsverfahren, bei denen eine Krankenkasse verliert und es Probleme mit dem Abrechnungszentrum g",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "e1e00d6daac96f67b91c9a0285d9ae52",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Gerichtsverfahren, bei denen eine Krankenkasse verliert, weil das Abrechnungszentrum zu spät zahlt, ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "131c06a777802a6f854860e7dc4cca39",
+    "score": 4,
+    "topics": [],
+    "reason": "Neue Regelungen zur Arbeitszeiterfassung sind für die allgemeine Arbeitswelt relevant, aber nicht sp",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "000f70307b95efc2742ea6ecf2b9c892",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung, dass Mitarbeiter für die Abrechnung gemeldet werden müssen, ist eine allgemeine adminis",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "9e4b63aa64d75ea4de02d0c9978aea0c",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Eine neue Regresswelle gegen Physiotherapeuten durch eine Krankenkasse ist hochrelevant, da sie dire",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "f049db6ff7c5f4a5920c5ce5728ce9fb",
+    "score": 3,
+    "topics": [],
+    "reason": "Das Gesetz für Daten und digitale Innovation im Gesundheitswesen (GeDIG) ist ein allgemeines gesundh",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "ab83bf11d900654fd0e1ba30632fb721",
+    "score": 5,
+    "topics": [
+      "Rückenschmerz",
+      "Leitlinie"
+    ],
+    "reason": "Die Aktualisierung des DMP zu chronischem Rückenschmerz ist für Physiotherapeuten potenziell relevan",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "1fe96201cd5aabe5d3e1e687edf2d483",
+    "score": 4,
+    "topics": [
+      "Knie",
+      "Reha"
+    ],
+    "reason": "Innovationsausschuss-Projekte zu Langzeit-Opioidtherapien und Kniegelenkersatz sind eher für Ärzte u",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "33aad898930bf77577ba61ce19ae0945",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Ausfallgebühr in Praxen ist ein relevantes Thema für die Abrechnung und das Management von physi",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "450eb43003deacd42779ce592edf5619",
+    "score": 4,
+    "topics": [],
+    "reason": "Die Frage, ob Praxen unter Generalverdacht stehen, ist eine allgemeine Aussage, die keine konkreten ",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "cffbfb2ddd63974479d9a71919d34a11",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Änderungen bei der Osteopathie ab 2026 sind relevant, da sie Auswirkungen auf die Ausübung und mögli",
+    "createdAt": "2026-10-18T16:59:28.724Z"
+  },
+  {
+    "titleHash": "3a410802cf39056ab919586939c8ac1f",
+    "score": 0,
+    "topics": [],
+    "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis erkennbar. Themen wie \"Praktikanten\" und \"Knast",
+    "createdAt": "2026-10-18T16:59:30.249Z"
+  },
+  {
+    "titleHash": "f83c0b62e047ff68696836c424bd0b01",
+    "score": 0,
+    "topics": [],
+    "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis erkennbar. \"Durchsuchung bei Arbeitnehmern\" ist",
+    "createdAt": "2026-10-18T16:59:30.249Z"
+  },
+  {
+    "titleHash": "3648408beba6035f755c9b755481a440",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Frage nach der Vergütung trotz Behandlung hat einen direkten Bezug zur Abrechnung und damit zur ",
+    "createdAt": "2026-10-18T16:59:30.249Z"
+  },
+  {
+    "titleHash": "27068fcf4c938a874cc1f9acf3f05bc3",
+    "score": 4,
+    "topics": [],
+    "reason": "Betrug im Gesundheitswesen ist ein relevantes Thema, aber ohne spezifischen Bezug zur physiotherapeu",
+    "createdAt": "2026-10-18T16:59:30.249Z"
+  },
+  {
+    "titleHash": "d4291793736fe7eae7a0f7873fcceae7",
+    "score": 4,
+    "topics": [],
+    "reason": "Betrug im Gesundheitswesen ist ein relevantes Thema, aber ohne spezifischen Bezug zur physiotherapeu",
+    "createdAt": "2026-10-18T16:59:30.249Z"
   }
 ]
