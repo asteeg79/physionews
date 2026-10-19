@@ -2755,5 +2755,26 @@
     "topics": [],
     "reason": "Der Titel ist zu allgemein und hat keinen direkten Bezug zur physiotherapeutischen Praxis. Es ist un",
     "createdAt": "2026-10-19T06:37:26.459Z"
+  },
+  {
+    "titleHash": "35a11a536d7c6ce125774a0fb5b84f43",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Berufsausbildung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung, die keinen direkten Einfluss auf die tägliche Arbeit von Physiother",
+    "createdAt": "2026-10-19T16:40:17.718Z"
+  },
+  {
+    "titleHash": "dc5ec8a4dd1c1076690e6b3212157ca7",
+    "score": 4,
+    "topics": [
+      "Wirbelsäule",
+      "Arthrose",
+      "Reha"
+    ],
+    "reason": "Die Meldung thematisiert die Zukunft der Orthopädie, was mittelbar für Physiotherapeut:innen relevan",
+    "createdAt": "2026-10-19T16:40:17.718Z"
   }
 ]
