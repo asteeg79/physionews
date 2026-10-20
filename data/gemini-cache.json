@@ -2776,5 +2776,52 @@
     ],
     "reason": "Die Meldung thematisiert die Zukunft der Orthopädie, was mittelbar für Physiotherapeut:innen relevan",
     "createdAt": "2026-10-19T16:40:17.718Z"
+  },
+  {
+    "titleHash": "3cbd6cb3225cbf017a396d2bd2bfd51e",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung/eines Austauschs ohne konkreten inhaltlichen Bezug zur physiotherape",
+    "createdAt": "2026-10-20T08:56:17.439Z"
+  },
+  {
+    "titleHash": "9ac8fd84826a50f8b996e91efb75b208",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Information über eine Arbeitsgruppe zur Prävention, ohne konkreten Bezug zur physiotherapeutischen P",
+    "createdAt": "2026-10-20T08:56:17.439Z"
+  },
+  {
+    "titleHash": "704fb58ba5b6b73fed90704e35f00ba8",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Ankündigung einer Magazin-Ausgabe ohne konkreten inhaltlichen Bezug zur physiotherapeutischen Praxis",
+    "createdAt": "2026-10-20T08:56:17.439Z"
+  },
+  {
+    "titleHash": "b3200858bd1837762916595f4824f515",
+    "score": 4,
+    "topics": [
+      "Studie",
+      "Fortbildung"
+    ],
+    "reason": "Die Cochrane Deutschland Stiftung ist eine Organisation, die evidenzbasierte Medizin fördert. Die Di",
+    "createdAt": "2026-10-20T08:56:17.439Z"
+  },
+  {
+    "titleHash": "cb76987655d3e5dc7cd470089fca094c",
+    "score": 0,
+    "topics": [],
+    "reason": "Allgemeine Information über die Gesundheitskompetenz der Deutschen ohne direkten Bezug zur physiothe",
+    "createdAt": "2026-10-20T08:56:17.439Z"
   }
 ]
