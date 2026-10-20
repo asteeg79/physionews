@@ -1,12 +1,5 @@
 [
   {
-    "titleHash": "6535211fa5efac4bbc6b1c5cd78ad9a0",
-    "score": 0,
-    "topics": [],
-    "reason": "Cochrane-Ticker sind reine Ankündigungen von Reviews, die noch nicht veröffentlicht sind. Sie ändern",
-    "createdAt": "2026-09-20T13:46:26.327Z"
-  },
-  {
     "titleHash": "29fd9068b0d1c9ba8b54d64de783910a",
     "score": 10,
     "topics": [
@@ -2823,5 +2816,26 @@
     "topics": [],
     "reason": "Allgemeine Information über die Gesundheitskompetenz der Deutschen ohne direkten Bezug zur physiothe",
     "createdAt": "2026-10-20T08:56:17.439Z"
+  },
+  {
+    "titleHash": "a6c03896d90beed2fdbcd46ed529a8cd",
+    "score": 4,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung beschreibt die verstärkte Präsenz von Physiotherapie in einer regionalen Gesundheitsregi",
+    "createdAt": "2026-10-20T14:33:13.326Z"
+  },
+  {
+    "titleHash": "80a1f04c908ac07cd40803cf0dd6f43c",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie",
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung kündigt eine Konferenz im Bereich Sportmedizin an. Auch wenn Sportphysiotherapie ein Tei",
+    "createdAt": "2026-10-20T14:33:13.326Z"
   }
 ]
