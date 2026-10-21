@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-10-21",
+    "tokensUsed": 2188,
+    "requestsMade": 2,
+    "updatedAt": "2026-10-21T08:55:57.121Z"
+  },
+  {
     "date": "2026-10-20",
     "tokensUsed": 6650,
     "requestsMade": 6,
@@ -172,11 +178,5 @@
     "tokensUsed": 5746,
     "requestsMade": 6,
     "updatedAt": "2026-09-22T19:19:10.795Z"
-  },
-  {
-    "date": "2026-09-21",
-    "tokensUsed": 2296,
-    "requestsMade": 4,
-    "updatedAt": "2026-09-21T16:03:39.272Z"
   }
 ]

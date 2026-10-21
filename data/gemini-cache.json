@@ -2844,5 +2844,34 @@
     "topics": [],
     "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis. Die Auszeichnung eines Journalistenpreises für",
     "createdAt": "2026-10-20T19:41:06.208Z"
+  },
+  {
+    "titleHash": "edbd4ae570afb2f7a18c19d9bb75b80b",
+    "score": 2,
+    "topics": [
+      "Pädiatrie",
+      "Sturzprävention",
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Meldung thematisiert Bewegungsmangel bei Kindern, was ein wichtiges Thema für die Prävention und",
+    "createdAt": "2026-10-21T08:55:55.849Z"
+  },
+  {
+    "titleHash": "36fbf3175568ca3ddfa848d250ca63a4",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel ist reißerisch und hat keinen erkennbaren Bezug zur fachlichen Arbeit, Abrechnung, Ausbild",
+    "createdAt": "2026-10-21T08:55:55.849Z"
+  },
+  {
+    "titleHash": "feb4991148d9ea6061bc46f11fcd0f1e",
+    "score": 7,
+    "topics": [
+      "Studie",
+      "Leitlinie",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung thematisiert die Notwendigkeit besserer Forschung in der Physiotherapie. Dies kann mitte",
+    "createdAt": "2026-10-21T08:55:55.849Z"
   }
 ]
