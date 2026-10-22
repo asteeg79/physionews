@@ -1,41 +1,5 @@
 [
   {
-    "titleHash": "dee2ff78a2411aa1776ed45faf369388",
-    "score": 7,
-    "topics": [
-      "Heilmittelversorgung",
-      "Berufsverband"
-    ],
-    "reason": "Der IFK berichtet über Bürokratieentlastungen im Heilmittelbereich. Dies kann direkte Auswirkungen a",
-    "createdAt": "2026-09-22T08:51:05.011Z"
-  },
-  {
-    "titleHash": "57d83e24f25d5ae0f08d9beddce7090c",
-    "score": 4,
-    "topics": [
-      "Sturzprävention",
-      "Reha"
-    ],
-    "reason": "Die Meldung bezieht sich auf die Zentrale Anlaufstelle Prävention (ZPP) und Prävention im Allgemeine",
-    "createdAt": "2026-09-22T08:51:05.011Z"
-  },
-  {
-    "titleHash": "e7ae690ff09778a4de11b70d244d8214",
-    "score": 4,
-    "topics": [
-      "Studie"
-    ],
-    "reason": "Die Meldung 'Metal lindert Schmerz' ist zu unspezifisch. Ohne klare Angaben, ob es sich um eine Stud",
-    "createdAt": "2026-09-22T08:51:05.011Z"
-  },
-  {
-    "titleHash": "667dbb5c98f292433f69f4a9564fe99f",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel 'Alice im Technikland' ist völlig irrelevant für Physiotherapeut:innen in der Praxis. Es g",
-    "createdAt": "2026-09-22T08:51:05.011Z"
-  },
-  {
     "titleHash": "b902d5be67da1d2804b696d169adb4ef",
     "score": 4,
     "topics": [
@@ -2821,5 +2785,55 @@
     ],
     "reason": "Der Austausch des VPT mit Prof. Dr. Manuel Cornely zur Weiterentwicklung der Lymphologie ist relevan",
     "createdAt": "2026-10-21T14:43:38.501Z"
+  },
+  {
+    "titleHash": "a96e42ee3c2e24d4c29272ec9fb43639",
+    "score": 7,
+    "topics": [
+      "Sportphysiotherapie",
+      "Studie",
+      "Fortbildung"
+    ],
+    "reason": "Die Umfrage von Physio Deutschland (ZVK) zur akuten Sprunggelenksdistorsion richtet sich direkt an P",
+    "createdAt": "2026-10-22T08:58:07.303Z"
+  },
+  {
+    "titleHash": "70e48f60eafbf95c0a037c326ecbb92f",
+    "score": 0,
+    "topics": [
+      "Fortbildung",
+      "Veranstaltung"
+    ],
+    "reason": "Ein Podcast des VPT NRW über Haltung ist keine direkte Änderung der Arbeit, Abrechnung, Ausbildung o",
+    "createdAt": "2026-10-22T08:58:07.303Z"
+  },
+  {
+    "titleHash": "0bc07fa478959e5578bce447a378e5fc",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'In der Kürze liegt die Würze!' aus dem Physio.de Newsletter-Archiv ist zu allgemein und l",
+    "createdAt": "2026-10-22T08:58:07.303Z"
+  },
+  {
+    "titleHash": "ca9faa33fa592434fd015a5ef9a8c2ba",
+    "score": 7,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha",
+      "Studie"
+    ],
+    "reason": "Diese Pilotstudie zum apparativ unterstützten bettseitigen Bewegungstraining in der Frührehabilitati",
+    "createdAt": "2026-10-22T08:58:07.303Z"
+  },
+  {
+    "titleHash": "865f2338a4efb4f9fe4f52b0eb6da5f2",
+    "score": 7,
+    "topics": [
+      "Neurologie",
+      "Bewegungstherapie",
+      "Studie"
+    ],
+    "reason": "Die Studie zur Wirksamkeit von Bewegungstherapie bei peripherer Fazialisparese ist relevant, da sie ",
+    "createdAt": "2026-10-22T08:58:07.303Z"
   }
 ]

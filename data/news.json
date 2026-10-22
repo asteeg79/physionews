@@ -1,16 +1,36 @@
 [
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "id": "b0175ac53b0d48a98fb1cb89665b937bde431f3164753bbb718c5aff9f978235",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Befragung zur akuten Sprunggelenksdistorsion: Erfahrungen aus der Physiotherapie gefragt",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-21T19:43:19.698Z",
-    "fetchedAt": "2026-10-21T19:43:19.703Z",
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/befragung-zur-akuten-sprunggelenksdistorsion.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/8/1/csm_261020_-_Studie_Aussenbaender_5b029b6d6b.png",
+    "publishedAt": "2026-10-22T12:00:00.000Z",
+    "fetchedAt": "2026-10-22T08:57:55.948Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
+    "relevanceReason": "ai: Die Umfrage von Physio Deutschland (ZVK) zur akuten Sprunggelenksdistorsion richtet sich direkt an P",
+    "isTopNews": false,
+    "topics": [
+      "Sportphysiotherapie",
+      "Studie",
+      "Fortbildung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-22T08:58:02.328Z",
+    "fetchedAt": "2026-10-22T08:58:02.328Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -19,77 +39,76 @@
     "lang": "de"
   },
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-10-21T19:43:19.696Z",
-    "fetchedAt": "2026-10-21T19:43:19.703Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-10-22T08:58:02.327Z",
+    "fetchedAt": "2026-10-22T08:58:02.328Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
+    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-22T08:58:02.324Z",
+    "fetchedAt": "2026-10-22T08:58:02.328Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Berufsverband",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
+    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
+    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
     "imageUrl": null,
-    "publishedAt": "2026-10-21T19:43:19.695Z",
-    "fetchedAt": "2026-10-21T19:43:19.703Z",
+    "publishedAt": "2026-10-22T08:58:02.323Z",
+    "fetchedAt": "2026-10-22T08:58:02.328Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
+    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
     "isTopNews": false,
     "topics": [
-      "Manuelle Therapie",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-10-21T19:43:19.694Z",
-    "fetchedAt": "2026-10-21T19:43:19.703Z",
+    "publishedAt": "2026-10-22T08:58:02.323Z",
+    "fetchedAt": "2026-10-22T08:58:02.328Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
+    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-21T19:43:19.694Z",
-    "fetchedAt": "2026-10-21T19:43:19.703Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
     ],
     "lang": "de"
   },
@@ -110,6 +129,26 @@
       "Lymphdrainage",
       "Fortbildung",
       "Berufsverband"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "0e2f1f3221c70bf70f16d2b42679b4b15237eb20f7e7c60809c263622283eeb2",
+    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
+    "title": "Device-assisted Bedside Movement Training in Interdisciplinary Early Rehabilitation – A Pilot StudyApparativ unterstütztes bettseitiges Bewegungstraining in der fachübergreifenden Frührehabilitation – eine Pilotstudie",
+    "summary": "Immobility in hospitalized patients is associated with increased morbidity and mortality. In early rehabilitation, device-assisted bedside training may enhance recovery and functional outcomes.To evaluate the feasibility, safety, and user-friendliness of a bedside training device in an early rehabilitation setting (non-neurological/neurosurgical, non-geriatric).In this single-center randomized pi…",
+    "url": "http://dx.doi.org/10.1055/a-2735-0508",
+    "imageUrl": null,
+    "publishedAt": "2026-10-21T08:05:54.000Z",
+    "fetchedAt": "2026-10-22T08:58:01.232Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Diese Pilotstudie zum apparativ unterstützten bettseitigen Bewegungstraining in der Frührehabilitati",
+    "isTopNews": false,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha",
+      "Studie"
     ],
     "lang": "de"
   },
@@ -711,7 +750,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +med:kreuzband,rehabilitation | src:+3",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [],
     "lang": "de"
   },
@@ -1517,7 +1556,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Regressgefahr Blankoverordnung - Kassen machen ernst!",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Blankoverordnung",
       "GKV-Vergütung"
