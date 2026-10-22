@@ -2817,5 +2817,24 @@
     ],
     "reason": "Die Rekrutierung internationaler Fachkräfte kann die Personalsituation in physiotherapeutischen Prax",
     "createdAt": "2026-10-22T14:43:31.178Z"
+  },
+  {
+    "titleHash": "dee2ff78a2411aa1776ed45faf369388",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Der IFK (Interessenverband für freie Physiotherapeuten) berichtet über Maßnahmen zur Bürokratieentla",
+    "createdAt": "2026-10-22T19:19:50.430Z"
+  },
+  {
+    "titleHash": "e69d348c2d313ed15566480f0e08e64c",
+    "score": 0,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Der Titel 'Die ganze Welt der Bewegung' ist zu allgemein und bietet keinen spezifischen Bezug zu Änd",
+    "createdAt": "2026-10-22T19:19:50.430Z"
   }
 ]
