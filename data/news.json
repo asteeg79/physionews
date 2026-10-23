@@ -1,55 +1,35 @@
 [
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "id": "a5883c24b49ca6e2b9512400489d6542f3dba693788409b7977d25d429ba1157",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Treffpunkt Wissenschaft: Menschen in Bewegung bringen",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-22T19:35:18.381Z",
-    "fetchedAt": "2026-10-22T19:35:18.386Z",
-    "relevanceScore": 8,
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/treffpunkt-wissenschaft-oktober.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/5/5/csm_260819_-_TPW_ffe5bd7bb0.png",
+    "publishedAt": "2026-10-23T12:00:00.000Z",
+    "fetchedAt": "2026-10-23T08:53:00.674Z",
+    "relevanceScore": 4,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
+    "relevanceReason": "ai: Der Titel 'Menschen in Bewegung bringen' ist zu allgemein und impliziert keine konkrete Änderung für",
     "isTopNews": false,
     "topics": [
-      "Manuelle Therapie",
-      "Berufsverband",
-      "Heilmittelversorgung"
+      "Bewegungstherapie",
+      "Reha"
     ],
     "lang": "de"
   },
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-10-22T19:35:18.381Z",
-    "fetchedAt": "2026-10-22T19:35:18.386Z",
+    "publishedAt": "2026-10-23T08:53:07.843Z",
+    "fetchedAt": "2026-10-23T08:53:07.845Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-22T19:35:18.380Z",
-    "fetchedAt": "2026-10-22T19:35:18.386Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -58,35 +38,73 @@
     "lang": "de"
   },
   {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-10-22T19:35:18.379Z",
-    "fetchedAt": "2026-10-22T19:35:18.386Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-10-23T08:53:07.841Z",
+    "fetchedAt": "2026-10-23T08:53:07.845Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
     "isTopNews": false,
     "topics": [
-      "GKV-Vergütung"
+      "Berufsausbildung",
+      "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
     "imageUrl": null,
-    "publishedAt": "2026-10-22T19:35:18.378Z",
-    "fetchedAt": "2026-10-22T19:35:18.386Z",
+    "publishedAt": "2026-10-23T08:53:07.837Z",
+    "fetchedAt": "2026-10-23T08:53:07.845Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
+    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-23T08:53:07.836Z",
+    "fetchedAt": "2026-10-23T08:53:07.845Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-23T08:53:07.835Z",
+    "fetchedAt": "2026-10-23T08:53:07.845Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
@@ -1449,25 +1467,6 @@
     "topics": [
       "Schulter",
       "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "74cf03834c4a50806d5ca5e2cde65b613a80473d6c53db5d9b238bbb90ddf1a0",
-    "sourceId": "3506f175-239b-4681-b6fa-fac881826441",
-    "title": "Nasses Laub wie Schmierseife: So vermeiden ältere Menschen Stürze",
-    "summary": "Tag der älteren Generation am 1. Oktober",
-    "url": "https://dgou.de/presse/pressemitteilungen/detailansicht-pressemitteilungen/artikel/nasses-laub-wie-schmierseife-so-vermeiden-aeltere-menschen-stuerze",
-    "imageUrl": null,
-    "publishedAt": "2026-09-23T00:00:00.000Z",
-    "fetchedAt": "2026-09-23T08:52:22.841Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung thematisiert Sturzprävention bei älteren Menschen. Dies ist zwar ein relevantes Thema fü",
-    "isTopNews": false,
-    "topics": [
-      "Sturzprävention",
-      "Geriatrie"
     ],
     "lang": "de"
   },

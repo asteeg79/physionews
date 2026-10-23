@@ -1,41 +1,5 @@
 [
   {
-    "titleHash": "253f6d89a06d2dfbda497ea45479c77b",
-    "score": 4,
-    "topics": [
-      "Sturzprävention",
-      "Geriatrie"
-    ],
-    "reason": "Die Meldung thematisiert Sturzprävention bei älteren Menschen. Dies ist zwar ein relevantes Thema fü",
-    "createdAt": "2026-09-23T08:52:30.875Z"
-  },
-  {
-    "titleHash": "79ebb1081845b2a3892dee200e4158a2",
-    "score": 9,
-    "topics": [
-      "Heilmittelversorgung",
-      "Blankoverordnung"
-    ],
-    "reason": "Die Meldung thematisiert die elektronische Heilmittelverordnung, was direkte Auswirkungen auf die Ab",
-    "createdAt": "2026-09-23T08:52:30.875Z"
-  },
-  {
-    "titleHash": "a5ca39dc59957362b3911a9c040689c2",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel 'Strich durch die Rechnung' ist zu vage und gibt keinen klaren Bezug zur physiotherapeutis",
-    "createdAt": "2026-09-23T08:52:30.875Z"
-  },
-  {
-    "titleHash": "2cded41089979a1d97ac948bd24bef04",
-    "score": 3,
-    "topics": [
-      "Reha"
-    ],
-    "reason": "Die Meldung über Unfälle am Arbeitsplatz und die Betroffenenzahlen ist zwar ein Thema im Gesundheits",
-    "createdAt": "2026-09-23T08:52:30.875Z"
-  },
-  {
     "titleHash": "22649c6dc4cc407e577f2465ee11b3ff",
     "score": 4,
     "topics": [
@@ -2836,5 +2800,21 @@
     ],
     "reason": "Der Titel 'Die ganze Welt der Bewegung' ist zu allgemein und bietet keinen spezifischen Bezug zu Änd",
     "createdAt": "2026-10-22T19:19:50.430Z"
+  },
+  {
+    "titleHash": "74fdc39b9d406aa734c22e279c05edd4",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Veranstaltung, die keinen direkten Einfluss auf die Arbeit von Physiotherapeut:inn",
+    "createdAt": "2026-10-23T08:53:08.898Z"
+  },
+  {
+    "titleHash": "77efc5c624a1a06e5ef3ea7d8f6a68af",
+    "score": 0,
+    "topics": [],
+    "reason": "Allgemeine Aussage über die Bedeutung von Pflegekräften, ohne direkten Bezug zur physiotherapeutisch",
+    "createdAt": "2026-10-23T08:53:08.898Z"
   }
 ]
