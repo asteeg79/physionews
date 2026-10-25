@@ -1,16 +1,16 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-10-25T08:46:13.553Z",
-    "fetchedAt": "2026-10-25T08:46:13.554Z",
+    "publishedAt": "2026-10-25T13:59:20.817Z",
+    "fetchedAt": "2026-10-25T13:59:20.821Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
+    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -19,36 +19,55 @@
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-10-25T08:46:13.552Z",
-    "fetchedAt": "2026-10-25T08:46:13.554Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-10-25T13:59:20.816Z",
+    "fetchedAt": "2026-10-25T13:59:20.821Z",
+    "relevanceScore": 8,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
+    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
     "isTopNews": false,
     "topics": [
-      "Berufsausbildung",
+      "Manuelle Therapie",
+      "Berufsverband",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-10-25T08:46:13.546Z",
-    "fetchedAt": "2026-10-25T08:46:13.554Z",
+    "publishedAt": "2026-10-25T13:59:20.815Z",
+    "fetchedAt": "2026-10-25T13:59:20.821Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-25T13:59:20.815Z",
+    "fetchedAt": "2026-10-25T13:59:20.821Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -57,35 +76,17 @@
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-10-25T08:46:13.545Z",
-    "fetchedAt": "2026-10-25T08:46:13.554Z",
+    "publishedAt": "2026-10-25T13:59:20.814Z",
+    "fetchedAt": "2026-10-25T13:59:20.821Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-25T08:46:13.544Z",
-    "fetchedAt": "2026-10-25T08:46:13.554Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
+    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
@@ -1316,65 +1317,6 @@
       "Leitlinie",
       "Studie",
       "Osteoporose"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "85d5ddf0e899f401a141c990237628743f2f93fa7193604dc05c961eec9ad153",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "CPTE: Die neue Klassifikation chronischer Schmerzen in der ICD-11 – Eine Einführung",
-    "summary": null,
-    "url": "https://www.ifk.de/artikel/cpte-die-neue-klassifikation-chronischer-schmerzen-der-icd-11-eine-einfuehrung",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/CPTE-Artikel_ICD-11.jpg?itok=iBccFA7t",
-    "publishedAt": "2026-09-25T12:00:00.000Z",
-    "fetchedAt": "2026-09-25T09:08:27.470Z",
-    "relevanceScore": 5,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die ICD-11 Klassifikation chronischer Schmerzen ist für Physiotherapeuten relevant, da sie die Grund",
-    "isTopNews": false,
-    "topics": [
-      "Rückenschmerz",
-      "Neurologie",
-      "Leitlinie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "21938757bf5f27661704c6a9e9254a57a9ec96eac5d8584b69bab39c5f36c7c2",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "CPTE: Die neue Klassifikation chronischer Schmerzen in der ICD-11 – Eine Einführung",
-    "summary": null,
-    "url": "https://www.ifk.de/index%2ephp/artikel/cpte-die-neue-klassifikation-chronischer-schmerzen-der-icd-11-eine-einfuehrung",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/CPTE-Artikel_ICD-11.jpg?itok=iBccFA7t",
-    "publishedAt": "2026-09-25T12:00:00.000Z",
-    "fetchedAt": "2026-09-25T14:49:01.473Z",
-    "relevanceScore": 5,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die ICD-11 Klassifikation chronischer Schmerzen ist für Physiotherapeuten relevant, da sie die Grund",
-    "isTopNews": false,
-    "topics": [
-      "Rückenschmerz",
-      "Neurologie",
-      "Leitlinie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "ef7dd000618300040aacdecc9f6fde2930900450e97128c0fb4ae4e2a4e0cbba",
-    "sourceId": "080c8549-27aa-4c6f-be77-a748e9dd65c8",
-    "title": "Neuer Leitartikel: „Was Cochrane heute bedeutet“ Zunehmende Desinformation, schwindendes Vertrauen in die Wissenschaft und große Risiken, aber auch Chancen beim Einsatz von Künstlicher Intelligenz: Wie soll sich die Cochrane Collaboration weiterentwickeln, um auf gesellschaftliche Herausforderungen dieser Art besser reagieren zu können? Dieser Frage widmet sich Dr. Rupa Sarkar, neue Chefredakteurin von Cochrane, in ihrem kürzlich in der Cochrane Library erschienenen Leitartikel. 25 Sep 2026",
-    "summary": null,
-    "url": "https://www.cochrane.de/news/neuer-leitartikel-was-cochrane-heute-bedeutet",
-    "imageUrl": "https://www.cochrane.de/sites/cochrane.de/files/styles/grid_image/public/uploads/images/image/adobestock_2107559262.jpeg.webp?itok=G4FrK5fN",
-    "publishedAt": "2026-09-25T09:29:32.000Z",
-    "fetchedAt": "2026-09-25T14:49:02.507Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Leitartikel über die Weiterentwicklung von Cochrane und den Umgang mit Desinformation und KI ist von",
-    "isTopNews": false,
-    "topics": [
-      "Leitlinie",
-      "Studie"
     ],
     "lang": "de"
   },
