@@ -2574,5 +2574,41 @@
     ],
     "reason": "Der Artikel behandelt die Weiterentwicklung der Cochrane Collaboration und die Reaktion auf gesellsc",
     "createdAt": "2026-10-25T19:37:45.270Z"
+  },
+  {
+    "titleHash": "8c6ea212b3ae1ea281a8ff93408320f2",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung, dass Physio Deutschland in internationalen Gremien vertreten ist, ändert nichts an der ",
+    "createdAt": "2026-10-26T09:25:29.385Z"
+  },
+  {
+    "titleHash": "fa56ef7916fa46a0565de1b134c709f2",
+    "score": 4,
+    "topics": [
+      "Schulter",
+      "Reha"
+    ],
+    "reason": "Die Meldung über Qualitätsunterschiede bei Schultergelenksimplantationen ist für Physiotherapeut:inn",
+    "createdAt": "2026-10-26T09:25:29.385Z"
+  },
+  {
+    "titleHash": "154ab71bde0e5b5d974e9ffd2006d425",
+    "score": 3,
+    "topics": [
+      "Reha",
+      "Cochrane-Review"
+    ],
+    "reason": "Die Meldung über die Unterstützung der Cochrane-Gruppe in der Ukraine ist für die physiotherapeutisc",
+    "createdAt": "2026-10-26T09:25:29.385Z"
+  },
+  {
+    "titleHash": "0ec0a22b64be5051edc3bae68d065b6a",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über die potenzielle Nutzung von Kuhstall-Bakterien zur Allergieprävention als Medikamen",
+    "createdAt": "2026-10-26T09:25:29.385Z"
   }
 ]
