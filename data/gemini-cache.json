@@ -2579,5 +2579,31 @@
     ],
     "reason": "Tetraplegiker kann wieder fühlen und greifen - Dies könnte auf neue Therapieansätze oder Fortschritt",
     "createdAt": "2026-10-27T09:23:35.705Z"
+  },
+  {
+    "titleHash": "2553a4f0fb2bc25e832bccfbc00738cb",
+    "score": 4,
+    "topics": [
+      "Neurologie",
+      "Reha"
+    ],
+    "reason": "Die Meldung über Sehfunktionsstörungen ist für Physiotherapeut:innen nur mittelbar relevant, da sie ",
+    "createdAt": "2026-10-27T12:11:47.995Z"
+  },
+  {
+    "titleHash": "a0b41f0ff304d69fd23a1f46e15571da",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung hat keinen direkten Bezug zur physiotherapeutischen Praxis, Abrechnung, Ausbildung ode",
+    "createdAt": "2026-10-27T12:11:47.995Z"
+  },
+  {
+    "titleHash": "ad43aa239959668567c9448fd3b04cc0",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung über die Pflegestrukturkommission betrifft primär die Pflege und hat keine unmittelbare ",
+    "createdAt": "2026-10-27T12:11:47.995Z"
   }
 ]
