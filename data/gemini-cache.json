@@ -2605,5 +2605,14 @@
     ],
     "reason": "Die Meldung über die Pflegestrukturkommission betrifft primär die Pflege und hat keine unmittelbare ",
     "createdAt": "2026-10-27T12:11:47.995Z"
+  },
+  {
+    "titleHash": "4ac35ee5376d4a42c73669d33a005aca",
+    "score": 1,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Das Robert Koch-Institut (RKI) gibt eine Pressemitteilung heraus, die das Thema „Bewegung und Bewegu",
+    "createdAt": "2026-10-27T15:35:02.425Z"
   }
 ]
