@@ -1,0 +1,39 @@
+# Sicherheits-Inventar für den Security-Agenten (Phase 0). Grundlage für den
+# täglichen Abgleich neuer Advisories: Was läuft wo, in welcher Version, wer patcht.
+# Bei Änderungen an Runtime, Hosting oder Deploy-Weg mitpflegen.
+projekt: physionews
+repo: asteeg79/physionews (öffentlich)
+stand: 2026-10-28
+
+# PHP2Shell (CVE-2026-109618, CVE-2026-109619): nicht betroffen. Geprüft am
+# 2026-10-28: kein composer.json, keine .php-Datei, kein Dockerfile, kein
+# setup-php in den Workflows; keine Komponente läuft auf PHP.
+php: keins
+
+komponenten:
+  - name: app
+    pfad: src/
+    runtime: { sprache: node, version: <zu klären> } # Vercel-Projekteinstellung, kein engines-Feld
+    abhaengigkeiten: package-lock.json (Next.js 16.2.6, Serwist, web-push)
+    hosting: { art: vercel, live_url: https://physionews.vercel.app }
+    deploy: automatisch bei Push auf main (Vercel-GitHub-App); deploy.yml nur als manueller Ersatz
+    runtime_patcht: Vercel
+    verifikation: <zu klären> # kein Versions-Endpoint
+
+  - name: pipeline
+    pfad: scripts/pipeline/
+    runtime: { sprache: node, version: 22 } # setup-node in cron-refresh.yml
+    abhaengigkeiten: package-lock.json (rss-parser, cheerio, Gemini-API)
+    hosting: { art: github-actions, runner: ubuntu-latest }
+    deploy: cron-refresh.yml (mehrmals täglich), committet nach data/
+    runtime_patcht: GitHub (Runner-Image), setup-node
+    verifikation: Actions-Log
+
+# Beobachtungen für Phase 1 (nicht in Phase 0 behoben):
+# - Öffentliches Repo: Workflows mit Secrets (GEMINI_API_KEY, VAPID, VERCEL_TOKEN)
+#   dürfen nie auf PRs aus Forks laufen; heute nur schedule und workflow_dispatch.
+# - Die Pipeline gibt fremde Feed-Inhalte an Gemini: OWASP LLM01 und LLM05.
+# - POST /api/refresh-on-demand startet die Pipeline ohne Anmeldung, nur mit
+#   Rate-Limit je IP (1 je 5 Min.); Kosten der Gemini-Aufrufe im Blick behalten.
+# - Node 22 ist in Wartung bis April 2027.
+# - Actions sind auf Tags gepinnt, nicht auf Commit-SHA (Renovate).
