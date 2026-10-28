@@ -2623,5 +2623,26 @@
     ],
     "reason": "Ankündigung einer Fortbildung ohne konkreten Bezug zu Änderungen in der Praxis.",
     "createdAt": "2026-10-28T12:41:50.896Z"
+  },
+  {
+    "titleHash": "55ccf9b851fbb51c50eff6a25a8b731d",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Berufsausbildung",
+      "Fortbildung"
+    ],
+    "reason": "Der VPT bringt auf dem DKOU 2026 Ausbildung und Praxis zusammen. Dies ist relevant, da es um die Ver",
+    "createdAt": "2026-10-28T17:29:29.054Z"
+  },
+  {
+    "titleHash": "7fd2efe65709bc627364ba0b42d91d02",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Ein neuer Podcast des VPT NRW mit dem Titel „Haltung, bitte!“ ist gestartet. Da es sich um eine Ankü",
+    "createdAt": "2026-10-28T17:29:29.054Z"
   }
 ]
