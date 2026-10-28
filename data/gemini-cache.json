@@ -1,15 +1,5 @@
 [
   {
-    "titleHash": "f232f960feda0ae2cc607149d7512e94",
-    "score": 3,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha"
-    ],
-    "reason": "Die Tampa Scale of Kinesiophobia ist ein Fragebogen zur Erfassung von bewegungsbezogener Angst. Obwo",
-    "createdAt": "2026-09-28T10:13:30.523Z"
-  },
-  {
     "titleHash": "5551d9ccea7f31c17a7206f9d84d56bd",
     "score": 0,
     "topics": [
@@ -2624,5 +2614,14 @@
     ],
     "reason": "Die Reform des Physiotherapieberufs ist ein Kernthema für die Berufsausübung. Änderungen in der Ausb",
     "createdAt": "2026-10-28T10:05:07.044Z"
+  },
+  {
+    "titleHash": "f83279464a2a35fbb5d0406198d0e99d",
+    "score": 0,
+    "topics": [
+      "Fortbildung"
+    ],
+    "reason": "Ankündigung einer Fortbildung ohne konkreten Bezug zu Änderungen in der Praxis.",
+    "createdAt": "2026-10-28T12:41:50.896Z"
   }
 ]
