@@ -1,45 +1,5 @@
 [
   {
-    "titleHash": "2e96ee87f10efec21f4c464be9f50d07",
-    "score": 0,
-    "topics": [
-      "Berufsverband"
-    ],
-    "reason": "Die Meldung thematisiert die Einbringung der Perspektive der Physiotherapie in die Klimaschutzdebatt",
-    "createdAt": "2026-09-29T10:10:51.878Z"
-  },
-  {
-    "titleHash": "95c546032aa696b7c5c0e579eba76cc2",
-    "score": 0,
-    "topics": [
-      "Sportphysiotherapie",
-      "Veranstaltung"
-    ],
-    "reason": "Die Meldung, dass die DGSP beim Weltsportärztekongress vertreten ist, hat keinen direkten Bezug zur ",
-    "createdAt": "2026-09-29T10:10:51.878Z"
-  },
-  {
-    "titleHash": "304222c8712829c475fecee0c51e6a8a",
-    "score": 5,
-    "topics": [
-      "Arthrose",
-      "Bewegungstherapie",
-      "Studie"
-    ],
-    "reason": "Die Frage nach dem Sinn eines Sportverbots bei Arthrose berührt direkt das fachliche Wissen und die ",
-    "createdAt": "2026-09-29T10:10:51.878Z"
-  },
-  {
-    "titleHash": "f105f9987fa0a99e1ce5da88eba348c4",
-    "score": 2,
-    "topics": [
-      "Leitlinie",
-      "Fortbildung"
-    ],
-    "reason": "Die Meldung über die Neuentwicklung medizinischer Leitlinien durch den Innovationsausschuss ist zu a",
-    "createdAt": "2026-09-29T10:10:51.878Z"
-  },
-  {
     "titleHash": "494ec5cf390afdd56448e6afa1e91d75",
     "score": 0,
     "topics": [
@@ -2624,5 +2584,12 @@
     ],
     "reason": "Ein neuer Podcast des VPT NRW mit dem Titel „Haltung, bitte!“ ist gestartet. Da es sich um eine Ankü",
     "createdAt": "2026-10-28T17:29:29.054Z"
+  },
+  {
+    "titleHash": "4c434b08d19b78057a7645f1c855cadb",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Frage nach dem Verdienst von Ärzten hat keinen direkten Einfluss auf die Arbeit, Abrechnung, Aus",
+    "createdAt": "2026-10-29T10:29:27.679Z"
   }
 ]
