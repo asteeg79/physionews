@@ -91,9 +91,27 @@ describe('Datumserkennung', () => {
   it('erfindet kein Datum aus einer Überschrift mit Jahreszahl', () => {
     // new Date('… Stammtisch am 01.10.2026') lieferte früher den 9. Januar 2026:
     // V8s Fallback-Parser klaubt aus beliebiger Prosa ein Datum zusammen.
+    // Danach las die Textsuche den 01.10.2026 aus der Überschrift, sobald er
+    // nicht mehr in der Zukunft lag — vor dem <time datetime> daneben.
     const heading = '<a href="/presse/pressemitteilungen/1234/">VPT NRW Online Stammtisch am 01.10.2026</a>';
     const item = parseOne(`<article><time datetime="2026-09-08">egal</time>${heading}</article>`);
     expect(item.publishedAt.toISOString().slice(0, 10)).toBe('2026-09-08');
+  });
+
+  it('liest auch ohne Datumselement kein Datum aus der Überschrift', () => {
+    // Bewusst ein vergangenes Datum: Es besteht die Plausibilitätsprüfung und
+    // darf trotzdem nicht als Veröffentlichungsdatum gelten.
+    const heading = '<a href="/presse/pressemitteilungen/1234/">Rückblick auf den Stammtisch am 01.10.2025</a>';
+    const item = parseOne(`<article>${heading}</article>`);
+    expect(Math.abs(item.publishedAt.getTime() - Date.now())).toBeLessThan(60_000);
+  });
+
+  it('zieht ein Datumselement weiter oben dem Fließtext darunter vor', () => {
+    // Das Datum im Teaser ist ein Termin, das <time> das Erscheinungsdatum.
+    const item = parseOne(
+      `<li><div>${LINK}<p>Anmeldung bis 12.03.2026</p></div><time datetime="2026-02-01">x</time></li>`
+    );
+    expect(item.publishedAt.toISOString().slice(0, 10)).toBe('2026-02-01');
   });
 
   it('rechnet relative deutsche Angaben zurück', () => {

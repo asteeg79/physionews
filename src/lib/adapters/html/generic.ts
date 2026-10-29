@@ -156,14 +156,14 @@ export class GenericHtmlAdapter extends HtmlScraperAdapter {
         // Externe Links überspringen (Domain-Filter)
         if (baseDomain && safeHostname(resolved) !== baseDomain) return;
 
-        const title = this.cleanText(
-          $item.find('h1, h2, h3, h4').first().text() || link.text()
-        );
+        const $heading = $item.find('h1, h2, h3, h4').first();
+        const title = this.cleanText($heading.text() || link.text());
         if (!isValidTitle(title)) return;
 
         seen.add(resolved);
 
-        const publishedAt = this.extractDate($item) ?? new Date();
+        const publishedAt =
+          this.extractDate($item, $heading.text() ? $heading : link) ?? new Date();
 
         const summary = this.cleanText(
           $item.find('p, .summary, .excerpt, .teaser-text, .beschreibung').first().text()

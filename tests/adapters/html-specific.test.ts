@@ -111,6 +111,9 @@ describe('Quellen-spezifische HTML-Adapter (Fixture-basiert)', () => {
     expect(items.length).toBeGreaterThanOrEqual(5);
     const real = items.filter((i) => Math.abs(i.publishedAt.getTime() - Date.now()) > 60_000);
     expect(real.length).toBe(items.length);
+    // Das <time> der Kachel gilt, nicht das Termindatum in der Überschrift.
+    const stammtisch = items.find((i) => i.title.includes('Stammtisch am 01.10.2026'));
+    expect(stammtisch?.publishedAt.toISOString().slice(0, 10)).toBe('2026-09-08');
   });
 
   it('GbaAdapter behält nur numerische Pressemitteilungs-IDs', () => {
@@ -119,5 +122,12 @@ describe('Quellen-spezifische HTML-Adapter (Fixture-basiert)', () => {
     // Navigations-Titel dürfen nicht erscheinen
     expect(items.find((i) => i.title.toLowerCase().includes('zur nächsten seite'))).toBeUndefined();
     expect(items.every((i) => /\/\d+\/?$/.test(i.url))).toBe(true);
+  });
+
+  it('GbaAdapter liest das „heute" einer Überschrift nicht als Datum', () => {
+    const items = loadAndParse('gba.html', 'https://www.g-ba.de/presse/pressemitteilungen/', new GbaAdapter() as never);
+    // Die Datumsspalte der Zeile nennt den 17.04.2026.
+    const item = items.find((i) => i.title.includes('ab heute Themenvorschläge'));
+    expect(item?.publishedAt.toISOString().slice(0, 10)).toBe('2026-04-17');
   });
 });

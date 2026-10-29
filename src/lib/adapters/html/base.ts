@@ -61,9 +61,16 @@ interface TextNode {
  * Schranke — eine unbegrenzte Operation auf fremdem Markup wird zu einer
  * begrenzten, unabhängig davon, wie groß die Seite ist.
  *
+ * `skip` blendet einen Teilbaum aus — die Überschrift des Items, deren
+ * Jahreszahlen ein Veranstaltungsdatum meinen, kein Veröffentlichungsdatum.
+ *
  * @returns Der normalisierte Text, oder `null`, wenn er die Grenze reißt.
  */
-function collectTextUpTo(node: TextNode | undefined, limit: number): string | null {
+function collectTextUpTo(
+  node: TextNode | undefined,
+  limit: number,
+  skip?: TextNode
+): string | null {
   if (!node) return null;
 
   // Großzügige Rohgrenze: Whitespace schrumpft beim Normalisieren, die
@@ -73,6 +80,7 @@ function collectTextUpTo(node: TextNode | undefined, limit: number): string | nu
   let raw = 0;
 
   const walk = (n: TextNode): boolean => {
+    if (n === skip) return true;
     if (n.type === 'text') {
       const chunk = n.data ?? '';
       raw += chunk.length;
@@ -344,9 +352,8 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
       const url = this.resolveUrl(href!, baseUrl);
       if (seen.has(url)) return;
 
-      const heading = spec.titleSelector
-        ? this.cleanText($el.find(spec.titleSelector).first().text())
-        : '';
+      const $heading = spec.titleSelector ? $el.find(spec.titleSelector).first() : undefined;
+      const heading = this.cleanText($heading?.text());
       const split = spec.splitTitleAtLineBreak ? this.splitAtLineBreak($, link) : null;
       const title =
         heading ||
@@ -363,7 +370,7 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
         (spec.dateSelector
           ? this.parseDate(scope.find(spec.dateSelector).first().text())
           : null) ??
-        this.extractDate($el) ??
+        this.extractDate($el, heading ? $heading : link) ??
         new Date();
 
       let summary: string | undefined;
@@ -437,56 +444,68 @@ export abstract class HtmlScraperAdapter implements SourceAdapter {
   /**
    * Sucht das Veröffentlichungsdatum im Umfeld eines Treffers.
    *
-   * Reihenfolge: `<time datetime>` → Text des `<time>` → Element mit
-   * `date`/`datum` in der Klasse → freier Text des Umfelds.
+   * Zwei Durchgänge über den Block und bis zu `MAX_DATE_ANCESTOR_DEPTH`
+   * Vorfahren — je nach Quelle steht das Datum als Geschwister des Links,
+   * nicht darin:
    *
-   * Der letzte Schritt ist der wichtige: viele Quellen schreiben das Datum
-   * als gewöhnlichen Text („Erschienen am 28.05.2026"), ohne jede Auszeichnung.
-   * Ohne ihn fielen rund 70 % aller Items auf den Abrufzeitpunkt zurück —
-   * mit Folgen für Zeit-Gruppierung, Retention und Top-News-Auswahl.
+   * 1. Ausgezeichnete Datumselemente (`markedDate`). Sie haben Vorrang vor
+   *    jedem Text, auch wenn sie erst einige Ebenen höher stehen.
+   * 2. Erst wenn es keines gibt: freier Text des Umfelds. Viele Quellen
+   *    schreiben das Datum als gewöhnlichen Text („Erschienen am 28.05.2026"),
+   *    ohne jede Auszeichnung. Ohne diesen Rückfall fielen rund 70 % aller
+   *    Items auf den Abrufzeitpunkt zurück — mit Folgen für Zeit-Gruppierung,
+   *    Retention und Top-News-Auswahl.
    *
-   * Findet sich im übergebenen Block nichts, wird bis zu
-   * `MAX_DATE_ANCESTOR_DEPTH` Ebenen nach oben weitergesucht — je nach Quelle
-   * steht das Datum als Geschwister des Links, nicht darin.
+   * Die Überschrift (`$title`) bleibt im zweiten Durchgang außen vor: Ein
+   * Datum darin meint den Gegenstand der Meldung („Online Stammtisch am
+   * 01.10.2026"), nicht ihr Erscheinen. Früher fiel ein solches Datum nur
+   * heraus, solange es mehr als zwei Tage in der Zukunft lag — danach
+   * schlug es das `<time datetime>` daneben.
    *
    * Der Text wird nur bis `MAX_DATE_SCAN_CHARS` durchsucht: in einem großen
    * Block wäre das erste gefundene Datum womöglich das eines anderen Beitrags.
    * Diese Grenze begrenzt zugleich die Suche nach oben — sobald der Block zu
    * groß wird, liefert er nichts mehr.
    */
-  protected extractDate($scope: cheerio.Cheerio): Date | null {
-    let node = $scope;
-    for (let depth = 0; depth < MAX_DATE_ANCESTOR_DEPTH && node.length > 0; depth++) {
-      // dateFromScope liefert nur plausible Daten (parseDate prüft das),
-      // künftige Veranstaltungsdaten aus der Überschrift fallen also schon
-      // dort heraus und die Suche läuft weiter nach oben.
-      const found = this.dateFromScope(node);
+  protected extractDate($scope: cheerio.Cheerio, $title?: cheerio.Cheerio): Date | null {
+    const levels: cheerio.Cheerio[] = [];
+    for (let node = $scope; levels.length < MAX_DATE_ANCESTOR_DEPTH && node.length > 0; node = node.parent()) {
+      levels.push(node);
+    }
+
+    for (const node of levels) {
+      const found = this.markedDate(node);
       if (found) return found;
-      node = node.parent();
+    }
+
+    const skip = $title?.[0] as unknown as TextNode | undefined;
+    for (const node of levels) {
+      const text = collectTextUpTo(node[0] as unknown as TextNode, MAX_DATE_SCAN_CHARS, skip);
+      // Zu groß — die Vorfahren sind es erst recht.
+      if (text === null) return null;
+      const found = this.parseDate(text);
+      if (found) return found;
     }
     return null;
   }
 
   /**
-   * Sucht ein Datum genau in einem Block — ohne die Vorfahren einzubeziehen.
+   * Sucht ein ausgezeichnetes Datum genau in einem Block.
    *
    * Reihenfolge: `<time datetime>` → Text des `<time>` → Element mit
-   * `date`/`datum` in der Klasse → freier Text des Blocks.
+   * `date`/`datum`/`published` in der Klasse.
    */
-  private dateFromScope($scope: cheerio.Cheerio): Date | null {
+  private markedDate($scope: cheerio.Cheerio): Date | null {
     // `find('time')` einmal ausführen statt zweimal denselben Teilbaum zu
     // durchlaufen — ohne <time> lieferte der erste Ausdruck nur null.
     const times = $scope.find('time');
-    const direct =
+    return (
       this.parseDate(times.attr('datetime')) ??
       this.parseDate(times.first().text()) ??
       this.parseDate(
         $scope.find('[class*="date"], [class*="datum"], [class*="published"]').first().text()
-      );
-    if (direct) return direct;
-
-    const text = collectTextUpTo($scope[0] as unknown as TextNode, MAX_DATE_SCAN_CHARS);
-    return text === null ? null : this.parseDate(text);
+      )
+    );
   }
 
   /**
