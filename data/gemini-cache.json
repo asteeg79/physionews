@@ -1,22 +1,5 @@
 [
   {
-    "titleHash": "41913cd9d91d822285f68892f35a5ba8",
-    "score": 0,
-    "topics": [
-      "Veranstaltung",
-      "Fortbildung"
-    ],
-    "reason": "Die Ankündigung einer Veranstaltung, auch wenn sie sich an Fachleute richtet, ändert nichts an der t",
-    "createdAt": "2026-09-30T17:04:59.747Z"
-  },
-  {
-    "titleHash": "e1b416a1dff4126d24bbe002715f76e1",
-    "score": 3,
-    "topics": [],
-    "reason": "Das Pflegeneuordnungsgesetz betrifft primär die Pflege und hat keine unmittelbaren Auswirkungen auf ",
-    "createdAt": "2026-09-30T17:04:59.747Z"
-  },
-  {
     "titleHash": "e96d1a71b530359210bff0f2d11d42b2",
     "score": 4,
     "topics": [
@@ -2571,5 +2554,43 @@
     "topics": [],
     "reason": "Die Festlegung des durchschnittlichen Zusatzbeitragssatzes durch das BMG ist eine rein gesundheitspo",
     "createdAt": "2026-10-30T10:30:13.762Z"
+  },
+  {
+    "titleHash": "9a9542550b02d54fd74b7fa28c72547f",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Unterstützung einer europäischen Erklärung zu Hitze und Gesundheit durch Physio Deutschland hat ",
+    "createdAt": "2026-10-30T17:18:53.310Z"
+  },
+  {
+    "titleHash": "ad23682216cc36579054996185035860",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung"
+    ],
+    "reason": "Eine Tagung der Geschäftsstellenleitungen von Physio Deutschland zur Mitgliederberatung ändert nicht",
+    "createdAt": "2026-10-30T17:18:53.310Z"
+  },
+  {
+    "titleHash": "29fd9068b0d1c9ba8b54d64de783910a",
+    "score": 10,
+    "topics": [
+      "Blankoverordnung",
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Blankoverordnung und die versorgungsbezogene Pauschale sind zentrale Elemente der Abrechnung in ",
+    "createdAt": "2026-10-30T17:18:53.310Z"
+  },
+  {
+    "titleHash": "af71b323dcb99a870fcf43bff9784ab1",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der Austausch des VPT mit der CSU-Bundestagsfraktion ist relevant, da politische Gespräche auf Bunde",
+    "createdAt": "2026-10-30T17:18:53.310Z"
   }
 ]
