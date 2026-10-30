@@ -1,16 +1,16 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-10-29T17:40:23.038Z",
-    "fetchedAt": "2026-10-29T17:40:23.039Z",
+    "publishedAt": "2026-10-30T10:30:10.680Z",
+    "fetchedAt": "2026-10-30T10:30:10.684Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
+    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -19,36 +19,37 @@
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-10-29T17:40:23.033Z",
-    "fetchedAt": "2026-10-29T17:40:23.039Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-10-30T10:30:10.679Z",
+    "fetchedAt": "2026-10-30T10:30:10.684Z",
+    "relevanceScore": 8,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
+    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
     "isTopNews": false,
     "topics": [
-      "Berufsausbildung",
+      "Manuelle Therapie",
+      "Berufsverband",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
     "imageUrl": null,
-    "publishedAt": "2026-10-29T17:40:23.028Z",
-    "fetchedAt": "2026-10-29T17:40:23.039Z",
+    "publishedAt": "2026-10-30T10:30:10.678Z",
+    "fetchedAt": "2026-10-30T10:30:10.684Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -57,17 +58,35 @@
     "lang": "de"
   },
   {
-    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-10-29T17:40:23.027Z",
-    "fetchedAt": "2026-10-29T17:40:23.039Z",
+    "publishedAt": "2026-10-30T10:30:10.677Z",
+    "fetchedAt": "2026-10-30T10:30:10.684Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-30T10:30:10.675Z",
+    "fetchedAt": "2026-10-30T10:30:10.684Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
+    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
@@ -75,19 +94,21 @@
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "id": "22bb1cc241f36622b979fd085336b3f4fc8a0293a0fc3ef2bed7456490bd63c8",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Schon wieder Stützorthesen für den Rücken",
+    "summary": "Eine französische Studie untersuchte die Effekte eines weichen Stützgurtes.",
+    "url": "https://physio.de/community/news/schon-wieder-stuetzorthesen-fuer-den-ruecken/99/12015/1",
     "imageUrl": null,
-    "publishedAt": "2026-10-29T17:40:23.027Z",
-    "fetchedAt": "2026-10-29T17:40:23.039Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-10-29T22:30:06.070Z",
+    "fetchedAt": "2026-10-30T10:30:06.077Z",
+    "relevanceScore": 4,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
+    "relevanceReason": "ai: Die Meldung über Stützorthesen für den Rücken könnte für Physiotherapeut:innen relevant sein, wenn e",
     "isTopNews": false,
     "topics": [
+      "Wirbelsäule",
+      "Rückenschmerz",
       "Heilmittelversorgung"
     ],
     "lang": "de"
@@ -462,25 +483,6 @@
     "lang": "de"
   },
   {
-    "id": "3db360d1228144aa4cbd5e68d351d3ca6def336bf08f8e32432eab6eb2abf29f",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Spreche ich mich klar für einen Direktzugang aus",
-    "summary": "Dr. Pilsinger (CSU), wichtiger Politiker und seines Zeichens Arzt, nimmt detailliert Stellung zu Direktzugang und dem geplanten Primärversorgungssystem.",
-    "url": "https://physio.de/community/news/spreche-ich-mich-klar-fuer-einen-direktzugang-aus-/99/12047/1",
-    "imageUrl": null,
-    "publishedAt": "2026-10-17T13:40:59.221Z",
-    "fetchedAt": "2026-10-24T13:40:59.222Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die klare Positionierung für einen Direktzugang durch einen Berufsverband ist für die Berufspolitik ",
-    "isTopNews": false,
-    "topics": [
-      "Direktzugang",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
     "id": "db490ceee796df5af8e167922eb4d203e0ce0fa2896a93e2511fb9e13e7ee562",
     "sourceId": "d39c6724-6454-48e5-a19a-4d2446391f6f",
     "title": "Hyperlipidämien bei Kindern und Jugendlichen diagnostizieren und behandeln: Innovationsausschuss-Projekt entwickelte S3-Leitlinie",
@@ -532,7 +534,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Die Meldung kündigt eine Leitlinie zur Behandlung von Osteoporose-Frakturen an. Leitlinien sind ents",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "Leitlinie",
       "Osteoporose",
@@ -629,7 +631,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Der Titel 'Stichtag der Abrechnung' bezieht sich direkt auf die Abrechnungspraxis von Heilmittelerbr",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
       "GKV-Vergütung"
@@ -1414,46 +1416,6 @@
     "topics": [
       "Manuelle Therapie",
       "Studie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "ce444f3d464e7b87fe30b9920b9da64a70439ced0db4f1e4534286e337b3d43d",
-    "sourceId": "3506f175-239b-4681-b6fa-fac881826441",
-    "title": "Leitlinie zur Bakeriophagentherapie: Neue Perspektive bei komplizierten Knochen- und Implantatinfektionen",
-    "summary": "DGOU an Konsensusleitlinie zur Bakteriophagentherapie beteiligt",
-    "url": "https://dgou.de/presse/pressemitteilungen/detailansicht-pressemitteilungen/artikel/leitlinie-zur-bakeriophagentherapie-neue-perspektive-bei-komplizierten-knochen-und-implantatinfektionen-1",
-    "imageUrl": null,
-    "publishedAt": "2026-09-30T00:00:00.000Z",
-    "fetchedAt": "2026-09-30T10:02:36.538Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Leitlinie zur Bakteriophagentherapie ist zwar eine medizinische Leitlinie, aber der Bezug zur ph",
-    "isTopNews": false,
-    "topics": [
-      "Leitlinie",
-      "Studie",
-      "S3-Leitlinie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "a0816bd12cd48dad36da3aef0e25a1f9417167503e63d668315e60abdd3d6e0e",
-    "sourceId": "3506f175-239b-4681-b6fa-fac881826441",
-    "title": "Leitlinie zur Bakteriophagentherapie: Neue Perspektive bei komplizierten Knochen- und Implantatinfektionen",
-    "summary": "DGOU an Konsensusleitlinie zur Bakteriophagentherapie beteiligt",
-    "url": "https://dgou.de/presse/pressemitteilungen/detailansicht-pressemitteilungen/artikel/leitlinie-zur-bakteriophagentherapie-neue-perspektive-bei-komplizierten-knochen-und-implantatinfektionen",
-    "imageUrl": null,
-    "publishedAt": "2026-09-30T00:00:00.000Z",
-    "fetchedAt": "2026-10-14T12:31:04.600Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die neue Leitlinie zur Bakteriophagentherapie bei komplizierten Knochen- und Implantatinfektionen is",
-    "isTopNews": false,
-    "topics": [
-      "Leitlinie",
-      "Studie",
-      "Osteoporose"
     ],
     "lang": "de"
   },
