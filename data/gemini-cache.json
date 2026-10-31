@@ -1,15 +1,5 @@
 [
   {
-    "titleHash": "e819df382bc14a9ee06ffcbc9cf025bf",
-    "score": 7,
-    "topics": [
-      "Berufsverband",
-      "Heilmittelversorgung"
-    ],
-    "reason": "Der IFK berichtet über eine Fachkräfteengpassanalyse, bei der die Physiotherapie als \"trauriger Spit",
-    "createdAt": "2026-10-01T10:30:50.446Z"
-  },
-  {
     "titleHash": "0823abf7e0dc617b405cbfc82b67cbd8",
     "score": 0,
     "topics": [
@@ -2581,5 +2571,41 @@
     ],
     "reason": "Ankündigung einer Veranstaltung (Newsletter-Archiv) ohne konkreten Bezug zu Änderungen in der physio",
     "createdAt": "2026-10-31T09:59:30.405Z"
+  },
+  {
+    "titleHash": "2588270364c47941973221f043a1f589",
+    "score": 5,
+    "topics": [
+      "Rückenschmerz",
+      "Studie",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung über einen Konsens-Workshop zu Forschungsbedarfen bei Rückenschmerzen ist für Physiother",
+    "createdAt": "2026-10-31T15:36:13.807Z"
+  },
+  {
+    "titleHash": "f6a0de1e1c15fee4a8a46c2da08f9a08",
+    "score": 1,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Die Meldung über einen Podcast-Beitrag eines Verbandsvertreters ist nicht relevant, da sie keine Änd",
+    "createdAt": "2026-10-31T15:36:13.807Z"
+  },
+  {
+    "titleHash": "5c43fade39d01da25d54e6ec423b4329",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung über einen Rabatt für Mitglieder bei einer Ausstellung ist nicht relevant, da sie keiner",
+    "createdAt": "2026-10-31T15:36:13.807Z"
+  },
+  {
+    "titleHash": "d15b8a17ddbfb39d12f602a96890eea6",
+    "score": 0,
+    "topics": [
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung über neue Termine für ein KI-Projekt ist nicht relevant, da sie keine unmittelbare Änder",
+    "createdAt": "2026-10-31T15:36:13.807Z"
   }
 ]

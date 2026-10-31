@@ -1,36 +1,16 @@
 [
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-10-31T09:59:29.374Z",
-    "fetchedAt": "2026-10-31T09:59:29.379Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Berufsverband",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-31T09:59:29.374Z",
-    "fetchedAt": "2026-10-31T09:59:29.379Z",
+    "publishedAt": "2026-10-31T15:36:11.337Z",
+    "fetchedAt": "2026-10-31T15:36:11.338Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -39,17 +19,36 @@
     "lang": "de"
   },
   {
-    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-10-31T09:59:29.373Z",
-    "fetchedAt": "2026-10-31T09:59:29.379Z",
+    "publishedAt": "2026-10-31T15:36:11.336Z",
+    "fetchedAt": "2026-10-31T15:36:11.338Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
+    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "imageUrl": null,
+    "publishedAt": "2026-10-31T15:36:11.331Z",
+    "fetchedAt": "2026-10-31T15:36:11.338Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -58,17 +57,17 @@
     "lang": "de"
   },
   {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-10-31T09:59:29.372Z",
-    "fetchedAt": "2026-10-31T09:59:29.379Z",
+    "publishedAt": "2026-10-31T15:36:11.330Z",
+    "fetchedAt": "2026-10-31T15:36:11.338Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
+    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
@@ -76,20 +75,20 @@
     "lang": "de"
   },
   {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
     "imageUrl": null,
-    "publishedAt": "2026-10-31T09:59:29.372Z",
-    "fetchedAt": "2026-10-31T09:59:29.379Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-10-31T15:36:11.329Z",
+    "fetchedAt": "2026-10-31T15:36:11.338Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
     "isTopNews": false,
     "topics": [
-      "GKV-Vergütung"
+      "Heilmittelversorgung"
     ],
     "lang": "de"
   },
@@ -1340,101 +1339,6 @@
     "topics": [
       "Berufsverband",
       "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9612f2acdd61f0cab3a5e903048f02d8af47f2ea9e4849e3f892a6b60243211b",
-    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
-    "title": "Therapie effizienter gestalten – mit Pixformance",
-    "summary": null,
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPbVdwYmZZZmN3SDNvWDQ0U2VXa2h1Ti1xd1gxMEg1cEpnd3dYRkRLbk1PSFp4S0c5X3VEdDJ6Z1hJR213cW5QS2U0OV9XWWRxSGk5bzlQN0pHTmlkUm0tUE1DaFR3M0t3bGVxczB6X2NiajlEWVVEXzJJQm5aN05zLXRhakFoQkhwd2tPbVNMRjc0WGM?oc=5",
-    "imageUrl": null,
-    "publishedAt": "2026-10-01T14:42:59.000Z",
-    "fetchedAt": "2026-10-02T10:05:52.020Z",
-    "relevanceScore": 5,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Effizienzsteigerung durch Pixformance könnte für Physiotherapeuten relevant sein, wenn es konkre",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "421088007b31bbd2351768744cb74c51d6c0530864606a2ec55b9bc4a6757960",
-    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
-    "title": "GRAPe Gender: Gemeinsam Forschungsprioritäten für die Physiotherapie setzen",
-    "summary": null,
-    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/grape-gender-workshop.html",
-    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/f/c/csm_260923_-_Gender-Workshop_b3f0cb611c.png",
-    "publishedAt": "2026-10-01T12:00:00.000Z",
-    "fetchedAt": "2026-10-01T06:59:40.416Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die Festlegung von Forschungsprioritäten im Bereich Gender in der Physiotherapie is",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "d4724d42e0ccdafa5040c1acd8043e9fe2915c0c4dea5c975b35173a4d84291d",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "Fachkräfteengpassanalyse: Physiotherapie erneut trauriger Spitzenreiter",
-    "summary": null,
-    "url": "https://www.ifk.de/artikel/fachkraefteengpassanalyse-physiotherapie-erneut-trauriger-spitzenreiter",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Behandlungsraum_shutterstock_2629590477_IM.jpg?itok=d78mKaAX",
-    "publishedAt": "2026-10-01T12:00:00.000Z",
-    "fetchedAt": "2026-10-01T10:30:41.243Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der IFK berichtet über eine Fachkräfteengpassanalyse, bei der die Physiotherapie als \"trauriger Spit",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "29e03dc017e0e540116f204ce4ede6b53b63b14385819db8b5c5f436c2b6fb65",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "Fachkräfteengpassanalyse: Physiotherapie erneut trauriger Spitzenreiter",
-    "summary": null,
-    "url": "https://www.ifk.de/index%2Ephp/artikel/fachkraefteengpassanalyse-physiotherapie-erneut-trauriger-spitzenreiter",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Behandlungsraum_shutterstock_2629590477_IM.jpg?itok=d78mKaAX",
-    "publishedAt": "2026-10-01T12:00:00.000Z",
-    "fetchedAt": "2026-10-10T16:27:03.232Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der IFK berichtet über eine Fachkräfteengpassanalyse, bei der die Physiotherapie als \"trauriger Spit",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "3943265e36e876b40db39b26d288cb954f151ad079f5755b362d1377307ef789",
-    "sourceId": "de0391bb-e895-414a-aacf-5f90f5beae3b",
-    "title": "Erratum: Was das Blut verrät – Laborwerte im physiotherapeutischen Alltag",
-    "summary": null,
-    "url": "http://dx.doi.org/10.1055/s-0046-1829458",
-    "imageUrl": null,
-    "publishedAt": "2026-10-01T10:47:30.000Z",
-    "fetchedAt": "2026-10-02T10:05:53.381Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Kenntnis von Laborwerten im physiotherapeutischen Alltag ist für die fachliche Arbeit und die Ei",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Studie"
     ],
     "lang": "de"
   },
