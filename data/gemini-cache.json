@@ -1,32 +1,5 @@
 [
   {
-    "titleHash": "0823abf7e0dc617b405cbfc82b67cbd8",
-    "score": 0,
-    "topics": [
-      "Veranstaltung"
-    ],
-    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeut:innen richtet, ist nicht rele",
-    "createdAt": "2026-10-01T17:35:19.644Z"
-  },
-  {
-    "titleHash": "8082be63d8d12adb9c87346108a205cd",
-    "score": 0,
-    "topics": [
-      "Cochrane-Review"
-    ],
-    "reason": "Die Meldung über die Beteiligung der Cochrane Deutschland-Stiftung an einem Aktionstag ist nicht rel",
-    "createdAt": "2026-10-01T17:35:19.644Z"
-  },
-  {
-    "titleHash": "b174cef4e75593f317d1db9dbd0630ec",
-    "score": 0,
-    "topics": [
-      "Atemtherapie"
-    ],
-    "reason": "Ein Saisonbericht zu akuten respiratorischen Erkrankungen durch das Robert Koch-Institut hat keinen ",
-    "createdAt": "2026-10-01T17:35:19.644Z"
-  },
-  {
     "titleHash": "d11e19b383363278183fed00a2cb5a5a",
     "score": 7,
     "topics": [
@@ -2607,5 +2580,15 @@
     ],
     "reason": "Die Meldung über neue Termine für ein KI-Projekt ist nicht relevant, da sie keine unmittelbare Änder",
     "createdAt": "2026-10-31T15:36:13.807Z"
+  },
+  {
+    "titleHash": "e819df382bc14a9ee06ffcbc9cf025bf",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der IFK berichtet über eine Fachkräfteengpassanalyse, bei der die Physiotherapie als \"trauriger Spit",
+    "createdAt": "2026-10-31T19:36:11.535Z"
   }
 ]
