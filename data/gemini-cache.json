@@ -2571,5 +2571,22 @@
     ],
     "reason": "Die Meldung bezieht sich auf eine Kurzintervention für die ärztliche Praxis und hat keinen direkten ",
     "createdAt": "2026-11-02T11:44:14.490Z"
+  },
+  {
+    "titleHash": "98bdb4f911311dcc9b802e54b7ea9296",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der VDB macht sich für die Interessen von Physiotherapeuten stark und fordert eine Verhandlung der V",
+    "createdAt": "2026-11-02T17:17:54.203Z"
+  },
+  {
+    "titleHash": "99cccd45ec716d1a9f5f000ee06d689b",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Trauer um eine Person hat keinen direkten Einfluss auf die Arbeit, Abrechnung, Ausbildung oder d",
+    "createdAt": "2026-11-02T17:17:54.203Z"
   }
 ]
