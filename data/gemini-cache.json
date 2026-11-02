@@ -2552,5 +2552,24 @@
     ],
     "reason": "Die Frage nach offener oder geschlossener Kette ist ein grundlegendes Konzept in der Physiotherapie,",
     "createdAt": "2026-11-02T10:05:18.203Z"
+  },
+  {
+    "titleHash": "f45c816a87b73130e1805a364a0e76f3",
+    "score": 9,
+    "topics": [
+      "Blankoverordnung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der IFK hat einen eigenen Bericht zur Blankoverordnung vorgelegt, was direkt die Abrechnung und Heil",
+    "createdAt": "2026-11-02T11:44:14.490Z"
+  },
+  {
+    "titleHash": "7a83b664f1ff68488668b9af6e7f9825",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Meldung bezieht sich auf eine Kurzintervention für die ärztliche Praxis und hat keinen direkten ",
+    "createdAt": "2026-11-02T11:44:14.490Z"
   }
 ]
