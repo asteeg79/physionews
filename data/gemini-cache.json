@@ -1,15 +1,5 @@
 [
   {
-    "titleHash": "2c8ee94c7aa5f2aa282c292c3f1c7b52",
-    "score": 4,
-    "topics": [
-      "Atemtherapie",
-      "Bewegungstherapie"
-    ],
-    "reason": "Der Titel ist zu allgemein und bezieht sich auf grundlegende physiotherapeutische Konzepte, ohne ein",
-    "createdAt": "2026-10-03T09:28:41.982Z"
-  },
-  {
     "titleHash": "f2f6d1ca960a67223923947084e701ce",
     "score": 3,
     "topics": [
@@ -2552,5 +2542,15 @@
     ],
     "reason": "Die Ankündigung einer Veranstaltung oder eines Aktionstages, auch wenn er sich an Physiotherapeut:in",
     "createdAt": "2026-11-01T17:18:10.827Z"
+  },
+  {
+    "titleHash": "1994fcf828dd96f9f2b5213da92adf14",
+    "score": 5,
+    "topics": [
+      "Manuelle Therapie",
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Frage nach offener oder geschlossener Kette ist ein grundlegendes Konzept in der Physiotherapie,",
+    "createdAt": "2026-11-02T10:05:18.203Z"
   }
 ]
