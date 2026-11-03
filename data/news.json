@@ -1,16 +1,56 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "id": "be3a5b5b44efcc4a2eaa4a5d72ba51a91c5af3499aff295f07e71ea8e19e564c",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Umfrage zur physiotherapeutischen Versorgung bei brustkrebsassoziiertem Lymphödem: Erfahrungen aus der Praxis gefragt",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-02T20:56:13.522Z",
-    "fetchedAt": "2026-11-02T20:56:13.523Z",
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/umfrage-zur-versorgung-bei-brustkrebsassoziiertem-lymphoedem.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/d/a/csm_021130_-_Umfrage_279283c1ec.png",
+    "publishedAt": "2026-11-03T12:00:00.000Z",
+    "fetchedAt": "2026-11-03T08:48:03.686Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
+    "relevanceReason": "ai: Die Umfrage von Physio Deutschland (ZVK) zielt darauf ab, die Erfahrungen von Physiotherapeut:innen ",
+    "isTopNews": false,
+    "topics": [
+      "Lymphdrainage",
+      "Berufsverband",
+      "Studie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-03T08:48:10.628Z",
+    "fetchedAt": "2026-11-03T08:48:10.632Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-03T08:48:10.628Z",
+    "fetchedAt": "2026-11-03T08:48:10.632Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -19,36 +59,17 @@
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
     "imageUrl": null,
-    "publishedAt": "2026-11-02T20:56:13.520Z",
-    "fetchedAt": "2026-11-02T20:56:13.523Z",
+    "publishedAt": "2026-11-03T08:48:10.627Z",
+    "fetchedAt": "2026-11-03T08:48:10.632Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
-    "isTopNews": false,
-    "topics": [
-      "Berufsausbildung",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-02T20:56:13.514Z",
-    "fetchedAt": "2026-11-02T20:56:13.523Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -57,17 +78,35 @@
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-11-02T20:56:13.513Z",
-    "fetchedAt": "2026-11-02T20:56:13.523Z",
+    "publishedAt": "2026-11-03T08:48:10.626Z",
+    "fetchedAt": "2026-11-03T08:48:10.632Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-03T08:48:10.625Z",
+    "fetchedAt": "2026-11-03T08:48:10.632Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
+    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
@@ -75,20 +114,22 @@
     "lang": "de"
   },
   {
-    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
+    "id": "f78068a041540733b8919e5f359f8a7366da7eb6705bb489c1192db920def615",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Ein Jahr Sport gegen Beschwerden bei axialer Spondylarthritis (axSpA)",
+    "summary": "Die Effektivität eines langfristigen Bewegungstrainings für Personen mit massiven Funktionseinschränkungen",
+    "url": "https://physio.de/community/news/ein-jahr-sport-gegen-beschwerden-bei-axialer-spondylarthritis-axspa/99/12031/1",
     "imageUrl": null,
-    "publishedAt": "2026-11-02T20:56:13.512Z",
-    "fetchedAt": "2026-11-02T20:56:13.523Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-02T22:48:06.732Z",
+    "fetchedAt": "2026-11-03T08:48:06.739Z",
+    "relevanceScore": 5,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
+    "relevanceReason": "ai: Die Meldung über einjähriges Training gegen axiale Spondylarthritis ist zwar thematisch im Gesundhei",
     "isTopNews": false,
     "topics": [
-      "Heilmittelversorgung"
+      "Wirbelsäule",
+      "Bewegungstherapie",
+      "Studie"
     ],
     "lang": "de"
   },
@@ -395,25 +436,6 @@
     "topics": [
       "Schulter",
       "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "c69af9d67fcfa379f76ce6b441e18a7fe7a9c9662a00159a69aa0bc46cfa3bcf",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Neues Berufsgesetz: Referenten-Entwurf liegt vor",
-    "summary": "Zertifikate sollen abgeschafft werden.",
-    "url": "https://physio.de/community/news/neues-berufsgesetz-referenten-entwurf-liegt-vor/99/12066/1",
-    "imageUrl": null,
-    "publishedAt": "2026-10-24T07:27:07.199Z",
-    "fetchedAt": "2026-10-24T08:27:07.205Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Referenten-Entwurf eines neuen Berufsgesetzes für Physiotherapeuten ist ein wichtiger Schritt, d",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Berufsausbildung"
     ],
     "lang": "de"
   },

@@ -2588,5 +2588,27 @@
     "topics": [],
     "reason": "Die Trauer um eine Person hat keinen direkten Einfluss auf die Arbeit, Abrechnung, Ausbildung oder d",
     "createdAt": "2026-11-02T17:17:54.203Z"
+  },
+  {
+    "titleHash": "eee52568c02e84191155b218c5aceab9",
+    "score": 7,
+    "topics": [
+      "Lymphdrainage",
+      "Berufsverband",
+      "Studie"
+    ],
+    "reason": "Die Umfrage von Physio Deutschland (ZVK) zielt darauf ab, die Erfahrungen von Physiotherapeut:innen ",
+    "createdAt": "2026-11-03T08:48:11.799Z"
+  },
+  {
+    "titleHash": "ff5aae56443f5c2d1b371afc67076174",
+    "score": 5,
+    "topics": [
+      "Wirbelsäule",
+      "Bewegungstherapie",
+      "Studie"
+    ],
+    "reason": "Die Meldung über einjähriges Training gegen axiale Spondylarthritis ist zwar thematisch im Gesundhei",
+    "createdAt": "2026-11-03T08:48:11.799Z"
   }
 ]
