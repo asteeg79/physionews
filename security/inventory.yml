@@ -3,7 +3,7 @@
 # Bei Änderungen an Runtime, Hosting oder Deploy-Weg mitpflegen.
 projekt: physionews
 repo: asteeg79/physionews (öffentlich)
-stand: 2026-10-28
+stand: 2026-11-03
 
 # PHP2Shell (CVE-2026-109618, CVE-2026-109619): nicht betroffen. Geprüft am
 # 2026-10-28: kein composer.json, keine .php-Datei, kein Dockerfile, kein
@@ -14,7 +14,7 @@ komponenten:
   - name: app
     pfad: src/
     runtime: { sprache: node, version: <zu klären> } # Vercel-Projekteinstellung, kein engines-Feld
-    abhaengigkeiten: package-lock.json (Next.js 16.2.6, Serwist, web-push)
+    abhaengigkeiten: package-lock.json (Next.js 16.4.3, Serwist, web-push)
     hosting: { art: vercel, live_url: https://physionews.vercel.app }
     deploy: automatisch bei Push auf main (Vercel-GitHub-App); deploy.yml nur als manueller Ersatz
     runtime_patcht: Vercel
@@ -36,4 +36,14 @@ komponenten:
 # - POST /api/refresh-on-demand startet die Pipeline ohne Anmeldung, nur mit
 #   Rate-Limit je IP (1 je 5 Min.); Kosten der Gemini-Aufrufe im Blick behalten.
 # - Node 22 ist in Wartung bis April 2027.
-# - Actions sind auf Tags gepinnt, nicht auf Commit-SHA (Renovate).
+# - Actions sind seit 2026-11-03 auf Commit-SHA gepinnt (Renovate, #10).
+
+# Akzeptierte Risiken (Phase 3, Stand 2026-11-03; npm audit: 4× hoch, 5× mittel, 2× niedrig):
+# - zod in @serwist/build (hoch, zählt über die Kette @serwist/next und
+#   @serwist/webpack-plugin viermal), dazu glob und minimatch (mittel): Serwist
+#   9.5.13, die aktuelle Version, legt diese Versionen fest. @serwist/next läuft nur
+#   beim Build und verarbeitet dort die eigenen Dateien, keine fremden Eingaben. Der
+#   von npm vorgeschlagene Fix ist ein Downgrade auf Serwist 8. Bei jedem
+#   Serwist-Release erneut prüfen.
+# - deepmerge, minimatch und ts-morph im shadcn-CLI (mittel, niedrig): Die App nutzt
+#   aus dem Paket nur shadcn/tailwind.css beim Build, das CLI läuft nie in Produktion.
