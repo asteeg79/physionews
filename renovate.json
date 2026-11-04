@@ -5,7 +5,36 @@
     "helpers:pinGitHubActionDigests",
     "docker:pinDigests"
   ],
-  "enabledManagers": ["github-actions", "dockerfile", "docker-compose"],
+  "enabledManagers": ["github-actions", "dockerfile", "docker-compose", "npm"],
   "timezone": "Europe/Berlin",
-  "schedule": ["before 7am on monday"]
+  "schedule": ["before 7am on monday"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 7am on monday"]
+  },
+  "packageRules": [
+    {
+      "description": "Pakete hebt Dependabot (Sicherheits-Updates). Renovate frischt bei npm nur das Lockfile auf, damit Fixes in Unterabhängigkeiten ankommen",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "pinDigest",
+        "digest",
+        "rollback",
+        "bump",
+        "replacement"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Kleine Updates der GitHub Actions (nicht Node oder Python) gesammelt in einem PR je Woche",
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["action"],
+      "matchUpdateTypes": ["minor", "patch", "digest", "pinDigest"],
+      "groupName": "GitHub Actions"
+    }
+  ]
 }
