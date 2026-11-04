@@ -1,34 +1,5 @@
 [
   {
-    "titleHash": "f2f6d1ca960a67223923947084e701ce",
-    "score": 3,
-    "topics": [
-      "Leitlinie",
-      "Studie"
-    ],
-    "reason": "Die Streichung der Bundesförderung für Cochrane Deutschland ist zwar ein wichtiges Thema für die evi",
-    "createdAt": "2026-10-05T10:55:01.282Z"
-  },
-  {
-    "titleHash": "678bcc0765f4a5e60ed9ce608b517092",
-    "score": 0,
-    "topics": [
-      "Sportphysiotherapie"
-    ],
-    "reason": "Die Trauer um eine Person, auch wenn sie im Bereich der Sportwissenschaft tätig war, hat keinen dire",
-    "createdAt": "2026-10-05T10:55:01.282Z"
-  },
-  {
-    "titleHash": "b58d354a91c64fe4a2b57c62e6532803",
-    "score": 5,
-    "topics": [
-      "Rückenschmerz",
-      "Bewegungstherapie"
-    ],
-    "reason": "Der Titel 'Rückenschmerzen weggehen' ist sehr allgemein und deutet auf eine mögliche Information übe",
-    "createdAt": "2026-10-05T10:55:01.282Z"
-  },
-  {
     "titleHash": "6630c3a14f5fd3676d9b0e38c5fc3489",
     "score": 0,
     "topics": [
@@ -2620,5 +2591,71 @@
     ],
     "reason": "Der Titel bezieht sich auf eine Verletzung eines Fußballspielers und hat keinen direkten Bezug zur A",
     "createdAt": "2026-11-03T18:43:11.213Z"
+  },
+  {
+    "titleHash": "3234745c15a4b734b1d4f464d7e03aae",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel ist humorvoll, aber es gibt keinen direkten Bezug zur Arbeit, Abrechnung, Ausbildung oder ",
+    "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "b642f41022b57cfe588e4160d05fc26f",
+    "score": 4,
+    "topics": [
+      "Osteoporose",
+      "Geriatrie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Änderung des DMP Osteoporose könnte mittelbar relevant sein, da Osteoporose ein Behandlungsfeld ",
+    "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "a31b4da41ac80c4261ed33d0b5944033",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Blankoverordnung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Heilmittel-Richtlinie ist unmittelbar relevant für die Abrechnung und die Versorgung von Patient",
+    "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "d85a536b0fe779e0ea99d25c9a7f3157",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft die ambulante Psychotherapie und hat keinen direkten Bezug zur Arbeit von Phy",
+    "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "211be41da9387749aa4f99d34bb0e91b",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft die Hebammengeleitete Geburtsbetreuung und hat keinen direkten Bezug zur Arbe",
+    "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "bfb39cf148f283ed93d3cae6b129ecfa",
+    "score": 0,
+    "topics": [
+      "Atemtherapie"
+    ],
+    "reason": "Diese Meldung betrifft die Lungenkrebs-Früherkennung und hat keinen direkten Bezug zur Arbeit von Ph",
+    "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "312f346e091605c9ba681ef6a93bfda4",
+    "score": 0,
+    "topics": [],
+    "reason": "Diese Meldung betrifft die Verordnung von außerklinischer Intensivpflege und hat keinen direkten Bez",
+    "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "c2d47ee6c74dc55cd2e2351988084f2e",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Auswahl von Arbeitsthemen des G-BA und Innovationsausschusses ist zu allgemein und hat keinen un",
+    "createdAt": "2026-11-04T11:39:43.637Z"
   }
 ]
