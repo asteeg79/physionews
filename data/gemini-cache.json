@@ -1,22 +1,5 @@
 [
   {
-    "titleHash": "eaa2aa7fc3b5336fdd5d62d5ded8cc16",
-    "score": 4,
-    "topics": [
-      "Praxisgründung",
-      "Berufsverband"
-    ],
-    "reason": "Die Meldung thematisiert die Praxisübergabe, was für Physiotherapeut:innen relevant sein kann, die e",
-    "createdAt": "2026-10-06T17:29:17.823Z"
-  },
-  {
-    "titleHash": "45eb2e1d7815dc5ee36bde5bd790e172",
-    "score": 3,
-    "topics": [],
-    "reason": "Die Meldung über KI in der Gesundheitsversorgung ist zwar ein relevantes Zukunftsthema, aber ohne ko",
-    "createdAt": "2026-10-06T17:29:17.823Z"
-  },
-  {
     "titleHash": "5b993c23b0e8814e258daecb1d6bc214",
     "score": 3,
     "topics": [
@@ -2638,5 +2621,14 @@
     "topics": [],
     "reason": "Die Europäische Nutzenbewertung von Arzneimitteln durch den G-BA hat keinen direkten Einfluss auf di",
     "createdAt": "2026-11-05T11:40:43.323Z"
+  },
+  {
+    "titleHash": "5ce78af495e4d6e1aaf312d6fac2ea4e",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Der Titel ist zu allgemein und lässt keinen direkten Bezug zur physiotherapeutischen Praxis erkennen",
+    "createdAt": "2026-11-05T19:07:51.148Z"
   }
 ]

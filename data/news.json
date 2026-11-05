@@ -1,16 +1,16 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-11-05T11:40:41.059Z",
-    "fetchedAt": "2026-11-05T11:40:41.059Z",
+    "publishedAt": "2026-11-05T19:07:49.904Z",
+    "fetchedAt": "2026-11-05T19:07:49.909Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
+    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -19,36 +19,55 @@
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-11-05T11:40:41.057Z",
-    "fetchedAt": "2026-11-05T11:40:41.059Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-05T19:07:49.903Z",
+    "fetchedAt": "2026-11-05T19:07:49.909Z",
+    "relevanceScore": 8,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
+    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
     "isTopNews": false,
     "topics": [
-      "Berufsausbildung",
+      "Manuelle Therapie",
+      "Berufsverband",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-11-05T11:40:41.051Z",
-    "fetchedAt": "2026-11-05T11:40:41.059Z",
+    "publishedAt": "2026-11-05T19:07:49.902Z",
+    "fetchedAt": "2026-11-05T19:07:49.909Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-05T19:07:49.902Z",
+    "fetchedAt": "2026-11-05T19:07:49.909Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -57,35 +76,17 @@
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-05T11:40:41.050Z",
-    "fetchedAt": "2026-11-05T11:40:41.059Z",
+    "publishedAt": "2026-11-05T19:07:49.901Z",
+    "fetchedAt": "2026-11-05T19:07:49.909Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-05T11:40:41.049Z",
-    "fetchedAt": "2026-11-05T11:40:41.059Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
+    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
@@ -1362,62 +1363,6 @@
     "topics": [
       "Neurologie",
       "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9bf018fb4f6e4f50e6925cac29a0db9325f6a5bb7da8602a4673b5f57b916c0b",
-    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
-    "title": "Elektrotherapie: Was ist heute für die physiotherapeutische Praxis relevant?",
-    "summary": null,
-    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/elektrotherapie-was-ist-heute-relevant.html",
-    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/a/0/csm_261006_-_Sonja_Soeder_dfede8ba36.png",
-    "publishedAt": "2026-10-06T12:00:00.000Z",
-    "fetchedAt": "2026-10-06T10:50:40.970Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage nach der Relevanz der Elektrotherapie für die physiotherapeutische Praxis könnte mittelbar",
-    "isTopNews": false,
-    "topics": [
-      "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "bf5d193d3c1265fbac219081978a66d76608ba37836788d9865332cb42dbe933",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "K wie Kommunikation: Reden oder Schweigen bei der Praxisübergabe?",
-    "summary": null,
-    "url": "https://www.ifk.de/artikel/k-wie-kommunikation-reden-oder-schweigen-bei-der-praxisuebergabe",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/K_Kommunikation.jpg?itok=SP3xTXcg",
-    "publishedAt": "2026-10-06T12:00:00.000Z",
-    "fetchedAt": "2026-10-06T17:28:51.087Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung thematisiert die Praxisübergabe, was für Physiotherapeut:innen relevant sein kann, die e",
-    "isTopNews": false,
-    "topics": [
-      "Praxisgründung",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "1ccd7a686770b91e6c6faf106c90ddcfca299767f1c8d94d572f09bce8b7bb02",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "K wie Kommunikation: Reden oder Schweigen bei der Praxisübergabe?",
-    "summary": null,
-    "url": "https://www.ifk.de/index%2Ephp/artikel/k-wie-kommunikation-reden-oder-schweigen-bei-der-praxisuebergabe",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/K_Kommunikation.jpg?itok=SP3xTXcg",
-    "publishedAt": "2026-10-06T12:00:00.000Z",
-    "fetchedAt": "2026-10-10T16:27:03.232Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung thematisiert die Praxisübergabe, was für Physiotherapeut:innen relevant sein kann, die e",
-    "isTopNews": false,
-    "topics": [
-      "Praxisgründung",
-      "Berufsverband"
     ],
     "lang": "de"
   },
