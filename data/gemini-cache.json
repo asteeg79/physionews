@@ -1,52 +1,5 @@
 [
   {
-    "titleHash": "6630c3a14f5fd3676d9b0e38c5fc3489",
-    "score": 0,
-    "topics": [
-      "Fortbildung",
-      "Veranstaltung"
-    ],
-    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeut:innen richtet, ist nicht rele",
-    "createdAt": "2026-10-06T10:50:49.494Z"
-  },
-  {
-    "titleHash": "d59cc04fbc7b0c76b3ac0653ea8a0684",
-    "score": 4,
-    "topics": [
-      "Fortbildung"
-    ],
-    "reason": "Die Frage nach der Relevanz der Elektrotherapie für die physiotherapeutische Praxis könnte mittelbar",
-    "createdAt": "2026-10-06T10:50:49.494Z"
-  },
-  {
-    "titleHash": "27b48df633c7e69a42fc6d0e3f0e8f0d",
-    "score": 0,
-    "topics": [
-      "Wirbelsäule",
-      "Schulter",
-      "Knie"
-    ],
-    "reason": "Die Meldung über nicht heilende Knochenbrüche und Infektionen hat keinen direkten Bezug zur physioth",
-    "createdAt": "2026-10-06T10:50:49.494Z"
-  },
-  {
-    "titleHash": "4840305690cab1a8fcac0f9ec62c120e",
-    "score": 7,
-    "topics": [
-      "Direktzugang",
-      "Berufsverband"
-    ],
-    "reason": "Die klare Positionierung für einen Direktzugang durch einen Berufsverband ist für die Berufspolitik ",
-    "createdAt": "2026-10-06T10:50:49.494Z"
-  },
-  {
-    "titleHash": "dee61ee49411bad79d6c8b73805e7a02",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel 'Dem Vergessen Beine machen' ist zu vage und hat ohne weitere Informationen keinen erkennb",
-    "createdAt": "2026-10-06T10:50:49.494Z"
-  },
-  {
     "titleHash": "eaa2aa7fc3b5336fdd5d62d5ded8cc16",
     "score": 4,
     "topics": [
@@ -2657,5 +2610,33 @@
     "topics": [],
     "reason": "Die Auswahl von Arbeitsthemen des G-BA und Innovationsausschusses ist zu allgemein und hat keinen un",
     "createdAt": "2026-11-04T11:39:43.637Z"
+  },
+  {
+    "titleHash": "78a6e6943cf73724dbd81a9928e5ab15",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "ANKÜNDIGUNG einer Veranstaltung, auch wenn sie sich ausdrücklich an Physiotherapeut:innen richtet, i",
+    "createdAt": "2026-11-05T11:40:42.618Z"
+  },
+  {
+    "titleHash": "c08f85e429bad215f8f8e741c09b6a9c",
+    "score": 7,
+    "topics": [
+      "Neurologie",
+      "Reha",
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Frage nach zeitgemäßer Neurorehabilitation ist klar relevant für Physiotherapeut:innen, da sie d",
+    "createdAt": "2026-11-05T11:40:42.618Z"
+  },
+  {
+    "titleHash": "a7b07171cc35ad825f506c1515698def",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Europäische Nutzenbewertung von Arzneimitteln durch den G-BA hat keinen direkten Einfluss auf di",
+    "createdAt": "2026-11-05T11:40:43.323Z"
   }
 ]
