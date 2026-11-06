@@ -1,32 +1,5 @@
 [
   {
-    "titleHash": "5b993c23b0e8814e258daecb1d6bc214",
-    "score": 3,
-    "topics": [
-      "Berufsverband",
-      "Fortbildung"
-    ],
-    "reason": "Die Stiftung von Physio Deutschland schreibt 20.000 Euro für Forschungsprojekte aus. Dies ist eine A",
-    "createdAt": "2026-10-07T10:37:57.627Z"
-  },
-  {
-    "titleHash": "717646790b85a63b9b96a561fb8eca88",
-    "score": 0,
-    "topics": [
-      "Sportphysiotherapie",
-      "Veranstaltung"
-    ],
-    "reason": "Die Meldung über das 50-jährige Jubiläum der dvs (Deutsche Vereinigung für Sportwissenschaft) ist fü",
-    "createdAt": "2026-10-07T10:37:57.627Z"
-  },
-  {
-    "titleHash": "2870e55c2d1aa3238776277f7fdfb066",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung 'Deutschland im europäischen Mittelfeld' ist zu allgemein und hat keinen spezifischen Be",
-    "createdAt": "2026-10-07T10:37:57.627Z"
-  },
-  {
     "titleHash": "28cf98ab8d665d631be261e301e4140e",
     "score": 0,
     "topics": [
@@ -2630,5 +2603,42 @@
     ],
     "reason": "Der Titel ist zu allgemein und lässt keinen direkten Bezug zur physiotherapeutischen Praxis erkennen",
     "createdAt": "2026-11-05T19:07:51.148Z"
+  },
+  {
+    "titleHash": "f86295318fae782b3e3b5fd816532bf5",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Mitgliedermagazin-Ausgabe ohne konkreten Bezug zu Änderungen in der physiotherapeu",
+    "createdAt": "2026-11-06T11:39:07.628Z"
+  },
+  {
+    "titleHash": "eaa2aa7fc3b5336fdd5d62d5ded8cc16",
+    "score": 0,
+    "topics": [
+      "Praxisgründung"
+    ],
+    "reason": "Thema Praxisübergabe ist für die tägliche Arbeit nicht unmittelbar relevant, es sei denn, es werden ",
+    "createdAt": "2026-11-06T11:39:07.628Z"
+  },
+  {
+    "titleHash": "6db5515633733f746a7433febe84ad46",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Ankündigung einer Podcast-Episode ohne konkreten Bezug zu Änderungen in der physiotherapeutischen Pr",
+    "createdAt": "2026-11-06T11:39:07.628Z"
+  },
+  {
+    "titleHash": "7f86c91d158d568d328ae8f1ddbc0717",
+    "score": 4,
+    "topics": [
+      "Sportphysiotherapie",
+      "Reha"
+    ],
+    "reason": "Thema Eiweißmangel kann für Sportphysiotherapie und Reha relevant sein, aber der Bezug zur direkten ",
+    "createdAt": "2026-11-06T11:39:07.628Z"
   }
 ]
