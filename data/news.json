@@ -1,16 +1,16 @@
 [
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-06T18:35:25.482Z",
-    "fetchedAt": "2026-11-06T18:35:25.486Z",
+    "publishedAt": "2026-11-07T10:44:29.642Z",
+    "fetchedAt": "2026-11-07T10:44:29.643Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -19,55 +19,36 @@
     "lang": "de"
   },
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-11-06T18:35:25.481Z",
-    "fetchedAt": "2026-11-06T18:35:25.486Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-11-07T10:44:29.641Z",
+    "fetchedAt": "2026-11-07T10:44:29.643Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
+    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
     "isTopNews": false,
     "topics": [
-      "Manuelle Therapie",
-      "Berufsverband",
+      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-06T18:35:25.480Z",
-    "fetchedAt": "2026-11-06T18:35:25.486Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-06T18:35:25.480Z",
-    "fetchedAt": "2026-11-06T18:35:25.486Z",
+    "publishedAt": "2026-11-07T10:44:29.637Z",
+    "fetchedAt": "2026-11-07T10:44:29.643Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
+    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -76,17 +57,35 @@
     "lang": "de"
   },
   {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-11-06T18:35:25.478Z",
-    "fetchedAt": "2026-11-06T18:35:25.486Z",
+    "publishedAt": "2026-11-07T10:44:29.636Z",
+    "fetchedAt": "2026-11-07T10:44:29.643Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
+    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-07T10:44:29.635Z",
+    "fetchedAt": "2026-11-07T10:44:29.643Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
@@ -1344,44 +1343,6 @@
     "topics": [
       "Heilmittelversorgung",
       "Berufsausbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "6e6b762537c630c9f0ab267693db221047a4e3f7f67ab2b2f3298d92f0556ed2",
-    "sourceId": "6eae40b7-1931-4027-b7bd-980d8924554b",
-    "title": "Fehlzeiten aufgrund psychischer Erkrankungen in zehn Jahren um 42 Prozent gestiegen",
-    "summary": "Die stetige Zunahme von Krankmeldungen aufgrund psychischer Erkrankungen und die damit verbundenen langen Ausfallzeiten der Beschäftigten sind wesentliche Treiber für den Anstieg der Fehlzeiten in den vergangenen Jahren. Das zeigen die Analysen des aktuellen Fehlzeiten-Reports 2026 des WIdO mit dem Schwerpunktthema „Mentale Gesundheit in der Arbeitswelt stärken“. Die Fehlzeiten wegen psychischer Erkrankungen sind bei den AOK-versicherten Beschäftigten in den vergangenen zehn Jahren um knapp 42 Prozent gestiegen. Während 2016 noch 284 Arbeitsunfähigkeitstage je 100 Mitglieder zu verzeichnen waren, lag dieser Wert 2025 bei 403 Tagen je 100 Mitglieder. > mehr",
-    "url": "https://www.wido.de/news-presse/pressemitteilungen/2026/fehlzeiten-report-2026/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-08T00:00:00.000Z",
-    "fetchedAt": "2026-10-08T10:58:49.714Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Anstieg psychischer Erkrankungen als Ursache für Fehlzeiten ist ein allgemeines Gesundheitsthema, da",
-    "isTopNews": false,
-    "topics": [
-      "Neurologie",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "21647ec9cabd93241b77eaeefc77901e20349b133a61e6ad05d49be23ed15e83",
-    "sourceId": "6eae40b7-1931-4027-b7bd-980d8924554b",
-    "title": "Fehlzeiten aufgrund psychischer Erkrankungen in zehn Jahren um 42 Prozent gestiegen",
-    "summary": "Die stetige Zunahme von Krankmeldungen aufgrund psychischer Erkrankungen und die damit verbundenen langen Ausfallzeiten der Beschäftigten sind wesentliche Treiber für den Anstieg der Fehlzeiten in den vergangenen Jahren. Das zeigen die Analysen des aktuellen Fehlzeiten-Reports 2026 des WIdO mit dem Schwerpunktthema „Mentale Gesundheit in der Arbeitswelt stärken“. Die Fehlzeiten wegen psychischer Erkrankungen sind bei den AOK-versicherten Beschäftigten in den vergangenen zehn Jahren um knapp 42 Prozent gestiegen. Während 2016 noch 284 Arbeitsunfähigkeitstage je 100 Mitglieder zu verzeichnen waren, lag dieser Wert 2025 bei 403 Tagen je 100 Mitglieder. > mehr",
-    "url": "https://www.wido.de/news-presse/pressemitteilungen/2026/fehlzeiten-report-2026/?L=0",
-    "imageUrl": null,
-    "publishedAt": "2026-10-08T00:00:00.000Z",
-    "fetchedAt": "2026-10-08T18:04:03.113Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Anstieg psychischer Erkrankungen als Ursache für Fehlzeiten ist ein allgemeines Gesundheitsthema, da",
-    "isTopNews": false,
-    "topics": [
-      "Neurologie",
-      "Reha"
     ],
     "lang": "de"
   },
