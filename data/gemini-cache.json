@@ -1,71 +1,5 @@
 [
   {
-    "titleHash": "ef13482b4f43c1ddf527b0a5988c17a6",
-    "score": 4,
-    "topics": [
-      "Bewegungstherapie",
-      "Fortbildung"
-    ],
-    "reason": "Der Titel suggeriert eine Effizienzsteigerung in der Therapie durch ein bestimmtes System (Pixforman",
-    "createdAt": "2026-10-09T17:36:37.994Z"
-  },
-  {
-    "titleHash": "c19e1dff91e315c835fcd9c0528fb33c",
-    "score": 4,
-    "topics": [
-      "Bewegungstherapie",
-      "Fortbildung"
-    ],
-    "reason": "Dieser Titel ist sehr allgemein und verspricht mehr Zeit und Unterstützung im Training. Ohne konkret",
-    "createdAt": "2026-10-09T17:36:37.994Z"
-  },
-  {
-    "titleHash": "a3e01e42ef4229096c8d65c452b01faf",
-    "score": 3,
-    "topics": [
-      "Fortbildung",
-      "Berufsausbildung"
-    ],
-    "reason": "Der Titel 'Fortbilden. Weiterentwickeln. 2027 Durchstarten.' ist eine allgemeine Aufforderung zur Fo",
-    "createdAt": "2026-10-09T17:36:37.994Z"
-  },
-  {
-    "titleHash": "2755d35e43fb1c95835d4ea173589ae8",
-    "score": 4,
-    "topics": [
-      "Bewegungstherapie",
-      "Fortbildung"
-    ],
-    "reason": "Der Titel 'Neue Impulse für deinen Behandlungsalltag' ist sehr vage. Es ist nicht ersichtlich, welch",
-    "createdAt": "2026-10-09T17:36:37.994Z"
-  },
-  {
-    "titleHash": "34affb82b304071462dcd001df66a28b",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel 'Spitzenreiter wider Willen' ist völlig unklar und lässt keinen Bezug zur physiotherapeuti",
-    "createdAt": "2026-10-09T17:36:37.994Z"
-  },
-  {
-    "titleHash": "dd4882e4cdf3f44322b5d60ed00de2e5",
-    "score": 4,
-    "topics": [
-      "Knie",
-      "Sportphysiotherapie"
-    ],
-    "reason": "Der Titel thematisiert einen Kreuzbandriss bei einer bekannten politischen Person und stellt eine Fr",
-    "createdAt": "2026-10-09T19:45:07.134Z"
-  },
-  {
-    "titleHash": "526e29083025658fda35ee2cb31c8215",
-    "score": 2,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "reason": "Die Meldung betrifft die Bekämpfung von Abrechnungsbetrug in Niedersachsen. Dies hat zwar einen Bezu",
-    "createdAt": "2026-10-10T10:10:23.909Z"
-  },
-  {
     "titleHash": "c79ca7d33c9653f4e7f6d0ce200ed2fc",
     "score": 2,
     "topics": [
@@ -2574,5 +2508,43 @@
     ],
     "reason": "Der Anstieg der Fehlzeiten aufgrund psychischer Erkrankungen ist eine allgemeine gesundheitspolitisc",
     "createdAt": "2026-11-08T10:48:54.617Z"
+  },
+  {
+    "titleHash": "1e42aa47412ef1f1d501175b3062546c",
+    "score": 7,
+    "topics": [
+      "Lymphdrainage",
+      "Studie"
+    ],
+    "reason": "Studie zu einer spezifischen physiotherapeutischen Behandlungsmethode bei Brustkrebspatientinnen mit",
+    "createdAt": "2026-11-09T12:14:33.789Z"
+  },
+  {
+    "titleHash": "63a1fa31293dcfb3f7d54d160858654c",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Stellungnahme des Spitzenverbandes Heilmittelverbände (SHV) zu einem Gesetz über Daten und digitale ",
+    "createdAt": "2026-11-09T12:14:33.789Z"
+  },
+  {
+    "titleHash": "1a919d60968b9924d4c740d702638df2",
+    "score": 9,
+    "topics": [
+      "Direktzugang",
+      "Heilmittelversorgung",
+      "Blankoverordnung"
+    ],
+    "reason": "Gesetzentwurf, der Direktzugang und Abrechnungen im Bereich der Heilmittel neu regeln soll. Dies hat",
+    "createdAt": "2026-11-09T12:14:33.789Z"
+  },
+  {
+    "titleHash": "ee95d29ca4f38799d8ac54cb1d72c1e6",
+    "score": 0,
+    "topics": [],
+    "reason": "Eine bundesweite Impf-Aktionswoche betrifft primär die Impfpolitik und -durchführung und hat keinen ",
+    "createdAt": "2026-11-09T12:14:33.789Z"
   }
 ]
