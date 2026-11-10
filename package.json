@@ -59,6 +59,9 @@
     },
     "@serwist/webpack-plugin": {
       "zod": "4.6.7"
+    },
+    "@ts-morph/common": {
+      "minimatch": "11.0.5"
     }
   }
 }
