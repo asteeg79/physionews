@@ -2619,5 +2619,15 @@
     ],
     "reason": "Die Meldung beschreibt die Erfahrungen von Patient:innen mit Gesundheitsinformationen auf Instagram ",
     "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "7b58bbad5d0b8a2225fd030636732930",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Der VPT fordert eine stärkere Einbindung der Heilmittelberufe in die Primärversorgung. Dies könnte A",
+    "createdAt": "2026-11-10T18:57:27.906Z"
   }
 ]
