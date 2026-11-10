@@ -2546,5 +2546,78 @@
     "topics": [],
     "reason": "Eine bundesweite Impf-Aktionswoche betrifft primär die Impfpolitik und -durchführung und hat keinen ",
     "createdAt": "2026-11-09T12:14:33.789Z"
+  },
+  {
+    "titleHash": "e7fc93272f894a61cdd2c64040b959bc",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Berufsverband"
+    ],
+    "reason": "Dies ist eine Ankündigung einer Veranstaltung und keine inhaltliche Änderung für die Praxis.",
+    "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "6a59ac137d443f79233b20f7aadc7fa3",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Eine Ankündigung eines Kongresses, der in der Zukunft stattfindet und keine unmittelbare Änderung fü",
+    "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "458c10ca01dc745f90650b398ec3b13f",
+    "score": 0,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Dies ist eine politische Stellungnahme, die keine direkte Auswirkung auf die tägliche Arbeit von Phy",
+    "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "dd4882e4cdf3f44322b5d60ed00de2e5",
+    "score": 4,
+    "topics": [
+      "Knie",
+      "Studie"
+    ],
+    "reason": "Der Titel bezieht sich auf eine Verletzung (Kreuzbandriss) und das Knie, was für Physiotherapeut:inn",
+    "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "875539afc781997d3551122907162b50",
+    "score": 0,
+    "topics": [],
+    "reason": "Dies ist ein allgemeines Thema zur Online-Reputation, das keine direkte Auswirkung auf die physiothe",
+    "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "c19e1dff91e315c835fcd9c0528fb33c",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "reason": "Der Titel suggeriert eine Verbesserung der Therapiezeit und Unterstützung im Training, was potenziel",
+    "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "2755d35e43fb1c95835d4ea173589ae8",
+    "score": 4,
+    "topics": [],
+    "reason": "Der Titel ist zu allgemein und bietet keine konkreten Informationen über Änderungen in der physiothe",
+    "createdAt": "2026-11-10T11:54:15.357Z"
+  },
+  {
+    "titleHash": "79496e8eff9b0dd33c925991cd05dbc7",
+    "score": 5,
+    "topics": [
+      "Rückenschmerz",
+      "Studie"
+    ],
+    "reason": "Die Meldung beschreibt die Erfahrungen von Patient:innen mit Gesundheitsinformationen auf Instagram ",
+    "createdAt": "2026-11-10T11:54:15.357Z"
   }
 ]

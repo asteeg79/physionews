@@ -1,16 +1,16 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
     "imageUrl": null,
-    "publishedAt": "2026-11-09T12:14:32.129Z",
-    "fetchedAt": "2026-11-09T12:14:32.129Z",
+    "publishedAt": "2026-11-10T11:54:13.234Z",
+    "fetchedAt": "2026-11-10T11:54:13.238Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
+    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -19,54 +19,37 @@
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-11-09T12:14:32.127Z",
-    "fetchedAt": "2026-11-09T12:14:32.129Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-10T11:54:13.234Z",
+    "fetchedAt": "2026-11-10T11:54:13.238Z",
+    "relevanceScore": 8,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
-    "isTopNews": false,
+    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
+    "isTopNews": true,
     "topics": [
-      "Berufsausbildung",
+      "Manuelle Therapie",
+      "Berufsverband",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-11-09T12:14:32.121Z",
-    "fetchedAt": "2026-11-09T12:14:32.129Z",
+    "publishedAt": "2026-11-10T11:54:13.234Z",
+    "fetchedAt": "2026-11-10T11:54:13.238Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-09T12:14:32.121Z",
-    "fetchedAt": "2026-11-09T12:14:32.129Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
@@ -75,20 +58,38 @@
     "lang": "de"
   },
   {
-    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-09T12:14:32.120Z",
-    "fetchedAt": "2026-11-09T12:14:32.129Z",
+    "publishedAt": "2026-11-10T11:54:13.233Z",
+    "fetchedAt": "2026-11-10T11:54:13.238Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
+    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-10T11:54:13.233Z",
+    "fetchedAt": "2026-11-10T11:54:13.238Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
     ],
     "lang": "de"
   },
@@ -128,6 +129,44 @@
       "Direktzugang",
       "Heilmittelversorgung",
       "Blankoverordnung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "85520217fe507cd7ea4af4bc0c6b75f3925d5a3786b730f9bcfd76e2d25d5f2b",
+    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
+    "title": "Experiences of Patients with Chronic Non-specific Back Pain with Health Information on InstagramErfahrungen von Patient*innen mit chronischen, nicht spezifischen Rückenschmerzen mit Gesundheitsinformationen auf Instagram",
+    "summary": "Back pain is one of the most common health problems worldwide. Digital, internet-based interventions have proven effective, while social media is increasingly used as a source of health-related information. However, limited quality control and insufficient digital health literacy may pose risks. Despite this development, it remains unclear how patients with chronic nonspecific back pain perceive…",
+    "url": "http://dx.doi.org/10.1055/a-2946-6532",
+    "imageUrl": null,
+    "publishedAt": "2026-11-09T07:48:48.000Z",
+    "fetchedAt": "2026-11-10T11:54:12.453Z",
+    "relevanceScore": 5,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung beschreibt die Erfahrungen von Patient:innen mit Gesundheitsinformationen auf Instagram ",
+    "isTopNews": false,
+    "topics": [
+      "Rückenschmerz",
+      "Studie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "4e63bd1fcb036a0ce620f33040a7f165afa9804dd39218d562e73731978fa62a",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Offene oder geschlossene Kette?",
+    "summary": "Neue Übersichtsarbeit vergleicht Pro und Kontra.",
+    "url": "https://physio.de/community/news/offene-oder-geschlossene-kette/99/12039/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-07T11:54:09.510Z",
+    "fetchedAt": "2026-11-10T11:54:09.511Z",
+    "relevanceScore": 5,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage nach offener oder geschlossener Kette ist ein grundlegendes Konzept in der Physiotherapie,",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Bewegungstherapie"
     ],
     "lang": "de"
   },
@@ -224,26 +263,6 @@
     "topics": [
       "Lymphdrainage",
       "Berufsverband",
-      "Studie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f78068a041540733b8919e5f359f8a7366da7eb6705bb489c1192db920def615",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Ein Jahr Sport gegen Beschwerden bei axialer Spondylarthritis (axSpA)",
-    "summary": "Die Effektivität eines langfristigen Bewegungstrainings für Personen mit massiven Funktionseinschränkungen",
-    "url": "https://physio.de/community/news/ein-jahr-sport-gegen-beschwerden-bei-axialer-spondylarthritis-axspa/99/12031/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-02T22:48:06.732Z",
-    "fetchedAt": "2026-11-03T08:48:06.739Z",
-    "relevanceScore": 5,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über einjähriges Training gegen axiale Spondylarthritis ist zwar thematisch im Gesundhei",
-    "isTopNews": false,
-    "topics": [
-      "Wirbelsäule",
-      "Bewegungstherapie",
       "Studie"
     ],
     "lang": "de"
@@ -1026,7 +1045,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +med:tep,knie-tep | src:+3",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [],
     "lang": "de"
   },
