@@ -2627,5 +2627,113 @@
     ],
     "reason": "Die Meldung kündigt Änderungen in der zukünftigen Ausbildung für Physiotherapeut:innen an. Dies betr",
     "createdAt": "2026-11-11T11:30:17.804Z"
+  },
+  {
+    "titleHash": "77248ba9c65988cfe8e7ad9497470298",
+    "score": 0,
+    "topics": [],
+    "reason": "Politik macht Körper – Wie Gesellschaft und Politik unser Körperbild formen",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "86481591089663d67674d5a9eaeeba0d",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Alarmierende Ergebnisse – Arbeiten an der Belastungsgrenze",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "c8b83f041b5a0ef129d6aca19d1e7a1f",
+    "score": 8,
+    "topics": [
+      "Knie",
+      "Studie",
+      "Reha"
+    ],
+    "reason": "Welche Rolle spielt Trainieren in der offenen Kette nach Kreuzband-OP? – Wissenschaft nachgefragt",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "794eeb296b0bf9f4ce5b5a972f3cce36",
+    "score": 9,
+    "topics": [
+      "Hand & Ellenbogen",
+      "Manuelle Therapie"
+    ],
+    "reason": "Schmerzhafter Händedruck – Myofasziale Triggerpunkttherapie bei chronisch lateralem Ellenbogenschmer",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "510b0bbf1c3f1cd47de3d4a32770b727",
+    "score": 8,
+    "topics": [
+      "Knie",
+      "Reha",
+      "Bewegungstherapie"
+    ],
+    "reason": "Stabil trainieren – Untergründe in der Knie-TEP-Reha",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "0ece00898019d30172d451bb448b8cba",
+    "score": 5,
+    "topics": [
+      "Hand & Ellenbogen",
+      "Geriatrie"
+    ],
+    "reason": "In guten Händen – Handfunktion im Alter",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "4a10cdb09f65974c1e74702d12db5434",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Babybauch trifft Hanteltraining – Krafttraining in der Schwangerschaft: sicher, sinnvoll und längst ",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "a3489b4bcd844073cd31acd131790414",
+    "score": 8,
+    "topics": [
+      "Atemtherapie"
+    ],
+    "reason": "Atem in Schwingung – Phonation in der Atemtherapie",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "ec4d7318f2cf1d938eb0f57e8b4842e4",
+    "score": 0,
+    "topics": [],
+    "reason": "Zauberformel mit Schattenseiten – Abnehmspritzen",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "d90852d7f461a7d91f1899fb16148fde",
+    "score": 7,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "„Wer die Versorgung umsetzt, sollte bei Entscheidungen mit einbezogen werden“ – Berufspolitikerin Ma",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "e984ebf4ed65f994e8514578a102bff9",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Zwischen Wirtschaftlichkeit, Therapie und Führung – Spagat von Leitungspersonen",
+    "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "d13a3d7fa6d56185eb2e3ac41cd5452e",
+    "score": 7,
+    "topics": [],
+    "reason": "Die Rechtsfrage: Welche Regeln gelten für Fixierungen?",
+    "createdAt": "2026-11-11T18:55:35.329Z"
   }
 ]
