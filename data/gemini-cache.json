@@ -1,16 +1,5 @@
 [
   {
-    "titleHash": "c79ca7d33c9653f4e7f6d0ce200ed2fc",
-    "score": 2,
-    "topics": [
-      "Geriatrie",
-      "Bewegungstherapie",
-      "Heilmittelversorgung"
-    ],
-    "reason": "Die Meldung ist nur mittelbar relevant, da sie sich auf die mobile Physiotherapie für \"die Schwächst",
-    "createdAt": "2026-10-12T11:23:33.615Z"
-  },
-  {
     "titleHash": "aa0e0d1579b7fe740f8cae971274fb34",
     "score": 0,
     "topics": [],
@@ -2629,5 +2618,14 @@
     ],
     "reason": "Der VPT fordert eine stärkere Einbindung der Heilmittelberufe in die Primärversorgung. Dies könnte A",
     "createdAt": "2026-11-10T18:57:27.906Z"
+  },
+  {
+    "titleHash": "5a948b2584283ddfe740d164fe0b8e32",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "reason": "Die Meldung kündigt Änderungen in der zukünftigen Ausbildung für Physiotherapeut:innen an. Dies betr",
+    "createdAt": "2026-11-11T11:30:17.804Z"
   }
 ]
