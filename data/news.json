@@ -1,5 +1,117 @@
 [
   {
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-12T19:18:51.923Z",
+    "fetchedAt": "2026-11-12T19:18:51.923Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Übertragbarkeit einer Abmahnung wegen Osteopathie auf die Physiotherapie ist relevant, da sie Au",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-12T19:18:51.922Z",
+    "fetchedAt": "2026-11-12T19:18:51.923Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Kassenzulassung für Fachfremde im Bereich Physiotherapie ist relevant, da sie potenziell die Arb",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-12T19:18:51.918Z",
+    "fetchedAt": "2026-11-12T19:18:51.923Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie kann die Anerkennung und Abrechnung ost",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "212bd668603669863e0a7c506351e60015265046954b818b1a4c5d3e1f913c8e",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Gesundheitsämter machen bei Physiotherapeuten ernst",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/gesundheits%C3%A4mter-machen-bei-physiotherapeuten-ernst-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-12T19:18:51.917Z",
+    "fetchedAt": "2026-11-12T19:18:51.923Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Wenn Gesundheitsämter bei Physiotherapeuten 'Ernst machen', deutet dies auf eine verstärkte behördli",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-12T19:18:51.917Z",
+    "fetchedAt": "2026-11-12T19:18:51.923Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Absicherung bei Terminausfall und Behandlungspflicht ist ein relevantes Thema für die Organisati",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "0688ed8722b91620b2f469b5a6644c7bc846387ff3986e863c0b35891e5edcbe",
+    "sourceId": "080c8549-27aa-4c6f-be77-a748e9dd65c8",
+    "title": "Nach Nutzer-Befragung: EbM-Manuale bekommen ein Kapitel zu Künstlicher Intelligenz Mehr als zwei Drittel der Befragten wünschen sich, dass aktuelle Themen wie Künstliche Intelligenz in die deutschsprachigen Manuale zu den Methoden der Evidenzbasierten Medizin aufgenommen werden – auch wenn es dazu noch keine gesicherten Empfehlungen gibt: Das ist ein wesentliches Ergebnis der Umfrage, die die Cochrane Deutschland Stiftung im Frühjahr 2026 durchgeführt hat. 12 Nov 2026",
+    "summary": null,
+    "url": "https://www.cochrane.de/news/nach-nutzer-befragung-ebm-manuale-bekommen-ein-kapitel-zu-kuenstlicher-intelligenz",
+    "imageUrl": "https://www.cochrane.de/sites/cochrane.de/files/styles/grid_image/public/uploads/images/image/06-umfrage-evidenzstaerke-adobestock_76651526-bearbeitet_0.jpeg.webp?itok=ntfp89J_",
+    "publishedAt": "2026-11-12T14:46:46.000Z",
+    "fetchedAt": "2026-11-12T19:18:44.764Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Aufnahme von Künstlicher Intelligenz in die Manuale der Evidenzbasierten Medizin ist für Physiot",
+    "isTopNews": false,
+    "topics": [
+      "Leitlinie",
+      "Fortbildung"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "632f82ce3e4ab7e18709a1877be0c4f1900cffdaae96ed45dc544cca8e5342f1",
     "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
     "title": "Primärversorgung neu denken: SHV fordert stärkere Einbindung der Heilmittelberufe",
@@ -15,100 +127,6 @@
     "topics": [
       "Heilmittelversorgung",
       "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-12T11:56:37.367Z",
-    "fetchedAt": "2026-11-12T11:56:37.373Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Erlaubnis der CranioSacralen Therapie auf Verordnung durch ein Oberlandesgericht ist relevant fü",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-12T11:56:37.366Z",
-    "fetchedAt": "2026-11-12T11:56:37.373Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Entscheidung des Bundessozialgerichts zur Zulassungserweiterung für Manuelle Therapie für Masseu",
-    "isTopNews": true,
-    "topics": [
-      "Manuelle Therapie",
-      "Berufsverband",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "3731442b1843de2e27e89f53ef4ccc88f9ab14e81ef21440ab6c577dda346631",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Dürfen \"Thai-Massage-Salons\" Patienten behandeln?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/d%C3%BCrfen-thai-massage-salons-patienten-behandeln/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-12T11:56:37.364Z",
-    "fetchedAt": "2026-11-12T11:56:37.373Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, ob 'Thai-Massage-Salons' Patienten behandeln dürfen, berührt die Abgrenzung von physiothe",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-12T11:56:37.362Z",
-    "fetchedAt": "2026-11-12T11:56:37.373Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage, welche Behandlungskosten private Krankenversicherungen zahlen, ist direkt relevant für di",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-12T11:56:37.361Z",
-    "fetchedAt": "2026-11-12T11:56:37.373Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Nutzung nicht zugelassener Geräte in der Physiotherapie birgt rechtliche und sicherheitsrelevant",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
     ],
     "lang": "de"
   },
@@ -208,6 +226,26 @@
     "lang": "de"
   },
   {
+    "id": "349f36e12bc7e08733a151b9958ea94f9571109bf3bd503ca7c4e5a21cc58e47",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Wie kann zeitgemäße Neurorehabilitation gelingen?",
+    "summary": "Eine Publikation gibt Einblick in eine deutsche Physiotherapiepraxis, die neue Wege geht.",
+    "url": "https://physio.de/community/news/wie-kann-zeitgemaesse-neurorehabilitation-gelingen/99/12053/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-08T19:18:45.993Z",
+    "fetchedAt": "2026-11-12T19:18:45.997Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage nach zeitgemäßer Neurorehabilitation ist klar relevant für Physiotherapeut:innen, da sie d",
+    "isTopNews": false,
+    "topics": [
+      "Neurologie",
+      "Reha",
+      "Bewegungstherapie"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "4e63bd1fcb036a0ce620f33040a7f165afa9804dd39218d562e73731978fa62a",
     "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
     "title": "Offene oder geschlossene Kette?",
@@ -261,25 +299,6 @@
     "topics": [
       "Sportphysiotherapie",
       "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "c69af9d67fcfa379f76ce6b441e18a7fe7a9c9662a00159a69aa0bc46cfa3bcf",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Neues Berufsgesetz: Referenten-Entwurf liegt vor",
-    "summary": "Zertifikate sollen abgeschafft werden.",
-    "url": "https://physio.de/community/news/neues-berufsgesetz-referenten-entwurf-liegt-vor/99/12066/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-05T11:56:33.768Z",
-    "fetchedAt": "2026-11-12T11:56:33.769Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Referenten-Entwurf eines neuen Berufsgesetzes für Physiotherapeuten ist ein wichtiger Schritt, d",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Berufsausbildung"
     ],
     "lang": "de"
   },
@@ -760,7 +779,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Die Meldung kündigt eine Leitlinie zur Behandlung von Osteoporose-Frakturen an. Leitlinien sind ents",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "Leitlinie",
       "Osteoporose",
@@ -896,78 +915,6 @@
     "topics": [
       "Manuelle Therapie",
       "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "2cf40ba13e6332fa351edb6162c7bcc110d9074f98da30c9040c56eea5a02736",
-    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
-    "title": "Heilmittel-Report 2026: Therapieberufe brauchen politische Entscheidungen statt weiterer Kostendebatten",
-    "summary": null,
-    "url": "https://www.vpt.de/aktuelles/news-ansicht/shv-nimmt-stellung-zum-gesetz-fuer-daten-und-digitale-innovation-im-gesundheitswesen-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-13T12:00:00.000Z",
-    "fetchedAt": "2026-10-13T11:13:35.438Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "keyword",
-    "relevanceReason": "keyword (gray): src:+3",
-    "isTopNews": false,
-    "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "9c34f070851bad1835ccbbe80d7994ce7a04cf12570c91b5d7a3b04665eb22e9",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "Heilmittel-Report 2026: Therapieberufe brauchen politische Entscheidungen statt weiterer Kostendebatten",
-    "summary": null,
-    "url": "https://www.ifk.de/artikel/shv-nimmt-stellung-zum-gesetz-fuer-daten-und-digitale-innovation-im-gesundheitswesen",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Krankenversicherung_shutterstock_2683805073_IM.jpg?itok=neTCNEK2",
-    "publishedAt": "2026-10-13T12:00:00.000Z",
-    "fetchedAt": "2026-10-13T18:34:18.846Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Heilmittel-Report 2026 thematisiert die Notwendigkeit politischer Entscheidungen für die Therapi",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "4dab8dda89574ac08495640205aa67b930e6d8886aeec84996d86ca3e1665a5e",
-    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
-    "title": "Heilmittel-Report 2026: Therapieberufe brauchen politische Entscheidungen statt weiterer Kostendebatten",
-    "summary": null,
-    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/shv-zum-heilmittel-report-2026.html",
-    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/7/f/csm_260617_-_HMR2026_db2bcfd13b.png",
-    "publishedAt": "2026-10-13T12:00:00.000Z",
-    "fetchedAt": "2026-10-13T18:34:19.136Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Heilmittel-Report 2026 thematisiert die Notwendigkeit politischer Entscheidungen für die Therapi",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "b78b20a804b833c3d721b6e04e9de03ef0e59e38ada1e74587bd7034eb5c056b",
-    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
-    "title": "Austausch auf europäischer Ebene: Physio Deutschland in Brüssel dabei",
-    "summary": null,
-    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/austausch-auf-europaeischer-ebene.html",
-    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/3/f/csm_261013_-_Bruessel_387f00d39e.png",
-    "publishedAt": "2026-10-13T12:00:00.000Z",
-    "fetchedAt": "2026-10-13T18:34:19.136Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Austausch auf europäischer Ebene durch Physio Deutschland in Brüssel ist für die direkte praktis",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband"
     ],
     "lang": "de"
   },
