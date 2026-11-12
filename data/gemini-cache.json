@@ -1,12 +1,5 @@
 [
   {
-    "titleHash": "aa0e0d1579b7fe740f8cae971274fb34",
-    "score": 0,
-    "topics": [],
-    "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis erkennbar. Das Thema Frauengesundheit und Wechs",
-    "createdAt": "2026-10-13T11:13:48.845Z"
-  },
-  {
     "titleHash": "1c323c40ac27106f98f2853a89959903",
     "score": 7,
     "topics": [
@@ -2735,5 +2728,14 @@
     "topics": [],
     "reason": "Die Rechtsfrage: Welche Regeln gelten für Fixierungen?",
     "createdAt": "2026-11-11T18:55:35.329Z"
+  },
+  {
+    "titleHash": "bc97d53b512eec44de03f3d670cec8b7",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie"
+    ],
+    "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis. Das Thema 'Runners High' ist zwar bewegungsbez",
+    "createdAt": "2026-11-12T11:56:38.977Z"
   }
 ]
