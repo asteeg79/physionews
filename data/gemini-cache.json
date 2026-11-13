@@ -1,76 +1,5 @@
 [
   {
-    "titleHash": "5291b912a4b06a901fe524abbc0d15e5",
-    "score": 9,
-    "topics": [
-      "Blankoverordnung",
-      "Heilmittelversorgung",
-      "GKV-Vergütung"
-    ],
-    "reason": "Die Meldung thematisiert die Kosten von Blankoverordnungen im Vergleich zu \"normalen Rezepten\". Dies",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
-    "titleHash": "6a763d6cf5a3e848953bdb039b2bd891",
-    "score": 0,
-    "topics": [
-      "Berufsverband"
-    ],
-    "reason": "Die Meldung ist ein 'Gespräch mit Nico Nollenberger'. Ohne weitere Informationen über den Inhalt des",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
-    "titleHash": "a471b7e239752703972c728784cb9e25",
-    "score": 5,
-    "topics": [
-      "Pädiatrie",
-      "Bewegungstherapie"
-    ],
-    "reason": "Der Titel 'Aktiv fördern statt unterfordern' deutet auf pädagogische oder therapeutische Ansätze hin",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
-    "titleHash": "0346d3e4f93e9d36169cb987b1b0d777",
-    "score": 4,
-    "topics": [],
-    "reason": "Der Titel 'Daumen hoch statt runter' ist sehr vage. Ohne weitere Informationen ist kein direkter Bez",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
-    "titleHash": "4ce1f034f1c453e81274d9a9bfec77b4",
-    "score": 6,
-    "topics": [
-      "Manuelle Therapie",
-      "Fortbildung"
-    ],
-    "reason": "Der Titel 'Zwischen Handgriff und High-Tech' deutet auf die Verbindung von manuellen Techniken und m",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
-    "titleHash": "0ad1d27d17b8d5cd613ac73fd6bcd2a2",
-    "score": 9,
-    "topics": [
-      "Heilmittelversorgung",
-      "GKV-Vergütung"
-    ],
-    "reason": "Der Titel 'Stichtag der Abrechnung' bezieht sich direkt auf die Abrechnungspraxis von Heilmittelerbr",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
-    "titleHash": "4415142fa78d3d651b7194e4096ca885",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel 'Hoffnung auf dem Seeweg' ist sehr metaphorisch und ohne weiteren Kontext nicht auf die ph",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
-    "titleHash": "e0da34a7fdf0a72d982d2e0e79c3d296",
-    "score": 2,
-    "topics": [],
-    "reason": "Die Einsetzung einer Pflegekommission durch das BMG betrifft primär die Pflege. Ohne einen explizite",
-    "createdAt": "2026-10-14T09:05:00.302Z"
-  },
-  {
     "titleHash": "8d73e12b825101c11ad3cdb8b22f87b6",
     "score": 7,
     "topics": [
@@ -2726,5 +2655,51 @@
     "topics": [],
     "reason": "Die HIV/AIDS-Situation in Deutschland ist für die tägliche Arbeit von Physiotherapeuten in der Praxi",
     "createdAt": "2026-11-12T19:18:52.910Z"
+  },
+  {
+    "titleHash": "502c830417c97aafec1f6a09a4dfc44f",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung betrifft die interprofessionelle Versorgung in Hausarztpraxen. Dies hat keinen direkten ",
+    "createdAt": "2026-11-13T11:39:29.203Z"
+  },
+  {
+    "titleHash": "5910e2d9680e4c8008cc43fbb0b2655f",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung kündigt eine Veranstaltung an und beschreibt deren Erfolg. Sie ändert nichts an der Arbe",
+    "createdAt": "2026-11-13T11:39:29.203Z"
+  },
+  {
+    "titleHash": "7e8a1ea7004a3380e487cf2acc580bbf",
+    "score": 0,
+    "topics": [
+      "Cochrane-Review",
+      "Studie"
+    ],
+    "reason": "Die Meldung kündigt ein Webinar zu Methoden der Evidenzsynthese an. Dies ist eine methodische Fortbi",
+    "createdAt": "2026-11-13T11:39:29.203Z"
+  },
+  {
+    "titleHash": "cffa56a492d7625647fb16b36305ed43",
+    "score": 0,
+    "topics": [
+      "Leitlinie",
+      "Studie"
+    ],
+    "reason": "Die Meldung kündigt ein Webinar zu neuen Berichtsleitlinien für qualitative Evidenzsynthese an. Dies",
+    "createdAt": "2026-11-13T11:39:29.203Z"
+  },
+  {
+    "titleHash": "3b77859e5403cb0a85f9e36ab79f9582",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel ist nichtssagend und hat keinen erkennbaren Bezug zur Physiotherapiepraxis, Abrechnung, Au",
+    "createdAt": "2026-11-13T11:39:29.203Z"
   }
 ]
