@@ -1,39 +1,5 @@
 [
   {
-    "titleHash": "1f0efa4e2c4a531ff36e1f05b350b305",
-    "score": 0,
-    "topics": [
-      "Sturzprävention"
-    ],
-    "reason": "Der G-BA passt das Mammographie-Screening an, was für Physiotherapeut:innen in der Praxis keine dire",
-    "createdAt": "2026-10-15T11:40:24.510Z"
-  },
-  {
-    "titleHash": "f94394c1f45a5624b832eb394ca723fb",
-    "score": 0,
-    "topics": [
-      "Sturzprävention"
-    ],
-    "reason": "Die Beratung über das Hautkrebs-Screening und den Check-up durch den G-BA hat keine unmittelbare Aus",
-    "createdAt": "2026-10-15T11:40:24.510Z"
-  },
-  {
-    "titleHash": "4e5ea8e527cf31de61d583281577025d",
-    "score": 0,
-    "topics": [
-      "Reha"
-    ],
-    "reason": "Die Einsetzung einer Pflegestrukturkommission durch das BMG betrifft primär die Organisation und Str",
-    "createdAt": "2026-10-15T11:40:24.510Z"
-  },
-  {
-    "titleHash": "9df06c6190a356b748c121ecad2ca4d4",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung betrifft die ambulante Psychotherapie und die Übermittlung von Konsiliarberichten. Dies ",
-    "createdAt": "2026-10-15T14:29:39.182Z"
-  },
-  {
     "titleHash": "5e2db2d7a3b9cc4b0a91dc67dde1650c",
     "score": 0,
     "topics": [],
@@ -2589,5 +2555,16 @@
     ],
     "reason": "Hyrox als neue Trendsportart ist für Physiotherapeut:innen in der Praxis nicht unmittelbar relevant,",
     "createdAt": "2026-11-14T11:00:54.992Z"
+  },
+  {
+    "titleHash": "6f68bf877a9f3b217a22abad6fa9d69e",
+    "score": 9,
+    "topics": [
+      "Wirbelsäule",
+      "Osteoporose",
+      "Leitlinie"
+    ],
+    "reason": "Die neue Leitlinie zur Behandlung von Osteoporose-Frakturen bringt Klarheit bei Wirbelbrüchen und is",
+    "createdAt": "2026-11-14T17:23:14.999Z"
   }
 ]
