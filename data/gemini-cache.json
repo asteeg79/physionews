@@ -1,36 +1,5 @@
 [
   {
-    "titleHash": "4dc926471e9ad6a22a208bc07cfb6115",
-    "score": 0,
-    "topics": [
-      "Cochrane-Review",
-      "Veranstaltung",
-      "Fortbildung"
-    ],
-    "reason": "Die Ankündigung eines Webinars über neue Leitlinien zur qualitativen Evidenzsynthese ändert nichts a",
-    "createdAt": "2026-10-16T14:22:18.555Z"
-  },
-  {
-    "titleHash": "c74d3da039b1a8def4797bcdf54428a5",
-    "score": 0,
-    "topics": [
-      "Veranstaltung"
-    ],
-    "reason": "Die Ankündigung des DKOU 2026 mit Highlights und Hot Topics ist eine allgemeine Veranstaltungsinform",
-    "createdAt": "2026-10-16T14:22:18.555Z"
-  },
-  {
-    "titleHash": "f4db0ce544313a393149899c009bd853",
-    "score": 4,
-    "topics": [
-      "S3-Leitlinie",
-      "Pädiatrie",
-      "Studie"
-    ],
-    "reason": "Die Entwicklung einer S3-Leitlinie zu Hyperlipidämien bei Kindern und Jugendlichen durch ein Projekt",
-    "createdAt": "2026-10-16T14:22:19.464Z"
-  },
-  {
     "titleHash": "2504a29c41365cb8ba62b2c440e227b3",
     "score": 0,
     "topics": [
@@ -2542,5 +2511,15 @@
     ],
     "reason": "Die neue Leitlinie zur Behandlung von Osteoporose-Frakturen bringt Klarheit bei Wirbelbrüchen und is",
     "createdAt": "2026-11-14T17:23:14.999Z"
+  },
+  {
+    "titleHash": "a89ca62e68c1920b95ba851552ab94de",
+    "score": 0,
+    "topics": [
+      "Berufsverband",
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung über das Engagement der DGSP auf europäischer Ebene in der EFSMA ist für die tägliche Ar",
+    "createdAt": "2026-11-15T18:03:33.879Z"
   }
 ]
