@@ -1,67 +1,5 @@
 [
   {
-    "titleHash": "2504a29c41365cb8ba62b2c440e227b3",
-    "score": 0,
-    "topics": [
-      "Veranstaltung"
-    ],
-    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeuten richtet, ist nicht relevant",
-    "createdAt": "2026-10-16T19:05:13.498Z"
-  },
-  {
-    "titleHash": "031244a0b6617dce381dc668b1b0fbe2",
-    "score": 0,
-    "topics": [
-      "Berufsverband"
-    ],
-    "reason": "Die Vertretung in einer Jury für einen Preis zur Teilhabe bei Rheuma ändert nichts an der direkten A",
-    "createdAt": "2026-10-16T19:05:13.498Z"
-  },
-  {
-    "titleHash": "aa218885d19d520715ed48baa7ba86b5",
-    "score": 0,
-    "topics": [
-      "Veranstaltung"
-    ],
-    "reason": "Ankündigung einer Veranstaltung, auch wenn sie sich an Physiotherapeuten richtet, ist nicht relevant",
-    "createdAt": "2026-10-16T19:05:13.498Z"
-  },
-  {
-    "titleHash": "a088f94dc1ff62c068ea113f5dfc3178",
-    "score": 0,
-    "topics": [
-      "Fortbildung"
-    ],
-    "reason": "Die Ankündigung von Intervisionsangeboten ist eine reine Verbandsaktivität und keine Änderung der Ar",
-    "createdAt": "2026-10-16T19:05:13.498Z"
-  },
-  {
-    "titleHash": "8b93a2324d24a39e65bc8ddbc119d2cf",
-    "score": 9,
-    "topics": [
-      "Blankoverordnung",
-      "Heilmittelversorgung"
-    ],
-    "reason": "Ein Zwischenstand zur Evaluation der Blankoverordnung ist unmittelbar relevant für die Abrechnung un",
-    "createdAt": "2026-10-16T19:05:13.498Z"
-  },
-  {
-    "titleHash": "2396e79417ed48fb2c19d82951509fc3",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel 'Ein echter Knochenjob' ist zu unspezifisch und lässt keinen direkten Bezug zur Arbeit, Ab",
-    "createdAt": "2026-10-16T19:05:13.498Z"
-  },
-  {
-    "titleHash": "d83a4c5494f598b775d8706ba4c37bc0",
-    "score": 0,
-    "topics": [
-      "Sturzprävention"
-    ],
-    "reason": "Keine unmittelbare Änderung der Arbeit, Abrechnung, Ausbildung oder des fachlichen Wissens für Physi",
-    "createdAt": "2026-10-17T08:05:25.429Z"
-  },
-  {
     "titleHash": "584c23c0bbc251662fa18561364c04e4",
     "score": 4,
     "topics": [
@@ -2521,5 +2459,41 @@
     ],
     "reason": "Die Meldung über das Engagement der DGSP auf europäischer Ebene in der EFSMA ist für die tägliche Ar",
     "createdAt": "2026-11-15T18:03:33.879Z"
+  },
+  {
+    "titleHash": "91998b7fe54f06990efb52fb99a06c87",
+    "score": 4,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "reason": "Die Aufnahme der DGPTW in die AWMF ist für die Berufspolitik relevant, aber nicht für die tägliche A",
+    "createdAt": "2026-11-16T12:09:13.347Z"
+  },
+  {
+    "titleHash": "6d59f6676dc2a3f3153a490b40601f45",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Fortbildung"
+    ],
+    "reason": "Die Ankündigung eines Physiotherapietags 2026 ist eine reine Veranstaltungsankündigung und ändert ni",
+    "createdAt": "2026-11-16T12:09:13.347Z"
+  },
+  {
+    "titleHash": "57468dd0f57f5cce24ce410ec1944063",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der Titel ist zu allgemein und lässt keinen direkten Bezug zur Arbeit, Abrechnung, Ausbildung oder d",
+    "createdAt": "2026-11-16T12:09:13.347Z"
+  },
+  {
+    "titleHash": "ba88e97099c9a284e32e258ae7ac0e52",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung des RKI zu HIV und Virushepatitis unter Drogengebrauchern hat keinen direkten Bezug zur ",
+    "createdAt": "2026-11-16T12:09:13.347Z"
   }
 ]
