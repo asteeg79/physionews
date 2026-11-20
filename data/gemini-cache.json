@@ -1,16 +1,5 @@
 [
   {
-    "titleHash": "68f5237f25fc839b9f88c1ba3c3b0cc8",
-    "score": 7,
-    "topics": [
-      "Lymphdrainage",
-      "Fortbildung",
-      "Berufsverband"
-    ],
-    "reason": "Der Austausch des VPT mit Prof. Dr. Manuel Cornely zur Weiterentwicklung der Lymphologie ist relevan",
-    "createdAt": "2026-10-21T14:43:38.501Z"
-  },
-  {
     "titleHash": "a96e42ee3c2e24d4c29272ec9fb43639",
     "score": 7,
     "topics": [
@@ -2087,5 +2076,42 @@
     ],
     "reason": "Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
     "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "2f4b254ffac00c01329128473b642fef",
+    "score": 0,
+    "topics": [
+      "Fortbildung"
+    ],
+    "reason": "Die Umfrage zum Einsatz von Generativer KI in der Physiotherapie ist für die Praxis nicht relevant, ",
+    "createdAt": "2026-11-20T17:35:15.031Z"
+  },
+  {
+    "titleHash": "4170a142a6b0dcbb045ce447f482de0f",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Ankündigung einer neuen Episode des VPT-Podcasts „Haltung, bitte!“ ist nicht relevant, da sie le",
+    "createdAt": "2026-11-20T17:35:15.031Z"
+  },
+  {
+    "titleHash": "a6c03896d90beed2fdbcd46ed529a8cd",
+    "score": 4,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung über die Physiotherapie in der Gesundheitsregion KölnBonn e.V. ist nur mittelbar relevan",
+    "createdAt": "2026-11-20T17:35:15.031Z"
+  },
+  {
+    "titleHash": "feb4991148d9ea6061bc46f11fcd0f1e",
+    "score": 7,
+    "topics": [
+      "Studie",
+      "Leitlinie"
+    ],
+    "reason": "Die Forderung nach weniger, aber besserer Forschung in der Physiotherapie ist klar relevant, da sie ",
+    "createdAt": "2026-11-20T17:35:15.031Z"
   }
 ]
