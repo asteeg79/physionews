@@ -1,94 +1,152 @@
 [
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-19T12:16:33.375Z",
-    "fetchedAt": "2026-11-19T12:16:33.382Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-11-20T12:16:06.559Z",
+    "fetchedAt": "2026-11-20T12:16:06.560Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
+    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Berufsverband"
+      "Fortbildung"
     ],
     "lang": "de"
   },
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-11-19T12:16:33.375Z",
-    "fetchedAt": "2026-11-19T12:16:33.382Z",
-    "relevanceScore": 9,
+    "publishedAt": "2026-11-20T12:16:06.558Z",
+    "fetchedAt": "2026-11-20T12:16:06.560Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
-    "isTopNews": true,
+    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
+    "isTopNews": false,
     "topics": [
-      "Manuelle Therapie",
+      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-11-19T12:16:33.374Z",
-    "fetchedAt": "2026-11-19T12:16:33.382Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-19T12:16:33.373Z",
-    "fetchedAt": "2026-11-19T12:16:33.382Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-19T12:16:33.367Z",
-    "fetchedAt": "2026-11-19T12:16:33.382Z",
+    "publishedAt": "2026-11-20T12:16:06.553Z",
+    "fetchedAt": "2026-11-20T12:16:06.560Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
+    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "GKV-Vergütung"
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-20T12:16:06.553Z",
+    "fetchedAt": "2026-11-20T12:16:06.560Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Reha"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-20T12:16:06.551Z",
+    "fetchedAt": "2026-11-20T12:16:06.560Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "isTopNews": true,
+    "topics": [
+      "GKV-Vergütung",
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "625174945e287705fc127e3704827b1ee997092823524d0e4187148fed4af801",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Langfristigen Heilmittelbedarf und Besonderen Verordnungsbedarf reformieren? Zwischen Kostendruck und Versorgungsrealität",
+    "summary": null,
+    "url": "https://www.ifk.de/artikel/langfristigen-heilmittelbedarf-und-besonderen-verordnungsbedarf-reformieren-zwischen",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Krankenversicherung_shutterstock_2683805073_IM_0.jpg?itok=WbIVYWaG",
+    "publishedAt": "2026-11-20T12:00:00.000Z",
+    "fetchedAt": "2026-11-20T12:15:59.810Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Langfristigen Heilmittelbedarf und Besonderen Verordnungsbedarf reformieren? Zwischen Kostendruck un",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b402db78a1527bd22e9c531df88640bb2a4802a8164d46656493d50ce23c6bb5",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Unsere PhysioReform: Nachwuchs der Physiotherapie gefragt",
+    "summary": null,
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/unsere-physioreform-umfrage.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/8/7/csm_261120_-_JPD_d1421a97c4.png",
+    "publishedAt": "2026-11-20T12:00:00.000Z",
+    "fetchedAt": "2026-11-20T12:16:00.657Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung thematisiert die Nachwuchsgewinnung in der Physiotherapie, was für die zukünftige Person",
+    "isTopNews": false,
+    "topics": [
+      "Berufsverband",
+      "Berufsausbildung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "4a4231fb86d4ec05fe2c0ba9f8bef4bbceb035146a59792e76b41ab44b6baa19",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Training präzise begründen",
+    "summary": "Amerikanische ForscherInnen wollen den Kern der physiotherapeutischen Arbeit sichtbarer machen.",
+    "url": "https://physio.de/community/news/training-praezise-begruenden/99/12041/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-19T23:16:03.178Z",
+    "fetchedAt": "2026-11-20T12:16:03.185Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung 'Training präzise begründen' könnte für Physiotherapeut:innen relevant sein, wenn sie si",
+    "isTopNews": false,
+    "topics": [
+      "Bewegungstherapie",
+      "Heilmittelversorgung"
     ],
     "lang": "de"
   },
@@ -145,6 +203,24 @@
     "topics": [
       "Bewegungstherapie",
       "Reha"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "cf7a3580f649b631eb90b047f34588080b9f1ed7dc3a52f01d8599b26e603986",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Zukünftige Physio-Ausbildung",
+    "summary": "Wer lernt, bekommt Geld. Wer studiert, nicht.",
+    "url": "https://physio.de/community/news/zukuenftige-physio-ausbildung/99/12072/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-18T12:16:03.181Z",
+    "fetchedAt": "2026-11-20T12:16:03.185Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung kündigt Änderungen in der zukünftigen Ausbildung für Physiotherapeut:innen an. Dies betr",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung"
     ],
     "lang": "de"
   },
@@ -478,24 +554,6 @@
     "lang": "de"
   },
   {
-    "id": "b04866da96321381fc77216d4011039d7cb6949061a35d9b41e8e372cf71a7bd",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "„Der Patient ist schneller als ich denken kann!“",
-    "summary": "Behandlungsfehler in der physiotherapeutischen Akutversorgung.",
-    "url": "https://physio.de/community/news/der-patient-ist-schneller-als-ich-denken-kann/99/11998/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-15T23:09:07.560Z",
-    "fetchedAt": "2026-11-16T12:09:07.566Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Titel ist zu allgemein und lässt keinen direkten Bezug zur Arbeit, Abrechnung, Ausbildung oder d",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
     "id": "0688ed8722b91620b2f469b5a6644c7bc846387ff3986e863c0b35891e5edcbe",
     "sourceId": "080c8549-27aa-4c6f-be77-a748e9dd65c8",
     "title": "Nach Nutzer-Befragung: EbM-Manuale bekommen ein Kapitel zu Künstlicher Intelligenz Mehr als zwei Drittel der Befragten wünschen sich, dass aktuelle Themen wie Künstliche Intelligenz in die deutschsprachigen Manuale zu den Methoden der Evidenzbasierten Medizin aufgenommen werden – auch wenn es dazu noch keine gesicherten Empfehlungen gibt: Das ist ein wesentliches Ergebnis der Umfrage, die die Cochrane Deutschland Stiftung im Frühjahr 2026 durchgeführt hat. 12 Nov 2026",
@@ -511,26 +569,6 @@
     "topics": [
       "Leitlinie",
       "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "349f36e12bc7e08733a151b9958ea94f9571109bf3bd503ca7c4e5a21cc58e47",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Wie kann zeitgemäße Neurorehabilitation gelingen?",
-    "summary": "Eine Publikation gibt Einblick in eine deutsche Physiotherapiepraxis, die neue Wege geht.",
-    "url": "https://physio.de/community/news/wie-kann-zeitgemaesse-neurorehabilitation-gelingen/99/12053/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-12T12:16:29.969Z",
-    "fetchedAt": "2026-11-19T12:16:29.971Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Frage nach zeitgemäßer Neurorehabilitation ist klar relevant für Physiotherapeut:innen, da sie d",
-    "isTopNews": false,
-    "topics": [
-      "Neurologie",
-      "Reha",
-      "Bewegungstherapie"
     ],
     "lang": "de"
   },
@@ -948,46 +986,6 @@
     "topics": [
       "Berufsverband",
       "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "12832387fa98517f0cc523943a3424da5d94d6c8bbdc9aff2d5c51a47bdb9a82",
-    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
-    "title": "VPT im Austausch mit Prof. Dr. Manuel Cornely: Lymphologie gemeinsam weiterentwickeln",
-    "summary": null,
-    "url": "https://www.vpt.de/aktuelles/news-ansicht/vpt-im-austausch-mit-prof-dr-manuel-cornely-lymphologie-gemeinsam-weiterentwickeln-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-21T12:00:00.000Z",
-    "fetchedAt": "2026-10-21T14:43:30.919Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Austausch des VPT mit Prof. Dr. Manuel Cornely zur Weiterentwicklung der Lymphologie ist relevan",
-    "isTopNews": false,
-    "topics": [
-      "Lymphdrainage",
-      "Fortbildung",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "0e2f1f3221c70bf70f16d2b42679b4b15237eb20f7e7c60809c263622283eeb2",
-    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
-    "title": "Device-assisted Bedside Movement Training in Interdisciplinary Early Rehabilitation – A Pilot StudyApparativ unterstütztes bettseitiges Bewegungstraining in der fachübergreifenden Frührehabilitation – eine Pilotstudie",
-    "summary": "Immobility in hospitalized patients is associated with increased morbidity and mortality. In early rehabilitation, device-assisted bedside training may enhance recovery and functional outcomes.To evaluate the feasibility, safety, and user-friendliness of a bedside training device in an early rehabilitation setting (non-neurological/neurosurgical, non-geriatric).In this single-center randomized pi…",
-    "url": "http://dx.doi.org/10.1055/a-2735-0508",
-    "imageUrl": null,
-    "publishedAt": "2026-10-21T08:05:54.000Z",
-    "fetchedAt": "2026-10-22T08:58:01.232Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Diese Pilotstudie zum apparativ unterstützten bettseitigen Bewegungstraining in der Frührehabilitati",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha",
-      "Studie"
     ],
     "lang": "de"
   },

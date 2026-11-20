@@ -1,62 +1,5 @@
 [
   {
-    "titleHash": "a6c03896d90beed2fdbcd46ed529a8cd",
-    "score": 4,
-    "topics": [
-      "Berufsverband",
-      "Veranstaltung"
-    ],
-    "reason": "Die Meldung beschreibt die verstärkte Präsenz von Physiotherapie in einer regionalen Gesundheitsregi",
-    "createdAt": "2026-10-20T14:33:13.326Z"
-  },
-  {
-    "titleHash": "80a1f04c908ac07cd40803cf0dd6f43c",
-    "score": 0,
-    "topics": [
-      "Sportphysiotherapie",
-      "Veranstaltung",
-      "Fortbildung"
-    ],
-    "reason": "Die Meldung kündigt eine Konferenz im Bereich Sportmedizin an. Auch wenn Sportphysiotherapie ein Tei",
-    "createdAt": "2026-10-20T14:33:13.326Z"
-  },
-  {
-    "titleHash": "76990f69ec31afe086f567d62b05fb09",
-    "score": 0,
-    "topics": [],
-    "reason": "Kein direkter Bezug zur physiotherapeutischen Praxis. Die Auszeichnung eines Journalistenpreises für",
-    "createdAt": "2026-10-20T19:41:06.208Z"
-  },
-  {
-    "titleHash": "edbd4ae570afb2f7a18c19d9bb75b80b",
-    "score": 2,
-    "topics": [
-      "Pädiatrie",
-      "Sturzprävention",
-      "Bewegungstherapie"
-    ],
-    "reason": "Die Meldung thematisiert Bewegungsmangel bei Kindern, was ein wichtiges Thema für die Prävention und",
-    "createdAt": "2026-10-21T08:55:55.849Z"
-  },
-  {
-    "titleHash": "36fbf3175568ca3ddfa848d250ca63a4",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel ist reißerisch und hat keinen erkennbaren Bezug zur fachlichen Arbeit, Abrechnung, Ausbild",
-    "createdAt": "2026-10-21T08:55:55.849Z"
-  },
-  {
-    "titleHash": "feb4991148d9ea6061bc46f11fcd0f1e",
-    "score": 7,
-    "topics": [
-      "Studie",
-      "Leitlinie",
-      "Fortbildung"
-    ],
-    "reason": "Die Meldung thematisiert die Notwendigkeit besserer Forschung in der Physiotherapie. Dies kann mitte",
-    "createdAt": "2026-10-21T08:55:55.849Z"
-  },
-  {
     "titleHash": "68f5237f25fc839b9f88c1ba3c3b0cc8",
     "score": 7,
     "topics": [
@@ -2013,5 +1956,136 @@
     "topics": [],
     "reason": "Der Titel 'BETRUG im Gesundheitswesen 2024 - Teil 4' ist zu allgemein. Ohne spezifischen Bezug zur P",
     "createdAt": "2026-11-19T12:16:53.844Z"
+  },
+  {
+    "titleHash": "102e12b183c4f8c32624bd5b56911cfa",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Berufsausbildung"
+    ],
+    "reason": "Die Meldung thematisiert die Nachwuchsgewinnung in der Physiotherapie, was für die zukünftige Person",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "238e0c0ec9db765476661929f2674b24",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung über den Einsatz von KI zur Content-Erstellung ist für Physiotherapeut:innen in der Prax",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "dc5ec8a4dd1c1076690e6b3212157ca7",
+    "score": 4,
+    "topics": [
+      "Wirbelsäule",
+      "Schulter",
+      "Knie"
+    ],
+    "reason": "Die Meldung über die Orthopädie und ihre Zukunftsperspektiven ist für Physiotherapeut:innen nur mitt",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "576c9f33eca88cb81cf0670d02f5260a",
+    "score": 0,
+    "topics": [
+      "Veranstaltung",
+      "Cochrane-Review"
+    ],
+    "reason": "Die Ankündigung eines internationalen Cochrane-Kolloquiums ist eine reine Veranstaltungsankündigung ",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "b3200858bd1837762916595f4824f515",
+    "score": 7,
+    "topics": [
+      "Berufsverband",
+      "Studie",
+      "Cochrane-Review"
+    ],
+    "reason": "Die Meldung über die mögliche Nicht-Weiterfinanzierung der Cochrane Deutschland Stiftung und die For",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "59e0ed213538a4eae145e1abb1733b05",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie",
+      "Reha",
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung über die MEDICA MEDICINE + SPORTS CONFERENCE ist eine reine Veranstaltungsankündigung. A",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "6c05a61d9a04e476e1d6c9eadb326c0c",
+    "score": 0,
+    "topics": [
+      "Sturzprävention"
+    ],
+    "reason": "Die Meldung über eine Kampagne zum Alkoholverzicht ist ein allgemeines Gesundheitsthema ohne direkte",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "879cf44fc34de6f08b2baf020d20f5fb",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung 'Training präzise begründen' könnte für Physiotherapeut:innen relevant sein, wenn sie si",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "a50980e895281b5591daf4852188369a",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "ec38748e77ad61d69df461cbaca39487",
+    "score": 9,
+    "topics": [
+      "Heilmittelversorgung",
+      "Praxisgründung"
+    ],
+    "reason": "Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "a42c10241dd77b97900f3b532aa3a12f",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Reha"
+    ],
+    "reason": "Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "ffe8c51c640a2cff09c928ed14cc2ec8",
+    "score": 7,
+    "topics": [
+      "Berufsausbildung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
+    "createdAt": "2026-11-20T12:16:12.186Z"
+  },
+  {
+    "titleHash": "54ba201b82c44cf2ccb09612767ea249",
+    "score": 7,
+    "topics": [
+      "Manuelle Therapie",
+      "Fortbildung"
+    ],
+    "reason": "Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
+    "createdAt": "2026-11-20T12:16:12.186Z"
   }
 ]
