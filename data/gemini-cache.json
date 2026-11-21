@@ -1,55 +1,5 @@
 [
   {
-    "titleHash": "a96e42ee3c2e24d4c29272ec9fb43639",
-    "score": 7,
-    "topics": [
-      "Sportphysiotherapie",
-      "Studie",
-      "Fortbildung"
-    ],
-    "reason": "Die Umfrage von Physio Deutschland (ZVK) zur akuten Sprunggelenksdistorsion richtet sich direkt an P",
-    "createdAt": "2026-10-22T08:58:07.303Z"
-  },
-  {
-    "titleHash": "70e48f60eafbf95c0a037c326ecbb92f",
-    "score": 0,
-    "topics": [
-      "Fortbildung",
-      "Veranstaltung"
-    ],
-    "reason": "Ein Podcast des VPT NRW über Haltung ist keine direkte Änderung der Arbeit, Abrechnung, Ausbildung o",
-    "createdAt": "2026-10-22T08:58:07.303Z"
-  },
-  {
-    "titleHash": "0bc07fa478959e5578bce447a378e5fc",
-    "score": 0,
-    "topics": [],
-    "reason": "Der Titel 'In der Kürze liegt die Würze!' aus dem Physio.de Newsletter-Archiv ist zu allgemein und l",
-    "createdAt": "2026-10-22T08:58:07.303Z"
-  },
-  {
-    "titleHash": "ca9faa33fa592434fd015a5ef9a8c2ba",
-    "score": 7,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha",
-      "Studie"
-    ],
-    "reason": "Diese Pilotstudie zum apparativ unterstützten bettseitigen Bewegungstraining in der Frührehabilitati",
-    "createdAt": "2026-10-22T08:58:07.303Z"
-  },
-  {
-    "titleHash": "865f2338a4efb4f9fe4f52b0eb6da5f2",
-    "score": 7,
-    "topics": [
-      "Neurologie",
-      "Bewegungstherapie",
-      "Studie"
-    ],
-    "reason": "Die Studie zur Wirksamkeit von Bewegungstherapie bei peripherer Fazialisparese ist relevant, da sie ",
-    "createdAt": "2026-10-22T08:58:07.303Z"
-  },
-  {
     "titleHash": "a6c1545a0d999a0cf34b360cf824c672",
     "score": 0,
     "topics": [
@@ -2113,5 +2063,25 @@
     ],
     "reason": "Die Forderung nach weniger, aber besserer Forschung in der Physiotherapie ist klar relevant, da sie ",
     "createdAt": "2026-11-20T17:35:15.031Z"
+  },
+  {
+    "titleHash": "68f5237f25fc839b9f88c1ba3c3b0cc8",
+    "score": 4,
+    "topics": [
+      "Lymphdrainage",
+      "Fortbildung"
+    ],
+    "reason": "Der Titel suggeriert einen Austausch über die Weiterentwicklung der Lymphologie. Ohne weitere Detail",
+    "createdAt": "2026-11-21T11:51:43.278Z"
+  },
+  {
+    "titleHash": "71e7234253f242b1148a80d2a72d116c",
+    "score": 4,
+    "topics": [
+      "Wirbelsäule",
+      "Arthrose"
+    ],
+    "reason": "Der Titel ist zu unspezifisch. 'Wenn es nachts knirscht und reibt' könnte sich auf Gelenkbeschwerden",
+    "createdAt": "2026-11-21T11:51:43.278Z"
   }
 ]

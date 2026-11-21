@@ -1,94 +1,115 @@
 [
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-20T17:35:12.578Z",
-    "fetchedAt": "2026-11-20T17:35:12.581Z",
-    "relevanceScore": 9,
+    "publishedAt": "2026-11-21T11:51:41.385Z",
+    "fetchedAt": "2026-11-21T11:51:41.386Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
-    "isTopNews": true,
+    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
+    "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
+      "Fortbildung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-21T11:51:41.384Z",
+    "fetchedAt": "2026-11-21T11:51:41.386Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-20T17:35:12.577Z",
-    "fetchedAt": "2026-11-20T17:35:12.581Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-11-21T11:51:41.380Z",
+    "fetchedAt": "2026-11-21T11:51:41.386Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
+    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Berufsverband"
+      "Reha"
     ],
     "lang": "de"
   },
   {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-11-20T17:35:12.576Z",
-    "fetchedAt": "2026-11-20T17:35:12.581Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-20T17:35:12.575Z",
-    "fetchedAt": "2026-11-20T17:35:12.581Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-20T17:35:12.571Z",
-    "fetchedAt": "2026-11-20T17:35:12.581Z",
+    "publishedAt": "2026-11-21T11:51:41.379Z",
+    "fetchedAt": "2026-11-21T11:51:41.386Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
-    "isTopNews": true,
+    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
+    "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "GKV-Vergütung"
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-21T11:51:41.377Z",
+    "fetchedAt": "2026-11-21T11:51:41.386Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "isTopNews": true,
+    "topics": [
+      "GKV-Vergütung",
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "72492fa57630f57aff8cc0502b0350fa14d8889b7690615b3267c89dd613cf0a",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Wenn es nachts knirscht und reibt",
+    "summary": "Die Bewertung der Physiotherapie in der aktuellen Buxismus-Leitlinie wurde um eine Stufe erhöht.",
+    "url": "https://physio.de/community/news/wenn-es-nachts-knirscht-und-reibt/99/12022/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-21T08:51:37.682Z",
+    "fetchedAt": "2026-11-21T11:51:37.686Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der Titel ist zu unspezifisch. 'Wenn es nachts knirscht und reibt' könnte sich auf Gelenkbeschwerden",
+    "isTopNews": false,
+    "topics": [
+      "Wirbelsäule",
+      "Arthrose"
     ],
     "lang": "de"
   },
@@ -178,7 +199,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Hintere Kreuzbandruptur: Neue S2k-Leitlinie veröffentlicht",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "Knie",
       "S2k-Leitlinie"
@@ -492,25 +513,6 @@
     "relevanceReason": "keyword (gray): src:+3",
     "isTopNews": false,
     "topics": [],
-    "lang": "de"
-  },
-  {
-    "id": "9f46a7e29c6cadf9ec995fb0d6b4f38c33ee7b0570140006920fdd0af1e79f2a",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Modifizierte Constraint-Induced Movement Therapie (m-CIMT)",
-    "summary": "Meta-Analyse zeigt Effektivität.",
-    "url": "https://physio.de/community/news/modifizierte-constraint-induced-movement-therapie-m-cimt/99/12018/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-16T23:09:42.596Z",
-    "fetchedAt": "2026-11-17T08:09:42.602Z",
-    "relevanceScore": 5,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung bezieht sich auf eine spezifische Therapiemethode (m-CIMT). Da es sich um eine Modifikat",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha"
-    ],
     "lang": "de"
   },
   {
