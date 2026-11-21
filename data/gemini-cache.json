@@ -1,25 +1,5 @@
 [
   {
-    "titleHash": "a6c1545a0d999a0cf34b360cf824c672",
-    "score": 0,
-    "topics": [
-      "Heilmittelversorgung",
-      "Berufsverband"
-    ],
-    "reason": "Der elektronische Institutionenausweis ist ein administratives Werkzeug für Leistungserbringer und h",
-    "createdAt": "2026-10-22T14:43:31.178Z"
-  },
-  {
-    "titleHash": "d351cf8c61e366ce1c7f0eabc679cbed",
-    "score": 7,
-    "topics": [
-      "Berufsverband",
-      "Fortbildung"
-    ],
-    "reason": "Die Rekrutierung internationaler Fachkräfte kann die Personalsituation in physiotherapeutischen Prax",
-    "createdAt": "2026-10-22T14:43:31.178Z"
-  },
-  {
     "titleHash": "dee2ff78a2411aa1776ed45faf369388",
     "score": 7,
     "topics": [
@@ -2083,5 +2063,27 @@
     ],
     "reason": "Der Titel ist zu unspezifisch. 'Wenn es nachts knirscht und reibt' könnte sich auf Gelenkbeschwerden",
     "createdAt": "2026-11-21T11:51:43.278Z"
+  },
+  {
+    "titleHash": "ca9faa33fa592434fd015a5ef9a8c2ba",
+    "score": 6,
+    "topics": [
+      "Bewegungstherapie",
+      "Reha",
+      "Studie"
+    ],
+    "reason": "Die Meldung beschreibt eine Pilotstudie zu apparativ unterstütztem Bewegungstraining in der Frühreha",
+    "createdAt": "2026-11-21T18:20:32.950Z"
+  },
+  {
+    "titleHash": "865f2338a4efb4f9fe4f52b0eb6da5f2",
+    "score": 7,
+    "topics": [
+      "Neurologie",
+      "Bewegungstherapie",
+      "Studie"
+    ],
+    "reason": "Die Meldung befasst sich mit der Wirksamkeit von Bewegungstherapie bei peripherer Fazialisparese. Di",
+    "createdAt": "2026-11-21T18:20:32.950Z"
   }
 ]
