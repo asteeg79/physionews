@@ -1,40 +1,5 @@
 [
   {
-    "titleHash": "dee2ff78a2411aa1776ed45faf369388",
-    "score": 7,
-    "topics": [
-      "Heilmittelversorgung",
-      "Berufsverband"
-    ],
-    "reason": "Der IFK (Interessenverband für freie Physiotherapeuten) berichtet über Maßnahmen zur Bürokratieentla",
-    "createdAt": "2026-10-22T19:19:50.430Z"
-  },
-  {
-    "titleHash": "e69d348c2d313ed15566480f0e08e64c",
-    "score": 0,
-    "topics": [
-      "Bewegungstherapie"
-    ],
-    "reason": "Der Titel 'Die ganze Welt der Bewegung' ist zu allgemein und bietet keinen spezifischen Bezug zu Änd",
-    "createdAt": "2026-10-22T19:19:50.430Z"
-  },
-  {
-    "titleHash": "74fdc39b9d406aa734c22e279c05edd4",
-    "score": 0,
-    "topics": [
-      "Veranstaltung"
-    ],
-    "reason": "Ankündigung einer Veranstaltung, die keinen direkten Einfluss auf die Arbeit von Physiotherapeut:inn",
-    "createdAt": "2026-10-23T08:53:08.898Z"
-  },
-  {
-    "titleHash": "77efc5c624a1a06e5ef3ea7d8f6a68af",
-    "score": 0,
-    "topics": [],
-    "reason": "Allgemeine Aussage über die Bedeutung von Pflegekräften, ohne direkten Bezug zur physiotherapeutisch",
-    "createdAt": "2026-10-23T08:53:08.898Z"
-  },
-  {
     "titleHash": "253f6d89a06d2dfbda497ea45479c77b",
     "score": 4,
     "topics": [
