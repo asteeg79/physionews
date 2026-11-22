@@ -1,22 +1,5 @@
 [
   {
-    "titleHash": "253f6d89a06d2dfbda497ea45479c77b",
-    "score": 4,
-    "topics": [
-      "Sturzprävention",
-      "Geriatrie"
-    ],
-    "reason": "Die Meldung thematisiert Sturzprävention bei älteren Menschen, was zwar einen Bezug zur Physiotherap",
-    "createdAt": "2026-10-23T14:30:00.003Z"
-  },
-  {
-    "titleHash": "ae20f5966293a73ef54700369b339081",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Meldung über das Interesse an Fördermitteln aus dem Innovationsfonds betrifft die allgemeine Ges",
-    "createdAt": "2026-10-23T14:30:00.003Z"
-  },
-  {
     "titleHash": "ceceef4483e7292b3a087169b7b0cf1f",
     "score": 7,
     "topics": [
@@ -2050,5 +2033,39 @@
     ],
     "reason": "Die Meldung befasst sich mit der Wirksamkeit von Bewegungstherapie bei peripherer Fazialisparese. Di",
     "createdAt": "2026-11-21T18:20:32.950Z"
+  },
+  {
+    "titleHash": "0c91bcf289c796548944c9eda9f08a96",
+    "score": 0,
+    "topics": [],
+    "reason": "Die Meldung bezieht sich auf eine allgemeine Wetterlage und hat keinen direkten Bezug zur physiother",
+    "createdAt": "2026-11-22T20:30:08.855Z"
+  },
+  {
+    "titleHash": "7b45a379ae8910f289a152840925eaec",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Meldung thematisiert Diabetes, was indirekt mit Physiotherapie zu tun hat (Bewegungstherapie bei",
+    "createdAt": "2026-11-22T20:30:08.855Z"
+  },
+  {
+    "titleHash": "d99f22aa5c2e658a5d3f55c4252c1e39",
+    "score": 0,
+    "topics": [
+      "Veranstaltung"
+    ],
+    "reason": "Die Meldung ist eine Ankündigung einer Zeitschrift und keine inhaltliche Information, die die physio",
+    "createdAt": "2026-11-22T20:30:08.855Z"
+  },
+  {
+    "titleHash": "ef13482b4f43c1ddf527b0a5988c17a6",
+    "score": 4,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Meldung erwähnt ein Therapiegerät, das die Effizienz steigern soll. Ohne weitere Details zur kon",
+    "createdAt": "2026-11-22T20:30:08.855Z"
   }
 ]
