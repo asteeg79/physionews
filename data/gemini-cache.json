@@ -1,25 +1,5 @@
 [
   {
-    "titleHash": "ceceef4483e7292b3a087169b7b0cf1f",
-    "score": 7,
-    "topics": [
-      "Berufsverband",
-      "Berufsausbildung"
-    ],
-    "reason": "Der Entwurf eines neuen Berufsgesetzes für Physiotherapeuten ist ein wichtiges Thema für die Berufsp",
-    "createdAt": "2026-10-24T05:45:52.858Z"
-  },
-  {
-    "titleHash": "7799591d3c42161608286d769cc56159",
-    "score": 7,
-    "topics": [
-      "Berufsverband",
-      "Berufsausbildung"
-    ],
-    "reason": "Der Referenten-Entwurf eines neuen Berufsgesetzes für Physiotherapeuten ist ein wichtiger Schritt, d",
-    "createdAt": "2026-10-24T08:27:12.505Z"
-  },
-  {
     "titleHash": "dc28a17e63021bd30dadc253b3f45da8",
     "score": 7,
     "topics": [
@@ -2067,5 +2047,66 @@
     ],
     "reason": "Die Meldung erwähnt ein Therapiegerät, das die Effizienz steigern soll. Ohne weitere Details zur kon",
     "createdAt": "2026-11-22T20:30:08.855Z"
+  },
+  {
+    "titleHash": "bc0394c69b4c16f2430b19ed1ae4c9e7",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Fortbildung"
+    ],
+    "reason": "Die Digitalisierung in der Physiotherapie birgt neue Regeln und Chancen, die sich direkt auf die Vor",
+    "createdAt": "2026-11-23T13:45:41.769Z"
+  },
+  {
+    "titleHash": "64fd8277deb1bc409b7f157adbd01ad2",
+    "score": 0,
+    "topics": [
+      "Wirbelsäule",
+      "Fortbildung"
+    ],
+    "reason": "Ein Podcast über Haltung ist für Physiotherapeuten nicht unmittelbar relevant, da er keine konkreten",
+    "createdAt": "2026-11-23T13:45:41.769Z"
+  },
+  {
+    "titleHash": "253f6d89a06d2dfbda497ea45479c77b",
+    "score": 5,
+    "topics": [
+      "Geriatrie",
+      "Sturzprävention",
+      "Bewegungstherapie"
+    ],
+    "reason": "Die Meldung thematisiert Sturzprävention bei älteren Menschen, was ein relevantes Thema für die Phys",
+    "createdAt": "2026-11-23T13:45:41.769Z"
+  },
+  {
+    "titleHash": "b73ef5802a390b829b9d3f918a6154f1",
+    "score": 0,
+    "topics": [
+      "Sportphysiotherapie",
+      "Veranstaltung"
+    ],
+    "reason": "Ein Rückblick auf einen Kongress für Sportmedizin ist nicht unmittelbar relevant für die tägliche Pr",
+    "createdAt": "2026-11-23T13:45:41.769Z"
+  },
+  {
+    "titleHash": "fc01377c6a198f8fd0867e9f7951a735",
+    "score": 4,
+    "topics": [
+      "Wirbelsäule",
+      "Bewegungstherapie",
+      "Reha"
+    ],
+    "reason": "Der Begriff 'Instabiles Powerhouse' könnte sich auf Rumpfstabilität beziehen, was ein Thema in der P",
+    "createdAt": "2026-11-23T13:45:41.769Z"
+  },
+  {
+    "titleHash": "eb90f4e616162d6ad146ac14e489f924",
+    "score": 0,
+    "topics": [
+      "Studie"
+    ],
+    "reason": "Eine Datenbank zu Krebs­erkrankungen hat keinen direkten Bezug zur Arbeit, Abrechnung, Ausbildung od",
+    "createdAt": "2026-11-23T13:45:41.769Z"
   }
 ]

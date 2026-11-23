@@ -1,94 +1,135 @@
 [
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-22T20:30:05.799Z",
-    "fetchedAt": "2026-11-22T20:30:05.802Z",
-    "relevanceScore": 9,
+    "publishedAt": "2026-11-23T13:45:39.119Z",
+    "fetchedAt": "2026-11-23T13:45:39.120Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
-    "isTopNews": true,
+    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
+    "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
+      "Fortbildung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-23T13:45:39.118Z",
+    "fetchedAt": "2026-11-23T13:45:39.120Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-11-22T20:30:05.798Z",
-    "fetchedAt": "2026-11-22T20:30:05.802Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-22T20:30:05.797Z",
-    "fetchedAt": "2026-11-22T20:30:05.802Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-22T20:30:05.795Z",
-    "fetchedAt": "2026-11-22T20:30:05.802Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-22T20:30:05.790Z",
-    "fetchedAt": "2026-11-22T20:30:05.802Z",
+    "publishedAt": "2026-11-23T13:45:39.113Z",
+    "fetchedAt": "2026-11-23T13:45:39.120Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
-    "isTopNews": true,
+    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
+    "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "GKV-Vergütung"
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-23T13:45:39.113Z",
+    "fetchedAt": "2026-11-23T13:45:39.120Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Reha"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-23T13:45:39.111Z",
+    "fetchedAt": "2026-11-23T13:45:39.120Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "isTopNews": true,
+    "topics": [
+      "GKV-Vergütung",
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "a9fafb7f2a2e04d97fc55dd1c80959f1a9e9881a3f61054a60e7b08041c96cd5",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Treffpunkt Führungskräfte: Digitalisierung in der Physiotherapie – Neue Regeln, neue Chancen: Was jetzt kommt – und wie ihr eure Praxis vorbereitet",
+    "summary": null,
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/tpf-dezember.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/e/3/csm_261124_-_TPF_3606da0185.png",
+    "publishedAt": "2026-11-23T12:00:00.000Z",
+    "fetchedAt": "2026-11-23T13:45:33.983Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Digitalisierung in der Physiotherapie birgt neue Regeln und Chancen, die sich direkt auf die Vor",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung",
+      "Fortbildung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "9c3e0e26129ba6ead3650cfd509565187220f0d874eb221048da2acbb2cc80c3",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Instabiles Powerhouse",
+    "summary": "Ist der feste Bauch beim Pilates überbewertet?",
+    "url": "https://physio.de/community/news/instabiles-powerhouse/99/12071/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-23T09:45:35.702Z",
+    "fetchedAt": "2026-11-23T13:45:35.705Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der Begriff 'Instabiles Powerhouse' könnte sich auf Rumpfstabilität beziehen, was ein Thema in der P",
+    "isTopNews": false,
+    "topics": [
+      "Wirbelsäule",
+      "Bewegungstherapie",
+      "Reha"
     ],
     "lang": "de"
   },
@@ -197,7 +238,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Hintere Kreuzbandruptur: Neue S2k-Leitlinie veröffentlicht",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "Knie",
       "S2k-Leitlinie"
@@ -239,22 +280,6 @@
     "topics": [
       "Berufsausbildung"
     ],
-    "lang": "de"
-  },
-  {
-    "id": "5483a520fb45d39e74f0613a90f40ee6547889c6aad7b93df022a16f3faea455",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Zweistelliger Stimmungsrückgang bei HeilberuflerInnen",
-    "summary": "Politik, aktuelle Ereignisse und Verwaltungsaufwand trüben die Gemütslage.",
-    "url": "https://physio.de/community/news/zweistelliger-stimmungsrueckgang-bei-heilberuflerinnen/99/12056/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-18T12:12:05.137Z",
-    "fetchedAt": "2026-11-18T12:22:05.139Z",
-    "relevanceScore": 5,
-    "relevanceMethod": "keyword",
-    "relevanceReason": "keyword (gray): neutral",
-    "isTopNews": false,
-    "topics": [],
     "lang": "de"
   },
   {
