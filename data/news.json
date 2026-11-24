@@ -1,96 +1,191 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-11-23T13:45:39.119Z",
-    "fetchedAt": "2026-11-23T13:45:39.120Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-24T14:21:26.487Z",
+    "fetchedAt": "2026-11-24T14:21:26.494Z",
+    "relevanceScore": 8,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
+    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Fortbildung"
+      "Berufsverband"
     ],
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-11-23T13:45:39.118Z",
-    "fetchedAt": "2026-11-23T13:45:39.120Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-24T14:21:26.487Z",
+    "fetchedAt": "2026-11-24T14:21:26.494Z",
+    "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
+    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
     "isTopNews": false,
     "topics": [
-      "Berufsausbildung",
+      "Manuelle Therapie",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-11-23T13:45:39.113Z",
-    "fetchedAt": "2026-11-23T13:45:39.120Z",
+    "publishedAt": "2026-11-24T14:21:26.485Z",
+    "fetchedAt": "2026-11-24T14:21:26.494Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-24T14:21:26.484Z",
+    "fetchedAt": "2026-11-24T14:21:26.494Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-24T14:21:26.480Z",
+    "fetchedAt": "2026-11-24T14:21:26.494Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
+    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "Praxisgründung"
+      "GKV-Vergütung"
     ],
     "lang": "de"
   },
   {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "id": "7437b28bf860074c2b82ee395d966709236c3bd5b4abc989cb5d03d0e7102411",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Vergütung für Physiotherapie steigt um 2,83 Prozent",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-23T13:45:39.113Z",
-    "fetchedAt": "2026-11-23T13:45:39.120Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
-    "isTopNews": false,
-    "topics": [
-      "Manuelle Therapie",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-23T13:45:39.111Z",
-    "fetchedAt": "2026-11-23T13:45:39.120Z",
+    "url": "https://www.ifk.de/artikel/verguetung-fuer-physiotherapie-steigt-um-283-prozent",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/M%C3%BCnzstapel_2_shutterstock_213230914_IM.jpg?itok=NKt-unRV",
+    "publishedAt": "2026-11-24T12:00:00.000Z",
+    "fetchedAt": "2026-11-24T14:21:19.173Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "relevanceReason": "ai: Die Vergütung für Physiotherapie steigt um 2,83 Prozent. Dies hat direkte Auswirkungen auf die Einna",
     "isTopNews": true,
     "topics": [
       "GKV-Vergütung",
-      "Praxisgründung"
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "911f283f52c0398634262b345150c413d5521a0f8462a9aabff5209b8d86b5c6",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Vergütung für Physiotherapie steigt um 2,83 Prozent",
+    "summary": null,
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/verguetung-fuer-physiotherapie-steigt-um-283-prozent.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/1/7/csm_Verg%C3%BCtung_Homepage_fe5455d156.png",
+    "publishedAt": "2026-11-24T12:00:00.000Z",
+    "fetchedAt": "2026-11-24T14:21:19.901Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Eine Erhöhung der Vergütung für Physiotherapie um 2,83 Prozent beeinflusst direkt die finanzielle Si",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "5a69c18f7e6c10e7b881ae705043dc37c8c6f3485001322be94607f0c25707e0",
+    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
+    "title": "Vergütung für Physiotherapie steigt um 2,83 Prozent",
+    "summary": null,
+    "url": "https://www.vpt.de/aktuelles/news-ansicht/verguetung-fuer-physiotherapie-steigt-um-283-prozent/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-24T12:00:00.000Z",
+    "fetchedAt": "2026-11-24T14:21:20.343Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Vergütung für Physiotherapie steigt um 2,83 Prozent. Dies ist eine direkte finanzielle Auswirkun",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "9267d40825caa555368d8c6219d10a5eacdb7aba400406798c4b2195d095219e",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Thüringen will den zusätzlichen Vergütungsabschlag zurücknehmen",
+    "summary": "Aufruf den Freistaat Thüringen in seinem Bestreben zu unterstützen",
+    "url": "https://physio.de/community/news/thueringen-will-den-zusaetzlichen-verguetungsabschlag-zuruecknehmen/99/12085/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-24T11:21:22.363Z",
+    "fetchedAt": "2026-11-24T14:21:22.369Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Rücknahme eines zusätzlichen Vergütungsabschlags in Thüringen hat direkte Auswirkungen auf die E",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "ede576dbd5a058fdc8126e892fdbda3cfb88e40139d6ef41645c3e94d4ff1144",
+    "sourceId": "b43fd6db-d99d-4a61-9bbc-ec5520a400f9",
+    "title": "Vergütung Physiotherapie steigt 2027 um 2,83 Prozent",
+    "summary": null,
+    "url": "https://physio.nrw/vergutung-physiotherapie-steigt-2027-um-2-83-prozent/",
+    "imageUrl": "https://physio.nrw/content/images/size/w600/2026/11/Bild1-1.jpg",
+    "publishedAt": "2026-11-24T00:00:00.000Z",
+    "fetchedAt": "2026-11-24T14:21:19.750Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Ankündigung einer Vergütungssteigerung für Physiotherapie um 2,83 Prozent ab 2027 ist für die Pl",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung",
+      "Berufsverband"
     ],
     "lang": "de"
   },
@@ -114,6 +209,25 @@
     "lang": "de"
   },
   {
+    "id": "877ae9290325df7ad57e388912c151236a6707ce833b11ca131450199eeb5711",
+    "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
+    "title": "German Translation, Cross-cultural Adaptation and Psychometric Evaluation of the Dutch Blended Physiotherapy ChecklistDeutsche Übersetzung, interkulturelle Anpassung und psychometrische Prüfung der Dutch Blended Physiotherapy Checklist",
+    "summary": "The digitalization of healthcare in Germany is advancing, also through new legislative frameworks, enabling telemedicine services as part of routine physiotherapy care. Blended physiotherapy describes a hybrid model of care that systematically integrates in-person treatments with digital components. Despite established structural prerequisites, validated decision-making instruments for planning b…",
+    "url": "http://dx.doi.org/10.1055/a-2967-6786",
+    "imageUrl": null,
+    "publishedAt": "2026-11-23T10:15:29.000Z",
+    "fetchedAt": "2026-11-24T14:21:26.077Z",
+    "relevanceScore": 5,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Übersetzung und Anpassung eines Fragebogens zur 'Blended Physiotherapy' könnte mittelbar relevan",
+    "isTopNews": false,
+    "topics": [
+      "Fortbildung",
+      "Studie"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "9c3e0e26129ba6ead3650cfd509565187220f0d874eb221048da2acbb2cc80c3",
     "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
     "title": "Instabiles Powerhouse",
@@ -130,6 +244,24 @@
       "Wirbelsäule",
       "Bewegungstherapie",
       "Reha"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "5483a520fb45d39e74f0613a90f40ee6547889c6aad7b93df022a16f3faea455",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Zweistelliger Stimmungsrückgang bei HeilberuflerInnen",
+    "summary": "Politik, aktuelle Ereignisse und Verwaltungsaufwand trüben die Gemütslage.",
+    "url": "https://physio.de/community/news/zweistelliger-stimmungsrueckgang-bei-heilberuflerinnen/99/12056/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-22T14:21:22.365Z",
+    "fetchedAt": "2026-11-24T14:21:22.369Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein zweistelliger Stimmungsrückgang bei HeilberuflerInnen ist zwar ein Indikator für Unzufriedenheit",
+    "isTopNews": false,
+    "topics": [
+      "Berufsverband"
     ],
     "lang": "de"
   },
@@ -238,47 +370,10 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Hintere Kreuzbandruptur: Neue S2k-Leitlinie veröffentlicht",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Knie",
       "S2k-Leitlinie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "a28ab94388a1f0f0f7553694f46c5e68f792827c48099a2a05095a4e406a8409",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Was begünstigt die Teilnahme an langfristigen Übungsprogrammen?",
-    "summary": "Hürden und Förderfaktoren für das Starten und die Therapietreue eines einjährigen Bewegungstrainings.",
-    "url": "https://physio.de/community/news/was-beguenstigt-die-teilnahme-an-langfristigen-uebungsprogrammen/99/12033/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-18T23:16:29.967Z",
-    "fetchedAt": "2026-11-19T12:16:29.971Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Was begünstigt die Teilnahme an langfristigen Übungsprogrammen?",
-    "isTopNews": false,
-    "topics": [
-      "Bewegungstherapie",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "cf7a3580f649b631eb90b047f34588080b9f1ed7dc3a52f01d8599b26e603986",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Zukünftige Physio-Ausbildung",
-    "summary": "Wer lernt, bekommt Geld. Wer studiert, nicht.",
-    "url": "https://physio.de/community/news/zukuenftige-physio-ausbildung/99/12072/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-18T12:16:03.181Z",
-    "fetchedAt": "2026-11-20T12:16:03.185Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung kündigt Änderungen in der zukünftigen Ausbildung für Physiotherapeut:innen an. Dies betr",
-    "isTopNews": false,
-    "topics": [
-      "Berufsausbildung"
     ],
     "lang": "de"
   },
@@ -438,7 +533,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +strong:physiotherap | +med:arthrose,gonarthrose | src:+3",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [],
     "lang": "de"
   },

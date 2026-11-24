@@ -2108,5 +2108,72 @@
     ],
     "reason": "Eine Datenbank zu Krebs­erkrankungen hat keinen direkten Bezug zur Arbeit, Abrechnung, Ausbildung od",
     "createdAt": "2026-11-23T13:45:41.769Z"
+  },
+  {
+    "titleHash": "fae6c20712d66c257a0b262029b382b6",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Vergütung für Physiotherapie steigt um 2,83 Prozent. Dies hat direkte Auswirkungen auf die Einna",
+    "createdAt": "2026-11-24T14:21:30.007Z"
+  },
+  {
+    "titleHash": "8e0391eb1e9645f792d1b60a3c8116bb",
+    "score": 9,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Die Ankündigung einer Vergütungssteigerung für Physiotherapie um 2,83 Prozent ab 2027 ist für die Pl",
+    "createdAt": "2026-11-24T14:21:30.007Z"
+  },
+  {
+    "titleHash": "802542abd6a6261c462a9d2e72643cad",
+    "score": 0,
+    "topics": [
+      "Sturzprävention",
+      "Geriatrie"
+    ],
+    "reason": "Die Meldung über Stürze, Dehydration und Beruhigungsmittel in verschiedenen Bundesländern hat keinen",
+    "createdAt": "2026-11-24T14:21:30.007Z"
+  },
+  {
+    "titleHash": "97b8a26ac838567506c7c3398d309e45",
+    "score": 8,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Die Rücknahme eines zusätzlichen Vergütungsabschlags in Thüringen hat direkte Auswirkungen auf die E",
+    "createdAt": "2026-11-24T14:21:30.007Z"
+  },
+  {
+    "titleHash": "cbfd665d3a1d6fdde1dbddd824e493d1",
+    "score": 4,
+    "topics": [
+      "Berufsverband"
+    ],
+    "reason": "Ein zweistelliger Stimmungsrückgang bei HeilberuflerInnen ist zwar ein Indikator für Unzufriedenheit",
+    "createdAt": "2026-11-24T14:21:30.007Z"
+  },
+  {
+    "titleHash": "791aff83670312bb95039b4e5ca5e573",
+    "score": 0,
+    "topics": [],
+    "reason": "Ein 'Gespräch mit Wolfhard Savoy' ist eine Ankündigung oder ein Bericht über eine Person, ohne dass ",
+    "createdAt": "2026-11-24T14:21:30.007Z"
+  },
+  {
+    "titleHash": "22b414119428cb9930f115e54f47263f",
+    "score": 5,
+    "topics": [
+      "Fortbildung",
+      "Studie"
+    ],
+    "reason": "Die Übersetzung und Anpassung eines Fragebogens zur 'Blended Physiotherapy' könnte mittelbar relevan",
+    "createdAt": "2026-11-24T14:21:30.007Z"
   }
 ]
