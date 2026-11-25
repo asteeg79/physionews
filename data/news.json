@@ -1,94 +1,134 @@
 [
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-24T14:21:26.487Z",
-    "fetchedAt": "2026-11-24T14:21:26.494Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-11-25T13:40:06.734Z",
+    "fetchedAt": "2026-11-25T13:40:06.734Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
+    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Berufsverband"
+      "Fortbildung"
     ],
     "lang": "de"
   },
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-11-24T14:21:26.487Z",
-    "fetchedAt": "2026-11-24T14:21:26.494Z",
-    "relevanceScore": 9,
+    "publishedAt": "2026-11-25T13:40:06.732Z",
+    "fetchedAt": "2026-11-25T13:40:06.734Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
+    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
     "isTopNews": false,
     "topics": [
-      "Manuelle Therapie",
+      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-24T14:21:26.485Z",
-    "fetchedAt": "2026-11-24T14:21:26.494Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-11-25T13:40:06.728Z",
+    "fetchedAt": "2026-11-25T13:40:06.734Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
+    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
     "isTopNews": false,
     "topics": [
-      "GKV-Vergütung"
+      "Manuelle Therapie",
+      "Reha"
     ],
     "lang": "de"
   },
   {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-11-24T14:21:26.484Z",
-    "fetchedAt": "2026-11-24T14:21:26.494Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-24T14:21:26.480Z",
-    "fetchedAt": "2026-11-24T14:21:26.494Z",
+    "publishedAt": "2026-11-25T13:40:06.727Z",
+    "fetchedAt": "2026-11-25T13:40:06.734Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
+    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "GKV-Vergütung"
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-25T13:40:06.725Z",
+    "fetchedAt": "2026-11-25T13:40:06.734Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung",
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "f77ac3e1348df1dc73f933d45777e7b5105f8c29eaaaa45cd3556d9e6bd9d53b",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Physiotherapie reformieren, Zukunft sichern: Physio Deutschland bringt konkrete Vorschläge ein",
+    "summary": null,
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/physiotherapie-reformieren-zukunft-sichern-physio-deutschland-bringt-konkrete-vorschlaege-ein.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/d/2/csm_Berufsgesetz_Homepage_d089142e0c.png",
+    "publishedAt": "2026-11-25T12:00:00.000Z",
+    "fetchedAt": "2026-11-25T13:39:59.999Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Physio Deutschland (ZVK) bringt konkrete Vorschläge zur Reform der Physiotherapie ein, was potenziel",
+    "isTopNews": false,
+    "topics": [
+      "Berufsverband",
+      "Fortbildung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "fb535dc36e46bac19f559f23b08aff4ad62b90ddb0c3212b13501e9e44167993",
+    "sourceId": "080c8549-27aa-4c6f-be77-a748e9dd65c8",
+    "title": "Erster Workshopausblick 2027: Grundlagen der Metaanalysen Die Planung des Workshop-Programms für das kommende Jahr ist noch nicht ganz abgeschlossen, aber die erste Veranstaltung steht schon fest: Vom 18. bis 23. Februar 2027 wird es wieder einen Workshop zu den Grundlagen der Metaanalysen geben. 25 Nov 2026",
+    "summary": null,
+    "url": "https://www.cochrane.de/news/erster-workshopausblick-2027-grundlagen-der-metaanalysen",
+    "imageUrl": "https://www.cochrane.de/sites/cochrane.de/files/styles/grid_image/public/uploads/images/image/adobestock_2099158597quadrat_narong.jpeg.webp?itok=OPF7CpKE",
+    "publishedAt": "2026-11-25T11:59:02.000Z",
+    "fetchedAt": "2026-11-25T13:40:01.371Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der Workshop zu den Grundlagen der Metaanalysen ist eine Fortbildungsveranstaltung, die direkt das f",
+    "isTopNews": false,
+    "topics": [
+      "Meta-Analyse",
+      "Fortbildung"
     ],
     "lang": "de"
   },
@@ -370,7 +410,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Hintere Kreuzbandruptur: Neue S2k-Leitlinie veröffentlicht",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "Knie",
       "S2k-Leitlinie"
@@ -533,7 +573,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +strong:physiotherap | +med:arthrose,gonarthrose | src:+3",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [],
     "lang": "de"
   },
@@ -820,6 +860,24 @@
     "lang": "de"
   },
   {
+    "id": "c0c6acd1c0ce4aba90c9b3254fbaf359cba701044e7e02cae1d0b5a959fa15eb",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Themenbereich Ausbildung & Studium",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xT2FpYTRlcDBtNFZnakxaMS1DVFQxREs4QzNvRl9WeEZSdzQ5cDlTS2FjRHZEVU1Kdl9zR1MyRFo0VEo2NUQ1Zzhwb3lJN0lxVWF3aEI0T1hab3RIV3BheGNVRHREN24tazIyb01lMDJBY2xSWlE?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-11-06T08:00:00.000Z",
+    "fetchedAt": "2026-11-25T13:40:03.192Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der Titel 'Themenbereich Ausbildung & Studium' ist zu allgemein. Ohne weitere Informationen über kon",
+    "isTopNews": false,
+    "topics": [
+      "Berufsausbildung"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "be3a5b5b44efcc4a2eaa4a5d72ba51a91c5af3499aff295f07e71ea8e19e564c",
     "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
     "title": "Umfrage zur physiotherapeutischen Versorgung bei brustkrebsassoziiertem Lymphödem: Erfahrungen aus der Praxis gefragt",
@@ -1006,63 +1064,6 @@
     "isTopNews": false,
     "topics": [
       "Neurologie",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "c7daac6688f9415158628a12578092b463cec2b9c853d145a4804befc26f61a5",
-    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
-    "title": "Gemeinsam über die Zukunft der Physiotherapie sprechen",
-    "summary": null,
-    "url": "https://www.vpt.de/aktuelles/news-ansicht/gemeinsam-ueber-die-zukunft-der-physiotherapie-sprechen/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-26T12:00:00.000Z",
-    "fetchedAt": "2026-10-26T16:20:13.963Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Titel deutet auf eine Diskussion über die Zukunft der Physiotherapie hin, was potenziell Auswirk",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "4ef86da99b42b645c03a89ee0440f64b263d2c2be0827b12249e882d91ddfaf5",
-    "sourceId": "6eae40b7-1931-4027-b7bd-980d8924554b",
-    "title": "Große Qualitätsunterschiede zwischen Kliniken bei Implantation künstlicher Schultergelenke",
-    "summary": "Bei der Implantation von künstlichen Schultergelenken wegen Gelenkverschleiß gibt es große Qualitätsunterschiede zwischen den Kliniken, die an der Versorgung beteiligt sind. Das zeigen Ergebnisse aus der Auswertung von knapp 13.000 Operationen bei AOK-Versicherten, die das WIdO im Rahmen des Verfahrens zur „Qualitätssicherung mit Routinedaten“ (QSR) analysiert hat. Demnach lag die risikoadjustierte Komplikationsrate im Fünftel der am besten abschneidenden Kliniken bei 3,6 Prozent, während sie im Fünftel der am schlechtesten bewerteten Kliniken mit 14,5 Prozent vier Mal so hoch war. Seit heute sind die erstmals veröffentlichten Ergebnisse für die einzelnen Krankenhäuser im Gesundheitsnavigator der AOK abrufbar. > mehr",
-    "url": "https://www.wido.de/news-presse/pressemitteilungen/2026/schultergelenk-implantationen/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-26T00:00:00.000Z",
-    "fetchedAt": "2026-10-26T09:25:21.255Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über Qualitätsunterschiede bei Schultergelenksimplantationen ist für Physiotherapeut:inn",
-    "isTopNews": false,
-    "topics": [
-      "Schulter",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "19c28abd4bc4df0d46a39d40cec9af7b035225af27595c7b114f9a961dc27e92",
-    "sourceId": "6eae40b7-1931-4027-b7bd-980d8924554b",
-    "title": "Große Qualitätsunterschiede zwischen Kliniken bei Implantation künstlicher Schultergelenke",
-    "summary": "Bei der Implantation von künstlichen Schultergelenken wegen Gelenkverschleiß gibt es große Qualitätsunterschiede zwischen den Kliniken, die an der Versorgung beteiligt sind. Das zeigen Ergebnisse aus der Auswertung von knapp 13.000 Operationen bei AOK-Versicherten, die das WIdO im Rahmen des Verfahrens zur „Qualitätssicherung mit Routinedaten“ (QSR) analysiert hat. Demnach lag die risikoadjustierte Komplikationsrate im Fünftel der am besten abschneidenden Kliniken bei 3,6 Prozent, während sie im Fünftel der am schlechtesten bewerteten Kliniken mit 14,5 Prozent viermal so hoch war. Seit heute sind die erstmals veröffentlichten Ergebnisse für die einzelnen Krankenhäuser im Gesundheitsnavigator der AOK abrufbar. > mehr",
-    "url": "https://www.wido.de/news-presse/pressemitteilungen/2026/schultergelenk-implantationen/?L=0",
-    "imageUrl": null,
-    "publishedAt": "2026-10-26T00:00:00.000Z",
-    "fetchedAt": "2026-10-29T10:29:21.451Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über Qualitätsunterschiede bei Schultergelenksimplantationen ist für Physiotherapeut:inn",
-    "isTopNews": false,
-    "topics": [
-      "Schulter",
       "Reha"
     ],
     "lang": "de"
