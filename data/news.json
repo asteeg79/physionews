@@ -1,97 +1,191 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-11-25T13:40:06.734Z",
-    "fetchedAt": "2026-11-25T13:40:06.734Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-26T13:17:20.285Z",
+    "fetchedAt": "2026-11-26T13:17:20.290Z",
+    "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
-    "isTopNews": false,
+    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
+    "isTopNews": true,
     "topics": [
       "Manuelle Therapie",
-      "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-25T13:40:06.732Z",
-    "fetchedAt": "2026-11-25T13:40:06.734Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
-    "isTopNews": false,
-    "topics": [
-      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-11-25T13:40:06.728Z",
-    "fetchedAt": "2026-11-25T13:40:06.734Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-26T13:17:20.284Z",
+    "fetchedAt": "2026-11-26T13:17:20.290Z",
+    "relevanceScore": 8,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
+    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Reha"
+      "Berufsverband"
     ],
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-11-25T13:40:06.727Z",
-    "fetchedAt": "2026-11-25T13:40:06.734Z",
+    "publishedAt": "2026-11-26T13:17:20.282Z",
+    "fetchedAt": "2026-11-26T13:17:20.290Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-26T13:17:20.281Z",
+    "fetchedAt": "2026-11-26T13:17:20.290Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-26T13:17:20.270Z",
+    "fetchedAt": "2026-11-26T13:17:20.290Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
+    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "Praxisgründung"
+      "GKV-Vergütung"
     ],
     "lang": "de"
   },
   {
-    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
+    "id": "5eccace5d8d869908f02df21f08f7888e3d948d25a243220b99ef1e59b2259cc",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Zwei Jahre Blankoverordnung",
+    "summary": "Zwei Berichte, zwei Sichtweisen – und viele offene Fragen",
+    "url": "https://physio.de/community/news/zwei-jahre-blankoverordnung/99/12076/1",
     "imageUrl": null,
-    "publishedAt": "2026-11-25T13:40:06.725Z",
-    "fetchedAt": "2026-11-25T13:40:06.734Z",
-    "relevanceScore": 9,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "publishedAt": "2026-11-26T12:52:16.390Z",
+    "fetchedAt": "2026-11-26T13:17:16.395Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:blankoverordnung",
     "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung",
-      "Praxisgründung"
-    ],
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "845f1ef0914cc80014211839e8365c57e03a1266a490c58b2c2e5f04fa187c16",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Physiotherapieberufereformgesetz: Wichtige Reform mit entscheidenden Lücken - VPT und IFK legen BMG gemeinsame Forderungen vor",
+    "summary": null,
+    "url": "https://www.ifk.de/artikel/physiotherapieberufereformgesetz-wichtige-reform-mit-entscheidenden-luecken-vpt-und-ifk",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Mikrofon_shutterstock_2438279025_IM_0.jpg?itok=K4-Nf57n",
+    "publishedAt": "2026-11-26T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "30b073e88d1f046a264238c16186ac0368e3a45d1946a368685167b90233d1a6",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Die letzten Schritte liegen vor Ihnen: Installation der TI und Kostenerstattung bei der GKV",
+    "summary": null,
+    "url": "https://www.ifk.de/index%2ephp/artikel/die-letzten-schritte-liegen-vor-ihnen-installation-der-ti-und-kostenerstattung-bei-der-gkv",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Schluss%20mit%20dem%20Aufschieben_shutterstock_2452963073_IM.jpg?itok=konQdlnI",
+    "publishedAt": "2026-11-26T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "2906568ee386a97bbb8ee0f0a21efc3380953b21280514c8941c1a0881250c23",
+    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
+    "title": "Physiotherapieberufereformgesetz – PhyThBRefG: Wichtige Reform mit entscheidenden Lücken: VPT und IFK legen Bundesministerium für Gesundheit gemeinsame Forderungen vor",
+    "summary": null,
+    "url": "https://www.vpt.de/aktuelles/news-ansicht/physiotherapieberufereformgesetz-phythbrefg-wichtige-reform-mit-entscheidenden-luecken-vpt-und-ifk-legen-bundesministerium-fuer-gesundheit-gemeinsame-forderungen-vor/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-26T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:14.734Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "2a1605fc8af372b2a28ff5152feb4964d930d79b4db91a9536aff19440e68ca3",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "GBA schließt Beratungen zu KG-ZNS ab",
+    "summary": null,
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/gba-schliesst-beratungen-zu-kg-zns-ab.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/d/c/csm_261126_-_GBA_0df266dc0a.png",
+    "publishedAt": "2026-11-26T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:14.745Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:kg-zns | src:+3",
+    "isTopNews": true,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "c4f4f3001376baef1ca8d6137ae7ae48d64ca1e6fd370e075f917edee1caa4fc",
+    "sourceId": "fade413f-4fde-4306-b2b5-7de2768351ad",
+    "title": "Kurz erklärt: Das neue Berufsgesetz",
+    "summary": null,
+    "url": "https://www.physio-deutschland.de/fachkreise/news-bundesweit/einzelansicht/artikel/kurz-erklaert-das-neue-berufsgesetz.html",
+    "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/c/f/csm_261126_-_Berufsgesetz_8152445b1a.png",
+    "publishedAt": "2026-11-26T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:14.745Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -111,6 +205,22 @@
       "Berufsverband",
       "Fortbildung"
     ],
+    "lang": "de"
+  },
+  {
+    "id": "1c3c21080c07e5b316abf4d9dd2a9b4e28c5336bc0fb7a6cedda3ba97d34bc62",
+    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
+    "title": "Gender Pain Gap: Schmerzen von Frauen ernst nehmen",
+    "summary": null,
+    "url": "https://www.vpt.de/aktuelles/news-ansicht/gender-pain-gap-schmerzen-von-frauen-ernst-nehmen/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-25T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:14.734Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): src:+3",
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -187,6 +297,25 @@
       "GKV-Vergütung",
       "Heilmittelversorgung",
       "Berufsverband"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "2cd21b17c4d01548958f219e4224416305903a60cac196859598a7bacb35e88b",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Vergütung für Physiotherapie steigt um 2,83 Prozent",
+    "summary": null,
+    "url": "https://www.ifk.de/index%2ephp/artikel/verguetung-fuer-physiotherapie-steigt-um-283-prozent",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/M%C3%BCnzstapel_2_shutterstock_213230914_IM.jpg?itok=NKt-unRV",
+    "publishedAt": "2026-11-24T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Vergütung für Physiotherapie steigt um 2,83 Prozent. Dies hat direkte Auswirkungen auf die Einna",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung",
+      "Heilmittelversorgung"
     ],
     "lang": "de"
   },
@@ -362,20 +491,19 @@
     "lang": "de"
   },
   {
-    "id": "4a4231fb86d4ec05fe2c0ba9f8bef4bbceb035146a59792e76b41ab44b6baa19",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Training präzise begründen",
-    "summary": "Amerikanische ForscherInnen wollen den Kern der physiotherapeutischen Arbeit sichtbarer machen.",
-    "url": "https://physio.de/community/news/training-praezise-begruenden/99/12041/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-19T23:16:03.178Z",
-    "fetchedAt": "2026-11-20T12:16:03.185Z",
-    "relevanceScore": 4,
+    "id": "05e33f45130b7ef0741f1122e1012482aeb533174f01a97ab46b325240f8a4e8",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Langfristigen Heilmittelbedarf und Besonderen Verordnungsbedarf reformieren? Zwischen Kostendruck und Versorgungsrealität",
+    "summary": null,
+    "url": "https://www.ifk.de/index%2ephp/artikel/langfristigen-heilmittelbedarf-und-besonderen-verordnungsbedarf-reformieren-zwischen",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Krankenversicherung_shutterstock_2683805073_IM_0.jpg?itok=WbIVYWaG",
+    "publishedAt": "2026-11-20T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung 'Training präzise begründen' könnte für Physiotherapeut:innen relevant sein, wenn sie si",
+    "relevanceReason": "ai: Langfristigen Heilmittelbedarf und Besonderen Verordnungsbedarf reformieren? Zwischen Kostendruck un",
     "isTopNews": false,
     "topics": [
-      "Bewegungstherapie",
       "Heilmittelversorgung"
     ],
     "lang": "de"
@@ -410,11 +538,27 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Hintere Kreuzbandruptur: Neue S2k-Leitlinie veröffentlicht",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Knie",
       "S2k-Leitlinie"
     ],
+    "lang": "de"
+  },
+  {
+    "id": "b0d0493ceede20f41b009b50e298f40d534e1c0437c52fa24940c9ddf80137f2",
+    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
+    "title": "40 Jahre Ottawa-Charta: Prävention endlich umsetzen – mit der Physiotherapie",
+    "summary": null,
+    "url": "https://www.vpt.de/aktuelles/news-ansicht/40-jahre-ottawa-charta-praevention-endlich-umsetzen-mit-der-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-19T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:14.734Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
+    "isTopNews": false,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -442,6 +586,22 @@
     "imageUrl": "https://www.physio-deutschland.de/fileadmin/_processed_/8/a/csm_261118_-_TherapieGipfel_a57ea61889.png",
     "publishedAt": "2026-11-18T12:00:00.000Z",
     "fetchedAt": "2026-11-18T12:22:03.681Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:heilmittelerbring,shv | src:+3",
+    "isTopNews": false,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "550aa74b623d26819b2ee6fcc6acc83646edbc1aed4442539f9b16d9310c1589",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "8. SHV-TherapieGipfel am 11. November 2026 in Berlin: Heilmittelerbringer als Schlüssel einer besseren Patientensteuerung",
+    "summary": null,
+    "url": "https://www.ifk.de/index%2ephp/artikel/8-shv-therapiegipfel-am-11-november-2026-berlin-heilmittelerbringer-als-schluessel-einer",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/261111_TherapieGipfel_IM.jpg?itok=7CnbnRqY",
+    "publishedAt": "2026-11-18T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +strong:heilmittelerbring,shv | src:+3",
@@ -712,6 +872,25 @@
     "lang": "de"
   },
   {
+    "id": "d76faa88c94eb62aaba23e4359b91b6b159fdc1a547623a055a9c36e0bc29d84",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Primärversorgung neu denken: SHV fordert stärkere Einbindung der Heilmittelberufe",
+    "summary": null,
+    "url": "https://www.ifk.de/index%2ephp/artikel/primaerversorgung-neu-denken-shv-fordert-staerkere-einbindung-der-heilmittelberufe",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/SHV%20Logo_web.jpg?itok=5rIY2Xfk",
+    "publishedAt": "2026-11-16T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der VPT fordert eine stärkere Einbindung der Heilmittelberufe in die Primärversorgung. Dies könnte A",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "a92f0f622843e772f42eb8c574407521ce833176d214df199c7518bb37696a2c",
     "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
     "title": "Wettlauf gegen den Zucker",
@@ -822,6 +1001,25 @@
     "lang": "de"
   },
   {
+    "id": "59ae053c331dce64048ab207d432567eaab61102fb41cad98e63f98466c0c165",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Studie: Physiotherapie bei Brustkrebspatientinnen mit Lymphödem",
+    "summary": null,
+    "url": "https://www.ifk.de/index%2ephp/artikel/studie-physiotherapie-bei-brustkrebspatientinnen-mit-lymphoedem",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Checkboxen_shutterstock_2578682585_web.jpg?itok=vQknDpXq",
+    "publishedAt": "2026-11-09T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Studie zu einer spezifischen physiotherapeutischen Behandlungsmethode bei Brustkrebspatientinnen mit",
+    "isTopNews": false,
+    "topics": [
+      "Lymphdrainage",
+      "Studie"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "85520217fe507cd7ea4af4bc0c6b75f3925d5a3786b730f9bcfd76e2d25d5f2b",
     "sourceId": "eb73b5d8-4e69-4b4c-b3f4-14220292c84f",
     "title": "Experiences of Patients with Chronic Non-specific Back Pain with Health Information on InstagramErfahrungen von Patient*innen mit chronischen, nicht spezifischen Rückenschmerzen mit Gesundheitsinformationen auf Instagram",
@@ -909,7 +1107,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Der IFK hat einen eigenen Bericht zur Blankoverordnung vorgelegt, was direkt die Abrechnung und Heil",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "Blankoverordnung",
       "Heilmittelversorgung"
@@ -973,6 +1171,25 @@
     "lang": "de"
   },
   {
+    "id": "71ac0e64b54f46a359b39a0697cdef69e73010810d884b676081bd1082af316f",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "Blankoverordnung: Physiotherapieverbände legen eigenen Bericht vor",
+    "summary": null,
+    "url": "https://www.ifk.de/index%2ephp/artikel/blankoverordnung-physiotherapieverbaende-legen-eigenen-bericht-vor",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/Zwischenbericht_Evaluation_Blanko_2.jpg?itok=CdpFbCxe",
+    "publishedAt": "2026-11-02T12:00:00.000Z",
+    "fetchedAt": "2026-11-26T13:17:13.926Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der IFK hat einen eigenen Bericht zur Blankoverordnung vorgelegt, was direkt die Abrechnung und Heil",
+    "isTopNews": false,
+    "topics": [
+      "Blankoverordnung",
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "43e96de929041356ac8df2172a2d8edea9823805a34419dd2199f8804a8c52c1",
     "sourceId": "b43fd6db-d99d-4a61-9bbc-ec5520a400f9",
     "title": "Versorgung ist nicht verhandelbar.",
@@ -1027,44 +1244,6 @@
       "Berufsverband",
       "Berufsausbildung",
       "Fortbildung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "0c30ca030e5e2b32d631af7726dc9b0f12736c4a81690dfef03185f12eb03951",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "Sehfunktionsstörungen – vielschichtig und auch relevant für die Physiotherapie",
-    "summary": null,
-    "url": "https://www.ifk.de/artikel/sehfunktionsstoerungen-vielschichtig-und-auch-relevant-fuer-die-physiotherapie",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/newarta-eye-check-5091177.jpg?itok=EaOfKjJU",
-    "publishedAt": "2026-10-27T12:00:00.000Z",
-    "fetchedAt": "2026-10-27T12:11:38.462Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über Sehfunktionsstörungen ist für Physiotherapeut:innen nur mittelbar relevant, da sie ",
-    "isTopNews": false,
-    "topics": [
-      "Neurologie",
-      "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "531b65069b79a1acaa1ab37fd138622351f553e19de98a3123f47652e4dad0b9",
-    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
-    "title": "Sehfunktionsstörungen – vielschichtig und auch relevant für die Physiotherapie",
-    "summary": null,
-    "url": "https://www.ifk.de/index%2ephp/artikel/sehfunktionsstoerungen-vielschichtig-und-auch-relevant-fuer-die-physiotherapie",
-    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/newarta-eye-check-5091177.jpg?itok=EaOfKjJU",
-    "publishedAt": "2026-10-27T12:00:00.000Z",
-    "fetchedAt": "2026-10-28T10:04:58.532Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über Sehfunktionsstörungen ist für Physiotherapeut:innen nur mittelbar relevant, da sie ",
-    "isTopNews": false,
-    "topics": [
-      "Neurologie",
-      "Reha"
     ],
     "lang": "de"
   },
