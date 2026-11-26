@@ -1,14 +1,5 @@
 [
   {
-    "titleHash": "4ac35ee5376d4a42c73669d33a005aca",
-    "score": 1,
-    "topics": [
-      "Bewegungstherapie"
-    ],
-    "reason": "Das Robert Koch-Institut (RKI) gibt eine Pressemitteilung heraus, die das Thema „Bewegung und Bewegu",
-    "createdAt": "2026-10-27T15:35:02.425Z"
-  },
-  {
     "titleHash": "94ec598f005c08ec352523db26b850ab",
     "score": 7,
     "topics": [
@@ -2117,5 +2108,32 @@
     ],
     "reason": "Der Titel 'Themenbereich Ausbildung & Studium' ist zu allgemein. Ohne weitere Informationen über kon",
     "createdAt": "2026-11-25T13:40:09.145Z"
+  },
+  {
+    "titleHash": "12bf57b5d6a62daf9214d78e1d3660b8",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "GKV-Vergütung"
+    ],
+    "reason": "Die Meldung ist relevant, da die Installation der Telematikinfrastruktur (TI) und die damit verbunde",
+    "createdAt": "2026-11-26T18:37:33.266Z"
+  },
+  {
+    "titleHash": "2553a4f0fb2bc25e832bccfbc00738cb",
+    "score": 4,
+    "topics": [],
+    "reason": "Die Meldung ist nur bedingt relevant. Sehfunktionsstörungen sind zwar ein medizinisches Thema, aber ",
+    "createdAt": "2026-11-26T18:37:33.266Z"
+  },
+  {
+    "titleHash": "fa56ef7916fa46a0565de1b134c709f2",
+    "score": 3,
+    "topics": [
+      "Schulter",
+      "Reha"
+    ],
+    "reason": "Die Meldung ist nicht relevant für Physiotherapeut:innen in der Praxis. Sie betrifft die Implantatio",
+    "createdAt": "2026-11-26T18:37:33.266Z"
   }
 ]
