@@ -1,97 +1,177 @@
 [
   {
-    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
+    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
+    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
     "imageUrl": null,
-    "publishedAt": "2026-11-26T18:37:28.287Z",
-    "fetchedAt": "2026-11-26T18:37:28.287Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-27T13:14:47.592Z",
+    "fetchedAt": "2026-11-27T13:14:47.596Z",
+    "relevanceScore": 8,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
+    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Fortbildung"
+      "Berufsverband"
     ],
     "lang": "de"
   },
   {
-    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
+    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
+    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
     "imageUrl": null,
-    "publishedAt": "2026-11-26T18:37:28.285Z",
-    "fetchedAt": "2026-11-26T18:37:28.287Z",
-    "relevanceScore": 7,
+    "publishedAt": "2026-11-27T13:14:47.592Z",
+    "fetchedAt": "2026-11-27T13:14:47.596Z",
+    "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
+    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
     "isTopNews": false,
     "topics": [
-      "Berufsausbildung",
+      "Manuelle Therapie",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
+    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
+    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
     "imageUrl": null,
-    "publishedAt": "2026-11-26T18:37:28.279Z",
-    "fetchedAt": "2026-11-26T18:37:28.287Z",
+    "publishedAt": "2026-11-27T13:14:47.590Z",
+    "fetchedAt": "2026-11-27T13:14:47.596Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-27T13:14:47.589Z",
+    "fetchedAt": "2026-11-27T13:14:47.596Z",
+    "relevanceScore": 8,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-27T13:14:47.585Z",
+    "fetchedAt": "2026-11-27T13:14:47.596Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
+    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "Praxisgründung"
+      "GKV-Vergütung"
     ],
     "lang": "de"
   },
   {
-    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "id": "cf7a3580f649b631eb90b047f34588080b9f1ed7dc3a52f01d8599b26e603986",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "Zukünftige Physio-Ausbildung",
+    "summary": "Wer lernt, bekommt Geld. Wer studiert, nicht.",
+    "url": "https://physio.de/community/news/zukuenftige-physio-ausbildung/99/12072/1",
     "imageUrl": null,
-    "publishedAt": "2026-11-26T18:37:28.279Z",
-    "fetchedAt": "2026-11-26T18:37:28.287Z",
+    "publishedAt": "2026-11-27T12:52:42.503Z",
+    "fetchedAt": "2026-11-27T13:14:42.505Z",
     "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
+    "relevanceReason": "ai: Die Meldung kündigt Änderungen in der zukünftigen Ausbildung für Physiotherapeut:innen an. Dies betr",
     "isTopNews": false,
     "topics": [
-      "Manuelle Therapie",
-      "Reha"
+      "Berufsausbildung"
     ],
     "lang": "de"
   },
   {
-    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
+    "id": "ee3ec0a0a68d212e08d46038e3901d8bdf4938b26c49be29bc93ffb7f98e821d",
+    "sourceId": "3e1a8567-7360-491c-8d70-7d6bba4a0d64",
+    "title": "SHV zum HiB-Gesetzentwurf: Jetzt die Chancen nutzen",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
+    "url": "https://www.ifk.de/artikel/shv-zum-hib-gesetzentwurf-jetzt-die-chancen-nutzen",
+    "imageUrl": "https://www.ifk.de/sites/default/files/styles/teaser2/public/redaktion/bilder/artikel/2026/SHV%20Logo_web.jpg?itok=5rIY2Xfk",
+    "publishedAt": "2026-11-27T12:00:00.000Z",
+    "fetchedAt": "2026-11-27T13:14:39.729Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:shv | src:+3",
+    "isTopNews": true,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "004579cddbac4ef0570e053f3840bc2b3b7054a4fafc0425749d767f067b4fd3",
+    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
+    "title": "Zukunftsforum Physiotherapie: Fünf Impulse für mehr Therapiezeit",
+    "summary": null,
+    "url": "https://www.vpt.de/aktuelles/news-ansicht/zukunftsforum-physiotherapie-fuenf-impulse-fuer-mehr-therapiezeit/",
     "imageUrl": null,
-    "publishedAt": "2026-11-26T18:37:28.276Z",
-    "fetchedAt": "2026-11-26T18:37:28.287Z",
-    "relevanceScore": 9,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "publishedAt": "2026-11-27T12:00:00.000Z",
+    "fetchedAt": "2026-11-27T13:14:40.844Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
+    "isTopNews": true,
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "93e0a54bc37ecbf5f59b3807547bf5b7dcb0c5faac6cb27b56c716e5debc54ab",
+    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
+    "title": "SHV zum HiB-Gesetzentwurf: Jetzt die Chancen nutzen",
+    "summary": null,
+    "url": "https://www.vpt.de/aktuelles/news-ansicht/shv-zum-hib-gesetzentwurf-jetzt-die-chancen-nutzen/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-27T12:00:00.000Z",
+    "fetchedAt": "2026-11-27T13:14:40.844Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (gray): +strong:shv | src:+3",
     "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung",
-      "Praxisgründung"
-    ],
+    "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "ca61d393a4a5ae3e2b16d4454e799b803aeb1474a2f1807777dfff0126650a71",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "KG-ZNS bald ohne Bobath, PNF und Vojta möglich",
+    "summary": "Der G-BA beschließt eine umfassende Reform der neurologischen Heilmittelversorgung.",
+    "url": "https://physio.de/community/news/kg-zns-bald-ohne-bobath-pnf-und-vojta-moeglich/99/12081/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-27T09:14:42.498Z",
+    "fetchedAt": "2026-11-27T13:14:42.505Z",
+    "relevanceScore": 10,
+    "relevanceMethod": "keyword",
+    "relevanceReason": "keyword (accept): +strong:kg-zns,heilmittelversorgung",
+    "isTopNews": true,
+    "topics": [],
     "lang": "de"
   },
   {
@@ -122,7 +202,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [],
     "lang": "de"
   },
@@ -170,7 +250,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +strong:kg-zns | src:+3",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [],
     "lang": "de"
   },
@@ -275,7 +355,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Die Vergütung für Physiotherapie steigt um 2,83 Prozent. Dies hat direkte Auswirkungen auf die Einna",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [
       "GKV-Vergütung",
       "Heilmittelversorgung"
@@ -434,43 +514,6 @@
       "Wirbelsäule",
       "Bewegungstherapie",
       "Reha"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "5483a520fb45d39e74f0613a90f40ee6547889c6aad7b93df022a16f3faea455",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Zweistelliger Stimmungsrückgang bei HeilberuflerInnen",
-    "summary": "Politik, aktuelle Ereignisse und Verwaltungsaufwand trüben die Gemütslage.",
-    "url": "https://physio.de/community/news/zweistelliger-stimmungsrueckgang-bei-heilberuflerinnen/99/12056/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-22T14:21:22.365Z",
-    "fetchedAt": "2026-11-24T14:21:22.369Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Ein zweistelliger Stimmungsrückgang bei HeilberuflerInnen ist zwar ein Indikator für Unzufriedenheit",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "72492fa57630f57aff8cc0502b0350fa14d8889b7690615b3267c89dd613cf0a",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Wenn es nachts knirscht und reibt",
-    "summary": "Die Bewertung der Physiotherapie in der aktuellen Buxismus-Leitlinie wurde um eine Stufe erhöht.",
-    "url": "https://physio.de/community/news/wenn-es-nachts-knirscht-und-reibt/99/12022/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-21T08:51:37.682Z",
-    "fetchedAt": "2026-11-21T11:51:37.686Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Titel ist zu unspezifisch. 'Wenn es nachts knirscht und reibt' könnte sich auf Gelenkbeschwerden",
-    "isTopNews": false,
-    "topics": [
-      "Wirbelsäule",
-      "Arthrose"
     ],
     "lang": "de"
   },
@@ -1245,26 +1288,6 @@
     "topics": [
       "Berufsverband",
       "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "e384192607ea2531ad254b9cad730666375cced57b3de19e0f59e5631db708cd",
-    "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
-    "title": "DKOU 2026: VPT bringt Ausbildung und Praxis zusammen",
-    "summary": null,
-    "url": "https://www.vpt.de/aktuelles/news-ansicht/dkou-2026-vpt-bringt-ausbildung-und-praxis-zusammen/",
-    "imageUrl": null,
-    "publishedAt": "2026-10-28T12:00:00.000Z",
-    "fetchedAt": "2026-10-28T17:29:20.931Z",
-    "relevanceScore": 7,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der VPT bringt auf dem DKOU 2026 Ausbildung und Praxis zusammen. Dies ist relevant, da es um die Ver",
-    "isTopNews": false,
-    "topics": [
-      "Berufsverband",
-      "Berufsausbildung",
-      "Fortbildung"
     ],
     "lang": "de"
   },
