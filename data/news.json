@@ -1,94 +1,116 @@
 [
   {
-    "id": "015680ae243844af510d3ec7928987d47752a0bfdc0ea77734a978f21248a220",
+    "id": "e255d45c8604d9dc3f921cc20659a69868552c9a6acd0c1810c35bafa54fa0a4",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie mehr erhält",
+    "title": "Abmahnung wegen Osteopathie ist übertragbar auf Physiotherapie",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/bundessozialgericht-erkl%C3%A4rt-wieso-masseur-keine-zulassungserweiterung-f%C3%BCr-manuelle-therapie-mehr-erh%C3%A4lt/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/abmahnung-wegen-osteopathie-%C3%BCbertragbar-auf-physiotherapie/",
     "imageUrl": null,
-    "publishedAt": "2026-11-27T13:14:47.592Z",
-    "fetchedAt": "2026-11-27T13:14:47.596Z",
-    "relevanceScore": 8,
+    "publishedAt": "2026-11-28T12:29:21.189Z",
+    "fetchedAt": "2026-11-28T12:29:21.190Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Bundessozialgericht erklärt, wieso der Masseur keine Zulassungserweiterung für Manuelle Therapie",
+    "relevanceReason": "ai: Die Meldung, dass eine Abmahnung wegen Osteopathie auf die Physiotherapie übertragbar ist, hat direk",
     "isTopNews": false,
     "topics": [
       "Manuelle Therapie",
-      "Berufsverband"
+      "Fortbildung"
     ],
     "lang": "de"
   },
   {
-    "id": "6ab2f895479c89627cfe210afcc05be3443fb7f70c5c60cb4771352dfabc10f3",
+    "id": "153b2d71ff83116414e380031ff4337f8d02e09a22b94a171c7b86e4a45211c2",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung",
+    "title": "Kassenzulassung für Fachfremde (Physiotherapie)",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/oberlandesgericht-frankfurt-am-main-erlaubt-craniosacrale-therapie-auf-verordnung/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/kassenzulassung-f%C3%BCr-fachfremde/",
     "imageUrl": null,
-    "publishedAt": "2026-11-27T13:14:47.592Z",
-    "fetchedAt": "2026-11-27T13:14:47.596Z",
-    "relevanceScore": 9,
+    "publishedAt": "2026-11-28T12:29:21.187Z",
+    "fetchedAt": "2026-11-28T12:29:21.190Z",
+    "relevanceScore": 7,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Das Oberlandesgericht Frankfurt am Main erlaubt CranioSacrale Therapie auf Verordnung. Dies ist unmi",
+    "relevanceReason": "ai: Die Meldung über die Kassenzulassung für Fachfremde in der Physiotherapie ist hochrelevant, da sie d",
     "isTopNews": false,
     "topics": [
-      "Manuelle Therapie",
+      "Berufsausbildung",
       "Heilmittelversorgung"
     ],
     "lang": "de"
   },
   {
-    "id": "9017efadb9c8004ae089f1ee66c71453d540517dcbdf44e502bdbf7add5d2899",
+    "id": "2f299cbe67ceb73e305682300165d74cdf0b704d52ff0073c3919901359c325d",
     "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Welche Behandlungskosten müssen private Krankenversicherungen zahlen?",
+    "title": "Absicherung bei Terminausfall und Behandlungspflicht",
     "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/welche-behandlungskosten-m%C3%BCssen-private-krankenversicherungen-zahlen/",
+    "url": "https://www.rechtsanwaltalt.de/artikel/absicherung-bei-terminausfall-und-behandlungspflicht/",
     "imageUrl": null,
-    "publishedAt": "2026-11-27T13:14:47.590Z",
-    "fetchedAt": "2026-11-27T13:14:47.596Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Welche Behandlungskosten private Krankenversicherungen zahlen, ist relevant, da es die Abrechnung un",
-    "isTopNews": false,
-    "topics": [
-      "GKV-Vergütung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "bfe9d72eecc6db23ce78bc29e4540893c4adc6dbfe2a9d5a1c202e7135216035",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/vorsicht-bei-der-nutzung-nicht-zugelassener-ger%C3%A4te-in-der-physiotherapie/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-27T13:14:47.589Z",
-    "fetchedAt": "2026-11-27T13:14:47.596Z",
-    "relevanceScore": 8,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Vorsicht bei der Nutzung nicht zugelassener Geräte in der Physiotherapie ist relevant, da es um die ",
-    "isTopNews": false,
-    "topics": [
-      "Heilmittelversorgung"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "f7ed7a659cacad20fbcb42734dcdd0ed6f3c609f3a733f5c745d074c18004fdb",
-    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
-    "title": "Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag)",
-    "summary": null,
-    "url": "https://www.rechtsanwaltalt.de/artikel/wichtige-informationen-zum-rahmenvertrag-physiotherapie-2021-1/",
-    "imageUrl": null,
-    "publishedAt": "2026-11-27T13:14:47.585Z",
-    "fetchedAt": "2026-11-27T13:14:47.596Z",
+    "publishedAt": "2026-11-28T12:29:21.181Z",
+    "fetchedAt": "2026-11-28T12:29:21.190Z",
     "relevanceScore": 9,
     "relevanceMethod": "ai",
-    "relevanceReason": "ai: Wichtige Informationen zum Rahmenvertrag Physiotherapie 2021 (Bundesrahmenvertrag) sind unmittelbar ",
+    "relevanceReason": "ai: Die Meldung zur Absicherung bei Terminausfall und Behandlungspflicht betrifft direkt die organisator",
     "isTopNews": false,
     "topics": [
       "Heilmittelversorgung",
-      "GKV-Vergütung"
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "b75930b3f33b9baa18a30ef2ee16824bc6a5c63c342c8ac38d6043e25f5e8e3d",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Urteil des Oberlandesgerichts Düsseldorf zur Osteopathie",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/urteil-des-oberlandesgerichts-d%C3%BCsseldorf-zur-osteopathie/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-28T12:29:21.181Z",
+    "fetchedAt": "2026-11-28T12:29:21.190Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Urteil eines Oberlandesgerichts zur Osteopathie kann für Physiotherapeut:innen relevant sein, in",
+    "isTopNews": false,
+    "topics": [
+      "Manuelle Therapie",
+      "Reha"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "de0d0a5bae7755fe01e02356d864b2b329ee9f310daddc1a07ae79fb63f4b180",
+    "sourceId": "93b5eb3c-e3a0-45d2-bc48-01515c81894c",
+    "title": "Abrechnungsbetrug wird nun intensiver verfolgt (auch in Bayern)",
+    "summary": null,
+    "url": "https://www.rechtsanwaltalt.de/artikel/abrechnungsbetrug-wird-nun-intensiver-verfolgt-auch-in-bayern-1/",
+    "imageUrl": null,
+    "publishedAt": "2026-11-28T12:29:21.179Z",
+    "fetchedAt": "2026-11-28T12:29:21.190Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Meldung über die intensivere Verfolgung von Abrechnungsbetrug hat direkte Auswirkungen auf die A",
+    "isTopNews": false,
+    "topics": [
+      "GKV-Vergütung",
+      "Praxisgründung"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "d6b01f4bd17ac7a9a37fa2ad51850556337b2d577329f17db6473dcfb8246a49",
+    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
+    "title": "SHV fordert echten Direktzugang und wirksamen Bürokratieabbau",
+    "summary": "Stellungnahme zum Referentenentwurf des Hilfsmittelmodernisierungs- und Bürokratierückbaugesetzes (HiB)",
+    "url": "https://physio.de/community/news/shv-fordert-echten-direktzugang-und-wirksamen-buerokratieabbau/99/12091/1",
+    "imageUrl": null,
+    "publishedAt": "2026-11-28T07:29:17.199Z",
+    "fetchedAt": "2026-11-28T12:29:17.206Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der SHV fordert einen echten Direktzugang und Bürokratieabbau, was direkte Auswirkungen auf die Arbe",
+    "isTopNews": false,
+    "topics": [
+      "Direktzugang",
+      "Berufsverband",
+      "Heilmittelversorgung"
     ],
     "lang": "de"
   },
@@ -138,7 +160,7 @@
     "relevanceScore": 10,
     "relevanceMethod": "keyword",
     "relevanceReason": "keyword (gray): +strong:physiotherap | src:+3",
-    "isTopNews": true,
+    "isTopNews": false,
     "topics": [],
     "lang": "de"
   },
@@ -355,7 +377,7 @@
     "relevanceScore": 9,
     "relevanceMethod": "ai",
     "relevanceReason": "ai: Die Vergütung für Physiotherapie steigt um 2,83 Prozent. Dies hat direkte Auswirkungen auf die Einna",
-    "isTopNews": false,
+    "isTopNews": true,
     "topics": [
       "GKV-Vergütung",
       "Heilmittelversorgung"
@@ -494,26 +516,6 @@
     "topics": [
       "Fortbildung",
       "Studie"
-    ],
-    "lang": "de"
-  },
-  {
-    "id": "9c3e0e26129ba6ead3650cfd509565187220f0d874eb221048da2acbb2cc80c3",
-    "sourceId": "e5b1501e-a27c-44c2-bd62-82f55e8a35b5",
-    "title": "Instabiles Powerhouse",
-    "summary": "Ist der feste Bauch beim Pilates überbewertet?",
-    "url": "https://physio.de/community/news/instabiles-powerhouse/99/12071/1",
-    "imageUrl": null,
-    "publishedAt": "2026-11-23T09:45:35.702Z",
-    "fetchedAt": "2026-11-23T13:45:35.705Z",
-    "relevanceScore": 4,
-    "relevanceMethod": "ai",
-    "relevanceReason": "ai: Der Begriff 'Instabiles Powerhouse' könnte sich auf Rumpfstabilität beziehen, was ein Thema in der P",
-    "isTopNews": false,
-    "topics": [
-      "Wirbelsäule",
-      "Bewegungstherapie",
-      "Reha"
     ],
     "lang": "de"
   },
@@ -1011,6 +1013,45 @@
     "lang": "de"
   },
   {
+    "id": "5cbfaa7477148dbb5ad211579b86a6b806783948ff23c9af303b45dbb564bd07",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "HIIT als Gamechanger bei Prostatakrebs?",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZjcyTlc1UXdTcTBJNlo0RFh0Z0xzcUJVOFlDZWw1bW5jS2dfQUpXdFB1Ui1kRkJqUUhadjBCbjhYeDZUd3VQTWtXTENsNFJyTXpYRS1GcmU5YUZtUmp3SXJNWXljR1FESi1aUWNPb1lkY1BpRkZPTGhFNzF5RE12bWpR?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-11-11T15:48:52.000Z",
+    "fetchedAt": "2026-11-28T12:29:17.692Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: HIIT bei Prostatakrebs könnte für Physiotherapeut:innen im Bereich Sportphysiotherapie oder Reha rel",
+    "isTopNews": false,
+    "topics": [
+      "Sportphysiotherapie",
+      "Reha",
+      "Studie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "7ca02adf1f0699639562f34b3f76d0f15e500709c37dacafe6ff2d7121905464",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Kreatin: Was bringt’s wirklich?",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1Wbk9YbDZEeHBXZ3VGNnBtN0prOU9mM1VWOVRfM205VmtleGJlZDI3Z2J5ZkFsczVid1l6UC1VUXZsUzIyRUU4Z1kxLTNzNDhReGs3b0x6VnJqY0FteG93NUVuY0JEWUs5V2NCUnV4ODBMbGpm?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-11-11T15:48:52.000Z",
+    "fetchedAt": "2026-11-28T12:29:17.692Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Frage nach der Wirkung von Kreatin könnte für Physiotherapeut:innen im Bereich Sportphysiotherap",
+    "isTopNews": false,
+    "topics": [
+      "Sportphysiotherapie",
+      "Reha"
+    ],
+    "lang": "de"
+  },
+  {
     "id": "1ccae1b4fd9368806b1f1db135e0d572a3737b5ee677e90bcf9df4aaaca53829",
     "sourceId": "256ef8b4-822b-45f7-8f2f-4b2cadc59000",
     "title": "8. SHV-TherapieGipfel am 11. November 2026 in Berlin Heilmittelerbringer als Schlüssel einer besseren Patientensteuerung",
@@ -1024,6 +1065,82 @@
     "relevanceReason": "keyword (gray): +strong:heilmittelerbring,shv | src:+3",
     "isTopNews": false,
     "topics": [],
+    "lang": "de"
+  },
+  {
+    "id": "48938c15ca2b3e31ab711e24329383b206cf4b30365aa80c1d396dc737a45984",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Den Schmerz im Nacken",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1IcFhCaUVpR2RIYy0yS21KN3B5VVdOZUc4ZjNoWlQxY2g4UFkxcDhFczlzdVR3UlJoR09QQVdYLUYyRW9VVVNHM2F2cFozeU5tWmxpYV9YcXVPeldUbWlQVmJ1R3VqaEV0bmRr?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-11-11T04:39:26.000Z",
+    "fetchedAt": "2026-11-28T12:29:17.692Z",
+    "relevanceScore": 4,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Der Titel 'Den Schmerz im Nacken' könnte relevant sein, wenn er spezifische physiotherapeutische Beh",
+    "isTopNews": false,
+    "topics": [
+      "Rückenschmerz"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "07c47e7b62346081b8361e2c26d1ee8212aff3910d504e2d60e2449c22c2264b",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Cochrane-Ticker 11 2026",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1xWXFQMEhEbEEzTjBEWlMwR1ZWclQxcmhCbkZ0bjhqc3VaRzNMdHM4NFFEanVQbjU4Vkg1b3c3R0Nfal83OENteTU3bTB3V0hOS2tXMWlTeTV6VmVyTmlEdkRNeVloUUFCVnJQOGJ3?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-11-11T04:39:26.000Z",
+    "fetchedAt": "2026-11-28T12:29:17.692Z",
+    "relevanceScore": 9,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Ein Cochrane-Ticker mit der Jahreszahl 2026 deutet auf die Veröffentlichung neuer oder aktualisierte",
+    "isTopNews": false,
+    "topics": [
+      "Cochrane-Review",
+      "Studie",
+      "Leitlinie"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "3b8ba115d208221a2dab4a23204ba9f90be76f792eb39b1d01ef4bac158db1fd",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Mehr Therapiezeit, weniger Bürokratie",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNM0hmcDMzT3lvLUFuemo5bzY4dkFfY0FWQXVDZGlwQlJQbHRZX0IwSF9fT3JXMnE0RVlYQm9UNUZYRzgtQ1pjNmpOMWUzcWFOSTg1X256UVh4RV8zRzA3Q3l0QlZQZFdNeE1lREFzalNUTTJtcTNGVGNOS1lyNExBUQ?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-11-11T02:31:02.000Z",
+    "fetchedAt": "2026-11-28T12:29:17.692Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Forderung nach mehr Therapiezeit und weniger Bürokratie adressiert direkt die Arbeitsbedingungen",
+    "isTopNews": false,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "lang": "de"
+  },
+  {
+    "id": "c8b119c50d8cae206c72ca232ce746b001f05f6eec78b3424632831f8aeda69c",
+    "sourceId": "0180c709-adbd-4156-bf43-6877ce280a2d",
+    "title": "Weiterbildung statt Weiter-so",
+    "summary": null,
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4wNDh2N2tWRTF0TXJHYUVOeUZSLWoxVG9rSGVUUmdmZ0ZCRE42S1A0Z1NoM0tjQ05UbTM3NVZYZ0psU0gzVk9hY1ZVdXhQN1JJdDQ3U2tsajBBZkRxRDlrNE1FSC0tRmxnTVozd3NnYWxLMGVtSkE?oc=5",
+    "imageUrl": null,
+    "publishedAt": "2026-11-11T01:33:57.000Z",
+    "fetchedAt": "2026-11-28T12:29:17.692Z",
+    "relevanceScore": 7,
+    "relevanceMethod": "ai",
+    "relevanceReason": "ai: Die Betonung von 'Weiterbildung statt Weiter-so' deutet auf notwendige Anpassungen in der Fortbildun",
+    "isTopNews": false,
+    "topics": [
+      "Fortbildung",
+      "Berufsverband"
+    ],
     "lang": "de"
   },
   {

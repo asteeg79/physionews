@@ -1,33 +1,5 @@
 [
   {
-    "titleHash": "55ccf9b851fbb51c50eff6a25a8b731d",
-    "score": 7,
-    "topics": [
-      "Berufsverband",
-      "Berufsausbildung",
-      "Fortbildung"
-    ],
-    "reason": "Der VPT bringt auf dem DKOU 2026 Ausbildung und Praxis zusammen. Dies ist relevant, da es um die Ver",
-    "createdAt": "2026-10-28T17:29:29.054Z"
-  },
-  {
-    "titleHash": "7fd2efe65709bc627364ba0b42d91d02",
-    "score": 0,
-    "topics": [
-      "Veranstaltung",
-      "Fortbildung"
-    ],
-    "reason": "Ein neuer Podcast des VPT NRW mit dem Titel „Haltung, bitte!“ ist gestartet. Da es sich um eine Ankü",
-    "createdAt": "2026-10-28T17:29:29.054Z"
-  },
-  {
-    "titleHash": "4c434b08d19b78057a7645f1c855cadb",
-    "score": 0,
-    "topics": [],
-    "reason": "Die Frage nach dem Verdienst von Ärzten hat keinen direkten Einfluss auf die Arbeit, Abrechnung, Aus",
-    "createdAt": "2026-10-29T10:29:27.679Z"
-  },
-  {
     "titleHash": "0ed9fa828da3c5fdd4cff50a2c963be8",
     "score": 0,
     "topics": [],
@@ -2116,5 +2088,139 @@
     ],
     "reason": "Die Meldung ist nicht relevant für Physiotherapeut:innen in der Praxis. Sie betrifft die Implantatio",
     "createdAt": "2026-11-26T18:37:33.266Z"
+  },
+  {
+    "titleHash": "cfa835a57d21a0c1c9d73ddef7ba37d4",
+    "score": 7,
+    "topics": [
+      "Direktzugang",
+      "Berufsverband",
+      "Heilmittelversorgung"
+    ],
+    "reason": "Der SHV fordert einen echten Direktzugang und Bürokratieabbau, was direkte Auswirkungen auf die Arbe",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "565c2a66f09152284465539ee21eba81",
+    "score": 0,
+    "topics": [
+      "Bewegungstherapie"
+    ],
+    "reason": "Der Titel 'Bewegung braucht Begegnung' ist zu allgemein und lässt keinen direkten Bezug zur praktisc",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "90aa009f2b4a0130d9a55540a7fe68c3",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Große Erwartungen, kleiner Sprung' ist metaphorisch und bietet keinen konkreten Bezug zur",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "ff66a5ff89679839158e5dd9960b2da8",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Der Knackpunkt liegt im Kopf' ist zu unspezifisch und lässt keinen direkten Bezug zur phy",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "e457dc647c871e6d3442f69d9b4ad908",
+    "score": 7,
+    "topics": [
+      "Heilmittelversorgung",
+      "Berufsverband"
+    ],
+    "reason": "Die Forderung nach mehr Therapiezeit und weniger Bürokratie adressiert direkt die Arbeitsbedingungen",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "d7aa6a234bc590eb78bfa54e42c5dae8",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Physiotherapie neu gedacht' ist zu vage und gibt keinen Hinweis darauf, ob sich konkrete ",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "c22f99773c2a9f83cd80ae5327e74052",
+    "score": 4,
+    "topics": [
+      "Rückenschmerz"
+    ],
+    "reason": "Der Titel 'Den Schmerz im Nacken' könnte relevant sein, wenn er spezifische physiotherapeutische Beh",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "d053d7a00431a57054d1ba62ae56517c",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Sauerstoff für unterwegs' deutet auf medizinische Geräte oder Hilfsmittel hin, ohne direk",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "dfd8826e6ac57242df095e303107bf15",
+    "score": 0,
+    "topics": [
+      "Atemtherapie"
+    ],
+    "reason": "Der Titel 'Keine Luft oder keine Lust?' ist zu allgemein und lässt keinen direkten Bezug zur physiot",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "38c408704528e0e3a8689e758d88f409",
+    "score": 0,
+    "topics": [
+      "Fortbildung"
+    ],
+    "reason": "Der Titel 'Bandprobe - pt Zeitschrift für Physiotherapeuten' ist eine Ankündigung einer Zeitschrift ",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "fd581335b4302c19b26f0c7c40de920f",
+    "score": 4,
+    "topics": [
+      "Sportphysiotherapie",
+      "Reha",
+      "Studie"
+    ],
+    "reason": "HIIT bei Prostatakrebs könnte für Physiotherapeut:innen im Bereich Sportphysiotherapie oder Reha rel",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "330ef9f0a274ff56450b1e4737ef6d60",
+    "score": 4,
+    "topics": [
+      "Sportphysiotherapie",
+      "Reha"
+    ],
+    "reason": "Die Frage nach der Wirkung von Kreatin könnte für Physiotherapeut:innen im Bereich Sportphysiotherap",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "1bce5e4361193f8861703c518d5dc815",
+    "score": 0,
+    "topics": [],
+    "reason": "Der Titel 'Wenn zwei Wege zum Ziel führen' ist zu allgemein und lässt keinen direkten Bezug zur phys",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "b1a7c9e9207f0303618a3432b9fe403a",
+    "score": 7,
+    "topics": [
+      "Fortbildung",
+      "Berufsverband"
+    ],
+    "reason": "Die Betonung von 'Weiterbildung statt Weiter-so' deutet auf notwendige Anpassungen in der Fortbildun",
+    "createdAt": "2026-11-28T12:29:25.322Z"
+  },
+  {
+    "titleHash": "6b16bd1692941c5748c44f040d70a2d0",
+    "score": 9,
+    "topics": [
+      "Cochrane-Review",
+      "Studie",
+      "Leitlinie"
+    ],
+    "reason": "Ein Cochrane-Ticker mit der Jahreszahl 2026 deutet auf die Veröffentlichung neuer oder aktualisierte",
+    "createdAt": "2026-11-28T12:29:25.322Z"
   }
 ]
